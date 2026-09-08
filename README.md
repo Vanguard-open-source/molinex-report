@@ -1,0 +1,743 @@
+<div align="center">
+
+<img src="assets/front-matter/upc-logo.png" width="110" alt="Logo de la Universidad Peruana de Ciencias Aplicadas">
+
+**Universidad Peruana de Ciencias Aplicadas**<br>
+**Carrera de Ingeniería de Software**<br>
+**Ciclo académico 2026-20**
+
+**1ASI0729**<br>
+**Desarrollo de Aplicaciones Open Source**
+
+**NRC [NRC]**
+
+**Profesor**<br>
+**Bautista Ubillús, Efraín Ricardo**
+
+# Informe de Trabajo Final
+
+**Startup: Vanguard**<br>
+**Producto: Molinex**
+
+## Integrantes
+
+| Código | Apellidos y nombres |
+|:--:|:--|
+| [Código UPC] | Casalino Berrocal, Luisa Nhiriel |
+| [Código UPC] | Gallegos De La Cruz, Giovanni Marcelo |
+| [Código UPC] | Huerta Cardenas, Brayan Benjamin |
+| [Código UPC] | Jimenez Saavedra, Antony Alexander |
+| [Código UPC] | Rivera Rupay, Fabricio Jose |
+
+**Septiembre de 2026**
+
+</div>
+
+<div style="page-break-after: always;"></div>
+
+## Registro de Versiones del Informe
+
+| Versión | Fecha | Autor | Descripción de la modificación |
+|:--:|:--:|:--|:--|
+| AV1 | [fecha] | [autor(es)] | [describir qué se agregó/cambió en esta versión] |
+
+<div style="page-break-after: always;"></div>
+
+## Project Report Collaboration Insights
+
+[Explicar cómo se desarrollan las actividades de elaboración del informe. Esta sección se expande en cada entrega.]
+
+### Repositorios del proyecto
+
+- Project Report: `[URL]`
+- Landing Page: `[URL]`
+- Frontend Web Application: `[URL]`
+- RESTful API: `[URL]`
+
+### Entrega AV1
+
+[Resumen de lo avanzado en esta entrega.]
+
+#### Participación del equipo
+
+- Casalino Berrocal, Luisa Nhiriel: [responsabilidades]
+- Gallegos De La Cruz, Giovanni Marcelo: [responsabilidades]
+- Huerta Cardenas, Brayan Benjamin: [responsabilidades]
+- Jimenez Saavedra, Antony Alexander: [responsabilidades]
+- Rivera Rupay, Fabricio Jose: [responsabilidades]
+
+#### Evidencias de colaboración y commits
+
+[Capturas de GitHub Insights y tabla de commits por repositorio.]
+
+<div style="page-break-after: always;"></div>
+
+## Contenido
+
+- [Student Outcome](#student-outcome)
+- [Capítulo I Introducción](#capítulo-i-introducción)
+- [1.1 Startup Profile](#11-startup-profile)
+  - [1.1.1 Descripción de la Startup](#111-descripción-de-la-startup)
+  - [1.1.2 Perfiles de integrantes del equipo](#112-perfiles-de-integrantes-del-equipo)
+- [1.2 Solution Profile](#12-solution-profile)
+  - [1.2.1 Antecedentes y problemática](#121-antecedentes-y-problemática)
+  - [1.2.2 Lean UX Process](#122-lean-ux-process)
+    - [1.2.2.1 Lean UX Problem Statements](#1221-lean-ux-problem-statements)
+    - [1.2.2.2 Lean UX Assumptions](#1222-lean-ux-assumptions)
+    - [1.2.2.3 Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
+    - [1.2.2.4 Lean UX Canvas](#1224-lean-ux-canvas)
+- [1.3 Segmentos objetivo](#13-segmentos-objetivo)
+- [Capítulo II Requirements Elicitation & Analysis](#capítulo-ii-requirements-elicitation-analysis)
+- [2.1 Competidores](#21-competidores)
+  - [2.1.1 Análisis competitivo](#211-análisis-competitivo)
+  - [2.1.2 Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
+- [2.2 Entrevistas](#22-entrevistas)
+  - [2.2.1 Diseño de entrevistas](#221-diseño-de-entrevistas)
+  - [2.2.2 Registro de entrevistas](#222-registro-de-entrevistas)
+  - [2.2.3 Análisis de entrevistas](#223-análisis-de-entrevistas)
+- [2.3 Needfinding](#23-needfinding)
+  - [2.3.1 User Personas](#231-user-personas)
+  - [2.3.2 User Task Matrix](#232-user-task-matrix)
+  - [2.3.3 User Journey Mapping](#233-user-journey-mapping)
+  - [2.3.4 Empathy Mapping](#234-empathy-mapping)
+- [2.4 Big Picture Event Storming](#24-big-picture-event-storming)
+- [2.5 Ubiquitous Language](#25-ubiquitous-language)
+- [Capítulo III Requirements Specification](#capítulo-iii-requirements-specification)
+- [3.1 User Stories](#31-user-stories)
+- [3.2 Impact Mapping](#32-impact-mapping)
+- [3.3 Product Backlog](#33-product-backlog)
+- [Capítulo IV Product Design](#capítulo-iv-product-design)
+- [4.1 Style Guidelines](#41-style-guidelines)
+  - [4.1.1 General Style Guidelines](#411-general-style-guidelines)
+  - [4.1.2 Web Style Guidelines](#412-web-style-guidelines)
+- [4.2 Information Architecture](#42-information-architecture)
+  - [4.2.1 Organization Systems](#421-organization-systems)
+  - [4.2.2 Labeling Systems](#422-labeling-systems)
+  - [4.2.3 SEO Tags and Meta Tags](#423-seo-tags-and-meta-tags)
+  - [4.2.4 Searching Systems](#424-searching-systems)
+  - [4.2.5 Navigation Systems](#425-navigation-systems)
+- [4.3 Landing Page UI Design](#43-landing-page-ui-design)
+  - [4.3.1 Landing Page Wireframe](#431-landing-page-wireframe)
+  - [4.3.2 Landing Page Mockup](#432-landing-page-mockup)
+- [4.4 Web Applications UX/UI Design](#44-web-applications-uxui-design)
+  - [4.4.1 Web Applications Wireframes](#441-web-applications-wireframes)
+  - [4.4.2 Web Applications Wireflow Diagrams](#442-web-applications-wireflow-diagrams)
+  - [4.4.3 Web Applications Mockups](#443-web-applications-mockups)
+  - [4.4.4 Web Applications User Flow Diagrams](#444-web-applications-user-flow-diagrams)
+- [4.5 Web Applications Prototyping](#45-web-applications-prototyping)
+- [4.6 Domain-Driven Software Architecture](#46-domain-driven-software-architecture)
+  - [4.6.1 Design-Level Event Storming](#461-design-level-event-storming)
+  - [4.6.2 Software Architecture Context Diagram](#462-software-architecture-context-diagram)
+  - [4.6.3 Software Architecture Container Diagrams](#463-software-architecture-container-diagrams)
+  - [4.6.4 Software Architecture Components Diagrams](#464-software-architecture-components-diagrams)
+- [4.7 Software Object-Oriented Design](#47-software-object-oriented-design)
+  - [4.7.1 Class Diagrams](#471-class-diagrams)
+- [4.8 Database Design](#48-database-design)
+  - [4.8.1 Database Diagrams](#481-database-diagrams)
+- [Capítulo V Product Implementation, Validation & Deployment](#capítulo-v-product-implementation-validation-deployment)
+- [5.1 Software Configuration Management](#51-software-configuration-management)
+  - [5.1.1 Software Development Environment Configuration](#511-software-development-environment-configuration)
+  - [5.1.2 Source Code Management](#512-source-code-management)
+  - [5.1.3 Source Code Style Guide & Coding Conventions](#513-source-code-style-guide-coding-conventions)
+  - [5.1.4 Software Deployment Configuration](#514-software-deployment-configuration)
+- [5.2 Landing Page, Services & Applications Implementation](#52-landing-page-services-applications-implementation)
+  - [5.2.1 Sprint 1](#521-sprint-1)
+    - [5.2.1.1 Sprint Planning 1](#5211-sprint-planning-1)
+    - [5.2.1.2 Aspect Leaders and Collaborators](#5212-aspect-leaders-and-collaborators)
+    - [5.2.1.3 Sprint Backlog 1](#5213-sprint-backlog-1)
+    - [5.2.1.4 Development Evidence for Sprint Review](#5214-development-evidence-for-sprint-review)
+    - [5.2.1.5 Execution Evidence for Sprint Review](#5215-execution-evidence-for-sprint-review)
+    - [5.2.1.6 Services Documentation Evidence for Sprint Review](#5216-services-documentation-evidence-for-sprint-review)
+    - [5.2.1.7 Software Deployment Evidence for Sprint Review](#5217-software-deployment-evidence-for-sprint-review)
+    - [5.2.1.8 Team Collaboration Insights during Sprint](#5218-team-collaboration-insights-during-sprint)
+- [Conclusiones](#conclusiones)
+- [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
+- [Bibliografía](#bibliografía)
+- [Anexos](#anexos)
+- [Anexo A. Videos de Exposiciones](#anexo-a-videos-de-exposiciones)
+
+<div style="page-break-after: always;"></div>
+
+## Student Outcome
+
+El curso contribuye al cumplimiento del Student Outcome ABET:
+
+**ABET – EAC - Student Outcome 3**
+
+Criterio: Capacidad de comunicarse efectivamente con un rango de audiencias.
+
+En el siguiente cuadro se describen las acciones realizadas y los enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 3.
+
+| Criterio específico | Acciones realizadas | Conclusiones |
+|:--|:--|:--|
+| Comunica oralmente con efectividad a diferentes rangos de audiencia. | [Apellidos, Nombres]<br>**AV1**<br>[acciones realizadas por esta persona en esta entrega] | [conclusión grupal acumulable] |
+| Comunica por escrito con efectividad a diferentes rangos de audiencia. | [Apellidos, Nombres]<br>**AV1**<br>[acciones realizadas por esta persona en esta entrega] | [conclusión grupal acumulable] |
+
+<div style="page-break-after: always;"></div>
+
+# Capítulo I Introducción
+
+## 1.1 Startup Profile
+
+### 1.1.1 Descripción de la Startup
+
+[Descripción de Vanguard: qué hace, para quién, y su misión, visión y principios de trabajo.]
+
+### 1.1.2 Perfiles de integrantes del equipo
+
+| Nombre completo | Código | Carrera | Fotografía | Conocimientos y habilidades |
+|:--|:--:|:--|:--:|:--|
+| Casalino Berrocal, Luisa Nhiriel | [Código UPC] | Ingeniería de Software, UPC | <img src="assets/team/luisa-casalino.jpg" width="120" alt="Luisa Casalino"> | [resumen en primera persona] |
+| Gallegos De La Cruz, Giovanni Marcelo | [Código UPC] | Ingeniería de Software, UPC | <img src="assets/team/giovanni-gallegos.jpg" width="120" alt="Giovanni Gallegos"> | [resumen en primera persona] |
+| Huerta Cardenas, Brayan Benjamin | [Código UPC] | Ingeniería de Software, UPC | <img src="assets/team/brayan-huerta.jpg" width="120" alt="Brayan Huerta"> | [resumen en primera persona] |
+| Jimenez Saavedra, Antony Alexander | [Código UPC] | Ingeniería de Software, UPC | <img src="assets/team/antony-jimenez.jpg" width="120" alt="Antony Jimenez"> | [resumen en primera persona] |
+| Rivera Rupay, Fabricio Jose | [Código UPC] | Ingeniería de Software, UPC | <img src="assets/team/fabricio-rivera.jpg" width="120" alt="Fabricio Rivera"> | [resumen en primera persona] |
+
+## 1.2 Solution Profile
+
+### 1.2.1 Antecedentes y problemática
+
+[Aproximación preliminar a los antecedentes y la problemática, aplicando la técnica de las 5W2H.]
+
+| Elemento 5W2H | Definición para Molinex |
+|:--|:--|
+| Who | [ ] |
+| What | [ ] |
+| Where | [ ] |
+| When | [ ] |
+| Why | [ ] |
+| How | [ ] |
+| How much | [ ] |
+
+**Objetivo general.** [ ]
+
+**Objetivos específicos.** [ ]
+
+### 1.2.2 Lean UX Process
+
+#### 1.2.2.1 Lean UX Problem Statements
+
+_Un único Problem Statement para todo el proyecto (versión Brand new initiative), considerando todos los segmentos._
+
+> The current state of [the domain we are working in] has focused mainly on [these customer segments, these pain points, these workflows, etc.].
+> What existing products/services fail to address is [this gap or change in the marketplace].
+> Our product/service will address this gap by [this product strategy or approach].
+> Our initial focus will be [this audience segment].
+> We'll know we are successful when we see [these measurable behaviors in our target audience].
+
+#### 1.2.2.2 Lean UX Assumptions
+
+**Business Assumptions**
+- [ ]
+
+**Business Outcome Assumptions**
+- [ ]
+
+**User Assumptions**
+- [ ]
+
+**User Outcome and Benefit Assumptions**
+- [ ]
+
+**Feature Assumptions**
+- [ ]
+
+#### 1.2.2.3 Lean UX Hypothesis Statements
+
+_Un Hypothesis Statement por cada Feature Assumption._
+
+> We believe we will achieve [this business outcome]
+> If [these personas]
+> Attain [this benefit/user outcome]
+> With [this feature or solution]
+
+#### 1.2.2.4 Lean UX Canvas
+
+| Campo | Síntesis |
+|:--|:--|
+| Business problem | [ ] |
+| Business outcomes | [ ] |
+| Users | [ ] |
+| User outcomes and benefits | [ ] |
+| Solutions | [ ] |
+| Hypotheses | [ ] |
+| Most important thing to learn | [ ] |
+| Least work for learning | [ ] |
+
+## 1.3 Segmentos objetivo
+
+[Descripción de cada segmento: características demográficas e información estadística de sustento.]
+
+<div style="page-break-after: always;"></div>
+
+# Capítulo II Requirements Elicitation & Analysis
+
+## 2.1 Competidores
+
+### 2.1.1 Análisis competitivo
+
+**Competitive Analysis Landscape**
+
+¿Por qué llevar a cabo este análisis? [ ]
+
+| Perfil | Molinex (Vanguard) | Competidor 1 | Competidor 2 | Competidor 3 |
+|:--|:--|:--|:--|:--|
+| Overview | | | | |
+| Ventaja competitiva | | | | |
+| ¿Qué valor ofrece a los clientes? | | | | |
+| Mercado objetivo | | | | |
+| Estrategias de marketing | | | | |
+| Productos y servicios | | | | |
+| Precios y costos | | | | |
+| Canales de distribución (Web y/o Móvil) | | | | |
+
+**Análisis SWOT**
+
+| | Molinex (Vanguard) | Competidor 1 | Competidor 2 | Competidor 3 |
+|:--|:--|:--|:--|:--|
+| Fortalezas | | | | |
+| Debilidades | | | | |
+| Oportunidades | | | | |
+| Amenazas | | | | |
+
+### 2.1.2 Estrategias y tácticas frente a competidores
+
+| Estrategia | Tácticas de Molinex |
+|:--|:--|
+| | |
+
+## 2.2 Entrevistas
+
+### 2.2.1 Diseño de entrevistas
+
+| Segmento / Rol | Criterio de selección | Propósito |
+|:--|:--|:--|
+| | | |
+
+**Guion:**
+
+1. [ ]
+
+### 2.2.2 Registro de entrevistas
+
+[Por cada entrevista: nombre, apellido, edad, distrito, screenshot, enlace en Microsoft Stream, timing/duración y resumen descriptivo. 3 a 5 entrevistas por segmento.]
+
+### 2.2.3 Análisis de entrevistas
+
+[Análisis con sustento estadístico por segmento, a partir de las entrevistas registradas.]
+
+## 2.3 Needfinding
+
+### 2.3.1 User Personas
+
+| Persona | Contexto | Objetivos | Frustraciones | Necesidades |
+|:--|:--|:--|:--|:--|
+| | | | | |
+
+<p align="center">
+  <img src="assets/design/user-personas.png" alt="Fichas de User Persona elaboradas en UXPressia" width="100%">
+</p>
+
+### 2.3.2 User Task Matrix
+
+| Tarea | Persona 1 (Frec. / Imp.) | Persona 2 (Frec. / Imp.) | Persona 3 (Frec. / Imp.) |
+|:--|:--:|:--:|:--:|
+| | | | |
+
+### 2.3.3 User Journey Mapping
+
+[User Journey Map As-Is por cada User Persona, elaborado en UXPressia.]
+
+<p align="center">
+  <img src="assets/design/user-journey-map.png" alt="User Journey Map As-Is elaborado en UXPressia" width="100%">
+</p>
+
+### 2.3.4 Empathy Mapping
+
+| Dimensión | Persona 1 | Persona 2 | Persona 3 |
+|:--|:--|:--|:--|
+| Dice | | | |
+| Piensa | | | |
+| Hace | | | |
+| Siente | | | |
+| Pains | | | |
+| Gains | | | |
+
+<p align="center">
+  <img src="assets/design/empathy-map.png" alt="Empathy Map elaborado en UXPressia" width="100%">
+</p>
+
+## 2.4 Big Picture Event Storming
+
+[Secuencia de eventos de dominio identificados en la sesión colaborativa, con capturas de la herramienta indicada.]
+
+<p align="center">
+  <img src="assets/design/big-picture-event-storming.png" alt="Sesión de Big Picture Event Storming en FigJam" width="100%">
+</p>
+
+## 2.5 Ubiquitous Language
+
+| Término (español) | Definición |
+|:--|:--|
+| | |
+
+<div style="page-break-after: always;"></div>
+
+# Capítulo III Requirements Specification
+
+## 3.1 User Stories
+
+_Un único cuadro para todos los Epics/Stories. Incluir historias del Landing Page (rol visitante) y Technical Stories del API (rol Developer, con Acceptance Criteria de request/response en Gherkin)._
+
+| Epic / Story ID | Título | Descripción | Criterios de Aceptación | Relacionado con (Epic ID) |
+|:--|:--|:--|:--|:--|
+| | | | | |
+
+## 3.2 Impact Mapping
+
+```mermaid
+flowchart TB
+    G["Goal: [Business Goal SMART]"]
+    G --> P1[Persona 1]
+    P1 --> I1[Impact]
+    I1 --> D1[Deliverable / User Story]
+```
+
+<p align="center">
+  <img src="assets/design/impact-map.png" alt="Impact Map elaborado en UXPressia" width="100%">
+</p>
+
+_URL pública del Impact Map en UXPressia:_ `[URL]`
+
+## 3.3 Product Backlog
+
+| # Orden | User Story Id | Título | Descripción | Story Points (1/2/3/5/8) |
+|--:|:--|:--|:--|:--:|
+| | | | | |
+
+**Captura y enlace al Product Backlog en la herramienta indicada:** `[URL]`
+
+<div style="page-break-after: always;"></div>
+
+# Capítulo IV Product Design
+
+## 4.1 Style Guidelines
+
+### 4.1.1 General Style Guidelines
+
+[Branding, Typography, Colors, Spacing y tono de comunicación (Divertido/Serio, Formal/Casual, Respetuoso/Irreverente, Entusiasta/Sereno).]
+
+### 4.1.2 Web Style Guidelines
+
+[Estándares visuales y de interacción para las interfaces responsivas.]
+
+## 4.2 Information Architecture
+
+### 4.2.1 Organization Systems
+
+[ ]
+
+### 4.2.2 Labeling Systems
+
+[ ]
+
+### 4.2.3 SEO Tags and Meta Tags
+
+| Página | Title | Meta Description | Keywords | Author |
+|:--|:--|:--|:--|:--|
+| | | | | |
+
+### 4.2.4 Searching Systems
+
+[ ]
+
+### 4.2.5 Navigation Systems
+
+[ ]
+
+## 4.3 Landing Page UI Design
+
+### 4.3.1 Landing Page Wireframe
+
+[Wireframes Desktop y Mobile elaborados en Figma.]
+
+<p align="center">
+  <img src="assets/design/landing-wireframe.png" alt="Wireframe del Landing Page de Molinex" width="100%">
+</p>
+
+### 4.3.2 Landing Page Mockup
+
+[Mockups Desktop y Mobile elaborados en Figma.]
+
+<p align="center">
+  <img src="assets/design/landing-mockup.png" alt="Mockup del Landing Page de Molinex" width="100%">
+</p>
+
+## 4.4 Web Applications UX/UI Design
+
+### 4.4.1 Web Applications Wireframes
+
+[ ]
+
+<p align="center">
+  <img src="assets/design/webapp-wireframes.png" alt="Wireframes de la Web Application de Molinex" width="100%">
+</p>
+
+### 4.4.2 Web Applications Wireflow Diagrams
+
+[ ]
+
+<p align="center">
+  <img src="assets/design/webapp-wireflow.png" alt="Wireflow Diagram de la Web Application de Molinex" width="100%">
+</p>
+
+### 4.4.3 Web Applications Mockups
+
+[ ]
+
+<p align="center">
+  <img src="assets/design/webapp-mockups.png" alt="Mockups de la Web Application de Molinex" width="100%">
+</p>
+
+### 4.4.4 Web Applications User Flow Diagrams
+
+[ ]
+
+<p align="center">
+  <img src="assets/design/webapp-user-flow.png" alt="User Flow Diagram de la Web Application de Molinex" width="100%">
+</p>
+
+## 4.5 Web Applications Prototyping
+
+[Prototipo interactivo en Figma + video demostrativo.]
+
+<p align="center">
+  <img src="assets/design/webapp-prototype.png" alt="Captura del prototipo interactivo en Figma" width="100%">
+</p>
+
+_Enlace al video demostrativo (Microsoft Stream):_ `[URL]`
+
+## 4.6 Domain-Driven Software Architecture
+
+### 4.6.1 Design-Level Event Storming
+
+| Bounded Context | Commands (ejemplos) | Events (ejemplos) | Queries (ejemplos) |
+|:--|:--|:--|:--|
+| | | | |
+
+<p align="center">
+  <img src="assets/design/design-level-event-storming.png" alt="Sesión de Design-Level Event Storming en FigJam" width="100%">
+</p>
+
+### 4.6.2 Software Architecture Context Diagram
+
+```mermaid
+graph TB
+    User((Usuario)):::actor
+    System[Molinex]:::system
+    External[[Servicio externo de terceros]]:::external
+
+    User --> System
+    System --> External
+
+    classDef actor fill:#f4d58d,stroke:#333;
+    classDef system fill:#4C6E91,stroke:#222,color:#fff;
+    classDef external fill:#cfd8dc,stroke:#333;
+```
+
+### 4.6.3 Software Architecture Container Diagrams
+
+```mermaid
+graph TB
+    LP[Landing Page]
+    WA[Web Application]
+    API[RESTful API]
+    DB[(Base de datos)]
+
+    LP --> WA
+    WA --> API
+    API --> DB
+```
+
+### 4.6.4 Software Architecture Components Diagrams
+
+```mermaid
+graph TB
+    subgraph API[RESTful API]
+        C1[Componente 1]
+        C2[Componente 2]
+    end
+```
+
+## 4.7 Software Object-Oriented Design
+
+### 4.7.1 Class Diagrams
+
+```mermaid
+classDiagram
+    class EntityName {
+      -UUID id
+      +method()
+    }
+```
+
+## 4.8 Database Design
+
+### 4.8.1 Database Diagrams
+
+```mermaid
+erDiagram
+    ENTITY_ONE ||--o{ ENTITY_TWO : relationship
+    ENTITY_ONE {
+        uuid id PK
+    }
+    ENTITY_TWO {
+        uuid id PK
+        uuid entity_one_id FK
+    }
+```
+
+<div style="page-break-after: always;"></div>
+
+# Capítulo V Product Implementation, Validation & Deployment
+
+## 5.1 Software Configuration Management
+
+### 5.1.1 Software Development Environment Configuration
+
+| Producto | Tecnologías | Herramientas principales |
+|:--|:--|:--|
+| Landing Page | | |
+| Web Application | | |
+| RESTful API | | |
+| Database | | |
+
+### 5.1.2 Source Code Management
+
+[Repositorios, GitFlow (branches y convenciones), Conventional Commits, Semantic Versioning.]
+
+### 5.1.3 Source Code Style Guide & Coding Conventions
+
+| Área | Convenciones |
+|:--|:--|
+| | |
+
+### 5.1.4 Software Deployment Configuration
+
+[ ]
+
+## 5.2 Landing Page, Services & Applications Implementation
+
+### 5.2.1 Sprint 1
+
+#### 5.2.1.1 Sprint Planning 1
+
+| Sprint # | Sprint 1 |
+|:--|:--|
+| **Sprint Planning Background** | |
+| Date | [ ] |
+| Time | [ ] |
+| Location | [ ] |
+| Prepared By | [ ] |
+| Attendees (to planning meeting) | [ ] |
+| Sprint n - 1 Review Summary | No aplica (primer Sprint). |
+| Sprint n - 1 Retrospective Summary | No aplica (primer Sprint). |
+| **Sprint Goal & User Stories** | |
+| Sprint 1 Goal | [Our focus is on... We believe it delivers... This will be confirmed when...] |
+| Sprint 1 Velocity | [ ] |
+| Sum of Story Points | [ ] |
+
+#### 5.2.1.2 Aspect Leaders and Collaborators
+
+| Team Member (Last Name, First Name) | GitHub Username | Aspecto 1 L/C | Aspecto 2 L/C | Aspecto 3 L/C |
+|:--|:--:|:--:|:--:|:--:|
+| Casalino Berrocal, Luisa Nhiriel | | | | |
+| Gallegos De La Cruz, Giovanni Marcelo | | | | |
+| Huerta Cardenas, Brayan Benjamin | | | | |
+| Jimenez Saavedra, Antony Alexander | | | | |
+| Rivera Rupay, Fabricio Jose | | | | |
+
+#### 5.2.1.3 Sprint Backlog 1
+
+**Captura y enlace al Board:** `[URL]`
+
+| Sprint # | Sprint 1 |
+|:--|:--|
+
+| Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
+|:--|:--|:--|:--|:--|--:|:--|:--|
+| | | | | | | | |
+
+#### 5.2.1.4 Development Evidence for Sprint Review
+
+[Tabla de commits por repositorio: Repository, Branch, Commit Id, Commit Message, Commit Message Body, Commited on.]
+
+#### 5.2.1.5 Execution Evidence for Sprint Review
+
+[Capturas de las vistas implementadas + enlace a video.]
+
+<p align="center">
+  <img src="assets/evidence/implemented/landing-desktop.png" alt="Landing Page de Molinex ejecutada en navegador" width="100%">
+</p>
+
+<p align="center">
+  <img src="assets/evidence/implemented/webapp-login.png" alt="Inicio de sesión de la Web Application de Molinex" width="100%">
+</p>
+
+<p align="center">
+  <img src="assets/evidence/implemented/webapp-register.png" alt="Registro de cuenta en la Web Application de Molinex" width="100%">
+</p>
+
+#### 5.2.1.6 Services Documentation Evidence for Sprint Review
+
+| Contexto | Rutas principales |
+|:--|:--|
+| | |
+
+<p align="center">
+  <img src="assets/evidence/collaboration/swagger-overview.png" alt="Swagger UI del RESTful API de Molinex" width="100%">
+</p>
+
+#### 5.2.1.7 Software Deployment Evidence for Sprint Review
+
+[ ]
+
+<p align="center">
+  <img src="assets/evidence/collaboration/deployment-config.png" alt="Configuración de despliegue de Molinex" width="100%">
+</p>
+
+#### 5.2.1.8 Team Collaboration Insights during Sprint
+
+[ ]
+
+<p align="center">
+  <img src="assets/evidence/collaboration/github-branches.png" alt="Ramas GitFlow publicadas en GitHub" width="100%">
+</p>
+
+<p align="center">
+  <img src="assets/evidence/collaboration/github-contributors.png" alt="GitHub Insights Contributors del repositorio" width="100%">
+</p>
+
+<div style="page-break-after: always;"></div>
+
+# Conclusiones
+
+## Conclusiones y recomendaciones
+
+[ ]
+
+<div style="page-break-after: always;"></div>
+
+# Bibliografía
+
+[Referencias en formato APA.]
+
+<div style="page-break-after: always;"></div>
+
+# Anexos
+
+## Anexo A. Videos de Exposiciones
+
+| Entrega | Título | Enlace |
+|:--|:--|:--|
+| AV1 | | |
