@@ -9,7 +9,7 @@
 **1ASI0729**<br>
 **Desarrollo de Aplicaciones Open Source**
 
-**NRC [NRC]**
+**NRC 7753**
 
 **Profesor**<br>
 **Bautista Ubillús, Efraín Ricardo**
@@ -23,11 +23,11 @@
 
 | Código | Apellidos y nombres |
 |:--:|:--|
-| [Código UPC] | Casalino Berrocal, Luisa Nhiriel |
-| [Código UPC] | Gallegos De La Cruz, Giovanni Marcelo |
-| [Código UPC] | Huerta Cardenas, Brayan Benjamin |
-| [Código UPC] | Jimenez Saavedra, Antony Alexander |
-| [Código UPC] | Rivera Rupay, Fabricio Jose |
+| u202424008 | Casalino Berrocal, Luisa Nhiriel |
+| u202424466 | Gallegos De La Cruz, Giovanni Marcelo |
+| u20241e550 | Huerta Cardenas, Brayan Benjamin |
+| u202420031 | Jimenez Saavedra, Antony Alexander |
+| u202423883 | Rivera Rupay, Fabricio Jose |
 
 **Septiembre de 2026**
 
@@ -49,10 +49,10 @@
 
 ### Repositorios del proyecto
 
-- Project Report: `[URL]`
-- Landing Page: `[URL]`
-- Frontend Web Application: `[URL]`
-- RESTful API: `[URL]`
+- Project Report: `https://github.com/Vanguard-open-source/molinex-report`
+- Landing Page: `https://github.com/Vanguard-open-source/molinex-website`
+- Frontend Web Application: `https://github.com/Vanguard-open-source/molinex-webapp`
+- RESTful API: `https://github.com/Vanguard-open-source/molinex-platform`
 
 ### Entrega AV1
 
@@ -187,11 +187,11 @@ En el siguiente cuadro se describen las acciones realizadas y los enunciados de 
 
 | Nombre completo | Código | Carrera | Fotografía | Conocimientos y habilidades |
 |:--|:--:|:--|:--:|:--|
-| Casalino Berrocal, Luisa Nhiriel | [Código UPC] | Ingeniería de Software, UPC | <img src="assets/team/luisa-casalino.jpg" width="120" alt="Luisa Casalino"> | [resumen en primera persona] |
-| Gallegos De La Cruz, Giovanni Marcelo | [Código UPC] | Ingeniería de Software, UPC | <img src="assets/team/giovanni-gallegos.jpg" width="120" alt="Giovanni Gallegos"> | [resumen en primera persona] |
-| Huerta Cardenas, Brayan Benjamin | [Código UPC] | Ingeniería de Software, UPC | <img src="assets/team/brayan-huerta.jpg" width="120" alt="Brayan Huerta"> | [resumen en primera persona] |
-| Jimenez Saavedra, Antony Alexander | [Código UPC] | Ingeniería de Software, UPC | <img src="assets/team/antony-jimenez.jpg" width="120" alt="Antony Jimenez"> | [resumen en primera persona] |
-| Rivera Rupay, Fabricio Jose | [Código UPC] | Ingeniería de Software, UPC | <img src="assets/team/fabricio-rivera.jpg" width="120" alt="Fabricio Rivera"> | [resumen en primera persona] |
+| Casalino Berrocal, Luisa Nhiriel | u202424008 | Ingeniería de Software, UPC | <img src="assets/team/luisa-casalino.jpg" width="120" alt="Luisa Casalino"> | [resumen en primera persona] |
+| Gallegos De La Cruz, Giovanni Marcelo | u202424466 | Ingeniería de Software, UPC | <img src="assets/team/giovanni-gallegos.jpg" width="120" alt="Giovanni Gallegos"> | [resumen en primera persona] |
+| Huerta Cardenas, Brayan Benjamin | u20241e550 | Ingeniería de Software, UPC | <img src="assets/team/brayan-huerta.jpg" width="120" alt="Brayan Huerta"> | [resumen en primera persona] |
+| Jimenez Saavedra, Antony Alexander | u202420031 | Ingeniería de Software, UPC | <img src="assets/team/antony-jimenez.jpg" width="120" alt="Antony Jimenez"> | [resumen en primera persona] |
+| Rivera Rupay, Fabricio Jose | u202423883 | Ingeniería de Software, UPC | <img src="assets/team/fabricio-rivera.jpg" width="120" alt="Fabricio Rivera"> | [resumen en primera persona] |
 
 ## 1.2 Solution Profile
 
@@ -395,13 +395,7 @@ _Un único cuadro para todos los Epics/Stories. Incluir historias del Landing Pa
 
 ## 3.2 Impact Mapping
 
-```mermaid
-flowchart TB
-    G["Goal: [Business Goal SMART]"]
-    G --> P1[Persona 1]
-    P1 --> I1[Impact]
-    I1 --> D1[Deliverable / User Story]
-```
+[Impact Map elaborado en la herramienta indicada (UXPressia).]
 
 <p align="center">
   <img src="assets/design/impact-map.png" alt="Impact Map elaborado en UXPressia" width="100%">
@@ -531,71 +525,47 @@ _Enlace al video demostrativo (Microsoft Stream):_ `[URL]`
 
 ### 4.6.2 Software Architecture Context Diagram
 
-```mermaid
-graph TB
-    User((Usuario)):::actor
-    System[Molinex]:::system
-    External[[Servicio externo de terceros]]:::external
+[Context Diagram de C4 Model elaborado en la herramienta indicada (Structurizr).]
 
-    User --> System
-    System --> External
-
-    classDef actor fill:#f4d58d,stroke:#333;
-    classDef system fill:#4C6E91,stroke:#222,color:#fff;
-    classDef external fill:#cfd8dc,stroke:#333;
-```
+<p align="center">
+  <img src="assets/design/context-diagram.png" alt="Software Architecture Context Diagram de Molinex" width="100%">
+</p>
 
 ### 4.6.3 Software Architecture Container Diagrams
 
-```mermaid
-graph TB
-    LP[Landing Page]
-    WA[Web Application]
-    API[RESTful API]
-    DB[(Base de datos)]
+[Container Diagram de C4 Model elaborado en la herramienta indicada (Structurizr).]
 
-    LP --> WA
-    WA --> API
-    API --> DB
-```
+<p align="center">
+  <img src="assets/design/container-diagram.png" alt="Software Architecture Container Diagram de Molinex" width="100%">
+</p>
 
 ### 4.6.4 Software Architecture Components Diagrams
 
-```mermaid
-graph TB
-    subgraph API[RESTful API]
-        C1[Componente 1]
-        C2[Componente 2]
-    end
-```
+[Component Diagram de C4 Model por cada Container, elaborado en la herramienta indicada (Structurizr).]
+
+<p align="center">
+  <img src="assets/design/component-diagram.png" alt="Software Architecture Component Diagram de Molinex" width="100%">
+</p>
 
 ## 4.7 Software Object-Oriented Design
 
 ### 4.7.1 Class Diagrams
 
-```mermaid
-classDiagram
-    class EntityName {
-      -UUID id
-      +method()
-    }
-```
+[Class Diagram de UML elaborado en la herramienta indicada (LucidChart), por producto y por bounded context.]
+
+<p align="center">
+  <img src="assets/design/class-diagram.png" alt="Class Diagram de Molinex" width="100%">
+</p>
 
 ## 4.8 Database Design
 
 ### 4.8.1 Database Diagrams
 
-```mermaid
-erDiagram
-    ENTITY_ONE ||--o{ ENTITY_TWO : relationship
-    ENTITY_ONE {
-        uuid id PK
-    }
-    ENTITY_TWO {
-        uuid id PK
-        uuid entity_one_id FK
-    }
-```
+[Database Diagram elaborado en la herramienta indicada (ERDPlus/LucidChart/MySQL Workbench), por bounded context.]
+
+<p align="center">
+  <img src="assets/design/database-diagram.png" alt="Database Diagram de Molinex" width="100%">
+</p>
 
 <div style="page-break-after: always;"></div>
 
