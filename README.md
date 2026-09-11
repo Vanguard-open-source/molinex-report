@@ -179,9 +179,28 @@ En el siguiente cuadro se describen las acciones realizadas y los enunciados de 
 
 ## 1.1 Startup Profile
 
+### 1.1.1 Descripción de la Startup 
+
 ### 1.1.1 Descripción de la Startup
 
-[Descripción de Vanguard: qué hace, para quién, y su misión, visión y principios de trabajo.]
+**Molinex** es una startup tecnológica que desarrolla soluciones digitales para optimizar las operaciones de los molinos de arroz. Su plataforma web, basada en el modelo **SaaS**, integra y analiza datos de producción, calidad, mantenimiento y materia prima para detectar anomalías, identificar posibles causas de pérdidas y generar recomendaciones que mejoren el rendimiento operativo.
+
+Molinex está dirigida a molinos pequeños, medianos y grandes, y ofrece tres planes de suscripción: **Básico, Profesional y Empresarial**, adaptados a las necesidades de cada cliente.
+
+**Misión:**
+Ayudar a los molinos de arroz a mejorar su eficiencia mediante el análisis inteligente de sus datos operativos.
+
+**Visión:**
+Ser una plataforma líder en inteligencia operativa para la industria arrocera en el Perú y Latinoamérica.
+
+**Valores:**
+
+* **Innovación:** Crear soluciones tecnológicas para la industria.
+* **Eficiencia:** Optimizar recursos y procesos.
+* **Transparencia:** Ofrecer información confiable.
+* **Compromiso:** Promover la mejora continua.
+* **Sostenibilidad:** Reducir pérdidas y desperdicios.
+
 
 ### 1.1.2 Perfiles de integrantes del equipo
 
