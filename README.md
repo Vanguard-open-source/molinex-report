@@ -216,59 +216,121 @@ Ser una plataforma líder en inteligencia operativa para la industria arrocera e
 
 ### 1.2.1 Antecedentes y problemática
 
-[Aproximación preliminar a los antecedentes y la problemática, aplicando la técnica de las 5W2H.]
+En los molinos de arroz, el proceso productivo genera información relacionada con la materia prima, producción, calidad, mantenimiento y rendimiento de las máquinas. Sin embargo, esta información suele encontrarse dispersa o utilizarse únicamente para visualizar indicadores, dificultando la identificación de las causas de problemas como el aumento del arroz quebrado, la merma, las fallas de maquinaria y la disminución del rendimiento.
+
+Para analizar preliminarmente la problemática, se aplicó la técnica de las 5W2H:
 
 | Elemento 5W2H | Definición para Molinex |
 |:--|:--|
-| Who | [ ] |
-| What | [ ] |
-| Where | [ ] |
-| When | [ ] |
-| Why | [ ] |
-| How | [ ] |
-| How much | [ ] |
+| Who | A los propietarios, administradores, supervisores, técnicos de mantenimiento y trabajadores de los molinos de arroz. |
+| What | Se presentan pérdidas de materia prima, disminución del rendimiento, aumento de arroz quebrado y fallas inesperadas en las máquinas. |
+| Where | En las diferentes etapas del proceso productivo de los molinos de arroz. |
+| When | Durante la recepción de materia prima, procesamiento, mantenimiento y control de calidad, especialmente cuando no se detectan oportunamente las anomalías. |
+| Why | Porque los datos de producción, calidad, mantenimiento y materia prima no siempre se encuentran integrados ni relacionados para identificar las causas de los problemas. |
+| How | Mediante mermas, menor cantidad de arroz entero, fallas de maquinaria, paradas no planificadas y decisiones basadas en información limitada. |
+| How much | Genera costos adicionales, desperdicio de materia prima, disminución de la productividad y posibles pérdidas económicas para el molino. La cuantificación exacta será determinada durante la investigación y validación con usuarios. |
 
-**Objetivo general.** [ ]
+**Objetivo general.**
+ - Desarrollar una plataforma web inteligente que integre y analice los datos operativos de los molinos de arroz para detectar posibles causas de pérdidas, anticipar problemas y mejorar la eficiencia del proceso productivo.
 
-**Objetivos específicos.** [ ]
+**Objetivos específicos**
 
+- Centralizar la información relacionada con la materia prima, producción, calidad y mantenimiento.
+- Permitir el monitoreo de indicadores como rendimiento, merma y porcentaje de arroz entero y quebrado.
+- Detectar anomalías y posibles fallas en el proceso productivo y en la maquinaria.
+- Generar alertas y recomendaciones que apoyen la toma de decisiones operativas.
+- Implementar planes de suscripción diferenciados según las necesidades de los molinos pequeños, medianos y grandes.
+- Evaluar la utilidad de la plataforma mediante pruebas con usuarios y el análisis de indicadores operativos.
 ### 1.2.2 Lean UX Process
 
 #### 1.2.2.1 Lean UX Problem Statements
 
-_Un único Problem Statement para todo el proyecto (versión Brand new initiative), considerando todos los segmentos._
 
-> The current state of [the domain we are working in] has focused mainly on [these customer segments, these pain points, these workflows, etc.].
-> What existing products/services fail to address is [this gap or change in the marketplace].
-> Our product/service will address this gap by [this product strategy or approach].
-> Our initial focus will be [this audience segment].
-> We'll know we are successful when we see [these measurable behaviors in our target audience].
+
+The current state of the rice milling industry has focused mainly on managing production, raw materials, quality control, maintenance, and operational performance through separate records or systems that do not always integrate the information generated throughout the process.
+
+What existing products and services fail to fully address is the need to relate operational data in order to identify the possible causes of losses, detect anomalies, anticipate equipment failures, and improve production performance.
+
+Our product, Molinex, will address this gap through a web-based SaaS platform that centralizes and analyzes data related to raw materials, production, quality, maintenance, and operational indicators. The platform will generate alerts and intelligent recommendations to support decision-making and optimize the milling process.
+
+Our initial focus will be small and medium-sized rice mills that need to improve operational control, reduce losses, and make decisions based on integrated information.
+
+We’ll know we are successful when users regularly consult the platform, monitor operational indicators, respond to alerts and recommendations, and achieve improvements in production performance, waste reduction, and the control of whole and broken rice.
+
+
 
 #### 1.2.2.2 Lean UX Assumptions
 
+
+
 **Business Assumptions**
-- [ ]
+
+- Creemos que los molinos de arroz estarán interesados en utilizar una plataforma digital para mejorar sus operaciones.
+- Creemos que el modelo de suscripción permitirá que Molinex sea sostenible y escalable.
 
 **Business Outcome Assumptions**
-- [ ]
+
+- Creemos que Molinex generará ingresos recurrentes mediante sus planes de suscripción.
+- Creemos que la plataforma permitirá captar y retener clientes del sector arrocero.
 
 **User Assumptions**
-- [ ]
+
+- Creemos que los administradores y supervisores necesitan centralizar la información de producción, calidad y mantenimiento.
+- Creemos que los usuarios requieren una interfaz sencilla para consultar indicadores y gestionar sus operaciones.
 
 **User Outcome and Benefit Assumptions**
-- [ ]
+
+- Creemos que los usuarios podrán identificar posibles causas de pérdidas y fallas con mayor rapidez.
+- Creemos que los usuarios mejorarán la toma de decisiones y el control de sus procesos.
+- Creemos que la plataforma contribuirá a reducir mermas y mejorar el rendimiento operativo.
 
 **Feature Assumptions**
-- [ ]
+
+- Creemos que un dashboard permitirá monitorear indicadores como rendimiento, merma y calidad.
+- Creemos que el registro de lotes permitirá realizar un mejor seguimiento de la materia prima.
+- Creemos que el módulo de mantenimiento permitirá registrar actividades y detectar posibles anomalías.
+- Creemos que el motor de análisis inteligente podrá generar alertas y recomendaciones a partir de los datos operativos.
+- Creemos que los planes de suscripción permitirán ofrecer funcionalidades según las necesidades de cada molino.
 
 #### 1.2.2.3 Lean UX Hypothesis Statements
 
-_Un Hypothesis Statement por cada Feature Assumption._
 
-> We believe we will achieve [this business outcome]
-> If [these personas]
-> Attain [this benefit/user outcome]
-> With [this feature or solution]
+
+
+
+We believe we will achieve improved operational decision-making and process visibility
+If administrators and production supervisors
+Attain a better understanding of the mill’s performance indicators
+With a dashboard that displays production performance, waste, and rice quality data.
+
+**Hypothesis 2: Lot Management**
+
+We believe we will achieve better traceability and control of raw materials
+If administrators and production supervisors
+Attain faster access to information about received raw materials and production lots
+With a lot management module that allows users to register, track, and consult lot information.
+
+**Hypothesis 3: Maintenance Management**
+
+We believe we will achieve reduced unexpected equipment failures and downtime
+If maintenance technicians and production supervisors
+Attain better visibility of equipment conditions and scheduled maintenance activities
+With a maintenance module that allows users to register maintenance activities and identify possible anomalies.
+
+**Hypothesis 4: Intelligent Analysis and Recommendations**
+
+We believe we will achieve reduced operational losses and improved production performance
+If administrators, production supervisors, and maintenance technicians
+Attain timely information about possible causes of losses and operational problems
+With an intelligent analysis engine that relates operational data and generates alerts and recommendations.
+
+**Hypothesis 5: Subscription Plans**
+
+We believe we will achieve customer acquisition and recurring revenue
+If owners and administrators of small, medium-sized, and large rice mills
+Attain access to functionalities that match their operational needs and available resources
+With differentiated Basic, Professional, and Enterprise subscription plans.
+
 
 #### 1.2.2.4 Lean UX Canvas
 
