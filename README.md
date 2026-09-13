@@ -387,29 +387,32 @@ En conjunto, estos segmentos permitirán que Molinex atienda las necesidades de 
 
 ### 2.1.1 Análisis competitivo
 
-**Competitive Analysis Landscape**
+El análisis competitivo permite identificar las empresas, plataformas y alternativas que atienden necesidades relacionadas con la gestión de operaciones, producción, mantenimiento, trazabilidad y digitalización de empresas agroindustriales en el mercado peruano.
 
-¿Por qué llevar a cabo este análisis? [ ]
+En el caso de Molinex, este análisis permite conocer qué soluciones ofrecen actualmente funcionalidades similares, reconocer sus fortalezas y limitaciones, y determinar oportunidades de diferenciación.
 
-| Perfil | Molinex (Vanguard) | Competidor 1 | Competidor 2 | Competidor 3 |
+
+
+
+| Perfil | Molinex (Vanguard) | Nisira | TGI Perú | IBAO |
 |:--|:--|:--|:--|:--|
-| Overview | | | | |
-| Ventaja competitiva | | | | |
-| ¿Qué valor ofrece a los clientes? | | | | |
-| Mercado objetivo | | | | |
-| Estrategias de marketing | | | | |
-| Productos y servicios | | | | |
-| Precios y costos | | | | |
-| Canales de distribución (Web y/o Móvil) | | | | |
+| Overview | Startup peruana que desarrolla una plataforma SaaS para la gestión operativa y el análisis inteligente de información en molinos de arroz. Integra datos de materia prima, lotes, producción, calidad y mantenimiento. | Empresa de tecnología que ofrece soluciones ERP para la gestión empresarial y agroindustrial. Su plataforma permite integrar procesos productivos, administrativos, logísticos y de trazabilidad. | Empresa peruana que desarrolla software industrial y soluciones tecnológicas a medida para monitorear y optimizar procesos productivos. | Empresa peruana que desarrolla soluciones tecnológicas para el sector agroindustrial, incluyendo software, IoT, monitoreo y trazabilidad. |
+| Ventaja competitiva | Especialización en molinos de arroz, integración de distintas áreas operativas, análisis de indicadores, alertas y recomendaciones inteligentes, y planes de suscripción diferenciados. | Integración de diferentes áreas de la empresa mediante una solución ERP, con funcionalidades orientadas a la gestión agroindustrial, producción, trazabilidad y control de operaciones. | Capacidad de desarrollar soluciones industriales personalizadas e integrar indicadores de producción, mantenimiento y operación. | Experiencia en digitalización agroindustrial, monitoreo de variables y uso de tecnologías IoT. |
+| ¿Qué valor ofrece a los clientes? | Centraliza información, facilita el control de producción y calidad, permite analizar rendimiento y merma, ayuda a detectar anomalías y facilita la toma de decisiones. | Permite centralizar y controlar los procesos empresariales y agroindustriales, mejorar la trazabilidad, organizar la producción y disponer de información integrada para la toma de decisiones. | Permite monitorear procesos industriales, controlar indicadores y mejorar la eficiencia de las operaciones. | Permite digitalizar procesos agroindustriales, monitorear variables y centralizar información operativa. |
+| Mercado objetivo | Molinos de arroz pequeños, medianos y grandes en Perú. Sus usuarios principales son gerentes, administradores, técnicos de mantenimiento y responsables de producción. | Empresas agroindustriales y organizaciones que necesitan gestionar procesos productivos, administrativos, logísticos, comerciales y de trazabilidad. | Empresas industriales y organizaciones que necesitan soluciones de producción, mantenimiento, trazabilidad y gestión de recursos. | Empresas agroindustriales que buscan digitalizar procesos, monitorear variables y gestionar información operativa. |
+| Estrategias de marketing | Marketing digital, demostraciones del producto, contacto directo con molinos, alianzas con empresas agroindustriales y ofrecimiento de planes de suscripción. | Presentación de sus soluciones ERP mediante su página web, demostraciones comerciales, contacto directo, asesoría e implementación personalizada. | Promoción de servicios mediante su página web, presentación de casos o soluciones y contacto comercial para proyectos personalizados. | Promoción de soluciones tecnológicas mediante su página web, presentación de servicios y contacto con empresas agroindustriales. |
+| Productos y servicios | Plataforma SaaS para gestión de lotes, producción, calidad, rendimiento, merma, mantenimiento, alertas y recomendaciones inteligentes. | Soluciones ERP para la gestión empresarial y agroindustrial, incluyendo producción, trazabilidad, inventarios, logística, calidad, procesos administrativos y aplicaciones móviles. | Software industrial, dashboards, indicadores de producción, OEE, planificación de fabricación, trazabilidad y gestión de recursos. | Software como servicio, soluciones IoT, monitoreo de temperatura y humedad, trazabilidad, centralización de información e integración mediante API. |
+| Precios y costos | Tres planes de suscripción: Básico, Profesional y Empresarial. El precio dependerá del tamaño del molino y de las funcionalidades contratadas. | No se identifica una tarifa pública general. El costo dependería de los módulos, usuarios, implementación, personalización y soporte contratado. | El precio normalmente depende del alcance, nivel de personalización, implementación e integración requerida. | El costo puede variar según el tipo de solución, dispositivos, sensores, implementación e integraciones necesarias. |
+| Canales de distribución (Web y/o Móvil) | Plataforma web SaaS accesible desde computadoras, tablets y dispositivos móviles mediante navegador. | Plataforma ERP y aplicaciones móviles para la consulta, registro y gestión de información empresarial y operativa. | Soluciones digitales implementadas de acuerdo con las necesidades del cliente. | Plataformas digitales, soluciones web, dispositivos IoT e integraciones tecnológicas. |
 
 **Análisis SWOT**
 
-| | Molinex (Vanguard) | Competidor 1 | Competidor 2 | Competidor 3 |
+| | Molinex (Vanguard) | Nisira | TGI Perú | IBAO |
 |:--|:--|:--|:--|:--|
-| Fortalezas | | | | |
-| Debilidades | | | | |
-| Oportunidades | | | | |
-| Amenazas | | | | |
+| **Fortalezas** | Especialización en molinos de arroz; integración de producción, calidad, mantenimiento y rendimiento; análisis de datos; alertas y recomendaciones; planes de suscripción diferenciados. | Experiencia en soluciones ERP; integración de procesos empresariales y agroindustriales; funcionalidades de producción, trazabilidad, inventarios y gestión operativa. | Experiencia en software industrial; capacidad de personalización; conocimiento de indicadores productivos y mantenimiento. | Enfoque agroindustrial; experiencia en IoT, monitoreo de variables y digitalización de procesos. |
+| **Debilidades** | Startup nueva en el mercado; limitada experiencia comercial; necesidad de validar el producto con molinos reales; dependencia de la calidad de los datos registrados. | Su solución tiene un alcance amplio y puede requerir configuración, capacitación e implementación especializada para adaptarse a las necesidades particulares de un molino de arroz. | Sus soluciones pueden requerir mayor inversión, tiempo de implementación y personal especializado; no está enfocada exclusivamente en molinos de arroz. | Su propuesta está dirigida al sector agroindustrial en general y puede requerir adaptaciones para cubrir las necesidades específicas de un molino de arroz. |
+| **Oportunidades** | Crecimiento de la digitalización agroindustrial en Perú; necesidad de mejorar el rendimiento y reducir mermas; interés por el mantenimiento preventivo y predictivo; posibilidad de atender molinos pequeños y medianos con planes accesibles. | Incorporar analítica avanzada, inteligencia artificial y funcionalidades especializadas para plantas de procesamiento y molinos de arroz. | Expandir sus soluciones hacia el sector molinero y desarrollar productos especializados para empresas agroindustriales. | Integrar nuevas funcionalidades de análisis de producción, mantenimiento y optimización para empresas agroindustriales. |
+| **Amenazas** | Competidores con mayor experiencia; resistencia al cambio; uso de Excel y registros manuales; limitaciones de infraestructura tecnológica; ingreso de empresas internacionales. | Competencia de otros ERP agroindustriales, soluciones especializadas y sistemas propios desarrollados por las empresas. | Competencia de empresas de software industrial nacionales e internacionales y posibles soluciones internas de las empresas. | Competencia de proveedores IoT, empresas de software agroindustrial y fabricantes de maquinaria que incorporen plataformas digitales propias. |
 
 ### 2.1.2 Estrategias y tácticas frente a competidores
 
