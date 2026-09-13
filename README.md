@@ -361,8 +361,23 @@ With differentiated Basic, Professional, and Enterprise subscription plans.
 | Least work for learning | [ ] |
 
 ## 1.3 Segmentos objetivo
+Molinex estará dirigida a tres segmentos principales dentro de los molinos de arroz: gerentes o administradores, técnicos de mantenimiento y operarios de maquinaria y producción. Estos perfiles fueron seleccionados porque participan directamente en la gestión, supervisión y ejecución de las actividades del proceso productivo.
 
-[Descripción de cada segmento: características demográficas e información estadística de sustento.]
+**Segmento 1: Gerentes o administradores**
+
+Los gerentes o administradores, necesitan controlar indicadores como el rendimiento, la merma, la calidad y los costos de producción. Este segmento representa a los responsables de los molinos de arroz pequeños, medianos y grandes que toman decisiones sobre la eficiencia y rentabilidad del negocio. La importancia de este grupo se relaciona con la presencia de numerosos establecimientos dedicados al procesamiento de arroz en las principales zonas productoras del Perú, según información del INEI y MIDAGRI.
+
+**Segmento 2: Técnicos de mantenimiento**
+
+Los técnicos de mantenimiento son responsables de inspeccionar, conservar y reparar las máquinas utilizadas en el procesamiento del arroz. Este segmento está conformado por técnicos, supervisores y encargados del mantenimiento industrial, quienes requieren registrar actividades, consultar el historial de los equipos y detectar posibles fallas. Su participación resulta relevante debido a que la industria manufacturera y agroindustrial requiere personal técnico para garantizar la continuidad y seguridad de sus operaciones.
+
+**Segmento 3: Operarios de maquinaria y producción**
+
+Los operarios de maquinaria y producción participan directamente en actividades como la recepción de materia prima, procesamiento, supervisión de máquinas y control de la producción. Este segmento incluye a los trabajadores encargados de ejecutar y registrar las actividades operativas del molino. Su importancia se sustenta en que el procesamiento de arroz forma parte de la actividad agroindustrial peruana y requiere personal para operar y supervisar las distintas etapas de producción.
+
+En conjunto, estos segmentos permitirán que Molinex atienda las necesidades de gestión, mantenimiento y operación, facilitando el intercambio de información entre las diferentes áreas del molino.
+
+
 
 <div style="page-break-after: always;"></div>
 
