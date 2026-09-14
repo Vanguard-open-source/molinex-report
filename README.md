@@ -2,37 +2,61 @@
 
 <img src="assets/front-matter/upc-logo.png" width="110" alt="Logo de la Universidad Peruana de Ciencias Aplicadas">
 
-**Universidad Peruana de Ciencias Aplicadas**<br>
-**Carrera de Ingeniería de Software**<br>
-**Ciclo académico 2026-20**
+Universidad Peruana de Ciencias Aplicadas<br>
+Carrera de Ingeniería de Software<br>
 
-**1ASI0729**<br>
-**Desarrollo de Aplicaciones Open Source**
+### 1ASI0729
+### Desarrollo de Aplicaciones Open Source
 
-**NRC 7753**
+**NRC**
+### 7753
 
-**Profesor**<br>
-**Bautista Ubillús, Efraín Ricardo**
+## Informe de Trabajo Final
 
-# Informe de Trabajo Final
+**Docente**<br>
+### Bautista Ubillús, Efraín Ricardo
 
-**Startup: Vanguard**<br>
-**Producto: Molinex**
+Equipo<br>
+**Vanguard**
 
-## Integrantes
+Proyecto<br>
+**Molinex**<br><br>
 
-| Código | Apellidos y nombres |
-|:--:|:--|
-| u202424008 | Casalino Berrocal, Luisa Nhiriel |
-| u202424466 | Gallegos De La Cruz, Giovanni Marcelo |
-| u20241e550 | Huerta Cardenas, Brayan Benjamin |
-| u202420031 | Jimenez Saavedra, Antony Alexander |
-| u202423883 | Rivera Rupay, Fabricio Jose |
+**Integrantes**<br><br>
 
-**Septiembre de 2026**
+<table style="margin: 0 auto; border-collapse: collapse; border: none;">
+  <tr style="border: none;">
+    <th style="border: none; text-align: left; padding-right: 30px;">Código</th>
+    <th style="border: none; text-align: left;">Apellidos y Nombres</th>
+  </tr>
+  <tr style="border: none;">
+    <td style="border: none; text-align: left; padding-right: 30px;">u202424008</td>
+    <td style="border: none; text-align: left;">Casalino Berrocal, Luisa Nhiriel</td>
+  </tr>
+  <tr style="border: none;">
+    <td style="border: none; text-align: left; padding-right: 30px;">u202424466</td>
+    <td style="border: none; text-align: left;">Gallegos De La Cruz, Giovanni Marcelo</td>
+  </tr>
+  <tr style="border: none;">
+    <td style="border: none; text-align: left; padding-right: 30px;">u20241e550</td>
+    <td style="border: none; text-align: left;">Huerta Cardenas, Brayan Benjamin</td>
+  </tr>
+  <tr style="border: none;">
+    <td style="border: none; text-align: left; padding-right: 30px;">u202420031</td>
+    <td style="border: none; text-align: left;">Jimenez Saavedra, Antony Alexander</td>
+  </tr>
+  <tr style="border: none;">
+    <td style="border: none; text-align: left; padding-right: 30px;">u202423883</td>
+    <td style="border: none; text-align: left;">Rivera Rupay, Fabricio Jose</td>
+  </tr>
+</table>
+<br>
+
+**Periodo 202620**
+
+**Septiembre 2026**
 
 </div>
-
 <div style="page-break-after: always;"></div>
 
 ## Registro de Versiones del Informe
