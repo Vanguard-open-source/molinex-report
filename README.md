@@ -428,14 +428,105 @@ En el caso de Molinex, este análisis permite conocer qué soluciones ofrecen ac
 
 ### 2.2.1 Diseño de entrevistas
 
-| Segmento / Rol | Criterio de selección | Propósito |
-|:--|:--|:--|
-| | | |
+### Segmentos de entrevistados
 
+| Segmento | Rol | Criterio de selección | Propósito |
+|---|---|---|---|
+| Segmento 1 | Gerentes o administradores de molinos de arroz | Personas responsables de la gestión general del molino, la supervisión de la producción, el control de costos y la toma de decisiones. | Identificar problemas administrativos, costos, pérdidas, control del rendimiento, necesidades de información y dificultades relacionadas con el estado de la maquinaria. |
+| Segmento 2 | Técnicos de mantenimiento | Personal encargado de realizar mantenimientos preventivos y correctivos, diagnosticar fallas y reparar las máquinas del molino. | Conocer las fallas más frecuentes, la forma en que registran los mantenimientos, los tiempos de reparación y las funciones necesarias para mejorar la gestión del mantenimiento. |
+| Segmento 3 | Operarios de maquinaria y producción | Trabajadores que utilizan diariamente las máquinas y participan directamente en los procesos de producción del molino. | Comprender las dificultades que enfrentan durante sus actividades, la forma en que reportan anomalías, el impacto de las paradas y las características que debería tener un sistema fácil y seguro de utilizar. |
 **Guion:**
 
-1. [ ]
+1. **Guion de entrevista: Gerentes o administradores**
 
+**Presentación**
+
+Buenos días/tardes. Somos estudiantes de Ingeniería de Software y estamos realizando una investigación para conocer las necesidades y dificultades que se presentan en la gestión de los molinos de arroz.
+
+El objetivo de esta entrevista es comprender cómo se administran actualmente los procesos de producción, mantenimiento y control de información, con la finalidad de identificar oportunidades de mejora mediante una solución tecnológica.
+
+**Preguntas**
+
+1. ¿Cuáles son los principales problemas en la administración del molino?
+
+2. ¿Qué procesos generan mayores costos o pérdidas?
+
+3. ¿Cómo controlan actualmente la producción y el rendimiento?
+
+4. ¿Qué información necesitan para tomar decisiones?
+
+5. ¿Qué dificultades tienen para conocer el estado de las máquinas?
+
+6. ¿Cómo afectan las fallas de maquinaria a la producción?
+
+7. ¿Qué características debería tener una solución tecnológica?
+
+**Cierre**
+
+Muchas gracias por su tiempo y por compartir su experiencia. La información brindada será utilizada únicamente con fines académicos para comprender mejor las necesidades del sector y diseñar una propuesta tecnológica adecuada.
+
+2. **Guion de entrevista: Técnicos de mantenimiento**
+
+**Presentación**
+
+Buenos días/tardes. Somos estudiantes de Ingeniería de Software y estamos realizando una investigación para conocer cómo se gestionan las actividades de mantenimiento y reparación de maquinaria en los molinos de arroz.
+
+El objetivo de esta entrevista es comprender las fallas más frecuentes, los procesos de mantenimiento y las dificultades que enfrentan los técnicos, con la finalidad de identificar oportunidades de mejora mediante una solución tecnológica.
+
+
+**Preguntas**
+
+1. ¿Cuáles son las fallas más frecuentes en las máquinas?
+
+2. ¿Cómo registran actualmente los mantenimientos realizados?
+
+3. ¿Realizan mantenimiento preventivo? ¿Con qué frecuencia?
+
+4. ¿Cómo reciben los avisos de fallas o problemas?
+
+5. ¿Qué información necesitan para atender una avería?
+
+6. ¿Cuánto tiempo suele tomar reparar una máquina?
+
+7. ¿Qué funciones debería incluir un sistema de mantenimiento?
+
+**Cierre**
+
+Muchas gracias por su tiempo y por compartir su experiencia. La información brindada será utilizada únicamente con fines académicos para comprender mejor las necesidades del área de mantenimiento y diseñar una propuesta tecnológica adecuada.
+
+3. **Guion de entrevista: Operarios de maquinaria y producción**
+
+**Presentación**
+
+Buenos días/tardes. Somos estudiantes de Ingeniería de Software y estamos realizando una investigación para conocer la experiencia de los operarios durante los procesos de producción en los molinos de arroz.
+
+El objetivo de esta entrevista es comprender las dificultades que enfrentan al utilizar las máquinas, la forma en que reportan fallas y las necesidades que tienen para realizar su trabajo de manera más eficiente y segura.
+
+La entrevista tendrá una duración aproximada de 10 a 15 minutos. No existen respuestas correctas o incorrectas; nos interesa conocer su experiencia y opinión.
+
+¿Nos autoriza a realizarle la entrevista?
+
+**Preguntas**
+
+1. ¿Qué máquinas utilizan diariamente?
+
+2. ¿Qué problemas encuentran durante el trabajo?
+
+3. ¿Cómo reportan una falla o anomalía?
+
+4. ¿Han tenido dificultades por falta de capacitación?
+
+5. ¿Qué ocurre cuando una máquina se detiene?
+
+6. ¿Qué información les ayudaría a trabajar mejor?
+
+7. ¿Qué tan fácil debería ser usar el sistema?
+
+8. ¿Qué medidas de seguridad deben considerarse?
+
+**Cierre**
+
+Muchas gracias por su tiempo y por compartir su experiencia. La información brindada será utilizada únicamente con fines académicos para comprender mejor las necesidades de los operarios y diseñar una propuesta tecnológica adecuada.
 ### 2.2.2 Registro de entrevistas
 
 [Por cada entrevista: nombre, apellido, edad, distrito, screenshot, enlace en Microsoft Stream, timing/duración y resumen descriptivo. 3 a 5 entrevistas por segmento.]
