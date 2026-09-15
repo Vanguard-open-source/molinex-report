@@ -594,12 +594,15 @@ La entrevista muestra que el proceso del molino involucra varias etapas y equipo
 
 ### 2.3.3 User Journey Mapping
 
-[User Journey Map As-Is por cada User Persona, elaborado en UXPressia.]
+**Segmento 1 : Gerentes o administradores**
+![User Journey Map As-Is Segmento 1 .jpeg](assets/Images%20Chapter%202/User%20Journey%20Map%20As-Is%20Segmento%201%20.jpeg)
 
-<p align="center">
-  <img src="assets/design/user-journey-map.png" alt="User Journey Map As-Is elaborado en UXPressia" width="100%">
-</p>
 
+**Segmento 2 : Técnicos de mantenimiento**
+![User Journey Map As-Is Segmento 2.jpeg](assets/Images%20Chapter%202/User%20Journey%20Map%20As-Is%20Segmento%202.jpeg)
+
+**Segmento 3 : Operarios de maquinaria y producción**
+![User Journey Map As-Is Segmento 3 .jpeg](assets/Images%20Chapter%202/User%20Journey%20Map%20As-Is%20Segmento%203%20.jpeg)
 ### 2.3.4 Empathy Mapping
 
 | Dimensión | Persona 1 | Persona 2 | Persona 3 |
