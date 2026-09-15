@@ -552,6 +552,11 @@ La entrevista tendrá una duración aproximada de 10 a 15 minutos. No existen re
 
 Muchas gracias por su tiempo y por compartir su experiencia. La información brindada será utilizada únicamente con fines académicos para comprender mejor las necesidades de los operarios y diseñar una propuesta tecnológica adecuada.
 ### 2.2.2 Registro de entrevistas
+| Nombre y apellido	 | Contexto | Distrito | Segmento | Duración |Resumen descriptivo|Screenshot|Link|
+|:---|:--|:--|:--|:----|:----|:--|:--|
+|Jackeline Estrella León Berrocal |26 años |Piura|Segmento1: Gerentes o administradores| 0:00 - 6:20|Jackeline Estrella León Berrocal, de 26 años, señaló que los molinos enfrentan problemas por la falta de monitoreo en tiempo real, pérdidas de arroz y fallas de maquinaria. Considera necesario implementar una solución como Molinex para monitorear procesos, prevenir fallas y reducir pérdidas.| | | | | |
+|Ismael Sandoval Sandoval| 32 años|Piura|Segmento 2: Técnicos de mantenimiento|6:20 - 10:54 |Técnico con 10 años de experiencia que identifica como principales fallas el desgaste mecánico, problemas eléctricos y mala lubricación. Actualmente, los reportes son manuales y algunos equipos cuentan con sensores. Propone un sistema que permita monitorear las máquinas, detectar paradas y reducir costos de mantenimiento.|| |
+|Diego Rantería Saavedra|34 años| Piura|Segmento 3:Operarios de maquinaria y producción|10:54 - 30:21 |Ingeniero agroindustrial (Universidad Nacional de Piura), 5 años en la industria arrocera. Describe el proceso completo (elevadores, descascaradoras, padi, conos pulidores, Rotex, selectora, envasado). Señala cortes eléctricos, desgaste de fajas/rodamientos y fallas en la cámara óptica de la selectora como problemas frecuentes. El reporte de fallas es informal (olor, sonido, atascos visibles). El mantenimiento preventivo se basa en calendarios fijos por horas de uso, no en monitoreo en tiempo real.|||
 
 ### 2.2.3 Análisis de entrevistas
 
