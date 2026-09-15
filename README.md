@@ -553,8 +553,6 @@ La entrevista tendrá una duración aproximada de 10 a 15 minutos. No existen re
 Muchas gracias por su tiempo y por compartir su experiencia. La información brindada será utilizada únicamente con fines académicos para comprender mejor las necesidades de los operarios y diseñar una propuesta tecnológica adecuada.
 ### 2.2.2 Registro de entrevistas
 
-[Por cada entrevista: nombre, apellido, edad, distrito, screenshot, enlace en Microsoft Stream, timing/duración y resumen descriptivo. 3 a 5 entrevistas por segmento.]
-
 ### 2.2.3 Análisis de entrevistas
 
 [Análisis con sustento estadístico por segmento, a partir de las entrevistas registradas.]
