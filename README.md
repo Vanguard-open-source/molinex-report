@@ -659,8 +659,6 @@ El presente glosario reúne los términos y conceptos utilizados en el dominio d
 
 ## 3.1 User Stories
 
-_Un único cuadro para todos los Epics/Stories. Incluir historias del Landing Page (rol visitante) y Technical Stories del API (rol Developer, con Acceptance Criteria de request/response en Gherkin)._
-
 # Historias de Usuario — Molinex
 
 | Epic / Story ID | Título | Descripción | Criterios de aceptación | Relacionado con |
@@ -717,10 +715,13 @@ _Un único cuadro para todos los Epics/Stories. Incluir historias del Landing Pa
 
 ## 3.2 Impact Mapping
 **Segmento 1 : Gerentes o administradores**
+
 ![Impact Mapping - Segemnto 1.png](assets/Images%20Chapter%203/Impact%20Mapping%20-%20Segemnto%201.png)
 **Segmento 2 : Técnicos de mantenimiento**
+
 ![Impact Mapping -Segmento 2.png](assets/Images%20Chapter%203/Impact%20Mapping%20-Segmento%202.png)
 **Segmento 3 : Operarios de maquinaria y producción**
+
 ![Impact Mapping- Segmento 3.png](assets/Images%20Chapter%203/Impact%20Mapping-%20Segmento%203.png)
 
 _URL pública del Impact Map en UXPressia:_ `https://uxpressia.com/w/7lSlk/i/xmNpX?tagId=noTag`
@@ -770,9 +771,9 @@ _URL pública del Impact Map en UXPressia:_ `https://uxpressia.com/w/7lSlk/i/xmN
 | **39** | **US-39** |Conocer los beneficios de Molinex|Como visitante, quiero conocer los beneficios de Molinex para mi molino.|1|
 | **40** | **US-40** |Solicitar información comercial|Como visitante interesado, quiero solicitar información sobre Molinex. |1|
 
-**Captura y enlace al Product Backlog en la herramienta indicada:** `[URL]`
+![Product Backlog.png](assets/Images%20Chapter%203/Product%20Backlog.png)
 
-<div style="page-break-after: always;"></div>
+**Link** `https://trello.com/invite/b/6aa9c4fdfc659047df591de0/ATTI907effe44c9315a41519954d192d71f48A54EF45/molinex`
 
 # Capítulo IV Product Design
 
