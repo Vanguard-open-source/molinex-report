@@ -575,15 +575,18 @@ La entrevista muestra que el proceso del molino involucra varias etapas y equipo
 
 ### 2.3.1 User Personas
 
-| Persona | Contexto | Objetivos | Frustraciones | Necesidades |
-|:--|:--|:--|:--|:--|
-| | | | | |
+**Segmento 1 : Gerentes o administradores**
+![User Persona Segmento 1.jpeg](assets/Images%20Chapter%202/User%20Persona%20Segmento%201.jpeg)
 
-<p align="center">
-  <img src="assets/design/user-personas.png" alt="Fichas de User Persona elaboradas en UXPressia" width="100%">
-</p>
 
-### 2.3.2 User Task Matrix
+
+**Segmento 2 : Técnicos de mantenimiento** 
+![User Persona Segmento 2.jpeg](assets/Images%20Chapter%202/User%20Persona%20Segmento%202.jpeg)
+
+
+**Segmento 3 : Operarios de maquinaria y producción**
+![User Persona Segmento 3.jpeg](assets/Images%20Chapter%202/User%20Persona%20Segmento%203.jpeg)
+### 2.3.2 User Task Matrix 
 
 | Tarea | Persona 1 (Frec. / Imp.) | Persona 2 (Frec. / Imp.) | Persona 3 (Frec. / Imp.) |
 |:--|:--:|:--:|:--:|
