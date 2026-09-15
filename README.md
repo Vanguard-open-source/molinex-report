@@ -716,14 +716,14 @@ _Un único cuadro para todos los Epics/Stories. Incluir historias del Landing Pa
 
 
 ## 3.2 Impact Mapping
+**Segmento 1 : Gerentes o administradores**
+![Impact Mapping - Segemnto 1.png](assets/Images%20Chapter%203/Impact%20Mapping%20-%20Segemnto%201.png)
+**Segmento 2 : Técnicos de mantenimiento**
+![Impact Mapping -Segmento 2.png](assets/Images%20Chapter%203/Impact%20Mapping%20-Segmento%202.png)
+**Segmento 3 : Operarios de maquinaria y producción**
+![Impact Mapping- Segmento 3.png](assets/Images%20Chapter%203/Impact%20Mapping-%20Segmento%203.png)
 
-[Impact Map elaborado en la herramienta indicada (UXPressia).]
-
-<p align="center">
-  <img src="assets/design/impact-map.png" alt="Impact Map elaborado en UXPressia" width="100%">
-</p>
-
-_URL pública del Impact Map en UXPressia:_ `[URL]`
+_URL pública del Impact Map en UXPressia:_ `https://uxpressia.com/w/7lSlk/i/xmNpX?tagId=noTag`
 
 ## 3.3 Product Backlog
 
