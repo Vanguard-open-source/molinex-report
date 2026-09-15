@@ -559,8 +559,17 @@ Muchas gracias por su tiempo y por compartir su experiencia. La información bri
 |Diego Rantería Saavedra|34 años| Piura|Segmento 3:Operarios de maquinaria y producción|10:54 - 30:21 |Ingeniero agroindustrial (Universidad Nacional de Piura), 5 años en la industria arrocera. Describe el proceso completo (elevadores, descascaradoras, padi, conos pulidores, Rotex, selectora, envasado). Señala cortes eléctricos, desgaste de fajas/rodamientos y fallas en la cámara óptica de la selectora como problemas frecuentes. El reporte de fallas es informal (olor, sonido, atascos visibles). El mantenimiento preventivo se basa en calendarios fijos por horas de uso, no en monitoreo en tiempo real.|||
 
 ### 2.2.3 Análisis de entrevistas
+Segmento 1: Gerentes o administradores
 
-[Análisis con sustento estadístico por segmento, a partir de las entrevistas registradas.]
+La entrevista evidencia que los molinos presentan dificultades para monitorear la producción y las máquinas en tiempo real. El uso de registros manuales y Excel dificulta identificar rápidamente pérdidas, fallas y problemas de rendimiento. Además, las paradas inesperadas y el arroz quebrado generan pérdidas económicas. Por ello, existe una necesidad de contar con una herramienta como Molinex que centralice la información, permita monitorear los procesos y ayude a tomar mejores decisiones.
+
+Segmento 2: Técnicos de mantenimiento
+
+El técnico señala que las principales fallas están relacionadas con desgaste mecánico, problemas eléctricos, lubricación y desalineación. Actualmente, el registro de fallas es mayormente manual y el monitoreo mediante sensores es limitado. Esto puede ocasionar reparaciones prolongadas y mayores costos. Se identifica la necesidad de un sistema que permita monitorear los activos, detectar paradas y anticipar posibles fallas.
+
+Segmento 3: Ingenieros agroindustriales
+
+La entrevista muestra que el proceso del molino involucra varias etapas y equipos, donde son frecuentes los cortes eléctricos, desgaste de fajas y rodamientos y fallas en la selectora. Las fallas suelen identificarse de manera informal mediante sonidos, olores o atascos, mientras que el mantenimiento se realiza según horarios establecidos. Esto evidencia la necesidad de pasar de un mantenimiento basado en calendarios a uno apoyado en datos y monitoreo en tiempo real.
 
 ## 2.3 Needfinding
 
