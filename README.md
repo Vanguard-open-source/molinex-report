@@ -974,12 +974,89 @@ Los gráficos incluirán título, unidad, leyenda y periodo analizado. No depend
 La Landing Page seguirá un recorrido vertical: propuesta de valor, problemática, funcionalidades, beneficios, funcionamiento, planes y contacto. El Hero presentará una sola acción principal. Las secciones utilizarán grids responsive y alternancia moderada de superficies. El CTA principal se repetirá únicamente en puntos de decisión relevantes.
 
 
-
 ## 4.2 Information Architecture
+
+La arquitectura de información de Molinex establece la forma en que el contenido es organizado, identificado, localizado y recorrido dentro de sus experiencias web. Su propósito es facilitar que los visitantes y usuarios encuentren la información que necesitan, comprendan las funciones disponibles y completen sus objetivos sin esfuerzo innecesario.
+
+Molinex comprende dos experiencias web. La **Landing Page** es una página pública orientada a comunicar la propuesta de valor, la problemática, las funcionalidades y los planes de suscripción. La **Web Application** estará orientada a la gestión de producción, calidad, maquinaria y mantenimiento por parte de gerentes o administradores, técnicos de mantenimiento y operarios de producción.
+
+En la presente etapa, las decisiones correspondientes a la Landing Page se sustentan en su implementación actual. La organización propuesta para la Web Application se deriva de los segmentos objetivo, las entrevistas, las User Stories y el Product Backlog; será validada y ampliada durante el diseño de sus interfaces.
 
 ### 4.2.1 Organization Systems
 
-[ ]
+Molinex combina sistemas jerárquicos, secuenciales, matriciales y basados en tópicos o audiencias. La elección depende del volumen de información y de la tarea que el usuario necesita realizar.
+
+#### Organización de la Landing Page
+
+La Landing Page se implementa como una página única. Su contenido aplica los siguientes sistemas:
+
+| Sistema | Aplicación | Justificación |
+|:--|:--|:--|
+| Jerárquico | Hero, problemática, funcionalidades, audiencias, planes y contacto | Presenta primero la propuesta de valor y después información progresivamente más detallada |
+| Secuencial | Recorrido vertical desde el Hero hasta el formulario | Conduce al visitante desde el reconocimiento del problema hasta una acción comercial |
+| Por tópicos | Solution, Features, Audiences, Plans y Contact | Agrupa información relacionada bajo secciones claramente diferenciadas |
+| Por audiencia | Managers, Maintenance Technicians y Production Operators | Adapta los beneficios a cada segmento objetivo |
+
+La jerarquía comienza con un Hero que comunica la propuesta principal y presenta dos llamadas a la acción. Luego se describe la problemática, las funcionalidades, los usuarios beneficiados y los planes disponibles. El recorrido concluye con un formulario para solicitar información.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Information%20Architecture/landing-page-sitemap.svg" alt="Sitemap de la Landing Page de Molinex" width="100%">
+</p>
+
+**Figura: Sitemap de la Landing Page de Molinex. Fuente: elaboración propia.**
+
+El orden de las secciones forma una narrativa orientada a la conversión. El visitante conoce Molinex, comprende la problemática, revisa sus funcionalidades, reconoce el beneficio correspondiente a su rol, compara los planes y finalmente puede solicitar información.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Information%20Architecture/landing-page-sequential-flow.svg" alt="Recorrido secuencial del visitante en la Landing Page" width="100%">
+</p>
+
+**Figura: Recorrido secuencial del visitante. Fuente: elaboración propia.**
+
+#### Organización prevista de la Web Application
+
+La Web Application utilizará una estructura jerárquica por módulos. Esta organización responde a las actividades identificadas en los requisitos del producto:
+
+```text
+Molinex
+├── Resumen
+├── Operaciones
+│   ├── Recepciones
+│   ├── Lotes
+│   ├── Producción
+│   ├── Calidad
+│   └── Merma
+├── Maquinaria
+│   ├── Inventario
+│   ├── Estado
+│   └── Variables operativas
+├── Mantenimiento
+│   ├── Preventivo
+│   ├── Correctivo
+│   └── Historial
+├── Inteligencia operativa
+│   ├── Anomalías
+│   ├── Alertas
+│   └── Recomendaciones
+├── Reportes
+│   ├── Producción
+│   ├── Calidad
+│   └── Mantenimiento
+├── Usuarios y permisos
+└── Configuración
+```
+
+La organización visual de la aplicación considerará:
+
+- **Jerarquía:** los dashboards mostrarán primero los indicadores y alertas más relevantes.
+- **Secuencia:** los registros de recepciones, lotes, producción y mantenimiento guiarán al usuario cuando exista dependencia entre datos.
+- **Matriz:** las tablas permitirán comparar y filtrar lotes, máquinas, mantenimientos y alertas.
+- **Cronología:** los historiales mostrarán eventos según fecha y hora.
+- **Estado:** las máquinas y alertas podrán agruparse según su condición operativa.
+- **Audiencia:** las funciones visibles dependerán de los permisos del administrador, técnico u operario.
+
+Esta estructura corresponde a una decisión de arquitectura prevista y podrá ajustarse cuando se diseñen y validen las interfaces de la Web Application.
+
 
 ### 4.2.2 Labeling Systems
 
