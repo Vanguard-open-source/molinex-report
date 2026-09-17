@@ -1060,7 +1060,56 @@ Esta estructura corresponde a una decisión de arquitectura prevista y podrá aj
 
 ### 4.2.2 Labeling Systems
 
-[ ]
+El sistema de etiquetado de Molinex emplea términos breves, descriptivos y consistentes. Las etiquetas deben ayudar a anticipar la información o acción que se encontrará después de seleccionarlas. Los módulos se expresarán principalmente mediante sustantivos y las acciones mediante verbos.
+
+#### Etiquetas implementadas en la Landing Page
+
+| Etiqueta | Tipo | Representación o resultado |
+|:--|:--|:--|
+| Solution | Navegación | Problemática abordada por Molinex |
+| Features | Navegación | Funcionalidades principales de la plataforma |
+| Plans | Navegación | Planes Basic, Professional y Enterprise |
+| Request information | Navegación y acción | Acceso al formulario de contacto |
+| Improve your mill | Acción primaria | Desplazamiento hacia el formulario |
+| Discover Molinex | Acción secundaria | Desplazamiento hacia la solución |
+| Learn more | Acción de plan | Desplazamiento hacia el contacto |
+| Operational dashboard | Contenido | Monitoreo de indicadores operativos |
+| Lot traceability | Contenido | Seguimiento de lotes y materia prima |
+| Maintenance control | Contenido | Gestión de mantenimiento preventivo y correctivo |
+| Alerts and recommendations | Contenido | Detección de anomalías y acciones sugeridas |
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Information%20Architecture/landing-page-labeling-system.svg" alt="Sistema de etiquetado de la Landing Page de Molinex" width="100%">
+</p>
+
+**Figura: Labeling System de la Landing Page. Fuente: elaboración propia.**
+
+El contenido actual utiliza inglés de forma consistente y el documento declara `lang="en"`. Por ello, las etiquetas se documentan tal como aparecen en la implementación. La referencia a otros idiomas en el footer no se considera una funcionalidad implementada mientras no exista un mecanismo de localización operativo.
+
+#### Convenciones para la Web Application
+
+Las etiquetas previstas para los módulos son:
+
+| Etiqueta | Información representada |
+|:--|:--|
+| Resumen | Indicadores y alertas principales |
+| Recepciones | Ingreso de materia prima |
+| Lotes | Registro y trazabilidad de lotes |
+| Producción | Jornadas y procesos productivos |
+| Calidad | Resultados de arroz entero y quebrado |
+| Merma | Pérdidas registradas durante el proceso |
+| Maquinaria | Inventario y estado de equipos |
+| Mantenimiento | Actividades preventivas y correctivas |
+| Anomalías | Comportamientos fuera del rango esperado |
+| Alertas | Eventos que requieren atención |
+| Recomendaciones | Acciones sugeridas por el sistema |
+| Reportes | Información consolidada y exportable |
+| Usuarios | Personal con acceso a Molinex |
+| Configuración | Preferencias generales |
+
+Las acciones utilizarán etiquetas como **Registrar recepción**, **Crear lote**, **Registrar producción**, **Programar mantenimiento**, **Atender alerta**, **Generar reporte**, **Guardar cambios** y **Cancelar**. Se evitarán términos ambiguos cuando no comuniquen el resultado de la acción.
+
+Las imágenes informativas incluirán un texto alternativo que describa su propósito. Las imágenes exclusivamente decorativas utilizarán un atributo `alt` vacío para que no generen ruido en lectores de pantalla.
 
 ### 4.2.3 SEO Tags and Meta Tags
 
