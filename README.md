@@ -229,7 +229,7 @@ Ser la plataforma de referencia en inteligencia operativa para la industria arro
 |:--|:--:|:--|:--:|:--|
 | Casalino Berrocal, Luisa Nhiriel | u202424008 | Ingeniería de Software, UPC | <img src="assets/team/luisa-casalino.jpg" width="120" alt="Luisa Casalino"> | [resumen en primera persona] |
 | Gallegos De La Cruz, Giovanni Marcelo | u202424466 | Ingeniería de Software, UPC | <img src="assets/team/giovanni-gallegos.jpg" width="120" alt="Giovanni Gallegos"> | [resumen en primera persona] |
-| Huerta Cardenas, Brayan Benjamin | u20241e550 | Ingeniería de Software, UPC | <img src="assets/team/brayan-huerta.jpg" width="120" alt="Brayan Huerta"> | [resumen en primera persona] |
+| Huerta Cardenas, Brayan Benjamin | u20241e550 | Ingeniería de Software, UPC | <img src="assets/team/brayan-huerta.jpg" width="120" alt="Brayan Huerta"> | Soy estudiante de Ingeniería de Software con conocimientos en HTML, CSS, JavaScript, Java, C++, SQL y MongoDB, y con especial interés en la ciencia y la tecnología. Me considero una persona con aptitudes técnicas y una actitud proactiva para el trabajo colaborativo, capaz de adaptarme a distintos entornos y resolver problemas de manera eficiente, lo que me ha permitido aportar valor en proyectos grupales y académicos. |
 | Jimenez Saavedra, Antony Alexander | u202420031 | Ingeniería de Software, UPC | <img src="assets/team/antony-jimenez.jpg" width="120" alt="Antony Jimenez"> | [resumen en primera persona] |
 | Rivera Rupay, Fabricio Jose | u202423883 | Ingeniería de Software, UPC | <img src="assets/team/fabricio-rivera.jpg" width="120" alt="Fabricio Rivera"> | [resumen en primera persona] |
 
