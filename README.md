@@ -547,7 +547,7 @@ Segmento 2: Técnicos de mantenimiento
 
 El técnico señala que las principales fallas están relacionadas con desgaste mecánico, problemas eléctricos, lubricación y desalineación. Actualmente, el registro de fallas es mayormente manual y el monitoreo mediante sensores es limitado. Esto puede ocasionar reparaciones prolongadas y mayores costos. Se identifica la necesidad de un sistema que permita monitorear los activos, detectar paradas y anticipar posibles fallas.
 
-Segmento 3: Ingenieros agroindustriales
+Segmento 3: Operarios de maquinaria y producción
 
 La entrevista muestra que el proceso del molino involucra varias etapas y equipos, donde son frecuentes los cortes eléctricos, desgaste de fajas y rodamientos y fallas en la selectora. Las fallas suelen identificarse de manera informal mediante sonidos, olores o atascos, mientras que el mantenimiento se realiza según horarios establecidos. Esto evidencia la necesidad de pasar de un mantenimiento basado en calendarios a uno apoyado en datos y monitoreo en tiempo real.
 
