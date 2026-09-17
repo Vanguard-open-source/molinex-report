@@ -696,14 +696,11 @@ El presente glosario reúne los términos y conceptos utilizados en el dominio d
 
 ## 3.2 Impact Mapping
 **Segmento 1 : Gerentes o administradores**
-
-![Impact Mapping - Segemnto 1.png](assets/Images%20Chapter%203/Impact%20Mapping%20-%20Segemnto%201.png)
+![Impact Mapping - Segmento 1.png](assets/Images%20Chapter%203/Impact%20Mapping%20-%20Segmento%201.png)
 **Segmento 2 : Técnicos de mantenimiento**
-
-![Impact Mapping -Segmento 2.png](assets/Images%20Chapter%203/Impact%20Mapping%20-Segmento%202.png)
+![Impact Mapping - Segmento 2.png](assets/Images%20Chapter%203/Impact%20Mapping%20-%20Segmento%202.png)
 **Segmento 3 : Operarios de maquinaria y producción**
-
-![Impact Mapping- Segmento 3.png](assets/Images%20Chapter%203/Impact%20Mapping-%20Segmento%203.png)
+![Impact Mapping - Segmento 3.png](assets/Images%20Chapter%203/Impact%20Mapping%20-%20Segmento%203.png)
 
 _URL pública del Impact Map en UXPressia:_ `https://uxpressia.com/w/7lSlk/i/xmNpX?tagId=noTag`
 
