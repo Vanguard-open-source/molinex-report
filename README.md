@@ -1170,9 +1170,63 @@ Los resultados mostrarán la cantidad de coincidencias, filtros activos, opcione
 
 Estas decisiones serán confirmadas cuando se diseñen las vistas correspondientes de la Web Application.
 
+
 ### 4.2.5 Navigation Systems
 
-[ ]
+Los sistemas de navegación guían al usuario entre secciones y acciones. La Landing Page utiliza navegación global, contextual, responsive y accesible.
+
+#### Navegación global
+
+La barra superior contiene el logotipo y los accesos **Solution**, **Features**, **Plans** y **Request information**. El encabezado utiliza una posición persistente para conservar los accesos durante el desplazamiento.
+
+#### Navegación por anclas
+
+Los enlaces principales utilizan identificadores dentro del mismo documento:
+
+```html
+<a href="#solution">Solution</a>
+<a href="#features">Features</a>
+<a href="#plans">Plans</a>
+<a href="#contact">Request information</a>
+```
+
+La propiedad `scroll-behavior: smooth` proporciona una transición continua entre secciones.
+
+#### Navegación contextual
+
+Los CTA del Hero, las funcionalidades y los planes dirigen al visitante hacia la solución o el formulario según el contexto. Esto reduce la necesidad de regresar al encabezado para continuar el recorrido.
+
+#### Navegación responsive
+
+En anchos reducidos, los enlaces se ocultan dentro de un menú desplegable. El botón comunica su estado mediante `aria-expanded` y se relaciona con el menú mediante `aria-controls`. Después de seleccionar un enlace, el menú se cierra automáticamente.
+
+#### Navegación accesible
+
+La Landing Page incorpora un skip link que permite pasar directamente al contenido principal:
+
+```html
+<a class="skip-link" href="#main-content">Skip to content</a>
+```
+
+Este mecanismo facilita la navegación mediante teclado al evitar que el usuario tenga que recorrer todos los enlaces del encabezado en cada acceso.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Information%20Architecture/landing-page-navigation-system.svg" alt="Sistema de navegación de la Landing Page de Molinex" width="100%">
+</p>
+
+**Figura: Navigation System de la Landing Page. Fuente: elaboración propia.**
+
+#### Navegación prevista de la Web Application
+
+La arquitectura inicial considera una navegación global por módulos, navegación local dentro de cada módulo, breadcrumbs para representar la jerarquía y acciones contextuales asociadas con el recurso seleccionado.
+
+- **Global:** Resumen, Operaciones, Maquinaria, Mantenimiento, Inteligencia operativa, Reportes, Usuarios y Configuración.
+- **Local:** subdivisiones como Preventivo, Correctivo e Historial dentro de Mantenimiento.
+- **Jerárquica:** rutas como `Inicio / Maquinaria / Máquina / Historial`.
+- **Contextual:** acciones como Ver detalle, Editar registro, Programar mantenimiento o Atender alerta.
+- **Utilitaria:** Notificaciones, Ayuda, Perfil y Cerrar sesión.
+
+En desktop se prevé una barra lateral persistente. En anchos menores podrá colapsarse conservando etiquetas accesibles y las mismas rutas. Esta propuesta será revisada cuando se desarrollen los wireframes y mockups de la Web Application.
 
 ## 4.3 Landing Page UI Design
 

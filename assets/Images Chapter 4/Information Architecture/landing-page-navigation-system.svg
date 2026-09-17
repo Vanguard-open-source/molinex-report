@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="700" viewBox="0 0 1400 700">
+  <rect width="1400" height="700" fill="#FFFFFF"/>
+  <text x="70" y="65" font-family="Poppins,Arial" font-size="34" font-weight="700" fill="#102A43">Navigation System de la Landing Page</text>
+  <text x="70" y="102" font-family="Inter,Arial" font-size="18" fill="#486581">Navegación global, contextual, responsive y accesible.</text>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#829AB1"/></marker></defs>
+  <g font-family="Inter,Arial">
+    <rect x="80" y="155" width="1240" height="86" rx="18" fill="#F5F7FA" stroke="#D9E2EC"/>
+    <text x="115" y="205" font-family="Poppins,Arial" font-size="22" font-weight="700" fill="#0B4F8A">MOLINEX</text>
+    <text x="720" y="205" font-size="17" fill="#102A43">Solution</text><text x="830" y="205" font-size="17" fill="#102A43">Features</text><text x="940" y="205" font-size="17" fill="#102A43">Plans</text>
+    <rect x="1035" y="174" width="245" height="48" rx="10" fill="#F2B705"/><text x="1157" y="205" text-anchor="middle" font-size="15" font-weight="600" fill="#073763">Request information</text>
+    <text x="80" y="285" font-family="Poppins,Arial" font-size="19" font-weight="600" fill="#102A43">Navegación global persistente</text>
+    <text x="80" y="315" font-size="16" fill="#486581">La navbar conduce mediante anclas a las secciones principales.</text>
+    <rect x="80" y="360" width="360" height="170" rx="16" fill="#EAF4FB" stroke="#0B4F8A"/>
+    <text x="110" y="405" font-family="Poppins,Arial" font-size="18" font-weight="600" fill="#102A43">Navegación contextual</text>
+    <text x="110" y="445" font-size="16" fill="#486581">CTA del Hero, funciones y planes</text><text x="110" y="478" font-size="16" fill="#486581">dirigen hacia Solution o Contact.</text>
+    <rect x="520" y="360" width="360" height="170" rx="16" fill="#EEF7E8" stroke="#4F8A2B"/>
+    <text x="550" y="405" font-family="Poppins,Arial" font-size="18" font-weight="600" fill="#102A43">Navegación responsive</text>
+    <text x="550" y="445" font-size="16" fill="#486581">El menú se colapsa en anchos</text><text x="550" y="478" font-size="16" fill="#486581">menores y conserva las mismas rutas.</text>
+    <rect x="960" y="360" width="360" height="170" rx="16" fill="#FFF7D6" stroke="#A86F00"/>
+    <text x="990" y="405" font-family="Poppins,Arial" font-size="18" font-weight="600" fill="#102A43">Navegación accesible</text>
+    <text x="990" y="445" font-size="16" fill="#486581">Skip link, foco mediante teclado y</text><text x="990" y="478" font-size="16" fill="#486581">estado aria-expanded del menú.</text>
+  </g>
+  <g stroke="#829AB1" stroke-width="3" marker-end="url(#arrow)"><line x1="700" y1="242" x2="300" y2="345"/><line x1="700" y1="242" x2="700" y2="345"/><line x1="700" y1="242" x2="1100" y2="345"/></g>
+  <text x="70" y="650" font-family="Inter,Arial" font-size="15" fill="#486581">Fuente: elaboración propia a partir del HTML, CSS y JavaScript actuales.</text>
+</svg>
