@@ -315,9 +315,7 @@ We’ll know we are successful when users regularly consult the platform, monito
 
 #### 1.2.2.3 Lean UX Hypothesis Statements
 
-
-
-
+**Hypothesis 1: Operational Dashboard**
 
 We believe we will achieve improved operational decision-making and process visibility
 If administrators and production supervisors
