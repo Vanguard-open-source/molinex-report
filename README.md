@@ -1144,7 +1144,31 @@ La Landing Page implementa actualmente los siguientes Meta Tags:
 
 ### 4.2.4 Searching Systems
 
-[ ]
+Los sistemas de búsqueda permiten localizar información sin recorrer manualmente todas las páginas o registros. Su necesidad depende de la cantidad y complejidad del contenido.
+
+#### Búsqueda en la Landing Page
+
+La Landing Page no incorpora un campo de búsqueda. Esta decisión se debe a que contiene un volumen reducido de información, utiliza una estructura de página única y ofrece enlaces directos hacia Solution, Features, Plans y Contact. El visitante puede localizar el contenido mediante la barra de navegación y el recorrido vertical.
+
+#### Búsqueda prevista en la Web Application
+
+La Web Application sí requerirá búsqueda y filtrado debido al volumen de información operativa esperado.
+
+| Módulo | Campos de búsqueda | Filtros previstos | Ordenamiento |
+|:--|:--|:--|:--|
+| Recepciones | Código y proveedor | Fecha y estado | Fecha y cantidad |
+| Lotes | Código y proveedor | Estado, fecha y calidad | Fecha y rendimiento |
+| Producción | Lote y responsable | Periodo, turno y estado | Fecha y rendimiento |
+| Maquinaria | Código y nombre | Estado y tipo | Nombre y última revisión |
+| Mantenimiento | Máquina y técnico | Tipo, estado y rango de fechas | Fecha y prioridad |
+| Anomalías | Máquina y descripción | Severidad, estado y fecha | Severidad y fecha |
+| Alertas | Máquina y código | Prioridad, estado y periodo | Prioridad y fecha |
+| Reportes | Nombre y tipo | Área y periodo | Fecha de generación |
+| Usuarios | Nombre y correo | Rol y estado | Nombre y fecha de registro |
+
+Los resultados mostrarán la cantidad de coincidencias, filtros activos, opciones de ordenamiento y una acción para limpiar criterios. Las listas extensas podrán incorporar paginación. Cuando no existan coincidencias, la interfaz explicará el resultado y permitirá modificar la búsqueda.
+
+Estas decisiones serán confirmadas cuando se diseñen las vistas correspondientes de la Web Application.
 
 ### 4.2.5 Navigation Systems
 
