@@ -199,7 +199,7 @@ En el siguiente cuadro se describen las acciones realizadas y los enunciados de 
 
 <div style="page-break-after: always;"></div>
 
-# Capítulo I Introducción
+# Capítulo I Introducción 
 
 ## 1.1 Startup Profile
 
@@ -759,13 +759,223 @@ _URL pública del Impact Map en UXPressia:_ `https://uxpressia.com/w/7lSlk/i/xmN
 
 ## 4.1 Style Guidelines
 
+Las Style Guidelines de Molinex establecen los criterios visuales, comunicacionales y de interacción que se aplicarán en la Landing Page y la Web Application. Su propósito es asegurar una experiencia consistente, accesible y comprensible para gerentes o administradores, técnicos de mantenimiento y operarios de producción.
+
+Molinex se desarrollará como una experiencia web responsive. Por ello, las referencias a dispositivos móviles corresponden a la adaptación del sitio en navegadores de menor ancho y no a una aplicación móvil nativa.
+
 ### 4.1.1 General Style Guidelines
 
-[Branding, Typography, Colors, Spacing y tono de comunicación (Divertido/Serio, Formal/Casual, Respetuoso/Irreverente, Entusiasta/Sereno).]
+#### Principios de diseño
+
+Las decisiones visuales de Molinex se apoyan en los siguientes principios:
+
+- **Claridad:** la información operativa debe comprenderse con rapidez.
+- **Consistencia:** componentes equivalentes conservarán la misma apariencia y comportamiento.
+- **Jerarquía:** títulos, indicadores, alertas y acciones se diferenciarán mediante tamaño, peso, color y espaciado.
+- **Prevención de errores:** los formularios comunicarán restricciones y validaciones antes de completar una acción.
+- **Visibilidad del estado:** la plataforma informará los resultados de cargas, registros, actualizaciones y errores.
+- **Accesibilidad:** los contenidos mantendrán contraste, foco visible y etiquetas comprensibles.
+- **Reconocimiento antes que recuerdo:** las acciones utilizarán nombres e iconos familiares para el sector.
+
+#### Branding
+
+La identidad visual de Molinex representa la integración entre la industria arrocera y la tecnología aplicada a la optimización de procesos productivos. La marca posee una personalidad tecnológica, confiable, eficiente y cercana.
+
+El logotipo combina el nombre **MOLINEX** con un isotipo formado por una espiga de arroz y figuras circulares. La espiga representa la materia prima y el sector productivo; las figuras dinámicas representan transformación, continuidad y análisis de información. El azul expresa confianza y tecnología; el verde, agricultura y eficiencia; y el dorado, el arroz y el valor generado durante su procesamiento.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Style%20Guidelines/molinex-logo-horizontal.png" alt="Logotipo horizontal de Molinex" width="80%">
+</p>
+
+El logotipo horizontal será la versión principal para encabezados web. El isotipo se utilizará en favicon, avatar y espacios reducidos. Posteriormente se mantendrán variantes monocromáticas para fondos donde la versión a color no alcance suficiente contraste.
+
+Como área de seguridad se utilizará una distancia equivalente a la altura de la letra **M** alrededor del logotipo. El ancho mínimo recomendado será de 160 px para la versión completa y 32 px para el isotipo. No se permitirá deformar el logotipo, cambiar sus colores, alterar la disposición de sus elementos, añadir sombras o utilizar fondos que dificulten su lectura.
+
+#### Typography
+
+Molinex empleará **Poppins** e **Inter**, disponibles en Google Fonts. Poppins se utilizará en títulos, navegación y botones por su carácter geométrico y tecnológico. Inter se utilizará en párrafos, formularios, tablas y métricas debido a su legibilidad en interfaces con alta densidad de información.
+
+| Tipografía | Aplicación | Pesos |
+|:--|:--|:--|
+| Poppins | Títulos, navegación, botones y títulos de tarjetas | 500, 600 y 700 |
+| Inter | Párrafos, formularios, tablas, métricas y textos auxiliares | 400, 500 y 600 |
+
+| Elemento | Fuente | Peso | Desktop | Navegador móvil |
+|:--|:--|:--:|--:|--:|
+| H1 | Poppins | 700 | 48 px | 36 px |
+| H2 | Poppins | 600 | 36 px | 28 px |
+| H3 | Poppins | 600 | 28 px | 24 px |
+| H4 | Poppins | 600 | 22 px | 20 px |
+| Título de tarjeta | Poppins | 600 | 18 px | 17 px |
+| Párrafo | Inter | 400 | 16 px | 16 px |
+| Botón | Poppins | 600 | 15 px | 15 px |
+| Etiqueta de formulario | Inter | 500 | 14 px | 14 px |
+| Tabla | Inter | 400 | 14 px | 14 px |
+| Texto auxiliar | Inter | 400 | 13 px | 13 px |
+
+Los tamaños se implementarán con unidades `rem` y funciones como `clamp()` para respetar la configuración del navegador y adaptar progresivamente los títulos. Los párrafos emplearán un interlineado de 1.6 y no superarán aproximadamente 70 caracteres por línea. Los datos numéricos utilizarán cifras tabulares cuando sea posible.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Style%20Guidelines/typography-hierarchy.svg" alt="Jerarquía tipográfica de Molinex" width="100%">
+</p>
+
+#### Paleta de colores
+
+La paleta combina tecnología, agricultura y transformación. El azul será el color estructural; el verde comunicará eficiencia y resultados positivos; el dorado actuará como acento relacionado con el arroz. Los fondos neutros reducirán la carga visual de dashboards, tablas y formularios.
+
+| Color | HEX | Aplicación |
+|:--|:--:|:--|
+| Azul Molinex | `#0B4F8A` | Marca, enlaces, navegación y acciones secundarias |
+| Azul oscuro | `#073763` | Títulos, footer y estados hover |
+| Azul claro | `#EAF4FB` | Fondos informativos |
+| Verde Molinex | `#4F8A2B` | Eficiencia, beneficios e indicadores positivos |
+| Verde oscuro | `#35651D` | Texto y estados hover verdes |
+| Verde claro | `#EEF7E8` | Fondos de estados positivos |
+| Dorado arroz | `#F2B705` | CTA y elementos destacados |
+| Dorado oscuro | `#A86F00` | Texto preventivo sobre fondos claros |
+| Texto principal | `#102A43` | Títulos, párrafos y datos |
+| Texto secundario | `#486581` | Descripciones y contenido auxiliar |
+| Borde | `#D9E2EC` | Campos, tarjetas y divisores |
+| Fondo general | `#F5F7FA` | Fondo de la aplicación |
+| Superficie | `#FFFFFF` | Tarjetas y formularios |
+
+Se seguirá la proporción aproximada 60–30–10: 60 % de superficies neutras, 30 % de azul y 10 % de verde o dorado. El dorado se combinará con azul oscuro y no con blanco, debido a su contraste.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Style%20Guidelines/color-palette.svg" alt="Paleta cromática de Molinex" width="100%">
+</p>
+
+#### Colores semánticos
+
+| Estado | Color | Fondo | Aplicación |
+|:--|:--:|:--:|:--|
+| Correcto | `#2E7D32` | `#E8F5E9` | Operación normal o acción completada |
+| Información | `#1976D2` | `#E3F2FD` | Mensajes informativos |
+| Advertencia | `#A86F00` | `#FFF4D6` | Revisión pendiente o desviación moderada |
+| Crítico | `#C62828` | `#FDECEC` | Fallas, anomalías y acciones destructivas |
+| Neutral | `#607D8B` | `#ECEFF1` | Estados inactivos o sin información |
+
+El color nunca será el único medio para comunicar un estado; se acompañará de texto e iconografía.
+
+#### Spacing System
+
+La interfaz aplicará una unidad principal de 8 px y subdivisiones de 4 px. Esto facilitará una composición consistente y escalable.
+
+| Escala | Valor | Aplicación |
+|:--|--:|:--|
+| XS | 4 px | Separación mínima e iconos |
+| S | 8 px | Elementos relacionados |
+| M | 16 px | Padding de controles y formularios |
+| L | 24 px | Separación entre grupos y tarjetas |
+| XL | 32 px | Padding de contenedores |
+| 2XL | 48 px | Separación entre secciones |
+| 3XL | 64 px | Secciones principales de la Landing Page |
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Style%20Guidelines/spacing-system.svg" alt="Sistema de espaciado de Molinex" width="100%">
+</p>
+
+#### Tone of Communication
+
+Molinex utilizará lenguaje claro, profesional y orientado a la acción. Se evitarán tecnicismos innecesarios y mensajes alarmistas.
+
+| Dimensión | Posicionamiento |
+|:--|:--|
+| Divertido–Serio | Serio, porque comunica información productiva y de mantenimiento |
+| Formal–Casual | Semiformal, para conservar credibilidad sin dificultar la comprensión |
+| Respetuoso–Irreverente | Respetuoso en todas las interacciones |
+| Entusiasta–Sereno | Sereno, especialmente en alertas y recomendaciones |
+
+Los mensajes indicarán qué ocurrió y qué puede hacer el usuario. Por ejemplo: **“La temperatura supera el rango esperado. Revise la máquina antes de continuar la producción.”** Se evitarán mensajes imprecisos como **“Algo salió mal”** cuando sea posible explicar el problema.
+
+#### Iconografía
+
+Se utilizará **Lucide Icons** como biblioteca principal. Los iconos serán lineales, simples y acompañados de etiquetas cuando su significado no sea evidente. Se mantendrá un tamaño base de 20 px y un trazo visual consistente. Los módulos principales se representarán mediante iconos relacionados con dashboard, lotes, producción, calidad, maquinaria, mantenimiento, alertas, reportes, usuarios y configuración.
+
+#### Accesibilidad general
+
+- Contraste mínimo de 4.5:1 para texto normal y 3:1 para texto grande.
+- Texto base de 16 px y contenido auxiliar no menor de 13 px.
+- Foco visible en enlaces, botones y controles.
+- Navegación completa mediante teclado.
+- Etiquetas persistentes en formularios; los placeholders no las sustituirán.
+- Iconos decorativos ocultos para lectores de pantalla e iconos funcionales con nombre accesible.
+- Estados comunicados mediante color, texto e icono.
+- Compatibilidad con ampliación del navegador sin pérdida de contenido o funcionalidad.
 
 ### 4.1.2 Web Style Guidelines
 
-[Estándares visuales y de interacción para las interfaces responsivas.]
+#### Responsive Design
+
+La Landing Page y la Web Application seguirán un enfoque mobile-first. La misma experiencia web reorganizará navegación, columnas, tablas y componentes según el ancho disponible.
+
+| Categoría | Breakpoint | Comportamiento general |
+|:--|:--:|:--|
+| Móvil | Menor de 768 px | Una columna, navegación colapsada y controles a ancho completo |
+| Tablet | Desde 768 px | Dos columnas cuando el contenido lo permita |
+| Laptop | Desde 1024 px | Navegación completa y paneles de varias columnas |
+| Desktop | Desde 1280 px | Contenedor amplio y dashboards completos |
+| Desktop amplio | Desde 1440 px | Mayor espacio lateral sin ampliar excesivamente el texto |
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Style%20Guidelines/responsive-breakpoints.svg" alt="Breakpoints responsive de Molinex" width="100%">
+</p>
+
+El contenido general tendrá un ancho máximo aproximado de 1200 px. En pantallas mayores se conservarán márgenes laterales; los párrafos no se estirarán hasta ocupar todo el ancho.
+
+#### Navegación web
+
+La Landing Page utilizará una barra superior con el logotipo, enlaces a secciones y una llamada a la acción. En navegadores móviles se transformará en un menú desplegable accesible.
+
+La Web Application utilizará una barra lateral en desktop y navegación colapsable en anchos menores. El encabezado mostrará el contexto de la vista, las notificaciones y el perfil. Las vistas profundas incorporarán breadcrumbs. Las alertas críticas permanecerán accesibles sin interrumpir innecesariamente otras tareas.
+
+#### Botones
+
+- **Primario:** dorado con texto azul oscuro para la acción principal de cada vista.
+- **Secundario:** azul con texto blanco para acciones complementarias.
+- **Terciario:** fondo transparente y borde azul.
+- **Destructivo:** rojo con texto blanco y confirmación cuando la acción sea irreversible.
+- **Deshabilitado:** gris y sin respuesta interactiva.
+
+Cada botón tendrá estados default, hover, active, focus, loading y disabled. La etiqueta comenzará con un verbo: **Registrar producción**, **Generar reporte** o **Revisar alerta**.
+
+#### Formularios
+
+Los labels permanecerán visibles sobre los campos. Los controles tendrán una altura mínima de 44 px, borde neutro y foco azul claramente visible. Las validaciones se mostrarán cerca del campo e indicarán cómo corregir el valor. Los formularios extensos se dividirán en grupos lógicos y conservarán los datos cuando ocurra un error recuperable.
+
+#### Tarjetas, métricas y estados
+
+Las tarjetas utilizarán fondo blanco, borde sutil, radio de 16 px y padding de 24 o 32 px. Las métricas destacarán primero el valor, después su unidad y finalmente el contexto. Las alertas utilizarán el color semántico correspondiente junto con un título, una explicación y una acción.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Style%20Guidelines/web-components.svg" alt="Componentes web de Molinex" width="100%">
+</p>
+
+#### Tablas y visualización de datos
+
+Las tablas se utilizarán para información que requiera comparación precisa. Incluirán encabezados visibles, ordenamiento cuando corresponda, filtros, paginación y alineación consistente de datos numéricos. En navegadores móviles se priorizarán columnas esenciales y se permitirá desplazamiento horizontal controlado o una representación en tarjetas.
+
+Los gráficos incluirán título, unidad, leyenda y periodo analizado. No dependerán únicamente del color y evitarán efectos tridimensionales que dificulten la comparación.
+
+#### Estados de interacción y del sistema
+
+| Estado | Tratamiento |
+|:--|:--|
+| Hover | Cambio moderado de color o fondo |
+| Active | Mayor contraste y confirmación de selección |
+| Focus | Contorno visible de al menos 2 px |
+| Loading | Indicador de progreso y prevención de envíos duplicados |
+| Empty | Explicación y acción para crear o buscar contenido |
+| Success | Confirmación clara sin interrumpir el flujo |
+| Warning | Descripción preventiva y acción sugerida |
+| Error | Explicación concreta y alternativa de recuperación |
+| Disabled | Menor contraste y ausencia de interacción |
+
+#### Patrones de la Landing Page
+
+La Landing Page seguirá un recorrido vertical: propuesta de valor, problemática, funcionalidades, beneficios, funcionamiento, planes y contacto. El Hero presentará una sola acción principal. Las secciones utilizarán grids responsive y alternancia moderada de superficies. El CTA principal se repetirá únicamente en puntos de decisión relevantes.
+
+
 
 ## 4.2 Information Architecture
 
