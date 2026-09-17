@@ -974,30 +974,259 @@ Los gráficos incluirán título, unidad, leyenda y periodo analizado. No depend
 La Landing Page seguirá un recorrido vertical: propuesta de valor, problemática, funcionalidades, beneficios, funcionamiento, planes y contacto. El Hero presentará una sola acción principal. Las secciones utilizarán grids responsive y alternancia moderada de superficies. El CTA principal se repetirá únicamente en puntos de decisión relevantes.
 
 
-
 ## 4.2 Information Architecture
+
+La arquitectura de información de Molinex establece la forma en que el contenido es organizado, identificado, localizado y recorrido dentro de sus experiencias web. Su propósito es facilitar que los visitantes y usuarios encuentren la información que necesitan, comprendan las funciones disponibles y completen sus objetivos sin esfuerzo innecesario.
+
+Molinex comprende dos experiencias web. La **Landing Page** es una página pública orientada a comunicar la propuesta de valor, la problemática, las funcionalidades y los planes de suscripción. La **Web Application** estará orientada a la gestión de producción, calidad, maquinaria y mantenimiento por parte de gerentes o administradores, técnicos de mantenimiento y operarios de producción.
+
+En la presente etapa, las decisiones correspondientes a la Landing Page se sustentan en su implementación actual. La organización propuesta para la Web Application se deriva de los segmentos objetivo, las entrevistas, las User Stories y el Product Backlog; será validada y ampliada durante el diseño de sus interfaces.
 
 ### 4.2.1 Organization Systems
 
-[ ]
+Molinex combina sistemas jerárquicos, secuenciales, matriciales y basados en tópicos o audiencias. La elección depende del volumen de información y de la tarea que el usuario necesita realizar.
+
+#### Organización de la Landing Page
+
+La Landing Page se implementa como una página única. Su contenido aplica los siguientes sistemas:
+
+| Sistema | Aplicación | Justificación |
+|:--|:--|:--|
+| Jerárquico | Hero, problemática, funcionalidades, audiencias, planes y contacto | Presenta primero la propuesta de valor y después información progresivamente más detallada |
+| Secuencial | Recorrido vertical desde el Hero hasta el formulario | Conduce al visitante desde el reconocimiento del problema hasta una acción comercial |
+| Por tópicos | Solution, Features, Audiences, Plans y Contact | Agrupa información relacionada bajo secciones claramente diferenciadas |
+| Por audiencia | Managers, Maintenance Technicians y Production Operators | Adapta los beneficios a cada segmento objetivo |
+
+La jerarquía comienza con un Hero que comunica la propuesta principal y presenta dos llamadas a la acción. Luego se describe la problemática, las funcionalidades, los usuarios beneficiados y los planes disponibles. El recorrido concluye con un formulario para solicitar información.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Information%20Architecture/landing-page-sitemap.svg" alt="Sitemap de la Landing Page de Molinex" width="100%">
+</p>
+
+**Figura: Sitemap de la Landing Page de Molinex. Fuente: elaboración propia.**
+
+El orden de las secciones forma una narrativa orientada a la conversión. El visitante conoce Molinex, comprende la problemática, revisa sus funcionalidades, reconoce el beneficio correspondiente a su rol, compara los planes y finalmente puede solicitar información.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Information%20Architecture/landing-page-sequential-flow.svg" alt="Recorrido secuencial del visitante en la Landing Page" width="100%">
+</p>
+
+**Figura: Recorrido secuencial del visitante. Fuente: elaboración propia.**
+
+#### Organización prevista de la Web Application
+
+La Web Application utilizará una estructura jerárquica por módulos. Esta organización responde a las actividades identificadas en los requisitos del producto:
+
+```text
+Molinex
+├── Resumen
+├── Operaciones
+│   ├── Recepciones
+│   ├── Lotes
+│   ├── Producción
+│   ├── Calidad
+│   └── Merma
+├── Maquinaria
+│   ├── Inventario
+│   ├── Estado
+│   └── Variables operativas
+├── Mantenimiento
+│   ├── Preventivo
+│   ├── Correctivo
+│   └── Historial
+├── Inteligencia operativa
+│   ├── Anomalías
+│   ├── Alertas
+│   └── Recomendaciones
+├── Reportes
+│   ├── Producción
+│   ├── Calidad
+│   └── Mantenimiento
+├── Usuarios y permisos
+└── Configuración
+```
+
+La organización visual de la aplicación considerará:
+
+- **Jerarquía:** los dashboards mostrarán primero los indicadores y alertas más relevantes.
+- **Secuencia:** los registros de recepciones, lotes, producción y mantenimiento guiarán al usuario cuando exista dependencia entre datos.
+- **Matriz:** las tablas permitirán comparar y filtrar lotes, máquinas, mantenimientos y alertas.
+- **Cronología:** los historiales mostrarán eventos según fecha y hora.
+- **Estado:** las máquinas y alertas podrán agruparse según su condición operativa.
+- **Audiencia:** las funciones visibles dependerán de los permisos del administrador, técnico u operario.
+
+Esta estructura corresponde a una decisión de arquitectura prevista y podrá ajustarse cuando se diseñen y validen las interfaces de la Web Application.
+
 
 ### 4.2.2 Labeling Systems
 
-[ ]
+El sistema de etiquetado de Molinex emplea términos breves, descriptivos y consistentes. Las etiquetas deben ayudar a anticipar la información o acción que se encontrará después de seleccionarlas. Los módulos se expresarán principalmente mediante sustantivos y las acciones mediante verbos.
+
+#### Etiquetas implementadas en la Landing Page
+
+| Etiqueta | Tipo | Representación o resultado |
+|:--|:--|:--|
+| Solution | Navegación | Problemática abordada por Molinex |
+| Features | Navegación | Funcionalidades principales de la plataforma |
+| Plans | Navegación | Planes Basic, Professional y Enterprise |
+| Request information | Navegación y acción | Acceso al formulario de contacto |
+| Improve your mill | Acción primaria | Desplazamiento hacia el formulario |
+| Discover Molinex | Acción secundaria | Desplazamiento hacia la solución |
+| Learn more | Acción de plan | Desplazamiento hacia el contacto |
+| Operational dashboard | Contenido | Monitoreo de indicadores operativos |
+| Lot traceability | Contenido | Seguimiento de lotes y materia prima |
+| Maintenance control | Contenido | Gestión de mantenimiento preventivo y correctivo |
+| Alerts and recommendations | Contenido | Detección de anomalías y acciones sugeridas |
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Information%20Architecture/landing-page-labeling-system.svg" alt="Sistema de etiquetado de la Landing Page de Molinex" width="100%">
+</p>
+
+**Figura: Labeling System de la Landing Page. Fuente: elaboración propia.**
+
+El contenido actual utiliza inglés de forma consistente y el documento declara `lang="en"`. Por ello, las etiquetas se documentan tal como aparecen en la implementación. La referencia a otros idiomas en el footer no se considera una funcionalidad implementada mientras no exista un mecanismo de localización operativo.
+
+#### Convenciones para la Web Application
+
+Las etiquetas previstas para los módulos son:
+
+| Etiqueta | Información representada |
+|:--|:--|
+| Resumen | Indicadores y alertas principales |
+| Recepciones | Ingreso de materia prima |
+| Lotes | Registro y trazabilidad de lotes |
+| Producción | Jornadas y procesos productivos |
+| Calidad | Resultados de arroz entero y quebrado |
+| Merma | Pérdidas registradas durante el proceso |
+| Maquinaria | Inventario y estado de equipos |
+| Mantenimiento | Actividades preventivas y correctivas |
+| Anomalías | Comportamientos fuera del rango esperado |
+| Alertas | Eventos que requieren atención |
+| Recomendaciones | Acciones sugeridas por el sistema |
+| Reportes | Información consolidada y exportable |
+| Usuarios | Personal con acceso a Molinex |
+| Configuración | Preferencias generales |
+
+Las acciones utilizarán etiquetas como **Registrar recepción**, **Crear lote**, **Registrar producción**, **Programar mantenimiento**, **Atender alerta**, **Generar reporte**, **Guardar cambios** y **Cancelar**. Se evitarán términos ambiguos cuando no comuniquen el resultado de la acción.
+
+Las imágenes informativas incluirán un texto alternativo que describa su propósito. Las imágenes exclusivamente decorativas utilizarán un atributo `alt` vacío para que no generen ruido en lectores de pantalla.
 
 ### 4.2.3 SEO Tags and Meta Tags
 
-| Página | Title | Meta Description | Keywords | Author |
+Los SEO Tags y Meta Tags permiten describir el contenido de las experiencias web de Molinex para facilitar su identificación por los navegadores y motores de búsqueda. Para ello, se han definido valores de Title, Description, Keywords y Author para la Landing Page y la Web Application.
+
+| Experiencia web | Title | Description | Keywords | Author |
 |:--|:--|:--|:--|:--|
-| | | | | |
+| Landing Page | Molinex \| Intelligence for better rice milling | Molinex helps rice mills improve production visibility, reduce losses and anticipate equipment failures with intelligent operational analysis. | rice mill, operational intelligence, predictive maintenance, rice production, Molinex | Vanguard - Molinex |
+| Web Application | Molinex \| Operational Management Platform | Web platform for managing production, quality, machinery, maintenance and operational alerts in rice mills. | Molinex, rice mill management, production monitoring, quality control, maintenance management | Vanguard - Molinex |
+
+En la Landing Page, el Title comunica el nombre de la solución y su propósito principal. La Description resume la propuesta de valor de Molinex, mientras que las Keywords representan los conceptos relacionados con el sector arrocero, la inteligencia operativa y el mantenimiento predictivo.
+
+Para la Web Application se propone un Title y una Description orientados a las principales funcionalidades de la plataforma. Estos valores podrán ajustarse cuando se complete el diseño y desarrollo de sus interfaces.
+
+La Landing Page implementa actualmente los siguientes Meta Tags:
+
+~~~html
+<title>Molinex | Intelligence for better rice milling</title>
+
+<meta
+  name="description"
+  content="Molinex helps rice mills improve production visibility, reduce losses and anticipate equipment failures with intelligent operational analysis."
+/>
+
+<meta
+  name="keywords"
+  content="rice mill, operational intelligence, predictive maintenance, rice production, Molinex"
+/>
+
+<meta name="author" content="Vanguard - Molinex" />
+~~~
 
 ### 4.2.4 Searching Systems
 
-[ ]
+Los sistemas de búsqueda permiten localizar información sin recorrer manualmente todas las páginas o registros. Su necesidad depende de la cantidad y complejidad del contenido.
+
+#### Búsqueda en la Landing Page
+
+La Landing Page no incorpora un campo de búsqueda. Esta decisión se debe a que contiene un volumen reducido de información, utiliza una estructura de página única y ofrece enlaces directos hacia Solution, Features, Plans y Contact. El visitante puede localizar el contenido mediante la barra de navegación y el recorrido vertical.
+
+#### Búsqueda prevista en la Web Application
+
+La Web Application sí requerirá búsqueda y filtrado debido al volumen de información operativa esperado.
+
+| Módulo | Campos de búsqueda | Filtros previstos | Ordenamiento |
+|:--|:--|:--|:--|
+| Recepciones | Código y proveedor | Fecha y estado | Fecha y cantidad |
+| Lotes | Código y proveedor | Estado, fecha y calidad | Fecha y rendimiento |
+| Producción | Lote y responsable | Periodo, turno y estado | Fecha y rendimiento |
+| Maquinaria | Código y nombre | Estado y tipo | Nombre y última revisión |
+| Mantenimiento | Máquina y técnico | Tipo, estado y rango de fechas | Fecha y prioridad |
+| Anomalías | Máquina y descripción | Severidad, estado y fecha | Severidad y fecha |
+| Alertas | Máquina y código | Prioridad, estado y periodo | Prioridad y fecha |
+| Reportes | Nombre y tipo | Área y periodo | Fecha de generación |
+| Usuarios | Nombre y correo | Rol y estado | Nombre y fecha de registro |
+
+Los resultados mostrarán la cantidad de coincidencias, filtros activos, opciones de ordenamiento y una acción para limpiar criterios. Las listas extensas podrán incorporar paginación. Cuando no existan coincidencias, la interfaz explicará el resultado y permitirá modificar la búsqueda.
+
+Estas decisiones serán confirmadas cuando se diseñen las vistas correspondientes de la Web Application.
+
 
 ### 4.2.5 Navigation Systems
 
-[ ]
+Los sistemas de navegación guían al usuario entre secciones y acciones. La Landing Page utiliza navegación global, contextual, responsive y accesible.
+
+#### Navegación global
+
+La barra superior contiene el logotipo y los accesos **Solution**, **Features**, **Plans** y **Request information**. El encabezado utiliza una posición persistente para conservar los accesos durante el desplazamiento.
+
+#### Navegación por anclas
+
+Los enlaces principales utilizan identificadores dentro del mismo documento:
+
+```html
+<a href="#solution">Solution</a>
+<a href="#features">Features</a>
+<a href="#plans">Plans</a>
+<a href="#contact">Request information</a>
+```
+
+La propiedad `scroll-behavior: smooth` proporciona una transición continua entre secciones.
+
+#### Navegación contextual
+
+Los CTA del Hero, las funcionalidades y los planes dirigen al visitante hacia la solución o el formulario según el contexto. Esto reduce la necesidad de regresar al encabezado para continuar el recorrido.
+
+#### Navegación responsive
+
+En anchos reducidos, los enlaces se ocultan dentro de un menú desplegable. El botón comunica su estado mediante `aria-expanded` y se relaciona con el menú mediante `aria-controls`. Después de seleccionar un enlace, el menú se cierra automáticamente.
+
+#### Navegación accesible
+
+La Landing Page incorpora un skip link que permite pasar directamente al contenido principal:
+
+```html
+<a class="skip-link" href="#main-content">Skip to content</a>
+```
+
+Este mecanismo facilita la navegación mediante teclado al evitar que el usuario tenga que recorrer todos los enlaces del encabezado en cada acceso.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Information%20Architecture/landing-page-navigation-system.svg" alt="Sistema de navegación de la Landing Page de Molinex" width="100%">
+</p>
+
+**Figura: Navigation System de la Landing Page. Fuente: elaboración propia.**
+
+#### Navegación prevista de la Web Application
+
+La arquitectura inicial considera una navegación global por módulos, navegación local dentro de cada módulo, breadcrumbs para representar la jerarquía y acciones contextuales asociadas con el recurso seleccionado.
+
+- **Global:** Resumen, Operaciones, Maquinaria, Mantenimiento, Inteligencia operativa, Reportes, Usuarios y Configuración.
+- **Local:** subdivisiones como Preventivo, Correctivo e Historial dentro de Mantenimiento.
+- **Jerárquica:** rutas como `Inicio / Maquinaria / Máquina / Historial`.
+- **Contextual:** acciones como Ver detalle, Editar registro, Programar mantenimiento o Atender alerta.
+- **Utilitaria:** Notificaciones, Ayuda, Perfil y Cerrar sesión.
+
+En desktop se prevé una barra lateral persistente. En anchos menores podrá colapsarse conservando etiquetas accesibles y las mismas rutas. Esta propuesta será revisada cuando se desarrollen los wireframes y mockups de la Web Application.
 
 ## 4.3 Landing Page UI Design
 

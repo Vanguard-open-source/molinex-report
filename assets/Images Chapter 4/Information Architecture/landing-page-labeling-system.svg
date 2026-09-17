@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="650" viewBox="0 0 1400 650">
+  <rect width="1400" height="650" fill="#F5F7FA"/>
+  <text x="70" y="65" font-family="Poppins,Arial" font-size="34" font-weight="700" fill="#102A43">Labeling System de la Landing Page</text>
+  <text x="70" y="102" font-family="Inter,Arial" font-size="18" fill="#486581">Etiquetas breves y consistentes según su función en la interfaz actual.</text>
+  <g font-family="Poppins,Arial" font-size="19" font-weight="600" fill="#102A43">
+    <text x="90" y="175">Navegación global</text><text x="515" y="175">Acciones</text><text x="940" y="175">Contenido</text>
+  </g>
+  <g font-family="Inter,Arial" font-size="17">
+    <rect x="70" y="200" width="350" height="330" rx="18" fill="#FFFFFF" stroke="#D9E2EC"/>
+    <text x="100" y="250" fill="#0B4F8A" font-weight="600">Solution</text><text x="100" y="280" fill="#486581">Presenta el problema.</text>
+    <text x="100" y="330" fill="#0B4F8A" font-weight="600">Features</text><text x="100" y="360" fill="#486581">Agrupa las capacidades.</text>
+    <text x="100" y="410" fill="#0B4F8A" font-weight="600">Plans</text><text x="100" y="440" fill="#486581">Compara suscripciones.</text>
+    <text x="100" y="490" fill="#0B4F8A" font-weight="600">Request information</text>
+    <rect x="495" y="200" width="350" height="330" rx="18" fill="#FFFFFF" stroke="#D9E2EC"/>
+    <text x="525" y="250" fill="#A86F00" font-weight="600">Improve your mill</text><text x="525" y="280" fill="#486581">CTA principal del Hero.</text>
+    <text x="525" y="330" fill="#0B4F8A" font-weight="600">Discover Molinex</text><text x="525" y="360" fill="#486581">Acceso a Solution.</text>
+    <text x="525" y="410" fill="#0B4F8A" font-weight="600">Learn more</text><text x="525" y="440" fill="#486581">Acción desde cada plan.</text>
+    <text x="525" y="490" fill="#0B4F8A" font-weight="600">Request information</text>
+    <rect x="920" y="200" width="410" height="330" rx="18" fill="#FFFFFF" stroke="#D9E2EC"/>
+    <text x="950" y="250" fill="#4F8A2B" font-weight="600">Operational dashboard</text>
+    <text x="950" y="300" fill="#4F8A2B" font-weight="600">Lot traceability</text>
+    <text x="950" y="350" fill="#4F8A2B" font-weight="600">Maintenance control</text>
+    <text x="950" y="400" fill="#4F8A2B" font-weight="600">Alerts and recommendations</text>
+    <text x="950" y="450" fill="#4F8A2B" font-weight="600">Basic · Professional · Enterprise</text>
+  </g>
+  <text x="70" y="600" font-family="Inter,Arial" font-size="15" fill="#486581">Fuente: elaboración propia a partir de las etiquetas implementadas.</text>
+</svg>
