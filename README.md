@@ -203,43 +203,25 @@ En el siguiente cuadro se describen las acciones realizadas y los enunciados de 
 
 ## 1.1 Startup Profile
 
-### 1.1.1 Descripción de la Startup 
-
 ### 1.1.1 Descripción de la Startup
-Vanguard es una startup tecnológica que desarrolla soluciones digitales para optimizar las operaciones de los molinos de arroz. Su plataforma web, basada en el modelo SaaS, integra y analiza datos de producción, calidad, mantenimiento y materia prima para detectar anomalías, identificar posibles causas de pérdidas y generar recomendaciones que mejoren el rendimiento operativo.
 
-Molinex está dirigida a molinos pequeños, medianos y grandes, y ofrece tres planes de suscripción: Básico, Profesional y Empresarial, adaptados a las necesidades de cada cliente.
-
-Misión: Ayudar a los molinos de arroz a mejorar su eficiencia mediante el análisis inteligente de sus datos operativos.
-
-Visión: Ser una plataforma líder en inteligencia operativa para la industria arrocera en el Perú y Latinoamérica.
-
-Valores:
-
-Innovación: Crear soluciones tecnológicas para la industria.
-Eficiencia: Optimizar recursos y procesos.
-Transparencia: Ofrecer información confiable.
-Compromiso: Promover la mejora continua.
-Sostenibilidad: Reducir pérdidas y desperdicios.
-
-**Molinex** es una startup tecnológica que desarrolla soluciones digitales para optimizar las operaciones de los molinos de arroz. Su plataforma web, basada en el modelo **SaaS**, integra y analiza datos de producción, calidad, mantenimiento y materia prima para detectar anomalías, identificar posibles causas de pérdidas y generar recomendaciones que mejoren el rendimiento operativo.
+**Vanguard** es una startup tecnológica que desarrolla soluciones digitales para optimizar las operaciones de los molinos de arroz. Su producto, **Molinex**, es una plataforma web basada en el modelo **SaaS** que integra y analiza datos de producción, calidad, mantenimiento y materia prima para detectar anomalías, identificar posibles causas de pérdidas y generar recomendaciones que mejoren el rendimiento operativo.
 
 Molinex está dirigida a molinos pequeños, medianos y grandes, y ofrece tres planes de suscripción: **Básico, Profesional y Empresarial**, adaptados a las necesidades de cada cliente.
 
 **Misión:**
-Ayudar a los molinos de arroz a mejorar su eficiencia mediante el análisis inteligente de sus datos operativos.
+Ayudar a gerentes, técnicos de mantenimiento y operarios de molinos de arroz a centralizar sus datos de producción, calidad y mantenimiento, para que puedan detectar a tiempo las causas de sus pérdidas y tomar decisiones basadas en información confiable, en lugar de registros dispersos o manuales.
 
 **Visión:**
-Ser una plataforma líder en inteligencia operativa para la industria arrocera en el Perú y Latinoamérica.
+Ser la plataforma de referencia en inteligencia operativa para la industria arrocera del Perú, reconocida por ayudar a los molinos a anticipar fallas de maquinaria y reducir mermas mediante análisis de datos, y expandir esta propuesta hacia otros países productores de arroz en Latinoamérica.
 
 **Valores:**
 
-* **Innovación:** Crear soluciones tecnológicas para la industria.
-* **Eficiencia:** Optimizar recursos y procesos.
-* **Transparencia:** Ofrecer información confiable.
-* **Compromiso:** Promover la mejora continua.
-* **Sostenibilidad:** Reducir pérdidas y desperdicios.
-
+* **Innovación:** Aplicar análisis de datos y detección de anomalías para resolver problemas reales del proceso de molienda, en lugar de ofrecer solo reportes o dashboards genéricos.
+* **Eficiencia:** Reducir el tiempo que toma detectar una falla o una desviación de calidad, para que cada hora de operación del molino se traduzca en menos pérdidas de materia prima.
+* **Transparencia:** Explicar con claridad el origen de cada indicador, alerta y recomendación que muestra la plataforma, para que gerentes, técnicos y operarios confíen en la información que reciben.
+* **Compromiso:** Acompañar a cada molino cliente durante la adopción de la plataforma, ajustando sus funcionalidades según el plan de suscripción y las necesidades reales de su operación.
+* **Sostenibilidad:** Contribuir a reducir la merma y el desperdicio de materia prima mediante la detección temprana de anomalías y el mantenimiento preventivo.
 
 ### 1.1.2 Perfiles de integrantes del equipo
 
