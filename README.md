@@ -1113,9 +1113,34 @@ Las imágenes informativas incluirán un texto alternativo que describa su prop�
 
 ### 4.2.3 SEO Tags and Meta Tags
 
-| Página | Title | Meta Description | Keywords | Author |
+Los SEO Tags y Meta Tags permiten describir el contenido de las experiencias web de Molinex para facilitar su identificación por los navegadores y motores de búsqueda. Para ello, se han definido valores de Title, Description, Keywords y Author para la Landing Page y la Web Application.
+
+| Experiencia web | Title | Description | Keywords | Author |
 |:--|:--|:--|:--|:--|
-| | | | | |
+| Landing Page | Molinex \| Intelligence for better rice milling | Molinex helps rice mills improve production visibility, reduce losses and anticipate equipment failures with intelligent operational analysis. | rice mill, operational intelligence, predictive maintenance, rice production, Molinex | Vanguard - Molinex |
+| Web Application | Molinex \| Operational Management Platform | Web platform for managing production, quality, machinery, maintenance and operational alerts in rice mills. | Molinex, rice mill management, production monitoring, quality control, maintenance management | Vanguard - Molinex |
+
+En la Landing Page, el Title comunica el nombre de la solución y su propósito principal. La Description resume la propuesta de valor de Molinex, mientras que las Keywords representan los conceptos relacionados con el sector arrocero, la inteligencia operativa y el mantenimiento predictivo.
+
+Para la Web Application se propone un Title y una Description orientados a las principales funcionalidades de la plataforma. Estos valores podrán ajustarse cuando se complete el diseño y desarrollo de sus interfaces.
+
+La Landing Page implementa actualmente los siguientes Meta Tags:
+
+~~~html
+<title>Molinex | Intelligence for better rice milling</title>
+
+<meta
+  name="description"
+  content="Molinex helps rice mills improve production visibility, reduce losses and anticipate equipment failures with intelligent operational analysis."
+/>
+
+<meta
+  name="keywords"
+  content="rice mill, operational intelligence, predictive maintenance, rice production, Molinex"
+/>
+
+<meta name="author" content="Vanguard - Molinex" />
+~~~
 
 ### 4.2.4 Searching Systems
 
