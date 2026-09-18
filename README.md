@@ -1354,12 +1354,33 @@ _Archivo de diseño en Figma:_ `https://www.figma.com/design/QytNXR0eMrUtT5MNpJa
 
 ### 4.4.1 Web Applications Wireframes
 
-[ ]
+Los wireframes de la Web Application de Molinex representan la estructura y distribución inicial de las principales vistas del sistema. En esta etapa se prioriza la organización de los elementos, la navegación y la ubicación de los componentes principales, sin incluir todavía los detalles visuales definitivos.
 
-<p align="center">
-  <img src="assets/design/webapp-wireframes.png" alt="Wireframes de la Web Application de Molinex" width="100%">
-</p>
+Las vistas representadas corresponden a:
 
+- Summary: resumen general de indicadores y alertas.
+- Operations: gestión de operaciones productivas.
+- Machinery: consulta del estado de la maquinaria.
+- Maintenance: seguimiento de mantenimientos y alertas.
+- Operational Intelligence: revisión de registros y recomendaciones operativas.
+- Reports: consulta de reportes operativos.
+- Users & Permissions: gestión de usuarios y permisos.
+
+![Wireframe Summary](assets/Images%20Chapter%204/Web%20app/webapp-summary-wireframe.png)
+
+![Wireframe Operations](assets/Images%20Chapter%204/Web%20app/webapp-operations-wireframe.png)
+
+![Wireframe Machinery](assets/Images%20Chapter%204/Web%20app/webapp-machinery-wireframe.png)
+
+![Wireframe Maintenance](assets/Images%20Chapter%204/Web%20app/webapp-maintenance-wireframe.png)
+
+![Wireframe Operational Intelligence](assets/Images%20Chapter%204/Web%20app/webapp-intelligence-wireframe.png)
+
+![Wireframe Reports](assets/Images%20Chapter%204/Web%20app/webapp-reports-wireframe.png)
+
+![Wireframe Users & Permissions](assets/Images%20Chapter%204/Web%20app/webapp-users-wireframe.png)
+
+**Figura:** Wireframes de las principales vistas de la Web Application de Molinex. Fuente: elaboración propia.
 ### 4.4.2 Web Applications Wireflow Diagrams
 
 [ ]
@@ -1370,11 +1391,21 @@ _Archivo de diseño en Figma:_ `https://www.figma.com/design/QytNXR0eMrUtT5MNpJa
 
 ### 4.4.3 Web Applications Mockups
 
-[ ]
+Los mockups de la Web Application representan las principales vistas operativas de Molinex: resumen general, operaciones, maquinaria, mantenimiento, inteligencia operativa, reportes y usuarios.
 
-<p align="center">
-  <img src="assets/design/webapp-mockups.png" alt="Mockups de la Web Application de Molinex" width="100%">
-</p>
+![Mockup Summary](assets/Images%20Chapter%204/Web%20app/webapp-summary.png)
+
+![Mockup Operations](assets/Images%20Chapter%204/Web%20app/webapp-operations.png)
+
+![Mockup Machinery](assets/Images%20Chapter%204/Web%20app/webapp-machinery.png)
+
+![Mockup Maintenance](assets/Images%20Chapter%204/Web%20app/webapp-maintenance.png)
+
+![Mockup Operational Intelligence](assets/Images%20Chapter%204/Web%20app/webapp-intelligence.png)
+
+![Mockup Reports](assets/Images%20Chapter%204/Web%20app/webapp-reports.png)
+
+![Mockup Users](assets/Images%20Chapter%204/Web%20app/webapp-users.png)
 
 ### 4.4.4 Web Applications User Flow Diagrams
 
