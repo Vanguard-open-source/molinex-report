@@ -1383,12 +1383,39 @@ Las vistas representadas corresponden a:
 **Figura:** Wireframes de las principales vistas de la Web Application de Molinex. Fuente: elaboración propia.
 ### 4.4.2 Web Applications Wireflow Diagrams
 
-[ ]
+Los Wireflow Diagrams representan los recorridos principales de los usuarios dentro de la Web Application de Molinex. Cada flujo muestra las pantallas involucradas y la navegación necesaria para alcanzar un objetivo específico.
 
-<p align="center">
-  <img src="assets/design/webapp-wireflow.png" alt="Wireflow Diagram de la Web Application de Molinex" width="100%">
-</p>
+#### User Goal 1: Revisar el estado general del molino
 
+Como gerente, quiero revisar el estado general del molino.
+
+![Wireflow de revisión operativa](assets/Images%20Chapter%204/Web%20app/flow-01-operational-overview.png)
+
+**Figura:** Wireflow para revisar el estado general del molino. Fuente: elaboración propia.
+
+#### User Goal 2: Registrar una operación
+
+Como encargado de operaciones, quiero registrar una operación.
+
+![Wireflow de registro de operación](assets/Images%20Chapter%204/Web%20app/flow-02-register-operation.png)
+
+**Figura:** Wireflow para registrar una operación. Fuente: elaboración propia.
+
+#### User Goal 3: Gestionar mantenimiento
+
+Como técnico, quiero revisar y registrar un mantenimiento.
+
+![Wireflow de gestión de mantenimiento](assets/Images%20Chapter%204/Web%20app/flow-03-manage-maintenance.png)
+
+**Figura:** Wireflow para gestionar el mantenimiento de los equipos. Fuente: elaboración propia.
+
+#### User Goal 4: Gestionar usuarios y permisos
+
+Como administrador, quiero gestionar usuarios y permisos.
+
+![Wireflow de usuarios y permisos](assets/Images%20Chapter%204/Web%20app/flow-04-manage-users.png)
+
+**Figura:** Wireflow para gestionar usuarios y permisos. Fuente: elaboración propia.
 ### 4.4.3 Web Applications Mockups
 
 Los mockups de la Web Application representan las principales vistas operativas de Molinex: resumen general, operaciones, maquinaria, mantenimiento, inteligencia operativa, reportes y usuarios.
