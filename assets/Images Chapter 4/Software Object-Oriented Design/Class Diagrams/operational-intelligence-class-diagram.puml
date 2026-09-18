@@ -1,0 +1,144 @@
+@startuml
+title Operational Intelligence Bounded Context - Class Diagram
+left to right direction
+hide circle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype ortho
+skinparam packageStyle rectangle
+
+package "Operational Intelligence Bounded Context" #EAF3F8 {
+  class OperationalReading <<Aggregate Root>> {
+    -id : OperationalReadingId
+    -machineId : MachineId
+    -measurement : OperationalMeasurement
+    -recordedAt : Instant
+    --
+    +record(machineId, measurement, recordedAt)
+  }
+
+  class OperationalAnomaly <<Aggregate Root>> {
+    -id : OperationalAnomalyId
+    -readingId : OperationalReadingId
+    -measurement : OperationalMeasurement
+    -criterion : EvaluationCriterion
+    -detectedAt : Instant
+    -status : AnomalyStatus
+    --
+    +acknowledge()
+    +resolve()
+  }
+
+  class Alert <<Aggregate Root>> {
+    -id : AlertId
+    -anomalyId : OperationalAnomalyId
+    -priority : AlertPriority
+    -status : AlertStatus
+    -generatedAt : Instant
+    --
+    +acknowledge()
+    +close()
+  }
+
+  class OperationalReadingId <<Value Object>> {
+    -value : UUID
+  }
+  class OperationalAnomalyId <<Value Object>> {
+    -value : UUID
+  }
+  class AlertId <<Value Object>> {
+    -value : UUID
+  }
+  class MachineId <<Value Object>> {
+    -value : UUID
+  }
+
+  class OperationalMeasurement <<Value Object>> {
+    -variableName : String
+    -value : BigDecimal
+    -unitSymbol : String
+  }
+  class EvaluationCriterion <<Value Object>> {
+    -minimum : BigDecimal
+    -maximum : BigDecimal
+    +isViolatedBy(value : BigDecimal) : boolean
+  }
+
+  enum AnomalyStatus <<Enumeration>> {
+    DETECTED
+    ACKNOWLEDGED
+    RESOLVED
+  }
+  enum AlertPriority <<Enumeration>> {
+    LOW
+    MEDIUM
+    HIGH
+    CRITICAL
+  }
+  enum AlertStatus <<Enumeration>> {
+    OPEN
+    ACKNOWLEDGED
+    CLOSED
+  }
+
+  class AnomalyDetectionService <<Domain Service>> {
+    +detect(reading : OperationalReading, criterion : EvaluationCriterion) : Optional<OperationalAnomaly>
+  }
+
+  class MaintenanceRecommendation <<Read Model>> {
+    +machineId : UUID
+    +anomalyId : UUID
+    +suggestedAction : String
+    +priority : String
+  }
+
+  interface SensorGatewayPort <<Port>> {
+    +receive(payload : SensorReadingPayload) : OperationalReading
+  }
+  class SensorReadingPayload <<External DTO>> {
+    +machineReference : String
+    +variableName : String
+    +value : BigDecimal
+    +unitSymbol : String
+    +recordedAt : Instant
+  }
+  interface NotificationPort <<Port>> {
+    +sendOperationalAlert(alert : Alert)
+  }
+
+  interface OperationalReadingRepository <<Repository>> {
+    +save(reading : OperationalReading)
+    +findById(id : OperationalReadingId) : Optional<OperationalReading>
+  }
+  interface OperationalAnomalyRepository <<Repository>> {
+    +save(anomaly : OperationalAnomaly)
+    +findById(id : OperationalAnomalyId) : Optional<OperationalAnomaly>
+  }
+  interface AlertRepository <<Repository>> {
+    +save(alert : Alert)
+    +findById(id : AlertId) : Optional<Alert>
+  }
+}
+
+OperationalReading *-- "1" OperationalReadingId
+OperationalReading *-- "1" MachineId : local reference
+OperationalReading *-- "1" OperationalMeasurement
+OperationalAnomaly *-- "1" OperationalAnomalyId
+OperationalAnomaly *-- "1" OperationalReadingId : references by id
+OperationalAnomaly *-- "1" OperationalMeasurement
+OperationalAnomaly *-- "1" EvaluationCriterion
+OperationalAnomaly --> "1" AnomalyStatus
+Alert *-- "1" AlertId
+Alert *-- "1" OperationalAnomalyId : references by id
+Alert --> "1" AlertPriority
+Alert --> "1" AlertStatus
+AnomalyDetectionService ..> OperationalReading
+AnomalyDetectionService ..> OperationalAnomaly : creates
+SensorGatewayPort ..> SensorReadingPayload : translates
+SensorGatewayPort ..> OperationalReading : creates
+NotificationPort ..> Alert : delivers
+OperationalReadingRepository ..> OperationalReading : persists
+OperationalAnomalyRepository ..> OperationalAnomaly : persists
+AlertRepository ..> Alert : persists
+MaintenanceRecommendation ..> OperationalAnomalyId : projects
+@enduml

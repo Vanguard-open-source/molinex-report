@@ -1,0 +1,91 @@
+@startuml
+title Asset and Maintenance Management Bounded Context - Class Diagram
+left to right direction
+hide circle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype ortho
+skinparam packageStyle rectangle
+
+package "Asset and Maintenance Management Bounded Context" #EAF3F8 {
+  class Machine <<Aggregate Root>> {
+    -id : MachineId
+    -code : MachineCode
+    -name : String
+    -model : String
+    -status : MachineStatus
+    -statusChangedAt : Instant
+    --
+    +register(code, name, model)
+    +changeStatus(status : MachineStatus, changedAt : Instant)
+  }
+
+  class MaintenanceRecord <<Aggregate Root>> {
+    -id : MaintenanceRecordId
+    -machineId : MachineId
+    -type : MaintenanceType
+    -performedAt : Instant
+    -description : MaintenanceDescription
+    -responsible : TechnicianReference
+    -anomalyReference : Optional<AnomalyReference>
+    --
+    +recordPreventive(machineId, performedAt, description, responsible)
+    +recordCorrective(machineId, performedAt, description, responsible, anomaly)
+  }
+
+  class MachineId <<Value Object>> {
+    -value : UUID
+  }
+  class MaintenanceRecordId <<Value Object>> {
+    -value : UUID
+  }
+  class MachineCode <<Value Object>> {
+    -value : String
+  }
+  class MaintenanceDescription <<Value Object>> {
+    -value : String
+    +isBlank() : boolean
+  }
+  class TechnicianReference <<Value Object>> {
+    -principalId : UUID
+    -displayName : String
+  }
+  class AnomalyReference <<Value Object>> {
+    -anomalyId : UUID
+  }
+
+  enum MachineStatus <<Enumeration>> {
+    OPERATIONAL
+    REQUIRES_ATTENTION
+    UNDER_MAINTENANCE
+    OUT_OF_SERVICE
+  }
+  enum MaintenanceType <<Enumeration>> {
+    PREVENTIVE
+    CORRECTIVE
+  }
+
+  interface MachineRepository <<Repository>> {
+    +save(machine : Machine)
+    +findById(id : MachineId) : Optional<Machine>
+    +existsByCode(code : MachineCode) : boolean
+  }
+  interface MaintenanceRecordRepository <<Repository>> {
+    +save(record : MaintenanceRecord)
+    +findById(id : MaintenanceRecordId) : Optional<MaintenanceRecord>
+    +findByMachineId(machineId : MachineId) : List<MaintenanceRecord>
+  }
+}
+
+Machine *-- "1" MachineId
+Machine *-- "1" MachineCode
+Machine --> "1" MachineStatus
+MaintenanceRecord *-- "1" MaintenanceRecordId
+MaintenanceRecord *-- "1" MachineId : references by id
+MaintenanceRecord *-- "1" MaintenanceDescription
+MaintenanceRecord *-- "1" TechnicianReference
+MaintenanceRecord o-- "0..1" AnomalyReference
+MaintenanceRecord --> "1" MaintenanceType
+MachineRepository ..> Machine : persists
+MaintenanceRecordRepository ..> MaintenanceRecord : persists
+@enduml
