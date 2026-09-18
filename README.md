@@ -1384,13 +1384,87 @@ _Enlace al video demostrativo (Microsoft Stream):_ `[URL]`
 
 ### 4.6.1 Design-Level Event Storming
 
-| Bounded Context | Commands (ejemplos) | Events (ejemplos) | Queries (ejemplos) |
-|:--|:--|:--|:--|
-| | | | |
+El Design-Level EventStorming de Molinex refina los resultados del Big Picture EventStorming y las User Stories para definir límites de consistencia, responsabilidades y contratos de integración. El análisis no presupone una arquitectura de microservicios: los Bounded Contexts se implementarán como módulos de un único backend desplegable, siguiendo un enfoque de monolito modular. Cada módulo conserva su propio modelo y evita acceder directamente a los Aggregates de otro contexto.
+
+Los modelos fueron elaborados con PlantUML bajo el enfoque Diagram-as-Code. Las fuentes `.puml` se conservan junto con sus representaciones SVG para que las decisiones puedan revisarse y evolucionar mediante control de versiones.
+
+#### Bounded Contexts definitivos
+
+| Bounded Context | Clasificación | Responsabilidad |
+|:--|:--|:--|
+| `Commercial Engagement` | Supporting Subdomain | Presentar la oferta comercial y registrar solicitudes de visitantes interesados. No incluye todavía contratación, pago ni activación de suscripciones. |
+| `Identity and Access Management` | Generic Subdomain | Gestionar usuarios, autenticación, roles, permisos y datos de perfil. |
+| `Production Management` | Core Subdomain | Gestionar recepciones de materia prima, lotes y registros de producción. |
+| `Quality and Yield Control` | Core Subdomain | Registrar resultados de calidad y merma, consultar indicadores e identificar desviaciones. |
+| `Asset and Maintenance Management` | Core Subdomain | Gestionar el inventario de máquinas y registrar mantenimiento preventivo y correctivo. |
+| `Operational Intelligence` | Core Subdomain | Registrar variables operativas, detectar anomalías y generar alertas e información de atención. |
+| `Reporting and Analytics` | Supporting Subdomain / Read Side | Construir proyecciones para resúmenes, reportes y tendencias sin apropiarse de los Aggregates operativos. |
+
+`Profiles` no se separa como Bounded Context porque la información de perfil forma parte del ciclo de vida del `User`. `Subscriptions` tampoco se incorpora: los requerimientos actuales permiten consultar planes, pero no definen contratación, pago, tenancy ni activación. Finalmente, `Shared` no se considera un Bounded Context; el subconjunto compartido se modela explícitamente como Shared Kernel.
+
+#### Commands, Aggregate Roots, Domain Events and Queries
+
+| Bounded Context | Commands | Aggregate Roots | Domain Events | Queries / Read Models |
+|:--|:--|:--|:--|:--|
+| `Commercial Engagement` | `SubmitCommercialInquiry` | `CommercialInquiry` | `CommercialInquirySubmitted` | `GetPlanCatalog`, `GetValueProposition` |
+| `Identity and Access Management` | `RegisterUser`, `AssignRole`, `AuthenticateUser`, `UpdateUserProfile` | `User` | `UserRegistered`, `RoleAssigned`, `UserAuthenticated`, `UserProfileUpdated` | `GetAuthorizedFunctions`, `GetUserProfile` |
+| `Production Management` | `RecordRawMaterialReception`, `RegisterProductionBatch`, `RecordProductionInformation`, `UpdateProductionInformation` | `RawMaterialReception`, `ProductionBatch`, `ProductionRecord` | `RawMaterialReceptionRecorded`, `ProductionBatchRegistered`, `ProductionInformationRecorded`, `ProductionInformationUpdated` | `GetProductionProcesses`, `GetProductionHistory` |
+| `Quality and Yield Control` | `RecordQualityResults`, `RecordProductionWaste`, `IdentifyQualityDeviation` | `QualityAssessment`, `WasteRecord`, `QualityDeviation` | `QualityResultsRecorded`, `ProductionWasteRecorded`, `QualityDeviationIdentified` | `GetYieldIndicators`, `GetRiceComposition`, `GetProductionWaste`, `CompareQualityIndicators` |
+| `Asset and Maintenance Management` | `RegisterMachine`, `RecordPreventiveMaintenance`, `RecordCorrectiveMaintenance` | `Machine`, `MaintenanceRecord` | `MachineRegistered`, `PreventiveMaintenanceRecorded`, `CorrectiveMaintenanceRecorded` | `GetMachineStatus`, `GetMaintenanceHistory` |
+| `Operational Intelligence` | `RecordOperationalVariable`, `DetectOperationalAnomaly`, `GenerateOperationalAlert` | `OperationalReading`, `OperationalAnomaly`, `Alert` | `OperationalVariableRecorded`, `OperationalAnomalyDetected`, `OperationalAlertGenerated` | `GetOperationalVariables`, `GetAnomalyHistory`, `GetAlerts`, `GetMaintenanceRecommendations` |
+| `Reporting and Analytics` | — | — | — | `GetOperationalSummary`, `GetProductionReport`, `GetMaintenanceReport`, `GetOperationalTrends` |
+
+`Reporting and Analytics` no define Aggregate Roots por ahora. Las historias describen consultas y generación de vistas, pero no confirman que un reporte posea identidad, ciclo de vida o persistencia propia. Si posteriormente se exige almacenar, versionar o aprobar reportes, esa decisión podrá introducir un Aggregate específico.
 
 <p align="center">
-  <img src="assets/design/design-level-event-storming.png" alt="Sesión de Design-Level Event Storming en FigJam" width="100%">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/design-level-event-storming.svg" alt="Design-Level EventStorming de Molinex" width="100%">
 </p>
+
+#### Aggregate boundaries and invariants
+
+Los límites se definieron aplicando cuatro criterios: cada Aggregate protege invariantes dentro de una transacción; debe mantenerse pequeño; las referencias hacia otros Aggregates se expresan mediante identificadores; y los cambios entre Aggregates o Bounded Contexts se propagan mediante Domain Events y consistencia eventual. Por ello, compartir el mismo dato físico no implica compartir la misma clase o el mismo Aggregate.
+
+| Bounded Context | Aggregate Root | Invariantes y responsabilidad protegida | Referencias externas o entre Aggregates |
+|:--|:--|:--|:--|
+| Identity and Access Management | `User` | Correo único, cuenta válida, rol permitido y datos de perfil válidos. | No expone su objeto interno; los demás módulos reciben un principal autenticado y claims. |
+| Production Management | `RawMaterialReception` | Fecha, proveedor, procedencia y cantidad obligatorios; la cantidad recibida debe ser válida. | Sin referencia directa a otro Aggregate. |
+| Production Management | `ProductionBatch` | Código de lote único y relación obligatoria con una recepción existente. | `RawMaterialReceptionId` local del contexto. |
+| Production Management | `ProductionRecord` | Datos productivos válidos, vínculo estable con el lote y actualización controlada. | `ProductionBatchId` local del contexto. |
+| Quality and Yield Control | `QualityAssessment` | Valores de calidad dentro de rangos permitidos y vínculo con producción. | `ProductionRecordId` propio de Quality, no el tipo interno de Production. |
+| Quality and Yield Control | `WasteRecord` | Cantidad no negativa y porcentaje calculable solo cuando existe una base válida. | `ProductionRecordId` propio de Quality. |
+| Quality and Yield Control | `QualityDeviation` | Solo existe cuando un indicador evaluado está fuera de su rango; conserva indicador, valor y fecha. | Referencias locales a la evaluación o registro que originó la desviación. |
+| Asset and Maintenance Management | `Machine` | Identificador único, datos obligatorios y estado operativo permitido. | Sin importar Aggregates de Operational Intelligence. |
+| Asset and Maintenance Management | `MaintenanceRecord` | Máquina obligatoria, tipo preventivo o correctivo, fecha, descripción y responsable válidos. | `MachineId` local; puede conservar un `AnomalyId` local como referencia informativa. |
+| Operational Intelligence | `OperationalReading` | Máquina, variable, valor y momento de medición obligatorios. | `MachineId` propio de Operational Intelligence. |
+| Operational Intelligence | `OperationalAnomaly` | Se crea únicamente cuando una lectura incumple un criterio definido; conserva variable, valor, fecha y estado. | `OperationalReadingId` local. |
+| Operational Intelligence | `Alert` | Toda alerta corresponde a una anomalía y mantiene una prioridad y estado de atención válidos. | `OperationalAnomalyId` local. |
+| Commercial Engagement | `CommercialInquiry` | Datos de contacto y consulta obligatorios y válidos. | Permanece independiente de IAM mientras no exista un flujo de onboarding confirmado. |
+
+#### Shared Kernel
+
+El Shared Kernel se limita a `Weight` y `MeasurementUnit`, compartidos por `Production Management` y `Quality and Yield Control`. `Weight` representa una magnitud y una unidad compatibles; las reglas particulares, como exigir una recepción estrictamente positiva o admitir merma cero, permanecen en el Aggregate correspondiente.
+
+El Shared Kernel no contiene identificadores, Aggregates, repositorios, servicios de infraestructura, gateways de notificación ni clases base. Cualquier cambio en sus Value Objects debe considerar simultáneamente a Production y Quality y mantenerse cubierto por pruebas de invariantes.
+
+#### DDD Context Map
+
+El Context Map hace explícitas las relaciones estratégicas. Estas relaciones describen dependencias de modelos dentro del monolito modular.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/context-map.svg" alt="DDD Context Map de Molinex" width="100%">
+</p>
+
+| Relación | Patrón | Contrato y decisión |
+|:--|:--|:--|
+| Commercial Engagement — IAM | Separate Ways | No existe todavía un contrato confirmado para convertir una solicitud comercial en suscripción, tenant o cuenta. |
+| IAM → módulos operativos | Open Host Service / Published Language | Los módulos reciben `AuthenticatedPrincipal` y claims de autorización; no importan el Aggregate `User`. |
+| Production Management → Quality and Yield Control | Customer/Supplier + Published Language | Production publica `ProductionInformationRecorded` y `ProductionInformationUpdated`; Quality traduce los identificadores a sus propios tipos. |
+| Production Management — Quality and Yield Control | Shared Kernel | Comparten únicamente `Weight` y `MeasurementUnit`. |
+| Quality and Yield Control → Operational Intelligence | Customer/Supplier + Published Language | `QualityDeviationIdentified` puede alimentar recomendaciones sin compartir el Aggregate `QualityDeviation`. |
+| Asset and Maintenance Management ↔ Operational Intelligence | Partnership + Published Language | Coordinan máquinas, anomalías y mantenimiento mediante eventos e identificadores locales. |
+| Módulos operativos → Reporting and Analytics | Customer/Supplier + Published Language | Reporting consume eventos publicados y construye sus propias proyecciones; no consulta directamente los repositorios de los módulos productores. |
+
+La combinación de referencias locales, Published Language y proyecciones permite que cada Bounded Context evolucione sin compartir sus Aggregate Roots. La comunicación puede ejecutarse mediante eventos internos en memoria porque el sistema será un monolito modular; no requiere broker de mensajería ni comunicación HTTP entre módulos.
 
 ### 4.6.2 Software Architecture Context Diagram
 
