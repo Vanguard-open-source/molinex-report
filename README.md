@@ -1614,26 +1614,91 @@ Reporting and Analytics se modela como un *read side*: consume eventos expresado
 
 ### 5.1.1 Software Development Environment Configuration
 
+
+El entorno de desarrollo de Molinex está compuesto por una Landing Page estática y una Web Application responsive. La configuración se definió considerando las tecnologías indicadas en el contrato del curso y las necesidades de la solución.
+
 | Producto | Tecnologías | Herramientas principales |
 |:--|:--|:--|
-| Landing Page | | |
-| Web Application | | |
-| RESTful API | | |
-| Database | | |
+| Landing Page | HTML5, CSS3 y JavaScript | Visual Studio Code, Git y GitHub |
+| Web Application | Angular 22, TypeScript y SCSS | Angular CLI, Angular Material, Angular CDK, Visual Studio Code y pnpm |
+| RESTful API | Spring Boot y Java | Spring Initializr, Maven y Swagger/OpenAPI |
+| Database | Pendiente de definición e integración | Herramienta de gestión de base de datos por confirmar |
+
+La Landing Page se utiliza para presentar la propuesta de valor de Molinex, sus funcionalidades, beneficios y planes. La Web Application permite gestionar información relacionada con operaciones, maquinaria, mantenimiento, calidad, reportes y usuarios.
+
+La Web Application fue configurada con Angular CLI y utiliza TypeScript para la lógica de la aplicación y SCSS para los estilos responsive. También se incorporaron Angular Material y Angular CDK como bibliotecas de apoyo para la construcción de componentes de interfaz.
+
+Durante esta etapa, la Web Application utiliza datos locales almacenados temporalmente en el navegador mediante `localStorage`. La conexión con la RESTful API y la base de datos será incorporada cuando se complete la implementación del backend.
 
 ### 5.1.2 Source Code Management
 
-[Repositorios, GitFlow (branches y convenciones), Conventional Commits, Semantic Versioning.]
+El código fuente del proyecto Molinex se gestiona mediante Git y GitHub. El repositorio permite controlar las versiones del informe, la Landing Page y la Web Application, además de registrar la participación de los integrantes del equipo.
+
+Para organizar el desarrollo colaborativo se utiliza GitFlow:
+
+- La rama `main` contiene las versiones estables del proyecto.
+- La rama `develop` concentra la integración de los cambios.
+- Las ramas `feature/*` se utilizan para desarrollar funcionalidades o secciones específicas.
+- Las ramas de funcionalidades se integran posteriormente en `develop`.
+
+Para este avance se utiliza la rama:
+
+`feature/chapter-5-evidence`
+
+![Ramas GitFlow del proyecto](assets/Images%20Chapter%205/github-branches.png)
+
+**Figura:** Ramas GitFlow utilizadas para organizar el desarrollo colaborativo de Molinex. Fuente: elaboración propia.
 
 ### 5.1.3 Source Code Style Guide & Coding Conventions
 
+El equipo estableció convenciones de código para mantener la legibilidad, consistencia y facilidad de mantenimiento de los productos de Molinex. Estas convenciones se aplican principalmente a la Landing Page, la Web Application y la documentación del proyecto.
+
 | Área | Convenciones |
 |:--|:--|
-| | |
+| TypeScript | Se utiliza `camelCase` para variables, atributos y métodos; y `PascalCase` para clases y componentes. |
+| Angular | Los componentes se organizan según la funcionalidad que implementan y mantienen una responsabilidad específica. |
+| HTML | Se utilizan elementos semánticos, atributos `alt` en imágenes y etiquetas visibles para los campos de formulario. |
+| SCSS | Se utilizan clases descriptivas, estilos reutilizables y media queries para adaptar la interfaz a diferentes tamaños de pantalla. |
+| CSS responsive | Se consideran breakpoints para desktop, tablet y móvil, evitando el desbordamiento horizontal. |
+| Formularios | Los campos tienen etiquetas visibles, placeholders descriptivos y validaciones básicas. |
+| Git | Se utilizan ramas GitFlow y mensajes basados en Conventional Commits. |
+| Archivos | Los nombres de archivos se escriben en minúsculas y utilizan guiones cuando es necesario. |
+| Documentación | Los títulos y secciones se organizan mediante Markdown y utilizan una estructura jerárquica. |
+
+En la Web Application se prioriza la separación de responsabilidades, la reutilización de componentes y la consistencia visual. Las vistas se organizan mediante rutas y los módulos operativos mantienen una estructura común para facilitar la navegación y el mantenimiento.
+
+También se aplican criterios básicos de accesibilidad, como textos alternativos para imágenes, etiquetas visibles en formularios, estados de foco y contraste suficiente entre el contenido y el fondo.
+
+![Convenciones de código de la Web Application](assets/Images%20Chapter%205/code-conventions.png)
+
+**Figura:** Organización del código Angular y ejecución del servidor de desarrollo de Molinex. Fuente: elaboración propia.
 
 ### 5.1.4 Software Deployment Configuration
 
-[ ]
+La primera versión de la Landing Page de Molinex fue desplegada mediante GitHub Pages. Esta publicación permite acceder a la solución desde un navegador sin necesidad de ejecutar el proyecto localmente.
+
+URL pública:
+
+[https://vanguard-open-source.github.io/molinex-website/](https://vanguard-open-source.github.io/molinex-website/)
+
+La Web Application se ejecuta localmente mediante Angular CLI utilizando:
+
+```bash
+pnpm exec ng serve
+```
+`http://localhost:4200`
+
+![Dashboard de la Web Application](assets/Images%20Chapter%205/webapp-dashboard.png)
+
+**Figura:** Dashboard de la Web Application de Molinex ejecutado localmente mediante Angular CLI. Fuente: elaboración propia.
+
+La Landing Page fue validada mediante la URL pública de GitHub Pages:
+
+[https://vanguard-open-source.github.io/molinex-website/](https://vanguard-open-source.github.io/molinex-website/)
+
+![Landing Page desplegada](assets/Images%20Chapter%205/landing-deployed.png)
+
+**Figura:** Landing Page de Molinex desplegada mediante GitHub Pages. Fuente: elaboración propia.
 
 ## 5.2 Landing Page, Services & Applications Implementation
 
@@ -1679,7 +1744,11 @@ Reporting and Analytics se modela como un *read side*: consume eventos expresado
 
 #### 5.2.1.4 Development Evidence for Sprint Review
 
-[Tabla de commits por repositorio: Repository, Branch, Commit Id, Commit Message, Commit Message Body, Commited on.]
+La participación en el desarrollo se evidencia mediante el historial de commits registrados en GitHub.
+
+![Commits del repositorio](assets/Images%20Chapter%205/github-commits.png)
+
+**Figura:** Historial de commits registrados en el repositorio del proyecto. Fuente: elaboración propia.
 
 #### 5.2.1.5 Execution Evidence for Sprint Review
 
