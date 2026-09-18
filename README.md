@@ -653,7 +653,7 @@ Se identificaron las siguientes políticas de negocio candidatas:
 | Se incorpora una variable operativa de una máquina. | Evaluar la variable utilizando los criterios operativos definidos. | Variable aceptada o anomalía detectada. |
 | Se detecta una anomalía operativa. | Generar información de atención para el técnico responsable. | Alerta y recomendación de mantenimiento disponibles. |
 
-Las consultas de procesos, historiales, indicadores, estado de maquinaria, alertas, recomendaciones, resúmenes y tendencias se representaron como *Read Models*. No se añadió ningún sistema externo al flujo debido a que los requerimientos actuales todavía no confirman una integración concreta con sensores, pasarelas de pago, mensajería u otros proveedores.
+Las consultas de procesos, historiales, indicadores, estado de maquinaria, alertas, recomendaciones, resúmenes y tendencias se representaron como *Read Models*. Durante el EventStorming no se añadió ningún sistema externo al flujo porque la investigación todavía no confirmaba una integración concreta. Posteriormente, la arquitectura C4 incorporó `Rice Mill Sensor Gateway` y `Notification Delivery Service` como integraciones planificadas; permanecen fuera del flujo de dominio hasta que sus contratos sean validados durante la implementación.
 
 <p align="center">
   <img src="assets/Images%20Chapter%202/Big%20Picture%20Event%20Storming/step-3-track-causes.svg" alt="Paso 3: actores, comandos, políticas, eventos y modelos de lectura de Molinex" width="100%">
@@ -1466,29 +1466,46 @@ El Context Map hace explícitas las relaciones estratégicas. Estas relaciones d
 
 La combinación de referencias locales, Published Language y proyecciones permite que cada Bounded Context evolucione sin compartir sus Aggregate Roots. La comunicación puede ejecutarse mediante eventos internos en memoria porque el sistema será un monolito modular; no requiere broker de mensajería ni comunicación HTTP entre módulos.
 
+Los sistemas externos planificados no constituyen Bounded Contexts. `Operational Intelligence` traducirá las mediciones provenientes de `Rice Mill Sensor Gateway` mediante un adaptador que proteja su modelo de dominio, mientras que `Identity and Access Management` y `Operational Intelligence` utilizarán un puerto de notificaciones para desacoplarse de `Notification Delivery Service`.
+
 ### 4.6.2 Software Architecture Context Diagram
 
-[Context Diagram de C4 Model elaborado en la herramienta indicada (Structurizr).]
+El diagrama de contexto presenta a Molinex como un único sistema de software, muestra los objetivos principales de sus actores e incorpora `Rice Mill Sensor Gateway` y `Notification Delivery Service` como integraciones externas planificadas. No expone decisiones internas de implementación.
 
 <p align="center">
-  <img src="assets/design/context-diagram.png" alt="Software Architecture Context Diagram de Molinex" width="100%">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/software-system-context.svg" alt="Software Architecture Context Diagram de Molinex" width="100%">
 </p>
+
+**Figura: Software Architecture Context Diagram de Molinex. Fuente: elaboración propia en Structurizr.**
 
 ### 4.6.3 Software Architecture Container Diagrams
 
-[Container Diagram de C4 Model elaborado en la herramienta indicada (Structurizr).]
 
 <p align="center">
-  <img src="assets/design/container-diagram.png" alt="Software Architecture Container Diagram de Molinex" width="100%">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/container-diagram.svg" alt="Software Architecture Container Diagram de Molinex" width="100%">
 </p>
+
+**Figura: Software Architecture Container Diagram de Molinex. Fuente: elaboración propia en Structurizr.**
 
 ### 4.6.4 Software Architecture Components Diagrams
 
-[Component Diagram de C4 Model por cada Container, elaborado en la herramienta indicada (Structurizr).]
+Los diagramas de componentes separan el frontend y el backend para conservar un nivel de detalle legible. La primera vista descompone la Web Application en áreas funcionales de Angular y la segunda presenta los módulos de Bounded Context que conviven dentro de la RESTful API, junto con sus puertos hacia los sistemas externos planificados.
+
+#### Frontend Component Diagram
 
 <p align="center">
-  <img src="assets/design/component-diagram.png" alt="Software Architecture Component Diagram de Molinex" width="100%">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/frontend-component-diagram.svg" alt="Frontend Component Diagram de Molinex" width="100%">
 </p>
+
+**Figura: Web Application Component Diagram de Molinex. Fuente: elaboración propia en Structurizr.**
+
+#### Backend Component Diagram
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/backend-component-diagram.svg" alt="Backend Component Diagram de Molinex" width="100%">
+</p>
+
+**Figura: RESTful API Component Diagram de Molinex. Fuente: elaboración propia en Structurizr.**
 
 ## 4.7 Software Object-Oriented Design
 
