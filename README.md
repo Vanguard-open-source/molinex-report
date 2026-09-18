@@ -1748,21 +1748,48 @@ La Web Application, la RESTful API y la base de datos no forman parte del despli
 ### 5.2.1 Sprint 1
 
 #### 5.2.1.1 Sprint Planning 1
+El Sprint 1 abre el desarrollo de Molinex con dos frentes. El primero es la Landing Page, que presenta a los visitantes la propuesta de valor, las funcionalidades, los beneficios y los planes de suscripción Básico, Profesional y Empresarial, y les permite solicitar información comercial (EP-07). El segundo es la gestión de acceso y usuarios (EP-01), base de seguridad sobre la que se construirán los demás módulos de la plataforma.
+
+A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con el Sprint Goal, el velocity establecido y las historias de usuario comprometidas.
 
 | Sprint # | Sprint 1 |
 |:--|:--|
 | **Sprint Planning Background** | |
-| Date | [ ] |
-| Time | [ ] |
-| Location | [ ] |
-| Prepared By | [ ] |
-| Attendees (to planning meeting) | [ ] |
+| Date | 26-09-02 |
+| Time | 7:00 PM |
+| Location | virtual (videollamada del equipo por Google Meet|
+| Prepared By | Gallegos De La Cruz, Giovanni Marcelo |
+| Attendees (to planning meeting) | Gallegos De La Cruz, Giovanni Marcelo / Casalino Berrocal, Luisa Nhiriel / Huerta Cardenas, Brayan Benjamin / Jimenez Saavedra, Antony Alexander / Rivera Rupay, Fabricio Jose |
 | Sprint n - 1 Review Summary | No aplica (primer Sprint). |
 | Sprint n - 1 Retrospective Summary | No aplica (primer Sprint). |
 | **Sprint Goal & User Stories** | |
-| Sprint 1 Goal | [Our focus is on... We believe it delivers... This will be confirmed when...] |
-| Sprint 1 Velocity | [ ] |
-| Sum of Story Points | [ ] |
+| Sprint 1 Goal | Our focus is on letting prospective mills evaluate Molinex and choose a subscription plan from the landing page, and on giving authorized mill staff role-based access to the platform.We believe it delivers a clearer understanding of Molinex's value, features and plans to the mill owners and administrators who visit the site, and controlled access to operational information to administrators, technicians and operators.This will be confirmed when a visitor can review the value proposition, benefits, features and the Basic, Professional and Enterprise plans and submit a commercial information request in no more than three steps, and when an administrator can register a user and assign a role, and that user can log in, update their profile and is denied access to functionalities outside their role.|
+|Sprint 1 Velocity | 20 Story Points. Primer Sprint sin velocity histórico: se adopta una capacidad conservadora para un equipo de 5 integrantes. |
+|Sum of Story Points | 20 Story Points (US-01 a US-04, US-35 a US-40) |
+
+* 5.2.1.2. Sprint Backlog 1
+
+| Sprint # | Sprint 1 | | | | | | |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **User Story** | | **Work-Item / Task** | | | | | |
+| **Id** | **Title** | **Id** | **Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status (To-do / In-Process / Done)** |
+| US-01 | Registrar usuario | TS-01.1 | Diseñar formulario de registro | Como administrador, quiero registrar nuevos usuarios en el sistema, para otorgarles acceso a la plataforma. | 4 | Casalino Berrocal, Luisa Nhiriel | Done |
+| US-01 | Registrar usuario | TS-01.2 | Implementar API de registro | Como administrador, quiero registrar nuevos usuarios en el sistema, para otorgarles acceso a la plataforma. | 6 | Gallegos De La Cruz, Giovanni Marcelo | Done |
+| US-01 | Registrar usuario | TS-01.3 | Pruebas de integración de registro | Como administrador, quiero registrar nuevos usuarios en el sistema, para otorgarles acceso a la plataforma. | 3 | Huerta Cardenas, Brayan Benjamin | Done |
+| US-02 | Iniciar sesión | TS-02.1 | Diseñar interfaz de Login | Como usuario del molino, quiero iniciar sesión en la plataforma, para acceder a mis funciones asignadas. | 3 | Jimenez Saavedra, Antony Alexander | Done |
+| US-02 | Iniciar sesión | TS-02.2 | Implementar autenticación JWT | Como usuario del molino, quiero iniciar sesión en la plataforma, para acceder a mis funciones asignadas. | 5 | Rivera Rupay, Fabricio Jose | Done |
+| US-02 | Iniciar sesión | TS-02.3 | Validaciones de credenciales | Como usuario del molino, quiero iniciar sesión en la plataforma, para acceder a mis funciones asignadas. | 2 | Casalino Berrocal, Luisa Nhiriel | Done |
+| US-03 | Gestionar roles y permisos | TS-03.1 | Diseñar esquema de BD para RBAC | Como administrador, quiero gestionar roles y permisos de los usuarios, para restringir el acceso según el perfil. | 4 | Gallegos De La Cruz, Giovanni Marcelo | Done |
+| US-03 | Gestionar roles y permisos | TS-03.2 | Implementar middleware de autorización | Como administrador, quiero gestionar roles y permisos de los usuarios, para restringir el acceso según el perfil. | 6 | Huerta Cardenas, Brayan Benjamin | Done |
+| US-03 | Gestionar roles y permisos | TS-03.3 | UI de administración de roles | Como administrador, quiero gestionar roles y permisos de los usuarios, para restringir el acceso según el perfil. | 5 | Jimenez Saavedra, Antony Alexander | Done |
+| US-04 | Gestionar perfil de usuario | TS-04.1 | Diseñar vista de perfil | Como usuario registrado, quiero gestionar mi perfil de usuario, para mantener mis datos personales actualizados. | 3 | Rivera Rupay, Fabricio Jose | Done |
+| US-04 | Gestionar perfil de usuario | TS-04.2 | Endpoint de actualización de perfil | Como usuario registrado, quiero gestionar mi perfil de usuario, para mantener mis datos personales actualizados. | 4 | Casalino Berrocal, Luisa Nhiriel | Done |
+| US-35 | Conocer la propuesta de valor | TS-35.1 | Sección Hero Landing Page | Como visitante, quiero conocer la propuesta de valor de Molinex, para entender las ventajas de la plataforma. | 3 | Gallegos De La Cruz, Giovanni Marcelo | Done |
+| US-36 | Conocer las funcionalidades | TS-36.1 | Sección de características | Como visitante, quiero conocer las funcionalidades clave, para evaluar si cubren las necesidades de mi negocio. | 3 | Huerta Cardenas, Brayan Benjamin | Done |
+| US-37 | Consultar planes de suscripción | TS-37.1 | Tabla de precios y planes | Como visitante, quiero consultar los planes de suscripción, para identificar los costos y opciones disponibles. | 4 | Jimenez Saavedra, Antony Alexander | Done |
+| US-38 | Identificar el plan adecuado | TS-38.1 | Filtro / Recomendador de planes | Como visitante, quiero identificar el plan adecuado para mi molino, para elegir la opción que mejor responda a mi volumen de operación. | 4 | Rivera Rupay, Fabricio Jose | Done |
+| US-39 | Conocer los beneficios de Molinex | TS-39.1 | Sección de testimonios y beneficios | Como visitante, quiero conocer los beneficios de Molinex, para tomar una decisión informada sobre la adopción del sistema. | 2 | Casalino Berrocal, Luisa Nhiriel | Done |
+| US-40 | Solicitar información comercial | TS-40.1 | Formulario de contacto comercial | Como visitante, quiero solicitar información comercial, para ponerse en contacto con el equipo de ventas. | 4 | Gallegos De La Cruz, Giovanni Marcelo | Done |
 
 #### 5.2.1.2 Aspect Leaders and Collaborators
 
