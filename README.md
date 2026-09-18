@@ -1625,20 +1625,16 @@ Molinex emplea una base de datos relacional MySQL para soportar un monolito modu
 ### 5.1.1 Software Development Environment Configuration
 
 
-El entorno de desarrollo de Molinex está compuesto por una Landing Page estática y una Web Application responsive en desarrollo. Para el AV1 se prioriza la implementación y publicación de la primera versión de la Landing Page; la Web Application se incluye como prototipo complementario para validar la propuesta de interfaz.
+El entorno de desarrollo de Molinex contempla una Landing Page estática y una Web Application planificada para futuras etapas. Para el AV1 se priorizó la implementación de la primera versión de la Landing Page, de acuerdo con los entregables establecidos para este avance.
 
 | Producto | Tecnologías | Herramientas principales |
 |:--|:--|:--|
 | Landing Page | HTML5, CSS3 y JavaScript | Visual Studio Code, Git y GitHub |
-| Web Application | Angular 22, TypeScript y SCSS | Angular CLI, Angular Material, Angular CDK, Visual Studio Code y pnpm |
-| RESTful API | Spring Boot y Java | Spring Initializr, Maven y Swagger/OpenAPI |
-| Database | Pendiente de definición e integración | Herramienta de gestión de base de datos por confirmar |
+| Web Application | Propuesta para una etapa posterior | Angular, TypeScript y SCSS |
+| RESTful API | Propuesta para una etapa posterior | Spring Boot y Java |
+| Database | Pendiente de definición | Herramienta por confirmar |
 
-La Landing Page se utiliza para presentar la propuesta de valor de Molinex, sus funcionalidades, beneficios y planes. La Web Application representa la futura plataforma operativa para gestionar información relacionada con operaciones, maquinaria, mantenimiento, calidad, reportes y usuarios.
-
-Como trabajo complementario, la Web Application fue configurada con Angular CLI y utiliza TypeScript para la lógica de la interfaz y SCSS para los estilos responsive. También se incorporaron Angular Material y Angular CDK como bibliotecas de apoyo para la construcción del prototipo.
-
-Durante esta etapa, la Web Application utiliza datos locales almacenados temporalmente en el navegador mediante `localStorage`. La conexión con la RESTful API y la base de datos será incorporada cuando se complete la implementación del backend.
+La Landing Page presenta la propuesta de valor de Molinex, sus funcionalidades, beneficios y planes de suscripción. La Web Application, la RESTful API y la base de datos se desarrollarán en avances posteriores.
 
 ### 5.1.2 Source Code Management
 
@@ -1690,30 +1686,17 @@ También se aplican criterios básicos de accesibilidad, como textos alternativo
 
 ### 5.1.4 Software Deployment Configuration
 
-La primera versión de la Landing Page de Molinex fue desplegada mediante GitHub Pages. Esta publicación permite acceder a la solución desde un navegador sin necesidad de ejecutar el proyecto localmente.
+La primera versión de la Landing Page de Molinex fue desplegada mediante GitHub Pages. Este despliegue permite acceder a la solución desde un navegador sin necesidad de ejecutar el proyecto localmente.
 
 URL pública:
-
-[https://vanguard-open-source.github.io/molinex-website/](https://vanguard-open-source.github.io/molinex-website/)
-
-La Web Application no forma parte del despliegue público requerido para el AV1. Se conserva como prototipo complementario y se ejecuta localmente mediante Angular CLI utilizando:
-
-```bash
-pnpm exec ng serve
-```
-`http://localhost:4200`
-
-![Dashboard de la Web Application](assets/Images%20Chapter%205/webapp-dashboard.png)
-
-**Figura:** Dashboard de la Web Application de Molinex ejecutado localmente mediante Angular CLI. Fuente: elaboración propia.
-
-La Landing Page fue validada mediante la URL pública de GitHub Pages:
 
 [https://vanguard-open-source.github.io/molinex-website/](https://vanguard-open-source.github.io/molinex-website/)
 
 ![Landing Page desplegada](assets/Images%20Chapter%205/landing-deployed.png)
 
 **Figura:** Landing Page de Molinex desplegada mediante GitHub Pages. Fuente: elaboración propia.
+
+La Web Application, la RESTful API y la base de datos no forman parte del despliegue requerido para el AV1. Su implementación y despliegue se realizarán en avances posteriores.
 
 ## 5.2 Landing Page, Services & Applications Implementation
 
@@ -1767,15 +1750,11 @@ La participación en el desarrollo se evidencia mediante el historial de commits
 
 #### 5.2.1.5 Execution Evidence for Sprint Review
 
-Para el AV1 se presenta como evidencia principal la primera versión de la Landing Page ejecutada y publicada. La Web Application se muestra únicamente como prototipo complementario en ejecución local.
+La evidencia principal del AV1 corresponde a la primera versión de la Landing Page ejecutada y publicada mediante GitHub Pages.
 
 ![Landing Page de Molinex ejecutada en navegador](assets/Images%20Chapter%205/landing-deployed.png)
 
 **Figura:** Landing Page de Molinex ejecutada y publicada mediante GitHub Pages. Fuente: elaboración propia.
-
-![Dashboard del prototipo de Web Application](assets/Images%20Chapter%205/webapp-dashboard.png)
-
-**Figura:** Vista de referencia del prototipo de Web Application ejecutado localmente. Fuente: elaboración propia.
 
 #### 5.2.1.6 Services Documentation Evidence for Sprint Review
 
