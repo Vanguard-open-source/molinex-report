@@ -608,11 +608,101 @@ Diego Rantería, egresado de Ingeniería Agroindustrial con 5 años en la indust
 
 ## 2.4 Big Picture Event Storming
 
-[Secuencia de eventos de dominio identificados en la sesión colaborativa, con capturas de la herramienta indicada.]
+El Big Picture Event Storming de Molinex permite observar, de extremo a extremo, los hechos relevantes que ocurren desde el interés comercial y la habilitación de usuarios hasta el registro de la operación del molino, la detección de anomalías y el análisis de resultados. Su propósito es comprender el dominio antes de tomar decisiones de diseño de software y exponer vacíos que requieren validación con especialistas del negocio.
+
+La propuesta se construyó a partir de las entrevistas, el User Task Matrix y las User Stories de los segmentos de gerentes o administradores, técnicos de mantenimiento y operarios de producción. Las Technical Stories de la API RESTful no se incorporaron como eventos, debido a que representan decisiones de implementación y no hechos relevantes para el negocio. De igual manera, las acciones de consulta que no cambian el estado del dominio se modelaron como *View/Read Models* y no como *Domain Events*.
+
+Los diagramas fueron elaborados mediante PlantUML bajo el enfoque Diagram-as-Code. Sus archivos fuente se conservan junto con las imágenes SVG para permitir su revisión, reproducción y evolución mediante control de versiones. Estos artefactos constituyen la base de la validación colaborativa del equipo.
+
+### Notación utilizada
+
+Los elementos siguen una convención cromática constante. Los actores se representan en amarillo claro, los comandos en azul, los eventos de dominio en naranja, las políticas en morado, los modelos de lectura en verde, los sistemas externos en rosado, los candidatos a agregados en amarillo y los puntos de discusión o *hotspots* en rojo. Los eventos se redactan en pasado porque representan hechos que ya ocurrieron, mientras que los comandos se expresan como acciones en modo imperativo.
 
 <p align="center">
-  <img src="assets/design/big-picture-event-storming.png" alt="Sesión de Big Picture Event Storming en FigJam" width="100%">
+  <img src="assets/Images%20Chapter%202/Big%20Picture%20Event%20Storming/event-storming-legend.svg" alt="Leyenda de elementos del Big Picture Event Storming de Molinex" width="100%">
 </p>
+
+### Paso 1: Recolección de Domain Events
+
+La primera ronda se concentró en identificar hechos significativos sin imponer todavía un orden, una solución técnica o límites entre módulos. Se recopilaron eventos vinculados con solicitudes comerciales, usuarios, recepción de materia prima, lotes, producción, calidad, merma, maquinaria, mantenimiento, monitoreo, alertas y reportes. Esta exploración permitió cubrir el dominio completo y evitar que el análisis se limitara únicamente a las pantallas previstas para la aplicación.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%202/Big%20Picture%20Event%20Storming/step-1-domain-events.svg" alt="Paso 1: recolección inicial de Domain Events de Molinex" width="100%">
+</p>
+
+### Paso 2: Refinamiento y secuencia de Domain Events
+
+Los eventos se depuraron para eliminar duplicidades, mantener una redacción consistente en pasado y organizarlos de acuerdo con su secuencia dentro de cada flujo de negocio. El resultado distingue seis recorridos de alto nivel: interés comercial; acceso y usuarios; materia prima y producción; calidad, rendimiento y merma; maquinaria, monitoreo y mantenimiento; y reportes e inteligencia operativa.
+
+La secuencia muestra que una recepción registrada habilita el registro de un lote y que este, a su vez, permite asociar información de producción. Los registros productivos habilitan el control de calidad y merma. Por otro lado, las variables operativas permiten evaluar el comportamiento de una máquina, identificar anomalías y producir alertas o recomendaciones. Finalmente, la información de producción, calidad y mantenimiento alimenta los modelos de análisis y reporte.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%202/Big%20Picture%20Event%20Storming/step-2-refined-events.svg" alt="Paso 2: Domain Events refinados y ordenados por flujo de negocio" width="100%">
+</p>
+
+### Paso 3: Identificación de causas, actores, políticas y Read Models
+
+En la tercera etapa se investigó qué origina cada evento. Se incorporaron los actores que toman decisiones, los comandos que ejecutan, las políticas que reaccionan automáticamente y la información que necesitan consultar. Los actores principales son el visitante, el gerente o administrador, el técnico de mantenimiento y el operario de producción.
+
+Se identificaron las siguientes políticas de negocio candidatas:
+
+| Evento o condición | Política candidata | Resultado esperado |
+|:--|:--|:--|
+| Se registra o actualiza información de producción, calidad o merma. | Recalcular los indicadores que dependan de la nueva información. | Indicadores de rendimiento actualizados. |
+| Un indicador queda fuera de su rango de referencia. | Registrar la desviación para su revisión operativa. | Desviación de calidad o rendimiento identificada. |
+| Se incorpora una variable operativa de una máquina. | Evaluar la variable utilizando los criterios operativos definidos. | Variable aceptada o anomalía detectada. |
+| Se detecta una anomalía operativa. | Generar información de atención para el técnico responsable. | Alerta y recomendación de mantenimiento disponibles. |
+
+Las consultas de procesos, historiales, indicadores, estado de maquinaria, alertas, recomendaciones, resúmenes y tendencias se representaron como *Read Models*. No se añadió ningún sistema externo al flujo debido a que los requerimientos actuales todavía no confirman una integración concreta con sensores, pasarelas de pago, mensajería u otros proveedores.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%202/Big%20Picture%20Event%20Storming/step-3-track-causes.svg" alt="Paso 3: actores, comandos, políticas, eventos y modelos de lectura de Molinex" width="100%">
+</p>
+
+### Paso 4: Reorganización y resultado de Software Modelling
+
+En el último paso, los elementos relacionados se reorganizaron alrededor de candidatos a *Aggregates* y *Bounded Contexts*. Esta agrupación no constituye todavía la arquitectura definitiva. Los límites de consistencia, las invariantes y las relaciones entre contextos deberán revisarse con mayor profundidad en el Design-Level EventStorming de la sección 4.6.1.
+
+| Bounded Context candidato | Clasificación inicial | Responsabilidad | Aggregates o Read Models candidatos |
+|:--|:--|:--|:--|
+| Commercial Engagement | Supporting | Presentar la oferta de Molinex y registrar solicitudes comerciales. | `Commercial Inquiry`; catálogo de planes y propuesta de valor como Read Model. |
+| Identity and Access Management | Generic | Gestionar usuarios, roles, perfiles y acceso autorizado. | `User`. |
+| Production Management | Core | Registrar la recepción de materia prima, los lotes y la ejecución productiva. | `Raw Material Reception`, `Production Batch`, `Production Record`. |
+| Quality and Yield Control | Core | Registrar calidad y merma, calcular indicadores e identificar desviaciones. | `Quality Assessment`, `Waste Record`. |
+| Asset and Maintenance Management | Core | Mantener el inventario de maquinaria y su historial de mantenimiento. | `Machine`, `Maintenance Record`. |
+| Operational Intelligence | Core | Evaluar variables, detectar anomalías y generar información de atención. | `Operational Anomaly`, `Alert`; recomendaciones como Read Model. |
+| Reporting and Analytics | Supporting / Read Side | Proyectar información integrada para apoyar decisiones. | Resumen operativo, reportes de producción y mantenimiento, y análisis de tendencias. |
+
+<p align="center">
+  <img src="assets/Images%20Chapter%202/Big%20Picture%20Event%20Storming/step-4-software-model.svg" alt="Paso 4: Bounded Contexts y Aggregates candidatos de Molinex" width="100%">
+</p>
+
+### Hotspots y decisiones pendientes
+
+El análisis hizo visibles preguntas que no deben resolverse mediante suposiciones técnicas:
+
+| Hotspot | Impacto en el dominio | Decisión que debe validarse |
+|:--|:--|:--|
+| Origen de las variables operativas | Define quién registra los datos, su frecuencia y su confiabilidad. | Determinar si los valores serán manuales, recibidos desde sensores o admitidos por ambas vías. |
+| Criterios y umbrales de evaluación | Condiciona cuándo una lectura se considera anómala. | Definir responsables, alcance por máquina y posibilidad de configuración. |
+| Ciclo de vida de alertas | Afecta la atención y trazabilidad de una posible falla. | Definir estados, prioridades, responsables y condiciones de cierre. |
+| Contratación y tenancy del SaaS | Los requerimientos actuales muestran planes, pero no describen cómo se contrata y habilita un molino. | Definir suscripción, pago, alta del molino, asignación del plan y asociación de usuarios. |
+| Corrección de información productiva | Una modificación puede alterar indicadores y reportes previamente calculados. | Definir auditoría, permisos y reglas de recálculo. |
+| Persistencia y exportación de reportes | Determina si un reporte es solo una consulta o un documento con identidad propia. | Definir formatos, almacenamiento, vigencia y regeneración. |
+
+### Trazabilidad con los requerimientos
+
+| Flujo del Big Picture | User Stories relacionadas |
+|:--|:--|
+| Interés comercial | US-31 a US-36; el único cambio de estado confirmado es el registro de la solicitud comercial de US-36. |
+| Acceso y usuarios | US-01 a US-04. |
+| Materia prima y producción | US-05 a US-10. |
+| Calidad, rendimiento y merma | US-11 a US-16. |
+| Maquinaria y mantenimiento | US-17 a US-21. |
+| Monitoreo, anomalías y alertas | US-22 a US-26. |
+| Reportes e inteligencia operativa | US-27 a US-30. |
+
+Esta trazabilidad permite comprobar que los elementos del Big Picture provienen de necesidades documentadas y, al mismo tiempo, señala qué procesos aún no cuentan con requisitos suficientes. Los candidatos obtenidos serán refinados en la sección 4.6.1 aplicando las reglas de diseño de Aggregates y definiendo los contratos de integración entre Bounded Contexts.
 
 ## 2.5 Ubiquitous Language
 

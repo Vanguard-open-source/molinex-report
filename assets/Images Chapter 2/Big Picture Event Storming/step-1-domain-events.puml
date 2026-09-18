@@ -1,0 +1,75 @@
+@startuml
+skinparam backgroundColor #F7FAFC
+skinparam defaultFontName Arial
+skinparam defaultFontSize 15
+skinparam shadowing false
+skinparam linetype ortho
+skinparam ArrowColor transparent
+skinparam RectangleBorderColor #B85C00
+skinparam RectangleFontColor #422006
+skinparam rectangle {
+  RoundCorner 10
+  Padding 14
+}
+
+title Step 1 - Collect Domain Events (Big Picture)
+caption Divergent first round: business facts identified before imposing sequence or software boundaries.
+
+left to right direction
+
+rectangle "Commercial Inquiry\nSubmitted" as e01 #FFB26B
+rectangle "User\nRegistered" as e02 #FFB26B
+rectangle "Role\nAssigned" as e03 #FFB26B
+rectangle "User\nAuthenticated" as e04 #FFB26B
+rectangle "User Profile\nUpdated" as e05 #FFB26B
+
+rectangle "Raw Material Reception\nRecorded" as e06 #FFB26B
+rectangle "Raw Material Batch\nRegistered" as e07 #FFB26B
+rectangle "Production Information\nRecorded" as e08 #FFB26B
+rectangle "Production Information\nUpdated" as e09 #FFB26B
+rectangle "Quality Results\nRecorded" as e10 #FFB26B
+
+rectangle "Production Waste\nRecorded" as e11 #FFB26B
+rectangle "Yield Indicators\nCalculated" as e12 #FFB26B
+rectangle "Rice Composition\nCalculated" as e13 #FFB26B
+rectangle "Quality or Yield\nDeviation Identified" as e14 #FFB26B
+rectangle "Machine\nRegistered" as e15 #FFB26B
+
+rectangle "Preventive Maintenance\nRecorded" as e16 #FFB26B
+rectangle "Corrective Maintenance\nRecorded" as e17 #FFB26B
+rectangle "Operational Variable\nRecorded" as e18 #FFB26B
+rectangle "Operational Anomaly\nDetected" as e19 #FFB26B
+rectangle "Operational Alert\nGenerated" as e20 #FFB26B
+
+rectangle "Maintenance Recommendation\nGenerated" as e21 #FFB26B
+rectangle "Production Report\nGenerated" as e22 #FFB26B
+rectangle "Maintenance Report\nGenerated" as e23 #FFB26B
+
+e01 -[hidden]-> e02
+e02 -[hidden]-> e03
+e03 -[hidden]-> e04
+e04 -[hidden]-> e05
+
+e06 -[hidden]-> e07
+e07 -[hidden]-> e08
+e08 -[hidden]-> e09
+e09 -[hidden]-> e10
+
+e11 -[hidden]-> e12
+e12 -[hidden]-> e13
+e13 -[hidden]-> e14
+e14 -[hidden]-> e15
+
+e16 -[hidden]-> e17
+e17 -[hidden]-> e18
+e18 -[hidden]-> e19
+e19 -[hidden]-> e20
+
+e21 -[hidden]-> e22
+e22 -[hidden]-> e23
+
+e01 -[hidden]down-> e06
+e06 -[hidden]down-> e11
+e11 -[hidden]down-> e16
+e16 -[hidden]down-> e21
+@enduml
