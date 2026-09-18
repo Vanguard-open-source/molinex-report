@@ -1,0 +1,93 @@
+@startuml
+title Reporting and Analytics Bounded Context - Class Diagram
+left to right direction
+hide circle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype ortho
+skinparam packageStyle rectangle
+
+package "Reporting and Analytics Bounded Context" #EAF3F8 {
+  class ReportingQueryService <<Query Service>> {
+    +getOperationalSummary(period : DateRange) : OperationalSummary
+    +generateProductionReport(period : DateRange) : ProductionReport
+    +generateMaintenanceReport(period : DateRange) : MaintenanceReport
+    +getOperationalTrend(indicator : String, period : DateRange) : OperationalTrend
+  }
+
+  class ReportingProjectionUpdater <<Event Handler>> {
+    +handle(event : PublishedDomainEvent)
+  }
+
+  interface ReportingProjectionStore <<Projection Store>> {
+    +saveMetric(metric : MetricValue)
+    +findMetrics(period : DateRange) : List<MetricValue>
+    +findProductionRows(period : DateRange) : List<ReportRow>
+    +findMaintenanceRows(period : DateRange) : List<ReportRow>
+  }
+
+  class PublishedDomainEvent <<Published Language>> {
+    +eventName : String
+    +aggregateReference : UUID
+    +occurredAt : Instant
+    +payloadVersion : int
+  }
+
+  class DateRange <<Value Object>> {
+    -start : LocalDate
+    -end : LocalDate
+    +isValid() : boolean
+  }
+  class MetricValue <<Value Object>> {
+    +name : String
+    +value : BigDecimal
+    +unit : String
+    +measuredAt : Instant
+  }
+  class ReportRow <<Value Object>> {
+    +dimensions : Map<String, String>
+    +metrics : List<MetricValue>
+  }
+  class TrendPoint <<Value Object>> {
+    +recordedAt : Instant
+    +value : BigDecimal
+  }
+
+  class OperationalSummary <<Read Model>> {
+    +period : DateRange
+    +metrics : List<MetricValue>
+  }
+  class ProductionReport <<Read Model>> {
+    +period : DateRange
+    +rows : List<ReportRow>
+  }
+  class MaintenanceReport <<Read Model>> {
+    +period : DateRange
+    +rows : List<ReportRow>
+  }
+  class OperationalTrend <<Read Model>> {
+    +indicator : String
+    +period : DateRange
+    +points : List<TrendPoint>
+  }
+}
+
+ReportingProjectionUpdater ..> PublishedDomainEvent : consumes
+ReportingProjectionUpdater ..> ReportingProjectionStore : updates
+ReportingQueryService ..> ReportingProjectionStore : reads
+ReportingQueryService ..> OperationalSummary : returns
+ReportingQueryService ..> ProductionReport : returns
+ReportingQueryService ..> MaintenanceReport : returns
+ReportingQueryService ..> OperationalTrend : returns
+OperationalSummary *-- "1" DateRange
+OperationalSummary *-- "0..*" MetricValue
+ProductionReport *-- "1" DateRange
+ProductionReport *-- "0..*" ReportRow
+MaintenanceReport *-- "1" DateRange
+MaintenanceReport *-- "0..*" ReportRow
+OperationalTrend *-- "1" DateRange
+OperationalTrend *-- "0..*" TrendPoint
+ReportRow *-- "0..*" MetricValue
+
+
+@enduml

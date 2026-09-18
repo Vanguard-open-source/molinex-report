@@ -1,0 +1,72 @@
+@startuml
+title Commercial Engagement Bounded Context - Class Diagram
+left to right direction
+hide circle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype ortho
+skinparam packageStyle rectangle
+
+package "Commercial Engagement Bounded Context" #EAF3F8 {
+  class CommercialInquiry <<Aggregate Root>> {
+    -id : CommercialInquiryId
+    -contact : ContactInformation
+    -message : InquiryMessage
+    -submittedAt : Instant
+    --
+    +submit(contact, message, submittedAt)
+  }
+
+  class CommercialInquiryId <<Value Object>> {
+    -value : UUID
+  }
+
+  class ContactInformation <<Value Object>> {
+    -fullName : String
+    -email : EmailAddress
+    -phone : Optional<PhoneNumber>
+    -companyName : String
+  }
+
+  class EmailAddress <<Value Object>> {
+    -value : String
+    +isValid() : boolean
+  }
+
+  class PhoneNumber <<Value Object>> {
+    -value : String
+    +isValid() : boolean
+  }
+
+  class InquiryMessage <<Value Object>> {
+    -value : String
+    +isBlank() : boolean
+  }
+
+  interface CommercialInquiryRepository <<Repository>> {
+    +save(inquiry : CommercialInquiry)
+    +findById(id : CommercialInquiryId) : Optional<CommercialInquiry>
+  }
+
+  class PlanSummary <<Read Model>> {
+    +name : String
+    +priceLabel : String
+    +features : List<String>
+    +conditions : List<String>
+  }
+
+  class CommercialContentQueryService <<Query Service>> {
+    +getPlanCatalog() : List<PlanSummary>
+    +getValueProposition() : String
+    +getFeatureCatalog() : List<String>
+  }
+}
+
+CommercialInquiry *-- "1" CommercialInquiryId
+CommercialInquiry *-- "1" ContactInformation
+CommercialInquiry *-- "1" InquiryMessage
+ContactInformation *-- "1" EmailAddress
+ContactInformation o-- "0..1" PhoneNumber
+CommercialInquiryRepository ..> CommercialInquiry : persists
+CommercialContentQueryService ..> PlanSummary : returns
+@enduml
