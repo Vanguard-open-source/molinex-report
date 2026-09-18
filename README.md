@@ -1322,19 +1322,33 @@ En desktop se prevé una barra lateral persistente. En anchos menores podrá col
 
 ### 4.3.1 Landing Page Wireframe
 
-[Wireframes Desktop y Mobile elaborados en Figma.]
+El wireframe del Landing Page traduce a bloques de baja fidelidad la organización definida en 4.2.1: un recorrido jerárquico y secuencial que va desde la propuesta de valor hasta el formulario de contacto, sin comprometer aún color ni tipografía final. Su objetivo es validar la agrupación y jerarquía del contenido antes de aplicar el Design System.
+
+La propuesta contempla: un encabezado con navegación (Solution, Features, Plans) y la acción principal de contacto; un Hero con título, descripción, dos llamadas a la acción y un panel de vista previa del dashboard operativo; una sección de problemática con tres tarjetas (Scattered data, Unexpected downtime, Hidden losses); una sección de funcionalidades con cuatro tarjetas, la primera en estado activo; una sección de audiencias con tres columnas (Managers, Maintenance Technicians, Production Operators); una sección de planes con tres tarjetas de precio; un formulario de contacto; y un footer con marca y enlaces de navegación y legales.
 
 <p align="center">
-  <img src="assets/design/landing-wireframe.png" alt="Wireframe del Landing Page de Molinex" width="100%">
+  <img src="assets/design/landing-wireframe.webp" alt="Wireframe Desktop del Landing Page de Molinex" width="100%">
 </p>
+
+**Figura: Wireframe Desktop del Landing Page de Molinex. Fuente: elaboración propia en Figma.**
+
+> Pendiente: versión Mobile Web Browser del wireframe.
 
 ### 4.3.2 Landing Page Mockup
 
-[Mockups Desktop y Mobile elaborados en Figma.]
+El mockup aplica sobre el wireframe el Design System definido en 4.1: Azul Molinex (`#0B4F8A`) como color estructural, Dorado (`#F2B705`) como acento de las acciones principales, y la pareja tipográfica Poppins/Inter. El panel del Hero muestra datos reales de ejemplo (rendimiento 86.4 %, merma 4.8 %) con un indicador "Live" y una alerta de mantenimiento, evidenciando el principio de Visibilidad del estado. La tarjeta de plan Professional se destaca con la insignia "Most flexible" y un botón dorado, siguiendo la proporción 60-30-10 y la regla de no combinar dorado con blanco establecidas en 4.1.1. El footer, en azul oscuro, incluye los enlaces legales que sustentan la sección de Ética y Responsabilidad del informe.
+
+Este mockup corresponde a la versión ya implementada y desplegada del Landing Page (ver 5.2.1.5 Execution Evidence), lo que evidencia que la implementación siguió al diseño y no al revés.
 
 <p align="center">
-  <img src="assets/design/landing-mockup.png" alt="Mockup del Landing Page de Molinex" width="100%">
+  <img src="assets/design/landing-mockup.webp" alt="Mockup Desktop del Landing Page de Molinex" width="100%">
 </p>
+
+**Figura: Mockup Desktop del Landing Page de Molinex. Fuente: elaboración propia en Figma.**
+
+_Archivo de diseño en Figma:_ `https://www.figma.com/design/QytNXR0eMrUtT5MNpJarbK/Figma-Molinex`
+
+> Pendiente: versión Mobile Web Browser del mockup.
 
 ## 4.4 Web Applications UX/UI Design
 
