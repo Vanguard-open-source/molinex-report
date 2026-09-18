@@ -1625,7 +1625,7 @@ Molinex emplea una base de datos relacional MySQL para soportar un monolito modu
 ### 5.1.1 Software Development Environment Configuration
 
 
-El entorno de desarrollo de Molinex está compuesto por una Landing Page estática y una Web Application responsive. La configuración se definió considerando las tecnologías indicadas en el contrato del curso y las necesidades de la solución.
+El entorno de desarrollo de Molinex está compuesto por una Landing Page estática y una Web Application responsive en desarrollo. Para el AV1 se prioriza la implementación y publicación de la primera versión de la Landing Page; la Web Application se incluye como prototipo complementario para validar la propuesta de interfaz.
 
 | Producto | Tecnologías | Herramientas principales |
 |:--|:--|:--|
@@ -1634,9 +1634,9 @@ El entorno de desarrollo de Molinex está compuesto por una Landing Page estáti
 | RESTful API | Spring Boot y Java | Spring Initializr, Maven y Swagger/OpenAPI |
 | Database | Pendiente de definición e integración | Herramienta de gestión de base de datos por confirmar |
 
-La Landing Page se utiliza para presentar la propuesta de valor de Molinex, sus funcionalidades, beneficios y planes. La Web Application permite gestionar información relacionada con operaciones, maquinaria, mantenimiento, calidad, reportes y usuarios.
+La Landing Page se utiliza para presentar la propuesta de valor de Molinex, sus funcionalidades, beneficios y planes. La Web Application representa la futura plataforma operativa para gestionar información relacionada con operaciones, maquinaria, mantenimiento, calidad, reportes y usuarios.
 
-La Web Application fue configurada con Angular CLI y utiliza TypeScript para la lógica de la aplicación y SCSS para los estilos responsive. También se incorporaron Angular Material y Angular CDK como bibliotecas de apoyo para la construcción de componentes de interfaz.
+Como trabajo complementario, la Web Application fue configurada con Angular CLI y utiliza TypeScript para la lógica de la interfaz y SCSS para los estilos responsive. También se incorporaron Angular Material y Angular CDK como bibliotecas de apoyo para la construcción del prototipo.
 
 Durante esta etapa, la Web Application utiliza datos locales almacenados temporalmente en el navegador mediante `localStorage`. La conexión con la RESTful API y la base de datos será incorporada cuando se complete la implementación del backend.
 
@@ -1644,12 +1644,17 @@ Durante esta etapa, la Web Application utiliza datos locales almacenados tempora
 
 El código fuente del proyecto Molinex se gestiona mediante Git y GitHub. El repositorio permite controlar las versiones del informe, la Landing Page y la Web Application, además de registrar la participación de los integrantes del equipo.
 
-Para organizar el desarrollo colaborativo se utiliza GitFlow:
+Para organizar el desarrollo colaborativo se utiliza GitFlow, considerando las siguientes ramas y convenciones:
 
 - La rama `main` contiene las versiones estables del proyecto.
 - La rama `develop` concentra la integración de los cambios.
-- Las ramas `feature/*` se utilizan para desarrollar funcionalidades o secciones específicas.
-- Las ramas de funcionalidades se integran posteriormente en `develop`.
+- Las ramas `feature/<modulo>-<descripcion>` se utilizan para desarrollar funcionalidades o secciones específicas y se integran posteriormente en `develop`.
+- Las ramas `release/v<MAJOR>.<MINOR>.<PATCH>` se utilizan para preparar una versión candidata antes de integrarla en `main` y actualizar `develop`.
+- Las ramas `hotfix/<descripcion>` se utilizan para corregir errores críticos detectados en una versión estable; luego se integran en `main` y `develop`.
+
+Las versiones se identifican mediante Semantic Versioning con el formato `MAJOR.MINOR.PATCH`. Por ejemplo, `v1.0.0` corresponde a una primera versión estable y `v1.0.1` a una corrección compatible.
+
+Los mensajes de commit siguen Conventional Commits con el formato `<tipo>(<alcance>): <descripción>`. Se utilizan tipos como `feat`, `fix`, `docs`, `refactor`, `test` y `chore`. Algunos ejemplos aplicados al proyecto son `docs(report): update chapter 5 evidence` y `feat(landing): add pricing section`.
 
 Para este avance se utiliza la rama:
 
@@ -1691,7 +1696,7 @@ URL pública:
 
 [https://vanguard-open-source.github.io/molinex-website/](https://vanguard-open-source.github.io/molinex-website/)
 
-La Web Application se ejecuta localmente mediante Angular CLI utilizando:
+La Web Application no forma parte del despliegue público requerido para el AV1. Se conserva como prototipo complementario y se ejecuta localmente mediante Angular CLI utilizando:
 
 ```bash
 pnpm exec ng serve
@@ -1762,19 +1767,15 @@ La participación en el desarrollo se evidencia mediante el historial de commits
 
 #### 5.2.1.5 Execution Evidence for Sprint Review
 
-[Capturas de las vistas implementadas + enlace a video.]
+Para el AV1 se presenta como evidencia principal la primera versión de la Landing Page ejecutada y publicada. La Web Application se muestra únicamente como prototipo complementario en ejecución local.
 
-<p align="center">
-  <img src="assets/evidence/implemented/landing-desktop.png" alt="Landing Page de Molinex ejecutada en navegador" width="100%">
-</p>
+![Landing Page de Molinex ejecutada en navegador](assets/Images%20Chapter%205/landing-deployed.png)
 
-<p align="center">
-  <img src="assets/evidence/implemented/webapp-login.png" alt="Inicio de sesión de la Web Application de Molinex" width="100%">
-</p>
+**Figura:** Landing Page de Molinex ejecutada y publicada mediante GitHub Pages. Fuente: elaboración propia.
 
-<p align="center">
-  <img src="assets/evidence/implemented/webapp-register.png" alt="Registro de cuenta en la Web Application de Molinex" width="100%">
-</p>
+![Dashboard del prototipo de Web Application](assets/Images%20Chapter%205/webapp-dashboard.png)
+
+**Figura:** Vista de referencia del prototipo de Web Application ejecutado localmente. Fuente: elaboración propia.
 
 #### 5.2.1.6 Services Documentation Evidence for Sprint Review
 
