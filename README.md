@@ -1436,19 +1436,43 @@ Los mockups de la Web Application representan las principales vistas operativas 
 
 ### 4.4.4 Web Applications User Flow Diagrams
 
-[ ]
+El User Flow Diagram representa las decisiones y acciones que puede realizar un usuario dentro de la Web Application de Molinex. El flujo parte del acceso del usuario al sistema y se divide según el objetivo operativo que desea cumplir.
 
-<p align="center">
-  <img src="assets/design/webapp-user-flow.png" alt="User Flow Diagram de la Web Application de Molinex" width="100%">
-</p>
+Los principales recorridos considerados son:
+
+- Revisar las operaciones registradas.
+- Consultar el estado de la maquinaria.
+- Gestionar actividades de mantenimiento.
+- Analizar la inteligencia operativa.
+- Consultar y exportar reportes.
+- Administrar usuarios y permisos.
+
+![User Flow Diagram de la Web Application de Molinex](assets/Images%20Chapter%204/Web%20app/webapp-user-flow.png)
+
+**Figura:** User Flow Diagram de la Web Application de Molinex, desde el acceso al sistema hasta las principales acciones operativas. Fuente: elaboración propia.
 
 ## 4.5 Web Applications Prototyping
 
-[Prototipo interactivo en Figma + video demostrativo.]
+Se desarrolló un prototipo interactivo de la Web Application de Molinex en Figma. El prototipo permite navegar entre el Summary y los principales módulos operativos de la plataforma.
 
-<p align="center">
-  <img src="assets/design/webapp-prototype.png" alt="Captura del prototipo interactivo en Figma" width="100%">
-</p>
+Las interacciones implementadas permiten:
+
+- Acceder al Summary o dashboard principal.
+- Navegar hacia Operations.
+- Consultar Machinery.
+- Acceder a Maintenance.
+- Revisar Operational Intelligence.
+- Consultar Reports.
+- Gestionar Users & Permissions.
+- Regresar al Summary mediante el enlace de retorno.
+
+**Enlace al prototipo interactivo en Figma:**
+
+[Ver prototipo interactivo de la Web Application de Molinex](https://www.figma.com/design/QytNXR0eMrUtT5MNpJarbK/Figma-Molinex?node-id=57-3295&p=f&t=Z5oRciQziOFpakae-0)
+
+![Prototipo general de la Web Application en Figma](assets/Images%20Chapter%204/Web%20app/webapp-prototype-figma.png)
+
+**Figura:** Vista general del prototipo de la Web Application de Molinex en Figma. Fuente: elaboración propia.
 
 _Enlace al video demostrativo (Microsoft Stream):_ `[URL]`
 
