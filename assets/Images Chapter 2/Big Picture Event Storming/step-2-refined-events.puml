@@ -1,0 +1,102 @@
+@startuml
+skinparam backgroundColor #F7FAFC
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam linetype ortho
+skinparam ArrowColor #334E68
+skinparam ArrowThickness 1.5
+skinparam RectangleBorderColor #B85C00
+skinparam RectangleFontColor #422006
+skinparam PackageBorderColor #829AB1
+skinparam PackageFontColor #102A43
+skinparam package {
+  BackgroundColor #EDF5FC
+  RoundCorner 12
+}
+skinparam rectangle {
+  RoundCorner 10
+  Padding 12
+}
+
+title Step 2 - Refine and Sequence Domain Events
+caption Events are ordered by business flow; queries without state changes are reserved as Read Models for Step 3.
+
+top to bottom direction
+
+package "Commercial Engagement" as p1 {
+  rectangle "Commercial Inquiry\nSubmitted" as c01 #FFB26B
+  rectangle "How does an inquiry become a subscription\nand an onboarded rice mill?" as h01 #FF8A80
+  c01 -right..-> h01 : unspecified process
+}
+
+package "Identity and Access" as p2 {
+  rectangle "User\nRegistered" as a01 #FFB26B
+  rectangle "Role\nAssigned" as a02 #FFB26B
+  rectangle "User\nAuthenticated" as a03 #FFB26B
+  rectangle "User Profile\nUpdated" as a04 #FFB26B
+  a01 -right-> a02
+  a02 -right-> a03
+  a03 -right-> a04
+}
+
+package "Raw Materials and Production" as p3 {
+  rectangle "Raw Material Reception\nRecorded" as pr01 #FFB26B
+  rectangle "Raw Material Batch\nRegistered" as pr02 #FFB26B
+  rectangle "Production Information\nRecorded" as pr03 #FFB26B
+  rectangle "Production Information\nUpdated" as pr04 #FFB26B
+  pr01 -right-> pr02
+  pr02 -right-> pr03
+  pr03 -right-> pr04
+}
+
+package "Quality, Yield, and Waste" as p4 {
+  rectangle "Quality Results\nRecorded" as q01 #FFB26B
+  rectangle "Rice Composition\nCalculated" as q02 #FFB26B
+  rectangle "Production Waste\nRecorded" as q03 #FFB26B
+  rectangle "Yield Indicators\nCalculated" as q04 #FFB26B
+  rectangle "Quality or Yield\nDeviation Identified" as q05 #FFB26B
+  q01 -right-> q02
+  q02 -right-> q04
+  q03 -right-> q04
+  q04 -right-> q05
+}
+
+package "Assets, Monitoring, and Maintenance" as p5 {
+  rectangle "Machine\nRegistered" as m01 #FFB26B
+  rectangle "Operational Variable\nRecorded" as m02 #FFB26B
+  rectangle "Operational Anomaly\nDetected" as m03 #FFB26B
+  rectangle "Operational Alert\nGenerated" as m04 #FFB26B
+  rectangle "Maintenance Recommendation\nGenerated" as m05 #FFB26B
+  rectangle "Preventive Maintenance\nRecorded" as m06 #FFB26B
+  rectangle "Corrective Maintenance\nRecorded" as m07 #FFB26B
+  rectangle "Is the variable recorded manually,\nreceived from a sensor, or both?" as h02 #FF8A80
+  m01 -right-> m02
+  m02 -right-> m03
+  m03 -right-> m04
+  m03 -right-> m05
+  m01 -right-> m06
+  m04 -right-> m07
+  m05 -right-> m07
+  h02 ..> m02
+}
+
+package "Reporting" as p6 {
+  rectangle "Production Report\nGenerated" as r02 #FFB26B
+  rectangle "Maintenance Report\nGenerated" as r03 #FFB26B
+  r02 -[hidden]right-> r03
+}
+
+c01 -[hidden]down-> a01
+a01 -[hidden]down-> pr01
+pr01 -[hidden]down-> q01
+q01 -[hidden]down-> m01
+m01 -[hidden]down-> r02
+
+pr03 ..> q01 : enables quality control
+pr03 ..> q03 : enables waste recording
+pr04 ..> r02 : provides data
+q04 ..> r02 : provides indicators
+m06 ..> r03 : provides history
+m07 ..> r03 : provides history
+@enduml

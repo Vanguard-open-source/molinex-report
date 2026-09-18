@@ -1,0 +1,35 @@
+@startuml
+skinparam backgroundColor #F7FAFC
+skinparam defaultFontName Arial
+skinparam defaultFontSize 16
+skinparam shadowing false
+skinparam linetype ortho
+skinparam ArrowColor #334E68
+skinparam RectangleBorderColor #486581
+skinparam RectangleFontColor #102A43
+skinparam rectangle {
+  RoundCorner 12
+  Padding 16
+}
+
+title Big Picture EventStorming Legend - Molinex
+
+top to bottom direction
+
+rectangle "Actor\nWho initiates the action?" as actor #FFF3A6
+rectangle "Command\nAction expressed in imperative form" as command #A9C7F7
+rectangle "Domain Event\nSignificant business fact expressed in past tense" as event #FFB26B
+rectangle "Policy\nRule that reacts to an event" as policy #C9A7E8
+rectangle "View / Read Model\nInformation viewed by an actor" as readmodel #B9D98A
+rectangle "External System\nSystem outside the Molinex boundary" as external #F5A3D7
+rectangle "Aggregate Candidate\nConsistency boundary to be validated" as aggregate #FFE27A
+rectangle "Hotspot\nQuestion, risk, or pending decision" as hotspot #FF8A80
+
+actor -[hidden]right-> command
+command -[hidden]right-> event
+event -[hidden]right-> policy
+readmodel -[hidden]right-> external
+external -[hidden]right-> aggregate
+aggregate -[hidden]right-> hotspot
+actor -[hidden]down-> readmodel
+@enduml
