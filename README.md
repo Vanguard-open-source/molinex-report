@@ -63,13 +63,36 @@ Proyecto<br>
 
 | Versión | Fecha | Autor | Descripción de la modificación |
 |:--:|:--:|:--|:--|
-| AV1 | [fecha] | [autor(es)] | [describir qué se agregó/cambió en esta versión] |
-
+| AV1 |  |  ||
+|0.1|12/09|Luisa Casalino|Desarrolle los segmentos objetivos y el análisis competitivo de Molinex.|
+|0.2|13/09|Antony Jimenez|descripción inicial de la startup y se configuró la estructura inicial del proyecto.|
+|0.3|06/09|Brayan Huerta|Se realizaron correcciones y actualizaciones relacionadas con la descripción de la startup, perfiles del equipo y análisis de entrevistas.|
+|0.4|15/09|Antony Jimenez Saavedra|Se incorporo el registro de entrevistas, análisis de entrevistas y User Task Matrix.|
+|0.5|15/09|Luisa Nhiriel Casalino|Se agregaron User Person, User Journey Map, Empathy Mapping y Ubiquitous Language.|
+|0.6|16/09|Antony Jimenez Saavedra|Se actualizaron los perfiles de los integrantes y se incorporaron evidencias adicionales del proyecto.|
+|0.7|17/09|Brayan Huerta|Se realizaron correcciones en hipótesis, perfiles del equipo y análisis de entrevistas.|
+|0.8|17/09|Fabricio Rivera|Se incorporaron Style Guidelines, Information Architecture, Big Picture Event Storming, Design-Level Event Storming, arquitectura de software y diagramas de clases.|
+|0.9|17/09|Fabricio Rivera|Se agregó el diagrama de base de datos y se completaron elementos del diseño técnico.|
+|1.0|17/09|Giovanni Gallegos|Se agregaron los wireflows, wireframes, prototipo de aplicación web y evidencias de la Landing Page.|
+|1.1|18/09|Giovanni Gallegos|Se completaron las secciones del informe correspondientes a AV1 y se agregaron evidencias.|
+|1.2|18/09|Equipo Vanguard|Consolidación y revisión de las secciones del informe correspondientes a la evaluación AV1.|
 <div style="page-break-after: always;"></div>
+
+
 
 ## Project Report Collaboration Insights
 
-[Explicar cómo se desarrollan las actividades de elaboración del informe. Esta sección se expande en cada entrega.]
+## AV1
+
+Para el desarrollo del informe perteneciente a la entrega TB1, se dividió la implementación de las diferentes secciones y actividades del proyecto Molinex entre los integrantes del equipo. La distribución presentada a continuación se basa en las actividades registradas mediante ramas y commits en el repositorio del proyecto.
+
+| Integrante | Tareas Designadas |
+| --- | --- |
+| **Antony Alexander Jimenez Saavedra** | Registro y análisis de entrevistas, Interview Record, Interview Analysis, User Task Matrix, Lean UX Canvas, Product Backlog, Impact Mapping, Mapping, enlace del Backlog y Sprint Backlog. |
+| **Luisa Nhiriel Casalino Berrocal** | User Person, User Journey Map, Empathy Mapping, Ubiquitous Language, User Stories, Sprint Planning 1, Aspect Leaders and Collaborators y Student Outcome. |
+| **Giovanni Marcelo Gallegos De La Cruz** | Wireframes de la aplicación web, Wireflows, prototipo de aplicación web, evidencias de la Landing Page, documentación de diseño y consolidación de secciones del informe para AV1. |
+| **Brayan Benjamin Huerta Cardenas** | Análisis de la Landing Page, wireframe y mockup de la Landing Page, perfiles de integrantes, correcciones de la descripción de la startup y ajustes del análisis de entrevistas. |
+| **Fabricio Jose Rivera Rupay** | Style Guidelines, Information Architecture, Big Picture Event Storming, Design-Level Event Storming, arquitectura de software, diagramas de clases y diagrama de base de datos. |
 
 ### Repositorios del proyecto
 
@@ -80,19 +103,21 @@ Proyecto<br>
 
 ### Entrega AV1
 
-[Resumen de lo avanzado en esta entrega.]
+Durante la entrega AV1 se avanzó en la elaboración y consolidación de los principales artefactos del proyecto Molinex. Se desarrollaron los perfiles de los integrantes, el análisis de entrevistas, User Person, User Journey Map, Empathy Mapping, User Task Matrix, Lean UX Canvas, User Stories, Product Backlog e Impact Mapping. Asimismo, se trabajó en el diseño de la solución mediante Style Guidelines, Information Architecture, Big Picture Event Storming, Design-Level Event Storming, wireframes, wireflows y el prototipo de la aplicación web.
+
+También se desarrollaron elementos relacionados con la arquitectura y el diseño técnico, como el modelo C4, diagramas de clases y diagrama de base de datos. Finalmente, se incorporaron evidencias de la Landing Page, Sprint Planning 1, Sprint Backlog, Aspect Leaders and Collaborators, Student Outcome y demás secciones requeridas para la consolidación del informe de la AV1.
+
+El trabajo se realizó de manera colaborativa mediante ramas y commits en el repositorio, permitiendo integrar los avances de cada integrante en la rama de desarrollo.
 
 #### Participación del equipo
 
-- Casalino Berrocal, Luisa Nhiriel: [responsabilidades]
-- Gallegos De La Cruz, Giovanni Marcelo: [responsabilidades]
-- Huerta Cardenas, Brayan Benjamin: [responsabilidades]
-- Jimenez Saavedra, Antony Alexander: [responsabilidades]
-- Rivera Rupay, Fabricio Jose: [responsabilidades]
-
-#### Evidencias de colaboración y commits
-
-[Capturas de GitHub Insights y tabla de commits por repositorio.]
+- Casalino Berrocal, Luisa Nhiriel
+- Gallegos De La Cruz, Giovanni Marcelo
+- Huerta Cardenas, Brayan Benjamin
+- Jimenez Saavedra, Antony Alexander
+- Rivera Rupay, Fabricio Jose
+- 
+![evidencias.png](assets/evidence/collaboration/evidencias.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -1831,11 +1856,6 @@ A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con e
 
 #### 5.2.1.3 Sprint Backlog 1
 
-**Captura y enlace al Board:** `https://trello.com/invite/b/6aa9c4fdfc659047df591de0/ATTI907effe44c9315a41519954d192d71f48A54EF45/molinex`
-
-| Sprint # | Sprint 1 |
-|:--|:--|
-
 | Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
 |:--|:--|:--|:--|:--|--:|:--|:--|
 | US-01 | Registrar usuario | TS-01.1 | Diseñar formulario de registro | Como administrador, quiero registrar nuevos usuarios en el sistema, para otorgarles acceso a la plataforma. | 4 | Casalino Berrocal, Luisa Nhiriel | Done |
@@ -1855,6 +1875,9 @@ A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con e
 | US-38 | Identificar el plan adecuado | TS-38.1 | Filtro / Recomendador de planes | Como visitante, quiero identificar el plan adecuado para mi molino, para elegir la opción que mejor responda a mi volumen de operación. | 4 | Rivera Rupay, Fabricio Jose | Done |
 | US-39 | Conocer los beneficios de Molinex | TS-39.1 | Sección de testimonios y beneficios | Como visitante, quiero conocer los beneficios de Molinex, para tomar una decisión informada sobre la adopción del sistema. | 2 | Casalino Berrocal, Luisa Nhiriel | Done |
 | US-40 | Solicitar información comercial | TS-40.1 | Formulario de contacto comercial | Como visitante, quiero solicitar información comercial, para ponerse en contacto con el equipo de ventas. | 4 | Gallegos De La Cruz, Giovanni Marcelo | Done |
+**Captura y enlace al Board:** `https://trello.com/invite/b/6aa9c4fdfc659047df591de0/ATTI907effe44c9315a41519954d192d71f48A54EF45/molinex`
+
+![Sprint Backlog.png](assets/Images%20Chapter%205/Sprint%20Backlog.png)
 
 
 #### 5.2.1.4 Development Evidence for Sprint Review
@@ -1947,6 +1970,6 @@ En este anexo se incluyen los enlaces a los videos correspondientes a la exposic
 
 | Entrega | Título | Enlace |
 |:--|:--|:--|
-| AV1 | Video de exposición del proyecto | Pendiente de incorporar |
+| AV1 | Video de exposición del proyecto | [Pendiente de incorporar](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202420031_upc_edu_pe/IQDe6HjgK534RoKJUdNr7jlUAeca07gXpLXC7_NkXEK444Y?e=faXkz9) |
 | AV1 | Video de demostración de la Landing Page | Pendiente de incorporar |
 | AV1 | Video del prototipo en Figma | [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202420031_upc_edu_pe/IQAuKZpedDkkTr19h5yiaO6hAbRvnrzfZpqPXLHV-w8nY5E?e=2iIVyT) |
