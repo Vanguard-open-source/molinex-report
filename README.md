@@ -1794,12 +1794,25 @@ A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con e
 |Sprint 1 Velocity | 20 Story Points. Primer Sprint sin velocity histórico: se adopta una capacidad conservadora para un equipo de 5 integrantes. |
 |Sum of Story Points | 20 Story Points (US-01 a US-04, US-35 a US-40) |
 
-* 5.2.1.2. Sprint Backlog 1
+#### 5.2.1.2 Aspect Leaders and Collaborators
 
-| Sprint # | Sprint 1 | | | | | | |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **User Story** | | **Work-Item / Task** | | | | | |
-| **Id** | **Title** | **Id** | **Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status (To-do / In-Process / Done)** |
+| Team Member (Last Name, First Name) | GitHub Username | Aspecto 1 L/C | Aspecto 2 L/C | Aspecto 3 L/C |
+|:--|:--:|:--:|:--:|:--:|
+| Casalino Berrocal, Luisa Nhiriel | | | | |
+| Gallegos De La Cruz, Giovanni Marcelo | | | | |
+| Huerta Cardenas, Brayan Benjamin | | | | |
+| Jimenez Saavedra, Antony Alexander | | | | |
+| Rivera Rupay, Fabricio Jose | | | | |
+
+#### 5.2.1.3 Sprint Backlog 1
+
+**Captura y enlace al Board:** `https://trello.com/invite/b/6aa9c4fdfc659047df591de0/ATTI907effe44c9315a41519954d192d71f48A54EF45/molinex`
+
+| Sprint # | Sprint 1 |
+|:--|:--|
+
+| Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
+|:--|:--|:--|:--|:--|--:|:--|:--|
 | US-01 | Registrar usuario | TS-01.1 | Diseñar formulario de registro | Como administrador, quiero registrar nuevos usuarios en el sistema, para otorgarles acceso a la plataforma. | 4 | Casalino Berrocal, Luisa Nhiriel | Done |
 | US-01 | Registrar usuario | TS-01.2 | Implementar API de registro | Como administrador, quiero registrar nuevos usuarios en el sistema, para otorgarles acceso a la plataforma. | 6 | Gallegos De La Cruz, Giovanni Marcelo | Done |
 | US-01 | Registrar usuario | TS-01.3 | Pruebas de integración de registro | Como administrador, quiero registrar nuevos usuarios en el sistema, para otorgarles acceso a la plataforma. | 3 | Huerta Cardenas, Brayan Benjamin | Done |
@@ -1818,26 +1831,6 @@ A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con e
 | US-39 | Conocer los beneficios de Molinex | TS-39.1 | Sección de testimonios y beneficios | Como visitante, quiero conocer los beneficios de Molinex, para tomar una decisión informada sobre la adopción del sistema. | 2 | Casalino Berrocal, Luisa Nhiriel | Done |
 | US-40 | Solicitar información comercial | TS-40.1 | Formulario de contacto comercial | Como visitante, quiero solicitar información comercial, para ponerse en contacto con el equipo de ventas. | 4 | Gallegos De La Cruz, Giovanni Marcelo | Done |
 
-#### 5.2.1.2 Aspect Leaders and Collaborators
-
-| Team Member (Last Name, First Name) | GitHub Username | Aspecto 1 L/C | Aspecto 2 L/C | Aspecto 3 L/C |
-|:--|:--:|:--:|:--:|:--:|
-| Casalino Berrocal, Luisa Nhiriel | | | | |
-| Gallegos De La Cruz, Giovanni Marcelo | | | | |
-| Huerta Cardenas, Brayan Benjamin | | | | |
-| Jimenez Saavedra, Antony Alexander | | | | |
-| Rivera Rupay, Fabricio Jose | | | | |
-
-#### 5.2.1.3 Sprint Backlog 1
-
-**Captura y enlace al Board:** `[URL]`
-
-| Sprint # | Sprint 1 |
-|:--|:--|
-
-| Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
-|:--|:--|:--|:--|:--|--:|:--|:--|
-| | | | | | | | |
 
 #### 5.2.1.4 Development Evidence for Sprint Review
 
