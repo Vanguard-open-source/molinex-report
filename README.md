@@ -1813,7 +1813,7 @@ A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con e
 | Attendees (to planning meeting) | Gallegos De La Cruz, Giovanni Marcelo / Casalino Berrocal, Luisa Nhiriel / Huerta Cardenas, Brayan Benjamin / Jimenez Saavedra, Antony Alexander / Rivera Rupay, Fabricio Jose |
 | Sprint n - 1 Review Summary | No aplica (primer Sprint). |
 | Sprint n - 1 Retrospective Summary | No aplica (primer Sprint). |
-| **Sprint Goal & User Stories** | |
+| Sprint 1 Goal | Implementar y desplegar la primera versión de la Landing Page de Molinex, presentando su propuesta de valor, funcionalidades, beneficios y planes de suscripción. También se busca validar la estructura inicial de la Web Application mediante wireframes, mockups y prototipo interactivo. |
 | Sprint 1 Goal | Our focus is on letting prospective mills evaluate Molinex and choose a subscription plan from the landing page, and on giving authorized mill staff role-based access to the platform.We believe it delivers a clearer understanding of Molinex's value, features and plans to the mill owners and administrators who visit the site, and controlled access to operational information to administrators, technicians and operators.This will be confirmed when a visitor can review the value proposition, benefits, features and the Basic, Professional and Enterprise plans and submit a commercial information request in no more than three steps, and when an administrator can register a user and assign a role, and that user can log in, update their profile and is denied access to functionalities outside their role.|
 |Sprint 1 Velocity | 20 Story Points. Primer Sprint sin velocity histórico: se adopta una capacidad conservadora para un equipo de 5 integrantes. |
 |Sum of Story Points | 20 Story Points (US-01 a US-04, US-35 a US-40) |
@@ -1885,14 +1885,18 @@ La Web Application presentada como prototipo utiliza datos locales y no realiza 
 | Base de datos | Pendiente de integración |
 | Consumo de servicios desde la Web Application | Pendiente para una etapa posterior |
 
-La primera versión de la Landing Page fue desplegada mediante GitHub Pages y se encuentra disponible en la siguiente URL:
+
+#### 5.2.1.7 Software Deployment Evidence for Sprint Review
+
+La primera versión de la Landing Page fue desplegada mediante GitHub Pages.
+
+URL pública:
 
 [https://vanguard-open-source.github.io/molinex-website/](https://vanguard-open-source.github.io/molinex-website/)
 
 ![Landing Page desplegada](assets/Images%20Chapter%205/landing-deployed.png)
 
 **Figura:** Primera versión de la Landing Page desplegada mediante GitHub Pages. Fuente: elaboración propia.
-
 #### 5.2.1.8 Team Collaboration Insights during Sprint
 
 Durante el Sprint 1, el equipo utilizó GitHub para organizar el desarrollo colaborativo y registrar la participación de sus integrantes.
@@ -1940,7 +1944,8 @@ Springdoc. (s. f.). *springdoc-openapi*. https://springdoc.org/
 
 En este anexo se incluyen los enlaces a los videos correspondientes a la exposición y demostración del proyecto.
 
-
 | Entrega | Título | Enlace |
 |:--|:--|:--|
-| AV1 | | |
+| AV1 | Video de exposición del proyecto | Pendiente de incorporar |
+| AV1 | Video de demostración de la Landing Page | Pendiente de incorporar |
+| AV1 | Video del prototipo en Figma | [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202420031_upc_edu_pe/IQAuKZpedDkkTr19h5yiaO6hAbRvnrzfZpqPXLHV-w8nY5E?e=2iIVyT) |
