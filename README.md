@@ -1474,7 +1474,7 @@ Las interacciones implementadas permiten:
 
 **Figura:** Vista general del prototipo de la Web Application de Molinex en Figma. Fuente: elaboración propia.
 
-_Enlace al video demostrativo (Microsoft Stream):_ `[URL]`
+_Enlace al video demostrativo (Microsoft Stream):_ `https://upcedupe-my.sharepoint.com/:v:/g/personal/u202420031_upc_edu_pe/IQAuKZpedDkkTr19h5yiaO6hAbRvnrzfZpqPXLHV-w8nY5E?e=2iIVyT`
 
 ## 4.6 Domain-Driven Software Architecture
 
@@ -1874,53 +1874,72 @@ La evidencia principal del AV1 corresponde a la primera versión de la Landing P
 
 #### 5.2.1.6 Services Documentation Evidence for Sprint Review
 
-| Contexto | Rutas principales |
+Durante el AV1 no se implementó una RESTful API ni servicios backend. La entrega se concentra en la primera versión de la Landing Page y en el prototipo de la Web Application.
+
+La Web Application presentada como prototipo utiliza datos locales y no realiza conexiones con servicios externos. La implementación de la RESTful API, la documentación mediante Swagger/OpenAPI y la integración con la base de datos serán desarrolladas en avances posteriores.
+
+| Servicio | Estado en AV1 |
 |:--|:--|
-| | |
+| RESTful API | Pendiente de implementación |
+| Documentación Swagger/OpenAPI | Pendiente de implementación |
+| Base de datos | Pendiente de integración |
+| Consumo de servicios desde la Web Application | Pendiente para una etapa posterior |
 
-<p align="center">
-  <img src="assets/evidence/collaboration/swagger-overview.png" alt="Swagger UI del RESTful API de Molinex" width="100%">
-</p>
+La primera versión de la Landing Page fue desplegada mediante GitHub Pages y se encuentra disponible en la siguiente URL:
 
-#### 5.2.1.7 Software Deployment Evidence for Sprint Review
+[https://vanguard-open-source.github.io/molinex-website/](https://vanguard-open-source.github.io/molinex-website/)
 
-[ ]
+![Landing Page desplegada](assets/Images%20Chapter%205/landing-deployed.png)
 
-<p align="center">
-  <img src="assets/evidence/collaboration/deployment-config.png" alt="Configuración de despliegue de Molinex" width="100%">
-</p>
+**Figura:** Primera versión de la Landing Page desplegada mediante GitHub Pages. Fuente: elaboración propia.
 
 #### 5.2.1.8 Team Collaboration Insights during Sprint
 
-[ ]
+Durante el Sprint 1, el equipo utilizó GitHub para organizar el desarrollo colaborativo y registrar la participación de sus integrantes.
 
-<p align="center">
-  <img src="assets/evidence/collaboration/github-branches.png" alt="Ramas GitFlow publicadas en GitHub" width="100%">
-</p>
+Se aplicó GitFlow mediante las ramas `main`, `develop` y `feature/*`. Cada integrante trabajó en cambios específicos y estos fueron registrados mediante commits siguiendo Conventional Commits.
 
-<p align="center">
-  <img src="assets/evidence/collaboration/github-contributors.png" alt="GitHub Insights Contributors del repositorio" width="100%">
-</p>
+![Ramas GitFlow del proyecto](assets/Images%20Chapter%205/github-branches.png)
 
-<div style="page-break-after: always;"></div>
+**Figura:** Ramas utilizadas para organizar el desarrollo colaborativo. Fuente: elaboración propia.
+
+![Colaboradores del repositorio](assets/Images%20Chapter%205/github-contributors.png)
+
+**Figura:** Colaboradores registrados en el repositorio del proyecto. Fuente: elaboración propia.
 
 # Conclusiones
 
 ## Conclusiones y recomendaciones
 
-[ ]
+Durante el AV1 se implementó y desplegó la primera versión de la Landing Page de Molinex mediante GitHub Pages. Esta versión permite presentar la propuesta de valor, las funcionalidades principales, los beneficios y los planes de la solución.
 
-<div style="page-break-after: always;"></div>
+También se definieron los wireframes, mockups, wireflows, user flows y el prototipo interactivo de la Web Application. Estos artefactos permiten validar la estructura de navegación y las principales vistas operativas antes de implementar completamente la aplicación.
+
+Asimismo, se estableció un flujo de trabajo basado en GitFlow, utilizando las ramas `main`, `develop` y `feature/*`. Se definieron convenciones para las ramas `release/*` y `hotfix/*`, además del uso de Semantic Versioning y Conventional Commits.
+
+Como trabajo pendiente para los siguientes avances, se recomienda implementar la RESTful API, integrar la base de datos, documentar los servicios mediante Swagger/OpenAPI y conectar la Web Application con los servicios backend.
 
 # Bibliografía
 
-[Referencias en formato APA.]
+Atlassian. (s. f.). *Gitflow workflow*. https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
 
-<div style="page-break-after: always;"></div>
+Conventional Commits. (s. f.). *Conventional Commits specification*. https://www.conventionalcommits.org/
 
+Driessen, V. (2010). *A successful Git branching model*. https://nvie.com/posts/a-successful-git-branching-model/
+
+GitLab. (s. f.). *What is GitFlow?*. https://about.gitlab.com/blog/what-is-gitflow/
+
+Kummer, D. (s. f.). *Git-flow cheatsheet*. https://danielkummer.github.io/git-flow-cheatsheet/index.html
+
+Preston-Werner, T. (s. f.). *Semantic Versioning 2.0.0*. https://semver.org/
+
+Springdoc. (s. f.). *springdoc-openapi*. https://springdoc.org/
 # Anexos
 
 ## Anexo A. Videos de Exposiciones
+
+En este anexo se incluyen los enlaces a los videos correspondientes a la exposición y demostración del proyecto.
+
 
 | Entrega | Título | Enlace |
 |:--|:--|:--|
