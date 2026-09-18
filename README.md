@@ -1598,13 +1598,23 @@ Reporting and Analytics se modela como un *read side*: consume eventos expresado
 
 ## 4.8 Database Design
 
+Molinex emplea una base de datos relacional MySQL para soportar un monolito modular con enfoque SaaS multiempresa. El modelo utiliza `rice_mills` como raíz de tenancy: los usuarios acceden a cada molino mediante membresías y los datos de producción, maquinaria y reportes quedan asociados directa o transitivamente con su propietario. El catálogo comercial permanece fuera de esta jerarquía porque puede ser consultado por visitantes que todavía no son clientes.
+
 ### 4.8.1 Database Diagrams
 
-[Database Diagram elaborado en la herramienta indicada (ERDPlus/LucidChart/MySQL Workbench), por bounded context.]
+
+| Área lógica | Tablas principales | Decisión de diseño |
+|:--|:--|:--|
+| Commercial Engagement | `plans`, `features`, `plan_features`, `plan_conditions`, `commercial_inquiries` | Mantiene el catálogo público y permite asociar opcionalmente una consulta con el plan de interés, sin representar todavía una suscripción activa. |
+| Tenant and Identity Access Management | `rice_mills`, `users`, `mill_memberships`, `roles`, `permissions`, `role_permissions` | Separa la identidad global del usuario de su rol dentro de cada molino y evita mezclar datos de diferentes tenants. |
+| Operational Management | `raw_material_receptions`, `production_batches`, `production_records`, `quality_assessments`, `quality_measurements`, `waste_records`, `quality_deviations`, `machines`, `maintenance_records`, `operational_readings`, `operational_anomalies`, `alerts` | Conserva la trazabilidad desde el molino hasta producción, calidad, activos, mediciones, anomalías y mantenimientos. |
+| Reporting and Analytics | `report_rows`, `report_dimensions`, `report_metrics` | Implementa proyecciones de lectura reconstruibles, asociadas al molino mediante `mill_id`, sin duplicar las tablas transaccionales de origen. |
 
 <p align="center">
-  <img src="assets/design/database-diagram.png" alt="Database Diagram de Molinex" width="100%">
+  <img src="assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/molinex-database.svg" alt="Molinex Relational Database Diagram" width="100%">
 </p>
+
+**Figura: Molinex Relational Database Diagram. Fuente: elaboración propia en MySQL Workbench.**
 
 <div style="page-break-after: always;"></div>
 
