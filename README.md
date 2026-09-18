@@ -1820,13 +1820,13 @@ A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con e
 
 #### 5.2.1.2 Aspect Leaders and Collaborators
 
-| Team Member (Last Name, First Name) | GitHub Username | Aspecto 1 L/C | Aspecto 2 L/C | Aspecto 3 L/C |
+| Team Member (Last Name, First Name) | GitHub Username | Aspecto 1 : Landing Page  | Aspecto 2 Usuarios y Acceso | Aspecto 3 Documentacion e Integracion |
 |:--|:--:|:--:|:--:|:--:|
-| Casalino Berrocal, Luisa Nhiriel | | | | |
-| Gallegos De La Cruz, Giovanni Marcelo | | | | |
-| Huerta Cardenas, Brayan Benjamin | | | | |
-| Jimenez Saavedra, Antony Alexander | | | | |
-| Rivera Rupay, Fabricio Jose | | | | |
+| Casalino Berrocal, Luisa Nhiriel |lulu22nhiri | C|C |C |
+| Gallegos De La Cruz, Giovanni Marcelo |Giova2725|L |L | L|
+| Huerta Cardenas, Brayan Benjamin |Brayanjk22|C |C |C |
+| Jimenez Saavedra, Antony Alexander |saavedraantony-max | C| C|C |
+| Rivera Rupay, Fabricio Jose |Fabricio1924 |C |C |C |
 
 #### 5.2.1.3 Sprint Backlog 1
 
