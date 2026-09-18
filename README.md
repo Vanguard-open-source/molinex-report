@@ -1511,11 +1511,90 @@ Los diagramas de componentes separan el frontend y el backend para conservar un 
 
 ### 4.7.1 Class Diagrams
 
-[Class Diagram de UML elaborado en la herramienta indicada (LucidChart), por producto y por bounded context.]
+El modelado se presenta por Bounded Context; por ello, no existe un único modelo de clases global que permita acceder directamente a los objetos internos de todos los módulos.
+
+Los diagramas representan el diseño orientado a objetos del dominio y no un esquema de base de datos. Los atributos se mantienen privados, las operaciones públicas expresan comportamientos que protegen invariantes y cada Aggregate Root dispone de su propio contrato de repositorio. Las referencias hacia otros Aggregates se expresan mediante identificadores tipados. Cuando dos contextos representan la misma identidad, cada uno define su propio tipo local en lugar de importar el modelo interno del otro.
+
+| Notación | Significado en el diseño |
+|:--|:--|
+| `<<Aggregate Root>>` | Único punto de entrada autorizado para modificar un Aggregate y proteger sus invariantes. |
+| `<<Entity>>` | Objeto con identidad subordinado al ciclo de vida de un Aggregate Root. |
+| `<<Value Object>>` | Objeto inmutable definido por sus valores y validaciones. |
+| `<<Repository>>` | Contrato de persistencia definido por el dominio para recuperar o guardar Aggregate Roots. |
+| `<<Domain Service>>` | Comportamiento de dominio que no pertenece naturalmente a una sola Entity o Value Object. |
+| `<<Read Model>>` | Proyección optimizada para consulta que no modifica el modelo transaccional. |
+| `<<Published Language>>` | Contrato estable utilizado para intercambiar información sin compartir modelos internos. |
+| `<<Port>>` | Frontera que desacopla el dominio de una integración externa. |
+
+#### Commercial Engagement Bounded Context
+
+`CommercialInquiry` es el único Aggregate Root transaccional. Los planes y la propuesta de valor se mantienen como modelos de lectura porque los requerimientos no confirman contratación, pago ni activación de suscripciones.
 
 <p align="center">
-  <img src="assets/design/class-diagram.png" alt="Class Diagram de Molinex" width="100%">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/commercial-engagement-class-diagram.svg" alt="Commercial Engagement Bounded Context Class Diagram" width="100%">
 </p>
+
+**Figura: Commercial Engagement Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
+
+#### Identity and Access Management Bounded Context
+
+`User` protege la validez de la cuenta, el perfil y el rol asignado. La unicidad global del correo se evalúa mediante `UniqueEmailPolicy`, que consulta el contrato `UserRepository`, porque una instancia aislada de `User` no puede conocer las demás cuentas. Los otros contextos no reciben el Aggregate: consumen únicamente `AuthenticatedPrincipal`, definido como Published Language.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/identity-access-management-class-diagram.svg" alt="Identity and Access Management Bounded Context Class Diagram" width="100%">
+</p>
+
+**Figura: Identity and Access Management Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
+
+#### Production Management Bounded Context
+
+`RawMaterialReception`, `ProductionBatch` y `ProductionRecord` son Aggregates independientes. Un lote conserva un `RawMaterialReceptionId` y un registro productivo conserva un `ProductionBatchId`; ninguno contiene otro Aggregate Root. `Weight` y `MeasurementUnit` pertenecen al Shared Kernel acordado con Quality and Yield Control.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/production-management-class-diagram.svg" alt="Production Management Bounded Context Class Diagram" width="100%">
+</p>
+
+**Figura: Production Management Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
+
+#### Quality and Yield Control Bounded Context
+
+`QualityAssessment`, `WasteRecord` y `QualityDeviation` protegen invariantes distintas y permanecen como Aggregates separados. El `ProductionRecordId` mostrado pertenece al lenguaje local de Quality; no importa la clase homónima de Production Management.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/quality-yield-control-class-diagram.svg" alt="Quality and Yield Control Bounded Context Class Diagram" width="100%">
+</p>
+
+**Figura: Quality and Yield Control Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
+
+#### Asset and Maintenance Management Bounded Context
+
+`Machine` y `MaintenanceRecord` evolucionan como Aggregates independientes y se relacionan mediante `MachineId`. Un mantenimiento correctivo puede conservar una `AnomalyReference` informativa, pero no importa el Aggregate `OperationalAnomaly` de Operational Intelligence.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/asset-maintenance-management-class-diagram.svg" alt="Asset and Maintenance Management Bounded Context Class Diagram" width="100%">
+</p>
+
+**Figura: Asset and Maintenance Management Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
+
+#### Operational Intelligence Bounded Context
+
+`OperationalReading`, `OperationalAnomaly` y `Alert` mantienen ciclos de vida separados. `AnomalyDetectionService` concentra la evaluación que involucra una lectura y un criterio. `SensorGatewayPort` actúa como Anti-Corruption Layer frente al proveedor de sensores, mientras que `NotificationPort` evita acoplar el dominio al servicio de entrega de notificaciones.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/operational-intelligence-class-diagram.svg" alt="Operational Intelligence Bounded Context Class Diagram" width="100%">
+</p>
+
+**Figura: Operational Intelligence Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
+
+#### Reporting and Analytics Bounded Context
+
+Reporting and Analytics se modela como un *read side*: consume eventos expresados mediante Published Language, construye proyecciones propias y responde consultas. No se introduce un Aggregate Root para reportes porque los requerimientos actuales no establecen identidad, versionado, aprobación ni ciclo de vida transaccional para ellos.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/reporting-analytics-class-diagram.svg" alt="Reporting and Analytics Bounded Context Class Diagram" width="100%">
+</p>
+
+**Figura: Reporting and Analytics Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
 
 ## 4.8 Database Design
 
