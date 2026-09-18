@@ -184,20 +184,21 @@ Proyecto<br>
 
 ## Student Outcome
 
+<div style="page-break-before: always;"></div>
+
+# Student Outcome
+
 El curso contribuye al cumplimiento del Student Outcome ABET:
 
-**ABET – EAC - Student Outcome 3**
+**ABET - EAC - Student Outcome 3**  
+**Criterio:** Capacidad de comunicarse efectivamente con un rango de audiencias.
 
-Criterio: Capacidad de comunicarse efectivamente con un rango de audiencias.
-
-En el siguiente cuadro se describen las acciones realizadas y los enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 3.
+En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET - EAC - Student Outcome 3.
 
 | Criterio específico | Acciones realizadas | Conclusiones |
-|:--|:--|:--|
-| Comunica oralmente con efectividad a diferentes rangos de audiencia. | [Apellidos, Nombres]<br>**AV1**<br>[acciones realizadas por esta persona en esta entrega] | [conclusión grupal acumulable] |
-| Comunica por escrito con efectividad a diferentes rangos de audiencia. | [Apellidos, Nombres]<br>**AV1**<br>[acciones realizadas por esta persona en esta entrega] | [conclusión grupal acumulable] |
-
-<div style="page-break-after: always;"></div>
+| :--- | :--- | :--- |
+| **Comunica oralmente con efectividad a diferentes rangos de audiencia.** | **Casalino Berrocal, Luisa Nhiriel**<br>**AV1:** Presenté y expliqué la distribución de roles del equipo en la llamada grupal y participé activamente en la grabación del video "About The Team", exponiendo la visión general del proyecto Molinex a una audiencia académica.<br><br>**Gallegos De La Cruz, Giovanni Marcelo**<br>**AV1:** Me mantuve activo en la comunicación oral durante las reuniones virtuales, exponiendo los aspectos técnicos de la arquitectura del software y proponiendo ideas de mejora para la Landing Page.<br><br>**Huerta Cardenas, Brayan Benjamin**<br>**AV1:** Participé en las llamadas de planificación comunicando mis propuestas sobre el alcance del dominio y la gestión de materia prima, además de intervenir oralmente en la presentación del video del grupo.<br><br>**Jimenez Saavedra, Antony Alexander**<br>**AV1:** Comuniqué mis ideas y dudas durante las sesiones grupales para la definición del Product Backlog, coordinando verbalmente con mis compañeros el desglose de historias de usuario del Sprint 1.<br><br>**Rivera Rupay, Fabricio Jose**<br>**AV1:** Apoyé la conducción de las reuniones de planificación, explicando oralmente los objetivos de negocio y la propuesta de valor del sistema frente al grupo y en la presentación en video. | Como conclusión para este primer avance del proyecto, hemos confirmado que la comunicación oral grupal desde el inicio del proyecto es fundamental para un buen inicio de trabajo. No solo nos ha permitido conocernos entre nosotros, sino que también ha servido como plataforma para expresar nuestras ideas, dudas y consultas de manera efectiva, lo cual ha contribuido significativamente a la organización y la claridad en el desarrollo del proyecto. Al participar activamente en las llamadas grupales, hemos establecido una base sólida de comprensión mutua y confianza, lo que facilita la asignación de tareas y la colaboración en equipo. Además, estas interacciones nos han permitido identificar áreas clave que requieren atención y enfoque, asegurando que abordemos los desafíos de manera proactiva y eficiente. En resumen, la comunicación oral grupal no solo es esencial para compartir información, sino que también es fundamental para construir relaciones sólidas y establecer una estructura organizativa efectiva que guiará nuestro progreso en las siguientes etapas del proyecto. |
+| **Comunica por escrito con efectividad a diferentes rangos de audiencia.** | **Casalino Berrocal, Luisa Nhiriel**<br>**AV1:** Realicé la redacción y estructuración formal del Sprint Planning 1 y del Sprint Backlog en formato Markdown, asegurando el uso correcto de estándares técnicos y la precisión del lenguaje escrito.<br><br>**Gallegos De La Cruz, Giovanni Marcelo**<br>**AV1:** Me encargué de la redacción de las tareas técnicas (Work-Items) del primer Sprint y de la documentación de los requisitos del sistema, manteniendo informados a mis compañeros por WhatsApp.<br><br>**Huerta Cardenas, Brayan Benjamin**<br>**AV1:** Elaboré las descripciones formales de las Historias de Usuario (US-01 a US-04 y US-35 a US-40) y redacté los objetivos del Sprint en inglés y español con rigor técnico.<br><br>**Jimenez Saavedra, Antony Alexander**<br>**AV1:** Redacté las secciones del informe vinculadas a la propuesta de valor y planes de suscripción de la Landing Page, e incluí referencias bibliográficas relevantes que respaldan la investigación.<br><br>**Rivera Rupay, Fabricio Jose**<br>**AV1:** Me encargué de consolidar la documentación textual en el repositorio Git, revisando la ortografía, coherencia y formato general del informe para el envío del avance 1. | La comunicación escrita desempeña un papel insustituible en nuestro equipo, actuando como un medio vital para mantenernos informados de manera constante sobre los progresos y las inquietudes que surgen en el transcurso del proyecto. A través de la documentación escrita, no solo consolidamos y compartimos nuestras investigaciones y aprendizajes, sino que también creamos un registro detallado y accesible de nuestro trabajo. Esta transcripción minuciosa no solo refleja nuestro compromiso con la transparencia y la organización interna, sino que también se erige como un recurso invaluable para cualquier individuo interesado en comprender los detalles y las razones detrás de nuestras decisiones y acciones. En última instancia, esta práctica no solo fortalece la cohesión y la eficacia de nuestro equipo, sino que también garantiza que nuestro proyecto sea accesible y comprensible para una audiencia más amplia, lo que amplifica su impacto y su alcance potencial. |
 
 # Capítulo I Introducción 
 
