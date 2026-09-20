@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760">
+  <rect width="1400" height="760" fill="#F5F7FA"/>
+  <text x="70" y="65" font-family="Poppins,Arial" font-size="34" font-weight="700" fill="#102A43">Sitemap de la Landing Page de Molinex</text>
+  <text x="70" y="102" font-family="Inter,Arial" font-size="18" fill="#486581">Estructura jerárquica implementada en una página única</text>
+  <g stroke="#829AB1" stroke-width="3" fill="none"><path d="M700 190V235M150 235H1250M150 235V285M370 235V285M590 235V285M810 235V285M1030 235V285M1250 235V285"/></g>
+  <rect x="535" y="135" width="330" height="60" rx="14" fill="#0B4F8A"/><text x="700" y="174" text-anchor="middle" font-family="Poppins,Arial" font-size="21" font-weight="600" fill="#FFFFFF">Molinex Landing Page</text>
+  <g font-family="Poppins,Arial" font-size="18" font-weight="600" text-anchor="middle" fill="#102A43">
+    <g><rect x="55" y="285" width="190" height="64" rx="12" fill="#EAF4FB" stroke="#0B4F8A"/><text x="150" y="325">Hero</text></g>
+    <g><rect x="275" y="285" width="190" height="64" rx="12" fill="#EAF4FB" stroke="#0B4F8A"/><text x="370" y="325">Solution</text></g>
+    <g><rect x="495" y="285" width="190" height="64" rx="12" fill="#EAF4FB" stroke="#0B4F8A"/><text x="590" y="325">Features</text></g>
+    <g><rect x="715" y="285" width="190" height="64" rx="12" fill="#EEF7E8" stroke="#4F8A2B"/><text x="810" y="325">Audiences</text></g>
+    <g><rect x="935" y="285" width="190" height="64" rx="12" fill="#FFF7D6" stroke="#A86F00"/><text x="1030" y="325">Plans</text></g>
+    <g><rect x="1155" y="285" width="190" height="64" rx="12" fill="#073763"/><text x="1250" y="325" fill="#FFFFFF">Contact</text></g>
+  </g>
+  <g font-family="Inter,Arial" font-size="15" fill="#486581">
+    <text x="75" y="390">• Propuesta de valor</text><text x="75" y="420">• CTA principal</text><text x="75" y="450">• Vista del dashboard</text>
+    <text x="295" y="390">• Scattered data</text><text x="295" y="420">• Unexpected downtime</text><text x="295" y="450">• Hidden losses</text>
+    <text x="515" y="390">• Dashboard</text><text x="515" y="420">• Lot traceability</text><text x="515" y="450">• Maintenance</text><text x="515" y="480">• Alerts</text>
+    <text x="735" y="390">• Managers</text><text x="735" y="420">• Technicians</text><text x="735" y="450">• Operators</text>
+    <text x="955" y="390">• Basic</text><text x="955" y="420">• Professional</text><text x="955" y="450">• Enterprise</text>
+    <text x="1175" y="390">• Contact form</text><text x="1175" y="420">• Mill size</text><text x="1175" y="450">• User challenge</text>
+  </g>
+  <rect x="410" y="560" width="580" height="92" rx="16" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="2"/>
+  <text x="700" y="598" text-anchor="middle" font-family="Poppins,Arial" font-size="18" font-weight="600" fill="#102A43">Footer</text>
+  <text x="700" y="628" text-anchor="middle" font-family="Inter,Arial" font-size="15" fill="#486581">Explore · Legal · Identidad del proyecto · Idioma mostrado</text>
+  <text x="70" y="710" font-family="Inter,Arial" font-size="15" fill="#486581">Fuente: elaboración propia a partir de la implementación actual de la Landing Page.</text>
+</svg>

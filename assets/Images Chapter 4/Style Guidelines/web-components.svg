@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#FFFFFF"/>
+  <text x="60" y="70" font-family="Poppins,Arial" font-size="34" font-weight="700" fill="#102A43">Componentes web de Molinex</text>
+  <text x="60" y="108" font-family="Inter,Arial" font-size="18" fill="#486581">Estados consistentes para botones, formularios, tarjetas e indicadores.</text>
+  <g font-family="Poppins,Arial" font-size="15" font-weight="600">
+    <rect x="60" y="160" width="190" height="52" rx="10" fill="#F2B705"/><text x="155" y="193" text-anchor="middle" fill="#073763">Acción principal</text>
+    <rect x="275" y="160" width="190" height="52" rx="10" fill="#0B4F8A"/><text x="370" y="193" text-anchor="middle" fill="#FFFFFF">Acción secundaria</text>
+    <rect x="490" y="160" width="190" height="52" rx="10" fill="#FFFFFF" stroke="#0B4F8A" stroke-width="2"/><text x="585" y="193" text-anchor="middle" fill="#0B4F8A">Botón terciario</text>
+    <rect x="705" y="160" width="190" height="52" rx="10" fill="#ECEFF1"/><text x="800" y="193" text-anchor="middle" fill="#829AB1">Deshabilitado</text>
+  </g>
+  <text x="60" y="285" font-family="Inter,Arial" font-size="14" font-weight="600" fill="#102A43">Código del lote</text>
+  <rect x="60" y="302" width="405" height="54" rx="9" fill="#FFFFFF" stroke="#0B4F8A" stroke-width="2"/><text x="78" y="336" font-family="Inter,Arial" font-size="16" fill="#486581">L-2026-001</text>
+  <text x="500" y="285" font-family="Inter,Arial" font-size="14" font-weight="600" fill="#102A43">Máquina</text>
+  <rect x="500" y="302" width="395" height="54" rx="9" fill="#F5F7FA" stroke="#D9E2EC"/><text x="518" y="336" font-family="Inter,Arial" font-size="16" fill="#829AB1">Seleccionar máquina</text>
+  <g font-family="Inter,Arial">
+    <rect x="60" y="420" width="320" height="190" rx="16" fill="#FFFFFF" stroke="#D9E2EC"/><text x="88" y="462" font-size="16" font-weight="600" fill="#486581">Rendimiento</text><text x="88" y="530" font-size="42" font-weight="700" fill="#102A43">82.4 %</text><rect x="88" y="558" width="104" height="30" rx="15" fill="#E8F5E9"/><text x="140" y="579" text-anchor="middle" font-size="13" font-weight="600" fill="#2E7D32">Normal</text>
+    <rect x="410" y="420" width="320" height="190" rx="16" fill="#FFFFFF" stroke="#D9E2EC"/><text x="438" y="462" font-size="16" font-weight="600" fill="#486581">Merma</text><text x="438" y="530" font-size="42" font-weight="700" fill="#102A43">3.8 %</text><rect x="438" y="558" width="126" height="30" rx="15" fill="#FFF4D6"/><text x="501" y="579" text-anchor="middle" font-size="13" font-weight="600" fill="#A86F00">Revisar</text>
+    <rect x="760" y="420" width="380" height="190" rx="16" fill="#FDECEC" stroke="#C62828"/><text x="788" y="462" font-size="16" font-weight="700" fill="#C62828">Anomalía detectada</text><text x="788" y="500" font-size="15" fill="#102A43">La temperatura supera el rango esperado.</text><rect x="788" y="548" width="170" height="44" rx="9" fill="#C62828"/><text x="873" y="576" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">Revisar máquina</text>
+  </g>
+  <text x="60" y="675" font-family="Inter,Arial" font-size="15" fill="#486581">El color siempre se acompaña de texto o iconografía para comunicar el estado.</text>
+</svg>

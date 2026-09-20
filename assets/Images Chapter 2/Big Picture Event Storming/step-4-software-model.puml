@@ -1,0 +1,128 @@
+@startuml
+skinparam backgroundColor #F7FAFC
+skinparam defaultFontName Arial
+skinparam defaultFontSize 13
+skinparam shadowing false
+skinparam linetype ortho
+skinparam ArrowColor #334E68
+skinparam ArrowThickness 1.5
+skinparam RectangleBorderColor #486581
+skinparam RectangleFontColor #102A43
+skinparam PackageBorderColor #486581
+skinparam PackageFontColor #102A43
+skinparam package {
+  BackgroundColor #EDF5FC
+  RoundCorner 15
+}
+skinparam rectangle {
+  RoundCorner 10
+  Padding 10
+}
+
+title Step 4 - Software Modeling Outcome
+caption Candidate Bounded Contexts and Aggregates. Their boundaries and invariants will be validated during Design-Level EventStorming in Section 4.6.1.
+
+top to bottom direction
+
+package "Commercial Engagement\nSupporting Subdomain" as bc_commercial #F1F5F9 {
+  rectangle "Commercial Inquiry\nAggregate Candidate" as ag_commercial #FFE27A
+  rectangle "Commercial Inquiry\nSubmitted" as ev_commercial #FFB26B
+  rectangle "Plan Catalog and\nValue Proposition" as rm_commercial #B9D98A
+  rectangle "Subscription, payment, rice mill onboarding,\nand plan activation flow is missing" as hs_commercial #FF8A80
+  ag_commercial --> ev_commercial
+  rm_commercial ..> ag_commercial
+  ev_commercial ..> hs_commercial
+}
+
+package "Identity and Access Management\nGeneric Subdomain" as bc_iam #F1F5F9 {
+  rectangle "User\nAggregate Candidate" as ag_user #FFE27A
+  rectangle "User Registered / Role Assigned /\nUser Profile Updated" as ev_user #FFB26B
+  rectangle "Role-Based\nAuthorized Functions" as rm_user #B9D98A
+  ag_user --> ev_user
+  ev_user ..> rm_user
+}
+
+package "Production Management\nCore Subdomain" as bc_production #E6F4EA {
+  rectangle "Raw Material Reception\nAggregate Candidate" as ag_reception #FFE27A
+  rectangle "Production Batch\nAggregate Candidate" as ag_batch #FFE27A
+  rectangle "Production Record\nAggregate Candidate" as ag_production #FFE27A
+  rectangle "Raw Material Reception\nRecorded" as ev_reception #FFB26B
+  rectangle "Raw Material Batch\nRegistered" as ev_batch #FFB26B
+  rectangle "Production Information\nRecorded or Updated" as ev_production #FFB26B
+  ag_reception --> ev_reception
+  ev_reception --> ag_batch : receptionId
+  ag_batch --> ev_batch
+  ev_batch --> ag_production : batchId
+  ag_production --> ev_production
+}
+
+package "Quality and Yield Control\nCore Subdomain" as bc_quality #E6F4EA {
+  rectangle "Quality Assessment\nAggregate Candidate" as ag_quality #FFE27A
+  rectangle "Waste Record\nAggregate Candidate" as ag_waste #FFE27A
+  rectangle "Quality Results\nRecorded" as ev_quality #FFB26B
+  rectangle "Production Waste\nRecorded" as ev_waste #FFB26B
+  rectangle "Yield Indicators Calculated /\nDeviation Identified" as ev_indicator #FFB26B
+  rectangle "Rice Composition, Yield,\nWaste, and Comparison" as rm_quality #B9D98A
+  ag_quality --> ev_quality
+  ag_waste --> ev_waste
+  ev_quality --> ev_indicator
+  ev_waste --> ev_indicator
+  ev_indicator ..> rm_quality
+}
+
+package "Asset and Maintenance Management\nCore Subdomain" as bc_maintenance #E6F4EA {
+  rectangle "Machine\nAggregate Candidate" as ag_machine #FFE27A
+  rectangle "Maintenance Record\nAggregate Candidate" as ag_maintenance #FFE27A
+  rectangle "Machine Registered" as ev_machine #FFB26B
+  rectangle "Preventive or Corrective\nMaintenance Recorded" as ev_maintenance #FFB26B
+  rectangle "Machine Status and\nMaintenance History" as rm_maintenance #B9D98A
+  ag_machine --> ev_machine
+  ev_machine --> ag_maintenance : machineId
+  ag_maintenance --> ev_maintenance
+  ev_maintenance ..> rm_maintenance
+}
+
+package "Operational Intelligence\nCore Subdomain" as bc_intelligence #E6F4EA {
+  rectangle "Operational Anomaly\nAggregate Candidate" as ag_anomaly #FFE27A
+  rectangle "Alert\nAggregate Candidate" as ag_alert #FFE27A
+  rectangle "Operational Variable\nRecorded" as ev_variable #FFB26B
+  rectangle "Operational Anomaly\nDetected" as ev_anomaly #FFB26B
+  rectangle "Operational Alert\nGenerated" as ev_alert #FFB26B
+  rectangle "Maintenance\nRecommendations" as rm_recommendation #B9D98A
+  rectangle "Define the source, frequency, and ownership\nof operational variables" as hs_variable #FF8A80
+  ev_variable --> ag_anomaly
+  ag_anomaly --> ev_anomaly
+  ev_anomaly --> ag_alert
+  ag_alert --> ev_alert
+  ev_anomaly ..> rm_recommendation
+  hs_variable ..> ev_variable
+}
+
+package "Reporting and Analytics\nSupporting Subdomain / Read Side" as bc_reporting #F1F5F9 {
+  rectangle "Operational Summary" as rm_summary #B9D98A
+  rectangle "Production Report" as rm_production_report #B9D98A
+  rectangle "Maintenance Report" as rm_maintenance_report #B9D98A
+  rectangle "Trend Analysis" as rm_trends #B9D98A
+  rm_summary -[hidden]-> rm_production_report
+  rm_production_report -[hidden]-> rm_maintenance_report
+  rm_maintenance_report -[hidden]-> rm_trends
+}
+
+ev_production ..> ag_quality : batchId / productionRecordId
+ev_production ..> rm_summary : published data
+ev_indicator ..> rm_summary : published indicators
+ev_indicator ..> rm_production_report
+ev_machine ..> ev_variable : machineId
+ev_anomaly ..> ag_maintenance : anomalyId
+ev_maintenance ..> rm_summary : published data
+ev_maintenance ..> rm_maintenance_report
+ev_anomaly ..> rm_trends : published anomaly
+ev_indicator ..> rm_trends : published deviation
+
+hs_commercial -[hidden]right-> ag_user
+ag_user -[hidden]right-> ag_reception
+ag_quality -[hidden]right-> ag_machine
+ag_machine -[hidden]right-> ag_anomaly
+ag_reception -[hidden]down-> ag_quality
+ag_quality -[hidden]down-> rm_summary
+@enduml

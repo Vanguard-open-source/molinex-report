@@ -1,0 +1,64 @@
+@startuml
+skinparam backgroundColor #F7FAFC
+skinparam defaultFontName Arial
+skinparam defaultFontSize 13
+skinparam shadowing false
+skinparam linetype ortho
+skinparam ArrowColor #334E68
+skinparam ArrowThickness 1.4
+skinparam RectangleBorderColor #486581
+skinparam RectangleFontColor #102A43
+skinparam rectangle {
+  RoundCorner 12
+  Padding 12
+}
+
+title Molinex - DDD Context Map
+caption Strategic relationships between Bounded Contexts inside one modular monolith. Lines describe model integration, not independent deployments.
+
+top to bottom direction
+
+rectangle "Commercial Engagement\nSupporting Subdomain" as commercial #F1F5F9
+rectangle "Identity and Access Management\nGeneric Subdomain" as iam #F1F5F9
+rectangle "Production Management\nCore Subdomain" as production #E6F4EA
+rectangle "Quality and Yield Control\nCore Subdomain" as quality #E6F4EA
+rectangle "Asset and Maintenance Management\nCore Subdomain" as maintenance #E6F4EA
+rectangle "Operational Intelligence\nCore Subdomain" as intelligence #E6F4EA
+rectangle "Reporting and Analytics\nSupporting Subdomain / Read Side" as reporting #F1F5F9
+rectangle "Production-Quality Shared Kernel\nWeight, MeasurementUnit" as shared_kernel #FFE27A
+
+commercial .. iam : Separate Ways\nNo confirmed onboarding contract
+
+iam --> production : Open Host Service / Published Language\nAuthenticatedPrincipal and role claims
+iam --> quality : Open Host Service / Published Language\nAuthenticatedPrincipal and role claims
+iam --> maintenance : Open Host Service / Published Language\nAuthenticatedPrincipal and role claims
+iam --> intelligence : Open Host Service / Published Language\nAuthenticatedPrincipal and role claims
+iam --> reporting : Open Host Service / Published Language\nAuthenticatedPrincipal and role claims
+
+production --> quality : Customer / Supplier + Published Language\nProductionInformationRecorded / Updated
+quality --> intelligence : Customer / Supplier + Published Language\nQualityDeviationIdentified
+maintenance <--> intelligence : Partnership + Published Language\nMachineRegistered, AnomalyDetected,\nCorrectiveMaintenanceRecorded
+
+production --> reporting : Customer / Supplier + Published Language\nProduction events
+quality --> reporting : Customer / Supplier + Published Language\nQuality and yield events
+maintenance --> reporting : Customer / Supplier + Published Language\nMaintenance events
+intelligence --> reporting : Customer / Supplier + Published Language\nAnomaly and alert events
+
+production -- shared_kernel : shares
+quality -- shared_kernel : shares
+
+commercial -[hidden]right-> iam
+iam -[hidden]right-> production
+production -[hidden]right-> quality
+quality -[hidden]down-> maintenance
+maintenance -[hidden]right-> intelligence
+intelligence -[hidden]down-> reporting
+
+legend bottom
+|= Notation |= Meaning |
+| Solid directed line | Upstream provides a contract to a downstream consumer |
+| Bidirectional line | Partnership with coordinated evolution |
+| Dotted line | Separate Ways; no integration contract currently exists |
+| Yellow box | Explicit and deliberately small Shared Kernel |
+endlegend
+@enduml

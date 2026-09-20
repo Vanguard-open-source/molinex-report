@@ -1,0 +1,238 @@
+@startuml
+skinparam backgroundColor #F7FAFC
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam linetype ortho
+skinparam ArrowColor #334E68
+skinparam ArrowThickness 1.3
+skinparam RectangleBorderColor #486581
+skinparam RectangleFontColor #102A43
+skinparam PackageBorderColor #486581
+skinparam PackageFontColor #102A43
+skinparam package {
+  BackgroundColor #EDF5FC
+  RoundCorner 14
+}
+skinparam rectangle {
+  RoundCorner 9
+  Padding 9
+}
+
+title Molinex - Design-Level EventStorming
+caption Bounded Contexts are implemented as modules of one modular monolith. Cross-context references use local identifiers and published events.
+
+top to bottom direction
+
+package "Commercial Engagement\nSupporting Subdomain" as commercial #F1F5F9 {
+  rectangle "Visitor" as actor_visitor #FFF3A6
+  rectangle "Plan Catalog and\nValue Proposition" as rm_offer #B9D98A
+  rectangle "Submit Commercial\nInquiry" as cmd_submit_inquiry #A9C7F7
+  rectangle "Commercial Inquiry\nAggregate Root" as agg_inquiry #FFE27A
+  rectangle "Commercial Inquiry\nSubmitted" as ev_inquiry_submitted #FFB26B
+  rectangle "Subscription, payment, and\nrice mill onboarding are undefined" as hs_commercial #FF8A80
+
+  actor_visitor ..> rm_offer : views
+  actor_visitor --> cmd_submit_inquiry
+  cmd_submit_inquiry --> agg_inquiry
+  agg_inquiry --> ev_inquiry_submitted
+  ev_inquiry_submitted ..> hs_commercial
+}
+
+package "Identity and Access Management\nGeneric Subdomain" as iam #F1F5F9 {
+  rectangle "Administrator" as actor_admin #FFF3A6
+  rectangle "Platform User" as actor_user #FFF3A6
+  rectangle "Register User" as cmd_register_user #A9C7F7
+  rectangle "Assign Role" as cmd_assign_role #A9C7F7
+  rectangle "Authenticate User" as cmd_authenticate_user #A9C7F7
+  rectangle "Update User Profile" as cmd_update_profile #A9C7F7
+  rectangle "User\nAggregate Root" as agg_user #FFE27A
+  rectangle "User Registered" as ev_user_registered #FFB26B
+  rectangle "Role Assigned" as ev_role_assigned #FFB26B
+  rectangle "User Authenticated" as ev_user_authenticated #FFB26B
+  rectangle "User Profile Updated" as ev_profile_updated #FFB26B
+  rectangle "Role-Based\nAuthorized Functions" as rm_authorized_functions #B9D98A
+
+  actor_admin --> cmd_register_user
+  cmd_register_user --> agg_user
+  agg_user --> ev_user_registered
+  actor_admin --> cmd_assign_role
+  cmd_assign_role --> agg_user
+  agg_user --> ev_role_assigned
+  actor_user --> cmd_authenticate_user
+  cmd_authenticate_user --> agg_user
+  agg_user --> ev_user_authenticated
+  actor_user --> cmd_update_profile
+  cmd_update_profile --> agg_user
+  agg_user --> ev_profile_updated
+  ev_role_assigned ..> rm_authorized_functions
+  ev_user_authenticated ..> rm_authorized_functions
+}
+
+package "Production Management\nCore Subdomain" as production #E6F4EA {
+  rectangle "Production Operator" as actor_operator #FFF3A6
+  rectangle "Record Raw Material\nReception" as cmd_record_reception #A9C7F7
+  rectangle "Raw Material Reception\nAggregate Root" as agg_reception #FFE27A
+  rectangle "Raw Material Reception\nRecorded" as ev_reception_recorded #FFB26B
+  rectangle "Register Raw\nMaterial Batch" as cmd_register_batch #A9C7F7
+  rectangle "Production Batch\nAggregate Root" as agg_batch #FFE27A
+  rectangle "Production Batch\nRegistered" as ev_batch_registered #FFB26B
+  rectangle "Record Production\nInformation" as cmd_record_production #A9C7F7
+  rectangle "Update Production\nInformation" as cmd_update_production #A9C7F7
+  rectangle "Production Record\nAggregate Root" as agg_production #FFE27A
+  rectangle "Production Information\nRecorded" as ev_production_recorded #FFB26B
+  rectangle "Production Information\nUpdated" as ev_production_updated #FFB26B
+  rectangle "Production Processes\nand History" as rm_production_history #B9D98A
+
+  actor_operator --> cmd_record_reception
+  cmd_record_reception --> agg_reception
+  agg_reception --> ev_reception_recorded
+  actor_operator --> cmd_register_batch
+  cmd_register_batch --> agg_batch
+  agg_batch --> ev_batch_registered
+  actor_operator --> cmd_record_production
+  cmd_record_production --> agg_production
+  agg_production --> ev_production_recorded
+  actor_operator --> cmd_update_production
+  cmd_update_production --> agg_production
+  agg_production --> ev_production_updated
+  ev_production_recorded ..> rm_production_history
+  ev_production_updated ..> rm_production_history
+}
+
+package "Quality and Yield Control\nCore Subdomain" as quality #E6F4EA {
+  rectangle "Production Operator" as actor_quality_operator #FFF3A6
+  rectangle "Administrator" as actor_quality_admin #FFF3A6
+  rectangle "Record Quality\nResults" as cmd_record_quality #A9C7F7
+  rectangle "Quality Assessment\nAggregate Root" as agg_quality #FFE27A
+  rectangle "Quality Results\nRecorded" as ev_quality_recorded #FFB26B
+  rectangle "Record Production\nWaste" as cmd_record_waste #A9C7F7
+  rectangle "Waste Record\nAggregate Root" as agg_waste #FFE27A
+  rectangle "Production Waste\nRecorded" as ev_waste_recorded #FFB26B
+  rectangle "When an evaluated indicator is outside\nits reference range, identify a deviation" as pol_quality_deviation #C9A7E8
+  rectangle "Identify Quality or\nYield Deviation" as cmd_identify_deviation #A9C7F7
+  rectangle "Quality Deviation\nAggregate Root" as agg_quality_deviation #FFE27A
+  rectangle "Quality or Yield\nDeviation Identified" as ev_quality_deviation #FFB26B
+  rectangle "Yield Indicators, Rice Composition,\nWaste, and Quality Comparison" as rm_quality_indicators #B9D98A
+
+  actor_quality_operator --> cmd_record_quality
+  cmd_record_quality --> agg_quality
+  agg_quality --> ev_quality_recorded
+  actor_quality_operator --> cmd_record_waste
+  cmd_record_waste --> agg_waste
+  agg_waste --> ev_waste_recorded
+  ev_quality_recorded --> pol_quality_deviation
+  ev_waste_recorded --> pol_quality_deviation
+  pol_quality_deviation --> cmd_identify_deviation
+  cmd_identify_deviation --> agg_quality_deviation
+  agg_quality_deviation --> ev_quality_deviation
+  actor_quality_admin ..> rm_quality_indicators : queries
+  actor_quality_operator ..> rm_quality_indicators : queries
+}
+
+package "Asset and Maintenance Management\nCore Subdomain" as maintenance #E6F4EA {
+  rectangle "Maintenance Technician" as actor_technician #FFF3A6
+  rectangle "Register Machine" as cmd_register_machine #A9C7F7
+  rectangle "Machine\nAggregate Root" as agg_machine #FFE27A
+  rectangle "Machine Registered" as ev_machine_registered #FFB26B
+  rectangle "Record Preventive\nMaintenance" as cmd_preventive_maintenance #A9C7F7
+  rectangle "Record Corrective\nMaintenance" as cmd_corrective_maintenance #A9C7F7
+  rectangle "Maintenance Record\nAggregate Root" as agg_maintenance #FFE27A
+  rectangle "Preventive Maintenance\nRecorded" as ev_preventive_recorded #FFB26B
+  rectangle "Corrective Maintenance\nRecorded" as ev_corrective_recorded #FFB26B
+  rectangle "Machine Status and\nMaintenance History" as rm_maintenance_history #B9D98A
+
+  actor_technician --> cmd_register_machine
+  cmd_register_machine --> agg_machine
+  agg_machine --> ev_machine_registered
+  actor_technician --> cmd_preventive_maintenance
+  cmd_preventive_maintenance --> agg_maintenance
+  agg_maintenance --> ev_preventive_recorded
+  actor_technician --> cmd_corrective_maintenance
+  cmd_corrective_maintenance --> agg_maintenance
+  agg_maintenance --> ev_corrective_recorded
+  actor_technician ..> rm_maintenance_history : queries
+}
+
+package "Operational Intelligence\nCore Subdomain" as intelligence #E6F4EA {
+  rectangle "Maintenance Technician /\nOperational Data Source" as actor_data_source #FFF3A6
+  rectangle "Record Operational\nVariable" as cmd_record_reading #A9C7F7
+  rectangle "Operational Reading\nAggregate Root" as agg_reading #FFE27A
+  rectangle "Operational Variable\nRecorded" as ev_reading_recorded #FFB26B
+  rectangle "When an operational variable is recorded,\nevaluate the applicable criteria" as pol_evaluate_reading #C9A7E8
+  rectangle "Detect Operational\nAnomaly" as cmd_detect_anomaly #A9C7F7
+  rectangle "Operational Anomaly\nAggregate Root" as agg_anomaly #FFE27A
+  rectangle "Operational Anomaly\nDetected" as ev_anomaly_detected #FFB26B
+  rectangle "When an anomaly requires attention,\ngenerate an operational alert" as pol_generate_alert #C9A7E8
+  rectangle "Generate Operational\nAlert" as cmd_generate_alert #A9C7F7
+  rectangle "Alert\nAggregate Root" as agg_alert #FFE27A
+  rectangle "Operational Alert\nGenerated" as ev_alert_generated #FFB26B
+  rectangle "Operational Variables, Anomaly History,\nAlerts, and Maintenance Recommendations" as rm_intelligence #B9D98A
+  rectangle "Source, frequency, thresholds, and alert\nlifecycle require business validation" as hs_intelligence #FF8A80
+
+  actor_data_source --> cmd_record_reading
+  cmd_record_reading --> agg_reading
+  agg_reading --> ev_reading_recorded
+  ev_reading_recorded --> pol_evaluate_reading
+  pol_evaluate_reading --> cmd_detect_anomaly
+  cmd_detect_anomaly --> agg_anomaly
+  agg_anomaly --> ev_anomaly_detected
+  ev_anomaly_detected --> pol_generate_alert
+  pol_generate_alert --> cmd_generate_alert
+  cmd_generate_alert --> agg_alert
+  agg_alert --> ev_alert_generated
+  actor_data_source ..> rm_intelligence : queries
+  ev_alert_generated ..> hs_intelligence
+}
+
+package "Reporting and Analytics\nSupporting Subdomain / Read Side" as reporting #F1F5F9 {
+  rectangle "Administrator" as actor_reporting_admin #FFF3A6
+  rectangle "Operational Summary" as rm_operational_summary #B9D98A
+  rectangle "Production Report" as rm_production_report #B9D98A
+  rectangle "Maintenance Report" as rm_maintenance_report #B9D98A
+  rectangle "Operational Trends" as rm_operational_trends #B9D98A
+  rectangle "Report persistence and export\nformat remain undefined" as hs_reporting #FF8A80
+
+  actor_reporting_admin ..> rm_operational_summary : queries
+  actor_reporting_admin ..> rm_production_report : queries
+  actor_reporting_admin ..> rm_maintenance_report : queries
+  actor_reporting_admin ..> rm_operational_trends : queries
+  rm_production_report ..> hs_reporting
+  rm_maintenance_report ..> hs_reporting
+}
+
+' Cross-context information flow. Consumers keep local reference types.
+ev_reception_recorded ..> cmd_register_batch : provides receptionId
+ev_batch_registered ..> cmd_record_production : provides batchId
+ev_production_recorded ..> cmd_record_quality : provides productionRecordId
+ev_production_updated ..> rm_quality_indicators : refreshes projection
+ev_quality_deviation ..> rm_intelligence : published deviation
+ev_machine_registered ..> cmd_record_reading : provides local machineId
+ev_anomaly_detected ..> cmd_corrective_maintenance : provides anomalyId
+
+ev_production_recorded ..> rm_operational_summary : published event
+ev_production_updated ..> rm_production_report : published event
+ev_quality_recorded ..> rm_operational_summary : published event
+ev_waste_recorded ..> rm_production_report : published event
+ev_preventive_recorded ..> rm_maintenance_report : published event
+ev_corrective_recorded ..> rm_maintenance_report : published event
+ev_anomaly_detected ..> rm_operational_trends : published event
+
+hs_commercial -[hidden]down-> agg_user
+agg_user -[hidden]down-> agg_reception
+agg_reception -[hidden]down-> agg_quality
+agg_quality -[hidden]down-> agg_machine
+agg_machine -[hidden]down-> agg_reading
+agg_reading -[hidden]down-> rm_operational_summary
+
+legend bottom
+|= Color |= EventStorming Element |
+|<#FFF3A6>| Actor |
+|<#A9C7F7>| Command |
+|<#FFE27A>| Aggregate Root |
+|<#FFB26B>| Domain Event |
+|<#C9A7E8>| Policy |
+|<#B9D98A>| Query / Read Model |
+|<#FF8A80>| Hotspot |
+endlegend
+@enduml

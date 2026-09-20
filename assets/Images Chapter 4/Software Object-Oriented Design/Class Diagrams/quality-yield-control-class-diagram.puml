@@ -1,0 +1,135 @@
+@startuml
+title Quality and Yield Control Bounded Context - Class Diagram
+left to right direction
+hide circle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype ortho
+skinparam packageStyle rectangle
+
+package "Production-Quality Shared Kernel" #FFF2CC {
+  class Weight <<Value Object>> {
+    -value : BigDecimal
+    -unit : MeasurementUnit
+    +isPositive() : boolean
+    +isNonNegative() : boolean
+  }
+
+  enum MeasurementUnit <<Enumeration>> {
+    KILOGRAM
+    METRIC_TON
+  }
+}
+
+package "Quality and Yield Control Bounded Context" #EAF3F8 {
+  class QualityAssessment <<Aggregate Root>> {
+    -id : QualityAssessmentId
+    -productionRecordId : ProductionRecordId
+    -measurements : List<QualityMeasurement>
+    -assessedAt : Instant
+    --
+    +recordMeasurement(measurement : QualityMeasurement)
+    +hasValidPercentages() : boolean
+  }
+
+  class WasteRecord <<Aggregate Root>> {
+    -id : WasteRecordId
+    -productionRecordId : ProductionRecordId
+    -quantity : Weight
+    -baseWeight : Optional<Weight>
+    -percentage : Optional<Percentage>
+    -recordedAt : Instant
+    --
+    +record(quantity, baseWeight, recordedAt)
+    +calculatePercentage() : Optional<Percentage>
+  }
+
+  class QualityDeviation <<Aggregate Root>> {
+    -id : QualityDeviationId
+    -source : DeviationSource
+    -indicator : QualityIndicator
+    -observedValue : Percentage
+    -expectedRange : QualityRange
+    -detectedAt : Instant
+    --
+    +identify(source, indicator, observedValue, expectedRange)
+  }
+
+  class QualityAssessmentId <<Value Object>> {
+    -value : UUID
+  }
+  class WasteRecordId <<Value Object>> {
+    -value : UUID
+  }
+  class QualityDeviationId <<Value Object>> {
+    -value : UUID
+  }
+  class ProductionRecordId <<Value Object>> {
+    -value : UUID
+  }
+
+  class QualityMeasurement <<Value Object>> {
+    -indicator : QualityIndicator
+    -value : Percentage
+    -expectedRange : QualityRange
+    +isOutsideExpectedRange() : boolean
+  }
+  class Percentage <<Value Object>> {
+    -value : BigDecimal
+    +isBetweenZeroAndOneHundred() : boolean
+  }
+  class QualityRange <<Value Object>> {
+    -minimum : Percentage
+    -maximum : Percentage
+    +contains(value : Percentage) : boolean
+  }
+  class DeviationSource <<Value Object>> {
+    -sourceId : UUID
+    -sourceType : DeviationSourceType
+  }
+  enum QualityIndicator <<Enumeration>> {
+    WHOLE_GRAIN_PERCENTAGE
+    BROKEN_GRAIN_PERCENTAGE
+    YIELD_PERCENTAGE
+  }
+  enum DeviationSourceType <<Enumeration>> {
+    QUALITY_ASSESSMENT
+    WASTE_RECORD
+  }
+
+  interface QualityAssessmentRepository <<Repository>> {
+    +save(assessment : QualityAssessment)
+    +findById(id : QualityAssessmentId) : Optional<QualityAssessment>
+  }
+  interface WasteRecordRepository <<Repository>> {
+    +save(record : WasteRecord)
+    +findById(id : WasteRecordId) : Optional<WasteRecord>
+  }
+  interface QualityDeviationRepository <<Repository>> {
+    +save(deviation : QualityDeviation)
+    +findById(id : QualityDeviationId) : Optional<QualityDeviation>
+  }
+}
+
+QualityAssessment *-- "1" QualityAssessmentId
+QualityAssessment *-- "1" ProductionRecordId : local reference
+QualityAssessment *-- "1..*" QualityMeasurement
+QualityMeasurement *-- "1" Percentage
+QualityMeasurement *-- "1" QualityRange
+QualityMeasurement --> "1" QualityIndicator
+QualityRange *-- "2" Percentage
+WasteRecord *-- "1" WasteRecordId
+WasteRecord *-- "1" ProductionRecordId : local reference
+WasteRecord *-- "1" Weight
+WasteRecord o-- "0..1" Percentage
+QualityDeviation *-- "1" QualityDeviationId
+QualityDeviation *-- "1" DeviationSource
+QualityDeviation *-- "1" Percentage
+QualityDeviation *-- "1" QualityRange
+QualityDeviation --> "1" QualityIndicator
+DeviationSource --> "1" DeviationSourceType
+Weight --> "1" MeasurementUnit
+QualityAssessmentRepository ..> QualityAssessment : persists
+WasteRecordRepository ..> WasteRecord : persists
+QualityDeviationRepository ..> QualityDeviation : persists
+@enduml

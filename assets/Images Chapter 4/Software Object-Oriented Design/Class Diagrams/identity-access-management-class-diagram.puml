@@ -1,0 +1,104 @@
+@startuml
+title Identity and Access Management Bounded Context - Class Diagram
+left to right direction
+hide circle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype ortho
+skinparam packageStyle rectangle
+
+package "Identity and Access Management Bounded Context" #EAF3F8 {
+  class User <<Aggregate Root>> {
+    -id : UserId
+    -email : EmailAddress
+    -credential : PasswordHash
+    -profile : UserProfile
+    -role : Role
+    -status : AccountStatus
+    --
+    +assignRole(role : Role)
+    +updateProfile(profile : UserProfile)
+    +verifyCredential(candidate : PasswordHash) : boolean
+    +activate()
+    +deactivate()
+    +toPrincipal() : AuthenticatedPrincipal
+  }
+
+  class UserId <<Value Object>> {
+    -value : UUID
+  }
+
+  class EmailAddress <<Value Object>> {
+    -value : String
+    +isValid() : boolean
+  }
+
+  class PasswordHash <<Value Object>> {
+    -value : String
+    +matches(candidate : PasswordHash) : boolean
+  }
+
+  class UserProfile <<Value Object>> {
+    -fullName : String
+    -jobTitle : String
+    -phoneNumber : String
+    +isValid() : boolean
+  }
+
+  class Role <<Value Object>> {
+    -type : RoleType
+    -permissions : Set<Permission>
+    +allows(permission : Permission) : boolean
+  }
+
+  enum RoleType <<Enumeration>> {
+    ADMINISTRATOR
+    MAINTENANCE_TECHNICIAN
+    PRODUCTION_OPERATOR
+  }
+
+  enum Permission <<Enumeration>> {
+    MANAGE_USERS
+    MANAGE_PRODUCTION
+    MANAGE_MAINTENANCE
+    VIEW_OPERATIONAL_INFORMATION
+    VIEW_REPORTS
+  }
+
+  enum AccountStatus <<Enumeration>> {
+    ACTIVE
+    INACTIVE
+    LOCKED
+  }
+
+  class AuthenticatedPrincipal <<Published Language>> {
+    +subject : UUID
+    +role : String
+    +permissions : Set<String>
+  }
+
+  class UniqueEmailPolicy <<Domain Service>> {
+    +isSatisfiedBy(email : EmailAddress) : boolean
+  }
+
+  interface UserRepository <<Repository>> {
+    +save(user : User)
+    +findById(id : UserId) : Optional<User>
+    +findByEmail(email : EmailAddress) : Optional<User>
+    +existsByEmail(email : EmailAddress) : boolean
+  }
+}
+
+User *-- "1" UserId
+User *-- "1" EmailAddress
+User *-- "1" PasswordHash
+User *-- "1" UserProfile
+User *-- "1" Role
+User --> "1" AccountStatus
+Role *-- "1" RoleType
+Role *-- "1..*" Permission
+UserRepository ..> User : persists
+UniqueEmailPolicy ..> UserRepository : checks
+UniqueEmailPolicy ..> EmailAddress
+User ..> AuthenticatedPrincipal : publishes
+@enduml

@@ -1,0 +1,172 @@
+@startuml
+skinparam backgroundColor #F7FAFC
+skinparam defaultFontName Arial
+skinparam defaultFontSize 13
+skinparam shadowing false
+skinparam linetype ortho
+skinparam ArrowColor #334E68
+skinparam ArrowThickness 1.4
+skinparam RectangleBorderColor #486581
+skinparam RectangleFontColor #102A43
+skinparam PackageBorderColor #829AB1
+skinparam PackageFontColor #102A43
+skinparam package {
+  BackgroundColor #EDF5FC
+  RoundCorner 12
+}
+skinparam rectangle {
+  RoundCorner 9
+  Padding 10
+}
+
+title Step 3 - Track Causes, Actors, Policies, and Read Models
+caption Solid arrows show decisions or reactions; dotted arrows show queries or information contributions.
+
+top to bottom direction
+
+package "Commercial Engagement" as commercial {
+  rectangle "Visitor" as ac01 #FFF3A6
+  rectangle "Value Proposition,\nFeatures, and Plans" as rm01 #B9D98A
+  rectangle "Submit Commercial\nInquiry" as cmd01 #A9C7F7
+  rectangle "Commercial Inquiry\nSubmitted" as ev01 #FFB26B
+  rectangle "Subscription, payment, rice mill onboarding,\nand plan activation remain undefined" as hs01 #FF8A80
+  ac01 ..> rm01 : views
+  ac01 --> cmd01
+  cmd01 --> ev01
+  ev01 ..> hs01
+}
+
+package "Identity and Access" as access {
+  rectangle "Administrator" as ac02 #FFF3A6
+  rectangle "User" as ac03 #FFF3A6
+  rectangle "Register User" as cmd02 #A9C7F7
+  rectangle "User\nRegistered" as ev02 #FFB26B
+  rectangle "Assign Role" as cmd03 #A9C7F7
+  rectangle "Role\nAssigned" as ev03 #FFB26B
+  rectangle "Authenticate User" as cmd04 #A9C7F7
+  rectangle "User\nAuthenticated" as ev04 #FFB26B
+  rectangle "Role-Based\nAuthorized Functions" as rm02 #B9D98A
+  ac02 --> cmd02
+  cmd02 --> ev02
+  ac02 --> cmd03
+  cmd03 --> ev03
+  ac03 --> cmd04
+  cmd04 --> ev04
+  ev03 ..> rm02
+  ev04 ..> rm02
+}
+
+package "Production, Quality, and Yield" as production {
+  rectangle "Production Operator" as ac04 #FFF3A6
+  rectangle "Record Raw Material\nReception" as cmd05 #A9C7F7
+  rectangle "Raw Material Reception\nRecorded" as ev05 #FFB26B
+  rectangle "Register Raw\nMaterial Batch" as cmd06 #A9C7F7
+  rectangle "Raw Material Batch\nRegistered" as ev06 #FFB26B
+  rectangle "Record Production\nInformation" as cmd07 #A9C7F7
+  rectangle "Production Information\nRecorded" as ev07 #FFB26B
+  rectangle "Record Quality\nResults" as cmd08 #A9C7F7
+  rectangle "Quality Results\nRecorded" as ev08 #FFB26B
+  rectangle "Record Production\nWaste" as cmd09 #A9C7F7
+  rectangle "Production Waste\nRecorded" as ev09 #FFB26B
+  rectangle "When production, quality, or waste changes,\nrecalculate yield indicators" as pol01 #C9A7E8
+  rectangle "Calculate Yield\nIndicators" as cmd10 #A9C7F7
+  rectangle "Yield Indicators\nCalculated" as ev10 #FFB26B
+  rectangle "When an indicator falls outside its\nreference range, identify a deviation" as pol02 #C9A7E8
+  rectangle "Identify Deviation" as cmd11 #A9C7F7
+  rectangle "Quality or Yield\nDeviation Identified" as ev11 #FFB26B
+  rectangle "Processes, History, Composition,\nYield, and Waste" as rm03 #B9D98A
+  ac04 --> cmd05
+  cmd05 --> ev05
+  ev05 --> cmd06
+  cmd06 --> ev06
+  ev06 --> cmd07
+  cmd07 --> ev07
+  ac04 --> cmd08
+  cmd08 --> ev08
+  ac04 --> cmd09
+  cmd09 --> ev09
+  ev07 --> pol01
+  ev08 --> pol01
+  ev09 --> pol01
+  pol01 --> cmd10
+  cmd10 --> ev10
+  ev10 --> pol02
+  pol02 --> cmd11
+  cmd11 --> ev11
+  ev07 ..> rm03
+  ev08 ..> rm03
+  ev09 ..> rm03
+  ev10 ..> rm03
+}
+
+package "Assets, Monitoring, and Maintenance" as maintenance {
+  rectangle "Maintenance Technician" as ac05 #FFF3A6
+  rectangle "Operator / Operational\nData Source" as ac06 #FFF3A6
+  rectangle "Register Machine" as cmd12 #A9C7F7
+  rectangle "Machine\nRegistered" as ev12 #FFB26B
+  rectangle "Record Operational\nVariable" as cmd13 #A9C7F7
+  rectangle "Operational Variable\nRecorded" as ev13 #FFB26B
+  rectangle "When an operational variable arrives,\nevaluate the operational criteria" as pol03 #C9A7E8
+  rectangle "Detect Operational\nAnomaly" as cmd14 #A9C7F7
+  rectangle "Operational Anomaly\nDetected" as ev14 #FFB26B
+  rectangle "When an operational anomaly is detected,\ngenerate technical attention information" as pol04 #C9A7E8
+  rectangle "Generate Operational\nAlert" as cmd15 #A9C7F7
+  rectangle "Operational Alert\nGenerated" as ev15 #FFB26B
+  rectangle "Generate Maintenance\nRecommendation" as cmd16 #A9C7F7
+  rectangle "Maintenance Recommendation\nGenerated" as ev16 #FFB26B
+  rectangle "Record Preventive or\nCorrective Maintenance" as cmd17 #A9C7F7
+  rectangle "Maintenance\nRecorded" as ev17 #FFB26B
+  rectangle "Machine Status, Maintenance History,\nAnomalies, Alerts, and Recommendations" as rm04 #B9D98A
+  rectangle "Is the data entered manually, integrated\nfrom sensors, or received from both sources?" as hs02 #FF8A80
+  ac05 --> cmd12
+  cmd12 --> ev12
+  ac06 --> cmd13
+  cmd13 --> ev13
+  ev13 --> pol03
+  pol03 --> cmd14
+  cmd14 --> ev14
+  ev14 --> pol04
+  pol04 --> cmd15
+  cmd15 --> ev15
+  pol04 --> cmd16
+  cmd16 --> ev16
+  ac05 --> cmd17
+  cmd17 --> ev17
+  ev12 ..> rm04
+  ev14 ..> rm04
+  ev15 ..> rm04
+  ev16 ..> rm04
+  ev17 ..> rm04
+  ac06 ..> hs02
+  hs02 ..> cmd13
+}
+
+package "Reporting and Operational Intelligence" as analytics {
+  rectangle "Manager / Administrator" as ac07 #FFF3A6
+  rectangle "Operational Summary" as rm05 #B9D98A
+  rectangle "Indicator Comparison" as rm06 #B9D98A
+  rectangle "Generate Production\nReport" as cmd18 #A9C7F7
+  rectangle "Production Report\nGenerated" as ev18 #FFB26B
+  rectangle "Generate Maintenance\nReport" as cmd19 #A9C7F7
+  rectangle "Maintenance Report\nGenerated" as ev19 #FFB26B
+  rectangle "Operational Trends" as rm07 #B9D98A
+  ac07 ..> rm05 : views
+  ac07 ..> rm06 : views
+  ac07 --> cmd18
+  cmd18 --> ev18
+  ac07 --> cmd19
+  cmd19 --> ev19
+  ac07 ..> rm07 : views
+}
+
+ev01 -[hidden]down-> ev02
+ev02 -[hidden]down-> ev05
+ev05 -[hidden]down-> ev12
+ev12 -[hidden]down-> rm05
+
+ev07 ..> rm05 : production data
+ev10 ..> rm05 : indicators
+ev11 ..> rm06 : deviations
+ev17 ..> rm05 : maintenance data
+ev14 ..> rm07 : anomalies
+@enduml

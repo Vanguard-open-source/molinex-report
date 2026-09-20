@@ -1,0 +1,117 @@
+@startuml
+title Production Management Bounded Context - Class Diagram
+left to right direction
+hide circle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype ortho
+skinparam packageStyle rectangle
+
+package "Production-Quality Shared Kernel" #FFF2CC {
+  class Weight <<Value Object>> {
+    -value : BigDecimal
+    -unit : MeasurementUnit
+    +isPositive() : boolean
+    +isNonNegative() : boolean
+  }
+
+  enum MeasurementUnit <<Enumeration>> {
+    KILOGRAM
+    METRIC_TON
+  }
+}
+
+package "Production Management Bounded Context" #EAF3F8 {
+  class RawMaterialReception <<Aggregate Root>> {
+    -id : RawMaterialReceptionId
+    -receivedAt : Instant
+    -supplier : Supplier
+    -origin : MaterialOrigin
+    -quantity : Weight
+    --
+    +record(receivedAt, supplier, origin, quantity)
+  }
+
+  class ProductionBatch <<Aggregate Root>> {
+    -id : ProductionBatchId
+    -code : BatchCode
+    -receptionId : RawMaterialReceptionId
+    -registeredAt : Instant
+    --
+    +register(code, receptionId, registeredAt)
+  }
+
+  class ProductionRecord <<Aggregate Root>> {
+    -id : ProductionRecordId
+    -batchId : ProductionBatchId
+    -details : ProductionDetails
+    -recordedAt : Instant
+    --
+    +record(batchId, details, recordedAt)
+    +updateDetails(details : ProductionDetails)
+  }
+
+  class RawMaterialReceptionId <<Value Object>> {
+    -value : UUID
+  }
+  class ProductionBatchId <<Value Object>> {
+    -value : UUID
+  }
+  class ProductionRecordId <<Value Object>> {
+    -value : UUID
+  }
+  class BatchCode <<Value Object>> {
+    -value : String
+  }
+  class Supplier <<Value Object>> {
+    -name : String
+  }
+  class MaterialOrigin <<Value Object>> {
+    -description : String
+  }
+  class ProductionDetails <<Value Object>> {
+    -processName : String
+    -processedWeight : Weight
+    -startedAt : Instant
+    -finishedAt : Optional<Instant>
+    -status : ProductionStatus
+    +isChronologicallyValid() : boolean
+  }
+  enum ProductionStatus <<Enumeration>> {
+    REGISTERED
+    IN_PROGRESS
+    COMPLETED
+  }
+
+  interface RawMaterialReceptionRepository <<Repository>> {
+    +save(reception : RawMaterialReception)
+    +findById(id : RawMaterialReceptionId) : Optional<RawMaterialReception>
+  }
+  interface ProductionBatchRepository <<Repository>> {
+    +save(batch : ProductionBatch)
+    +findById(id : ProductionBatchId) : Optional<ProductionBatch>
+    +existsByCode(code : BatchCode) : boolean
+  }
+  interface ProductionRecordRepository <<Repository>> {
+    +save(record : ProductionRecord)
+    +findById(id : ProductionRecordId) : Optional<ProductionRecord>
+  }
+}
+
+RawMaterialReception *-- "1" RawMaterialReceptionId
+RawMaterialReception *-- "1" Supplier
+RawMaterialReception *-- "1" MaterialOrigin
+RawMaterialReception *-- "1" Weight
+ProductionBatch *-- "1" ProductionBatchId
+ProductionBatch *-- "1" BatchCode
+ProductionBatch *-- "1" RawMaterialReceptionId : references by id
+ProductionRecord *-- "1" ProductionRecordId
+ProductionRecord *-- "1" ProductionBatchId : references by id
+ProductionRecord *-- "1" ProductionDetails
+ProductionDetails *-- "1" Weight
+ProductionDetails --> "1" ProductionStatus
+Weight --> "1" MeasurementUnit
+RawMaterialReceptionRepository ..> RawMaterialReception : persists
+ProductionBatchRepository ..> ProductionBatch : persists
+ProductionRecordRepository ..> ProductionRecord : persists
+@enduml
