@@ -1611,23 +1611,159 @@ El diagrama de contexto presenta a Molinex como un único sistema de software, m
 
 ### 4.6.4 Software Architecture Components Diagrams
 
-Los diagramas de componentes separan el frontend y el backend para conservar un nivel de detalle legible. La primera vista descompone la Web Application en áreas funcionales de Angular y la segunda presenta los módulos de Bounded Context que conviven dentro de la RESTful API, junto con sus puertos hacia los sistemas externos planificados.
+Los diagramas de componentes se organizan por producto de software y por límite funcional. Para cada producto se presenta primero una vista general y luego una vista detallada por Bounded Context, además de la estructura compartida correspondiente. Esta separación evita mezclar los límites propios de Angular con los del monolito modular de Spring Boot.
 
-#### Frontend Component Diagram
+#### Frontend Component Diagrams
 
-<p align="center">
-  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/frontend-component-diagram.svg" alt="Frontend Component Diagram de Molinex" width="100%">
-</p>
+La vista general muestra las áreas funcionales de la Web Application y su acceso a la RESTful API. En las vistas detalladas, cada área se organiza mediante los límites Presentation, Application, Domain e Infrastructure. El Frontend Shared Module reúne capacidades transversales de interfaz, sesión y comunicación HTTP; únicamente Weight y MeasurementUnit corresponden al modelo compartido entre Producción y Calidad.
 
-**Figura: Web Application Component Diagram de Molinex. Fuente: elaboración propia en Structurizr.**
-
-#### Backend Component Diagram
+##### Frontend Component Overview
 
 <p align="center">
-  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/backend-component-diagram.svg" alt="Backend Component Diagram de Molinex" width="100%">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/frontend-component-diagram.svg" alt="Molinex Frontend Component Overview" width="100%">
 </p>
 
-**Figura: RESTful API Component Diagram de Molinex. Fuente: elaboración propia en Structurizr.**
+**Figura: Molinex Frontend Component Overview. Fuente: elaboración propia en Structurizr.**
+
+##### Commercial Engagement Frontend Components
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/frontend-commercial-engagement-component-diagram.svg" alt="Commercial Engagement Frontend Component Diagram" width="100%">
+</p>
+
+**Figura: Commercial Engagement Frontend Component Diagram. Fuente: elaboración propia en Structurizr.**
+
+##### Identity and Access Management Frontend Components
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/frontend-identity-access-management-component-diagram.svg" alt="Identity and Access Management Frontend Component Diagram" width="100%">
+</p>
+
+**Figura: Identity and Access Management Frontend Component Diagram. Fuente: elaboración propia en Structurizr.**
+
+##### Production Management Frontend Components
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/frontend-production-management-component-diagram.svg" alt="Production Management Frontend Component Diagram" width="100%">
+</p>
+
+**Figura: Production Management Frontend Component Diagram. Fuente: elaboración propia en Structurizr.**
+
+##### Quality and Yield Control Frontend Components
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/frontend-quality-yield-control-component-diagram.svg" alt="Quality and Yield Control Frontend Component Diagram" width="100%">
+</p>
+
+**Figura: Quality and Yield Control Frontend Component Diagram. Fuente: elaboración propia en Structurizr.**
+
+##### Asset and Maintenance Management Frontend Components
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/frontend-asset-maintenance-management-component-diagram.svg" alt="Asset and Maintenance Management Frontend Component Diagram" width="100%">
+</p>
+
+**Figura: Asset and Maintenance Management Frontend Component Diagram. Fuente: elaboración propia en Structurizr.**
+
+##### Operational Intelligence Frontend Components
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/frontend-operational-intelligence-component-diagram.svg" alt="Operational Intelligence Frontend Component Diagram" width="100%">
+</p>
+
+**Figura: Operational Intelligence Frontend Component Diagram. Fuente: elaboración propia en Structurizr.**
+
+##### Reporting and Analytics Frontend Components
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/frontend-reporting-analytics-component-diagram.svg" alt="Reporting and Analytics Frontend Component Diagram" width="100%">
+</p>
+
+**Figura: Reporting and Analytics Frontend Component Diagram. Fuente: elaboración propia en Structurizr.**
+
+##### Frontend Shared Module Components
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/frontend-shared-module-component-diagram.svg" alt="Frontend Shared Module Component Diagram" width="100%">
+</p>
+
+**Figura: Frontend Shared Module Component Diagram. Fuente: elaboración propia en Structurizr.**
+
+#### Backend Component Diagrams
+
+La vista general representa los módulos de los Bounded Contexts que conviven dentro de la RESTful API, sus eventos en proceso y los sistemas externos planificados. Cada vista detallada separa Interfaces, Application, Domain e Infrastructure, de modo que las dependencias técnicas apunten hacia contratos controlados por el dominio. El Production-Quality Shared Kernel constituye una excepción intencional: contiene solo objetos de valor de Domain, por lo que no se inventan capas de Interfaces, Application o Infrastructure.
+
+##### Backend Component Overview
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/backend-component-diagram.svg" alt="Molinex Backend Component Overview" width="100%">
+</p>
+
+**Figura: Molinex Backend Component Overview. Fuente: elaboración propia en Structurizr.**
+
+##### Commercial Engagement Backend Components
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/backend-commercial-engagement-component-diagram.svg" alt="Commercial Engagement Backend Component Diagram" width="100%">
+</p>
+
+**Figura: Commercial Engagement Backend Component Diagram. Fuente: elaboración propia en Structurizr.**
+
+##### Identity and Access Management Backend Components
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/backend-identity-access-management-component-diagram.svg" alt="Identity and Access Management Backend Component Diagram" width="100%">
+</p>
+
+**Figura: Identity and Access Management Backend Component Diagram. Fuente: elaboración propia en Structurizr.**
+
+##### Production Management Backend Components
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/backend-production-management-component-diagram.svg" alt="Production Management Backend Component Diagram" width="100%">
+</p>
+
+**Figura: Production Management Backend Component Diagram. Fuente: elaboración propia en Structurizr.**
+
+##### Quality and Yield Control Backend Components
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/backend-quality-yield-control-component-diagram.svg" alt="Quality and Yield Control Backend Component Diagram" width="100%">
+</p>
+
+**Figura: Quality and Yield Control Backend Component Diagram. Fuente: elaboración propia en Structurizr.**
+
+##### Asset and Maintenance Management Backend Components
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/backend-asset-maintenance-management-component-diagram.svg" alt="Asset and Maintenance Management Backend Component Diagram" width="100%">
+</p>
+
+**Figura: Asset and Maintenance Management Backend Component Diagram. Fuente: elaboración propia en Structurizr.**
+
+##### Operational Intelligence Backend Components
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/backend-operational-intelligence-component-diagram.svg" alt="Operational Intelligence Backend Component Diagram" width="100%">
+</p>
+
+**Figura: Operational Intelligence Backend Component Diagram. Fuente: elaboración propia en Structurizr.**
+
+##### Reporting and Analytics Backend Components
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/backend-reporting-analytics-component-diagram.svg" alt="Reporting and Analytics Backend Component Diagram" width="100%">
+</p>
+
+**Figura: Reporting and Analytics Backend Component Diagram. Fuente: elaboración propia en Structurizr.**
+
+##### Production-Quality Shared Kernel Components
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/backend-production-quality-shared-kernel-component-diagram.svg" alt="Production-Quality Shared Kernel Component Diagram" width="100%">
+</p>
+
+**Figura: Production-Quality Shared Kernel Component Diagram. Fuente: elaboración propia en Structurizr.**
 
 ## 4.7 Software Object-Oriented Design
 
