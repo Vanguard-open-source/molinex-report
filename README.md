@@ -2109,23 +2109,25 @@ El Sprint Product Backlog del Sprint 2 está conformado por las User Stories sel
 
 | Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
 |:--|:--|:--|:--|:--|--:|:--|:--|
-| US-05 | Registrar recepción de materia prima | T-05-01 | Diseñar modelo y API de recepción | Definir la entidad de recepción (proveedor, fecha, peso, tipo de arroz) y exponer los endpoints REST para registrarla. | 3 | Gallegos De La Cruz Giovanni | To Do |
-| US-05 | Registrar recepción de materia prima | T-05-02 | Crear formulario de recepción | Implementar en el webapp el formulario de registro con validaciones de campos obligatorios. | 2 | Casalino Berrocal Luisa | To Do |
-| US-06 | Registrar lote de materia prima | T-06-01 | Diseñar modelo y API de lote | Crear la entidad de lote asociada a una recepción, con código único, cantidad y estado, y sus endpoints. | 3 | Gallegos De La Cruz Giovanni | To Do |
-| US-06 | Registrar lote de materia prima | T-06-02 | Crear vista de registro de lotes | Implementar el formulario y el listado de lotes registrados en el webapp. | 3 | Casalino Berrocal Luisa | To Do |
-| US-07 | Registrar maquinaria | T-07-01 | Diseñar modelo y API de maquinaria | Definir la entidad de maquinaria (nombre, tipo, código, estado) y los endpoints de registro y consulta. | 2 | Huerta Cardenas Brayan | To Do |
-| US-07 | Registrar maquinaria | T-07-02 | Crear formulario de maquinaria | Implementar el formulario de registro y la lista de maquinaria en el webapp. | 2 | Rivera Rupay Fabricio | To Do |
-| US-08 | Registrar información de producción | T-08-01 | Diseñar modelo y API de producción | Crear la entidad de producción vinculada a lote y maquinaria (cantidad procesada, turno, fecha) con sus endpoints. | 4 | Jimenez Saavedra Antony | To Do |
-| US-08 | Registrar información de producción | T-08-02 | Crear formulario de producción | Implementar el formulario de registro de producción con selección de lote y maquinaria. | 3 | Rivera Rupay Fabricio | To Do |
-| US-09 | Registrar resultados de calidad | T-09-01 | Diseñar modelo y API de calidad | Definir la entidad de resultados de calidad (humedad, granos quebrados, impurezas) asociada a un lote y sus endpoints. | 3 | Jimenez Saavedra Antony | To Do |
-| US-09 | Registrar resultados de calidad | T-09-02 | Crear formulario de calidad | Implementar el formulario de registro de resultados de calidad en el webapp. | 3 | Casalino Berrocal Luisa | To Do |
-| US-10 | Registrar y consultar merma | T-10-01 | Diseñar modelo y API de merma | Crear la entidad de merma por proceso y los endpoints de registro y consulta con filtros por fecha y lote. | 3 | Gallegos De La Cruz Giovanni | To Do |
-| US-10 | Registrar y consultar merma | T-10-02 | Crear vista de registro y consulta de merma | Implementar el formulario de registro y la tabla de consulta con filtros. | 3 | Huerta Cardenas Brayan | To Do |
-| US-11 | Registrar mantenimiento preventivo | T-11-01 | Diseñar modelo y API de mantenimiento preventivo | Definir la entidad de mantenimiento preventivo (maquinaria, fecha programada, tipo, responsable) y sus endpoints. | 3 | Huerta Cardenas Brayan | To Do |
-| US-11 | Registrar mantenimiento preventivo | T-11-02 | Crear formulario de mantenimiento preventivo | Implementar el formulario de programación y registro en el webapp. | 2 | Rivera Rupay Fabricio | To Do |
-| US-12 | Registrar mantenimiento correctivo | T-12-01 | Diseñar modelo y API de mantenimiento correctivo | Crear la entidad de mantenimiento correctivo (falla, causa, acción realizada, tiempo de parada) y sus endpoints. | 3 | Jimenez Saavedra Antony | To Do |
-| US-12 | Registrar mantenimiento correctivo | T-12-02 | Crear formulario de mantenimiento correctivo | Implementar el formulario de registro de fallas y acciones correctivas en el webapp. | 2 | Huerta Cardenas Brayan | To Do |
-| US-05 a US-12 | Todas las historias del Sprint 2 | T-QA-01 | Pruebas de integración y validación | Ejecutar pruebas de los endpoints y flujos de registro, y corregir los defectos encontrados. | 4 | Todo el equipo | To Do |
+| US-05 | Registrar recepción de materia prima | T-05-01 | Diseñar modelo y API de recepción | Definir la entidad de recepción (proveedor, fecha, peso, tipo de arroz) y exponer los endpoints REST para registrarla. | 6 | Gallegos De La Cruz Giovanni | To Do |
+| US-05 | Registrar recepción de materia prima | T-05-02 | Crear formulario de recepción | Implementar en el webapp el formulario de registro con validaciones de campos obligatorios. | 4 | Casalino Berrocal Luisa | To Do |
+| US-06 | Registrar lote de materia prima | T-06-01 | Diseñar modelo y API de lote | Crear la entidad de lote asociada a una recepción, con código único, cantidad y estado, y sus endpoints. | 6 | Gallegos De La Cruz Giovanni | To Do |
+| US-06 | Registrar lote de materia prima | T-06-02 | Crear vista de registro de lotes | Implementar el formulario y el listado de lotes registrados en el webapp. | 5 | Casalino Berrocal Luisa | To Do |
+| US-07 | Registrar maquinaria | T-07-01 | Diseñar modelo y API de maquinaria | Definir la entidad de maquinaria (nombre, tipo, código, estado) y los endpoints de registro y consulta. | 4 | Huerta Cardenas Brayan | To Do |
+| US-07 | Registrar maquinaria | T-07-02 | Crear formulario de maquinaria | Implementar el formulario de registro y la lista de maquinaria en el webapp. | 4 | Rivera Rupay Fabricio | To Do |
+| US-08 | Registrar información de producción | T-08-01 | Diseñar modelo y API de producción | Crear la entidad de producción vinculada a lote y maquinaria (cantidad procesada, turno, fecha) con sus endpoints. | 8 | Jimenez Saavedra Antony | To Do |
+| US-08 | Registrar información de producción | T-08-02 | Crear formulario de producción | Implementar el formulario de registro de producción con selección de lote y maquinaria. | 6 | Rivera Rupay Fabricio | To Do |
+| US-09 | Registrar resultados de calidad | T-09-01 | Diseñar modelo y API de calidad | Definir la entidad de resultados de calidad (humedad, granos quebrados, impurezas) asociada a un lote y sus endpoints. | 6 | Jimenez Saavedra Antony | To Do |
+| US-09 | Registrar resultados de calidad | T-09-02 | Crear formulario de calidad | Implementar el formulario de registro de resultados de calidad en el webapp. | 5 | Casalino Berrocal Luisa | To Do |
+| US-10 | Registrar y consultar merma | T-10-01 | Diseñar modelo y API de merma | Crear la entidad de merma por proceso y los endpoints de registro y consulta con filtros por fecha y lote. | 6 | Gallegos De La Cruz Giovanni | To Do |
+| US-10 | Registrar y consultar merma | T-10-02 | Crear vista de registro y consulta de merma | Implementar el formulario de registro y la tabla de consulta con filtros. | 6 | Huerta Cardenas Brayan | To Do |
+| US-11 | Registrar mantenimiento preventivo | T-11-01 | Diseñar modelo y API de mantenimiento preventivo | Definir la entidad de mantenimiento preventivo (maquinaria, fecha programada, tipo, responsable) y sus endpoints. | 6 | Huerta Cardenas Brayan | To Do |
+| US-11 | Registrar mantenimiento preventivo | T-11-02 | Crear formulario de mantenimiento preventivo | Implementar el formulario de programación y registro en el webapp. | 4 | Rivera Rupay Fabricio | To Do |
+| US-12 | Registrar mantenimiento correctivo | T-12-01 | Diseñar modelo y API de mantenimiento correctivo | Crear la entidad de mantenimiento correctivo (falla, causa, acción realizada, tiempo de parada) y sus endpoints. | 6 | Jimenez Saavedra Antony | To Do |
+| US-12 | Registrar mantenimiento correctivo | T-12-02 | Crear formulario de mantenimiento correctivo | Implementar el formulario de registro de fallas y acciones correctivas en el webapp. | 5 | Gallegos De La Cruz Giovanni | To Do |
+| US-05 a US-12 | Todas las historias del Sprint 2 | T-QA-01 | Pruebas de integración y validación | Ejecutar pruebas de los endpoints y flujos de registro, y corregir los defectos encontrados. | 8 | Todo el equipo | To Do |
+![Captura de pantalla 2026-10-02 180921.png](assets/Images%20Chapter%205/Captura%20de%20pantalla%202026-10-02%20180921.png)
+
 #### 5.2.2.4.Development Evidence for Sprint Review.
 #### 5.2.2.5.Execution Evidence for Sprint Review.
 #### 5.2.2.6.Services Documentation Evidence for Sprint Review.
