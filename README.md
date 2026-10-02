@@ -1992,26 +1992,25 @@ A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con e
 | Rivera Rupay, Fabricio Jose |Fabricio1924 |C |C |C |
 
 #### 5.2.1.3 Sprint Backlog 1
-
 | Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
-|:-|:--|:--|:--|:--|--:|:--|:--|
-| US-01 | Registrar usuario | TS-01.1 | Diseñar formulario de registro | Como administrador, quiero registrar nuevos usuarios en el sistema, para otorgarles acceso a la plataforma. | 4 | Casalino Berrocal, Luisa Nhiriel | Done |
-| US-01 | Registrar usuario | TS-01.2 | Implementar API de registro | Como administrador, quiero registrar nuevos usuarios en el sistema, para otorgarles acceso a la plataforma. | 6 | Gallegos De La Cruz, Giovanni Marcelo | Done |
-| US-01 | Registrar usuario | TS-01.3 | Pruebas de integración de registro | Como administrador, quiero registrar nuevos usuarios en el sistema, para otorgarles acceso a la plataforma. | 3 | Huerta Cardenas, Brayan Benjamin | Done |
-| US-02 | Iniciar sesión | TS-02.1 | Diseñar interfaz de Login | Como usuario del molino, quiero iniciar sesión en la plataforma, para acceder a mis funciones asignadas. | 3 | Jimenez Saavedra, Antony Alexander | Done |
-| US-02 | Iniciar sesión | TS-02.2 | Implementar autenticación JWT | Como usuario del molino, quiero iniciar sesión en la plataforma, para acceder a mis funciones asignadas. | 5 | Rivera Rupay, Fabricio Jose | Done |
-| US-02 | Iniciar sesión | TS-02.3 | Validaciones de credenciales | Como usuario del molino, quiero iniciar sesión en la plataforma, para acceder a mis funciones asignadas. | 2 | Casalino Berrocal, Luisa Nhiriel | Done |
-| US-03 | Gestionar roles y permisos | TS-03.1 | Diseñar esquema de BD para RBAC | Como administrador, quiero gestionar roles y permisos de los usuarios, para restringir el acceso según el perfil. | 4 | Gallegos De La Cruz, Giovanni Marcelo | Done |
-| US-03 | Gestionar roles y permisos | TS-03.2 | Implementar middleware de autorización | Como administrador, quiero gestionar roles y permisos de los usuarios, para restringir el acceso según el perfil. | 6 | Huerta Cardenas, Brayan Benjamin | Done |
-| US-03 | Gestionar roles y permisos | TS-03.3 | UI de administración de roles | Como administrador, quiero gestionar roles y permisos de los usuarios, para restringir el acceso según el perfil. | 5 | Jimenez Saavedra, Antony Alexander | Done |
-| US-04 | Gestionar perfil de usuario | TS-04.1 | Diseñar vista de perfil | Como usuario registrado, quiero gestionar mi perfil de usuario, para mantener mis datos personales actualizados. | 3 | Rivera Rupay, Fabricio Jose | Done |
-| US-04 | Gestionar perfil de usuario | TS-04.2 | Endpoint de actualización de perfil | Como usuario registrado, quiero gestionar mi perfil de usuario, para mantener mis datos personales actualizados. | 4 | Casalino Berrocal, Luisa Nhiriel | Done |
-| US-35 | Conocer la propuesta de valor | TS-35.1 | Sección Hero Landing Page | Como visitante, quiero conocer la propuesta de valor de Molinex, para entender las ventajas de la plataforma. | 3 | Gallegos De La Cruz, Giovanni Marcelo | Done |
-| US-36 | Conocer las funcionalidades | TS-36.1 | Sección de características | Como visitante, quiero conocer las funcionalidades clave, para evaluar si cubren las necesidades de mi negocio. | 3 | Huerta Cardenas, Brayan Benjamin | Done |
-| US-37 | Consultar planes de suscripción | TS-37.1 | Tabla de precios y planes | Como visitante, quiero consultar los planes de suscripción, para identificar los costos y opciones disponibles. | 4 | Jimenez Saavedra, Antony Alexander | Done |
-| US-38 | Identificar el plan adecuado | TS-38.1 | Filtro / Recomendador de planes | Como visitante, quiero identificar el plan adecuado para mi molino, para elegir la opción que mejor responda a mi volumen de operación. | 4 | Rivera Rupay, Fabricio Jose | Done |
-| US-39 | Conocer los beneficios de Molinex | TS-39.1 | Sección de testimonios y beneficios | Como visitante, quiero conocer los beneficios de Molinex, para tomar una decisión informada sobre la adopción del sistema. | 2 | Casalino Berrocal, Luisa Nhiriel | Done |
-| US-40 | Solicitar información comercial | TS-40.1 | Formulario de contacto comercial | Como visitante, quiero solicitar información comercial, para ponerse en contacto con el equipo de ventas. | 4 | Gallegos De La Cruz, Giovanni Marcelo | Done |
+|---|---|---|---|---|---:|---|---|
+| US-01 | Registrar usuario | TS-01.1 | Diseñar formulario de registro | Definir la estructura del formulario, los campos requeridos y las validaciones necesarias para el registro de usuarios. | 4 | Casalino Berrocal, Luisa Nhiriel | Done |
+| US-01 | Registrar usuario | TS-01.2 | Implementar API de registro | Desarrollar el endpoint encargado de registrar usuarios y validar los datos recibidos. | 6 | Gallegos De La Cruz, Giovanni Marcelo | Done |
+| US-01 | Registrar usuario | TS-01.3 | Implementar pruebas de registro | Verificar el registro correcto de usuarios y el rechazo de información inválida mediante pruebas de integración. | 4 | Huerta Cardenas, Brayan Benjamin | Done |
+| US-02 | Iniciar sesión | TS-02.1 | Implementar interfaz de Login | Construir la interfaz de inicio de sesión y conectar los campos con el proceso de autenticación. | 4 | Jimenez Saavedra, Antony Alexander | Done |
+| US-02 | Iniciar sesión | TS-02.2 | Implementar autenticación JWT | Implementar el mecanismo de autenticación mediante tokens JWT para controlar las sesiones de los usuarios. | 6 | Rivera Rupay, Fabricio Jose | Done |
+| US-02 | Iniciar sesión | TS-02.3 | Implementar validaciones de credenciales | Implementar las validaciones necesarias para credenciales correctas, incorrectas y campos requeridos. | 4 | Casalino Berrocal, Luisa Nhiriel | Done |
+| US-03 | Gestionar roles y permisos | TS-03.1 | Diseñar esquema RBAC | Definir las entidades y relaciones necesarias para gestionar usuarios, roles y permisos. | 4 | Gallegos De La Cruz, Giovanni Marcelo | Done |
+| US-03 | Gestionar roles y permisos | TS-03.2 | Implementar middleware de autorización | Desarrollar el middleware encargado de verificar los permisos asociados al rol del usuario. | 6 | Huerta Cardenas, Brayan Benjamin | Done |
+| US-03 | Gestionar roles y permisos | TS-03.3 | Implementar administración de roles | Desarrollar las operaciones necesarias para consultar y asignar roles a los usuarios. | 6 | Jimenez Saavedra, Antony Alexander | Done |
+| US-04 | Gestionar perfil de usuario | TS-04.1 | Implementar vista de perfil | Construir la vista que permita consultar y editar la información del perfil del usuario. | 4 | Rivera Rupay, Fabricio Jose | Done |
+| US-04 | Gestionar perfil de usuario | TS-04.2 | Implementar actualización de perfil | Desarrollar el endpoint y las validaciones necesarias para actualizar los datos del perfil. | 4 | Casalino Berrocal, Luisa Nhiriel | Done |
+| US-35 | Conocer la propuesta de valor | TS-35.1 | Implementar sección Hero | Desarrollar la sección principal de la Landing Page con la propuesta de valor de Molinex. | 4 | Gallegos De La Cruz, Giovanni Marcelo | Done |
+| US-36 | Conocer las funcionalidades | TS-36.1 | Implementar sección de funcionalidades | Desarrollar la sección destinada a presentar las principales funcionalidades de Molinex. | 4 | Huerta Cardenas, Brayan Benjamin | Done |
+| US-37 | Consultar planes de suscripción | TS-37.1 | Implementar tabla de planes | Construir la sección que presenta los planes Básico, Profesional y Empresarial junto con sus características. | 4 | Jimenez Saavedra, Antony Alexander | Done |
+| US-38 | Identificar el plan adecuado | TS-38.1 | Implementar recomendador de planes | Desarrollar la lógica que permite identificar el plan correspondiente según el volumen de operación indicado. | 4 | Rivera Rupay, Fabricio Jose | Done |
+| US-39 | Conocer los beneficios de Molinex | TS-39.1 | Implementar sección de beneficios | Desarrollar la sección destinada a presentar los principales beneficios de Molinex. | 4 | Casalino Berrocal, Luisa Nhiriel | Done |
+| US-40 | Solicitar información comercial | TS-40.1 | Implementar formulario comercial | Desarrollar el formulario que permite al visitante registrar una solicitud de información comercial. | 4 | Gallegos De La Cruz, Giovanni Marcelo | Done |
 
 **Captura y enlace al Board:** `https://trello.com/invite/b/6aa9c4fdfc659047df591de0/ATTI907effe44c9315a41519954d192d71f48A54EF45/molinex`
 
