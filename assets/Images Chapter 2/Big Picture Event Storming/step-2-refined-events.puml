@@ -20,7 +20,7 @@ skinparam rectangle {
 }
 
 title Step 2 - Refine and Sequence Domain Events
-caption Events are ordered by business flow; queries without state changes are reserved as Read Models for Step 3.
+caption Events are ordered by business flow; queries without state changes are excluded and deferred to Design-Level EventStorming.
 
 top to bottom direction
 
