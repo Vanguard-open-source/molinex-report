@@ -16,20 +16,14 @@ title Big Picture EventStorming Legend - Molinex
 
 top to bottom direction
 
-rectangle "Actor\nWho initiates the action?" as actor #FFF3A6
-rectangle "Command\nAction expressed in imperative form" as command #A9C7F7
+rectangle "Actor\nWho participates in the business flow?" as actor #FFF3A6
 rectangle "Domain Event\nSignificant business fact expressed in past tense" as event #FFB26B
-rectangle "Policy\nRule that reacts to an event" as policy #C9A7E8
-rectangle "View / Read Model\nInformation viewed by an actor" as readmodel #B9D98A
+rectangle "Pivotal Event\nEvent that marks a relevant change in the journey" as pivotal #E88A3D
 rectangle "External System\nSystem outside the Molinex boundary" as external #F5A3D7
-rectangle "Aggregate Candidate\nConsistency boundary to be validated" as aggregate #FFE27A
 rectangle "Hotspot\nQuestion, risk, or pending decision" as hotspot #FF8A80
 
-actor -[hidden]right-> command
-command -[hidden]right-> event
-event -[hidden]right-> policy
-readmodel -[hidden]right-> external
-external -[hidden]right-> aggregate
-aggregate -[hidden]right-> hotspot
-actor -[hidden]down-> readmodel
+actor -[hidden]right-> event
+event -[hidden]right-> pivotal
+pivotal -[hidden]right-> external
+external -[hidden]right-> hotspot
 @enduml

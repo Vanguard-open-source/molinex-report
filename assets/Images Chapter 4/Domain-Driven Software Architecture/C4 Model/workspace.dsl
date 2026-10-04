@@ -25,8 +25,12 @@ workspace "Molinex Platform" "C4 model for the Molinex rice mill operational man
                 tags "Landing Page"
             }
 
-            webApplication = container "Web Application" "Provides role-based operational management and analytics through a responsive browser experience." "Angular and TypeScript" {
+            webApplication = container "Web Application" "Serves the compiled Single Page Application to the user's browser." "Nginx" {
                 tags "Web Application"
+            }
+
+            spa = container "Single Page Application" "Provides role-based operational management and analytics entirely in the user's browser." "Angular, TypeScript and Angular Material" {
+                tags "SPA"
                 !include frontend-components.dsl
             }
 
@@ -73,6 +77,10 @@ workspace "Molinex Platform" "C4 model for the Molinex rice mill operational man
             element "Web Application" {
                 shape webBrowser
                 background #B9DDF2
+            }
+            element "SPA" {
+                shape webBrowser
+                background #9ECBE7
             }
             element "Backend Application" {
                 background #5B9CCB

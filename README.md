@@ -76,6 +76,7 @@ Proyecto<br>
 |1.0|17/09|Giovanni Gallegos|Se agregaron los wireflows, wireframes, prototipo de aplicación web y evidencias de la Landing Page.|
 |1.1|18/09|Giovanni Gallegos|Se completaron las secciones del informe correspondientes a AV1 y se agregaron evidencias.|
 |1.2|18/09|Equipo Vanguard|Consolidación y revisión de las secciones del informe correspondientes a la evaluación AV1.|
+|1.3|04/10|Fabricio Rivera|Se corrigió el Big Picture EventStorming y se incorporó la Single Page Application como contenedor independiente en el modelo C4.|
 <div style="page-break-after: always;"></div>
 
 
@@ -636,13 +637,13 @@ Diego Rantería, egresado de Ingeniería Agroindustrial con 5 años en la indust
 
 El Big Picture Event Storming de Molinex permite observar, de extremo a extremo, los hechos relevantes que ocurren desde el interés comercial y la habilitación de usuarios hasta el registro de la operación del molino, la detección de anomalías y el análisis de resultados. Su propósito es comprender el dominio antes de tomar decisiones de diseño de software y exponer vacíos que requieren validación con especialistas del negocio.
 
-La propuesta se construyó a partir de las entrevistas, el User Task Matrix y las User Stories de los segmentos de gerentes o administradores, técnicos de mantenimiento y operarios de producción. Las Technical Stories de la API RESTful no se incorporaron como eventos, debido a que representan decisiones de implementación y no hechos relevantes para el negocio. De igual manera, las acciones de consulta que no cambian el estado del dominio se modelaron como *View/Read Models* y no como *Domain Events*.
+La propuesta se construyó a partir de las entrevistas, el User Task Matrix y las User Stories de los segmentos de gerentes o administradores, técnicos de mantenimiento y operarios de producción. Las Technical Stories de la API RESTful no se incorporaron porque representan decisiones de implementación y no hechos relevantes para el negocio. En este nivel se conservaron únicamente eventos de dominio, actores, sistemas externos potenciales, eventos pivote y *hotspots*. Los comandos, políticas, Aggregates y modelos de lectura se reservaron para el Design-Level EventStorming de la sección 4.6.1.
 
 Los diagramas fueron elaborados mediante PlantUML bajo el enfoque Diagram-as-Code. Sus archivos fuente se conservan junto con las imágenes SVG para permitir su revisión, reproducción y evolución mediante control de versiones. Estos artefactos constituyen la base de la validación colaborativa del equipo.
 
 ### Notación utilizada
 
-Los elementos siguen una convención cromática constante. Los actores se representan en amarillo claro, los comandos en azul, los eventos de dominio en naranja, las políticas en morado, los modelos de lectura en verde, los sistemas externos en rosado, los candidatos a agregados en amarillo y los puntos de discusión o *hotspots* en rojo. Los eventos se redactan en pasado porque representan hechos que ya ocurrieron, mientras que los comandos se expresan como acciones en modo imperativo.
+Los elementos siguen una convención cromática constante. Los actores se representan en amarillo claro, los eventos de dominio en naranja, los eventos pivote en naranja oscuro, los sistemas externos en rosado y los puntos de discusión o *hotspots* en rojo. Los eventos se redactan en pasado porque representan hechos significativos que ya ocurrieron en el negocio.
 
 <p align="center">
   <img src="assets/Images%20Chapter%202/Big%20Picture%20Event%20Storming/event-storming-legend.svg" alt="Leyenda de elementos del Big Picture Event Storming de Molinex" width="100%">
@@ -666,41 +667,41 @@ La secuencia muestra que una recepción registrada habilita el registro de un lo
   <img src="assets/Images%20Chapter%202/Big%20Picture%20Event%20Storming/step-2-refined-events.svg" alt="Paso 2: Domain Events refinados y ordenados por flujo de negocio" width="100%">
 </p>
 
-### Paso 3: Identificación de causas, actores, políticas y Read Models
+### Paso 3: Identificación de actores, sistemas externos y hotspots
 
-En la tercera etapa se investigó qué origina cada evento. Se incorporaron los actores que toman decisiones, los comandos que ejecutan, las políticas que reaccionan automáticamente y la información que necesitan consultar. Los actores principales son el visitante, el gerente o administrador, el técnico de mantenimiento y el operario de producción.
+En la tercera etapa se identificaron los participantes de cada recorrido y las dependencias externas que todavía requieren validación. Los actores principales son el visitante, el gerente o administrador, el técnico de mantenimiento y el operario de producción. También se representó una fuente potencial de sensores, sin asumir todavía que exista una integración confirmada.
 
-Se identificaron las siguientes políticas de negocio candidatas:
+Los *hotspots* se ubicaron junto a los eventos relacionados para hacer visibles las preguntas abiertas más relevantes:
 
-| Evento o condición | Política candidata | Resultado esperado |
-|:--|:--|:--|
-| Se registra o actualiza información de producción, calidad o merma. | Recalcular los indicadores que dependan de la nueva información. | Indicadores de rendimiento actualizados. |
-| Un indicador queda fuera de su rango de referencia. | Registrar la desviación para su revisión operativa. | Desviación de calidad o rendimiento identificada. |
-| Se incorpora una variable operativa de una máquina. | Evaluar la variable utilizando los criterios operativos definidos. | Variable aceptada o anomalía detectada. |
-| Se detecta una anomalía operativa. | Generar información de atención para el técnico responsable. | Alerta y recomendación de mantenimiento disponibles. |
+| Flujo | Hotspot |
+|:--|:--|
+| Comercial | Definir suscripción, pago, alta del molino y activación del plan. |
+| Calidad y rendimiento | Determinar quién define y aprueba los rangos de referencia. |
+| Monitoreo | Confirmar si las variables se ingresarán manualmente, mediante sensores o por ambas vías. |
+| Reportes | Definir si los reportes se almacenan, versionan o regeneran bajo demanda. |
 
-Las consultas de procesos, historiales, indicadores, estado de maquinaria, alertas, recomendaciones, resúmenes y tendencias se representaron como *Read Models*. Durante el EventStorming no se añadió ningún sistema externo al flujo porque la investigación todavía no confirmaba una integración concreta. Posteriormente, la arquitectura C4 incorporó `Rice Mill Sensor Gateway` y `Notification Delivery Service` como integraciones planificadas; permanecen fuera del flujo de dominio hasta que sus contratos sean validados durante la implementación.
+La fuente de sensores se mantiene como sistema externo potencial. Su contrato, protocolo y responsabilidad se detallan en el C4 como una integración planificada, no como una decisión ya validada del dominio.
 
 <p align="center">
-  <img src="assets/Images%20Chapter%202/Big%20Picture%20Event%20Storming/step-3-track-causes.svg" alt="Paso 3: actores, comandos, políticas, eventos y modelos de lectura de Molinex" width="100%">
+  <img src="assets/Images%20Chapter%202/Big%20Picture%20Event%20Storming/step-3-track-causes.svg" alt="Paso 3: actores, sistemas externos, eventos y hotspots de Molinex" width="100%">
 </p>
 
-### Paso 4: Reorganización y resultado de Software Modelling
+### Paso 4: Eventos pivote y áreas de negocio candidatas
 
-En el último paso, los elementos relacionados se reorganizaron alrededor de candidatos a *Aggregates* y *Bounded Contexts*. Esta agrupación no constituye todavía la arquitectura definitiva. Los límites de consistencia, las invariantes y las relaciones entre contextos deberán revisarse con mayor profundidad en el Design-Level EventStorming de la sección 4.6.1.
+En el último paso se marcaron como eventos pivote aquellos hechos que cambian de manera relevante la etapa del recorrido, como la autenticación de un usuario, el registro de un lote, el registro de información productiva, el cálculo de indicadores, la detección de una anomalía y la generación de reportes. A partir de las agrupaciones naturales del lenguaje y del flujo se propusieron áreas de negocio candidatas. Esta organización todavía no define Aggregates ni límites de consistencia; esas decisiones corresponden al Design-Level EventStorming de la sección 4.6.1.
 
-| Bounded Context candidato | Clasificación inicial | Responsabilidad | Aggregates o Read Models candidatos |
+| Área de negocio candidata | Clasificación inicial | Responsabilidad | Conceptos de dominio observados |
 |:--|:--|:--|:--|
-| Commercial Engagement | Supporting | Presentar la oferta de Molinex y registrar solicitudes comerciales. | `Commercial Inquiry`; catálogo de planes y propuesta de valor como Read Model. |
-| Identity and Access Management | Generic | Gestionar usuarios, roles, perfiles y acceso autorizado. | `User`. |
-| Production Management | Core | Registrar la recepción de materia prima, los lotes y la ejecución productiva. | `Raw Material Reception`, `Production Batch`, `Production Record`. |
-| Quality and Yield Control | Core | Registrar calidad y merma, calcular indicadores e identificar desviaciones. | `Quality Assessment`, `Waste Record`. |
-| Asset and Maintenance Management | Core | Mantener el inventario de maquinaria y su historial de mantenimiento. | `Machine`, `Maintenance Record`. |
-| Operational Intelligence | Core | Evaluar variables, detectar anomalías y generar información de atención. | `Operational Anomaly`, `Alert`; recomendaciones como Read Model. |
-| Reporting and Analytics | Supporting / Read Side | Proyectar información integrada para apoyar decisiones. | Resumen operativo, reportes de producción y mantenimiento, y análisis de tendencias. |
+| Commercial Engagement | Supporting | Presentar la oferta de Molinex y registrar solicitudes comerciales. | Solicitud comercial, plan y propuesta de valor. |
+| Identity and Access Management | Generic | Gestionar usuarios, roles, perfiles y acceso autorizado. | Usuario, rol y autenticación. |
+| Production Management | Core | Registrar la recepción de materia prima, los lotes y la ejecución productiva. | Recepción, lote e información de producción. |
+| Quality and Yield Control | Core | Registrar calidad y merma, calcular indicadores e identificar desviaciones. | Resultado de calidad, merma, rendimiento y desviación. |
+| Asset and Maintenance Management | Core | Mantener el inventario de maquinaria y su historial de mantenimiento. | Máquina y mantenimiento. |
+| Operational Intelligence | Core | Evaluar variables, detectar anomalías y generar información de atención. | Variable operativa, anomalía, alerta y recomendación. |
+| Reporting and Analytics | Supporting | Integrar hechos operativos para apoyar decisiones. | Reporte de producción y reporte de mantenimiento. |
 
 <p align="center">
-  <img src="assets/Images%20Chapter%202/Big%20Picture%20Event%20Storming/step-4-software-model.svg" alt="Paso 4: Bounded Contexts y Aggregates candidatos de Molinex" width="100%">
+  <img src="assets/Images%20Chapter%202/Big%20Picture%20Event%20Storming/step-4-software-model.svg" alt="Paso 4: eventos pivote y áreas de negocio candidatas de Molinex" width="100%">
 </p>
 
 ### Hotspots y decisiones pendientes
@@ -728,7 +729,7 @@ El análisis hizo visibles preguntas que no deben resolverse mediante suposicion
 | Monitoreo, anomalías y alertas | US-22 a US-26. |
 | Reportes e inteligencia operativa | US-27 a US-30. |
 
-Esta trazabilidad permite comprobar que los elementos del Big Picture provienen de necesidades documentadas y, al mismo tiempo, señala qué procesos aún no cuentan con requisitos suficientes. Los candidatos obtenidos serán refinados en la sección 4.6.1 aplicando las reglas de diseño de Aggregates y definiendo los contratos de integración entre Bounded Contexts.
+Esta trazabilidad permite comprobar que los elementos del Big Picture provienen de necesidades documentadas y, al mismo tiempo, señala qué procesos aún no cuentan con requisitos suficientes. En la sección 4.6.1, las áreas candidatas se refinan y recién allí se incorporan comandos, políticas, Aggregates, modelos de lectura y contratos de integración entre Bounded Contexts.
 
 ## 2.5 Ubiquitous Language
 
@@ -1604,6 +1605,7 @@ El diagrama de contexto presenta a Molinex como un único sistema de software, m
 
 ### 4.6.3 Software Architecture Container Diagrams
 
+El diagrama separa explícitamente la `Web Application` de la `Single Page Application`. La primera utiliza Nginx para servir al navegador los archivos estáticos generados por `ng build`; la SPA contiene la aplicación Angular que se ejecuta en el navegador. Por ello, el flujo principal es `Web Application → Single Page Application → RESTful API`. Los usuarios interactúan con la SPA, mientras que esta consume la API mediante JSON sobre HTTPS. La Landing Page se mantiene como un contenedor independiente porque cubre la experiencia pública y únicamente envía solicitudes comerciales a la API.
 
 <p align="center">
   <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/container-diagram.svg" alt="Software Architecture Container Diagram de Molinex" width="100%">
@@ -1613,11 +1615,11 @@ El diagrama de contexto presenta a Molinex como un único sistema de software, m
 
 ### 4.6.4 Software Architecture Components Diagrams
 
-Los diagramas de componentes se organizan por producto de software y por límite funcional. Para cada producto se presenta primero una vista general y luego una vista detallada por Bounded Context, además de la estructura compartida correspondiente. Esta separación evita mezclar los límites propios de Angular con los del monolito modular de Spring Boot.
+Los diagramas de componentes se organizan por producto de software y por límite funcional. Para cada producto se presenta primero una vista general y luego una vista detallada por Bounded Context, además de la estructura compartida correspondiente. Esta separación evita mezclar los límites propios de la SPA de Angular con los del monolito modular de Spring Boot.
 
 #### Frontend Component Diagrams
 
-La vista general muestra las áreas funcionales de la Web Application y su acceso a la RESTful API. En las vistas detalladas, cada área se organiza mediante los límites Presentation, Application, Domain e Infrastructure. El Frontend Shared Module reúne capacidades transversales de interfaz, sesión y comunicación HTTP; únicamente Weight y MeasurementUnit corresponden al modelo compartido entre Producción y Calidad.
+La vista general muestra las áreas funcionales internas de la Single Page Application y su acceso a la RESTful API. En las vistas detalladas, cada área se organiza mediante los límites Presentation, Application, Domain e Infrastructure. El Frontend Shared Module reúne capacidades transversales de interfaz, sesión y comunicación HTTP; únicamente Weight y MeasurementUnit corresponden al modelo compartido entre Producción y Calidad.
 
 ##### Frontend Component Overview
 
