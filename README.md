@@ -200,6 +200,15 @@ El trabajo se realizó de manera colaborativa mediante ramas y commits en el rep
     - [5.2.1.6 Services Documentation Evidence for Sprint Review](#5216-services-documentation-evidence-for-sprint-review)
     - [5.2.1.7 Software Deployment Evidence for Sprint Review](#5217-software-deployment-evidence-for-sprint-review)
     - [5.2.1.8 Team Collaboration Insights during Sprint](#5218-team-collaboration-insights-during-sprint)
+  - [5.2.2 Sprint 2](#522-sprint-2)
+    - [5.2.2.1 Sprint Planning 2](#5221-sprint-planning-2)
+    - [5.2.2.2 Aspect Leaders and Collaborators](#5222-aspect-leaders-and-collaborators)
+    - [5.2.2.3 Sprint Backlog 2](#5223-sprint-backlog-2)
+    - [5.2.2.4 Development Evidence for Sprint Review](#5224-development-evidence-for-sprint-review)
+    - [5.2.2.5 Execution Evidence for Sprint Review](#5225-execution-evidence-for-sprint-review)
+    - [5.2.2.6 Services Documentation Evidence for Sprint Review](#5226-services-documentation-evidence-for-sprint-review)
+    - [5.2.2.7 Software Deployment Evidence for Sprint Review](#5227-software-deployment-evidence-for-sprint-review)
+    - [5.2.2.8 Team Collaboration Insights during Sprint](#5228-team-collaboration-insights-during-sprint)
 - [Conclusiones](#conclusiones)
 - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
 - [Bibliografía](#bibliografía)
@@ -1974,7 +1983,7 @@ A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con e
 | **Sprint Planning Background** | |
 | Date | 26-09-02 |
 | Time | 7:00 PM |
-| Location | virtual (videollamada del equipo por Google Meet|
+| Location | virtual (videollamada del equipo por Discord) |
 | Prepared By | Gallegos De La Cruz, Giovanni Marcelo |
 | Attendees (to planning meeting) | Gallegos De La Cruz, Giovanni Marcelo / Casalino Berrocal, Luisa Nhiriel / Huerta Cardenas, Brayan Benjamin / Jimenez Saavedra, Antony Alexander / Rivera Rupay, Fabricio Jose |
 | Sprint n - 1 Review Summary | No aplica (primer Sprint). |
@@ -2085,56 +2094,209 @@ A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con e
 | Sprint # | Sprint 2 |
 |:--|:--|
 | **Sprint Planning Background** | |
-| **Date** | 26-09-31 |
+| **Date** | 26-10-03 |
 | **Time** | 7:00 PM |
-| **Location** | virtual (videollamada del equipo por Google Meet) |
+| **Location** | virtual (videollamada del equipo por Discord) |
 | **Prepared By** | Gallegos De La Cruz, Giovanni Marcelo |
 | **Attendees (to planning meeting)** | Gallegos De La Cruz, Giovanni Marcelo / Casalino Berrocal, Luisa Nhiriel / Huerta Cardenas, Brayan Benjamin / Jimenez Saavedra, Antony Alexander / Rivera Rupay, Fabricio Jose |
 | **Sprint 1 Review Summary** | Se revisó la primera versión de la Landing Page de Molinex, incluyendo la propuesta de valor, funcionalidades, beneficios y planes de suscripción Básico, Profesional y Empresarial. También se revisaron las funcionalidades de acceso y gestión inicial de usuarios desarrolladas durante el Sprint 1. |
 | **Sprint 1 Retrospective Summary** | El equipo identificó como aspectos positivos la distribución de actividades y la coordinación para desarrollar las funcionalidades iniciales. Como oportunidad de mejora, se estableció fortalecer la coordinación entre los integrantes y precisar los criterios de aceptación antes de iniciar el desarrollo de cada historia de usuario. |
 | **Sprint 2 Goal** | **Our focus is on enabling the initial operational management of rice mill information in Molinex. We believe it delivers a structured way for mill personnel to register and manage the information required for production and maintenance activities. This will be confirmed when users can register raw material reception and lots, machinery, production and quality information, waste, and preventive and corrective maintenance records.** |
 | **Sprint 2 Velocity** | **23 Story Points.** Se establece una capacidad de 23 Story Points considerando la experiencia obtenida durante el Sprint 1 y la capacidad de trabajo del equipo de 5 integrantes. |
-| **Sum of Story Points** | **23 Story Points (US-05 a US-12)** |
+| **Sum of Story Points** | **23 Story Points (US-05, US-06, US-07, US-11, US-14, US-17, US-19 y US-20)** |
 
-#### 5.2.2.2. Aspect Leaders and Collaborators
+#### 5.2.2.2 Aspect Leaders and Collaborators
 
-| Team Member (Last Name, First Name) | GitHub Username | Aspecto 1 : Landing Page  | Aspecto 2 Usuarios y Acceso | Aspecto 3 Documentacion e Integracion |
-|:--|:--:|:--:|:--:|:--:|
-| Casalino Berrocal, Luisa Nhiriel |lulu22nhiri | C|C |C |
-| Gallegos De La Cruz, Giovanni Marcelo |Giova2725|L |L | L|
-| Huerta Cardenas, Brayan Benjamin |Brayanjk22|C |C |C |
-| Jimenez Saavedra, Antony Alexander |saavedraantony-max | C| C|C |
-| Rivera Rupay, Fabricio Jose |Fabricio1924 |C |C |C |
+| Team Member (Last Name, First Name) | GitHub Username | Aspecto 1: Production Management (US-05, US-06, US-07) | Aspecto 2: Quality & Waste Control (US-11, US-14) | Aspecto 3: Asset & Maintenance (US-17, US-19, US-20) | Aspecto 4: Base compartida, API e Integración |
+|:--|:--:|:--:|:--:|:--:|:--:|
+| Casalino Berrocal, Luisa Nhiriel | lulu22nhiri | C | L | C | C |
+| Gallegos De La Cruz, Giovanni Marcelo | Giova2725 | L | C | C | C |
+| Huerta Cardenas, Brayan Benjamin | Brayanjk22 | C | C | C | C |
+| Jimenez Saavedra, Antony Alexander | saavedraantony-max | C | C | L | C |
+| Rivera Rupay, Fabricio Jose | Fabricio1924 | C | C | C | L |
 
-#### 5.2.2.3.Sprint Backlog 2
+L = Líder del aspecto, C = Colaborador.
+
+#### 5.2.2.3 Sprint Backlog 2
 El Sprint Product Backlog del Sprint 2 está conformado por las User Stories seleccionadas del Product Backlog para implementar las funcionalidades operativas iniciales de Molinex. Las historias fueron priorizadas considerando su relación con el registro y gestión de información necesaria para las operaciones de un molino de arroz.
 
 | Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
 |:--|:--|:--|:--|:--|--:|:--|:--|
-| US-05 | Registrar recepción de materia prima | T-05-01 | Diseñar modelo y API de recepción | Definir la entidad de recepción (proveedor, fecha, peso, tipo de arroz) y exponer los endpoints REST para registrarla. | 6 | Gallegos De La Cruz Giovanni | To Do |
-| US-05 | Registrar recepción de materia prima | T-05-02 | Crear formulario de recepción | Implementar en el webapp el formulario de registro con validaciones de campos obligatorios. | 4 | Casalino Berrocal Luisa | To Do |
-| US-06 | Registrar lote de materia prima | T-06-01 | Diseñar modelo y API de lote | Crear la entidad de lote asociada a una recepción, con código único, cantidad y estado, y sus endpoints. | 6 | Gallegos De La Cruz Giovanni | To Do |
-| US-06 | Registrar lote de materia prima | T-06-02 | Crear vista de registro de lotes | Implementar el formulario y el listado de lotes registrados en el webapp. | 5 | Casalino Berrocal Luisa | To Do |
-| US-07 | Registrar maquinaria | T-07-01 | Diseñar modelo y API de maquinaria | Definir la entidad de maquinaria (nombre, tipo, código, estado) y los endpoints de registro y consulta. | 4 | Huerta Cardenas Brayan | To Do |
-| US-07 | Registrar maquinaria | T-07-02 | Crear formulario de maquinaria | Implementar el formulario de registro y la lista de maquinaria en el webapp. | 4 | Rivera Rupay Fabricio | To Do |
-| US-08 | Registrar información de producción | T-08-01 | Diseñar modelo y API de producción | Crear la entidad de producción vinculada a lote y maquinaria (cantidad procesada, turno, fecha) con sus endpoints. | 8 | Jimenez Saavedra Antony | To Do |
-| US-08 | Registrar información de producción | T-08-02 | Crear formulario de producción | Implementar el formulario de registro de producción con selección de lote y maquinaria. | 6 | Rivera Rupay Fabricio | To Do |
-| US-09 | Registrar resultados de calidad | T-09-01 | Diseñar modelo y API de calidad | Definir la entidad de resultados de calidad (humedad, granos quebrados, impurezas) asociada a un lote y sus endpoints. | 6 | Jimenez Saavedra Antony | To Do |
-| US-09 | Registrar resultados de calidad | T-09-02 | Crear formulario de calidad | Implementar el formulario de registro de resultados de calidad en el webapp. | 5 | Casalino Berrocal Luisa | To Do |
-| US-10 | Registrar y consultar merma | T-10-01 | Diseñar modelo y API de merma | Crear la entidad de merma por proceso y los endpoints de registro y consulta con filtros por fecha y lote. | 6 | Gallegos De La Cruz Giovanni | To Do |
-| US-10 | Registrar y consultar merma | T-10-02 | Crear vista de registro y consulta de merma | Implementar el formulario de registro y la tabla de consulta con filtros. | 6 | Huerta Cardenas Brayan | To Do |
-| US-11 | Registrar mantenimiento preventivo | T-11-01 | Diseñar modelo y API de mantenimiento preventivo | Definir la entidad de mantenimiento preventivo (maquinaria, fecha programada, tipo, responsable) y sus endpoints. | 6 | Huerta Cardenas Brayan | To Do |
-| US-11 | Registrar mantenimiento preventivo | T-11-02 | Crear formulario de mantenimiento preventivo | Implementar el formulario de programación y registro en el webapp. | 4 | Rivera Rupay Fabricio | To Do |
-| US-12 | Registrar mantenimiento correctivo | T-12-01 | Diseñar modelo y API de mantenimiento correctivo | Crear la entidad de mantenimiento correctivo (falla, causa, acción realizada, tiempo de parada) y sus endpoints. | 6 | Jimenez Saavedra Antony | To Do |
-| US-12 | Registrar mantenimiento correctivo | T-12-02 | Crear formulario de mantenimiento correctivo | Implementar el formulario de registro de fallas y acciones correctivas en el webapp. | 5 | Gallegos De La Cruz Giovanni | To Do |
-| US-05 a US-12 | Todas las historias del Sprint 2 | T-QA-01 | Pruebas de integración y validación | Ejecutar pruebas de los endpoints y flujos de registro, y corregir los defectos encontrados. | 8 | Todo el equipo | To Do |
-![Captura de pantalla 2026-10-02 180921.png](assets/Images%20Chapter%205/Captura%20de%20pantalla%202026-10-02%20180921.png)
+| US-05 | Registrar recepción de materia prima | T-05-01 | Diseñar modelo y API de recepción | Definir la entidad de recepción (proveedor, fecha, peso, tipo de arroz) y exponer los endpoints REST para registrarla. | 6 | Gallegos De La Cruz Giovanni | Done |
+| US-05 | Registrar recepción de materia prima | T-05-02 | Crear formulario de recepción | Implementar en el webapp el formulario de registro con validaciones de campos obligatorios. | 4 | Casalino Berrocal Luisa | Done |
+| US-06 | Registrar lote de materia prima | T-06-01 | Diseñar modelo y API de lote | Crear la entidad de lote asociada a una recepción, con código único, cantidad y estado, y sus endpoints. | 6 | Gallegos De La Cruz Giovanni | Done |
+| US-06 | Registrar lote de materia prima | T-06-02 | Crear vista de registro de lotes | Implementar el formulario y el listado de lotes registrados en el webapp. | 5 | Casalino Berrocal Luisa | Done |
+| US-07 | Registrar información de producción | T-07-01 | Diseñar modelo y API de producción | Crear la entidad de producción vinculada a lote y maquinaria (cantidad procesada, turno, fecha) con sus endpoints. | 8 | Jimenez Saavedra Antony | Done |
+| US-07 | Registrar información de producción | T-07-02 | Crear formulario de producción | Implementar el formulario de registro de producción con selección de lote y maquinaria. | 6 | Rivera Rupay Fabricio | Done |
+| US-11 | Registrar resultados de calidad | T-11-01 | Diseñar modelo y API de calidad | Definir la entidad de resultados de calidad (humedad, granos quebrados, impurezas) asociada a un lote y sus endpoints. | 6 | Jimenez Saavedra Antony | Done |
+| US-11 | Registrar resultados de calidad | T-11-02 | Crear formulario de calidad | Implementar el formulario de registro de resultados de calidad en el webapp. | 5 | Casalino Berrocal Luisa | Done |
+| US-14 | Registrar y consultar merma | T-14-01 | Diseñar modelo y API de merma | Crear la entidad de merma por proceso y los endpoints de registro y consulta con filtros por fecha y lote. | 6 | Gallegos De La Cruz Giovanni | Done |
+| US-14 | Registrar y consultar merma | T-14-02 | Crear vista de registro y consulta de merma | Implementar el formulario de registro y la tabla de consulta con filtros. | 6 | Huerta Cardenas Brayan | Done |
+| US-17 | Registrar maquinaria | T-17-01 | Diseñar modelo y API de maquinaria | Definir la entidad de maquinaria (nombre, tipo, código, estado) y los endpoints de registro y consulta. | 4 | Huerta Cardenas Brayan | Done |
+| US-17 | Registrar maquinaria | T-17-02 | Crear formulario de maquinaria | Implementar el formulario de registro y la lista de maquinaria en el webapp. | 4 | Rivera Rupay Fabricio | Done |
+| US-19 | Registrar mantenimiento preventivo | T-19-01 | Diseñar modelo y API de mantenimiento preventivo | Definir la entidad de mantenimiento preventivo (maquinaria, fecha programada, tipo, responsable) y sus endpoints. | 6 | Huerta Cardenas Brayan | Done |
+| US-19 | Registrar mantenimiento preventivo | T-19-02 | Crear formulario de mantenimiento preventivo | Implementar el formulario de programación y registro en el webapp. | 4 | Rivera Rupay Fabricio | Done |
+| US-20 | Registrar mantenimiento correctivo | T-20-01 | Diseñar modelo y API de mantenimiento correctivo | Crear la entidad de mantenimiento correctivo (falla, causa, acción realizada, tiempo de parada) y sus endpoints. | 6 | Jimenez Saavedra Antony | Done |
+| US-20 | Registrar mantenimiento correctivo | T-20-02 | Crear formulario de mantenimiento correctivo | Implementar el formulario de registro de fallas y acciones correctivas en el webapp. | 5 | Gallegos De La Cruz Giovanni | Done |
+| US-05, US-06, US-07, US-11, US-14, US-17, US-19, US-20 | Todas las historias del Sprint 2 | T-QA-01 | Pruebas de integración y validación | Ejecutar pruebas de los endpoints y flujos de registro, y corregir los defectos encontrados. | 8 | Todo el equipo | Done |
 
-#### 5.2.2.4.Development Evidence for Sprint Review.
-#### 5.2.2.5.Execution Evidence for Sprint Review.
-#### 5.2.2.6.Services Documentation Evidence for Sprint Review.
-#### 5.2.2.7.Software Deployment Evidence for Sprint Review.
-#### 5.2.2.8.Team Collaboration Insights during Sprint.
+![Tablero de Trello del Sprint 2](assets/Images%20Chapter%205/Captura%20de%20pantalla%202026-10-02%20180921.png)
+
+**Nota sobre el alcance:** las historias comprometidas en el Sprint Planning son las ocho listadas. Durante la implementación del módulo de Producción también se dejaron operativas la consulta de procesos productivos (US-08), el historial de producción (US-09) y la actualización de registros de producción (US-10), que comparten modelo, API y Store con US-07. Su evidencia se presenta en la sección 5.2.2.5.
+
+**Figura:** Tablero de Trello del Sprint 2 con las historias comprometidas y sus tareas. Fuente: elaboración propia.
+
+#### 5.2.2.4 Development Evidence for Sprint Review
+
+La participación en el desarrollo del Sprint 2 se evidencia mediante las ramas `feature/*`, los commits y los Pull Requests registrados en el repositorio [molinex-webapp](https://github.com/Vanguard-open-source/molinex-webapp) de la organización Vanguard-open-source. Se aplicó GitFlow: cada responsabilidad se desarrolló en una rama `feature/*` creada desde `develop` y se integró mediante un Pull Request hacia `develop`. Los commits siguen Conventional Commits. La arquitectura respeta Domain-Driven Design y Clean Architecture, con las capas Domain, Application, Infrastructure y Presentation por bounded context.
+
+| PR | Rama | Responsable (GitHub) | Historias de usuario / alcance | Commits principales | Capas / archivos integrados | Merge a `develop` |
+|:--|:--|:--|:--|:--|:--|:--|
+| #1 | `feature/project-setup` | Fabricio1924 | Base del repositorio: dependencias, entornos, API falsa (JSON Server), estilos y documentación | `cb9cb9c`, `c0cf2d8`, `f9a4af6`, `c8a47aa` | Configuración, `server/`, estilos globales | 03-10-2026 |
+| #2 | `feature/architecture-scaffold` | Fabricio1924 | Estructura de bounded contexts del frontend | `8b71eae` | Carpetas Domain/Application/Infrastructure/Presentation por contexto | 03-10-2026 |
+| #3 | `feature/sprint2-production-management` | Giova2725 | US-05, US-06, US-07 (y consulta, historial y actualización de producción: US-08, US-09, US-10) | `2e61ffe` `feat(production): integrate production management module structure` | Domain, Infrastructure, Application y Presentation de `production-management` y `production-quality-shared-kernel` (47 archivos) | 04-10-2026 17:38 |
+| #4 | `feature/sprint2-shared-shell-i18n` | Fabricio1924 | Base compartida: layout, navegación, rutas e i18n ES/EN | `309b276` `feat(shared)`, `3949f83` `feat(i18n)`, `baf46cd` `feat(shell)`, `fd8e7e1` `fix(config)` | `shared/` (domain, infrastructure, presentation), layout, side navigation, top bar, language switcher, `es.json`/`en.json` | 04-10-2026 19:37 |
+| #5 | `feature/sprint2-asset-maintenance` | saavedraantony-max | US-17, US-19, US-20 | `5c96250` `feat(maintenance): integrate asset and maintenance management module` | Domain, Infrastructure, Application y Presentation de `asset-maintenance-management` (34 archivos) | 04-10-2026 20:08 |
+| #6 | `feature/fix-maintenance-api-endpoints` | saavedraantony-max | Ajuste de endpoints de mantenimiento | `a85b634` `fix(maintenance): configure maintenance api endpoints` | `environment.ts`, `environment.development.ts` | 04-10-2026 20:24 |
+| #7 | `feature/sprint2-quality-waste-control` | lulu22nhiri | US-11, US-14 | `f62abdc` y `bcae13f` `feat(quality): integrate quality and waste control module` | Domain, Infrastructure, Application y Presentation de `quality-yield-control` (28 archivos) y configuración de endpoints | 04-10-2026 20:51 |
+| #8 | `feature/sprint2-api-integration` | Fabricio1924 | Integración de la API falsa y de las rutas de los módulos | `05392be` `fix(integration)`, `b8a207d` `chore(api)`, `c1b8a71` `chore(config)` | `server/db.json`, `app.routes.ts`, `angular.json` | 04-10-2026 21:57 |
+| #9 | `feature/configure-production-deployment` | Fabricio1924 | Configuración de despliegue de la Web Application | `c808f57` `feat(environment)`, `b0a65bf` `chore` | `environment.ts`, `public/staticwebapp.config.json` | 05-10-2026 01:18 |
+
+Sobre la rama `main`, se publicaron las versiones `v0.1.0` (04-10-2026) y `v0.1.1` (05-10-2026) mediante ramas `release/*`, con su registro en `CHANGELOG.md`.
+
+![Pull Requests cerrados de molinex-webapp](assets/Images%20Chapter%205/Sprint%202/5.2.2.4-01-github-pull-requests.jpg)
+
+**Figura:** Pull Requests cerrados en el repositorio molinex-webapp (0 abiertos, 9 integrados en `develop`). Fuente: elaboración propia a partir de GitHub, 05-10-2026.
+
+#### 5.2.2.5 Execution Evidence for Sprint Review
+
+La evidencia de ejecución corresponde a la Web Application desplegada en Azure Static Web Apps, que consume la API simulada publicada en Azure. Las pantallas se revisaron el 05-10-2026 en `https://lemon-meadow-06ea8a41e.1.azurestaticapps.net` y muestran datos obtenidos de la API, no datos escritos en el código de la vista.
+
+| HU | Pantalla / URL | Acción | Resultado observado |
+|:--|:--|:--|:--|
+| US-05 | `/production/receptions` | Consultar las recepciones de materia prima | Lista de 8 recepciones con fecha, proveedor, procedencia y cantidad; incluye búsqueda y paginación. |
+| US-06 | `/production/batches` | Consultar los lotes registrados | 8 lotes, cada uno vinculado a su recepción (8 recepciones vinculadas). |
+| US-07 y US-08 | `/production` | Consultar la trazabilidad recepción → lote → proceso | Trazabilidad del 100 % (8 de 8 lotes vinculados) y procesos productivos asociados a cada lote. |
+| US-09 | `/production/history` | Revisar el historial con filtros por periodo, lote y estado | 7 procesos en el periodo, 61 850 kg procesados, 6 procesos completados y 7 lotes involucrados. |
+| US-10 | `/production/records/1/edit` | Abrir la edición de un registro de producción | El formulario carga los datos del registro (LOT-2026-001, 8 200 kg) y mantiene bloqueado el lote relacionado. |
+| US-11 | `/quality` | Consultar los resultados de calidad | 6 evaluaciones; promedios de 72.05 % de grano entero, 18.73 % de grano quebrado y 68.53 % de rendimiento. |
+| US-14 | `/quality/waste` | Consultar la merma por proceso y lote | 6 registros; merma total de 2 381.45 kg y promedio de 4.82 %. |
+| US-17 | `/assets/machinery` | Consultar el inventario de maquinaria | 6 máquinas: 3 operativas, 1 requiere atención, 1 en mantenimiento y 1 fuera de servicio. |
+| US-19 y US-20 | `/assets/maintenance` | Consultar el historial de mantenimiento | 6 registros preventivos, 4 correctivos, 1 actividad próxima y 6 máquinas cubiertas. |
+
+![Operaciones de producción](assets/Images%20Chapter%205/Sprint%202/5.2.2.5-01-production-overview.jpg)
+
+**Figura:** Vista general de Producción con recepciones, lotes y trazabilidad. Fuente: elaboración propia.
+
+![Recepciones de materia prima](assets/Images%20Chapter%205/Sprint%202/5.2.2.5-02-raw-material-receptions.jpg)
+
+**Figura:** Listado de recepciones de materia prima (US-05). Fuente: elaboración propia.
+
+![Lotes de producción](assets/Images%20Chapter%205/Sprint%202/5.2.2.5-03-production-batches.jpg)
+
+**Figura:** Listado de lotes vinculados a su recepción (US-06). Fuente: elaboración propia.
+
+![Historial de producción](assets/Images%20Chapter%205/Sprint%202/5.2.2.5-04-production-history.jpg)
+
+**Figura:** Historial de producción con filtros (US-09). Fuente: elaboración propia.
+
+![Edición de un proceso productivo](assets/Images%20Chapter%205/Sprint%202/5.2.2.5-05-edit-production-record-en.jpg)
+
+**Figura:** Formulario de edición de un registro de producción en inglés (US-10). Fuente: elaboración propia.
+
+![Edición de un proceso productivo en español](assets/Images%20Chapter%205/Sprint%202/5.2.2.5-06-edit-production-record-es.jpg)
+
+**Figura:** La misma pantalla en español, con el selector de idioma ES/EN. Fuente: elaboración propia.
+
+![Resultados de calidad](assets/Images%20Chapter%205/Sprint%202/5.2.2.5-07-quality-results.jpg)
+
+**Figura:** Resultados de calidad del arroz procesado (US-11). Fuente: elaboración propia.
+
+![Merma de producción](assets/Images%20Chapter%205/Sprint%202/5.2.2.5-08-production-waste.jpg)
+
+**Figura:** Registros de merma por proceso y lote (US-14). Fuente: elaboración propia.
+
+![Inventario de maquinaria](assets/Images%20Chapter%205/Sprint%202/5.2.2.5-09-machinery-inventory.jpg)
+
+**Figura:** Inventario de maquinaria con su estado operativo (US-17). Fuente: elaboración propia.
+
+![Control de mantenimiento](assets/Images%20Chapter%205/Sprint%202/5.2.2.5-10-maintenance-control.jpg)
+
+**Figura:** Historial de mantenimiento preventivo y correctivo (US-19 y US-20). Fuente: elaboración propia.
+
+#### 5.2.2.6 Services Documentation Evidence for Sprint Review
+
+En el Sprint 2 la Web Application consume una API REST simulada con JSON Server, publicada en Azure. Esta API reemplaza temporalmente al backend mientras se implementa la RESTful API definitiva, por lo que en este Sprint no se documentó con Swagger/OpenAPI.
+
+URL base de la API desplegada:
+
+`https://molinex-platform-mock-vanguard-eyhedsg9fcgkexft.canadacentral-01.azurewebsites.net/api/v1`
+
+En el repositorio, el archivo `server/routes.json` reescribe las rutas `/api/v1/*` hacia los recursos del archivo `server/db.json`. En desarrollo la base URL es `http://localhost:3000/api/v1` y en producción es la URL de Azure indicada arriba. Ambas se definen en `src/environments`, y ningún componente usa una URL literal.
+
+Los siete recursos mínimos se consultaron el 05-10-2026 sobre la API desplegada y todos respondieron con código HTTP 200 y JSON válido:
+
+| Endpoint | Historias de usuario | Registros | Qué se comprobó |
+|:--|:--|--:|:--|
+| `/api/v1/raw-material-receptions` | US-05 | 8 | Identificadores utilizables, proveedor, procedencia y cantidad. |
+| `/api/v1/production-batches` | US-06 | 8 | Cada lote referencia una recepción existente (`receptionId`). |
+| `/api/v1/production-records` | US-07, US-08, US-09, US-10 | 7 | Cada registro referencia un lote existente (`batchId`). |
+| `/api/v1/quality-results` | US-11 | 6 | Cada resultado referencia un registro de producción (`productionRecordId`). |
+| `/api/v1/waste-records` | US-14 | 6 | Cada merma referencia un registro de producción y calcula su porcentaje. |
+| `/api/v1/machines` | US-17 | 6 | Inventario con código, nombre, modelo y estado. |
+| `/api/v1/maintenance-records` | US-19, US-20 | 10 | Referencia a la máquina (`machineId`) y tipo `PREVENTIVE` o `CORRECTIVE`. |
+
+![Respuesta de la API de registros de producción](assets/Images%20Chapter%205/Sprint%202/5.2.2.6-01-api-production-records.jpg)
+
+**Figura:** Respuesta JSON del endpoint `/api/v1/production-records` en la API desplegada. Fuente: elaboración propia.
+
+#### 5.2.2.7 Software Deployment Evidence for Sprint Review
+
+La Web Application se desplegó en Azure Static Web Apps y la API simulada se publicó en Azure. El despliegue de la Web Application se realiza con GitHub Actions: el flujo de trabajo `.github/workflows/azure-static-web-apps-lemon-meadow-06ea8a41e.yml` compila la aplicación y publica el contenido de `dist/molinex-webapp/browser` cada vez que se integra un cambio en `main`.
+
+URL pública de la Web Application:
+
+[https://lemon-meadow-06ea8a41e.1.azurestaticapps.net/](https://lemon-meadow-06ea8a41e.1.azurestaticapps.net/)
+
+| Componente | Plataforma | URL / detalle |
+|:--|:--|:--|
+| Web Application (Angular) | Azure Static Web Apps | `https://lemon-meadow-06ea8a41e.1.azurestaticapps.net/` |
+| API simulada (JSON Server) | Azure | `https://molinex-platform-mock-vanguard-eyhedsg9fcgkexft.canadacentral-01.azurewebsites.net/api/v1` |
+| Despliegue continuo | GitHub Actions | Se ejecuta en cada `push` a `main` |
+
+La compilación de producción (`npm run build`, versión 0.1.2) se ejecutó el 05-10-2026 sin errores. El paquete inicial pesa 472.20 kB (118.84 kB de transferencia estimada) y el resto de la aplicación se carga por módulos bajo demanda, uno por cada vista.
+
+![Resultado de npm run build](assets/Images%20Chapter%205/Sprint%202/5.2.2.7-02-npm-run-build.png)
+
+**Figura:** Resultado de `npm run build` en molinex-webapp. Fuente: elaboración propia.
+
+El archivo `public/staticwebapp.config.json` define la regla `navigationFallback` hacia `/index.html`, para que las rutas de la aplicación (por ejemplo `/production/history`) funcionen al recargar la página. El entorno de producción (`src/environments/environment.ts`) apunta a la API desplegada. Las versiones `v0.1.0` y `v0.1.1` se publicaron mediante ramas `release/*` y quedaron registradas en `CHANGELOG.md`.
+
+![Web Application desplegada en Azure Static Web Apps](assets/Images%20Chapter%205/Sprint%202/5.2.2.5-01-production-overview.jpg)
+
+**Figura:** Web Application de Molinex desplegada en Azure Static Web Apps y consumiendo la API publicada. Fuente: elaboración propia.
+
+#### 5.2.2.8 Team Collaboration Insights during Sprint
+
+Durante el Sprint 2 el equipo mantuvo GitFlow en el repositorio molinex-webapp. Cada responsabilidad se trabajó en una rama `feature/*` creada desde `develop` y se integró mediante un Pull Request. Al 05-10-2026 los 9 Pull Requests del repositorio estaban integrados y no quedaba ninguno abierto. Las ramas `feature/*` se eliminaron después de cada integración, por lo que el historial de cada una se conserva en su Pull Request (sección 5.2.2.4). En el repositorio permanecen las ramas `main` y `develop`.
+
+| Responsable (GitHub) | Pull Requests integrados | Alcance |
+|:--|:--|:--|
+| Giova2725 | #3 | Módulo Production Management. |
+| lulu22nhiri | #7 | Módulo Quality & Waste Control. |
+| saavedraantony-max | #5, #6 | Módulo Asset & Maintenance y ajuste de sus endpoints. |
+| Fabricio1924 | #1, #2, #4, #8, #9 | Base del repositorio, base compartida con i18n, integración de la API y despliegue. |
+
+El gráfico de contribuciones de GitHub registra los commits del repositorio molinex-webapp en la rama `main`, sin contar los commits de merge. La documentación del Sprint 2 en este informe se registra en el repositorio molinex-report mediante la rama `feature/sprint2-report-evidence`.
+
+![Ramas del repositorio molinex-webapp](assets/Images%20Chapter%205/Sprint%202/5.2.2.8-01-github-branches.jpg)
+
+**Figura:** Ramas del repositorio molinex-webapp. Fuente: elaboración propia a partir de GitHub, 05-10-2026.
+
+![Colaboradores del repositorio molinex-webapp](assets/Images%20Chapter%205/Sprint%202/5.2.2.8-02-github-contributors.jpg)
+
+**Figura:** Contribuciones al repositorio molinex-webapp. Fuente: elaboración propia a partir de GitHub, 05-10-2026.
+
 
 # Conclusiones
 
