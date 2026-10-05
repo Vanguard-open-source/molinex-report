@@ -77,6 +77,7 @@ Proyecto<br>
 |1.1|18/09|Giovanni Gallegos|Se completaron las secciones del informe correspondientes a AV1 y se agregaron evidencias.|
 |1.2|18/09|Equipo Vanguard|Consolidación y revisión de las secciones del informe correspondientes a la evaluación AV1.|
 |1.3|04/10|Fabricio Rivera|Se corrigió el Big Picture EventStorming y se incorporó la Single Page Application como contenedor independiente en el modelo C4.|
+|1.4|05/10|Equipo Vanguard|Se incorporaron las evidencias de implementación, ejecución, servicios, despliegue y colaboración correspondientes al Sprint 2 y se actualizaron las conclusiones y anexos de TB1.|
 <div style="page-break-after: always;"></div>
 
 
