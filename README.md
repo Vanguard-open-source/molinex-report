@@ -2308,7 +2308,11 @@ También se definieron los wireframes, mockups, wireflows, user flows y el proto
 
 Asimismo, se estableció un flujo de trabajo basado en GitFlow, utilizando las ramas `main`, `develop` y `feature/*`. Se definieron convenciones para las ramas `release/*` y `hotfix/*`, además del uso de Semantic Versioning y Conventional Commits.
 
-Como trabajo pendiente para los siguientes avances, se recomienda implementar la RESTful API, integrar la base de datos, documentar los servicios mediante Swagger/OpenAPI y conectar la Web Application con los servicios backend.
+Durante el Sprint 2 se implementó la primera versión funcional de la Web Application de Molinex. Se desarrollaron módulos para la gestión de recepciones y lotes, producción, calidad, merma, maquinaria y mantenimiento preventivo y correctivo. La aplicación fue integrada con una API simulada mediante JSON Server, permitiendo validar los principales flujos de consulta, navegación y gestión de información.
+
+La Web Application fue desplegada en Azure Static Web Apps y la API simulada fue publicada en Azure. Asimismo, se verificó la compilación de producción, la navegación entre módulos, el cambio de idioma y la consulta de datos mediante los endpoints documentados en la sección de servicios. Las evidencias de Pull Requests, commits, ramas, colaboradores y despliegue sustentan la participación del equipo durante el Sprint 2.
+
+Como trabajo pendiente para los siguientes avances, se recomienda reemplazar la API simulada por la RESTful API definitiva, implementar e integrar la base de datos productiva y documentar los servicios definitivos mediante Swagger/OpenAPI. Por tanto, JSON Server se presenta únicamente como una solución temporal de integración y validación de la Web Application, no como el backend definitivo del producto.
 
 # Bibliografía
 
