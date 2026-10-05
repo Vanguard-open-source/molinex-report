@@ -2145,6 +2145,8 @@ L = Líder del aspecto, C = Colaborador.
 #### 5.2.2.3 Sprint Backlog 2
 El Sprint Product Backlog del Sprint 2 está conformado por las User Stories seleccionadas del Product Backlog para implementar las funcionalidades operativas iniciales de Molinex. Las historias fueron priorizadas considerando su relación con el registro y gestión de información necesaria para las operaciones de un molino de arroz.
 
+Los estados utilizan el vocabulario `To-do`, `In-Process`, `To-Review` y `Done` definido para el Sprint Backlog. Los Work-Items de este sprint se mantienen en `Done` porque las vistas, formularios, recursos de la API simulada, compilación y despliegue cuentan con evidencia en las secciones 5.2.2.4 a 5.2.2.7. En este contexto, `Done` se limita al alcance de integración con JSON Server y no implica que la RESTful API definitiva esté implementada.
+
 | Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
 |:--|:--|:--|:--|:--|--:|:--|:--|
 | US-05 | Registrar recepción de materia prima | T-05-01 | Diseñar modelo y API de recepción | Definir la entidad de recepción (proveedor, fecha, peso, tipo de arroz) y exponer los endpoints REST para registrarla. | 6 | Gallegos De La Cruz Giovanni | Done |
