@@ -1895,17 +1895,22 @@ Molinex emplea una base de datos relacional MySQL para soportar un monolito modu
 
 ### 5.1.1 Software Development Environment Configuration
 
-
-El entorno de desarrollo de Molinex contempla una Landing Page estática y una Web Application planificada para futuras etapas. Para el AV1 se priorizó la implementación de la primera versión de la Landing Page, de acuerdo con los entregables establecidos para este avance.
+El entorno de desarrollo de Molinex contempla la Landing Page y la Web Application.
+Durante el AV1 se priorizó la implementación de la primera versión de la Landing
+Page, mientras que durante el Sprint 2 se implementó la primera versión funcional
+de la Web Application. Para la integración y validación de esta aplicación se
+utilizó una API simulada mediante JSON Server. La RESTful API definitiva y la
+base de datos productiva quedan pendientes para un sprint posterior.
 
 | Producto | Tecnologías | Herramientas principales |
 |:--|:--|:--|
 | Landing Page | HTML5, CSS3 y JavaScript | Visual Studio Code, Git y GitHub |
-| Web Application | Propuesta para una etapa posterior | Angular, TypeScript y SCSS |
+| Web Application | Angular, TypeScript y SCSS  |  Git, GitHub y GitHub Actions  |
+| API simulada (Sprint 2) | JSON Server | Azure |
 | RESTful API | Propuesta para una etapa posterior | Spring Boot y Java |
 | Database | Pendiente de definición | Herramienta por confirmar |
 
-La Landing Page presenta la propuesta de valor de Molinex, sus funcionalidades, beneficios y planes de suscripción. La Web Application, la RESTful API y la base de datos se desarrollarán en avances posteriores.
+La Landing Page presenta la propuesta de valor de Molinex, sus funcionalidades, beneficios y planes de suscripción. La Web Application fue implementada durante el Sprint 2. Durante el Sprint 2 se utilizó una API simulada con JSON Server para integrar y validar la Web Application. La RESTful API definitiva con Swagger/OpenAPI será implementada en un sprint posterior, junto con la base de datos productiva.
 
 ### 5.1.2 Source Code Management
 
