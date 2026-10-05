@@ -2226,9 +2226,9 @@ La evidencia de ejecución corresponde a la Web Application desplegada en Azure 
 
 #### 5.2.2.6 Services Documentation Evidence for Sprint Review
 
-En el Sprint 2 la Web Application consume una API REST simulada con JSON Server, publicada en Azure. Esta API reemplaza temporalmente al backend mientras se implementa la RESTful API definitiva, por lo que en este Sprint no se documentó con Swagger/OpenAPI.
+Durante el Sprint 2 se utilizó una **API simulada con JSON Server** para integrar y validar la Web Application. Esta API permitió disponer de datos de prueba y comprobar el funcionamiento de los módulos desarrollados durante el Sprint.
 
-URL base de la API desplegada:
+La **RESTful API definitiva**, implementada con los servicios correspondientes y documentada mediante **Swagger/OpenAPI**, será desarrollada en un sprint posterior. Por lo tanto, la implementación presentada en este Sprint corresponde únicamente a una solución temporal de integración y validación, y no representa la API definitiva del producto.
 
 `https://molinex-platform-mock-vanguard-eyhedsg9fcgkexft.canadacentral-01.azurewebsites.net/api/v1`
 
