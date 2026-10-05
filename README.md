@@ -54,7 +54,7 @@ Proyecto<br>
 
 **Periodo 202620**
 
-**Septiembre 2026**
+**Octubre 2026**
 
 </div>
 <div style="page-break-after: always;"></div>
@@ -64,11 +64,11 @@ Proyecto<br>
 | Versión | Fecha | Autor | Descripción de la modificación |
 |:--:|:--:|:--|:--|
 | AV1 |  |  ||
-|0.1|12/09|Luisa Casalino|Desarrolle los segmentos objetivos y el análisis competitivo de Molinex.|
-|0.2|13/09|Antony Jimenez|descripción inicial de la startup y se configuró la estructura inicial del proyecto.|
+|0.1|12/09|Luisa Casalino|Se desarrollaron los segmentos objetivo y el análisis competitivo de Molinex.|
+|0.2|13/09|Antony Jimenez|Se redactó la descripción inicial de la startup y se configuró la estructura inicial del proyecto.|
 |0.3|06/09|Brayan Huerta|Se realizaron correcciones y actualizaciones relacionadas con la descripción de la startup, perfiles del equipo y análisis de entrevistas.|
-|0.4|15/09|Antony Jimenez Saavedra|Se incorporo el registro de entrevistas, análisis de entrevistas y User Task Matrix.|
-|0.5|15/09|Luisa Nhiriel Casalino|Se agregaron User Person, User Journey Map, Empathy Mapping y Ubiquitous Language.|
+|0.4|15/09|Antony Jimenez Saavedra|Se incorporó el registro de entrevistas, análisis de entrevistas y User Task Matrix.|
+|0.5|15/09|Luisa Nhiriel Casalino|Se agregaron User Persona, User Journey Map, Empathy Mapping y Ubiquitous Language.|
 |0.6|16/09|Antony Jimenez Saavedra|Se actualizaron los perfiles de los integrantes y se incorporaron evidencias adicionales del proyecto.|
 |0.7|17/09|Brayan Huerta|Se realizaron correcciones en hipótesis, perfiles del equipo y análisis de entrevistas.|
 |0.8|17/09|Fabricio Rivera|Se incorporaron Style Guidelines, Information Architecture, Big Picture Event Storming, Design-Level Event Storming, arquitectura de software y diagramas de clases.|
@@ -76,8 +76,9 @@ Proyecto<br>
 |1.0|17/09|Giovanni Gallegos|Se agregaron los wireflows, wireframes, prototipo de aplicación web y evidencias de la Landing Page.|
 |1.1|18/09|Giovanni Gallegos|Se completaron las secciones del informe correspondientes a AV1 y se agregaron evidencias.|
 |1.2|18/09|Equipo Vanguard|Consolidación y revisión de las secciones del informe correspondientes a la evaluación AV1.|
-|1.3|04/10|Fabricio Rivera|Se corrigió el Big Picture EventStorming y se incorporó la Single Page Application como contenedor independiente en el modelo C4.|
+|1.3|04/10|Fabricio Rivera|Se corrigió el Big Picture Event Storming y se incorporó la Single Page Application como contenedor independiente en el modelo C4.|
 |1.4|05/10|Equipo Vanguard|Se incorporaron las evidencias de implementación, ejecución, servicios, despliegue y colaboración correspondientes al Sprint 2 y se actualizaron las conclusiones y anexos de TB1.|
+|1.5|05/10|Fabricio Rivera|Se alinearon los identificadores y estados del Sprint Backlog, se documentó el i18n de la Landing Page y se corrigieron las referencias de repositorios para TB1.|
 <div style="page-break-after: always;"></div>
 
 
@@ -86,12 +87,12 @@ Proyecto<br>
 
 ## AV1
 
-Para el desarrollo del informe perteneciente a la entrega TB1, se dividió la implementación de las diferentes secciones y actividades del proyecto Molinex entre los integrantes del equipo. La distribución presentada a continuación se basa en las actividades registradas mediante ramas y commits en el repositorio del proyecto.
+Para el desarrollo del informe correspondiente a la entrega AV1, se distribuyeron las diferentes secciones y actividades del proyecto Molinex entre los integrantes del equipo. La distribución presentada a continuación se basa en las actividades registradas mediante ramas y commits en el repositorio del proyecto.
 
 | Integrante | Tareas Designadas |
 | --- | --- |
 | **Antony Alexander Jimenez Saavedra** | Registro y análisis de entrevistas, Interview Record, Interview Analysis, User Task Matrix, Lean UX Canvas, Product Backlog, Impact Mapping, Mapping, enlace del Backlog y Sprint Backlog. |
-| **Luisa Nhiriel Casalino Berrocal** | User Person, User Journey Map, Empathy Mapping, Ubiquitous Language, User Stories, Sprint Planning 1, Aspect Leaders and Collaborators y Student Outcome. |
+| **Luisa Nhiriel Casalino Berrocal** | User Persona, User Journey Map, Empathy Mapping, Ubiquitous Language, User Stories, Sprint Planning 1, Aspect Leaders and Collaborators y Student Outcome. |
 | **Giovanni Marcelo Gallegos De La Cruz** | Wireframes de la aplicación web, Wireflows, prototipo de aplicación web, evidencias de la Landing Page, documentación de diseño y consolidación de secciones del informe para AV1. |
 | **Brayan Benjamin Huerta Cardenas** | Análisis de la Landing Page, wireframe y mockup de la Landing Page, perfiles de integrantes, correcciones de la descripción de la startup y ajustes del análisis de entrevistas. |
 | **Fabricio Jose Rivera Rupay** | Style Guidelines, Information Architecture, Big Picture Event Storming, Design-Level Event Storming, arquitectura de software, diagramas de clases y diagrama de base de datos. |
@@ -101,11 +102,13 @@ Para el desarrollo del informe perteneciente a la entrega TB1, se dividió la im
 - Project Report: `https://github.com/Vanguard-open-source/molinex-report`
 - Landing Page: `https://github.com/Vanguard-open-source/molinex-website`
 - Frontend Web Application: `https://github.com/Vanguard-open-source/molinex-webapp`
-- RESTful API: `https://github.com/Vanguard-open-source/molinex-platform`
+- Mock Web Service (Sprint 2): `https://github.com/Vanguard-open-source/molinex-platform-mock`
+
+La RESTful API definitiva todavía no cuenta con un repositorio. Su implementación y publicación están planificadas para un sprint posterior; por ello, no se incluye un enlace inexistente.
 
 ### Entrega AV1
 
-Durante la entrega AV1 se avanzó en la elaboración y consolidación de los principales artefactos del proyecto Molinex. Se desarrollaron los perfiles de los integrantes, el análisis de entrevistas, User Person, User Journey Map, Empathy Mapping, User Task Matrix, Lean UX Canvas, User Stories, Product Backlog e Impact Mapping. Asimismo, se trabajó en el diseño de la solución mediante Style Guidelines, Information Architecture, Big Picture Event Storming, Design-Level Event Storming, wireframes, wireflows y el prototipo de la aplicación web.
+Durante la entrega AV1 se avanzó en la elaboración y consolidación de los principales artefactos del proyecto Molinex. Se desarrollaron los perfiles de los integrantes, el análisis de entrevistas, User Persona, User Journey Map, Empathy Mapping, User Task Matrix, Lean UX Canvas, User Stories, Product Backlog e Impact Mapping. Asimismo, se trabajó en el diseño de la solución mediante Style Guidelines, Information Architecture, Big Picture Event Storming, Design-Level Event Storming, wireframes, wireflows y el prototipo de la aplicación web.
 
 También se desarrollaron elementos relacionados con la arquitectura y el diseño técnico, como el modelo C4, diagramas de clases y diagrama de base de datos. Finalmente, se incorporaron evidencias de la Landing Page, Sprint Planning 1, Sprint Backlog, Aspect Leaders and Collaborators, Student Outcome y demás secciones requeridas para la consolidación del informe de la AV1.
 
@@ -118,8 +121,14 @@ El trabajo se realizó de manera colaborativa mediante ramas y commits en el rep
 - Huerta Cardenas, Brayan Benjamin
 - Jimenez Saavedra, Antony Alexander
 - Rivera Rupay, Fabricio Jose
-- 
+
 ![evidencias.png](assets/evidence/collaboration/evidencias.png)
+
+### Entrega TB1
+
+Para TB1, el informe se amplió con las correcciones recibidas en AV1, la documentación del Sprint 2 y las evidencias de implementación, ejecución, servicios, despliegue y colaboración. Los aportes se integraron mediante ramas `feature/*` hacia `develop`, y el historial del repositorio conserva los commits y merges asociados a la actualización del Student Outcome, la configuración del entorno de desarrollo, la documentación de servicios y la evidencia del Sprint Review.
+
+La participación de cada integrante en la implementación se detalla en las secciones 5.2.2.4 y 5.2.2.8. Estas secciones relacionan responsables, Pull Requests, commits y módulos entregados, manteniendo la trazabilidad entre el trabajo colaborativo del código y su documentación en el informe.
 
 <div style="page-break-after: always;"></div>
 
@@ -231,7 +240,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 | Criterio específico | Acciones realizadas | Conclusiones |
 | :--- | :--- | :--- |
 | **Comunica oralmente con efectividad a diferentes rangos de audiencia.** | **Casalino Berrocal, Luisa Nhiriel**<br>**AV1:** Presenté y expliqué la distribución de roles del equipo en la llamada grupal y participé activamente en la grabación del video "About The Team", exponiendo la visión general del proyecto Molinex a una audiencia académica.<br>**TB1:** Participé en el Sprint Planning 2 realizado por videollamada en Discord, donde expuse mi propuesta para el módulo de Quality & Waste Control (US-11 y US-14) y asumí el liderazgo de ese aspecto. Durante la implementación coordiné verbalmente con mis compañeros la integración de los formularios de recepción, lotes y calidad con los módulos de producción.<br><br>**Gallegos De La Cruz, Giovanni Marcelo**<br>**AV1:** Me mantuve activo en la comunicación oral durante las reuniones virtuales, exponiendo los aspectos técnicos de la arquitectura del software y proponiendo ideas de mejora para la Landing Page.<br>**TB1:** Conduje el Sprint Planning 2 en Discord, presentando al equipo el Sprint Goal, la velocity de 23 Story Points y las historias de usuario comprometidas, y expliqué el diseño del módulo de Production Management (US-05, US-06 y US-07) que lideré para que los demás integrantes pudieran conectar sus módulos.<br><br>**Huerta Cardenas, Brayan Benjamin**<br>**AV1:** Participé en las llamadas de planificación comunicando mis propuestas sobre el alcance del dominio y la gestión de materia prima, además de intervenir oralmente en la presentación del video del grupo.<br>**TB1:** Participé en el Sprint Planning 2 y en la retrospectiva del Sprint 1, comunicando mis observaciones sobre la coordinación del equipo y explicando mi alcance en la merma (US-14), la maquinaria (US-17) y el mantenimiento preventivo (US-19), así como los puntos que debía coordinar con los módulos de mis compañeros.<br><br>**Jimenez Saavedra, Antony Alexander**<br>**AV1:** Comuniqué mis ideas y dudas durante las sesiones grupales para la definición del Product Backlog, coordinando verbalmente con mis compañeros el desglose de historias de usuario del Sprint 1.<br>**TB1:** En el Sprint Planning 2 expuse el alcance del módulo de Asset & Maintenance (US-17, US-19 y US-20), que lideré, y expliqué verbalmente los endpoints de mantenimiento al equipo cuando fue necesario ajustarlos para la integración con la API.<br><br>**Rivera Rupay, Fabricio Jose**<br>**AV1:** Apoyé la conducción de las reuniones de planificación, explicando oralmente los objetivos de negocio y la propuesta de valor del sistema frente al grupo y en la presentación en video.<br>**TB1:** Expliqué al equipo la estructura base del repositorio, la arquitectura por bounded contexts, el sistema de internacionalización ES/EN y el proceso de despliegue en Azure, de modo que todos pudieran integrar sus módulos siguiendo GitFlow, y lideré el aspecto de base compartida, API e integración. | Como conclusión para este primer avance del proyecto, hemos confirmado que la comunicación oral grupal desde el inicio del proyecto es fundamental para un buen inicio de trabajo. No solo nos ha permitido conocernos entre nosotros, sino que también ha servido como plataforma para expresar nuestras ideas, dudas y consultas de manera efectiva, lo cual ha contribuido significativamente a la organización y la claridad en el desarrollo del proyecto. Al participar activamente en las llamadas grupales, hemos establecido una base sólida de comprensión mutua y confianza, lo que facilita la asignación de tareas y la colaboración en equipo. Además, estas interacciones nos han permitido identificar áreas clave que requieren atención y enfoque, asegurando que abordemos los desafíos de manera proactiva y eficiente. En resumen, la comunicación oral grupal no solo es esencial para compartir información, sino que también es fundamental para construir relaciones sólidas y establecer una estructura organizativa efectiva que guiará nuestro progreso en las siguientes etapas del proyecto.<br><br>**TB1:** Durante el Sprint 2 la comunicación oral pasó de la presentación de ideas a la coordinación técnica. En el Sprint Planning 2 cada integrante expuso el alcance de su aspecto (Production Management, Quality & Waste Control, Asset & Maintenance y base compartida, API e integración) y la retrospectiva del Sprint 1 permitió acordar mejoras concretas: fortalecer la coordinación entre los integrantes y precisar los criterios de aceptación antes de desarrollar cada historia de usuario. Explicar oralmente las decisiones de diseño y las dependencias entre módulos redujo los conflictos de integración y permitió que los nueve Pull Requests del repositorio molinex-webapp se integraran en `develop` sin quedar ninguno abierto. |
-| **Comunica por escrito con efectividad a diferentes rangos de audiencia.** | **Casalino Berrocal, Luisa Nhiriel**<br>**AV1:** Realicé la redacción y estructuración formal del Sprint Planning 1 y del Sprint Backlog en formato Markdown, asegurando el uso correcto de estándares técnicos y la precisión del lenguaje escrito.<br>**TB1:** Integré el módulo de Quality & Waste Control mediante el Pull Request #7 (`feature/sprint2-quality-waste-control`), con commits redactados según Conventional Commits, y documenté las tareas T-05-02, T-06-02 y T-11-02 del Sprint Backlog 2 con descripciones claras de cada formulario y sus validaciones.<br><br>**Gallegos De La Cruz, Giovanni Marcelo**<br>**AV1:** Me encargué de la redacción de las tareas técnicas (Work-Items) del primer Sprint y de la documentación de los requisitos del sistema, manteniendo informados a mis compañeros por WhatsApp.<br>**TB1:** Preparé la documentación del Sprint Planning 2 (Sprint Goal, velocity y resumen de las revisiones del Sprint 1) y redacté las tareas de modelo y API de recepción, lote y merma (T-05-01, T-06-01 y T-14-01). Integré el módulo de Production Management mediante el Pull Request #3 (`feature/sprint2-production-management`), con 47 archivos y el commit `feat(production): integrate production management module structure`.<br><br>**Huerta Cardenas, Brayan Benjamin**<br>**AV1:** Elaboré las descripciones formales de las Historias de Usuario (US-01 a US-04 y US-35 a US-40) y redacté los objetivos del Sprint en inglés y español con rigor técnico.<br>**TB1:** Redacté la descripción de las tareas T-14-02, T-17-01 y T-19-01 del Sprint Backlog 2, detallando las entidades de maquinaria y mantenimiento preventivo, sus campos y los endpoints de registro y consulta, y mantuve la consistencia de los términos con el Ubiquitous Language del proyecto.<br><br>**Jimenez Saavedra, Antony Alexander**<br>**AV1:** Redacté las secciones del informe vinculadas a la propuesta de valor y planes de suscripción de la Landing Page, e incluí referencias bibliográficas relevantes que respaldan la investigación.<br>**TB1:** Integré el módulo de Asset & Maintenance mediante el Pull Request #5 (`feature/sprint2-asset-maintenance`, 34 archivos) y el ajuste de endpoints del Pull Request #6, y documenté las tareas T-07-01, T-11-01 y T-20-01 con las entidades de producción, calidad y mantenimiento correctivo.<br><br>**Rivera Rupay, Fabricio Jose**<br>**AV1:** Me encargué de consolidar la documentación textual en el repositorio Git, revisando la ortografía, coherencia y formato general del informe para el envío del avance 1.<br>**TB1:** Documenté la base del repositorio (Pull Requests #1, #2, #4, #8 y #9): dependencias, entornos, API simulada con JSON Server, estructura de bounded contexts, i18n ES/EN y configuración de despliegue en Azure. Además registré las versiones `v0.1.0` y `v0.1.1` en el `CHANGELOG.md` y redacté las tareas T-07-02, T-17-02 y T-19-02 del Sprint Backlog 2. | La comunicación escrita desempeña un papel insustituible en nuestro equipo, actuando como un medio vital para mantenernos informados de manera constante sobre los progresos y las inquietudes que surgen en el transcurso del proyecto. A través de la documentación escrita, no solo consolidamos y compartimos nuestras investigaciones y aprendizajes, sino que también creamos un registro detallado y accesible de nuestro trabajo. Esta transcripción minuciosa no solo refleja nuestro compromiso con la transparencia y la organización interna, sino que también se erige como un recurso invaluable para cualquier individuo interesado en comprender los detalles y las razones detrás de nuestras decisiones y acciones. En última instancia, esta práctica no solo fortalece la cohesión y la eficacia de nuestro equipo, sino que también garantiza que nuestro proyecto sea accesible y comprensible para una audiencia más amplia, lo que amplifica su impacto y su alcance potencial.<br><br>**TB1:** En el Sprint 2 la comunicación escrita se aplicó a públicos distintos: el docente, que evalúa el informe; los compañeros, que integran módulos ajenos; y los futuros mantenedores del código. Para el docente se documentaron el Sprint Planning 2, el Sprint Backlog 2, las evidencias de ejecución, los servicios y el despliegue, aclarando que JSON Server es una solución temporal y no el backend definitivo. Para el equipo se usaron GitFlow, Conventional Commits y Pull Requests con alcance definido, y para quienes mantendrán el producto se registraron las versiones en el `CHANGELOG.md` y las convenciones de código. Esta documentación permitió trazar quién implementó cada historia de usuario y fortaleció la claridad y la trazabilidad del trabajo. |
+| **Comunica por escrito con efectividad a diferentes rangos de audiencia.** | **Casalino Berrocal, Luisa Nhiriel**<br>**AV1:** Realicé la redacción y estructuración formal del Sprint Planning 1 y del Sprint Backlog en formato Markdown, asegurando el uso correcto de estándares técnicos y la precisión del lenguaje escrito.<br>**TB1:** Integré el módulo de Quality & Waste Control mediante el Pull Request #7 (`feature/sprint2-quality-waste-control`), con commits redactados según Conventional Commits, y documenté las tareas T-05-02, T-06-02 y T-11-02 del Sprint Backlog 2 con descripciones claras de cada formulario y sus validaciones.<br><br>**Gallegos De La Cruz, Giovanni Marcelo**<br>**AV1:** Me encargué de la redacción de las tareas técnicas (Work-Items) del primer Sprint y de la documentación de los requisitos del sistema, manteniendo informados a mis compañeros por WhatsApp.<br>**TB1:** Preparé la documentación del Sprint Planning 2 (Sprint Goal, velocity y resumen de las revisiones del Sprint 1) y redacté las tareas de modelo y API de recepción, lote y merma (T-05-01, T-06-01 y T-14-01). Integré el módulo de Production Management mediante el Pull Request #3 (`feature/sprint2-production-management`), con 47 archivos y el commit `feat(production): integrate production management module structure`.<br><br>**Huerta Cardenas, Brayan Benjamin**<br>**AV1:** Elaboré las descripciones formales de las Historias de Usuario (US-01 a US-04 y US-31 a US-36) y redacté los objetivos del Sprint en inglés y español con rigor técnico.<br>**TB1:** Redacté la descripción de las tareas T-14-02, T-17-01 y T-19-01 del Sprint Backlog 2, detallando las entidades de maquinaria y mantenimiento preventivo, sus campos y los endpoints de registro y consulta, y mantuve la consistencia de los términos con el Ubiquitous Language del proyecto.<br><br>**Jimenez Saavedra, Antony Alexander**<br>**AV1:** Redacté las secciones del informe vinculadas a la propuesta de valor y planes de suscripción de la Landing Page, e incluí referencias bibliográficas relevantes que respaldan la investigación.<br>**TB1:** Integré el módulo de Asset & Maintenance mediante el Pull Request #5 (`feature/sprint2-asset-maintenance`, 34 archivos) y el ajuste de endpoints del Pull Request #6, y documenté las tareas T-07-01, T-11-01 y T-20-01 con las entidades de producción, calidad y mantenimiento correctivo.<br><br>**Rivera Rupay, Fabricio Jose**<br>**AV1:** Me encargué de consolidar la documentación textual en el repositorio Git, revisando la ortografía, coherencia y formato general del informe para el envío del avance 1.<br>**TB1:** Documenté la base del repositorio (Pull Requests #1, #2, #4, #8 y #9): dependencias, entornos, API simulada con JSON Server, estructura de bounded contexts, i18n ES/EN y configuración de despliegue en Azure. Además registré las versiones `v0.1.0` y `v0.1.1` en el `CHANGELOG.md` y redacté las tareas T-07-02, T-17-02 y T-19-02 del Sprint Backlog 2. | La comunicación escrita desempeña un papel insustituible en nuestro equipo, actuando como un medio vital para mantenernos informados de manera constante sobre los progresos y las inquietudes que surgen en el transcurso del proyecto. A través de la documentación escrita, no solo consolidamos y compartimos nuestras investigaciones y aprendizajes, sino que también creamos un registro detallado y accesible de nuestro trabajo. Esta transcripción minuciosa no solo refleja nuestro compromiso con la transparencia y la organización interna, sino que también se erige como un recurso invaluable para cualquier individuo interesado en comprender los detalles y las razones detrás de nuestras decisiones y acciones. En última instancia, esta práctica no solo fortalece la cohesión y la eficacia de nuestro equipo, sino que también garantiza que nuestro proyecto sea accesible y comprensible para una audiencia más amplia, lo que amplifica su impacto y su alcance potencial.<br><br>**TB1:** En el Sprint 2 la comunicación escrita se aplicó a públicos distintos: el docente, que evalúa el informe; los compañeros, que integran módulos ajenos; y los futuros mantenedores del código. Para el docente se documentaron el Sprint Planning 2, el Sprint Backlog 2, las evidencias de ejecución, los servicios y el despliegue, aclarando que JSON Server es una solución temporal y no el backend definitivo. Para el equipo se usaron GitFlow, Conventional Commits y Pull Requests con alcance definido, y para quienes mantendrán el producto se registraron las versiones `v0.1.0` y `v0.1.1` en el `CHANGELOG.md` y las convenciones de código. Esta documentación permitió trazar quién implementó cada historia de usuario y fortaleció la claridad y la trazabilidad del trabajo. |
 # Capítulo I Introducción 
 
 ## 1.1 Startup Profile
@@ -608,9 +617,9 @@ Diego Rantería, egresado de Ingeniería Agroindustrial con 5 años en la indust
 |Controlar los costos de producción y mantenimiento|Semanal/Alta|Ocasional/Media| Ocasional/Media|
 |Detectar una falla o anomalía en una máquina|Ocasional/Media|Diaria/Alta|Ocasional/Alta|
 |Reportar una avería detectada|Ocasional/Media|Diaria/Alta|Semanal/Media|
-|Diagnosticar la causa de una falla mecánica o eléctrica|No Aplica/-|Semanal/Alta|Ocasinal/Media|
+|Diagnosticar la causa de una falla mecánica o eléctrica|No Aplica/-|Semanal/Alta|Ocasional/Media|
 |Reparar o dar mantenimiento a una máquina	|No Aplica/-|Semanal/Alta|No Aplica/-|
-|Coordinar con técnicos externos especializados|Ocasional/Media|Ocasional/Alta|Ocasinal/Alta|
+|Coordinar con técnicos externos especializados|Ocasional/Media|Ocasional/Alta|Ocasional/Alta|
 |Registrar información de producción o mantenimiento|Semanal/Media|Diaria/Alta|Semanal/Media|
 |Detener la producción ante una falla crítica|No Aplica/-|Ocasional/Alta|Ocasional/Alta|
 |Tomar decisiones sobre la operación del molino|Diaria/Alta|No Aplica/-|Ocasional/Media|
@@ -643,7 +652,7 @@ Diego Rantería, egresado de Ingeniería Agroindustrial con 5 años en la indust
 
 El Big Picture Event Storming de Molinex permite observar, de extremo a extremo, los hechos relevantes que ocurren desde el interés comercial y la habilitación de usuarios hasta el registro de la operación del molino, la detección de anomalías y el análisis de resultados. Su propósito es comprender el dominio antes de tomar decisiones de diseño de software y exponer vacíos que requieren validación con especialistas del negocio.
 
-La propuesta se construyó a partir de las entrevistas, el User Task Matrix y las User Stories de los segmentos de gerentes o administradores, técnicos de mantenimiento y operarios de producción. Las Technical Stories de la API RESTful no se incorporaron porque representan decisiones de implementación y no hechos relevantes para el negocio. En este nivel se conservaron únicamente eventos de dominio, actores, sistemas externos potenciales, eventos pivote y *hotspots*. Los comandos, políticas, Aggregates y modelos de lectura se reservaron para el Design-Level EventStorming de la sección 4.6.1.
+La propuesta se construyó a partir de las entrevistas, el User Task Matrix y las User Stories de los segmentos de gerentes o administradores, técnicos de mantenimiento y operarios de producción. Las Technical Stories de la API RESTful no se incorporaron porque representan decisiones de implementación y no hechos relevantes para el negocio. En este nivel se conservaron únicamente eventos de dominio, actores, sistemas externos potenciales, eventos pivote y *hotspots*. Los comandos, políticas, Aggregates y modelos de lectura se reservaron para el Design-Level Event Storming de la sección 4.6.1.
 
 Los diagramas fueron elaborados mediante PlantUML bajo el enfoque Diagram-as-Code. Sus archivos fuente se conservan junto con las imágenes SVG para permitir su revisión, reproducción y evolución mediante control de versiones. Estos artefactos constituyen la base de la validación colaborativa del equipo.
 
@@ -694,7 +703,7 @@ La fuente de sensores se mantiene como sistema externo potencial. Su contrato, p
 
 ### Paso 4: Eventos pivote y áreas de negocio candidatas
 
-En el último paso se marcaron como eventos pivote aquellos hechos que cambian de manera relevante la etapa del recorrido, como la autenticación de un usuario, el registro de un lote, el registro de información productiva, el cálculo de indicadores, la detección de una anomalía y la generación de reportes. A partir de las agrupaciones naturales del lenguaje y del flujo se propusieron áreas de negocio candidatas. Esta organización todavía no define Aggregates ni límites de consistencia; esas decisiones corresponden al Design-Level EventStorming de la sección 4.6.1.
+En el último paso se marcaron como eventos pivote aquellos hechos que cambian de manera relevante la etapa del recorrido, como la autenticación de un usuario, el registro de un lote, el registro de información productiva, el cálculo de indicadores, la detección de una anomalía y la generación de reportes. A partir de las agrupaciones naturales del lenguaje y del flujo se propusieron áreas de negocio candidatas. Esta organización todavía no define Aggregates ni límites de consistencia; esas decisiones corresponden al Design-Level Event Storming de la sección 4.6.1.
 
 | Área de negocio candidata | Clasificación inicial | Responsabilidad | Conceptos de dominio observados |
 |:--|:--|:--|:--|
@@ -1514,7 +1523,7 @@ _Enlace al video demostrativo (Microsoft Stream):_ `https://upcedupe-my.sharepoi
 
 ### 4.6.1 Design-Level Event Storming
 
-El Design-Level EventStorming de Molinex refina los resultados del Big Picture EventStorming y las User Stories para definir límites de consistencia, responsabilidades y contratos de integración. El análisis no presupone una arquitectura de microservicios: los Bounded Contexts se implementarán como módulos de un único backend desplegable, siguiendo un enfoque de monolito modular. Cada módulo conserva su propio modelo y evita acceder directamente a los Aggregates de otro contexto.
+El Design-Level Event Storming de Molinex refina los resultados del Big Picture Event Storming y las User Stories para definir límites de consistencia, responsabilidades y contratos de integración. El análisis no presupone una arquitectura de microservicios: los Bounded Contexts se implementarán como módulos de un único backend desplegable, siguiendo un enfoque de monolito modular. Cada módulo conserva su propio modelo y evita acceder directamente a los Aggregates de otro contexto.
 
 Los modelos fueron elaborados con PlantUML bajo el enfoque Diagram-as-Code. Las fuentes `.puml` se conservan junto con sus representaciones SVG para que las decisiones puedan revisarse y evolucionar mediante control de versiones.
 
@@ -1547,7 +1556,7 @@ Los modelos fueron elaborados con PlantUML bajo el enfoque Diagram-as-Code. Las 
 `Reporting and Analytics` no define Aggregate Roots por ahora. Las historias describen consultas y generación de vistas, pero no confirman que un reporte posea identidad, ciclo de vida o persistencia propia. Si posteriormente se exige almacenar, versionar o aprobar reportes, esa decisión podrá introducir un Aggregate específico.
 
 <p align="center">
-  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/design-level-event-storming.svg" alt="Design-Level EventStorming de Molinex" width="100%">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/design-level-event-storming.svg" alt="Design-Level Event Storming de Molinex" width="100%">
 </p>
 
 #### Aggregate boundaries and invariants
@@ -1910,7 +1919,16 @@ La Landing Page presenta la propuesta de valor de Molinex, sus funcionalidades, 
 
 ### 5.1.2 Source Code Management
 
-El código fuente del proyecto Molinex se gestiona mediante Git y GitHub. El repositorio permite controlar las versiones del informe, la Landing Page y la Web Application, además de registrar la participación de los integrantes del equipo.
+El código fuente del proyecto Molinex se gestiona mediante Git y GitHub. Cada producto entregado cuenta con un repositorio independiente dentro de la organización Vanguard-open-source, lo que permite controlar sus versiones y registrar la participación de los integrantes del equipo.
+
+| Producto | Repositorio |
+|:--|:--|
+| Project Report | `https://github.com/Vanguard-open-source/molinex-report` |
+| Landing Page | `https://github.com/Vanguard-open-source/molinex-website` |
+| Frontend Web Application | `https://github.com/Vanguard-open-source/molinex-webapp` |
+| Mock Web Service de Sprint 2 | `https://github.com/Vanguard-open-source/molinex-platform-mock` |
+
+La RESTful API definitiva aún no dispone de un repositorio. El Mock Web Service se documenta como una solución temporal de integración y no como sustituto del backend definitivo.
 
 Para organizar el desarrollo colaborativo se utiliza GitFlow, considerando las siguientes ramas y convenciones:
 
@@ -1924,9 +1942,7 @@ Las versiones se identifican mediante Semantic Versioning con el formato `MAJOR.
 
 Los mensajes de commit siguen Conventional Commits con el formato `<tipo>(<alcance>): <descripción>`. Se utilizan tipos como `feat`, `fix`, `docs`, `refactor`, `test` y `chore`. Algunos ejemplos aplicados al proyecto son `docs(report): update chapter 5 evidence` y `feat(landing): add pricing section`.
 
-Para este avance se utiliza la rama:
-
-`feature/chapter-5-evidence`
+Las ramas específicas y los Pull Requests utilizados durante el Sprint 2 se detallan en la sección 5.2.2.4.
 
 ![Ramas GitFlow del proyecto](assets/Images%20Chapter%205/github-branches.png)
 
@@ -1958,7 +1974,7 @@ También se aplican criterios básicos de accesibilidad, como textos alternativo
 
 ### 5.1.4 Software Deployment Configuration
 
-La primera versión de la Landing Page de Molinex fue desplegada mediante GitHub Pages. Este despliegue permite acceder a la solución desde un navegador sin necesidad de ejecutar el proyecto localmente.
+La Landing Page de Molinex fue desplegada mediante GitHub Pages. Este despliegue permite acceder a la solución desde un navegador sin necesidad de ejecutar el proyecto localmente. La versión actualizada para TB1 incorpora internacionalización en inglés y español mediante los recursos `i18n/en.json` e `i18n/es.json`. El inglés es el idioma predeterminado, el visitante puede cambiar a español con el selector EN/ES y la preferencia se conserva en el navegador.
 
 URL pública:
 
@@ -1991,7 +2007,7 @@ A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con e
 | Sprint n - 1 Retrospective Summary | No aplica (primer Sprint). |
 | Sprint 1 Goal | Our focus is on letting prospective mills evaluate Molinex and choose a subscription plan from the landing page, and on giving authorized mill staff role-based access to the platform.We believe it delivers a clearer understanding of Molinex's value, features and plans to the mill owners and administrators who visit the site, and controlled access to operational information to administrators, technicians and operators.This will be confirmed when a visitor can review the value proposition, benefits, features and the Basic, Professional and Enterprise plans and submit a commercial information request in no more than three steps, and when an administrator can register a user and assign a role, and that user can log in, update their profile and is denied access to functionalities outside their role.|
 |Sprint 1 Velocity | 20 Story Points. Primer Sprint sin velocity histórico: se adopta una capacidad conservadora para un equipo de 5 integrantes. |
-|Sum of Story Points | 20 Story Points (US-01 a US-04, US-35 a US-40) |
+|Sum of Story Points | 20 Story Points (US-01 a US-04 y US-31 a US-36) |
 
 #### 5.2.1.2 Aspect Leaders and Collaborators
 
@@ -2004,29 +2020,37 @@ A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con e
 | Rivera Rupay, Fabricio Jose |Fabricio1924 |C |C |C |
 
 #### 5.2.1.3 Sprint Backlog 1
+
+La tabla conserva el alcance comprometido durante la planificación y actualiza sus identificadores para mantener la correspondencia con el Product Backlog vigente. El estado de cada Work-Item utiliza exclusivamente los valores definidos en el enunciado: `To-do`, `In-Process`, `To-Review` y `Done`.
+
 | Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
 |---|---|---|---|---|---:|---|---|
-| US-01 | Registrar usuario | TS-01.1 | Diseñar formulario de registro | Definir la estructura del formulario, los campos requeridos y las validaciones necesarias para el registro de usuarios. | 4 | Casalino Berrocal, Luisa Nhiriel | Done |
-| US-01 | Registrar usuario | TS-01.2 | Implementar API de registro | Desarrollar el endpoint encargado de registrar usuarios y validar los datos recibidos. | 6 | Gallegos De La Cruz, Giovanni Marcelo | Done |
-| US-01 | Registrar usuario | TS-01.3 | Implementar pruebas de registro | Verificar el registro correcto de usuarios y el rechazo de información inválida mediante pruebas de integración. | 4 | Huerta Cardenas, Brayan Benjamin | Done |
-| US-02 | Iniciar sesión | TS-02.1 | Implementar interfaz de Login | Construir la interfaz de inicio de sesión y conectar los campos con el proceso de autenticación. | 4 | Jimenez Saavedra, Antony Alexander | Done |
-| US-02 | Iniciar sesión | TS-02.2 | Implementar autenticación JWT | Implementar el mecanismo de autenticación mediante tokens JWT para controlar las sesiones de los usuarios. | 6 | Rivera Rupay, Fabricio Jose | Done |
-| US-02 | Iniciar sesión | TS-02.3 | Implementar validaciones de credenciales | Implementar las validaciones necesarias para credenciales correctas, incorrectas y campos requeridos. | 4 | Casalino Berrocal, Luisa Nhiriel | Done |
-| US-03 | Gestionar roles y permisos | TS-03.1 | Diseñar esquema RBAC | Definir las entidades y relaciones necesarias para gestionar usuarios, roles y permisos. | 4 | Gallegos De La Cruz, Giovanni Marcelo | Done |
-| US-03 | Gestionar roles y permisos | TS-03.2 | Implementar middleware de autorización | Desarrollar el middleware encargado de verificar los permisos asociados al rol del usuario. | 6 | Huerta Cardenas, Brayan Benjamin | Done |
-| US-03 | Gestionar roles y permisos | TS-03.3 | Implementar administración de roles | Desarrollar las operaciones necesarias para consultar y asignar roles a los usuarios. | 6 | Jimenez Saavedra, Antony Alexander | Done |
-| US-04 | Gestionar perfil de usuario | TS-04.1 | Implementar vista de perfil | Construir la vista que permita consultar y editar la información del perfil del usuario. | 4 | Rivera Rupay, Fabricio Jose | Done |
-| US-04 | Gestionar perfil de usuario | TS-04.2 | Implementar actualización de perfil | Desarrollar el endpoint y las validaciones necesarias para actualizar los datos del perfil. | 4 | Casalino Berrocal, Luisa Nhiriel | Done |
-| US-35 | Conocer la propuesta de valor | TS-35.1 | Implementar sección Hero | Desarrollar la sección principal de la Landing Page con la propuesta de valor de Molinex. | 4 | Gallegos De La Cruz, Giovanni Marcelo | Done |
-| US-36 | Conocer las funcionalidades | TS-36.1 | Implementar sección de funcionalidades | Desarrollar la sección destinada a presentar las principales funcionalidades de Molinex. | 4 | Huerta Cardenas, Brayan Benjamin | Done |
-| US-37 | Consultar planes de suscripción | TS-37.1 | Implementar tabla de planes | Construir la sección que presenta los planes Básico, Profesional y Empresarial junto con sus características. | 4 | Jimenez Saavedra, Antony Alexander | Done |
-| US-38 | Identificar el plan adecuado | TS-38.1 | Implementar recomendador de planes | Desarrollar la lógica que permite identificar el plan correspondiente según el volumen de operación indicado. | 4 | Rivera Rupay, Fabricio Jose | Done |
-| US-39 | Conocer los beneficios de Molinex | TS-39.1 | Implementar sección de beneficios | Desarrollar la sección destinada a presentar los principales beneficios de Molinex. | 4 | Casalino Berrocal, Luisa Nhiriel | Done |
-| US-40 | Solicitar información comercial | TS-40.1 | Implementar formulario comercial | Desarrollar el formulario que permite al visitante registrar una solicitud de información comercial. | 4 | Gallegos De La Cruz, Giovanni Marcelo | Done |
+| US-01 | Registrar usuario | T-01-01 | Diseñar formulario de registro | Definir la estructura del formulario, los campos requeridos y las validaciones necesarias para el registro de usuarios. | 4 | Casalino Berrocal, Luisa Nhiriel | To-do |
+| US-01 | Registrar usuario | T-01-02 | Implementar API de registro | Desarrollar el endpoint encargado de registrar usuarios y validar los datos recibidos. | 6 | Gallegos De La Cruz, Giovanni Marcelo | To-do |
+| US-01 | Registrar usuario | T-01-03 | Implementar pruebas de registro | Verificar el registro correcto de usuarios y el rechazo de información inválida mediante pruebas de integración. | 4 | Huerta Cardenas, Brayan Benjamin | To-do |
+| US-02 | Iniciar sesión | T-02-01 | Implementar interfaz de login | Construir la interfaz de inicio de sesión y conectar los campos con el proceso de autenticación. | 4 | Jimenez Saavedra, Antony Alexander | To-do |
+| US-02 | Iniciar sesión | T-02-02 | Implementar autenticación JWT | Implementar el mecanismo de autenticación mediante tokens JWT para controlar las sesiones de los usuarios. | 6 | Rivera Rupay, Fabricio Jose | To-do |
+| US-02 | Iniciar sesión | T-02-03 | Implementar validaciones de credenciales | Implementar las validaciones necesarias para credenciales correctas, incorrectas y campos requeridos. | 4 | Casalino Berrocal, Luisa Nhiriel | To-do |
+| US-03 | Gestionar roles y permisos | T-03-01 | Diseñar esquema RBAC | Definir las entidades y relaciones necesarias para gestionar usuarios, roles y permisos. | 4 | Gallegos De La Cruz, Giovanni Marcelo | To-do |
+| US-03 | Gestionar roles y permisos | T-03-02 | Implementar middleware de autorización | Desarrollar el middleware encargado de verificar los permisos asociados al rol del usuario. | 6 | Huerta Cardenas, Brayan Benjamin | To-do |
+| US-03 | Gestionar roles y permisos | T-03-03 | Implementar administración de roles | Desarrollar las operaciones necesarias para consultar y asignar roles a los usuarios. | 6 | Jimenez Saavedra, Antony Alexander | To-do |
+| US-04 | Gestionar perfil de usuario | T-04-01 | Implementar vista de perfil | Construir la vista que permita consultar y editar la información del perfil del usuario. | 4 | Rivera Rupay, Fabricio Jose | To-do |
+| US-04 | Gestionar perfil de usuario | T-04-02 | Implementar actualización de perfil | Desarrollar el endpoint y las validaciones necesarias para actualizar los datos del perfil. | 4 | Casalino Berrocal, Luisa Nhiriel | To-do |
+| US-31 | Conocer la propuesta de valor | T-31-01 | Implementar sección Hero | Desarrollar la sección principal de la Landing Page con la propuesta de valor de Molinex. | 4 | Gallegos De La Cruz, Giovanni Marcelo | Done |
+| US-32 | Conocer las funcionalidades | T-32-01 | Implementar sección de funcionalidades | Desarrollar la sección destinada a presentar las principales funcionalidades de Molinex. | 4 | Huerta Cardenas, Brayan Benjamin | Done |
+| US-33 | Consultar planes de suscripción | T-33-01 | Implementar tabla de planes | Construir la sección que presenta los planes Básico, Profesional y Empresarial junto con sus características. | 4 | Jimenez Saavedra, Antony Alexander | Done |
+| US-34 | Comparar planes de suscripción | T-34-01 | Implementar comparación de planes | Presentar las características de los planes de manera diferenciada para facilitar su comparación. | 4 | Rivera Rupay, Fabricio Jose | Done |
+| US-35 | Conocer los beneficios de Molinex | T-35-01 | Implementar sección de beneficios | Desarrollar la sección destinada a presentar los principales beneficios de Molinex. | 4 | Casalino Berrocal, Luisa Nhiriel | Done |
+| US-36 | Solicitar información comercial | T-36-01 | Implementar formulario comercial | Desarrollar el formulario, sus campos obligatorios y la validación en el navegador. | 4 | Gallegos De La Cruz, Giovanni Marcelo | Done |
+| US-36 | Solicitar información comercial | T-36-02 | Persistir la solicitud comercial | Conectar el formulario con un servicio que registre la solicitud y confirme su recepción. | 4 | Gallegos De La Cruz, Giovanni Marcelo | To-do |
+
+El Sprint Goal se alcanzó parcialmente. La Landing Page entregó la propuesta de valor, funcionalidades, planes, comparación y beneficios; además, incorporó el formulario comercial en el navegador. La persistencia de solicitudes y las historias de Identity and Access Management permanecieron en estado `To-do` y no se presentan como funcionalidades implementadas.
 
 **Captura y enlace al Board:** `https://trello.com/invite/b/6aa9c4fdfc659047df591de0/ATTI907effe44c9315a41519954d192d71f48A54EF45/molinex`
 
 ![Sprint Backlog.png](assets/Images%20Chapter%205/Sprint%20Backlog.png)
+
+**Figura:** Captura histórica del Board al cierre del AV1. La tabla anterior presenta la corrección consolidada para TB1, con los identificadores vigentes y los estados verificados frente a la implementación disponible.
 
 
 #### 5.2.1.4 Development Evidence for Sprint Review
@@ -2039,7 +2063,7 @@ La participación en el desarrollo se evidencia mediante el historial de commits
 
 #### 5.2.1.5 Execution Evidence for Sprint Review
 
-La evidencia principal del AV1 corresponde a la primera versión de la Landing Page ejecutada y publicada mediante GitHub Pages.
+La evidencia principal del AV1 corresponde a la primera versión de la Landing Page ejecutada y publicada mediante GitHub Pages. Como mejora aplicada para TB1, la versión actual incorpora un selector EN/ES, utiliza inglés como idioma predeterminado y carga las traducciones desde `i18n/en.json` e `i18n/es.json`. Esta implementación se encuentra en el repositorio `https://github.com/Vanguard-open-source/molinex-website`.
 
 ![Landing Page de Molinex ejecutada en navegador](assets/Images%20Chapter%205/landing-deployed.png)
 
@@ -2061,7 +2085,7 @@ La Web Application presentada como prototipo utiliza datos locales y no realiza 
 
 #### 5.2.1.7 Software Deployment Evidence for Sprint Review
 
-La primera versión de la Landing Page fue desplegada mediante GitHub Pages.
+La versión actualizada de la Landing Page fue desplegada mediante GitHub Pages e incluye soporte i18n en inglés y español.
 
 URL pública:
 
@@ -2100,7 +2124,7 @@ A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con e
 | **Location** | virtual (videollamada del equipo por Discord) |
 | **Prepared By** | Gallegos De La Cruz, Giovanni Marcelo |
 | **Attendees (to planning meeting)** | Gallegos De La Cruz, Giovanni Marcelo / Casalino Berrocal, Luisa Nhiriel / Huerta Cardenas, Brayan Benjamin / Jimenez Saavedra, Antony Alexander / Rivera Rupay, Fabricio Jose |
-| **Sprint 1 Review Summary** | Se revisó la primera versión de la Landing Page de Molinex, incluyendo la propuesta de valor, funcionalidades, beneficios y planes de suscripción Básico, Profesional y Empresarial. También se revisaron las funcionalidades de acceso y gestión inicial de usuarios desarrolladas durante el Sprint 1. |
+| **Sprint 1 Review Summary** | Se revisó la primera versión de la Landing Page de Molinex, incluyendo la propuesta de valor, funcionalidades, beneficios y planes de suscripción Básico, Profesional y Empresarial. Las historias de acceso y gestión de usuarios no se completaron y permanecieron en estado `To-do`. Como corrección para TB1, la Landing Page incorporó soporte i18n EN/ES con inglés como idioma predeterminado. |
 | **Sprint 1 Retrospective Summary** | El equipo identificó como aspectos positivos la distribución de actividades y la coordinación para desarrollar las funcionalidades iniciales. Como oportunidad de mejora, se estableció fortalecer la coordinación entre los integrantes y precisar los criterios de aceptación antes de iniciar el desarrollo de cada historia de usuario. |
 | **Sprint 2 Goal** | **Our focus is on enabling the initial operational management of rice mill information in Molinex. We believe it delivers a structured way for mill personnel to register and manage the information required for production and maintenance activities. This will be confirmed when users can register raw material reception and lots, machinery, production and quality information, waste, and preventive and corrective maintenance records.** |
 | **Sprint 2 Velocity** | **23 Story Points.** Se establece una capacidad de 23 Story Points considerando la experiencia obtenida durante el Sprint 1 y la capacidad de trabajo del equipo de 5 integrantes. |
