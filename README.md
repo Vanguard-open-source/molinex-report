@@ -278,13 +278,15 @@ Ser la plataforma de referencia en inteligencia operativa para la industria arro
 
 ### 1.2.1 Antecedentes y problemática
 
+**Enunciado del problema**
+
 En los molinos de arroz, el proceso productivo genera información relacionada con la materia prima, producción, calidad, mantenimiento y rendimiento de las máquinas. Sin embargo, esta información suele encontrarse dispersa o utilizarse únicamente para visualizar indicadores, dificultando la identificación de las causas de problemas como el aumento del arroz quebrado, la merma, las fallas de maquinaria y la disminución del rendimiento.
 
 Para analizar preliminarmente la problemática, se aplicó la técnica de las 5W2H:
 
 | Elemento 5W2H | Definición para Molinex |
 |:--|:--|
-| Who | A los propietarios, administradores, supervisores, técnicos de mantenimiento y trabajadores de los molinos de arroz. |
+| Who | Propietarios, administradores, supervisores, técnicos de mantenimiento y trabajadores de los molinos de arroz. |
 | What | Se presentan pérdidas de materia prima, disminución del rendimiento, aumento de arroz quebrado y fallas inesperadas en las máquinas. |
 | Where | En las diferentes etapas del proceso productivo de los molinos de arroz. |
 | When | Durante la recepción de materia prima, procesamiento, mantenimiento y control de calidad, especialmente cuando no se detectan oportunamente las anomalías. |
@@ -292,8 +294,16 @@ Para analizar preliminarmente la problemática, se aplicó la técnica de las 5W
 | How | Mediante mermas, menor cantidad de arroz entero, fallas de maquinaria, paradas no planificadas y decisiones basadas en información limitada. |
 | How much | Genera costos adicionales, desperdicio de materia prima, disminución de la productividad y posibles pérdidas económicas para el molino. La cuantificación exacta será determinada durante la investigación y validación con usuarios. |
 
-**Objetivo general.**
- - Desarrollar una plataforma web inteligente que integre y analice los datos operativos de los molinos de arroz para detectar posibles causas de pérdidas, anticipar problemas y mejorar la eficiencia del proceso productivo.
+**Aspectos que debe resolver la solución**
+
+- Reunir en un solo lugar los datos de materia prima, producción, calidad y mantenimiento, que hoy están dispersos.
+- Relacionar esos datos para identificar las causas de la merma, del arroz quebrado y de la caída del rendimiento.
+- Detectar anomalías en las variables de las máquinas antes de que deriven en paradas no planificadas.
+- Entregar alertas y recomendaciones que permitan decidir con información completa.
+
+**Objetivo general**
+
+- Desarrollar una plataforma web inteligente que integre y analice los datos operativos de los molinos de arroz para detectar posibles causas de pérdidas, anticipar problemas y mejorar la eficiencia del proceso productivo.
 
 **Objetivos específicos**
 
@@ -303,6 +313,16 @@ Para analizar preliminarmente la problemática, se aplicó la técnica de las 5W
 - Generar alertas y recomendaciones que apoyen la toma de decisiones operativas.
 - Implementar planes de suscripción diferenciados según las necesidades de los molinos pequeños, medianos y grandes.
 - Evaluar la utilidad de la plataforma mediante pruebas con usuarios y el análisis de indicadores operativos.
+
+**Restricciones del proyecto**
+
+- Molinex se entrega como una experiencia web responsive, formada por la Landing Page y la Web Application. No incluye una aplicación móvil nativa (sección 4.1).
+- La contratación, el pago y la activación de suscripciones quedan fuera del alcance actual. La Landing Page presenta los planes y registra solicitudes comerciales (secciones 2.4 y 4.6.1).
+- El origen de las variables operativas (registro manual, sensores o ambos) sigue sin definirse, por lo que el alcance no asume una integración con sensores confirmada (sección 2.4).
+- La implementación usa las tecnologías exigidas por el curso: HTML5, CSS3 y JavaScript para la Landing Page, Angular y TypeScript para la Web Application, y Spring Boot con Spring Data JPA y Java para los Web Services, documentados con OpenAPI/Swagger.
+- El inglés es el idioma predeterminado de la interfaz y de la documentación del producto, con español como idioma secundario.
+- El trabajo se organiza en cuatro Sprints, con las entregas AV1, TB1, AV2 y TB2 durante el ciclo 202620, a cargo de un equipo de cinco integrantes. Cada Sprint toma solo una parte de las historias del Product Backlog.
+
 ### 1.2.2 Lean UX Process
 
 #### 1.2.2.1 Lean UX Problem Statements
