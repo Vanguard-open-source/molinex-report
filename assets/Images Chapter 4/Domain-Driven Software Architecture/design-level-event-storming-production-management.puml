@@ -1,0 +1,52 @@
+@startuml
+title Production Management — Design-Level Event Storming
+left to right direction
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam defaultFontName Arial
+skinparam ArrowColor #334E68
+
+rectangle "Operador de Producción" as operator #FFF3A6
+rectangle "Administrador" as admin #FFF3A6
+package "Production Management · Core Subdomain" {
+  rectangle "US-05\nRecordRawMaterialReception" as receive #A9C7F7
+  rectangle "US-06\nRegisterProductionBatch" as batch #A9C7F7
+  rectangle "US-07\nRecordProductionInformation" as record #A9C7F7
+  rectangle "US-10\nUpdateProductionInformation" as update #A9C7F7
+  rectangle "RawMaterialReception" as receptionRoot #FFE27A
+  rectangle "ProductionBatch" as batchRoot #FFE27A
+  rectangle "ProductionRecord" as recordRoot #FFE27A
+  rectangle "RawMaterialReceptionRecorded" as received #FFB26B
+  rectangle "ProductionBatchRegistered" as registered #FFB26B
+  rectangle "ProductionInformationRecorded" as recorded #FFB26B
+  rectangle "ProductionInformationUpdated" as updated #FFB26B
+  rectangle "US-08\nGetProductionProcesses" as processes #B9D98A
+  rectangle "US-09\nGetProductionHistory" as history #B9D98A
+}
+operator --> receive
+operator --> batch
+operator --> record
+operator --> update
+operator --> processes
+admin --> history
+
+receive --> receptionRoot
+receptionRoot --> received
+batch --> batchRoot
+batchRoot --> registered
+record --> recordRoot
+update --> recordRoot
+recordRoot --> recorded : al registrar
+recordRoot --> updated : al actualizar
+
+note bottom of batch
+  El código debe ser único y la
+  recepción indicada debe existir.
+  Si se rechaza el comando, no se
+  registra el lote ni se emite el evento.
+end note
+
+legend bottom
+  |<#FFF3A6> Actor |<#A9C7F7> Comando |<#FFE27A> Aggregate Root |<#FFB26B> Evento de dominio |<#B9D98A> Consulta |
+endlegend
+@enduml

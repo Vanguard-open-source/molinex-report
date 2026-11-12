@@ -1710,13 +1710,13 @@ Los modelos fueron elaborados con PlantUML bajo el enfoque Diagram-as-Code. Las 
 
 | Bounded Context | Clasificación | Responsabilidad |
 |:--|:--|:--|
-| `Commercial Engagement` | Supporting Subdomain | Presentar la oferta comercial y registrar solicitudes de visitantes interesados. No incluye todavía contratación, pago ni activación de suscripciones. |
-| `Identity and Access Management` | Generic Subdomain | Gestionar usuarios, autenticación, roles, permisos y datos de perfil. |
 | `Production Management` | Core Subdomain | Gestionar recepciones de materia prima, lotes y registros de producción. |
 | `Quality and Yield Control` | Core Subdomain | Registrar resultados de calidad y merma, consultar indicadores e identificar desviaciones. |
 | `Asset and Maintenance Management` | Core Subdomain | Gestionar el inventario de máquinas y registrar mantenimiento preventivo y correctivo. |
 | `Operational Intelligence` | Core Subdomain | Registrar variables operativas, detectar anomalías y generar alertas e información de atención. |
+| `Commercial Engagement` | Supporting Subdomain | Presentar la oferta comercial y registrar solicitudes de visitantes interesados. No incluye todavía contratación, pago ni activación de suscripciones. |
 | `Reporting and Analytics` | Supporting Subdomain / Read Side | Construir proyecciones para resúmenes, reportes y tendencias sin apropiarse de los Aggregates operativos. |
+| `Identity and Access Management` | Generic Subdomain | Gestionar usuarios, autenticación, roles, permisos y datos de perfil. |
 
 `Profiles` no se separa como Bounded Context porque la información de perfil forma parte del ciclo de vida del `User`. `Subscriptions` tampoco se incorpora: los requisitos actuales permiten consultar planes, pero no definen contratación, pago, tenancy ni activación. Finalmente, `Shared` no se considera un Bounded Context; el subconjunto compartido se modela explícitamente como Shared Kernel.
 
@@ -1724,19 +1724,31 @@ Los modelos fueron elaborados con PlantUML bajo el enfoque Diagram-as-Code. Las 
 
 | Bounded Context | Commands | Aggregate Roots | Domain Events | Queries / Read Models |
 |:--|:--|:--|:--|:--|
-| `Commercial Engagement` | `SubmitCommercialInquiry` | `CommercialInquiry` | `CommercialInquirySubmitted` | `GetPlanCatalog`, `GetValueProposition` |
-| `Identity and Access Management` | `RegisterUser`, `AssignRole`, `AuthenticateUser`, `UpdateUserProfile` | `User` | `UserRegistered`, `RoleAssigned`, `UserAuthenticated`, `UserProfileUpdated` | `GetAuthorizedFunctions`, `GetUserProfile` |
 | `Production Management` | `RecordRawMaterialReception`, `RegisterProductionBatch`, `RecordProductionInformation`, `UpdateProductionInformation` | `RawMaterialReception`, `ProductionBatch`, `ProductionRecord` | `RawMaterialReceptionRecorded`, `ProductionBatchRegistered`, `ProductionInformationRecorded`, `ProductionInformationUpdated` | `GetProductionProcesses`, `GetProductionHistory` |
 | `Quality and Yield Control` | `RecordQualityResults`, `RecordProductionWaste`, `IdentifyQualityDeviation` | `QualityAssessment`, `WasteRecord`, `QualityDeviation` | `QualityResultsRecorded`, `ProductionWasteRecorded`, `QualityDeviationIdentified` | `GetYieldIndicators`, `GetRiceComposition`, `GetProductionWaste`, `CompareQualityIndicators` |
 | `Asset and Maintenance Management` | `RegisterMachine`, `RecordPreventiveMaintenance`, `RecordCorrectiveMaintenance` | `Machine`, `MaintenanceRecord` | `MachineRegistered`, `PreventiveMaintenanceRecorded`, `CorrectiveMaintenanceRecorded` | `GetMachineStatus`, `GetMaintenanceHistory` |
 | `Operational Intelligence` | `RecordOperationalVariable`, `DetectOperationalAnomaly`, `GenerateOperationalAlert` | `OperationalReading`, `OperationalAnomaly`, `Alert` | `OperationalVariableRecorded`, `OperationalAnomalyDetected`, `OperationalAlertGenerated` | `GetOperationalVariables`, `GetAnomalyHistory`, `GetAlerts`, `GetMaintenanceRecommendations` |
+| `Commercial Engagement` | `SubmitCommercialInquiry` | `CommercialInquiry` | `CommercialInquirySubmitted` | `GetPlanCatalog`, `GetValueProposition` |
 | `Reporting and Analytics` | — | — | — | `GetOperationalSummary`, `GetProductionReport`, `GetMaintenanceReport`, `GetOperationalTrends` |
+| `Identity and Access Management` | `RegisterUser`, `AssignRole`, `AuthenticateUser`, `UpdateUserProfile` | `User` | `UserRegistered`, `RoleAssigned`, `UserAuthenticated`, `UserProfileUpdated` | `GetAuthorizedFunctions`, `GetUserProfile` |
 
 `Reporting and Analytics` no define Aggregate Roots por ahora. Las historias describen consultas y generación de vistas, pero no confirman que un reporte posea identidad, ciclo de vida o persistencia propia. Si posteriormente se exige almacenar, versionar o aprobar reportes, esa decisión podrá introducir un Aggregate específico.
 
 <p align="center">
   <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/design-level-event-storming.svg" alt="Design-Level Event Storming de Molinex" width="100%">
 </p>
+
+#### Diagrama detallado de Production Management
+
+El diagrama presenta el diseño de las historias US-05 a US-10. El Operador de Producción registra recepciones, lotes y procesos, actualiza la información productiva y consulta procesos. El Administrador consulta el historial. Las consultas se muestran como operaciones de lectura sin emisión de eventos de dominio.
+
+En US-06, `RegisterProductionBatch` requiere un código único y una recepción existente. `ProductionBatch` conserva la referencia mediante `RawMaterialReceptionId`, dentro del mismo bounded context. El diseño prevé emitir `ProductionBatchRegistered` tras aceptar el registro. El Context Map documenta por separado los eventos de información productiva que Production publica hacia Quality.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/design-level-event-storming-production-management.svg" alt="Design-Level Event Storming de Production Management, historias US-05 a US-10" width="100%">
+</p>
+
+**Figura: Design-Level Event Storming de Production Management. Fuente: elaboración propia en PlantUML.**
 
 #### Aggregate boundaries and invariants
 
