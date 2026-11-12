@@ -226,7 +226,6 @@ La participación de cada integrante en la implementación se detalla en las sec
 - [Anexo A. Videos de Exposiciones](#anexo-a-videos-de-exposiciones)
 
 <div style="page-break-after: always;"></div>
-<div style="page-break-before: always;"></div>
 
 # Student Outcome
 
@@ -598,16 +597,26 @@ Diego Rantería, egresado de Ingeniería Agroindustrial con 5 años en la indust
 ### 2.3.1 User Personas
 
 **Segmento 1 : Gerentes o administradores**
-![User Persona Segmento 1.jpeg](assets/Images%20Chapter%202/User%20Persona%20Segmento%201.jpeg)
+
+<p align="center">
+  <img src="assets/Images%20Chapter%202/User%20Persona%20Segmento%201.jpeg" alt="User Persona del Segmento 1: Gerentes o administradores" width="70%">
+</p>
 
 
 
 **Segmento 2 : Técnicos de mantenimiento** 
-![User Persona Segmento 2.jpeg](assets/Images%20Chapter%202/User%20Persona%20Segmento%202.jpeg)
+
+<p align="center">
+  <img src="assets/Images%20Chapter%202/User%20Persona%20Segmento%202.jpeg" alt="User Persona del Segmento 2: Técnicos de mantenimiento" width="70%">
+</p>
 
 
 **Segmento 3 : Operarios de maquinaria y producción**
-![User Persona Segmento 3.jpeg](assets/Images%20Chapter%202/User%20Persona%20Segmento%203.jpeg)
+
+<p align="center">
+  <img src="assets/Images%20Chapter%202/User%20Persona%20Segmento%203.jpeg" alt="User Persona del Segmento 3: Operarios de maquinaria y producción" width="70%">
+</p>
+
 ### 2.3.2 User Task Matrix 
 
 | Tarea | Jackeline – Gerente/Administradora(Frec. / Imp.) | Ismael – Técnico de Mantenimiento (Frec. / Imp.) | Diego-Operario de Producción (Frec. / Imp.) |
@@ -1486,7 +1495,7 @@ El wireframe del Landing Page traduce a bloques de baja fidelidad la organizaci�
 La propuesta contempla: un encabezado con navegación (Solution, Features, Plans) y la acción principal de contacto; un Hero con título, descripción, dos llamadas a la acción y un panel de vista previa del dashboard operativo; una sección de problemática con tres tarjetas (Scattered data, Unexpected downtime, Hidden losses); una sección de funcionalidades con cuatro tarjetas, la primera en estado activo; una sección de audiencias con tres columnas (Managers, Maintenance Technicians, Production Operators); una sección de planes con tres tarjetas de precio; un formulario de contacto; y un footer con marca y enlaces de navegación y legales.
 
 <p align="center">
-  <img src="assets/design/landing-wireframe.webp" alt="Wireframe Desktop del Landing Page de Molinex" width="100%">
+  <img src="assets/design/landing-wireframe.webp" alt="Wireframe Desktop del Landing Page de Molinex" width="45%">
 </p>
 
 **Figura: Wireframe Desktop del Landing Page de Molinex. Fuente: elaboración propia en Figma.**
@@ -1500,7 +1509,7 @@ El mockup aplica sobre el wireframe el Design System definido en 4.1: Azul Molin
 Este mockup corresponde a la versión ya implementada y desplegada del Landing Page (ver 5.2.1.5 Execution Evidence), lo que evidencia que la implementación siguió al diseño y no al revés.
 
 <p align="center">
-  <img src="assets/design/landing-mockup.webp" alt="Mockup Desktop del Landing Page de Molinex" width="100%">
+  <img src="assets/design/landing-mockup.webp" alt="Mockup Desktop del Landing Page de Molinex" width="45%">
 </p>
 
 **Figura: Mockup Desktop del Landing Page de Molinex. Fuente: elaboración propia en Figma.**
