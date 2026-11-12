@@ -577,7 +577,7 @@ Muchas gracias por su tiempo y por compartir su experiencia. La información bri
 |:---|:--|:--|:--|:----|:----|:--|:--|
 |Jackeline Estrella León Berrocal |26 años |Piura|Segmento1: Gerentes o administradores| 0:00 - 6:20|Jackeline Estrella León Berrocal, de 26 años, señaló que los molinos enfrentan problemas por la falta de monitoreo en tiempo real, pérdidas de arroz y fallas de maquinaria. Considera necesario implementar una solución como Molinex para monitorear procesos, prevenir fallas y reducir pérdidas.|![Entrevista1-Jacky.jpeg](assets/Screenshot%20of%20the%20interview/Entrevista1-Jacky.jpeg) |https://upcedupe-my.sharepoint.com/:v:/g/personal/u202420031_upc_edu_pe/IQC0KNSr8pYrQ7bDyXmh9IRCAfutJgxPHGtcYY1l51bef4s?e=oa7HYB|
 |Ismael Sandoval Sandoval| 32 años|Piura|Segmento 2: Técnicos de mantenimiento|6:20 - 10:54 |Técnico con 10 años de experiencia que identifica como principales fallas el desgaste mecánico, problemas eléctricos y mala lubricación. Actualmente, los reportes son manuales y algunos equipos cuentan con sensores. Propone un sistema que permita monitorear las máquinas, detectar paradas y reducir costos de mantenimiento.|![Entrevista2-Ismael.png](assets/Screenshot%20of%20the%20interview/Entrevista2-Ismael.png)|https://upcedupe-my.sharepoint.com/:v:/g/personal/u202420031_upc_edu_pe/IQC0KNSr8pYrQ7bDyXmh9IRCAfutJgxPHGtcYY1l51bef4s?e=oa7HYB|
-|Diego Rantería Saavedra|34 años| Piura|Segmento 3:Operarios de maquinaria y producción|10:54 - 30:21 |Ingeniero agroindustrial (Universidad Nacional de Piura), 5 años en la industria arrocera. Describe el proceso completo (elevadores, descascaradoras, padi, conos pulidores, Rotex, selectora, envasado). Señala cortes eléctricos, desgaste de fajas/rodamientos y fallas en la cámara óptica de la selectora como problemas frecuentes. El reporte de fallas es informal (olor, sonido, atascos visibles). El mantenimiento preventivo se basa en calendarios fijos por horas de uso, no en monitoreo en tiempo real.|![Entrevista3-Diego.png](assets/Screenshot%20of%20the%20interview/Entrevista3-Diego.png)|https://upcedupe-my.sharepoint.com/:v:/g/personal/u202420031_upc_edu_pe/IQC0KNSr8pYrQ7bDyXmh9IRCAfutJgxPHGtcYY1l51bef4s?e=oa7HYB|
+|Diego Rantería Saavedra|32 años| Piura|Segmento 3:Operarios de maquinaria y producción|10:54 - 30:21 |Ingeniero agroindustrial (Universidad Nacional de Piura), 5 años en la industria arrocera. Describe el proceso completo (elevadores, descascaradoras, padi, conos pulidores, Rotex, selectora, envasado). Señala cortes eléctricos, desgaste de fajas/rodamientos y fallas en la cámara óptica de la selectora como problemas frecuentes. El reporte de fallas es informal (olor, sonido, atascos visibles). El mantenimiento preventivo se basa en calendarios fijos por horas de uso, no en monitoreo en tiempo real.|![Entrevista3-Diego.png](assets/Screenshot%20of%20the%20interview/Entrevista3-Diego.png)|https://upcedupe-my.sharepoint.com/:v:/g/personal/u202420031_upc_edu_pe/IQC0KNSr8pYrQ7bDyXmh9IRCAfutJgxPHGtcYY1l51bef4s?e=oa7HYB|
 
 ### 2.2.3 Análisis de entrevistas
 Segmento 1: Gerentes o administradores
@@ -594,7 +594,13 @@ Diego Rantería, egresado de Ingeniería Agroindustrial con 5 años en la indust
 
 ## 2.3 Needfinding
 
+Esta sección presenta los artefactos que salen de analizar las entrevistas (2.2) y la competencia (2.1): una User Persona, un User Journey Map As-Is y un Empathy Map por segmento, y un User Task Matrix que reúne las tareas de los tres. Las personas, los journey maps y los empathy maps se elaboraron en UXPressia a partir de la entrevista registrada de cada segmento.
+
 ### 2.3.1 User Personas
+
+Cada ficha resume a la persona entrevistada de su segmento: Jackeline León (gerente de un molino en Piura), Ismael Sandoval (técnico de mantenimiento) y Diego Rantería (ingeniero agroindustrial con experiencia en operación de planta). La frase representativa y el background reproducen lo que dijo cada entrevistado en 2.2.2. Las frustraciones y las necesidades recogen los problemas que el análisis de 2.2.3 destacó: la falta de visibilidad en tiempo real y los registros manuales en la gerencia; las fallas por desgaste, las reparaciones largas y la espera de técnicos externos en mantenimiento; y los cortes de luz, las fallas imprevistas de piezas y las demoras por técnicos especializados en producción.
+
+Las necesidades también se contrastan con la competencia de 2.1. Ninguno de los competidores presenta el mantenimiento predictivo como su valor principal, y las tres personas piden justamente monitoreo y alertas para anticipar fallas.
 
 **Segmento 1 : Gerentes o administradores**
 
@@ -619,6 +625,8 @@ Diego Rantería, egresado de Ingeniería Agroindustrial con 5 años en la indust
 
 ### 2.3.2 User Task Matrix 
 
+El User Task Matrix reúne las tareas que realizan las personas de los tres segmentos para cumplir sus objetivos, sin importar si existe una solución de software. Las columnas corresponden a Jackeline (Segmento 1, gerentes o administradores), Ismael (Segmento 2, técnicos de mantenimiento) y Diego (Segmento 3, operarios de maquinaria y producción). Para cada una se indica con qué frecuencia realiza la tarea y qué importancia le da.
+
 | Tarea | Jackeline – Gerente/Administradora(Frec. / Imp.) | Ismael – Técnico de Mantenimiento (Frec. / Imp.) | Diego-Operario de Producción (Frec. / Imp.) |
 |:--|:--:|:--:|:--:|
 |Supervisar el estado general de la producción|Diaria/Alta|Diaria/Media |Diaria/Alta |
@@ -632,7 +640,16 @@ Diego Rantería, egresado de Ingeniería Agroindustrial con 5 años en la indust
 |Registrar información de producción o mantenimiento|Semanal/Media|Diaria/Alta|Semanal/Media|
 |Detener la producción ante una falla crítica|No Aplica/-|Ocasional/Alta|Ocasional/Alta|
 |Tomar decisiones sobre la operación del molino|Diaria/Alta|No Aplica/-|Ocasional/Media|
+
+Las tareas más frecuentes e importantes cambian según el rol. Jackeline supervisa la producción, controla el rendimiento y la merma, y toma decisiones sobre la operación, todo a diario y con importancia alta. Ismael detecta y reporta fallas y registra información a diario, también con importancia alta, y es el único que repara las máquinas. Diego coincide con Jackeline en supervisar y controlar el rendimiento y la merma a diario; detecta y diagnostica fallas de forma ocasional y las reporta cada semana.
+
+Hay tres coincidencias. Los tres supervisan la producción todos los días. Los tres coordinan de vez en cuando con técnicos externos, una tarea de importancia alta para Ismael y Diego. Y Ismael y Diego consideran de importancia alta detener la producción ante una falla crítica, aunque la hacen ocasionalmente. La diferencia principal está en el foco: la gerencia mira resultados y costos, el técnico atiende las fallas y sus registros, y el operario combina ambos.
+
 ### 2.3.3 User Journey Mapping
+
+Los User Journey Maps muestran cómo trabaja hoy cada persona, antes de Molinex (versión As-Is). Siguen las cinco etapas de la plantilla de UXPressia (Aware, Join, Use, Develop y Leave) y, en cada una, describen las metas, el proceso, los problemas, la experiencia y las oportunidades. El panel lateral de cada mapa enlaza con la persona de 2.3.1.
+
+El recorrido de Jackeline va de la supervisión de la producción a la recopilación de información, el análisis del rendimiento, la toma de decisiones y el seguimiento de resultados. El de Ismael y el de Diego van de la detección de fallas o anomalías al reporte y registro, la atención y reparación, el mantenimiento preventivo y la continuidad operativa. En los tres mapas el punto más bajo de la experiencia es la etapa Use: Jackeline no logra obtener indicadores en tiempo real y no detecta las mermas a tiempo, y Ismael y Diego esperan horas, días o semanas por reparaciones que dependen de técnicos externos. Las oportunidades que proponen los tres mapas (centralizar la información, dar seguimiento continuo al estado de las máquinas y aprovechar el historial de fallas) son las que orientan la propuesta de Molinex.
 
 **Segmento 1 : Gerentes o administradores**
 ![User Journey Map As-Is Segmento 1 .jpeg](assets/Images%20Chapter%202/User%20Journey%20Map%20As-Is%20Segmento%201%20.jpeg)
@@ -644,6 +661,10 @@ Diego Rantería, egresado de Ingeniería Agroindustrial con 5 años en la indust
 **Segmento 3 : Operarios de maquinaria y producción**
 ![User Journey Map As-Is Segmento 3 .jpeg](assets/Images%20Chapter%202/User%20Journey%20Map%20As-Is%20Segmento%203%20.jpeg)
 ### 2.3.4 Empathy Mapping
+
+Para cada persona se construyó un Empathy Map en UXPressia, con la persona al centro y las siete preguntas de la plantilla: con quién estamos empatizando, qué necesita hacer, qué ve, qué dice, qué hace, qué escucha y qué piensa y siente. Cada casilla se redactó a partir de la entrevista del segmento, y las citas textuales provienen de lo que dijeron los entrevistados. Por ejemplo, Jackeline señala que la falta de visibilidad en tiempo real "dificulta detectar rápidamente las ineficiencias", e Ismael nombra como fallas más frecuentes "problemas de lubricación, el desgaste mecánico, las fallas eléctricas y la desalineación de componentes".
+
+Cada mapa cierra con los Pains, que repiten los problemas del journey (visibilidad, registros manuales, fallas recurrentes y esperas por técnicos externos), y los Gains, que los convierten en lo que la persona busca ganar: monitoreo continuo sin infraestructura IoT compleja en Jackeline, control de activos y menos paradas inesperadas en Ismael, y una cultura de mantenimiento preventivo apoyada en sistemas en Diego.
 
 **Segmento 1 : Gerentes o administradores**
 ![Empathy Mapping Segmento 1.jpeg](assets/Images%20Chapter%202/Empathy%20Mapping%20Segmento%201.jpeg)
