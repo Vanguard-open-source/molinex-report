@@ -122,7 +122,7 @@ El trabajo se realizó de manera colaborativa mediante ramas y commits en el rep
 - Jimenez Saavedra, Antony Alexander
 - Rivera Rupay, Fabricio Jose
 
-![evidencias.png](assets/evidence/collaboration/evidencias.png)
+![GitHub Contributors de molinex-report al cierre de AV1](assets/evidence/collaboration/av1-report-github-contributors.png)
 
 ### Entrega TB1
 
@@ -2164,7 +2164,7 @@ El Sprint Goal se alcanzó parcialmente. La Landing Page entregó la propuesta d
 
 **Captura y enlace al Board:** `https://trello.com/invite/b/6aa9c4fdfc659047df591de0/ATTI907effe44c9315a41519954d192d71f48A54EF45/molinex`
 
-![Sprint Backlog.png](assets/Images%20Chapter%205/Sprint%20Backlog.png)
+![Tablero de Trello del Sprint 1 con el Product Backlog y las tareas hechas](assets/Images%20Chapter%205/Sprint%20Backlog%201.png)
 
 **Figura:** Captura histórica del Board al cierre del AV1. La tabla anterior presenta la corrección consolidada para TB1, con los identificadores vigentes y los estados verificados frente a la implementación disponible.
 
@@ -2283,7 +2283,7 @@ Los estados utilizan el vocabulario `To-do`, `In-Process`, `To-Review` y `Done` 
 | US-20 | Registrar mantenimiento correctivo | T-20-02 | Crear formulario de mantenimiento correctivo | Implementar el formulario de registro de fallas y acciones correctivas en el webapp. | 5 | Gallegos De La Cruz Giovanni | Done |
 | US-05, US-06, US-07, US-11, US-14, US-17, US-19, US-20 | Todas las historias del Sprint 2 | T-QA-01 | Pruebas de integración y validación | Ejecutar pruebas de los endpoints y flujos de registro, y corregir los defectos encontrados. | 8 | Todo el equipo | Done |
 
-![Tablero de Trello del Sprint 2](assets/Images%20Chapter%205/Captura%20de%20pantalla%202026-10-02%20180921.png)
+![Tablero de Trello del Sprint 2](assets/Images%20Chapter%205/Sprint%202/5.2.2.3-01-trello-sprint-2-board.png)
 
 **Nota sobre el alcance:** las historias comprometidas en el Sprint Planning son las ocho listadas. Durante la implementación del módulo de Producción también se dejaron operativas la consulta de procesos productivos (US-08), el historial de producción (US-09) y la actualización de registros de producción (US-10), que comparten modelo, API y Store con US-07. Su evidencia se presenta en la sección 5.2.2.5.
 
