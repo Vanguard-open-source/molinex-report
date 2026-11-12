@@ -2687,6 +2687,159 @@ Link:https://trello.com/invite/b/6aa9c4fdfc659047df591de0/ATTI907effe44c9315a415
 ### 5.2.3.8.Team Collaboration Insights during Sprint.
 ### 5.3. Validation Interviews.
 ### 5.3.1. Diseño de Entrevistas.
+#### Objetivo general
+
+Validar la propuesta de valor y las funcionalidades principales de Molinex mediante sesiones de validación dirigidas a los tres segmentos de usuarios identificados. Estas sesiones se realizarán después de presentar la Landing Page y la Web Application, con la finalidad de evaluar la comprensión de la propuesta de valor, la utilidad de las funcionalidades, la facilidad de uso y la experiencia de interacción de los participantes, así como identificar oportunidades de mejora.
+
+#### Características de las sesiones de validación
+
+- **Tipo:** Entrevistas semiestructuradas de validación.
+- **Modalidad:** Virtual o presencial.
+- **Duración:** 15 a 20 minutos por participante.
+- **Participantes:** Entre 3 y 5 personas por cada segmento objetivo.
+- **Material de apoyo:** Landing Page desplegada y prototipo navegable de Figma de la Web Application.
+- **Procedimiento:** Presentación de la solución, exploración de la Landing Page, ejecución de los User Flows correspondientes a cada segmento y aplicación de preguntas abiertas posteriores a la interacción.
+- **Registro:** Las sesiones serán grabadas en video, previa autorización de los participantes, para documentar sus respuestas y observaciones.
+
+1. **Guion de entrevista: Gerentes o administradores**
+
+**Objetivo específico:**
+
+Evaluar la comprensión de la propuesta de valor de Molinex, la presentación de los planes de suscripción y la utilidad de las funcionalidades relacionadas con la supervisión general del molino, los indicadores de producción, rendimiento, mermas, calidad y estado de la maquinaria, así como su contribución a la toma de decisiones administrativas.
+
+**Artefactos y User Flows para la validación:**
+
+- **Landing Page:** Se evaluará la comprensión de la propuesta de valor, la identificación de los beneficios y funcionalidades, la ubicación y comparación de los planes de suscripción Básico, Profesional y Empresarial, y la posibilidad de solicitar información comercial.
+- **Web Application:** Se utilizará el User Goal 1: "Revisar el estado general del molino", definido en la sección 4.4.2 del presente informe. También se tomará como referencia el User Flow Diagram de la sección 4.4.4.
+
+**Actividades de validación:**
+
+1. Explorar la Landing Page e identificar la propuesta de valor y los beneficios principales de Molinex.
+2. Localizar las funcionalidades presentadas y explicar cómo contribuirían a la gestión del molino.
+3. Ubicar los tres planes de suscripción, comparar sus características e identificar cuál se ajustaría mejor a las necesidades del molino.
+4. Localizar la opción para solicitar información comercial y explicar cómo realizaría dicha solicitud.
+5. Ingresar a la Web Application y explorar el dashboard principal.
+6. Consultar los indicadores de producción, rendimiento y merma.
+7. Revisar las alertas y recomendaciones generadas por el sistema.
+8. Explorar los reportes y la información disponible para la toma de decisiones.
+
+**Presentación:**
+
+Buenos días/tardes. Somos estudiantes de Ingeniería de Software y estamos desarrollando Molinex, una plataforma web orientada a mejorar la gestión operativa de los molinos de arroz.
+
+En esta sesión le mostraremos nuestra Landing Page y la aplicación web de Molinex para que pueda explorar sus funcionalidades. Después de interactuar con ambas, queremos conocer su experiencia, evaluar la utilidad de la información presentada y recopilar sus opiniones y sugerencias para mejorar la solución.
+
+Asimismo, solicitamos su autorización para grabar la sesión en video, únicamente con fines académicos y como evidencia del proceso de validación.
+
+**Preguntas de validación:**
+
+1. Después de explorar la Landing Page, ¿cómo describiría la propuesta de valor de Molinex? ¿Qué beneficios logró identificar?
+2. ¿Qué funcionalidades presentadas en la Landing Page considera más relevantes para la gestión de un molino de arroz? ¿Por qué?
+3. ¿Cómo describiría la presentación de los planes Básico, Profesional y Empresarial? ¿Qué diferencias logró identificar y qué información adicional necesitaría para compararlos?
+4. ¿Qué tan sencillo le resultó encontrar la opción para solicitar información comercial? ¿Qué mejoraría de ese proceso?
+5. Después de explorar el dashboard, ¿cómo describiría la utilidad de los indicadores presentados para supervisar el funcionamiento del molino?
+6. ¿Qué información del dashboard considera más relevante para sus decisiones administrativas? ¿Por qué?
+7. ¿Cómo interpretó los indicadores de producción, rendimiento y merma? ¿Qué información adicional le habría resultado útil?
+8. Si una de las alertas presentadas apareciera hoy en su molino, ¿qué decisión tomaría a partir de esa información? ¿Qué dato adicional necesitaría?
+9. ¿De qué manera los reportes presentados podrían contribuir al control de las operaciones?
+10. ¿Qué dificultades encontró al navegar por la plataforma o interpretar la información?
+11. ¿Qué funcionalidad considera que aporta mayor valor a la gestión del molino y qué cambios propondría para mejorarla?
+
+**Cierre:**
+
+Muchas gracias por su tiempo y por compartir su experiencia. Sus comentarios nos permitirán identificar oportunidades de mejora y evaluar si Molinex responde a las necesidades de gestión y toma de decisiones de los gerentes o administradores de los molinos de arroz.
+
+2. **Guion de entrevista: Técnicos de mantenimiento**
+
+**Objetivo específico:**
+
+Evaluar la utilidad y facilidad de uso de las funcionalidades de Molinex relacionadas con la gestión de maquinaria, el registro de mantenimientos, el historial de fallas y las alertas, considerando su contribución al seguimiento y control de las actividades de mantenimiento.
+
+**Artefactos y User Flows para la validación:**
+
+- **Landing Page:** Se evaluará la comprensión general de la propuesta de valor, la identificación de las funcionalidades relacionadas con el mantenimiento y la facilidad para localizar los planes de suscripción.
+- **Web Application:** Se utilizará el User Goal 3: "Gestionar mantenimiento", definido en la sección 4.4.2 del presente informe. También se tomará como referencia el User Flow Diagram de la sección 4.4.4.
+
+**Actividades de validación:**
+
+1. Explorar la Landing Page e identificar las funcionalidades relacionadas con el mantenimiento de maquinaria.
+2. Localizar los planes de suscripción y revisar la información presentada.
+3. Ingresar a la Web Application y consultar el listado de maquinaria registrada.
+4. Revisar la información y el estado de una máquina seleccionada.
+5. Consultar el historial de mantenimientos y fallas.
+6. Explorar el registro de una actividad de mantenimiento.
+7. Consultar las alertas relacionadas con posibles fallas o mantenimientos pendientes.
+
+**Presentación:**
+
+Buenos días/tardes. Somos estudiantes de Ingeniería de Software y estamos desarrollando Molinex, una plataforma web que busca facilitar la gestión operativa y el mantenimiento de maquinaria en los molinos de arroz.
+
+En esta sesión le mostraremos nuestra Landing Page y la aplicación web de Molinex para que pueda explorar sus funcionalidades, especialmente aquellas relacionadas con el mantenimiento de maquinaria. Después de interactuar con la solución, queremos conocer su experiencia, identificar posibles dificultades y recoger sus sugerencias para mejorar la plataforma.
+
+Asimismo, solicitamos su autorización para grabar la sesión en video, únicamente con fines académicos y como evidencia del proceso de validación.
+
+**Preguntas de validación:**
+
+1. Después de explorar la Landing Page, ¿cómo describiría las funcionalidades de Molinex relacionadas con el mantenimiento de maquinaria?
+2. ¿Qué información presentada en la Landing Page considera más relevante para un técnico de mantenimiento?
+3. Después de revisar la información de la maquinaria, ¿qué tan útil le resultó para conocer el estado de los equipos? ¿Qué datos considera más importantes?
+4. ¿Cómo describiría su experiencia al consultar el historial de mantenimientos y fallas? ¿En qué le ayudaría disponer de esta información?
+5. ¿Qué opinión tiene sobre el proceso de registro de las actividades de mantenimiento? ¿Qué aspectos facilitaría o cambiaría?
+6. Si una alerta de mantenimiento apareciera en la plataforma, ¿qué información necesitaría para determinar la prioridad de atención de la máquina?
+7. ¿Qué dificultades encontró al utilizar las funcionalidades relacionadas con el mantenimiento?
+8. ¿Qué información adicional considera necesaria para mejorar el seguimiento de las máquinas?
+9. ¿Qué funcionalidad considera más útil para sus actividades y qué mejoras propondría?
+
+**Cierre:**
+
+Muchas gracias por su participación. Sus comentarios nos ayudarán a mejorar las funcionalidades de mantenimiento y adaptarlas a las necesidades reales de los técnicos de los molinos de arroz.
+
+3. **Guion de entrevista: Operarios de maquinaria y producción**
+
+**Objetivo específico:**
+
+Evaluar la facilidad de uso y utilidad de las funcionalidades de Molinex relacionadas con el registro y consulta de información de producción, el seguimiento de lotes y la comunicación de anomalías, considerando su adecuación a las actividades diarias de los operarios.
+
+**Artefactos y User Flows para la validación:**
+
+- **Landing Page:** Se evaluará la comprensión general de la propuesta de valor, la identificación de las funcionalidades relacionadas con la producción y la facilidad para localizar los planes de suscripción.
+- **Web Application:** Se utilizará el User Goal 2: "Registrar una operación", definido en la sección 4.4.2 del presente informe. También se tomará como referencia el User Flow Diagram de la sección 4.4.4.
+
+**Actividades de validación:**
+
+1. Explorar la Landing Page e identificar las funcionalidades relacionadas con las actividades de producción.
+2. Localizar los planes de suscripción y revisar la información presentada.
+3. Ingresar a la Web Application y explorar las opciones disponibles en el módulo de producción.
+4. Consultar la información de un lote de producción.
+5. Revisar los datos relacionados con la producción y las mermas.
+6. Explorar el flujo para registrar una operación y completar las acciones correspondientes.
+7. Identificar las opciones disponibles para comunicar anomalías o problemas relacionados con la maquinaria.
+
+**Presentación:**
+
+Buenos días/tardes. Somos estudiantes de Ingeniería de Software y estamos desarrollando Molinex, una plataforma web orientada a mejorar el control de los procesos operativos en los molinos de arroz.
+
+En esta sesión le mostraremos nuestra Landing Page y la aplicación web de Molinex para que pueda explorar sus funcionalidades relacionadas con las actividades de producción. Después de interactuar con la solución, queremos conocer su experiencia, identificar qué tan comprensibles y sencillas resultaron las opciones y recoger sus sugerencias para mejorar la plataforma.
+
+Asimismo, solicitamos su autorización para grabar la sesión en video, únicamente con fines académicos y como evidencia del proceso de validación.
+
+**Preguntas de validación:**
+
+1. Después de explorar la Landing Page, ¿cómo describiría las funcionalidades de Molinex relacionadas con las actividades de producción?
+2. ¿Qué información presentada en la Landing Page le permitió comprender cómo la plataforma apoya las operaciones del molino?
+3. Después de explorar el módulo de producción, ¿cómo describiría la facilidad para encontrar las opciones que necesitaba?
+4. ¿Qué opinión tiene sobre la información presentada acerca de los lotes de producción? ¿Qué datos le resultaron más útiles?
+5. ¿Cómo interpretó la información relacionada con la producción y las mermas?
+6. ¿Qué tan sencillo le resultó seguir el flujo para registrar una operación? ¿En qué parte tuvo alguna dificultad?
+7. ¿Qué datos del registro de la operación le resultaron fáciles o difíciles de completar
+8. ¿Qué información adicional le gustaría registrar al terminar una operación?
+9. ¿Qué cambios realizaría en la interfaz para facilitar su utilización durante la jornada laboral?
+10. ¿Qué funcionalidad considera que facilitaría más sus actividades diarias y qué mejoras propondría?
+
+**Cierre:**
+
+Muchas gracias por su tiempo y por compartir su experiencia. Sus respuestas nos permitirán mejorar la facilidad de uso de Molinex y comprobar si sus funcionalidades se adaptan a las necesidades de los operarios de maquinaria y producción.
+
 ### 5.3.2. Registro de Entrevistas.
 ### 5.3.3. Evaluaciones según heurísticas.
 ### 5.4. Video About-the-Product.
