@@ -1,0 +1,129 @@
+@startuml
+title Molinex Open Source - Production Management Frontend
+top to bottom direction
+skinparam classAttributeIconSize 0
+hide empty members
+
+package "Presentation" {
+  class RawMaterialReceptionForm <<Angular Component>> {
+    #submit(): void
+  }
+  class RawMaterialReceptionList <<Angular Component>> {
+    #navigateToNew(): void
+  }
+  class ProductionBatchForm <<Angular Component>> {
+    #submit(): void
+  }
+  class ProductionBatchList <<Angular Component>> {
+    #navigateToNew(): void
+  }
+  class ProductionRecordForm <<Angular Component>> {
+    #editing: boolean
+    #submit(): void
+  }
+  class ProductionOverview <<Angular Component>> {
+    #traceabilityPercentage: Signal<number>
+  }
+  class ProductionHistory <<Angular Component>> {
+    #batchId: WritableSignal<number>
+    #clearFilters(): void
+  }
+}
+
+package "Application" {
+  class ProductionManagementStore <<Angular Store>> {
+    -productionManagementApi: ProductionManagementApi
+    +rawMaterialReceptions: Signal<RawMaterialReception[]>
+    +productionBatches: Signal<ProductionBatch[]>
+    +productionRecords: Signal<ProductionRecord[]>
+    +addRawMaterialReception(reception: RawMaterialReception): void
+    +addProductionBatch(batch: ProductionBatch): void
+    +addProductionRecord(record: ProductionRecord): void
+    +updateProductionRecord(record: ProductionRecord): void
+    +reloadProductionData(): void
+  }
+}
+
+package "Domain" {
+  class RawMaterialReception <<Entity>> {
+    -id: number
+    -receivedAt: Date
+    -supplierName: string
+    -originDescription: string
+    -quantity: Weight
+    +get quantity(): Weight
+  }
+  class ProductionBatch <<Entity>> {
+    -id: number
+    -code: string
+    -receptionId: number
+    -registeredAt: Date
+    +get receptionId(): number
+  }
+  class ProductionRecord <<Entity>> {
+    -id: number
+    -batchId: number
+    -details: ProductionDetails
+    -recordedAt: Date
+    +get details(): ProductionDetails
+  }
+  class ProductionDetails <<Value Object>> {
+    -processName: string
+    -processedWeight: Weight
+    -startedAt: Date
+    -finishedAt: Date | null
+    -status: ProductionStatus
+    +get status(): ProductionStatus
+  }
+}
+
+package "Infrastructure" {
+  class ProductionManagementApi <<API Adapter>> {
+    -rawMaterialReceptionsEndpoint: RawMaterialReceptionsApiEndpoint
+    -productionBatchesEndpoint: ProductionBatchesApiEndpoint
+    -productionRecordsEndpoint: ProductionRecordsApiEndpoint
+    +createProductionBatch(batch: ProductionBatch): Observable<ProductionBatch>
+  }
+  class RawMaterialReceptionsApiEndpoint <<API Adapter>>
+  class ProductionBatchesApiEndpoint <<API Adapter>>
+  class ProductionRecordsApiEndpoint <<API Adapter>>
+  class RawMaterialReceptionAssembler <<Assembler>> {
+    +toEntityFromResource(resource: RawMaterialReceptionResource): RawMaterialReception
+    +toResourceFromEntity(entity: RawMaterialReception): RawMaterialReceptionResource
+  }
+  class ProductionBatchAssembler <<Assembler>> {
+    +toEntityFromResource(resource: ProductionBatchResource): ProductionBatch
+    +toResourceFromEntity(entity: ProductionBatch): ProductionBatchResource
+  }
+  class ProductionRecordAssembler <<Assembler>> {
+    +toEntityFromResource(resource: ProductionRecordResource): ProductionRecord
+    +toResourceFromEntity(entity: ProductionRecord): ProductionRecordResource
+  }
+}
+
+package "Production and Quality Shared Kernel" {
+  class Weight <<Value Object>>
+}
+RawMaterialReceptionForm --> ProductionManagementStore
+RawMaterialReceptionList --> ProductionManagementStore
+ProductionBatchForm --> ProductionManagementStore
+ProductionBatchList --> ProductionManagementStore
+ProductionRecordForm --> ProductionManagementStore
+ProductionOverview --> ProductionManagementStore
+ProductionHistory --> ProductionManagementStore
+ProductionManagementStore --> ProductionManagementApi
+ProductionBatch ..> RawMaterialReception : receptionId
+ProductionRecord ..> ProductionBatch : batchId
+ProductionRecord --> ProductionDetails
+ProductionDetails --> Weight
+RawMaterialReception --> Weight
+ProductionManagementApi --> RawMaterialReceptionsApiEndpoint
+RawMaterialReceptionsApiEndpoint --> RawMaterialReceptionAssembler
+RawMaterialReceptionAssembler ..> RawMaterialReception
+ProductionManagementApi --> ProductionBatchesApiEndpoint
+ProductionBatchesApiEndpoint --> ProductionBatchAssembler
+ProductionBatchAssembler ..> ProductionBatch
+ProductionManagementApi --> ProductionRecordsApiEndpoint
+ProductionRecordsApiEndpoint --> ProductionRecordAssembler
+ProductionRecordAssembler ..> ProductionRecord
+@enduml
