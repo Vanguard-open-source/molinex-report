@@ -1723,6 +1723,86 @@ La combinación de referencias locales, Published Language y proyecciones permit
 
 Los sistemas externos planificados no constituyen Bounded Contexts. `Operational Intelligence` traducirá las mediciones provenientes de `Rice Mill Sensor Gateway` mediante un adaptador que proteja su modelo de dominio, mientras que `Identity and Access Management` y `Operational Intelligence` utilizarán un puerto de notificaciones para desacoplarse de `Notification Delivery Service`.
 
+#### Decisiones de diseño de la sesión
+
+La sesión partió de los hotspots del Big Picture Event Storming (2.4) y de las User Stories. La primera tabla indica qué decidió el equipo para cada hotspot y cuáles siguen abiertos. La segunda reúne las decisiones estructurales del modelo.
+
+| Hotspot (2.4) | Decisión del equipo | Estado |
+|:--|:--|:--|
+| Origen de las variables operativas | `RecordOperationalVariable` registra las variables y un adaptador traduce las mediciones del `Rice Mill Sensor Gateway`, de modo que el dominio no dependa del sensor. | Parcial: falta definir quién registra los valores y con qué frecuencia. |
+| Criterios y umbrales de evaluación | `OperationalAnomaly` solo se crea cuando una lectura incumple un criterio definido. | Abierto: faltan responsables, alcance por máquina y posibilidad de configuración. |
+| Ciclo de vida de alertas | `Alert` es un Aggregate propio, siempre ligado a una anomalía y con prioridad y estado de atención válidos. | Parcial: faltan los estados concretos, los responsables y las condiciones de cierre. |
+| Contratación y tenancy del SaaS | No se crea el contexto `Subscriptions`. `Commercial Engagement` queda separado de `Identity and Access Management` (Separate Ways) hasta que exista un flujo de alta confirmado. | Resuelto para este alcance. |
+| Corrección de información productiva | `UpdateProductionInformation` publica `ProductionInformationUpdated` para que `Quality and Yield Control` y `Reporting and Analytics` reaccionen sin compartir el Aggregate. | Parcial: faltan la auditoría, los permisos y las reglas de recálculo. |
+| Persistencia y exportación de reportes | `Reporting and Analytics` es un read side con proyecciones propias y no define Aggregate Roots. | Resuelto por ahora. Se revisará si se exige almacenar, versionar o aprobar reportes. |
+
+| Decisión estructural | Motivo |
+|:--|:--|
+| Los Bounded Contexts se implementan como módulos de un monolito modular con un único backend desplegable. | El análisis no presupone microservicios, y cada módulo conserva su modelo sin acceder a los Aggregates de otro contexto. |
+| `Profiles` se incluye dentro de `Identity and Access Management`. | La información de perfil forma parte del ciclo de vida del `User`. |
+| `Shared` no es un Bounded Context; solo se comparte un Shared Kernel con `Weight` y `MeasurementUnit`. | Production y Quality usan la misma magnitud, pero el Shared Kernel no incluye identificadores, Aggregates, repositorios, servicios de infraestructura ni clases base. |
+| Los Aggregates son pequeños, se referencian por identificador local y se sincronizan con consistencia eventual. | Cada Aggregate protege sus invariantes dentro de una transacción. Compartir el mismo dato físico no implica compartir la misma clase. |
+| Los módulos se comunican con eventos internos en memoria, sin broker de mensajería. | El sistema es un monolito modular y no necesita HTTP ni mensajería entre módulos. |
+| Los sistemas externos quedan fuera del dominio, detrás de adaptadores y puertos. | `Rice Mill Sensor Gateway` y `Notification Delivery Service` no son Bounded Contexts; un adaptador y un puerto protegen el modelo de dominio. |
+
+#### Trazabilidad con las User Stories
+
+Las tablas vinculan cada comando, consulta y flujo entre contextos con las User Stories (US) y Technical Stories (TS) del Product Backlog. Las historias TS-01 a TS-04 exponen mediante la RESTful API los mismos casos de uso.
+
+La primera tabla relaciona cada comando con el Domain Event que produce y con las historias que lo sustentan.
+
+| Bounded Context | Command | Domain Event | User Story / Technical Story |
+|:--|:--|:--|:--|
+| `Commercial Engagement` | `SubmitCommercialInquiry` | `CommercialInquirySubmitted` | US-36 |
+| `Identity and Access Management` | `RegisterUser` | `UserRegistered` | US-01 |
+| `Identity and Access Management` | `AuthenticateUser` | `UserAuthenticated` | US-02 |
+| `Identity and Access Management` | `AssignRole` | `RoleAssigned` | US-03 |
+| `Identity and Access Management` | `UpdateUserProfile` | `UserProfileUpdated` | US-04 |
+| `Production Management` | `RecordRawMaterialReception` | `RawMaterialReceptionRecorded` | US-05, TS-01 |
+| `Production Management` | `RegisterProductionBatch` | `ProductionBatchRegistered` | US-06, TS-01 |
+| `Production Management` | `RecordProductionInformation` | `ProductionInformationRecorded` | US-07, TS-01 |
+| `Production Management` | `UpdateProductionInformation` | `ProductionInformationUpdated` | US-10, TS-01 |
+| `Quality and Yield Control` | `RecordQualityResults` | `QualityResultsRecorded` | US-11 |
+| `Quality and Yield Control` | `RecordProductionWaste` | `ProductionWasteRecorded` | US-14 |
+| `Quality and Yield Control` | `IdentifyQualityDeviation` | `QualityDeviationIdentified` | US-16 |
+| `Asset and Maintenance Management` | `RegisterMachine` | `MachineRegistered` | US-17 |
+| `Asset and Maintenance Management` | `RecordPreventiveMaintenance` | `PreventiveMaintenanceRecorded` | US-19, TS-03 |
+| `Asset and Maintenance Management` | `RecordCorrectiveMaintenance` | `CorrectiveMaintenanceRecorded` | US-20, TS-03 |
+| `Operational Intelligence` | `RecordOperationalVariable` | `OperationalVariableRecorded` | Sin historia explícita (ver brecha 1) |
+| `Operational Intelligence` | `DetectOperationalAnomaly` | `OperationalAnomalyDetected` | US-23 |
+| `Operational Intelligence` | `GenerateOperationalAlert` | `OperationalAlertGenerated` | US-24 (la historia presupone que el sistema genera las alertas) |
+
+La segunda tabla relaciona cada consulta con las historias que la sustentan. `Reporting and Analytics` solo tiene consultas, porque funciona como read side.
+
+| Bounded Context | Query / Read Model y User Story / Technical Story |
+|:--|:--|
+| `Commercial Engagement` | `GetValueProposition`: US-31, US-32, US-35<br>`GetPlanCatalog`: US-33, US-34 |
+| `Identity and Access Management` | `GetAuthorizedFunctions`: US-03<br>`GetUserProfile`: US-04 |
+| `Production Management` | `GetProductionProcesses`: US-08, TS-01<br>`GetProductionHistory`: US-09, TS-01 |
+| `Quality and Yield Control` | `GetYieldIndicators`: US-12, TS-02<br>`GetRiceComposition`: US-13, TS-02<br>`GetProductionWaste`: US-14, TS-02<br>`CompareQualityIndicators`: US-15 |
+| `Asset and Maintenance Management` | `GetMachineStatus`: US-18<br>`GetMaintenanceHistory`: US-21, TS-03 |
+| `Operational Intelligence` | `GetOperationalVariables`: US-22<br>`GetAlerts`: US-24, TS-04<br>`GetAnomalyHistory`: US-25, TS-04<br>`GetMaintenanceRecommendations`: US-26 |
+| `Reporting and Analytics` | `GetOperationalSummary`: US-27<br>`GetProductionReport`: US-28<br>`GetMaintenanceReport`: US-29<br>`GetOperationalTrends`: US-30 |
+
+Los flujos entre Bounded Contexts del Context Map también se apoyan en historias concretas.
+
+| Flujo entre contextos | Contrato o evento | User Stories involucradas |
+|:--|:--|:--|
+| `Identity and Access Management` hacia los módulos operativos | `AuthenticatedPrincipal` y claims de autorización | US-02 y US-03; condición de acceso de TS-01 a TS-04 |
+| `Production Management` hacia `Quality and Yield Control` | `ProductionInformationRecorded` y `ProductionInformationUpdated` | US-07 y US-10 originan el flujo; US-11 y US-14 lo usan al vincular calidad y merma con el proceso |
+| `Quality and Yield Control` hacia `Operational Intelligence` | `QualityDeviationIdentified` | US-16 origina el flujo y puede alimentar las recomendaciones de US-26 |
+| `Asset and Maintenance Management` y `Operational Intelligence` | Eventos e identificadores locales de máquina y anomalía | US-20 y US-21 se coordinan con US-23 y US-25 |
+| Módulos operativos hacia `Reporting and Analytics` | Eventos publicados | US-05 a US-26 aportan los datos; US-27 a US-30 los consumen |
+| `Commercial Engagement` y `Identity and Access Management` | Separate Ways, sin contrato | US-36 no crea cuenta, tenant ni suscripción |
+
+Con estas tablas, las 36 User Stories y las 4 Technical Stories quedan cubiertas al menos una vez. La trazabilidad también dejó tres brechas:
+
+1. `RecordOperationalVariable` no tiene historia explícita. US-22 solo consulta variables y US-23 las evalúa, pero ninguna historia define quién registra la variable ni cómo llegan las mediciones.
+2. TS-04 exige actualizar el estado de una anomalía o alerta, pero el modelo no incluye un comando para ese cambio.
+3. US-24 da por hecho que las alertas ya fueron generadas, y `GenerateOperationalAlert` no tiene un criterio de aceptación propio.
+
+Las dos primeras dependen de los hotspots "Origen de las variables operativas" y "Ciclo de vida de alertas", que siguen abiertos en la sección 2.4. Conviene cerrarlas con nuevas historias o criterios de aceptación antes de implementar esos flujos.
+
 ### 4.6.2 Software Architecture Context Diagram
 
 El diagrama de contexto presenta a Molinex como un único sistema de software, muestra los objetivos principales de sus actores e incorpora `Rice Mill Sensor Gateway` y `Notification Delivery Service` como integraciones externas planificadas. No expone decisiones internas de implementación.
