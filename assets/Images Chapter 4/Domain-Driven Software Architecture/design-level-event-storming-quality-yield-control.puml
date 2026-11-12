@@ -1,0 +1,52 @@
+@startuml
+title Quality and Yield Control — Design-Level Event Storming
+left to right direction
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam defaultFontName Arial
+skinparam ArrowColor #334E68
+
+rectangle "Operador de Producción" as operator #FFF3A6
+rectangle "Administrador" as admin #FFF3A6
+package "Quality and Yield Control · Core Subdomain" {
+  rectangle "US-11\nRecordQualityResults" as recordQuality #A9C7F7
+  rectangle "US-14\nRecordProductionWaste" as recordWaste #A9C7F7
+  rectangle "US-16\nIdentifyQualityDeviation" as identify #A9C7F7
+  rectangle "QualityAssessment" as assessment #FFE27A
+  rectangle "WasteRecord" as waste #FFE27A
+  rectangle "QualityDeviation" as deviation #FFE27A
+  rectangle "QualityResultsRecorded" as qualityRecorded #FFB26B
+  rectangle "ProductionWasteRecorded" as wasteRecorded #FFB26B
+  rectangle "QualityDeviationIdentified" as deviationIdentified #FFB26B
+  rectangle "US-12\nGetYieldIndicators" as yieldIndicators #B9D98A
+  rectangle "US-13\nGetRiceComposition" as composition #B9D98A
+  rectangle "US-14\nGetProductionWaste" as getWaste #B9D98A
+  rectangle "US-15\nCompareQualityIndicators" as compare #B9D98A
+}
+
+operator --> recordQuality
+operator --> recordWaste
+operator --> composition
+operator --> getWaste
+admin --> yieldIndicators
+admin --> compare
+admin --> identify
+
+recordQuality --> assessment
+assessment --> qualityRecorded
+recordWaste --> waste
+waste --> wasteRecorded
+identify --> deviation : si el valor está fuera de rango
+deviation --> deviationIdentified
+
+note bottom of waste
+  La merma debe ser no negativa.
+  Para calcular su porcentaje se
+  requiere una base positiva
+  en unidades comparables.
+end note
+
+legend bottom
+  |<#FFF3A6> Actor |<#A9C7F7> Comando |<#FFE27A> Aggregate Root |<#FFB26B> Evento de dominio |<#B9D98A> Consulta |
+endlegend
+@enduml
