@@ -728,11 +728,11 @@ El análisis hizo visibles preguntas que no deben resolverse mediante suposicion
 | Origen de las variables operativas | Define quién registra los datos, su frecuencia y su confiabilidad. | Determinar si los valores serán manuales, recibidos desde sensores o admitidos por ambas vías. |
 | Criterios y umbrales de evaluación | Condiciona cuándo una lectura se considera anómala. | Definir responsables, alcance por máquina y posibilidad de configuración. |
 | Ciclo de vida de alertas | Afecta la atención y trazabilidad de una posible falla. | Definir estados, prioridades, responsables y condiciones de cierre. |
-| Contratación y tenancy del SaaS | Los requerimientos actuales muestran planes, pero no describen cómo se contrata y habilita un molino. | Definir suscripción, pago, alta del molino, asignación del plan y asociación de usuarios. |
+| Contratación y tenancy del SaaS | Los requisitos actuales muestran planes, pero no describen cómo se contrata y habilita un molino. | Definir suscripción, pago, alta del molino, asignación del plan y asociación de usuarios. |
 | Corrección de información productiva | Una modificación puede alterar indicadores y reportes previamente calculados. | Definir auditoría, permisos y reglas de recálculo. |
 | Persistencia y exportación de reportes | Determina si un reporte es solo una consulta o un documento con identidad propia. | Definir formatos, almacenamiento, vigencia y regeneración. |
 
-### Trazabilidad con los requerimientos
+### Trazabilidad con los requisitos
 
 | Flujo del Big Picture | User Stories relacionadas |
 |:--|:--|
@@ -1655,7 +1655,7 @@ Los modelos fueron elaborados con PlantUML bajo el enfoque Diagram-as-Code. Las 
 | `Operational Intelligence` | Core Subdomain | Registrar variables operativas, detectar anomalías y generar alertas e información de atención. |
 | `Reporting and Analytics` | Supporting Subdomain / Read Side | Construir proyecciones para resúmenes, reportes y tendencias sin apropiarse de los Aggregates operativos. |
 
-`Profiles` no se separa como Bounded Context porque la información de perfil forma parte del ciclo de vida del `User`. `Subscriptions` tampoco se incorpora: los requerimientos actuales permiten consultar planes, pero no definen contratación, pago, tenancy ni activación. Finalmente, `Shared` no se considera un Bounded Context; el subconjunto compartido se modela explícitamente como Shared Kernel.
+`Profiles` no se separa como Bounded Context porque la información de perfil forma parte del ciclo de vida del `User`. `Subscriptions` tampoco se incorpora: los requisitos actuales permiten consultar planes, pero no definen contratación, pago, tenancy ni activación. Finalmente, `Shared` no se considera un Bounded Context; el subconjunto compartido se modela explícitamente como Shared Kernel.
 
 #### Commands, Aggregate Roots, Domain Events and Queries
 
@@ -1920,7 +1920,7 @@ Los diagramas representan el diseño orientado a objetos del dominio y no un esq
 
 #### Commercial Engagement Bounded Context
 
-`CommercialInquiry` es el único Aggregate Root transaccional. Los planes y la propuesta de valor se mantienen como modelos de lectura porque los requerimientos no confirman contratación, pago ni activación de suscripciones.
+`CommercialInquiry` es el único Aggregate Root transaccional. Los planes y la propuesta de valor se mantienen como modelos de lectura porque los requisitos no confirman contratación, pago ni activación de suscripciones.
 
 <p align="center">
   <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/commercial-engagement-class-diagram.svg" alt="Commercial Engagement Bounded Context Class Diagram" width="100%">
@@ -1980,7 +1980,7 @@ Los diagramas representan el diseño orientado a objetos del dominio y no un esq
 
 #### Reporting and Analytics Bounded Context
 
-Reporting and Analytics se modela como un *read side*: consume eventos expresados mediante Published Language, construye proyecciones propias y responde consultas. No se introduce un Aggregate Root para reportes porque los requerimientos actuales no establecen identidad, versionado, aprobación ni ciclo de vida transaccional para ellos.
+Reporting and Analytics se modela como un *read side*: consume eventos expresados mediante Published Language, construye proyecciones propias y responde consultas. No se introduce un Aggregate Root para reportes porque los requisitos actuales no establecen identidad, versionado, aprobación ni ciclo de vida transaccional para ellos.
 
 <p align="center">
   <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/reporting-analytics-class-diagram.svg" alt="Reporting and Analytics Bounded Context Class Diagram" width="100%">
