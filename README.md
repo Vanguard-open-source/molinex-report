@@ -64,21 +64,21 @@ Proyecto<br>
 | Versión | Fecha | Autor | Descripción de la modificación |
 |:--:|:--:|:--|:--|
 | AV1 |  |  ||
-|0.1|12/09|Luisa Casalino|Se desarrollaron los segmentos objetivo y el análisis competitivo de Molinex.|
-|0.2|13/09|Antony Jimenez|Se redactó la descripción inicial de la startup y se configuró la estructura inicial del proyecto.|
-|0.3|06/09|Brayan Huerta|Se realizaron correcciones y actualizaciones relacionadas con la descripción de la startup, perfiles del equipo y análisis de entrevistas.|
-|0.4|15/09|Antony Jimenez Saavedra|Se incorporó el registro de entrevistas, análisis de entrevistas y User Task Matrix.|
-|0.5|15/09|Luisa Nhiriel Casalino|Se agregaron User Persona, User Journey Map, Empathy Mapping y Ubiquitous Language.|
-|0.6|16/09|Antony Jimenez Saavedra|Se actualizaron los perfiles de los integrantes y se incorporaron evidencias adicionales del proyecto.|
-|0.7|17/09|Brayan Huerta|Se realizaron correcciones en hipótesis, perfiles del equipo y análisis de entrevistas.|
-|0.8|17/09|Fabricio Rivera|Se incorporaron Style Guidelines, Information Architecture, Big Picture Event Storming, Design-Level Event Storming, arquitectura de software y diagramas de clases.|
-|0.9|17/09|Fabricio Rivera|Se agregó el diagrama de base de datos y se completaron elementos del diseño técnico.|
-|1.0|17/09|Giovanni Gallegos|Se agregaron los wireflows, wireframes, prototipo de aplicación web y evidencias de la Landing Page.|
-|1.1|18/09|Giovanni Gallegos|Se completaron las secciones del informe correspondientes a AV1 y se agregaron evidencias.|
-|1.2|18/09|Equipo Vanguard|Consolidación y revisión de las secciones del informe correspondientes a la evaluación AV1.|
-|1.3|04/10|Fabricio Rivera|Se corrigió el Big Picture Event Storming y se incorporó la Single Page Application como contenedor independiente en el modelo C4.|
-|1.4|05/10|Equipo Vanguard|Se incorporaron las evidencias de implementación, ejecución, servicios, despliegue y colaboración correspondientes al Sprint 2 y se actualizaron las conclusiones y anexos de TB1.|
-|1.5|05/10|Fabricio Rivera|Se alinearon los identificadores y estados del Sprint Backlog, se documentó el i18n de la Landing Page y se corrigieron las referencias de repositorios para TB1.|
+|0.1|12-09-2026|Luisa Casalino|Se desarrollaron los segmentos objetivo y el análisis competitivo de Molinex.|
+|0.2|13-09-2026|Antony Jimenez|Se redactó la descripción inicial de la startup y se configuró la estructura inicial del proyecto.|
+|0.3|06-09-2026|Brayan Huerta|Se realizaron correcciones y actualizaciones relacionadas con la descripción de la startup, perfiles del equipo y análisis de entrevistas.|
+|0.4|15-09-2026|Antony Jimenez Saavedra|Se incorporó el registro de entrevistas, análisis de entrevistas y User Task Matrix.|
+|0.5|15-09-2026|Luisa Nhiriel Casalino|Se agregaron User Persona, User Journey Map, Empathy Mapping y Ubiquitous Language.|
+|0.6|16-09-2026|Antony Jimenez Saavedra|Se actualizaron los perfiles de los integrantes y se incorporaron evidencias adicionales del proyecto.|
+|0.7|17-09-2026|Brayan Huerta|Se realizaron correcciones en hipótesis, perfiles del equipo y análisis de entrevistas.|
+|0.8|17-09-2026|Fabricio Rivera|Se incorporaron Style Guidelines, Information Architecture, Big Picture Event Storming, Design-Level Event Storming, arquitectura de software y diagramas de clases.|
+|0.9|17-09-2026|Fabricio Rivera|Se agregó el diagrama de base de datos y se completaron elementos del diseño técnico.|
+|1.0|17-09-2026|Giovanni Gallegos|Se agregaron los wireflows, wireframes, prototipo de aplicación web y evidencias de la Landing Page.|
+|1.1|18-09-2026|Giovanni Gallegos|Se completaron las secciones del informe correspondientes a AV1 y se agregaron evidencias.|
+|1.2|18-09-2026|Equipo Vanguard|Consolidación y revisión de las secciones del informe correspondientes a la evaluación AV1.|
+|1.3|04-10-2026|Fabricio Rivera|Se corrigió el Big Picture Event Storming y se incorporó la Single Page Application como contenedor independiente en el modelo C4.|
+|1.4|05-10-2026|Equipo Vanguard|Se incorporaron las evidencias de implementación, ejecución, servicios, despliegue y colaboración correspondientes al Sprint 2 y se actualizaron las conclusiones y anexos de TB1.|
+|1.5|05-10-2026|Fabricio Rivera|Se alinearon los identificadores y estados del Sprint Backlog, se documentó el i18n de la Landing Page y se corrigieron las referencias de repositorios para TB1.|
 <div style="page-break-after: always;"></div>
 
 
@@ -493,7 +493,7 @@ En el caso de Molinex, este análisis permite conocer qué soluciones ofrecen ac
 
 ### 2.2.1 Diseño de entrevistas
 
-### Segmentos de entrevistados
+#### Segmentos de entrevistados
 
 | Segmento | Rol | Criterio de selección | Propósito |
 |---|---|---|---|
@@ -649,17 +649,17 @@ El User Task Matrix reúne las tareas que realizan las personas de los tres segm
 
 | Tarea | Jackeline – Gerente/Administradora(Frec. / Imp.) | Ismael – Técnico de Mantenimiento (Frec. / Imp.) | Diego-Operario de Producción (Frec. / Imp.) |
 |:--|:--:|:--:|:--:|
-|Supervisar el estado general de la producción|Diaria/Alta|Diaria/Media |Diaria/Alta |
-|Controlar el rendimiento y la merma del proceso|Diaria/Alta|Ocasional/Baja| Diaria/Alta|
-|Controlar los costos de producción y mantenimiento|Semanal/Alta|Ocasional/Media| Ocasional/Media|
-|Detectar una falla o anomalía en una máquina|Ocasional/Media|Diaria/Alta|Ocasional/Alta|
-|Reportar una avería detectada|Ocasional/Media|Diaria/Alta|Semanal/Media|
-|Diagnosticar la causa de una falla mecánica o eléctrica|No Aplica/-|Semanal/Alta|Ocasional/Media|
-|Reparar o dar mantenimiento a una máquina	|No Aplica/-|Semanal/Alta|No Aplica/-|
-|Coordinar con técnicos externos especializados|Ocasional/Media|Ocasional/Alta|Ocasional/Alta|
-|Registrar información de producción o mantenimiento|Semanal/Media|Diaria/Alta|Semanal/Media|
-|Detener la producción ante una falla crítica|No Aplica/-|Ocasional/Alta|Ocasional/Alta|
-|Tomar decisiones sobre la operación del molino|Diaria/Alta|No Aplica/-|Ocasional/Media|
+| Supervisar el estado general de la producción | Diaria/Alta | Diaria/Media | Diaria/Alta |
+| Controlar el rendimiento y la merma del proceso | Diaria/Alta | Ocasional/Baja | Diaria/Alta |
+| Controlar los costos de producción y mantenimiento | Semanal/Alta | Ocasional/Media | Ocasional/Media |
+| Detectar una falla o anomalía en una máquina | Ocasional/Media | Diaria/Alta | Ocasional/Alta |
+| Reportar una avería detectada | Ocasional/Media | Diaria/Alta | Semanal/Media |
+| Diagnosticar la causa de una falla mecánica o eléctrica | No aplica/- | Semanal/Alta | Ocasional/Media |
+| Reparar o dar mantenimiento a una máquina | No aplica/- | Semanal/Alta | No aplica/- |
+| Coordinar con técnicos externos especializados | Ocasional/Media | Ocasional/Alta | Ocasional/Alta |
+| Registrar información de producción o mantenimiento | Semanal/Media | Diaria/Alta | Semanal/Media |
+| Detener la producción ante una falla crítica | No aplica/- | Ocasional/Alta | Ocasional/Alta |
+| Tomar decisiones sobre la operación del molino | Diaria/Alta | No aplica/- | Ocasional/Media |
 
 Las tareas más frecuentes e importantes cambian según el rol. Jackeline supervisa la producción, controla el rendimiento y la merma, y toma decisiones sobre la operación, todo a diario y con importancia alta. Ismael detecta y reporta fallas y registra información a diario, también con importancia alta, y es el único que repara las máquinas. Diego coincide con Jackeline en supervisar y controlar el rendimiento y la merma a diario; detecta y diagnostica fallas de forma ocasional y las reporta cada semana.
 
@@ -937,7 +937,6 @@ El presente glosario reúne los términos y conceptos utilizados en el dominio d
 
 ## 3.1 User Stories
 
-# Historias de Usuario — Molinex
 | Epic / Story ID | Título | Descripción | Criterios de Aceptación | Relacionado con (Epic ID) |
 |:---|:---|:---|:---|:---|
 | **EP-02** | **Gestión de materia prima y producción** | Permite registrar y consultar la recepción de materia prima, los lotes y la información relacionada con los procesos productivos del molino. | No aplica. | — |
@@ -2218,14 +2217,14 @@ Cada entrega se cierra con un release en cada repositorio: una rama `release/*` 
 
 | Entrega | Repositorio | Tag | Commit del tag | Commit desplegado | Fecha |
 |:--|:--|:--|:--|:--|:--|
-| AV1 | `molinex-report` | `v1.0.0` | `0a4a743` | No aplica | 2026-09-19 |
-| AV1 | `molinex-website` | `release_v0.0.1` | `0db81b0` | `0db81b0` (GitHub Pages) | 2026-09-18 |
-| TB1 | `molinex-report` | `v2.0.0` | `60e5c56` | No aplica | 2026-10-05 |
-| TB1 | `molinex-website` | `Vn1.0.0` | `32dd6e3` | `32dd6e3` (GitHub Pages) | 2026-10-05 |
-| TB1 | `molinex-webapp` | `v0.1.1` | `c3b9416` | `959513a` (Azure Static Web Apps) | 2026-10-05 |
-| TB1 | `molinex-platform-mock` | Sin tag | No aplica | `902c31d` (Azure App Service) | 2026-10-05 |
+| AV1 | `molinex-report` | `v1.0.0` | `0a4a743` | No aplica | 19-09-2026 |
+| AV1 | `molinex-website` | `release_v0.0.1` | `0db81b0` | `0db81b0` (GitHub Pages) | 18-09-2026 |
+| TB1 | `molinex-report` | `v2.0.0` | `60e5c56` | No aplica | 05-10-2026 |
+| TB1 | `molinex-website` | `Vn1.0.0` | `32dd6e3` | `32dd6e3` (GitHub Pages) | 05-10-2026 |
+| TB1 | `molinex-webapp` | `v0.1.1` | `c3b9416` | `959513a` (Azure Static Web Apps) | 05-10-2026 |
+| TB1 | `molinex-platform-mock` | Sin tag | No aplica | `902c31d` (Azure App Service) | 05-10-2026 |
 
-- Antes de TB1 se publicaron dos releases intermedios: `Vn0.0.2` (`293a289`) en `molinex-website` y `v0.1.0` (`5551944`) en `molinex-webapp`, ambos el 2026-10-04.
+- Antes de TB1 se publicaron dos releases intermedios: `Vn0.0.2` (`293a289`) en `molinex-website` y `v0.1.0` (`5551944`) en `molinex-webapp`, ambos el 04-10-2026.
 - Los tags de la landing (`release_v0.0.1`, `Vn0.0.2` y `Vn1.0.0`) se documentan tal como existen en GitHub. No siguen el formato `vMAJOR.MINOR.PATCH` definido arriba y se conservan para no alterar releases ya publicados. El siguiente release de la landing usará ese formato.
 - El commit desplegado de `molinex-webapp` (`959513a`) es posterior al tag y solo agrega el archivo de workflow de Azure Static Web Apps. El código de la aplicación es el del tag `v0.1.1`.
 - El repositorio `molinex-platform-mock` aún no publica tags ni releases, por lo que se identifica por el commit desplegado.
@@ -2281,7 +2280,7 @@ A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con e
 | Sprint # | Sprint 1 |
 |:--|:--|
 | **Sprint Planning Background** | |
-| Date | 26-09-02 |
+| Date | 02-09-2026 |
 | Time | 7:00 PM |
 | Location | virtual (videollamada del equipo por Discord) |
 | Prepared By | Gallegos De La Cruz, Giovanni Marcelo |
@@ -2403,7 +2402,7 @@ A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con e
 | Sprint # | Sprint 2 |
 |:--|:--|
 | **Sprint Planning Background** | |
-| **Date** | 26-10-03 |
+| **Date** | 03-10-2026 |
 | **Time** | 7:00 PM |
 | **Location** | virtual (videollamada del equipo por Discord) |
 | **Prepared By** | Gallegos De La Cruz, Giovanni Marcelo |
@@ -2433,22 +2432,22 @@ Los estados utilizan el vocabulario `To-do`, `In-Process`, `To-Review` y `Done` 
 
 | Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
 |:--|:--|:--|:--|:--|--:|:--|:--|
-| US-05 | Registrar recepción de materia prima | T-05-01 | Diseñar modelo y API de recepción | Definir la entidad de recepción (proveedor, fecha, peso, tipo de arroz) y exponer los endpoints REST para registrarla. | 6 | Gallegos De La Cruz Giovanni | Done |
-| US-05 | Registrar recepción de materia prima | T-05-02 | Crear formulario de recepción | Implementar en el webapp el formulario de registro con validaciones de campos obligatorios. | 4 | Casalino Berrocal Luisa | Done |
-| US-06 | Registrar lote de materia prima | T-06-01 | Diseñar modelo y API de lote | Crear la entidad de lote asociada a una recepción, con código único, cantidad y estado, y sus endpoints. | 6 | Gallegos De La Cruz Giovanni | Done |
-| US-06 | Registrar lote de materia prima | T-06-02 | Crear vista de registro de lotes | Implementar el formulario y el listado de lotes registrados en el webapp. | 5 | Casalino Berrocal Luisa | Done |
-| US-07 | Registrar información de producción | T-07-01 | Diseñar modelo y API de producción | Crear la entidad de producción vinculada a lote y maquinaria (cantidad procesada, turno, fecha) con sus endpoints. | 8 | Jimenez Saavedra Antony | Done |
-| US-07 | Registrar información de producción | T-07-02 | Crear formulario de producción | Implementar el formulario de registro de producción con selección de lote y maquinaria. | 6 | Rivera Rupay Fabricio | Done |
-| US-11 | Registrar resultados de calidad | T-11-01 | Diseñar modelo y API de calidad | Definir la entidad de resultados de calidad (humedad, granos quebrados, impurezas) asociada a un lote y sus endpoints. | 6 | Jimenez Saavedra Antony | Done |
-| US-11 | Registrar resultados de calidad | T-11-02 | Crear formulario de calidad | Implementar el formulario de registro de resultados de calidad en el webapp. | 5 | Casalino Berrocal Luisa | Done |
-| US-14 | Registrar y consultar merma | T-14-01 | Diseñar modelo y API de merma | Crear la entidad de merma por proceso y los endpoints de registro y consulta con filtros por fecha y lote. | 6 | Gallegos De La Cruz Giovanni | Done |
-| US-14 | Registrar y consultar merma | T-14-02 | Crear vista de registro y consulta de merma | Implementar el formulario de registro y la tabla de consulta con filtros. | 6 | Huerta Cardenas Brayan | Done |
-| US-17 | Registrar maquinaria | T-17-01 | Diseñar modelo y API de maquinaria | Definir la entidad de maquinaria (nombre, tipo, código, estado) y los endpoints de registro y consulta. | 4 | Huerta Cardenas Brayan | Done |
-| US-17 | Registrar maquinaria | T-17-02 | Crear formulario de maquinaria | Implementar el formulario de registro y la lista de maquinaria en el webapp. | 4 | Rivera Rupay Fabricio | Done |
-| US-19 | Registrar mantenimiento preventivo | T-19-01 | Diseñar modelo y API de mantenimiento preventivo | Definir la entidad de mantenimiento preventivo (maquinaria, fecha programada, tipo, responsable) y sus endpoints. | 6 | Huerta Cardenas Brayan | Done |
-| US-19 | Registrar mantenimiento preventivo | T-19-02 | Crear formulario de mantenimiento preventivo | Implementar el formulario de programación y registro en el webapp. | 4 | Rivera Rupay Fabricio | Done |
-| US-20 | Registrar mantenimiento correctivo | T-20-01 | Diseñar modelo y API de mantenimiento correctivo | Crear la entidad de mantenimiento correctivo (falla, causa, acción realizada, tiempo de parada) y sus endpoints. | 6 | Jimenez Saavedra Antony | Done |
-| US-20 | Registrar mantenimiento correctivo | T-20-02 | Crear formulario de mantenimiento correctivo | Implementar el formulario de registro de fallas y acciones correctivas en el webapp. | 5 | Gallegos De La Cruz Giovanni | Done |
+| US-05 | Registrar recepción de materia prima | T-05-01 | Diseñar modelo y API de recepción | Definir la entidad de recepción (proveedor, fecha, peso, tipo de arroz) y exponer los endpoints REST para registrarla. | 6 | Gallegos De La Cruz, Giovanni Marcelo | Done |
+| US-05 | Registrar recepción de materia prima | T-05-02 | Crear formulario de recepción | Implementar en el webapp el formulario de registro con validaciones de campos obligatorios. | 4 | Casalino Berrocal, Luisa Nhiriel | Done |
+| US-06 | Registrar lote de materia prima | T-06-01 | Diseñar modelo y API de lote | Crear la entidad de lote asociada a una recepción, con código único, cantidad y estado, y sus endpoints. | 6 | Gallegos De La Cruz, Giovanni Marcelo | Done |
+| US-06 | Registrar lote de materia prima | T-06-02 | Crear vista de registro de lotes | Implementar el formulario y el listado de lotes registrados en el webapp. | 5 | Casalino Berrocal, Luisa Nhiriel | Done |
+| US-07 | Registrar información de producción | T-07-01 | Diseñar modelo y API de producción | Crear la entidad de producción vinculada a lote y maquinaria (cantidad procesada, turno, fecha) con sus endpoints. | 8 | Jimenez Saavedra, Antony Alexander | Done |
+| US-07 | Registrar información de producción | T-07-02 | Crear formulario de producción | Implementar el formulario de registro de producción con selección de lote y maquinaria. | 6 | Rivera Rupay, Fabricio Jose | Done |
+| US-11 | Registrar resultados de calidad | T-11-01 | Diseñar modelo y API de calidad | Definir la entidad de resultados de calidad (humedad, granos quebrados, impurezas) asociada a un lote y sus endpoints. | 6 | Jimenez Saavedra, Antony Alexander | Done |
+| US-11 | Registrar resultados de calidad | T-11-02 | Crear formulario de calidad | Implementar el formulario de registro de resultados de calidad en el webapp. | 5 | Casalino Berrocal, Luisa Nhiriel | Done |
+| US-14 | Registrar y consultar merma | T-14-01 | Diseñar modelo y API de merma | Crear la entidad de merma por proceso y los endpoints de registro y consulta con filtros por fecha y lote. | 6 | Gallegos De La Cruz, Giovanni Marcelo | Done |
+| US-14 | Registrar y consultar merma | T-14-02 | Crear vista de registro y consulta de merma | Implementar el formulario de registro y la tabla de consulta con filtros. | 6 | Huerta Cardenas, Brayan Benjamin | Done |
+| US-17 | Registrar maquinaria | T-17-01 | Diseñar modelo y API de maquinaria | Definir la entidad de maquinaria (nombre, tipo, código, estado) y los endpoints de registro y consulta. | 4 | Huerta Cardenas, Brayan Benjamin | Done |
+| US-17 | Registrar maquinaria | T-17-02 | Crear formulario de maquinaria | Implementar el formulario de registro y la lista de maquinaria en el webapp. | 4 | Rivera Rupay, Fabricio Jose | Done |
+| US-19 | Registrar mantenimiento preventivo | T-19-01 | Diseñar modelo y API de mantenimiento preventivo | Definir la entidad de mantenimiento preventivo (maquinaria, fecha programada, tipo, responsable) y sus endpoints. | 6 | Huerta Cardenas, Brayan Benjamin | Done |
+| US-19 | Registrar mantenimiento preventivo | T-19-02 | Crear formulario de mantenimiento preventivo | Implementar el formulario de programación y registro en el webapp. | 4 | Rivera Rupay, Fabricio Jose | Done |
+| US-20 | Registrar mantenimiento correctivo | T-20-01 | Diseñar modelo y API de mantenimiento correctivo | Crear la entidad de mantenimiento correctivo (falla, causa, acción realizada, tiempo de parada) y sus endpoints. | 6 | Jimenez Saavedra, Antony Alexander | Done |
+| US-20 | Registrar mantenimiento correctivo | T-20-02 | Crear formulario de mantenimiento correctivo | Implementar el formulario de registro de fallas y acciones correctivas en el webapp. | 5 | Gallegos De La Cruz, Giovanni Marcelo | Done |
 | US-05, US-06, US-07, US-11, US-14, US-17, US-19, US-20 | Todas las historias del Sprint 2 | T-QA-01 | Pruebas de integración y validación | Ejecutar pruebas de los endpoints y flujos de registro, y corregir los defectos encontrados. | 8 | Todo el equipo | Done |
 
 ![Tablero de Trello del Sprint 2](assets/Images%20Chapter%205/Sprint%202/5.2.2.3-01-trello-sprint-2-board.png)
@@ -2617,7 +2616,7 @@ A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con e
 | Sprint # | Sprint 3 |
 |:--|:--|
 | **Sprint Planning Background** | |
-| **Date** | 1-11-2026 |
+| **Date** | 01-11-2026 |
 | **Time** | 7:00 PM|
 | **Location** | virtual (videollamada del equipo por Discord)  |
 | **Prepared By** | Gallegos De La Cruz, Giovanni Marcelo |
@@ -2625,7 +2624,7 @@ A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con e
 | **Sprint 2 Review Summary** | Se revisó la Web Application desplegada en Azure Static Web Apps con los módulos de producción, calidad, merma, maquinaria y mantenimiento, integrados con una API simulada (JSON Server). Quedaron pendientes la RESTful API definitiva, la base de datos productiva, la documentación Swagger/OpenAPI, las historias de gestión de acceso (US-01 a US-04) y la persistencia de las solicitudes comerciales (US-36). |
 | **Sprint 2 Retrospective Summary** |  Durante el Sprint 2, el equipo integró 9 Pull Requests en la rama develop, aplicando GitFlow y Conventional Commits. Se destacó el trabajo colaborativo, pero también se identificó la necesidad de mejorar la coordinación y el seguimiento de tareas. Para el siguiente sprint, se acordó fortalecer la comunicación y planificar mejor las actividades. |
 | **Sprint 3 Goal** | **Our focus is on replacing the simulated API with the first version of Molinex's RESTful Web Services and on giving mill staff access to performance, quality and maintenance information. We believe it delivers reliable, persistent operational data to administrators, technicians and operators, and a documented API to developers. This will be confirmed when the Web Application consumes the deployed Spring Boot API instead of JSON Server and the endpoints can be explored and tested in Swagger UI.** |
-| **Sprint 3 Velocity** |  Story Points. Referencia: 20 en el Sprint 1 y 23 en el Sprint 2. |
+| **Sprint 3 Velocity** | **24 Story Points.** Se establece una capacidad de 24 Story Points considerando la experiencia de los Sprints 1 y 2 (20 y 23 Story Points) y la capacidad de trabajo del equipo de 5 integrantes. |
 | **Sum of Story Points** | 24 Story Points (TS-01, TS-02, TS-03, US-02, US-12, US-13, US-18, US-21 y US-36) |
 
 ### 5.2.3.2. Aspect Leaders and Collaborators.
