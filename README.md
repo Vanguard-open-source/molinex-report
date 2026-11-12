@@ -1500,6 +1500,14 @@ La propuesta contempla: un encabezado con navegación (Solution, Features, Plans
 
 **Figura: Wireframe Desktop del Landing Page de Molinex. Fuente: elaboración propia en Figma.**
 
+En la versión Mobile Web Browser, las secciones se apilan en una sola columna y conservan el orden definido en 4.2.1. El menú del encabezado se reduce a un botón de hamburguesa, los dos botones del Hero ocupan todo el ancho y las tarjetas de problemática, funcionalidades y planes pasan de una cuadrícula a una lista vertical. El footer incluye los enlaces a Terms and conditions y Privacy policy. Como la pantalla completa mide casi 25 veces su ancho, la figura la muestra en cinco tramos, de izquierda a derecha: encabezado, Hero y problemática; funcionalidades y audiencias; beneficios y cómo funciona; planes y contacto; footer y textos legales.
+
+<p align="center">
+  <img src="assets/design/landing-wireframe-mobile.webp" alt="Wireframe Mobile del Landing Page de Molinex, en cinco tramos consecutivos" width="90%">
+</p>
+
+**Figura: Wireframe Mobile del Landing Page de Molinex, en cinco tramos. Fuente: elaboración propia en Figma.**
+
 ### 4.3.2 Landing Page Mockup
 
 El mockup aplica sobre el wireframe el Design System definido en 4.1: Azul Molinex (`#0B4F8A`) como color estructural, Dorado (`#F2B705`) como acento de las acciones principales, y la pareja tipográfica Poppins/Inter. El panel del Hero muestra datos reales de ejemplo (rendimiento 86.4 %, merma 4.8 %) con un indicador "Live" y una alerta de mantenimiento, evidenciando el principio de Visibilidad del estado. La tarjeta de plan Professional se destaca con la insignia "Most flexible" y un botón dorado, siguiendo la proporción 60-30-10 y la regla de no combinar dorado con blanco establecidas en 4.1.1. El footer, en azul oscuro, incluye los enlaces legales que sustentan la sección de Ética y Responsabilidad del informe.
@@ -1511,6 +1519,14 @@ Este mockup corresponde a la versión ya implementada y desplegada del Landing P
 </p>
 
 **Figura: Mockup Desktop del Landing Page de Molinex. Fuente: elaboración propia en Figma.**
+
+La versión móvil conserva la paleta y la tipografía del Design System de 4.1. El botón dorado "Improve your mill" y el de "Learn more" del plan Professional siguen siendo los elementos de mayor contraste, por lo que la jerarquía de acciones es la misma que en escritorio. El panel del Hero se muestra a ancho completo bajo los botones. La figura sigue la misma división en cinco tramos que el wireframe.
+
+<p align="center">
+  <img src="assets/design/landing-mockup-mobile.webp" alt="Mockup Mobile del Landing Page de Molinex, en cinco tramos consecutivos" width="90%">
+</p>
+
+**Figura: Mockup Mobile del Landing Page de Molinex, en cinco tramos. Fuente: elaboración propia en Figma.**
 
 _Archivo de diseño en Figma:_ `https://www.figma.com/design/QytNXR0eMrUtT5MNpJarbK/Figma-Molinex`
 
