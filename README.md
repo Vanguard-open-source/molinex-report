@@ -1747,6 +1747,8 @@ El diagrama separa explícitamente la `Web Application` de la `Single Page Appli
 
 Los diagramas de componentes se organizan por producto de software y por límite funcional. Para cada producto se presenta primero una vista general y luego una vista detallada por Bounded Context, además de la estructura compartida correspondiente. Esta separación evita mezclar los límites propios de la SPA de Angular con los del monolito modular de Spring Boot.
 
+Dentro de cada producto, los Bounded Contexts se presentan según su tipo de subdominio, como se clasificó en 4.6.1: primero los Core (`Production Management`, `Quality and Yield Control`, `Asset and Maintenance Management` y `Operational Intelligence`), luego los Supporting (`Commercial Engagement` y `Reporting and Analytics`) y al final el Generic (`Identity and Access Management`). Los módulos compartidos van al cierre porque no son Bounded Contexts.
+
 #### Frontend Component Diagrams
 
 La vista general muestra las áreas funcionales internas de la Single Page Application y su acceso a la RESTful API. En las vistas detalladas, cada área se organiza mediante los límites Presentation, Application, Domain e Infrastructure. El Frontend Shared Module reúne capacidades transversales de interfaz, sesión y comunicación HTTP; únicamente Weight y MeasurementUnit corresponden al modelo compartido entre Producción y Calidad.
@@ -1758,22 +1760,6 @@ La vista general muestra las áreas funcionales internas de la Single Page Appli
 </p>
 
 **Figura: Molinex Frontend Component Overview. Fuente: elaboración propia en Structurizr.**
-
-##### Commercial Engagement Frontend Components
-
-<p align="center">
-  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/frontend-commercial-engagement-component-diagram.svg" alt="Commercial Engagement Frontend Component Diagram" width="100%">
-</p>
-
-**Figura: Commercial Engagement Frontend Component Diagram. Fuente: elaboración propia en Structurizr.**
-
-##### Identity and Access Management Frontend Components
-
-<p align="center">
-  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/frontend-identity-access-management-component-diagram.svg" alt="Identity and Access Management Frontend Component Diagram" width="100%">
-</p>
-
-**Figura: Identity and Access Management Frontend Component Diagram. Fuente: elaboración propia en Structurizr.**
 
 ##### Production Management Frontend Components
 
@@ -1807,6 +1793,14 @@ La vista general muestra las áreas funcionales internas de la Single Page Appli
 
 **Figura: Operational Intelligence Frontend Component Diagram. Fuente: elaboración propia en Structurizr.**
 
+##### Commercial Engagement Frontend Components
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/frontend-commercial-engagement-component-diagram.svg" alt="Commercial Engagement Frontend Component Diagram" width="100%">
+</p>
+
+**Figura: Commercial Engagement Frontend Component Diagram. Fuente: elaboración propia en Structurizr.**
+
 ##### Reporting and Analytics Frontend Components
 
 <p align="center">
@@ -1814,6 +1808,14 @@ La vista general muestra las áreas funcionales internas de la Single Page Appli
 </p>
 
 **Figura: Reporting and Analytics Frontend Component Diagram. Fuente: elaboración propia en Structurizr.**
+
+##### Identity and Access Management Frontend Components
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/frontend-identity-access-management-component-diagram.svg" alt="Identity and Access Management Frontend Component Diagram" width="100%">
+</p>
+
+**Figura: Identity and Access Management Frontend Component Diagram. Fuente: elaboración propia en Structurizr.**
 
 ##### Frontend Shared Module Components
 
@@ -1834,22 +1836,6 @@ La vista general representa los módulos de los Bounded Contexts que conviven de
 </p>
 
 **Figura: Molinex Backend Component Overview. Fuente: elaboración propia en Structurizr.**
-
-##### Commercial Engagement Backend Components
-
-<p align="center">
-  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/backend-commercial-engagement-component-diagram.svg" alt="Commercial Engagement Backend Component Diagram" width="100%">
-</p>
-
-**Figura: Commercial Engagement Backend Component Diagram. Fuente: elaboración propia en Structurizr.**
-
-##### Identity and Access Management Backend Components
-
-<p align="center">
-  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/backend-identity-access-management-component-diagram.svg" alt="Identity and Access Management Backend Component Diagram" width="100%">
-</p>
-
-**Figura: Identity and Access Management Backend Component Diagram. Fuente: elaboración propia en Structurizr.**
 
 ##### Production Management Backend Components
 
@@ -1883,6 +1869,14 @@ La vista general representa los módulos de los Bounded Contexts que conviven de
 
 **Figura: Operational Intelligence Backend Component Diagram. Fuente: elaboración propia en Structurizr.**
 
+##### Commercial Engagement Backend Components
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/backend-commercial-engagement-component-diagram.svg" alt="Commercial Engagement Backend Component Diagram" width="100%">
+</p>
+
+**Figura: Commercial Engagement Backend Component Diagram. Fuente: elaboración propia en Structurizr.**
+
 ##### Reporting and Analytics Backend Components
 
 <p align="center">
@@ -1890,6 +1884,14 @@ La vista general representa los módulos de los Bounded Contexts que conviven de
 </p>
 
 **Figura: Reporting and Analytics Backend Component Diagram. Fuente: elaboración propia en Structurizr.**
+
+##### Identity and Access Management Backend Components
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/backend-identity-access-management-component-diagram.svg" alt="Identity and Access Management Backend Component Diagram" width="100%">
+</p>
+
+**Figura: Identity and Access Management Backend Component Diagram. Fuente: elaboración propia en Structurizr.**
 
 ##### Production-Quality Shared Kernel Components
 
@@ -1905,6 +1907,8 @@ La vista general representa los módulos de los Bounded Contexts que conviven de
 
 El modelado se presenta por Bounded Context; por ello, no existe un único modelo de clases global que permita acceder directamente a los objetos internos de todos los módulos.
 
+Los modelos de clases siguen el mismo orden que 4.6.4: Core, Supporting y Generic Subdomain, según la clasificación de 4.6.1.
+
 Los diagramas representan el diseño orientado a objetos del dominio y no un esquema de base de datos. Los atributos se mantienen privados, las operaciones públicas expresan comportamientos que protegen invariantes y cada Aggregate Root dispone de su propio contrato de repositorio. Las referencias hacia otros Aggregates se expresan mediante identificadores tipados. Cuando dos contextos representan la misma identidad, cada uno define su propio tipo local en lugar de importar el modelo interno del otro.
 
 | Notación | Significado en el diseño |
@@ -1917,26 +1921,6 @@ Los diagramas representan el diseño orientado a objetos del dominio y no un esq
 | `<<Read Model>>` | Proyección optimizada para consulta que no modifica el modelo transaccional. |
 | `<<Published Language>>` | Contrato estable utilizado para intercambiar información sin compartir modelos internos. |
 | `<<Port>>` | Frontera que desacopla el dominio de una integración externa. |
-
-#### Commercial Engagement Bounded Context
-
-`CommercialInquiry` es el único Aggregate Root transaccional. Los planes y la propuesta de valor se mantienen como modelos de lectura porque los requisitos no confirman contratación, pago ni activación de suscripciones.
-
-<p align="center">
-  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/commercial-engagement-class-diagram.svg" alt="Commercial Engagement Bounded Context Class Diagram" width="100%">
-</p>
-
-**Figura: Commercial Engagement Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
-
-#### Identity and Access Management Bounded Context
-
-`User` protege la validez de la cuenta, el perfil y el rol asignado. La unicidad global del correo se evalúa mediante `UniqueEmailPolicy`, que consulta el contrato `UserRepository`, porque una instancia aislada de `User` no puede conocer las demás cuentas. Los otros contextos no reciben el Aggregate: consumen únicamente `AuthenticatedPrincipal`, definido como Published Language.
-
-<p align="center">
-  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/identity-access-management-class-diagram.svg" alt="Identity and Access Management Bounded Context Class Diagram" width="100%">
-</p>
-
-**Figura: Identity and Access Management Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
 
 #### Production Management Bounded Context
 
@@ -1978,6 +1962,16 @@ Los diagramas representan el diseño orientado a objetos del dominio y no un esq
 
 **Figura: Operational Intelligence Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
 
+#### Commercial Engagement Bounded Context
+
+`CommercialInquiry` es el único Aggregate Root transaccional. Los planes y la propuesta de valor se mantienen como modelos de lectura porque los requisitos no confirman contratación, pago ni activación de suscripciones.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/commercial-engagement-class-diagram.svg" alt="Commercial Engagement Bounded Context Class Diagram" width="100%">
+</p>
+
+**Figura: Commercial Engagement Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
+
 #### Reporting and Analytics Bounded Context
 
 Reporting and Analytics se modela como un *read side*: consume eventos expresados mediante Published Language, construye proyecciones propias y responde consultas. No se introduce un Aggregate Root para reportes porque los requisitos actuales no establecen identidad, versionado, aprobación ni ciclo de vida transaccional para ellos.
@@ -1987,6 +1981,16 @@ Reporting and Analytics se modela como un *read side*: consume eventos expresado
 </p>
 
 **Figura: Reporting and Analytics Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
+
+#### Identity and Access Management Bounded Context
+
+`User` protege la validez de la cuenta, el perfil y el rol asignado. La unicidad global del correo se evalúa mediante `UniqueEmailPolicy`, que consulta el contrato `UserRepository`, porque una instancia aislada de `User` no puede conocer las demás cuentas. Los otros contextos no reciben el Aggregate: consumen únicamente `AuthenticatedPrincipal`, definido como Published Language.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/identity-access-management-class-diagram.svg" alt="Identity and Access Management Bounded Context Class Diagram" width="100%">
+</p>
+
+**Figura: Identity and Access Management Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
 
 ## 4.8 Database Design
 
