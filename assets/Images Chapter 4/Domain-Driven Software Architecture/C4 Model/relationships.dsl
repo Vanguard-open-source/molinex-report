@@ -6,9 +6,9 @@ sensorGateway -> molinex "Sends planned operational readings to Molinex." "HTTPS
 molinex -> notificationService "Sends planned account and operational alert notifications to." "HTTPS API or SMTP"
 
 visitor -> molinex.landingPage "Explores product information using" "HTTPS"
-administrator -> molinex.spa "Administers users and supervises operations using" "HTTPS"
-maintenanceTechnician -> molinex.spa "Manages machines, maintenance and alerts using" "HTTPS"
-productionOperator -> molinex.spa "Records production and quality information using" "HTTPS"
+administrator -> molinex.webApplication "Accesses Molinex through" "HTTPS"
+maintenanceTechnician -> molinex.webApplication "Accesses Molinex through" "HTTPS"
+productionOperator -> molinex.webApplication "Accesses Molinex through" "HTTPS"
 molinex.landingPage -> molinex.apiApplication "Submits commercial inquiries to" "JSON/HTTPS REST"
 molinex.webApplication -> molinex.spa "Delivers the compiled application to the user's browser" "HTTPS"
 molinex.spa -> molinex.apiApplication "Manages and queries operational information through" "JSON/HTTPS REST"
