@@ -2280,8 +2280,8 @@ A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con e
 | Sprint # | Sprint 1 |
 |:--|:--|
 | **Sprint Planning Background** | |
-| Date | 02-09-2026 |
-| Time | 7:00 PM |
+| Date | 2026-09-02 |
+| Time | 07:00 PM |
 | Location | virtual (videollamada del equipo por Discord) |
 | Prepared By | Gallegos De La Cruz, Giovanni Marcelo |
 | Attendees (to planning meeting) | Gallegos De La Cruz, Giovanni Marcelo / Casalino Berrocal, Luisa Nhiriel / Huerta Cardenas, Brayan Benjamin / Jimenez Saavedra, Antony Alexander / Rivera Rupay, Fabricio Jose |
@@ -2402,8 +2402,8 @@ A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con e
 | Sprint # | Sprint 2 |
 |:--|:--|
 | **Sprint Planning Background** | |
-| **Date** | 03-10-2026 |
-| **Time** | 7:00 PM |
+| **Date** | 2026-10-03 |
+| **Time** | 07:00 PM |
 | **Location** | virtual (videollamada del equipo por Discord) |
 | **Prepared By** | Gallegos De La Cruz, Giovanni Marcelo |
 | **Attendees (to planning meeting)** | Gallegos De La Cruz, Giovanni Marcelo / Casalino Berrocal, Luisa Nhiriel / Huerta Cardenas, Brayan Benjamin / Jimenez Saavedra, Antony Alexander / Rivera Rupay, Fabricio Jose |
@@ -2616,8 +2616,8 @@ A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con e
 | Sprint # | Sprint 3 |
 |:--|:--|
 | **Sprint Planning Background** | |
-| **Date** | 01-11-2026 |
-| **Time** | 7:00 PM|
+| **Date** | 2026-11-01 |
+| **Time** | 07:00 PM |
 | **Location** | virtual (videollamada del equipo por Discord)  |
 | **Prepared By** | Gallegos De La Cruz, Giovanni Marcelo |
 | **Attendees (to planning meeting)** | Gallegos De La Cruz, Giovanni Marcelo / Casalino Berrocal, Luisa Nhiriel / Huerta Cardenas, Brayan Benjamin / Jimenez Saavedra, Antony Alexander / Rivera Rupay, Fabricio Jose |
