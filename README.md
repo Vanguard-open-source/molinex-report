@@ -2148,6 +2148,25 @@ Las ramas específicas y los Pull Requests utilizados durante el Sprint 2 se det
 
 **Figura:** Ramas GitFlow utilizadas para organizar el desarrollo colaborativo de Molinex. Fuente: elaboración propia.
 
+#### Releases por entrega
+
+Cada entrega se cierra con un release en cada repositorio: una rama `release/*` se integra en `main` y el commit resultante se marca con un tag anotado de Git. La tabla indica qué tag y qué commit corresponden a AV1 y TB1, y qué commit quedó realmente desplegado.
+
+| Entrega | Repositorio | Tag | Commit del tag | Commit desplegado | Fecha |
+|:--|:--|:--|:--|:--|:--|
+| AV1 | `molinex-report` | `v1.0.0` | `0a4a743` | No aplica | 2026-09-19 |
+| AV1 | `molinex-website` | `release_v0.0.1` | `0db81b0` | `0db81b0` (GitHub Pages) | 2026-09-18 |
+| TB1 | `molinex-report` | `v2.0.0` | `60e5c56` | No aplica | 2026-10-05 |
+| TB1 | `molinex-website` | `Vn1.0.0` | `32dd6e3` | `32dd6e3` (GitHub Pages) | 2026-10-05 |
+| TB1 | `molinex-webapp` | `v0.1.1` | `c3b9416` | `959513a` (Azure Static Web Apps) | 2026-10-05 |
+| TB1 | `molinex-platform-mock` | Sin tag | No aplica | `902c31d` (Azure App Service) | 2026-10-05 |
+
+- Antes de TB1 se publicaron dos releases intermedios: `Vn0.0.2` (`293a289`) en `molinex-website` y `v0.1.0` (`5551944`) en `molinex-webapp`, ambos el 2026-10-04.
+- Los tags de la landing (`release_v0.0.1`, `Vn0.0.2` y `Vn1.0.0`) se documentan tal como existen en GitHub. No siguen el formato `vMAJOR.MINOR.PATCH` definido arriba y se conservan para no alterar releases ya publicados. El siguiente release de la landing usará ese formato.
+- El commit desplegado de `molinex-webapp` (`959513a`) es posterior al tag y solo agrega el archivo de workflow de Azure Static Web Apps. El código de la aplicación es el del tag `v0.1.1`.
+- El repositorio `molinex-platform-mock` aún no publica tags ni releases, por lo que se identifica por el commit desplegado.
+- En `molinex-report`, `main` avanzó un commit después del tag `v2.0.0` (`f112bb7`, "Update README.md").
+
 ### 5.1.3 Source Code Style Guide & Coding Conventions
 
 El equipo estableció convenciones de código para mantener la legibilidad, consistencia y facilidad de mantenimiento de los productos de Molinex. Estas convenciones se aplican principalmente a la Landing Page, la Web Application y la documentación del proyecto.
@@ -2389,7 +2408,7 @@ La participación en el desarrollo del Sprint 2 se evidencia mediante las ramas 
 | #8 | `feature/sprint2-api-integration` | Fabricio1924 | Integración de la API falsa y de las rutas de los módulos | `05392be` `fix(integration)`, `b8a207d` `chore(api)`, `c1b8a71` `chore(config)` | `server/db.json`, `app.routes.ts`, `angular.json` | 04-10-2026 21:57 |
 | #9 | `feature/configure-production-deployment` | Fabricio1924 | Configuración de despliegue de la Web Application | `c808f57` `feat(environment)`, `b0a65bf` `chore` | `environment.ts`, `public/staticwebapp.config.json` | 05-10-2026 01:18 |
 
-Sobre la rama `main`, se publicaron las versiones `v0.1.0` (04-10-2026) y `v0.1.1` (05-10-2026) mediante ramas `release/*`, con su registro en `CHANGELOG.md`.
+Sobre la rama `main`, se publicaron las versiones `v0.1.0` (04-10-2026) y `v0.1.1` (05-10-2026) mediante ramas `release/*`, con su registro en `CHANGELOG.md`. La tabla de releases por entrega, con sus commits, se encuentra en la sección 5.1.2.
 
 ![Pull Requests cerrados de molinex-webapp](assets/Images%20Chapter%205/Sprint%202/5.2.2.4-01-github-pull-requests.jpg)
 
