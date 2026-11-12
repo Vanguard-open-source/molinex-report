@@ -1750,6 +1750,18 @@ En US-06, `RegisterProductionBatch` requiere un código único y una recepción 
 
 **Figura: Design-Level Event Storming de Production Management. Fuente: elaboración propia en PlantUML.**
 
+#### Diagrama detallado de Quality and Yield Control
+
+El diagrama documenta el diseño de US-11 a US-16. El Operador de Producción registra resultados de calidad y merma, y consulta la composición del arroz y la merma registrada. El Administrador consulta rendimientos, compara indicadores e identifica desviaciones. El diseño prevé emitir `QualityDeviationIdentified` solo si el indicador queda fuera de un rango válido. Las consultas se muestran como operaciones de lectura.
+
+`QualityAssessment` y `WasteRecord` referencian el proceso mediante el `ProductionRecordId` local de Quality. Según el Context Map, Production comunica los cambios de información productiva mediante `ProductionInformationRecorded` y `ProductionInformationUpdated` como parte del Published Language. Quality traduce el identificador a su propio tipo y mantiene sus propios agregados.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/design-level-event-storming-quality-yield-control.svg" alt="Design-Level Event Storming de Quality and Yield Control, historias US-11 a US-16" width="100%">
+</p>
+
+**Figura: Design-Level Event Storming de Quality and Yield Control. Fuente: elaboración propia en PlantUML.**
+
 #### Aggregate boundaries and invariants
 
 Los límites se definieron aplicando cuatro criterios: cada Aggregate protege invariantes dentro de una transacción; debe mantenerse pequeño; las referencias hacia otros Aggregates se expresan mediante identificadores; y los cambios entre Aggregates o Bounded Contexts se propagan mediante Domain Events y consistencia eventual. Por ello, compartir el mismo dato físico no implica compartir la misma clase o el mismo Aggregate.
