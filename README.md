@@ -764,6 +764,122 @@ El presente glosario reúne los términos y conceptos utilizados en el dominio d
 | Whitening | Blanqueado | Proceso mediante el cual se eliminan las capas externas del grano para obtener arroz blanco o pilado. |
 | Polishing | Pulido | Etapa de acabado que mejora la apariencia y limpieza del grano mediante la eliminación de restos de salvado. |
 | Rice Grading | Clasificación del arroz | Proceso de separación del arroz según características como tamaño, calidad y proporción de granos enteros o quebrados. |
+| Paddy Reception | Recepción de arroz cáscara | Actividad mediante la cual el molino recibe la materia prima procedente de los proveedores para iniciar su registro, evaluación y procesamiento. |
+| Paddy Unloading | Descarga de arroz cáscara | Operación mediante la cual se descarga el arroz cáscara de los vehículos de transporte para trasladarlo hacia las áreas de recepción o almacenamiento. |
+| Supplier | Proveedor | Persona o empresa encargada de suministrar arroz cáscara al molino para su procesamiento. |
+| Supplier Evaluation | Evaluación de proveedores | Análisis de los proveedores considerando aspectos como calidad de la materia prima, cantidades entregadas y cumplimiento de los acuerdos de suministro. |
+| Delivery Record | Registro de entrega | Documento que contiene información sobre la entrega de materia prima, incluyendo proveedor, fecha, cantidad y condiciones de recepción. |
+| Gross Weight | Peso bruto | Peso total del vehículo junto con la carga de arroz cáscara antes de descontar el peso del vehículo vacío. |
+| Tare Weight | Peso de tara | Peso del vehículo vacío que se utiliza para calcular la cantidad neta de materia prima recibida. |
+| Net Weight | Peso neto | Cantidad real de arroz cáscara recibida después de descontar el peso del vehículo vacío del peso bruto. |
+| Weighbridge | Báscula camionera | Equipo utilizado para determinar el peso de los vehículos que transportan materia prima o productos terminados hacia o desde el molino. |
+| Moisture Content | Contenido de humedad | Porcentaje de agua presente en el arroz. Es un factor importante para determinar las condiciones de secado, almacenamiento y procesamiento. |
+| Moisture Measurement | Medición de humedad | Procedimiento mediante el cual se determina la cantidad de agua presente en una muestra de arroz utilizando instrumentos de medición. |
+| Impurity Content | Contenido de impurezas | Porcentaje de materiales extraños presentes en el arroz cáscara, como piedras, tierra, polvo y restos vegetales. |
+| Paddy Cleaning | Limpieza de arroz cáscara | Operación destinada a retirar impurezas y materiales extraños presentes en la materia prima antes de continuar con el procesamiento. |
+| Pre-cleaning | Prelimpieza | Primera operación de limpieza del arroz cáscara, en la que se eliminan materiales extraños de mayor tamaño y partículas ligeras. |
+| Screening | Cribado | Operación que permite separar materiales mediante superficies perforadas o mallas según sus dimensiones. |
+| Destoning | Despedrado | Proceso mediante el cual se separan piedras y otros materiales pesados que pueden encontrarse mezclados con el arroz. |
+| Aspiration | Aspiración | Operación que utiliza corrientes de aire para retirar partículas ligeras, polvo y otros materiales presentes durante el procesamiento. |
+| Foreign Matter | Materia extraña | Materiales que no forman parte del arroz y que pueden encontrarse mezclados con la materia prima, como piedras, tierra, restos vegetales y polvo. |
+| Paddy Drying | Secado de arroz cáscara | Proceso mediante el cual se reduce el contenido de humedad del arroz cáscara para alcanzar condiciones adecuadas de almacenamiento y procesamiento. |
+| Drying Temperature | Temperatura de secado | Temperatura del aire utilizado durante el secado, cuya regulación influye en la conservación de las características físicas del grano. |
+| Drying Time | Tiempo de secado | Duración necesaria para reducir la humedad del arroz hasta alcanzar el nivel requerido para su almacenamiento o procesamiento. |
+| Drying Capacity | Capacidad de secado | Cantidad de arroz cáscara que un equipo de secado puede procesar durante un periodo determinado. |
+| Grain Cooling | Enfriamiento del grano | Operación destinada a reducir la temperatura del arroz después del secado para facilitar su conservación y almacenamiento. |
+| Tempering | Reposo de humedad | Periodo durante el cual el arroz permanece en reposo después del secado para favorecer una distribución más uniforme de la humedad dentro del grano. |
+| Paddy Storage | Almacenamiento de arroz cáscara | Actividad de conservación del arroz sin descascarar en espacios destinados a mantener sus condiciones antes de su procesamiento. |
+| Storage Conditions | Condiciones de almacenamiento | Conjunto de factores ambientales y físicos, como temperatura, humedad y ventilación, que influyen en la conservación del arroz. |
+| Storage Capacity | Capacidad de almacenamiento | Cantidad máxima de arroz cáscara o producto terminado que puede conservarse en las instalaciones del molino. |
+| Storage Duration | Tiempo de almacenamiento | Periodo durante el cual la materia prima o el producto terminado permanece almacenado antes de ser procesado o despachado. |
+| Aeration | Aireación | Circulación controlada de aire a través del arroz almacenado para contribuir al control de la temperatura y las condiciones de conservación. |
+| Relative Humidity | Humedad relativa | Relación entre la cantidad de vapor de agua presente en el aire y la cantidad máxima que puede contener a una temperatura determinada. |
+| Grain Temperature | Temperatura del grano | Temperatura registrada en el arroz almacenado, utilizada para evaluar sus condiciones de conservación. |
+| Dehusker | Descascaradora | Máquina encargada de retirar la cáscara del arroz cáscara mediante mecanismos de presión y fricción. |
+| Rubber Roll Husker | Descascaradora de rodillos de goma | Máquina que utiliza dos rodillos de goma para separar la cáscara del grano mediante presión y fricción controladas. |
+| Paddy Separator | Separadora de arroz cáscara | Máquina que separa los granos que todavía conservan su cáscara de aquellos que ya han sido descascarados. |
+| Rice Whitener | Blanqueadora de arroz | Máquina utilizada para eliminar las capas externas del arroz integral y obtener arroz blanco. |
+| Rice Polisher | Pulidora de arroz | Equipo que mejora la apariencia superficial del arroz blanco mediante una operación de pulido. |
+| Rice Grader Machine | Máquina clasificadora de arroz | Equipo utilizado para separar los granos según sus dimensiones y características físicas, permitiendo obtener diferentes categorías de producto. |
+| Color Sorter | Clasificadora óptica | Máquina que identifica y separa granos según sus características de color y apariencia mediante sensores y mecanismos de selección. |
+| Bucket Elevator | Elevador de cangilones | Equipo utilizado para transportar arroz verticalmente mediante recipientes fijados a una banda o cadena. |
+| Belt Conveyor | Transportador de faja | Sistema mecánico que utiliza una banda continua para trasladar arroz entre diferentes etapas y áreas del molino. |
+| Screw Conveyor | Transportador helicoidal | Equipo que utiliza un tornillo giratorio para desplazar arroz u otros materiales a través de un conducto. |
+| Paddy Hopper | Tolva de arroz cáscara | Recipiente utilizado para recibir y almacenar temporalmente el arroz antes de alimentar una máquina o etapa del proceso. |
+| Grain Feeder | Alimentador de granos | Dispositivo que regula la cantidad de arroz suministrada a una máquina para mantener un flujo adecuado durante el procesamiento. |
+| Dust Collector | Colector de polvo | Equipo encargado de recoger partículas de polvo generadas durante las operaciones de limpieza, transporte y procesamiento del arroz. |
+| Rice Husk | Cáscara de arroz | Cubierta externa que protege el grano y que se retira durante la etapa de descascarado. |
+| Rice Bran | Salvado de arroz | Subproducto obtenido durante el blanqueado, compuesto por las capas externas que se eliminan del grano. |
+| Rice Husk Recovery | Recuperación de cáscara | Cantidad de cáscara obtenida y recolectada durante el proceso de descascarado del arroz. |
+| Bran Recovery | Recuperación de salvado | Cantidad de salvado recuperada durante las operaciones de blanqueado del arroz. |
+| Byproduct | Subproducto | Material secundario obtenido durante el procesamiento del arroz, como cáscara, salvado y arroz quebrado. |
+| Byproduct Management | Gestión de subproductos | Conjunto de actividades destinadas a recolectar, clasificar, almacenar y aprovechar los materiales obtenidos como resultado del procesamiento del arroz. |
+| Broken Rice | Arroz quebrado | Fragmentos de granos generados durante el procesamiento que se separan del arroz entero mediante operaciones de clasificación. |
+| Whole Grain | Grano entero | Grano de arroz que conserva su integridad física después del procesamiento y cumple con las características establecidas para su clasificación. |
+| Whole Grain Percentage | Porcentaje de grano entero | Proporción de arroz entero obtenida respecto de la cantidad total de arroz pilado producido durante el procesamiento. |
+| Broken Grain Percentage | Porcentaje de grano quebrado | Proporción de fragmentos de arroz obtenidos respecto de la cantidad total de arroz pilado producido. |
+| Rice Yield | Rendimiento de arroz | Relación entre la cantidad de arroz pilado obtenida y la cantidad de arroz cáscara utilizada como materia prima. |
+| Milling Recovery | Recuperación de pilado | Porcentaje de producto aprovechable obtenido después del procesamiento del arroz cáscara. |
+| Milling Loss | Pérdida de pilado | Cantidad de materia prima que no se convierte en producto aprovechable durante las operaciones de pilado. |
+| Production Loss | Pérdida de producción | Disminución de la cantidad de producto esperado debido a fallas, desperdicios, condiciones inadecuadas o problemas durante el procesamiento. |
+| Waste | Desperdicio | Material que se pierde o descarta durante las actividades de producción y que no se incorpora al producto final. |
+| Merma | Merma | Disminución de la cantidad o peso de la materia prima o producto durante las operaciones de recepción, almacenamiento o procesamiento. |
+| Material Balance | Balance de materiales | Comparación entre las cantidades de materia prima ingresadas y las cantidades de productos y subproductos obtenidos durante el procesamiento. |
+| Processing Capacity | Capacidad de procesamiento | Cantidad de arroz cáscara que una máquina o etapa puede procesar durante un periodo determinado. |
+| Production Volume | Volumen de producción | Cantidad total de arroz procesado u obtenido durante una jornada, turno o periodo de trabajo. |
+| Production Target | Meta de producción | Cantidad de arroz que el molino espera procesar u obtener durante un periodo determinado. |
+| Production Schedule | Programa de producción | Organización de las actividades productivas mediante la asignación de cantidades, fechas y horarios de procesamiento. |
+| Production Order | Orden de producción | Documento que establece la cantidad de arroz que debe procesarse y las condiciones generales de la actividad productiva. |
+| Quality Inspection | Inspección de calidad | Evaluación de las características físicas y condiciones del arroz mediante observaciones, mediciones y análisis de muestras. |
+| Quality Standard | Estándar de calidad | Conjunto de características y criterios establecidos para determinar si la materia prima o el producto terminado cumple con las condiciones requeridas. |
+| Quality Parameter | Parámetro de calidad | Característica medible utilizada para evaluar las condiciones del arroz, como humedad, tamaño, color, impurezas y proporción de granos enteros. |
+| Grain Length | Longitud del grano | Medida que representa la dimensión longitudinal del grano de arroz y permite evaluar sus características físicas y clasificación. |
+| Grain Width | Ancho del grano | Medida correspondiente a la dimensión transversal del grano que permite complementar su caracterización física. |
+| Grain Shape | Forma del grano | Característica física determinada por la proporción entre la longitud y el ancho del grano de arroz. |
+| Grain Uniformity | Uniformidad del grano | Grado de semejanza entre los granos de un lote considerando características como tamaño, forma y apariencia. |
+| Chalky Grain | Grano yesoso | Grano que presenta zonas blancas y opacas en su interior, característica que puede afectar su apariencia y clasificación comercial. |
+| Damaged Grain | Grano dañado | Grano que presenta alteraciones físicas o deterioro que afectan su integridad y pueden disminuir su aceptación comercial. |
+| Discolored Grain | Grano decolorado | Grano que presenta cambios de color respecto de la apariencia habitual del arroz y que puede afectar la calidad del producto. |
+| Immature Grain | Grano inmaduro | Grano que no ha completado adecuadamente su desarrollo durante el cultivo y que puede presentar características físicas diferentes a las del arroz maduro. |
+| Rice Sample | Muestra de arroz | Cantidad representativa de arroz extraída de un lote para realizar mediciones, inspecciones y evaluaciones de calidad. |
+| Sampling | Muestreo | Procedimiento mediante el cual se selecciona una cantidad representativa de arroz para analizar sus características. |
+| Sample Analysis | Análisis de muestra | Evaluación de una muestra de arroz para determinar características como humedad, impurezas, integridad y proporción de granos enteros y quebrados. |
+| Defect Rate | Tasa de defectos | Proporción de granos o productos que presentan características no conformes respecto del total evaluado. |
+| Acceptance Criteria | Criterios de aceptación | Condiciones establecidas para determinar si una cantidad de materia prima o producto terminado cumple con los requisitos de calidad del molino. |
+| Nonconformity | No conformidad | Incumplimiento de una característica o condición establecida para la materia prima, el producto terminado o una actividad del proceso. |
+| Machine | Máquina | Equipo utilizado para ejecutar una operación específica durante las diferentes etapas del procesamiento industrial del arroz. |
+| Equipment | Equipo | Conjunto de dispositivos y componentes utilizados para realizar actividades de producción, transporte, almacenamiento o mantenimiento dentro del molino. |
+| Machine Component | Componente de máquina | Pieza o elemento que forma parte de una máquina y que contribuye a su funcionamiento mecánico, eléctrico u operativo. |
+| Machine Operation | Operación de maquinaria | Actividad mediante la cual una máquina realiza la función para la que fue diseñada durante el procesamiento del arroz. |
+| Machine Condition | Estado de maquinaria | Situación en la que se encuentra una máquina considerando su funcionamiento, desgaste, temperatura, vibración y condiciones generales. |
+| Machine Availability | Disponibilidad de maquinaria | Capacidad de una máquina para encontrarse en condiciones de funcionamiento cuando se requiere realizar una actividad productiva. |
+| Machine Performance | Rendimiento de maquinaria | Capacidad de una máquina para procesar cantidades determinadas de arroz durante un periodo y bajo condiciones específicas. |
+| Machine Failure | Falla de maquinaria | Situación en la que una máquina deja de funcionar correctamente o pierde la capacidad de realizar la operación para la que fue diseñada. |
+| Mechanical Failure | Falla mecánica | Problema ocasionado por el deterioro, rotura, desgaste o funcionamiento incorrecto de los componentes mecánicos de una máquina. |
+| Electrical Failure | Falla eléctrica | Problema relacionado con los circuitos, conexiones, motores o componentes eléctricos que impide el funcionamiento adecuado de una máquina. |
+| Unexpected Shutdown | Parada inesperada | Interrupción no planificada del funcionamiento de una máquina que puede afectar la continuidad de la producción. |
+| Downtime | Tiempo de inactividad | Periodo durante el cual una máquina permanece detenida y no puede realizar sus actividades productivas. |
+| Equipment Inspection | Inspección de equipos | Revisión de las condiciones físicas y operativas de una máquina para identificar desgaste, daños o posibles fallas. |
+| Component Wear | Desgaste de componentes | Deterioro progresivo de las piezas de una máquina debido al uso, fricción y condiciones de funcionamiento. |
+| Bearing | Rodamiento | Componente mecánico que facilita el movimiento giratorio de un eje y reduce la fricción entre las piezas móviles. |
+| Drive Belt | Faja de transmisión | Elemento flexible utilizado para transmitir movimiento y potencia entre diferentes componentes de una máquina. |
+| Pulley | Polea | Elemento mecánico que trabaja junto con una faja para transmitir movimiento entre ejes de una máquina. |
+| Gear | Engranaje | Componente mecánico dentado que permite transmitir movimiento y fuerza entre diferentes partes de una máquina. |
+| Drive Shaft | Eje de transmisión | Componente mecánico encargado de transmitir movimiento giratorio y potencia entre los elementos de una máquina. |
+| Gearbox | Caja reductora | Mecanismo que modifica la velocidad de rotación y transmite movimiento hacia los componentes de una máquina. |
+| Electric Motor | Motor eléctrico | Dispositivo que transforma energía eléctrica en energía mecánica para accionar las máquinas utilizadas en el molino. |
+| Lubrication | Lubricación | Aplicación de sustancias lubricantes entre superficies móviles para reducir la fricción y evitar el desgaste prematuro de los componentes. |
+| Overheating | Sobrecalentamiento | Incremento anormal de temperatura en una máquina o componente que puede afectar su funcionamiento y provocar daños. |
+| Excessive Vibration | Vibración excesiva | Movimiento oscilatorio superior al esperado durante el funcionamiento de una máquina que puede indicar desequilibrio, desalineación o deterioro. |
+| Preventive Maintenance | Mantenimiento preventivo | Actividades programadas que se realizan periódicamente para reducir la posibilidad de fallas y conservar las condiciones de funcionamiento de las máquinas. |
+| Corrective Maintenance | Mantenimiento correctivo | Actividades realizadas para reparar una máquina o componente después de que se presenta una falla o avería. |
+| Predictive Maintenance | Mantenimiento predictivo | Estrategia que utiliza información sobre las condiciones y el comportamiento de las máquinas para anticipar posibles fallas y planificar intervenciones. |
+| Maintenance Schedule | Programa de mantenimiento | Plan que establece las actividades de mantenimiento que deben realizarse, sus fechas, frecuencias y responsables. |
+| Maintenance Record | Registro de mantenimiento | Información documentada sobre las inspecciones, reparaciones y actividades realizadas a una máquina durante su funcionamiento. |
+| Maintenance History | Historial de mantenimiento | Conjunto de registros de las intervenciones, fallas, reparaciones y reemplazos realizados a una máquina a lo largo del tiempo. |
+| Maintenance Task | Tarea de mantenimiento | Actividad específica que debe realizarse para inspeccionar, ajustar, conservar o reparar una máquina o componente. |
+| Maintenance Inspection | Inspección de mantenimiento | Revisión de una máquina para identificar condiciones que puedan requerir limpieza, lubricación, ajuste, reparación o reemplazo de componentes. |
+
 
 <div style="page-break-after: always;"></div>
 
