@@ -1878,7 +1878,7 @@ El diagrama de contexto presenta a Molinex como un único sistema de software, m
 
 ### 4.6.3 Software Architecture Container Diagrams
 
-El diagrama separa explícitamente la `Web Application` de la `Single Page Application`. La primera utiliza Nginx para servir al navegador los archivos estáticos generados por `ng build`; la SPA contiene la aplicación Angular que se ejecuta en el navegador. Por ello, el flujo principal es `Web Application → Single Page Application → RESTful API`. Los usuarios interactúan con la SPA, mientras que esta consume la API mediante JSON sobre HTTPS. La Landing Page se mantiene como un contenedor independiente porque cubre la experiencia pública y únicamente envía solicitudes comerciales a la API.
+El administrador, el técnico de mantenimiento y el operario de producción acceden a Molinex por HTTPS mediante el contenedor Web Application. Nginx sirve los archivos estáticos de la SPA Angular, que se ejecuta en el navegador y consume la RESTful API mediante JSON sobre HTTPS. La Landing Page se mantiene como un contenedor independiente que presenta la oferta pública y envía solicitudes comerciales a la API.
 
 <p align="center">
   <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/container-diagram.svg" alt="Software Architecture Container Diagram de Molinex" width="100%">
