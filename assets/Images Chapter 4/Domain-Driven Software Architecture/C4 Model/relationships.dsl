@@ -50,6 +50,8 @@ molinex.spa.identityApplication -> molinex.spa.identityInfrastructure "Authentic
 molinex.spa.identityInfrastructure -> molinex.spa.identityDomain "Maps API resources to"
 molinex.spa.identityInfrastructure -> molinex.apiApplication "Invokes identity endpoints on" "JSON/HTTPS REST"
 
+productionOperator -> molinex.spa.productionPresentation "Registers production batches through"
+
 molinex.spa.productionPresentation -> molinex.spa.productionApplication "Dispatches production actions and reads state from"
 molinex.spa.productionApplication -> molinex.spa.productionDomain "Uses production models from"
 molinex.spa.productionApplication -> molinex.spa.productionInfrastructure "Loads and persists production data through"

@@ -1912,6 +1912,10 @@ La vista general muestra las áreas funcionales internas de la Single Page Appli
 
 **Figura: Production Management Frontend Component Diagram. Fuente: elaboración propia en Structurizr.**
 
+En el bounded context **Production Management**, el Operador de Producción inicia el registro de un lote de materia prima asociado a una recepción (US-06) en **Production Views**. Las vistas delegan la operación a **Production Management Facade**, implementada por `ProductionManagementStore`, que gestiona el estado y utiliza **Production API Adapter** para enviar la solicitud.
+
+La figura representa la arquitectura objetivo, en la que el adaptador consume la API REST de Spring Boot. En el despliegue de TB1, el frontend Angular consumió la API simulada de `molinex-platform-mock` (JSON Server).
+
 ##### Quality and Yield Control Frontend Components
 
 <p align="center">
