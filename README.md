@@ -2355,11 +2355,58 @@ Los aspectos del Sprint 3 son los Web Services (producción y calidad; mantenimi
 | Jimenez Saavedra, Antony Alexander | saavedraantony-max | C | C| L | C | C |
 | Rivera Rupay, Fabricio Jose | Fabricio1924 | C | C | C | C | L |
 ### 5.2.3.3.Sprint Backlog 3.
+| Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
+|---|---|---|---|---|---:|---|---|
+| TS-01 | Gestionar recursos de producción mediante API | T-S3-PROD-01 | Implementar persistencia productiva con JPA | Implementar recepción, lote y registro productivo respetando referencias, código único, peso válido y vínculo estable con el lote; retomar los modelos iniciados con mock. | 8 | Gallegos De La Cruz, Giovanni Marcelo | Done |
+| TS-01 | Gestionar recursos de producción mediante API | T-S3-PROD-02 | Implementar endpoints productivos y errores | Crear y consultar recursos y actualizar producción; responder según TS-01 E1–E6, sin cambios parciales ante datos o referencias inválidas. | 8 | Gallegos De La Cruz, Giovanni Marcelo | Done |
+| TS-01 | Gestionar recursos de producción mediante API | T-S3-PROD-03 | Comprobar contrato de producción | Verificar persistencia, consulta, actualización, datos inválidos y recursos/referencias inexistentes; registrar resultados y dependencias de acceso pendientes. | 6 | Huerta Cardenas, Brayan Benjamin | To-Review |
+| TS-02 | Consultar indicadores mediante API | T-S3-IND-01 | Preparar fuentes persistentes de indicadores | Integrar datos reales de producción, calidad y merma necesarios para los indicadores, distinguiendo datos faltantes y cero observado; trazar el trabajo con US-11 y US-14 sin contarlo otra vez. | 8 | Casalino Berrocal, Luisa Nhiriel | Done |
+| TS-02 | Consultar indicadores mediante API | T-S3-IND-02 | Implementar cálculos de indicadores | Documentar y validar con el dominio las fórmulas de rendimiento y composición; implementar cálculos con unidades compatibles y bases válidas. | 6 | Casalino Berrocal, Luisa Nhiriel | Done |
+| TS-02 | Consultar indicadores mediante API | T-S3-IND-03 | Exponer consulta de indicadores y errores | Implementar consulta con parámetros válidos, ausencia de datos y rechazo de parámetros inválidos, según TS-02 E1–E3; E4/E5 dependen de IAM y permanecen diferidos. | 4 | Casalino Berrocal, Luisa Nhiriel | Done |
+| TS-02 | Consultar indicadores mediante API | T-S3-IND-04 | Comprobar escenarios de negocio de indicadores | Registrar resultados TS-02 E1–E3 y declarar E4/E5 pendientes de IAM; no aceptar la historia completa si esos criterios siguen sin cumplirse. | 5 | Huerta Cardenas, Brayan Benjamin | To-Review |
+| TS-03 | Gestionar mantenimiento mediante API | T-S3-MAN-01 | Implementar persistencia de maquinaria y mantenimiento | Implementar entidades y repositorios JPA de maquinaria y mantenimiento; alinear el tratamiento de AnomalyId con la regla de dominio acordada. | 6 | Casalino Berrocal, Luisa Nhiriel | Done |
+| TS-03 | Gestionar mantenimiento mediante API | T-S3-MAN-02 | Implementar servicios de mantenimiento | Registrar y consultar mantenimientos con máquina, tipo, fecha, responsable y descripción; manejar datos inválidos y máquina/intervención inexistente. | 6 | Casalino Berrocal, Luisa Nhiriel | Done |
+| TS-03 | Gestionar mantenimiento mediante API | T-S3-MAN-03 | Comprobar contrato de mantenimiento | Verificar TS-03 E1–E5 sobre la API real y registrar por separado las precondiciones de acceso pendientes hasta implementar IAM. | 5 | Jimenez Saavedra, Antony Alexander | To-Review |
+| US-12 | Consultar indicadores de rendimiento | T-12-01 | Integrar consulta de rendimiento en Angular | Conectar la vista de indicadores con la API Spring Boot y mostrar valor, unidad y periodo o conjunto evaluado. | 6 | Jimenez Saavedra, Antony Alexander | Done |
+| US-12 | Consultar indicadores de rendimiento | T-12-02 | Validar rendimiento no calculable | Comprobar US-12 E1–E3: resultado disponible, ausencia de datos y base no válida; no representar falta de información como 0 %. | 4 | Jimenez Saavedra, Antony Alexander | Done |
+| US-13 | Consultar porcentaje de arroz entero y quebrado | T-13-01 | Integrar composición de arroz por lote | Consultar porcentajes de arroz entero y quebrado del lote seleccionado mediante el servicio propio. | 4 | Jimenez Saavedra, Antony Alexander | Done |
+| US-13 | Consultar porcentaje de arroz entero y quebrado | T-13-02 | Validar consulta de composición | Comprobar US-13 E1–E2 e identificar lotes sin resultados sin mostrar datos ajenos o porcentajes ficticios. | 2 | Jimenez Saavedra, Antony Alexander | Done |
+| US-18 | Consultar estado de maquinaria | T-18-01 | Integrar consulta de estado de maquinaria | Mostrar estado operativo y fecha de actualización del equipo consultado utilizando la API real. | 3 | Jimenez Saavedra, Antony Alexander | Done |
+| US-18 | Consultar estado de maquinaria | T-18-02 | Validar existencia del equipo consultado | Comprobar US-18 E1–E2 y distinguir equipo existente de equipo no encontrado. | 2 | Jimenez Saavedra, Antony Alexander | Done |
+| US-21 | Consultar historial de mantenimiento | T-21-01 | Integrar historial de mantenimiento | Mostrar intervenciones del equipo con tipo, fecha, descripción y responsable desde el servicio propio. | 4 | Jimenez Saavedra, Antony Alexander | Done |
+| US-21 | Consultar historial de mantenimiento | T-21-02 | Validar historial y ausencia de registros | Comprobar US-21 E1–E3: historial con datos, máquina sin intervenciones y máquina inexistente. | 3 | Jimenez Saavedra, Antony Alexander | Done |
+| US-36 | Solicitar información comercial | T-36-02 | Persistir la solicitud comercial | Retomar la tarea pendiente de Sprint 1: guardar solicitudes comerciales válidas mediante servicio propio y confirmar recepción después de la persistencia. | 4 | Gallegos De La Cruz, Giovanni Marcelo | Done |
+| US-36 | Solicitar información comercial | T-S3-COM-01 | Integrar formulario comercial y manejo de fallos | Conectar Landing Page al servicio y comprobar US-36 E1–E4: registro, campos requeridos, correo inválido y fallo sin falsa confirmación. | 4 | Huerta Cardenas, Brayan Benjamin | Done |
+| — | Trabajo transversal AV2 | T-S3-BASE-01 | Configurar proyecto backend y base de datos | Configurar Java, Spring Boot, Spring Data JPA, MySQL, entornos y estructura por bounded contexts; documentar las versiones realmente utilizadas. | 6 | Rivera Rupay, Fabricio Jose | Done |
+| — | Trabajo transversal AV2 | T-S3-BASE-02 | Alinear esquema y reglas de dominio | Revisar diagramas, SQL y entidades; resolver diferencias de campos, referencias y fórmulas antes de validar la primera API. | 6 | Rivera Rupay, Fabricio Jose | Done |
+| — | Trabajo transversal AV2 | T-S3-QA-01 | Trazar escenarios, tareas y evidencias | Relacionar las ocho historias seleccionadas y sus 30 escenarios con pruebas o revisiones; marcar explícitamente las dependencias IAM diferidas. | 3 | Todo el equipo | Done |
+| — | Trabajo transversal AV2 | T-S3-QA-02 | Comprobar integración y corregir defectos | Ejecutar verificaciones apropiadas de dominio, API y flujos Angular del alcance; comprobar inglés/español, accesibilidad, persistencia y errores; documentar resultados reales. | 6 | Todo el equipo | To-Review |
+| TS-01, TS-02, TS-03 | Gestionar recursos de producción mediante API / Consultar indicadores mediante API / Gestionar mantenimiento mediante API | T-S3-DOC-01 | Publicar Swagger/OpenAPI del alcance | Documentar rutas, verbos, parámetros, ejemplos y respuestas reales; publicar Swagger UI y registrar repositorio y commits de documentación. | 4 | Gallegos De La Cruz, Giovanni Marcelo | Done |
+| — | Trabajo transversal AV2 | T-S3-LP-01 | Actualizar Landing Page y CTA | Revalidar contenido, idiomas y visualización móvil; conectar CTA por segmento con las vistas entregadas, sin afirmar disponibilidad de funciones pendientes. | 6 | Huerta Cardenas, Brayan Benjamin | Done |
+| — | Trabajo transversal AV2 | T-S3-LP-02 | Incrustar videos de producto y equipo | Incluir About-the-Product y About-the-Team publicados y comprobar su reproducción desde la Landing Page. | 2 | Huerta Cardenas, Brayan Benjamin | To-do |
+| — | Trabajo transversal AV2 | T-S3-DEP-01 | Desplegar primera API propia y base de datos | Publicar backend real y persistencia, verificar recuperación de registros y documentación accesible; conservar evidencia de configuración y despliegue. | 6 | Rivera Rupay, Fabricio Jose | Done |
+| — | Trabajo transversal AV2 | T-S3-DEP-02 | Desplegar nueva Web Application | Publicar Angular con la URL real de servicios para el alcance y verificar navegación, recarga de rutas e integración. | 3 | Rivera Rupay, Fabricio Jose | Done |
+| — | Trabajo transversal AV2 | T-S3-DEP-03 | Desplegar nueva Landing Page | Publicar cambios AV2 y verificar CTA, formulario, idiomas y videos. | 2 | Huerta Cardenas, Brayan Benjamin | Done |
+| — | Trabajo transversal AV2 | T-S3-VAL-01 | Diseñar validaciones por segmento | Definir tareas, user flows, preguntas y registro de resultados para gerentes, técnicos y operarios usando funciones disponibles. | 3 | Huerta Cardenas, Brayan Benjamin | Done |
+| — | Trabajo transversal AV2 | T-S3-VAL-02 | Realizar entrevistas de validación | Realizar y registrar de 3 a 5 sesiones por cada uno de los tres segmentos; consolidar evidencia, datos, tiempos, capturas y resúmenes reales. | 8 | Todo el equipo | Done |
+| — | Trabajo transversal AV2 | T-S3-VAL-03 | Evaluar heurísticas y registrar mejoras | Aplicar Anexo D con usabilidad, diseño inclusivo y arquitectura de información; registrar severidad 1–4, captura, recomendación y correcciones reales. | 4 | Huerta Cardenas, Brayan Benjamin | In-Process |
+| — | Trabajo transversal AV2 | T-S3-VID-01 | Publicar About-the-Product | Producir MP4 de 1–3 minutos con escenas del producto y una opinión por segmento, al menos una positiva de validación; publicar en Stream y YouTube. | 4 | Todo el equipo | Done |
+| — | Trabajo transversal AV2 | T-S3-VID-02 | Publicar About-the-Team | Registrar sesiones reales, narración y testimonios de los cinco miembros sobre actividades, outcomes y competencias; publicar en Stream y YouTube. | 4 | Todo el equipo | In-Process |
+| — | Trabajo transversal AV2 | T-S3-REP-01 | Consolidar evidencias y documentación AV2 | Actualizar informe, registro de versiones, colaboración, Student Outcome, conclusiones, bibliografía, anexos y materiales de exposición. | 6 | Todo el equipo | To-do |
+
+![Sprint Backlog 3.png](assets/Images%20Chapter%205/Sprint%20Backlog%203.png)
+Link:https://trello.com/invite/b/6aa9c4fdfc659047df591de0/ATTI907effe44c9315a41519954d192d71f48A54EF45/molinex
+
 ### 5.2.3.4.Development Evidence for Sprint Review.
 ### 5.2.3.5.Execution Evidence for Sprint Review.
-
-
-
+### 5.2.3.6.Services Documentation Evidence for Sprint Review.
+### 5.2.3.7.Software Deployment Evidence for Sprint Review.
+### 5.2.3.8.Team Collaboration Insights during Sprint.
+### 5.3. Validation Interviews.
+### 5.3.1. Diseño de Entrevistas.
+### 5.3.2. Registro de Entrevistas.
+### 5.3.3. Evaluaciones según heurísticas.
+### 5.4. Video About-the-Product.
 # Conclusiones
 
 ## Conclusiones y recomendaciones
