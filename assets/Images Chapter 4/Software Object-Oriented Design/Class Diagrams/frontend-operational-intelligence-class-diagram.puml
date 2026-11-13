@@ -1,0 +1,272 @@
+@startuml
+title Molinex Open Source - Operational Intelligence Frontend Class Diagram
+left to right direction
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+package "Application" #EAF3F8 {
+  class OperationalIntelligenceStore <<Angular Signals Store>> {
+    -#intelligenceApi : IntelligenceApi
+    -#readingsSignal : WritableSignal<OperationalReading[]>
+    -#anomaliesSignal : WritableSignal<OperationalAnomaly[]>
+    -#alertsSignal : WritableSignal<Alert[]>
+    -#recommendationsSignal : WritableSignal<MaintenanceRecommendation[]>
+    +readings : Signal<OperationalReading[]>
+    +anomalies : Signal<OperationalAnomaly[]>
+    +alerts : Signal<Alert[]>
+    +recommendations : Signal<MaintenanceRecommendation[]>
+    +loading : Signal<boolean>
+    +error : Signal<OperationalIntelligenceOperationError?>
+    --
+    +reloadReadings() : void
+    +reloadAnomalies() : void
+    +reloadAlerts() : void
+    +acknowledgeAlert(id : AlertId) : void
+    +reloadRecommendations() : void
+  }
+}
+
+package "Domain Model" #E8F4D4 {
+  class OperationalReading <<Aggregate Root>> {
+    -#id : OperationalReadingId
+    -#machineId : MachineId
+    -#measurement : OperationalMeasurement
+    -#recordedAt : ReadingDateTime
+    --
+    +id : OperationalReadingId
+    +machineId : MachineId
+    +measurement : OperationalMeasurement
+    +recordedAt : ReadingDateTime
+    +{static} record(machineId, measurement, recordedAt) : OperationalReading
+  }
+
+  class OperationalAnomaly <<Aggregate Root>> {
+    -#id : OperationalAnomalyId
+    -#readingId : OperationalReadingId
+    -#measurement : OperationalMeasurement
+    -#criterion : EvaluationCriterion
+    -#detectedAt : DetectionDateTime
+    -#status : AnomalyStatus
+    --
+    +id : OperationalAnomalyId
+    +readingId : OperationalReadingId
+    +measurement : OperationalMeasurement
+    +criterion : EvaluationCriterion
+    +detectedAt : DetectionDateTime
+    +status : AnomalyStatus
+    +acknowledge() : void
+    +resolve() : void
+  }
+
+  class Alert <<Aggregate Root>> {
+    -#id : AlertId
+    -#anomalyId : OperationalAnomalyId
+    -#priority : AlertPriority
+    -#status : AlertStatus
+    -#generatedAt : AlertGenerationDateTime
+    --
+    +id : AlertId
+    +anomalyId : OperationalAnomalyId
+    +priority : AlertPriority
+    +status : AlertStatus
+    +generatedAt : AlertGenerationDateTime
+    +acknowledge() : void
+    +close() : void
+  }
+
+  class OperationalReadingId <<Value Object>> {
+    -#value : number
+    +value : number
+  }
+  class OperationalAnomalyId <<Value Object>> {
+    -#value : number
+    +value : number
+  }
+  class AlertId <<Value Object>> {
+    -#value : number
+    +value : number
+  }
+  class MachineId <<Value Object>> {
+    -#value : number
+    +value : number
+  }
+  class VariableName <<Value Object>> {
+    -#value : string
+    +value : string
+  }
+  class MeasurementValue <<Value Object>> {
+    -#value : number
+    +value : number
+  }
+  class UnitSymbol <<Value Object>> {
+    -#value : string
+    +value : string
+  }
+  class ReadingDateTime <<Value Object>> {
+    -#value : Date
+    +value : Date
+  }
+  class DetectionDateTime <<Value Object>> {
+    -#value : Date
+    +value : Date
+  }
+  class AlertGenerationDateTime <<Value Object>> {
+    -#value : Date
+    +value : Date
+  }
+  class OperationalMeasurement <<Value Object>> {
+    -#variable : VariableName
+    -#value : MeasurementValue
+    -#unit : UnitSymbol
+    +variable : VariableName
+    +value : MeasurementValue
+    +unit : UnitSymbol
+  }
+  class EvaluationCriterion <<Value Object>> {
+    -#minimum : MeasurementValue
+    -#maximum : MeasurementValue
+    +minimum : MeasurementValue
+    +maximum : MeasurementValue
+    +isViolatedBy(value : MeasurementValue) : boolean
+  }
+  class SuggestedAction <<Value Object>> {
+    -#value : string
+    +value : string
+  }
+
+  class MaintenanceRecommendation <<Read Model>> {
+    +machineId : MachineId
+    +anomalyId : OperationalAnomalyId
+    +suggestedAction : SuggestedAction
+    +priority : AlertPriority
+  }
+
+  enum AnomalyStatus <<Enumeration>> {
+    DETECTED
+    ACKNOWLEDGED
+    RESOLVED
+  }
+  enum AlertPriority <<Enumeration>> {
+    LOW
+    MEDIUM
+    HIGH
+    CRITICAL
+  }
+  enum AlertStatus <<Enumeration>> {
+    OPEN
+    ACKNOWLEDGED
+    CLOSED
+  }
+}
+
+package "Infrastructure" #F0E6FA {
+  class IntelligenceApi <<Angular HTTP Service>> {
+    -#readingsEndpoint : OperationalReadingsApiEndpoint
+    -#anomaliesEndpoint : OperationalAnomaliesApiEndpoint
+    -#alertsEndpoint : AlertsApiEndpoint
+    -#recommendationsEndpoint : MaintenanceRecommendationsApiEndpoint
+    --
+    +getReadings() : Observable<OperationalReading[]>
+    +getAnomalies() : Observable<OperationalAnomaly[]>
+    +getAlerts() : Observable<Alert[]>
+    +updateAlert(alert : Alert) : Observable<Alert>
+    +getRecommendations() : Observable<MaintenanceRecommendation[]>
+  }
+
+  class OperationalReadingAssembler <<Assembler>> {
+    +toEntityFromResource(resource : OperationalReadingResource) : OperationalReading
+  }
+  class OperationalAnomalyAssembler <<Assembler>> {
+    +toEntityFromResource(resource : OperationalAnomalyResource) : OperationalAnomaly
+  }
+  class AlertAssembler <<Assembler>> {
+    +toEntityFromResource(resource : AlertResource) : Alert
+    +toResourceFromEntity(entity : Alert) : AlertResource
+  }
+  class MaintenanceRecommendationAssembler <<Assembler>> {
+    +toModelFromResource(resource : MaintenanceRecommendationResource) : MaintenanceRecommendation
+  }
+
+  interface OperationalReadingResource <<Resource>> {
+    +id : number
+    +machineId : number
+    +variableName : string
+    +value : number
+    +unitSymbol : string
+    +recordedAt : string
+  }
+  interface OperationalAnomalyResource <<Resource>> {
+    +id : number
+    +readingId : number
+    +variableName : string
+    +observedValue : number
+    +unitSymbol : string
+    +minimum : number
+    +maximum : number
+    +detectedAt : string
+    +status : string
+  }
+  interface AlertResource <<Resource>> {
+    +id : number
+    +anomalyId : number
+    +priority : string
+    +status : string
+    +generatedAt : string
+  }
+  interface MaintenanceRecommendationResource <<Resource>> {
+    +machineId : number
+    +anomalyId : number
+    +suggestedAction : string
+    +priority : string
+  }
+}
+
+package "Shared References" #FFF2CC {
+  abstract class BaseApi <<Shared Infrastructure>>
+  abstract class BaseApiEndpoint <<Shared Infrastructure>>
+}
+
+OperationalIntelligenceStore o-- "0..*" OperationalReading : holds
+OperationalIntelligenceStore o-- "0..*" OperationalAnomaly : holds
+OperationalIntelligenceStore o-- "0..*" Alert : holds
+OperationalIntelligenceStore o-- "0..*" MaintenanceRecommendation : holds
+OperationalIntelligenceStore ..> IntelligenceApi : uses
+
+OperationalReading *-- OperationalReadingId
+OperationalReading *-- MachineId : references by identity
+OperationalReading *-- OperationalMeasurement
+OperationalReading *-- ReadingDateTime
+OperationalMeasurement *-- VariableName
+OperationalMeasurement *-- MeasurementValue
+OperationalMeasurement *-- UnitSymbol
+OperationalAnomaly *-- OperationalAnomalyId
+OperationalAnomaly *-- OperationalReadingId : references by identity
+OperationalAnomaly *-- OperationalMeasurement
+OperationalAnomaly *-- EvaluationCriterion
+OperationalAnomaly *-- DetectionDateTime
+OperationalAnomaly --> AnomalyStatus
+EvaluationCriterion *-- "2" MeasurementValue
+Alert *-- AlertId
+Alert *-- OperationalAnomalyId : references by identity
+Alert --> AlertPriority
+Alert --> AlertStatus
+Alert *-- AlertGenerationDateTime
+MaintenanceRecommendation *-- MachineId
+MaintenanceRecommendation *-- OperationalAnomalyId
+MaintenanceRecommendation *-- SuggestedAction
+MaintenanceRecommendation --> AlertPriority
+
+IntelligenceApi --|> BaseApi
+IntelligenceApi *-- BaseApiEndpoint : composes one per resource
+OperationalReadingAssembler ..> OperationalReadingResource : maps
+OperationalReadingAssembler ..> OperationalReading : builds
+OperationalAnomalyAssembler ..> OperationalAnomalyResource : maps
+OperationalAnomalyAssembler ..> OperationalAnomaly : builds
+AlertAssembler ..> AlertResource : maps
+AlertAssembler ..> Alert : builds
+MaintenanceRecommendationAssembler ..> MaintenanceRecommendationResource : maps
+MaintenanceRecommendationAssembler ..> MaintenanceRecommendation : builds
+@enduml
