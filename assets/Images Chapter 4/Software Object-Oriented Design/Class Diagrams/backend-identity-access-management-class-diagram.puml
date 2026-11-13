@@ -1,0 +1,304 @@
+@startuml
+title Molinex Open Source - Identity and Access Management Backend Class Diagram
+left to right direction
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+package "interfaces.rest" #DCEEF8 {
+  class AuthenticationController <<REST Controller>> {
+    -#authenticationService : AuthenticationService
+    +signIn(resource : SignInResource) : ResponseEntity
+  }
+  class UsersController <<REST Controller>> {
+    -#commandService : UserCommandService
+    -#queryService : UserQueryService
+    +create(resource : CreateUserResource) : ResponseEntity
+    +changeStatus(id : Long, resource : ChangeAccountStatusResource) : ResponseEntity
+    +getById(id : Long) : ResponseEntity
+    +getAll() : ResponseEntity
+  }
+  record SignInResource <<Request Resource>> {
+    +email : String
+    +password : String
+  }
+  record CreateUserResource <<Request Resource>> {
+    +email : String
+    +password : String
+    +fullName : String
+    +jobTitle : String
+    +phoneNumber : String
+    +role : String
+  }
+  record ChangeAccountStatusResource <<Request Resource>> {
+    +status : String
+  }
+  record AuthenticatedUserResource <<Response Resource>> {
+    +accessToken : String
+    +userId : Long
+    +role : String
+    +permissions : Set<String>
+  }
+  record UserResource <<Response Resource>> {
+    +id : Long
+    +email : String
+    +fullName : String
+    +role : String
+    +status : String
+  }
+  class IamResourceAssembler <<Assembler>> {
+    +toCommand(resource : SignInResource) : SignInCommand
+    +toCommand(resource : CreateUserResource) : CreateUserCommand
+    +toResource(result : AuthenticationResult) : AuthenticatedUserResource
+    +toResource(user : User) : UserResource
+  }
+}
+
+package "application" #EAF3F8 {
+  interface AuthenticationService <<Application Port>> {
+    +handle(command : SignInCommand) : Result<AuthenticationResult, ApplicationError>
+  }
+  interface UserCommandService <<Application Port>> {
+    +handle(command : CreateUserCommand) : Result<UserId, ApplicationError>
+    +handle(command : ChangeAccountStatusCommand) : Result<UserId, ApplicationError>
+  }
+  interface UserQueryService <<Application Port>> {
+    +handle(query : GetUserByIdQuery) : Optional<User>
+    +handle(query : GetUsersQuery) : List<User>
+  }
+  interface PasswordHashingPort <<Outbound Port>> {
+    +hash(rawPassword : String) : PasswordHash
+    +matches(rawPassword : String, hash : PasswordHash) : boolean
+  }
+  interface AccessTokenIssuerPort <<Outbound Port>> {
+    +issue(principal : AuthenticatedPrincipal) : String
+  }
+  class AuthenticationServiceImpl <<Application Service>> {
+    -#repository : UserRepository
+    -#passwordHashingPort : PasswordHashingPort
+    -#tokenIssuerPort : AccessTokenIssuerPort
+  }
+  class UserCommandServiceImpl <<Application Service>> {
+    -#repository : UserRepository
+    -#uniqueEmailPolicy : UniqueEmailPolicy
+    -#passwordHashingPort : PasswordHashingPort
+    -#eventPublisher : DomainEventPublisher
+  }
+  class UserQueryServiceImpl <<Application Service>> {
+    -#repository : UserRepository
+  }
+  record SignInCommand <<Command>> {
+    +email : String
+    +password : String
+  }
+  record CreateUserCommand <<Command>> {
+    +email : String
+    +password : String
+    +fullName : String
+    +jobTitle : String
+    +phoneNumber : String
+    +role : String
+  }
+  record ChangeAccountStatusCommand <<Command>> {
+    +userId : Long
+    +status : String
+  }
+  record GetUserByIdQuery <<Query>> {
+    +userId : Long
+  }
+  record GetUsersQuery <<Query>>
+  record AuthenticationResult <<Application Result>> {
+    +accessToken : String
+    +principal : AuthenticatedPrincipal
+  }
+}
+
+package "domain" #E8F4D4 {
+  class User <<Aggregate Root>> {
+    -#id : UserId
+    -#email : EmailAddress
+    -#credential : PasswordHash
+    -#profile : UserProfile
+    -#role : Role
+    -#status : AccountStatus
+    +{static} register(email, credential, profile, role) : User
+    +assignRole(role : Role) : void
+    +updateProfile(profile : UserProfile) : void
+    +activate() : void
+    +deactivate() : void
+    +lock() : void
+    +toPrincipal() : AuthenticatedPrincipal
+  }
+  record UserId <<Value Object>> {
+    +value : Long
+  }
+  record EmailAddress <<Value Object>> {
+    +value : String
+    +isValid() : boolean
+  }
+  record PasswordHash <<Value Object>> {
+    +value : String
+  }
+  record UserProfile <<Value Object>> {
+    +fullName : FullName
+    +jobTitle : JobTitle
+    +phoneNumber : PhoneNumber
+  }
+  record FullName <<Value Object>> {
+    +value : String
+  }
+  record JobTitle <<Value Object>> {
+    +value : String
+  }
+  record PhoneNumber <<Value Object>> {
+    +value : String
+  }
+  record Role <<Value Object>> {
+    +type : RoleType
+    +permissions : Set<Permission>
+    +allows(permission : Permission) : boolean
+  }
+  enum RoleType <<Enumeration>> {
+    ADMINISTRATOR
+    MAINTENANCE_TECHNICIAN
+    PRODUCTION_OPERATOR
+  }
+  enum Permission <<Enumeration>> {
+    MANAGE_USERS
+    MANAGE_PRODUCTION
+    MANAGE_MAINTENANCE
+    VIEW_OPERATIONAL_INFORMATION
+    VIEW_REPORTS
+  }
+  enum AccountStatus <<Enumeration>> {
+    ACTIVE
+    INACTIVE
+    LOCKED
+  }
+  record AuthenticatedPrincipal <<Published Language>> {
+    +subject : Long
+    +role : String
+    +permissions : Set<String>
+  }
+  class UniqueEmailPolicy <<Domain Service>> {
+    -#repository : UserRepository
+    +isSatisfiedBy(email : EmailAddress) : boolean
+  }
+  interface UserRepository <<Repository Port>> {
+    +save(user : User) : User
+    +findById(id : UserId) : Optional<User>
+    +findByEmail(email : EmailAddress) : Optional<User>
+    +findAll() : List<User>
+    +existsByEmail(email : EmailAddress) : boolean
+  }
+  record UserRegistered <<Domain Event>> {
+    +userId : UserId
+    +occurredAt : Instant
+  }
+  record AccountStatusChanged <<Domain Event>> {
+    +userId : UserId
+    +status : AccountStatus
+    +occurredAt : Instant
+  }
+}
+
+package "infrastructure.persistence.jpa" #F0E6FA {
+  class UserPersistenceEntity <<JPA Entity>> {
+    -id : Long <<BIGINT>>
+    -email : String
+    -passwordHash : String
+    -fullName : String
+    -jobTitle : String
+    -phoneNumber : String
+    -role : String
+    -status : String
+  }
+  class UserPersistenceAssembler <<Data Mapper>> {
+    +toPersistence(domain : User) : UserPersistenceEntity
+    +toDomain(entity : UserPersistenceEntity) : User
+  }
+  interface UserPersistenceRepository <<Spring Data Repository>>
+  class UserRepositoryImpl <<Repository Adapter>>
+}
+
+package "infrastructure.security" #FCE4D6 {
+  class BCryptPasswordHashingAdapter <<Security Adapter>> {
+    -#passwordEncoder : PasswordEncoder
+    +hash(rawPassword : String) : PasswordHash
+    +matches(rawPassword : String, hash : PasswordHash) : boolean
+  }
+  class JwtAccessTokenIssuerAdapter <<Security Adapter>> {
+    -#jwtService : JwtService
+    +issue(principal : AuthenticatedPrincipal) : String
+  }
+  class JwtAuthenticationFilter <<Spring Security Filter>> {
+    -#jwtService : JwtService
+    +doFilterInternal(request, response, chain) : void
+  }
+  class JwtService <<Security Component>> {
+    +generateToken(principal : AuthenticatedPrincipal) : String
+    +parse(token : String) : AuthenticatedPrincipal
+    +isValid(token : String) : boolean
+  }
+  class SecurityConfiguration <<Spring Configuration>> {
+    +securityFilterChain(http : HttpSecurity) : SecurityFilterChain
+  }
+}
+
+package "shared (reference)" #FFF2CC {
+  abstract class AbstractDomainAggregateRoot <<Shared Base Aggregate>>
+  class DomainEventPublisher <<Shared Component>>
+  class Result <<Shared Result>>
+  class ApplicationError <<Shared Value Object>>
+}
+
+AuthenticationController ..> AuthenticationService
+AuthenticationController ..> IamResourceAssembler
+UsersController ..> UserCommandService
+UsersController ..> UserQueryService
+UsersController ..> IamResourceAssembler
+AuthenticationServiceImpl ..|> AuthenticationService
+UserCommandServiceImpl ..|> UserCommandService
+UserQueryServiceImpl ..|> UserQueryService
+AuthenticationServiceImpl ..> UserRepository
+AuthenticationServiceImpl ..> PasswordHashingPort
+AuthenticationServiceImpl ..> AccessTokenIssuerPort
+UserCommandServiceImpl ..> UserRepository
+UserCommandServiceImpl ..> UniqueEmailPolicy
+UserCommandServiceImpl ..> PasswordHashingPort
+UserCommandServiceImpl ..> DomainEventPublisher
+UserQueryServiceImpl ..> UserRepository
+User --|> AbstractDomainAggregateRoot
+User *-- UserId
+User *-- EmailAddress
+User *-- PasswordHash
+User *-- UserProfile
+User *-- Role
+User --> AccountStatus
+UserProfile *-- FullName
+UserProfile *-- JobTitle
+UserProfile *-- PhoneNumber
+Role *-- RoleType
+Role *-- Permission
+User ..> AuthenticatedPrincipal : publishes
+User ..> UserRegistered : raises
+User ..> AccountStatusChanged : raises
+UniqueEmailPolicy ..> UserRepository
+UserRepositoryImpl ..|> UserRepository
+UserRepositoryImpl --> UserPersistenceRepository
+UserRepositoryImpl ..> UserPersistenceAssembler
+UserPersistenceRepository --|> JpaRepository
+BCryptPasswordHashingAdapter ..|> PasswordHashingPort
+JwtAccessTokenIssuerAdapter ..|> AccessTokenIssuerPort
+BCryptPasswordHashingAdapter ..> PasswordEncoder
+JwtAccessTokenIssuerAdapter ..> JwtService
+JwtAuthenticationFilter ..> JwtService
+SecurityConfiguration ..> JwtAuthenticationFilter
+
+note right of UserPersistenceEntity
+  @Id @GeneratedValue
+  Java Long -> MySQL BIGINT
+end note
+@enduml

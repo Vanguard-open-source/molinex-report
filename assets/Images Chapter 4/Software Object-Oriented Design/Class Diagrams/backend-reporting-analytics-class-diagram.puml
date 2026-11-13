@@ -1,0 +1,246 @@
+@startuml
+title Molinex Open Source - Reporting and Analytics Backend Class Diagram
+left to right direction
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+package "interfaces.rest" #DCEEF8 {
+  class ReportingController <<REST Controller>> {
+    -#queryService : ReportingQueryService
+    +getOperationalSummary(start : LocalDate, end : LocalDate) : ResponseEntity
+    +getProductionReport(start : LocalDate, end : LocalDate) : ResponseEntity
+    +getMaintenanceReport(start : LocalDate, end : LocalDate) : ResponseEntity
+    +getOperationalTrend(indicator : String, start : LocalDate, end : LocalDate) : ResponseEntity
+  }
+  record OperationalSummaryResource <<Response Resource>> {
+    +start : LocalDate
+    +end : LocalDate
+    +metrics : List<MetricResource>
+  }
+  record ReportResource <<Response Resource>> {
+    +start : LocalDate
+    +end : LocalDate
+    +rows : List<ReportRowResource>
+  }
+  record OperationalTrendResource <<Response Resource>> {
+    +indicator : String
+    +points : List<TrendPointResource>
+  }
+  record MetricResource <<Response Resource>> {
+    +name : String
+    +value : BigDecimal
+    +unit : String
+  }
+  record ReportRowResource <<Response Resource>> {
+    +dimensions : Map<String, String>
+    +metrics : List<MetricResource>
+  }
+  record TrendPointResource <<Response Resource>> {
+    +recordedAt : Instant
+    +value : BigDecimal
+  }
+  class ReportingResourceAssembler <<Assembler>> {
+    +toResource(summary : OperationalSummary) : OperationalSummaryResource
+    +toResource(report : ProductionReport) : ReportResource
+    +toResource(report : MaintenanceReport) : ReportResource
+    +toResource(trend : OperationalTrend) : OperationalTrendResource
+  }
+}
+
+package "application" #EAF3F8 {
+  interface ReportingQueryService <<Application Port>> {
+    +handle(query : GetOperationalSummaryQuery) : OperationalSummary
+    +handle(query : GenerateProductionReportQuery) : ProductionReport
+    +handle(query : GenerateMaintenanceReportQuery) : MaintenanceReport
+    +handle(query : GetOperationalTrendQuery) : OperationalTrend
+  }
+  interface ReportingProjectionService <<Application Port>> {
+    +handle(event : PublishedDomainEvent) : Result<ProjectionMetricId, ApplicationError>
+  }
+  class ReportingQueryServiceImpl <<Application Service>> {
+    -#projectionRepository : ReportingProjectionRepository
+  }
+  class ReportingProjectionServiceImpl <<Application Service>> {
+    -#projectionRepository : ReportingProjectionRepository
+  }
+  record GetOperationalSummaryQuery <<Query>> {
+    +start : LocalDate
+    +end : LocalDate
+  }
+  record GenerateProductionReportQuery <<Query>> {
+    +start : LocalDate
+    +end : LocalDate
+  }
+  record GenerateMaintenanceReportQuery <<Query>> {
+    +start : LocalDate
+    +end : LocalDate
+  }
+  record GetOperationalTrendQuery <<Query>> {
+    +indicator : String
+    +start : LocalDate
+    +end : LocalDate
+  }
+  class ReportingDomainEventSubscriber <<Event Subscriber>> {
+    -#projectionService : ReportingProjectionService
+    +on(event : PublishedDomainEvent) : void
+  }
+}
+
+package "domain" #E8F4D4 {
+  record ProjectionMetricId <<Value Object>> {
+    +value : Long
+  }
+  record DateRange <<Value Object>> {
+    +start : LocalDate
+    +end : LocalDate
+    +isValid() : boolean
+  }
+  record MetricName <<Value Object>> {
+    +value : String
+  }
+  record MetricValue <<Value Object>> {
+    +name : MetricName
+    +value : BigDecimal
+    +unit : String
+    +measuredAt : Instant
+  }
+  record ReportRow <<Value Object>> {
+    +dimensions : Map<String, String>
+    +metrics : List<MetricValue>
+  }
+  record TrendPoint <<Value Object>> {
+    +recordedAt : Instant
+    +value : BigDecimal
+  }
+  record OperationalSummary <<Read Model>> {
+    +period : DateRange
+    +metrics : List<MetricValue>
+  }
+  record ProductionReport <<Read Model>> {
+    +period : DateRange
+    +rows : List<ReportRow>
+  }
+  record MaintenanceReport <<Read Model>> {
+    +period : DateRange
+    +rows : List<ReportRow>
+  }
+  record OperationalTrend <<Read Model>> {
+    +indicator : MetricName
+    +period : DateRange
+    +points : List<TrendPoint>
+  }
+  record PublishedDomainEvent <<Published Language>> {
+    +eventName : String
+    +sourceContext : String
+    +aggregateReference : Long
+    +occurredAt : Instant
+    +payloadVersion : Integer
+    +payload : Map<String, String>
+  }
+  interface ReportingProjectionRepository <<Projection Port>> {
+    +save(metric : MetricProjection) : MetricProjection
+    +findMetrics(period : DateRange) : List<MetricProjection>
+    +findByCategory(category : ReportCategory, period : DateRange) : List<MetricProjection>
+    +findTrend(indicator : MetricName, period : DateRange) : List<MetricProjection>
+  }
+  class MetricProjection <<Projection Model>> {
+    -#id : ProjectionMetricId
+    -#sourceContext : String
+    -#sourceAggregateId : Long
+    -#category : ReportCategory
+    -#metric : MetricValue
+    -#dimensions : Map<String, String>
+  }
+  enum ReportCategory <<Enumeration>> {
+    OPERATIONAL
+    PRODUCTION
+    QUALITY
+    MAINTENANCE
+  }
+}
+
+package "infrastructure.persistence.jpa" #F0E6FA {
+  class MetricProjectionPersistenceEntity <<JPA Entity>> {
+    -id : Long <<BIGINT>>
+    -sourceContext : String
+    -sourceAggregateId : Long <<BIGINT>>
+    -category : String
+    -metricName : String
+    -metricValue : BigDecimal
+    -unit : String
+    -measuredAt : Instant
+    -dimensionsJson : String
+  }
+  class MetricProjectionPersistenceAssembler <<Data Mapper>> {
+    +toPersistence(domain : MetricProjection) : MetricProjectionPersistenceEntity
+    +toDomain(entity : MetricProjectionPersistenceEntity) : MetricProjection
+  }
+  interface MetricProjectionPersistenceRepository <<Spring Data Repository>>
+  class ReportingProjectionRepositoryImpl <<Repository Adapter>>
+}
+
+package "infrastructure.messaging" #FCE4D6 {
+  class SpringDomainEventListenerAdapter <<Messaging Adapter>> {
+    -#subscriber : ReportingDomainEventSubscriber
+    +consume(message : DomainEventMessage) : void
+  }
+  record DomainEventMessage <<Integration Message>> {
+    +eventName : String
+    +sourceContext : String
+    +aggregateReference : Long
+    +occurredAt : Instant
+    +payloadVersion : Integer
+    +payload : Map<String, String>
+  }
+  class PublishedDomainEventAssembler <<Anti-Corruption Layer>> {
+    +toPublishedLanguage(message : DomainEventMessage) : PublishedDomainEvent
+  }
+}
+
+package "shared (reference)" #FFF2CC {
+  class Result <<Shared Result>>
+  class ApplicationError <<Shared Value Object>>
+}
+
+ReportingController ..> ReportingQueryService
+ReportingController ..> ReportingResourceAssembler
+ReportingQueryServiceImpl ..|> ReportingQueryService
+ReportingProjectionServiceImpl ..|> ReportingProjectionService
+ReportingQueryServiceImpl ..> ReportingProjectionRepository
+ReportingProjectionServiceImpl ..> ReportingProjectionRepository
+ReportingDomainEventSubscriber ..> ReportingProjectionService
+ReportingDomainEventSubscriber ..> PublishedDomainEvent
+ReportingResourceAssembler ..> OperationalSummary
+ReportingResourceAssembler ..> ProductionReport
+ReportingResourceAssembler ..> MaintenanceReport
+ReportingResourceAssembler ..> OperationalTrend
+MetricProjection *-- ProjectionMetricId
+MetricProjection *-- MetricValue
+MetricProjection --> ReportCategory
+MetricValue *-- MetricName
+OperationalSummary *-- DateRange
+OperationalSummary *-- MetricValue
+ProductionReport *-- DateRange
+ProductionReport *-- ReportRow
+MaintenanceReport *-- DateRange
+MaintenanceReport *-- ReportRow
+OperationalTrend *-- MetricName
+OperationalTrend *-- DateRange
+OperationalTrend *-- TrendPoint
+ReportRow *-- MetricValue
+ReportingProjectionRepositoryImpl ..|> ReportingProjectionRepository
+ReportingProjectionRepositoryImpl --> MetricProjectionPersistenceRepository
+ReportingProjectionRepositoryImpl ..> MetricProjectionPersistenceAssembler
+MetricProjectionPersistenceRepository --|> JpaRepository
+SpringDomainEventListenerAdapter ..> ReportingDomainEventSubscriber
+SpringDomainEventListenerAdapter ..> PublishedDomainEventAssembler
+PublishedDomainEventAssembler ..> PublishedDomainEvent
+
+note right of MetricProjectionPersistenceEntity
+  @Id @GeneratedValue
+  Java Long -> MySQL BIGINT
+end note
+@enduml
