@@ -3032,6 +3032,30 @@ Se verificaron **Swagger UI** y **OpenAPI 3.1** con HTTP 200 al ejecutar localme
 
 La especificación generada declara `200` para las altas de recepción, lote y registro productivo. Los controladores y las pruebas de integración confirman `201 Created`. Las respuestas `400` y `404` observadas tampoco están documentadas en esas operaciones de ejemplo. Queda pendiente alinear esos códigos en el backend e incorporar la URL de Swagger del entorno desplegado.
 
+#### Capturas de Swagger UI
+
+Las capturas corresponden al backend Java de Molinex ejecutado en `localhost:8080`. Las figuras de la consulta de recepciones muestran tanto la solicitud `GET /api/v1/raw-material-receptions` como la respuesta del servidor con datos de prueba.
+
+![Vista general de Swagger UI y operaciones de registros de producción.](assets/Images%20Chapter%205/Sprint%203/5.2.3.6-01-swagger-registros-produccion.png)
+
+**Figura.** Vista general de Swagger UI y operaciones de registros de producción. Fuente de la captura: Swagger UI en `localhost:8080`.
+
+![Solicitud GET de recepciones de materia prima desde Swagger UI.](assets/Images%20Chapter%205/Sprint%203/5.2.3.6-02-swagger-consulta-recepciones.png)
+
+**Figura.** Solicitud GET de recepciones de materia prima desde Swagger UI. Fuente de la captura: Swagger UI en `localhost:8080`.
+
+![Respuesta 200 OK de la consulta, con una recepción que contiene datos de prueba.](assets/Images%20Chapter%205/Sprint%203/5.2.3.6-03-swagger-respuesta-recepciones.png)
+
+**Figura.** Respuesta 200 OK de la consulta, con una recepción que contiene datos de prueba. Fuente de la captura: Swagger UI en `localhost:8080`.
+
+![Operaciones documentadas para calidad, lotes de producción y mantenimiento.](assets/Images%20Chapter%205/Sprint%203/5.2.3.6-04-swagger-calidad-lotes-mantenimiento.png)
+
+**Figura.** Operaciones documentadas para calidad, lotes de producción y mantenimiento. Fuente de la captura: Swagger UI en `localhost:8080`.
+
+![Operaciones documentadas para maquinaria, solicitudes comerciales, rendimiento y composición del arroz.](assets/Images%20Chapter%205/Sprint%203/5.2.3.6-05-swagger-maquinaria-comercial-indicadores.png)
+
+**Figura.** Operaciones documentadas para maquinaria, solicitudes comerciales, rendimiento y composición del arroz. Fuente de la captura: Swagger UI en `localhost:8080`.
+
 ### 5.2.3.7.Software Deployment Evidence for Sprint Review.
 ### 5.2.3.8.Team Collaboration Insights during Sprint.
 ### 5.3. Validation Interviews.
