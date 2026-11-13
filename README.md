@@ -2956,6 +2956,25 @@ La rama indica la rama de origen cuando el merge permite identificarla. Para los
 Las ramas principales publicadas de [`molinex-webapp`](https://github.com/Vanguard-open-source/molinex-webapp) y [`molinex-website`](https://github.com/Vanguard-open-source/molinex-website) todavía registran como últimos cambios commits de octubre. La integración de Angular y del formulario de la Landing Page con la API queda por sustentar con cambios en sus respectivos repositorios. Los commits del backend acreditan el desarrollo de los servicios y deben complementarse con las evidencias de ejecución y despliegue.
 
 ### 5.2.3.5.Execution Evidence for Sprint Review.
+
+La evidencia de ejecución del Sprint 3 corresponde a pruebas locales del backend Java de Molinex, realizadas el 13 de noviembre de 2026 sobre el commit [`97c9763`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/97c9763). Se ejecutó Maven con JDK 25 mediante un ajuste temporal por línea de comandos. Las pruebas de integración utilizaron Spring MockMvc y H2 en memoria.
+
+```text
+mvnw.cmd -Djava.version=25 test
+Tests run: 44, Failures: 0, Errors: 0, Skipped: 0
+BUILD SUCCESS
+```
+
+| Flujo del Sprint 3 | Resultado observado | Pruebas ejecutadas |
+| --- | --- | ---: |
+| **TS-01 · Producción** | Registro y consulta de recepciones y lotes, vinculación con el registro productivo, consulta del historial y actualización. Se comprobó el rechazo de datos inválidos, códigos duplicados y referencias inexistentes en los escenarios cubiertos. | 13 |
+| **TS-02 · Calidad y rendimiento** | Registro de resultados de calidad y merma, consulta del rendimiento por registro productivo y de la composición por lote. La prueba incluye una consulta de composición sin resultados. | 1 |
+| **TS-03 · Maquinaria y mantenimiento** | Registro y consulta de equipos, estado e historial, intervenciones preventivas y correctivas. Se comprobaron escenarios HTTP de mantenimiento y casos de validación y recursos inexistentes. | 21 |
+| **US-02 · Inicio de sesión** | Autenticación de una cuenta activa y emisión de un token firmado. Se comprobó el rechazo de credenciales incorrectas, cuentas no disponibles y solicitudes sin contraseña. | 3 |
+| **US-36 · Solicitud comercial** | Persistencia y confirmación de una solicitud válida en el backend. Se comprobó el rechazo de solicitudes inválidas y el manejo de fallos en el servicio. | 6 |
+
+La ejecución de estas pruebas cubre el backend en un entorno local de pruebas. Sigue pendiente incorporar evidencia visual de los flujos de rendimiento, composición, estado de maquinaria e historial en Angular (US-12, US-13, US-18 y US-21), así como del inicio de sesión y del envío del formulario desde la Landing Page. La comprobación de estos flujos contra la API desplegada y MySQL requiere una ejecución adicional.
+
 ### 5.2.3.6.Services Documentation Evidence for Sprint Review.
 ### 5.2.3.7.Software Deployment Evidence for Sprint Review.
 ### 5.2.3.8.Team Collaboration Insights during Sprint.
