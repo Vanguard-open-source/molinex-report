@@ -2233,6 +2233,30 @@ Este bounded context se modela como un *read side*: `OperationalSummary`, `Produ
 
 **Figura: Identity and Access Management Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
 
+##### Identity and Access Management Frontend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Identity and Access Management** para el frontend Angular. `IdentityAccessStore` conserva mediante Signals la sesión autenticada y los usuarios, coordina los comandos de acceso y registro, y utiliza `TokenStorage` para persistir el token. `IamApi`, los assemblers, el guard y el interceptor aíslan las responsabilidades de comunicación, transformación y protección de rutas.
+
+`User` es el Aggregate Root y encapsula su identidad, correo, perfil, rol y estado mediante tipos del dominio. `UserId` contiene un `number`, en correspondencia con identificadores `Long` y columnas `BIGINT`. `AuthenticatedSession` permanece como Value Object del contexto y referencia al usuario por identidad; las credenciales aparecen como datos primitivos únicamente en Commands y Resources de las fronteras de aplicación e infraestructura.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/frontend-identity-access-management-class-diagram.svg" alt="Identity and Access Management Frontend Class Diagram" width="100%">
+</p>
+
+**Figura: Identity and Access Management Frontend Class Diagram. Fuente: elaboración propia en PlantUML.**
+
+#### Frontend Shared Kernel Class Diagram
+
+El Shared Kernel del frontend reúne únicamente contratos y capacidades realmente reutilizados por varios bounded contexts. `Weight` y `MeasurementUnit` constituyen el modelo compartido acordado entre Production Management y Quality and Yield Control. `BaseApi`, `BaseApiEndpoint`, los contratos base de recursos y respuestas, el interceptor de autenticación y `ApiErrorHandler` proporcionan la infraestructura común basada en Angular `HttpClient` y RxJS.
+
+El Shared Kernel no es un bounded context y por ello se presenta después de los contextos core, supporting y generic. Su alcance se mantiene reducido para evitar que los modelos particulares de negocio se conviertan en dependencias globales.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/frontend-shared-kernel-class-diagram.svg" alt="Frontend Shared Kernel Class Diagram" width="100%">
+</p>
+
+**Figura: Frontend Shared Kernel Class Diagram. Fuente: elaboración propia en PlantUML.**
+
 ## 4.8 Database Design
 
 Molinex emplea una base de datos relacional MySQL para soportar un monolito modular con enfoque SaaS multiempresa. El modelo utiliza `rice_mills` como raíz de tenancy: los usuarios acceden a cada molino mediante membresías y los datos de producción, maquinaria y reportes quedan asociados directa o transitivamente con su propietario. El catálogo comercial permanece fuera de esta jerarquía porque puede ser consultado por visitantes que todavía no son clientes.
