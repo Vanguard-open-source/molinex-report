@@ -2197,13 +2197,17 @@ El diagrama representa el diseño objetivo del bounded context **Operational Int
 
 #### Commercial Engagement Bounded Context
 
-`CommercialInquiry` es el único Aggregate Root transaccional. Los planes y la propuesta de valor se mantienen como modelos de lectura porque los requisitos no confirman contratación, pago ni activación de suscripciones.
+##### Commercial Engagement Backend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Commercial Engagement** para el backend Java con Spring Boot. Los controllers REST delegan comandos y consultas en servicios de aplicación; el dominio conserva el Aggregate y sus Value Objects sin dependencias JPA; el repository adapter traduce hacia una entidad de persistencia separada; y el catálogo comercial se obtiene mediante un puerto de consulta para no acoplar el dominio a su fuente de configuración.
+
+`CommercialInquiry` es el único Aggregate Root transaccional. Su identificador encapsula un `Long` y se almacena como `BIGINT` en MySQL. Los planes y la propuesta de valor se mantienen como modelos de lectura porque el alcance no confirma contratación, pago ni activación de suscripciones.
 
 <p align="center">
-  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/commercial-engagement-class-diagram.svg" alt="Commercial Engagement Bounded Context Class Diagram" width="100%">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/backend-commercial-engagement-class-diagram.svg" alt="Commercial Engagement Backend Class Diagram" width="100%">
 </p>
 
-**Figura: Commercial Engagement Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
+**Figura: Commercial Engagement Backend Class Diagram. Fuente: elaboración propia en PlantUML.**
 
 ##### Commercial Engagement Frontend Class Diagram
 
@@ -2219,13 +2223,17 @@ El diagrama representa el diseño objetivo del bounded context **Commercial Enga
 
 #### Reporting and Analytics Bounded Context
 
-Reporting and Analytics se modela como un *read side*: consume eventos expresados mediante Published Language, construye proyecciones propias y responde consultas. No se introduce un Aggregate Root para reportes porque los requisitos actuales no establecen identidad, versionado, aprobación ni ciclo de vida transaccional para ellos.
+##### Reporting and Analytics Backend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Reporting and Analytics** para el backend Java con Spring Boot. El controller REST expone exclusivamente consultas; los servicios de aplicación construyen los modelos de lectura; un subscriber consume eventos mediante Published Language; y un Anti-Corruption Layer traduce los mensajes externos antes de actualizar proyecciones JPA propias.
+
+Reporting and Analytics se modela como un *read side*: no se introduce un Aggregate Root para los reportes porque el alcance actual no establece identidad, versionado, aprobación ni ciclo de vida transaccional para ellos. Cada proyección usa un identificador `Long`, persistido como `BIGINT`, y conserva las referencias de los Aggregates de origen también como `BIGINT`, sin importar sus modelos internos.
 
 <p align="center">
-  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/reporting-analytics-class-diagram.svg" alt="Reporting and Analytics Bounded Context Class Diagram" width="100%">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/backend-reporting-analytics-class-diagram.svg" alt="Reporting and Analytics Backend Class Diagram" width="100%">
 </p>
 
-**Figura: Reporting and Analytics Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
+**Figura: Reporting and Analytics Backend Class Diagram. Fuente: elaboración propia en PlantUML.**
 
 ##### Reporting and Analytics Frontend Class Diagram
 
