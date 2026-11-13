@@ -102,9 +102,10 @@ Para el desarrollo del informe correspondiente a la entrega AV1, se distribuyero
 - Project Report: `https://github.com/Vanguard-open-source/molinex-report`
 - Landing Page: `https://github.com/Vanguard-open-source/molinex-website`
 - Frontend Web Application: `https://github.com/Vanguard-open-source/molinex-webapp`
+- Backend RESTful API (Sprint 3): [molinex-platform-backend](https://github.com/Vanguard-open-source/molinex-platform-backend)
 - Mock Web Service (Sprint 2): `https://github.com/Vanguard-open-source/molinex-platform-mock`
 
-La RESTful API definitiva todavía no cuenta con un repositorio. Su implementación y publicación están planificadas para un sprint posterior; por ello, no se incluye un enlace inexistente.
+El backend propio corresponde al Sprint 3 (AV2). El Mock Web Service con JSON Server se utilizó para la integración del Sprint 2 (TB1).
 
 ### Entrega AV1
 
@@ -2410,9 +2411,10 @@ El código fuente del proyecto Molinex se gestiona mediante Git y GitHub. Cada p
 | Project Report | `https://github.com/Vanguard-open-source/molinex-report` |
 | Landing Page | `https://github.com/Vanguard-open-source/molinex-website` |
 | Frontend Web Application | `https://github.com/Vanguard-open-source/molinex-webapp` |
+| Backend RESTful API de Sprint 3 | [molinex-platform-backend](https://github.com/Vanguard-open-source/molinex-platform-backend) |
 | Mock Web Service de Sprint 2 | `https://github.com/Vanguard-open-source/molinex-platform-mock` |
 
-La RESTful API definitiva aún no dispone de un repositorio. El Mock Web Service se documenta como una solución temporal de integración y no como sustituto del backend definitivo.
+El backend propio se desarrolla en Java con Spring Boot para el Sprint 3 (AV2). El Mock Web Service se conserva como evidencia de la integración del Sprint 2 (TB1).
 
 Para organizar el desarrollo colaborativo se utiliza GitFlow, considerando las siguientes ramas y convenciones:
 
