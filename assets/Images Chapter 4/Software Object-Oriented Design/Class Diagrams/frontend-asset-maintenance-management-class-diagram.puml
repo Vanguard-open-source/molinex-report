@@ -1,0 +1,212 @@
+@startuml
+title Molinex Open Source - Asset and Maintenance Management Frontend Class Diagram
+left to right direction
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+package "Application" #EAF3F8 {
+  class AssetMaintenanceStore <<Angular Signals Store>> {
+    -#assetMaintenanceApi : AssetMaintenanceApi
+    -#machinesSignal : WritableSignal<Machine[]>
+    -#maintenanceRecordsSignal : WritableSignal<MaintenanceRecord[]>
+    +machines : Signal<Machine[]>
+    +maintenanceRecords : Signal<MaintenanceRecord[]>
+    +loading : Signal<boolean>
+    +error : Signal<AssetMaintenanceOperationError?>
+    --
+    +addMachine(machine : Machine) : void
+    +updateMachine(machine : Machine) : void
+    +addMaintenanceRecord(record : MaintenanceRecord) : void
+    +reloadMachines() : void
+    +reloadMaintenance() : void
+  }
+}
+
+package "Domain Model" #E8F4D4 {
+  class Machine <<Aggregate Root>> {
+    -#id : MachineId
+    -#code : MachineCode
+    -#name : MachineName
+    -#model : MachineModel
+    -#status : MachineStatus
+    -#statusChangedAt : StatusChangeDateTime
+    --
+    +id : MachineId
+    +code : MachineCode
+    +name : MachineName
+    +model : MachineModel
+    +status : MachineStatus
+    +statusChangedAt : StatusChangeDateTime
+    +{static} register(code, name, model, registeredAt) : Machine
+    +changeStatus(status : MachineStatus, changedAt : StatusChangeDateTime) : void
+  }
+
+  class MaintenanceRecord <<Aggregate Root>> {
+    -#id : MaintenanceRecordId
+    -#machineId : MachineId
+    -#type : MaintenanceType
+    -#performedAt : MaintenanceDateTime
+    -#description : MaintenanceDescription
+    -#responsible : TechnicianReference
+    -#anomalyReference : AnomalyReference?
+    -#correctiveDetails : CorrectiveMaintenanceDetails?
+    --
+    +id : MaintenanceRecordId
+    +machineId : MachineId
+    +type : MaintenanceType
+    +performedAt : MaintenanceDateTime
+    +description : MaintenanceDescription
+    +responsible : TechnicianReference
+    +anomalyReference : AnomalyReference?
+    +correctiveDetails : CorrectiveMaintenanceDetails?
+    +{static} recordPreventive(machineId, performedAt, description, responsible) : MaintenanceRecord
+    +{static} recordCorrective(machineId, performedAt, description, responsible, anomaly, details) : MaintenanceRecord
+  }
+
+  class MachineId <<Value Object>> {
+    -#value : number
+    +value : number
+  }
+  class MaintenanceRecordId <<Value Object>> {
+    -#value : number
+    +value : number
+  }
+  class MachineCode <<Value Object>> {
+    -#value : string
+    +value : string
+  }
+  class MachineName <<Value Object>> {
+    -#value : string
+    +value : string
+  }
+  class MachineModel <<Value Object>> {
+    -#value : string
+    +value : string
+  }
+  class StatusChangeDateTime <<Value Object>> {
+    -#value : Date
+    +value : Date
+  }
+  class MaintenanceDateTime <<Value Object>> {
+    -#value : Date
+    +value : Date
+    +isNotInFuture() : boolean
+  }
+  class MaintenanceDescription <<Value Object>> {
+    -#value : string
+    +value : string
+    +isBlank() : boolean
+  }
+  class TechnicianReference <<Value Object>> {
+    -#principalId : number
+    -#displayName : string
+    +principalId : number
+    +displayName : string
+  }
+  class AnomalyReference <<Value Object>> {
+    -#anomalyId : number
+    +anomalyId : number
+  }
+  class CorrectiveMaintenanceDetails <<Value Object>> {
+    -#failure : string
+    -#cause : string
+    -#actionTaken : string
+    -#downtimeMinutes : number
+    +failure : string
+    +cause : string
+    +actionTaken : string
+    +downtimeMinutes : number
+    +hasValidDowntime() : boolean
+  }
+
+  enum MachineStatus <<Enumeration>> {
+    OPERATIONAL
+    REQUIRES_ATTENTION
+    UNDER_MAINTENANCE
+    OUT_OF_SERVICE
+  }
+  enum MaintenanceType <<Enumeration>> {
+    PREVENTIVE
+    CORRECTIVE
+  }
+}
+
+package "Infrastructure" #F0E6FA {
+  class AssetMaintenanceApi <<Angular HTTP Service>> {
+    -#machinesEndpoint : MachinesApiEndpoint
+    -#maintenanceRecordsEndpoint : MaintenanceRecordsApiEndpoint
+    --
+    +getMachines() : Observable<Machine[]>
+    +createMachine(machine : Machine) : Observable<Machine>
+    +updateMachine(machine : Machine) : Observable<Machine>
+    +getMaintenanceRecords(machineId : number?) : Observable<MaintenanceRecord[]>
+    +createMaintenanceRecord(record : MaintenanceRecord) : Observable<MaintenanceRecord>
+  }
+
+  class MachineAssembler <<Assembler>> {
+    +toEntityFromResource(resource : MachineResource) : Machine
+    +toResourceFromEntity(entity : Machine) : MachineResource
+  }
+  class MaintenanceRecordAssembler <<Assembler>> {
+    +toEntityFromResource(resource : MaintenanceRecordResource) : MaintenanceRecord
+    +toResourceFromEntity(entity : MaintenanceRecord) : MaintenanceRecordResource
+  }
+
+  interface MachineResource <<Resource>> {
+    +id : number
+    +code : string
+    +name : string
+    +model : string
+    +status : string
+    +statusChangedAt : string
+  }
+  interface MaintenanceRecordResource <<Resource>> {
+    +id : number
+    +machineId : number
+    +type : string
+    +performedAt : string
+    +description : string
+    +responsiblePrincipalId : number
+    +responsibleDisplayName : string
+    +anomalyId : number?
+    +failure : string?
+    +cause : string?
+    +actionTaken : string?
+    +downtimeMinutes : number?
+  }
+}
+
+package "Shared References" #FFF2CC {
+  abstract class BaseApi <<Shared Infrastructure>>
+  abstract class BaseApiEndpoint <<Shared Infrastructure>>
+}
+
+AssetMaintenanceStore o-- "0..*" Machine : holds
+AssetMaintenanceStore o-- "0..*" MaintenanceRecord : holds
+AssetMaintenanceStore ..> AssetMaintenanceApi : uses
+
+Machine *-- MachineId
+Machine *-- MachineCode
+Machine *-- MachineName
+Machine *-- MachineModel
+Machine --> MachineStatus
+Machine *-- StatusChangeDateTime
+MaintenanceRecord *-- MaintenanceRecordId
+MaintenanceRecord *-- MachineId : references by identity
+MaintenanceRecord --> MaintenanceType
+MaintenanceRecord *-- MaintenanceDateTime
+MaintenanceRecord *-- MaintenanceDescription
+MaintenanceRecord *-- TechnicianReference
+MaintenanceRecord o-- "0..1" AnomalyReference
+MaintenanceRecord o-- "0..1" CorrectiveMaintenanceDetails
+
+AssetMaintenanceApi --|> BaseApi
+AssetMaintenanceApi *-- BaseApiEndpoint : composes one per resource
+MachineAssembler ..> MachineResource : maps
+MachineAssembler ..> Machine : builds
+MaintenanceRecordAssembler ..> MaintenanceRecordResource : maps
+MaintenanceRecordAssembler ..> MaintenanceRecord : builds
+@enduml
