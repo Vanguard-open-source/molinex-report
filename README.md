@@ -2167,6 +2167,18 @@ El diagrama representa el diseño objetivo del bounded context **Asset and Maint
 
 **Figura: Operational Intelligence Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
 
+##### Operational Intelligence Frontend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Operational Intelligence** para el frontend Angular. `OperationalIntelligenceStore` mantiene mediante Signals las lecturas, anomalías, alertas y recomendaciones, mientras `IntelligenceApi` coordina las solicitudes HTTP. Los assemblers reconstruyen el modelo frontend a partir de recursos REST serializables y preparan las actualizaciones de alertas.
+
+`OperationalReading`, `OperationalAnomaly` y `Alert` mantienen ciclos de vida independientes como Aggregate Roots y se relacionan únicamente mediante identificadores locales. Estos identificadores encapsulan un `number`, en correspondencia con identificadores `Long` y columnas `BIGINT` del backend y la base de datos. Las mediciones, los criterios, las fechas y la acción sugerida se expresan mediante Value Objects. `MaintenanceRecommendation` permanece como modelo de lectura y referencia una máquina y una anomalía sin importar Aggregates de otros bounded contexts.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/frontend-operational-intelligence-class-diagram.svg" alt="Operational Intelligence Frontend Class Diagram" width="100%">
+</p>
+
+**Figura: Operational Intelligence Frontend Class Diagram. Fuente: elaboración propia en PlantUML.**
+
 #### Commercial Engagement Bounded Context
 
 `CommercialInquiry` es el único Aggregate Root transaccional. Los planes y la propuesta de valor se mantienen como modelos de lectura porque los requisitos no confirman contratación, pago ni activación de suscripciones.
