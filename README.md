@@ -2103,9 +2103,9 @@ Los diagramas representan el diseño orientado a objetos del dominio y no un esq
 
 ##### Production Management Frontend Class Diagram
 
-El diagrama muestra las clases principales del bounded context **Production Management** en el [frontend Angular de Open Source entregado en TB1](https://github.com/Vanguard-open-source/molinex-webapp/tree/959513a/src/app/production-management). Las vistas de recepción, lotes y procesos productivos usan `ProductionManagementStore` para consultar el estado y solicitar operaciones. El store delega el acceso a datos a `ProductionManagementApi`. Los assemblers traducen entre los recursos REST y los modelos del frontend.
+El diagrama representa el diseño objetivo del bounded context **Production Management** para el frontend Angular. `ProductionManagementStore` conserva el estado reactivo mediante Signals y coordina las operaciones expuestas por `ProductionManagementApi`. Los endpoints y assemblers traducen entre los recursos REST —que utilizan tipos serializables— y el modelo de dominio del frontend.
 
-El lote referencia la recepción por `receptionId` y el registro productivo referencia el lote por `batchId`, ambos de tipo `number` en esta implementación. `ProductionDetails` agrupa los datos del proceso y reutiliza `Weight` del Shared Kernel de Production y Quality. La figura documenta las clases de Angular; las invariantes y contratos de repositorio del diseño de dominio se muestran en la figura anterior.
+`RawMaterialReception`, `ProductionBatch` y `ProductionRecord` se modelan como Aggregate Roots independientes. Sus identidades se expresan mediante `RawMaterialReceptionId`, `ProductionBatchId` y `ProductionRecordId`, objetos de valor que encapsulan un `number` para mantener correspondencia con identificadores `Long` y columnas `BIGINT` en backend y base de datos. De igual manera, fechas, códigos, proveedor, origen, nombre del proceso y periodo productivo se representan mediante Value Objects. `ProductionDetails` reutiliza `Weight` y `MeasurementUnit` del Shared Kernel acordado entre Production Management y Quality and Yield Control.
 
 <p align="center">
   <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/frontend-production-management-class-diagram.svg" alt="Production Management Frontend Class Diagram" width="100%">
