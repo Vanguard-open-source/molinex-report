@@ -2123,6 +2123,18 @@ El diagrama representa el diseño objetivo del bounded context **Production Mana
 
 **Figura: Quality and Yield Control Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
 
+##### Quality and Yield Control Frontend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Quality and Yield Control** para el frontend Angular. `QualityControlStore` mantiene mediante Signals las evaluaciones, los registros de merma, los indicadores, la composición del arroz, las comparaciones y las desviaciones; `QualityApi` coordina las solicitudes HTTP y los assemblers traducen entre recursos REST serializables y el modelo del dominio frontend.
+
+`QualityAssessment`, `WasteRecord` y `QualityDeviation` conservan ciclos de vida independientes como Aggregate Roots. Sus identificadores y la referencia local a `ProductionRecord` se expresan mediante Value Objects que encapsulan un `number`, en correspondencia con identificadores `Long` y columnas `BIGINT` del backend y la base de datos. Porcentajes, rangos, mediciones, fechas y fuentes de desviación también se modelan como Value Objects. `Weight` y `MeasurementUnit` se reutilizan desde el Shared Kernel acordado con Production Management, mientras que los indicadores, la composición y las comparaciones se representan como modelos de lectura.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/frontend-quality-yield-control-class-diagram.svg" alt="Quality and Yield Control Frontend Class Diagram" width="100%">
+</p>
+
+**Figura: Quality and Yield Control Frontend Class Diagram. Fuente: elaboración propia en PlantUML.**
+
 #### Asset and Maintenance Management Bounded Context
 
 `Machine` y `MaintenanceRecord` evolucionan como Aggregates independientes y se relacionan mediante `MachineId`. Un mantenimiento correctivo puede conservar una `AnomalyReference` informativa, pero no importa el Aggregate `OperationalAnomaly` de Operational Intelligence.
