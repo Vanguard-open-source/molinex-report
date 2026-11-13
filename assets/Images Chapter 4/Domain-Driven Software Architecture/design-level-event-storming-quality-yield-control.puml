@@ -1,52 +1,84 @@
 @startuml
-title Quality and Yield Control — Design-Level Event Storming
+title Quality and Yield Control — Detailed Design-Level Event Storming
 left to right direction
-skinparam shadowing false
-skinparam roundcorner 8
+skinparam backgroundColor #F7FAFC
 skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam linetype ortho
 skinparam ArrowColor #334E68
-
-rectangle "Operador de Producción" as operator #FFF3A6
-rectangle "Administrador" as admin #FFF3A6
-package "Quality and Yield Control · Core Subdomain" {
-  rectangle "US-11\nRecordQualityResults" as recordQuality #A9C7F7
-  rectangle "US-14\nRecordProductionWaste" as recordWaste #A9C7F7
-  rectangle "US-16\nIdentifyQualityDeviation" as identify #A9C7F7
-  rectangle "QualityAssessment" as assessment #FFE27A
-  rectangle "WasteRecord" as waste #FFE27A
-  rectangle "QualityDeviation" as deviation #FFE27A
-  rectangle "QualityResultsRecorded" as qualityRecorded #FFB26B
-  rectangle "ProductionWasteRecorded" as wasteRecorded #FFB26B
-  rectangle "QualityDeviationIdentified" as deviationIdentified #FFB26B
-  rectangle "US-12\nGetYieldIndicators" as yieldIndicators #B9D98A
-  rectangle "US-13\nGetRiceComposition" as composition #B9D98A
-  rectangle "US-14\nGetProductionWaste" as getWaste #B9D98A
-  rectangle "US-15\nCompareQualityIndicators" as compare #B9D98A
+skinparam ArrowThickness 1.3
+skinparam packageStyle rectangle
+skinparam rectangle {
+  RoundCorner 8
+  Padding 8
 }
 
-operator --> recordQuality
-operator --> recordWaste
-operator --> composition
-operator --> getWaste
-admin --> yieldIndicators
-admin --> compare
-admin --> identify
+rectangle "Production\nOperator" as operator #FFF3A6
+rectangle "Administrator" as administrator #FFF3A6
 
-recordQuality --> assessment
-assessment --> qualityRecorded
-recordWaste --> waste
-waste --> wasteRecorded
-identify --> deviation : si el valor está fuera de rango
-deviation --> deviationIdentified
+package "Quality and Yield Control · Core Subdomain" #E6F4EA {
+  rectangle "Record Quality\nAssessment" as cmdAssessment #A9C7F7
+  rectangle "QualityAssessment" as aggAssessment #FFE27A
+  rectangle "QualityAssessment\nRecorded" as evtAssessment #FFB26B
 
-note bottom of waste
-  La merma debe ser no negativa.
-  Para calcular su porcentaje se
-  requiere una base positiva
-  en unidades comparables.
+  rectangle "Record Production\nWaste" as cmdWaste #A9C7F7
+  rectangle "WasteRecord" as aggWaste #FFE27A
+  rectangle "WasteRecorded" as evtWaste #FFB26B
+
+  rectangle "When a recorded indicator is outside\nits valid reference range" as policyDeviation #C9A7E8
+  rectangle "Identify Quality\nDeviation" as cmdDeviation #A9C7F7
+  rectangle "QualityDeviation" as aggDeviation #FFE27A
+  rectangle "QualityDeviation\nIdentified" as evtDeviation #FFB26B
+
+  rectangle "Yield Indicators" as readYield #B9D98A
+  rectangle "Rice Composition" as readComposition #B9D98A
+  rectangle "Production Waste" as readWaste #B9D98A
+  rectangle "Quality Comparison" as readComparison #B9D98A
+  rectangle "Quality Deviations" as readDeviations #B9D98A
+}
+
+operator --> cmdAssessment
+cmdAssessment --> aggAssessment
+aggAssessment --> evtAssessment
+
+operator --> cmdWaste
+cmdWaste --> aggWaste
+aggWaste --> evtWaste
+
+evtAssessment --> policyDeviation
+evtWaste --> policyDeviation
+policyDeviation --> cmdDeviation : automatically triggers
+cmdDeviation --> aggDeviation
+aggDeviation --> evtDeviation
+
+administrator ..> readYield : queries
+operator ..> readComposition : queries
+operator ..> readWaste : queries
+administrator ..> readComparison : queries
+administrator ..> readDeviations : queries
+
+cmdAssessment -[hidden]down-> cmdWaste
+cmdWaste -[hidden]down-> policyDeviation
+policyDeviation -[hidden]down-> readYield
+readYield -[hidden]right-> readComposition
+readComposition -[hidden]right-> readWaste
+readWaste -[hidden]right-> readComparison
+readComparison -[hidden]right-> readDeviations
+
+note bottom of policyDeviation
+  This is a Policy because it reacts to recorded
+  facts and automatically issues a new Command.
+  Read Models remain on the independent query side.
 end note
 
 legend bottom
-  |<#FFF3A6> Actor |<#A9C7F7> Comando |<#FFE27A> Aggregate Root |<#FFB26B> Evento de dominio |<#B9D98A> Consulta |
+|= Color |= EventStorming element |
+|<#FFF3A6>| Actor |
+|<#A9C7F7>| Command |
+|<#FFE27A>| Aggregate Root |
+|<#FFB26B>| Domain Event |
+|<#C9A7E8>| Policy: Event → Command |
+|<#B9D98A>| Read Model |
 endlegend
 @enduml
