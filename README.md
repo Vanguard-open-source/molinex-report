@@ -2189,6 +2189,18 @@ El diagrama representa el diseño objetivo del bounded context **Operational Int
 
 **Figura: Commercial Engagement Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
 
+##### Commercial Engagement Frontend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Commercial Engagement** para el frontend Angular. `CommercialStore` mantiene mediante Signals el catálogo de planes, la propuesta de valor y el estado de la consulta comercial. `CommercialApi` coordina las solicitudes HTTP y los assemblers traducen los recursos REST al modelo frontend.
+
+`CommercialInquiry` es el único Aggregate Root transaccional y encapsula la información de contacto, el mensaje y la fecha de envío mediante Value Objects. Su identificador y el de los planes encapsulan un `number`, en correspondencia con identificadores `Long` y columnas `BIGINT`. `Plan` y `ValueProposition` permanecen como modelos de lectura, ya que el alcance actual no incorpora contratación ni activación de suscripciones.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/frontend-commercial-engagement-class-diagram.svg" alt="Commercial Engagement Frontend Class Diagram" width="100%">
+</p>
+
+**Figura: Commercial Engagement Frontend Class Diagram. Fuente: elaboración propia en PlantUML.**
+
 #### Reporting and Analytics Bounded Context
 
 Reporting and Analytics se modela como un *read side*: consume eventos expresados mediante Published Language, construye proyecciones propias y responde consultas. No se introduce un Aggregate Root para reportes porque los requisitos actuales no establecen identidad, versionado, aprobación ni ciclo de vida transaccional para ellos.
@@ -2198,6 +2210,18 @@ Reporting and Analytics se modela como un *read side*: consume eventos expresado
 </p>
 
 **Figura: Reporting and Analytics Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
+
+##### Reporting and Analytics Frontend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Reporting and Analytics** para el frontend Angular. `ReportingStore` conserva mediante Signals el resumen operativo, los reportes de producción y mantenimiento, las tendencias y el periodo seleccionado. `ReportingApi` ejecuta consultas de solo lectura y los assemblers reconstruyen las proyecciones desde recursos REST serializables.
+
+Este bounded context se modela como un *read side*: `OperationalSummary`, `ProductionReport`, `MaintenanceReport` y `OperationalTrend` son modelos de lectura, no Aggregate Roots. Los periodos, métricas, dimensiones, filas y puntos de tendencia se expresan mediante Value Objects. De esta manera el frontend consume proyecciones propias sin importar los Aggregates de los bounded contexts que originan la información.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/frontend-reporting-analytics-class-diagram.svg" alt="Reporting and Analytics Frontend Class Diagram" width="100%">
+</p>
+
+**Figura: Reporting and Analytics Frontend Class Diagram. Fuente: elaboración propia en PlantUML.**
 
 #### Identity and Access Management Bounded Context
 
