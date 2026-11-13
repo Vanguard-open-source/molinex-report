@@ -1,0 +1,79 @@
+@startuml
+title Molinex Open Source - Frontend Shared Kernel Class Diagram
+left to right direction
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+package "Domain Model" #E8F4D4 {
+  class Weight <<Shared Value Object>> {
+    -#value : number
+    -#unit : MeasurementUnit
+    --
+    +value : number
+    +unit : MeasurementUnit
+    +{static} create(value : number, unit : MeasurementUnit) : Weight
+    +isPositive() : boolean
+    +isNonNegative() : boolean
+  }
+
+  enum MeasurementUnit <<Enumeration>> {
+    KILOGRAM
+    METRIC_TON
+  }
+}
+
+package "Infrastructure" #F0E6FA {
+  abstract class BaseApi <<Base Angular HTTP Service>> {
+    -#http : HttpClient
+    --
+    #httpClient : HttpClient
+  }
+
+  abstract class BaseApiEndpoint<TResource, TId> <<Base HTTP Endpoint>> {
+    -#http : HttpClient
+    -#endpointUrl : string
+    --
+    +getAll() : Observable<TResource[]>
+    +getById(id : TId) : Observable<TResource>
+    +create(resource : TResource) : Observable<TResource>
+    +update(id : TId, resource : TResource) : Observable<TResource>
+    +delete(id : TId) : Observable<void>
+  }
+
+  interface BaseResource<TId> <<Resource Contract>> {
+    +id : TId
+  }
+  interface BaseResponse <<Response Contract>> {
+    +status : number
+    +message : string
+  }
+
+  class AuthenticationInterceptor <<Angular HTTP Interceptor>> {
+    +intercept(request : HttpRequest, next : HttpHandler) : Observable<HttpEvent>
+  }
+  class ApiErrorHandler <<Error Mapper>> {
+    +{static} toMessages(error : HttpErrorResponse) : string[]
+  }
+}
+
+package "Angular and RxJS Types (reference)" #FFF2CC {
+  class HttpClient <<Angular Service>>
+  class HttpRequest <<Angular Type>>
+  class HttpHandler <<Angular Type>>
+  class HttpEvent <<Angular Type>>
+  class HttpErrorResponse <<Angular Type>>
+}
+
+Weight --> MeasurementUnit
+BaseApi ..> HttpClient
+BaseApiEndpoint ..> HttpClient
+BaseApiEndpoint ..> BaseResource : constrains resources
+AuthenticationInterceptor ..> HttpRequest
+AuthenticationInterceptor ..> HttpHandler
+AuthenticationInterceptor ..> HttpEvent
+BaseApi ..> ApiErrorHandler : delegates failures to
+BaseApiEndpoint ..> ApiErrorHandler : delegates failures to
+@enduml

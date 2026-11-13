@@ -1,0 +1,206 @@
+@startuml
+title Molinex Open Source - Reporting and Analytics Frontend Class Diagram
+left to right direction
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+package "Application" #EAF3F8 {
+  class ReportingStore <<Angular Signals Store>> {
+    -#reportingApi : ReportingApi
+    -#summarySignal : WritableSignal<OperationalSummary?>
+    -#productionReportSignal : WritableSignal<ProductionReport?>
+    -#maintenanceReportSignal : WritableSignal<MaintenanceReport?>
+    -#trendSignal : WritableSignal<OperationalTrend?>
+    -#periodSignal : WritableSignal<DateRange?>
+    +summary : Signal<OperationalSummary?>
+    +productionReport : Signal<ProductionReport?>
+    +maintenanceReport : Signal<MaintenanceReport?>
+    +trend : Signal<OperationalTrend?>
+    +period : Signal<DateRange?>
+    +loading : Signal<boolean>
+    +error : Signal<ReportingOperationError?>
+    --
+    +loadSummary(period : DateRange) : void
+    +loadProductionReport(period : DateRange) : void
+    +loadMaintenanceReport(period : DateRange) : void
+    +loadTrend(indicator : MetricName, period : DateRange) : void
+  }
+}
+
+package "Domain Model" #E8F4D4 {
+  class DateRange <<Value Object>> {
+    -#start : Date
+    -#end : Date
+    +start : Date
+    +end : Date
+    +isValid() : boolean
+  }
+  class MetricName <<Value Object>> {
+    -#value : string
+    +value : string
+  }
+  class MetricAmount <<Value Object>> {
+    -#value : number
+    +value : number
+  }
+  class UnitSymbol <<Value Object>> {
+    -#value : string
+    +value : string
+  }
+  class MetricDateTime <<Value Object>> {
+    -#value : Date
+    +value : Date
+  }
+  class MetricValue <<Value Object>> {
+    -#name : MetricName
+    -#value : MetricAmount
+    -#unit : UnitSymbol
+    -#measuredAt : MetricDateTime
+    +name : MetricName
+    +value : MetricAmount
+    +unit : UnitSymbol
+    +measuredAt : MetricDateTime
+  }
+  class ReportDimension <<Value Object>> {
+    -#name : string
+    -#value : string
+    +name : string
+    +value : string
+  }
+  class ReportRow <<Value Object>> {
+    -#dimensions : ReportDimension[]
+    -#metrics : MetricValue[]
+    +dimensions : ReportDimension[]
+    +metrics : MetricValue[]
+  }
+  class TrendPoint <<Value Object>> {
+    -#recordedAt : MetricDateTime
+    -#value : MetricAmount
+    +recordedAt : MetricDateTime
+    +value : MetricAmount
+  }
+
+  class OperationalSummary <<Read Model>> {
+    +period : DateRange
+    +metrics : MetricValue[]
+  }
+  class ProductionReport <<Read Model>> {
+    +period : DateRange
+    +rows : ReportRow[]
+  }
+  class MaintenanceReport <<Read Model>> {
+    +period : DateRange
+    +rows : ReportRow[]
+  }
+  class OperationalTrend <<Read Model>> {
+    +indicator : MetricName
+    +period : DateRange
+    +points : TrendPoint[]
+  }
+}
+
+package "Infrastructure" #F0E6FA {
+  class ReportingApi <<Angular HTTP Service>> {
+    -#summaryEndpoint : OperationalSummaryApiEndpoint
+    -#reportsEndpoint : ReportsApiEndpoint
+    -#trendsEndpoint : OperationalTrendsApiEndpoint
+    --
+    +getSummary(period : DateRange) : Observable<OperationalSummary>
+    +getProductionReport(period : DateRange) : Observable<ProductionReport>
+    +getMaintenanceReport(period : DateRange) : Observable<MaintenanceReport>
+    +getTrend(indicator : MetricName, period : DateRange) : Observable<OperationalTrend>
+  }
+
+  class OperationalSummaryAssembler <<Assembler>> {
+    +toModelFromResource(resource : OperationalSummaryResource) : OperationalSummary
+  }
+  class ReportAssembler <<Assembler>> {
+    +toProductionReport(resource : ReportResource) : ProductionReport
+    +toMaintenanceReport(resource : ReportResource) : MaintenanceReport
+  }
+  class OperationalTrendAssembler <<Assembler>> {
+    +toModelFromResource(resource : OperationalTrendResource) : OperationalTrend
+  }
+
+  interface MetricResource <<Resource>> {
+    +name : string
+    +value : number
+    +unit : string
+    +measuredAt : string
+  }
+  interface ReportDimensionResource <<Resource>> {
+    +name : string
+    +value : string
+  }
+  interface ReportRowResource <<Resource>> {
+    +dimensions : ReportDimensionResource[]
+    +metrics : MetricResource[]
+  }
+  interface TrendPointResource <<Resource>> {
+    +recordedAt : string
+    +value : number
+  }
+  interface OperationalSummaryResource <<Resource>> {
+    +start : string
+    +end : string
+    +metrics : MetricResource[]
+  }
+  interface ReportResource <<Resource>> {
+    +start : string
+    +end : string
+    +rows : ReportRowResource[]
+  }
+  interface OperationalTrendResource <<Resource>> {
+    +indicator : string
+    +start : string
+    +end : string
+    +points : TrendPointResource[]
+  }
+}
+
+package "Shared References" #FFF2CC {
+  abstract class BaseApi <<Shared Infrastructure>>
+  abstract class BaseApiEndpoint <<Shared Infrastructure>>
+}
+
+ReportingStore o-- "0..1" OperationalSummary : holds
+ReportingStore o-- "0..1" ProductionReport : holds
+ReportingStore o-- "0..1" MaintenanceReport : holds
+ReportingStore o-- "0..1" OperationalTrend : holds
+ReportingStore o-- "0..1" DateRange : filters by
+ReportingStore ..> ReportingApi : uses
+
+OperationalSummary *-- DateRange
+OperationalSummary *-- "0..*" MetricValue
+ProductionReport *-- DateRange
+ProductionReport *-- "0..*" ReportRow
+MaintenanceReport *-- DateRange
+MaintenanceReport *-- "0..*" ReportRow
+OperationalTrend *-- MetricName
+OperationalTrend *-- DateRange
+OperationalTrend *-- "0..*" TrendPoint
+MetricValue *-- MetricName
+MetricValue *-- MetricAmount
+MetricValue *-- UnitSymbol
+MetricValue *-- MetricDateTime
+ReportRow *-- "0..*" ReportDimension
+ReportRow *-- "0..*" MetricValue
+TrendPoint *-- MetricDateTime
+TrendPoint *-- MetricAmount
+
+ReportingApi --|> BaseApi
+ReportingApi *-- BaseApiEndpoint : composes one per resource
+OperationalSummaryAssembler ..> OperationalSummaryResource : maps
+OperationalSummaryAssembler ..> MetricResource : maps
+OperationalSummaryAssembler ..> OperationalSummary : builds
+ReportAssembler ..> ReportResource : maps
+ReportAssembler ..> ReportRowResource : maps
+ReportAssembler ..> ProductionReport : builds
+ReportAssembler ..> MaintenanceReport : builds
+OperationalTrendAssembler ..> OperationalTrendResource : maps
+OperationalTrendAssembler ..> TrendPointResource : maps
+OperationalTrendAssembler ..> OperationalTrend : builds
+@enduml
