@@ -3091,6 +3091,170 @@ Muchas gracias por su tiempo y por compartir su experiencia. Sus respuestas nos 
 | Yeisen Maculupu Beckam | Entrevista realizada por Antony Jimenez Saavedra para conocer las necesidades y experiencias relacionadas con la gestión de molinos arroceros. | Piura | Segmento1: Gerentes o administradores | 0:00 - 5:05 | Durante la entrevista, Jason, administrador de un molino arrocero, destacó la utilidad de Molinex para gestionar la producción y el mantenimiento de maquinaria, especialmente para anticipar fallas y evitar interrupciones. Asimismo, sugirió agregar precios al registro de materia prima, incorporar filtros de búsqueda y mejorar algunos detalles de la interfaz. En general, consideró que la aplicación es funcional y beneficiosa para el molino. |![Registo 1-cap5.png](assets/Images%20Chapter%205/Registo%201-cap5.png)|https://upcedupe-my.sharepoint.com/:v:/g/personal/u202420031_upc_edu_pe/IQDk-auXMJy3TauRlpsRkVs5Ae_am6uFEoqAHHow4fr19hc?e=rkMsyE&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
 
 ### 5.3.3. Evaluaciones según heurísticas.
+La evaluación busca identificar dificultades de uso en Molinex y proponer mejoras para los gerentes, técnicos de mantenimiento y operarios. Se revisaron las capturas de la Web Application del Sprint 2, el mockup de la Landing Page y las observaciones registradas en la entrevista de validación de la sección 5.3.2.
+
+La revisión se organizó en tres dimensiones: usabilidad, diseño inclusivo y arquitectura de información. Para usabilidad se tomaron como referencia las [diez heurísticas de Nielsen](https://www.nngroup.com/articles/ten-usability-heuristics/). Para los aspectos de accesibilidad se consultaron los criterios de W3C citados al final de la sección.
+
+**Alcance de la revisión.** Se trata de una evaluación preliminar de las evidencias visuales del informe, realizada el 13 de noviembre de 2026. Las capturas permiten revisar etiquetas, organización y presentación de la información. No permiten comprobar por sí solas la navegación por teclado, los nombres accesibles, los mensajes después de guardar, la recuperación ante errores ni el comportamiento responsive de la aplicación. Esos puntos quedan pendientes de una evaluación interactiva. El Anexo D mencionado en el backlog no está incluido en el material recibido, por lo que esta estructura deberá contrastarse con ese formato antes de la entrega académica.
+
+#### Escala de severidad
+
+Los problemas se clasificaron con una escala de 1 a 4, basada en la [propuesta de Nielsen](https://www.nngroup.com/articles/how-to-rate-the-severity-of-usability-problems/).
+
+| Nivel | Interpretación | Prioridad orientativa |
+| --- | --- | --- |
+| 1 | Detalle cosmético que no dificulta la tarea. | Baja. |
+| 2 | Dificultad menor que puede aumentar el esfuerzo o generar dudas. | Corregir en una próxima iteración. |
+| 3 | Dificultad importante para completar una tarea. | Alta. |
+| 4 | Problema crítico que impide una tarea esencial. | Resolver antes de publicar el flujo afectado. |
+
+La severidad de los hallazgos es una estimación de esta revisión. Su frecuencia y persistencia deben contrastarse al observar a los usuarios. No se asignaron niveles 3 o 4 porque el material estático no demuestra bloqueos de esa magnitud; esto no implica que todos los flujos estén libres de problemas importantes.
+
+#### Revisión de las diez heurísticas de usabilidad
+
+| Heurística | Evidencia y valoración preliminar |
+| --- | --- |
+| 1. Visibilidad del estado del sistema | La navegación lateral resalta el módulo activo y la maquinaria presenta estados con texto. Falta observar la respuesta durante cargas, guardados y fallos. |
+| 2. Relación con el mundo real | Las pantallas utilizan términos del molino, como recepción, lote, peso procesado y mantenimiento. Conviene explicar cómo se calculan los indicadores de calidad. |
+| 3. Control y libertad del usuario | El formulario de edición muestra la acción «Cancelar». No se comprobó su funcionamiento ni el tratamiento de cambios sin guardar. |
+| 4. Consistencia y estándares | Las capturas mantienen la navegación y la disposición de las acciones principales. La coherencia de todos los textos EN/ES requiere una revisión interactiva. |
+| 5. Prevención de errores | El formulario de edición bloquea el lote y explica que su relación no puede cambiar. Las validaciones de peso, fechas y datos obligatorios siguen pendientes de prueba. |
+| 6. Reconocimiento antes que recuerdo | Los títulos y campos orientan la tarea. Las acciones representadas solo mediante iconos pueden resultar ambiguas (H-01). |
+| 7. Flexibilidad y eficiencia de uso | Recepciones ofrece búsqueda y paginación. La vista mostrada no presenta un filtro específico por periodo (H-02). |
+| 8. Diseño estético y minimalista | Las pantallas separan navegación, resumen y contenido operativo. En maquinaria, el texto del buscador queda cortado (H-04). |
+| 9. Reconocimiento y recuperación de errores | Las capturas no muestran escenarios de error. No es posible valorar este comportamiento con las evidencias revisadas. |
+| 10. Ayuda y documentación | La edición contiene una indicación sobre el lote bloqueado. En calidad no se observa una explicación de la fórmula de rendimiento (H-03). |
+
+Estas observaciones describen lo visible en cada evidencia. No representan una certificación de cumplimiento de las diez heurísticas.
+
+#### Hallazgos y recomendaciones
+
+**H-01. Acciones de producción representadas solo con iconos**
+
+- **Dimensión:** usabilidad.
+- **Heurística:** reconocimiento antes que recuerdo.
+- **Ubicación:** vista general de producción, acciones debajo de cada proceso.
+- **Evidencia observada:** aparecen dos controles con iconos y sin una etiqueta textual visible al lado.
+- **Dificultad prevista:** una persona que usa la plataforma por primera vez puede dudar sobre qué control consulta información y cuál la modifica.
+- **Severidad estimada:** 2. La acción está disponible visualmente, pero exige interpretar el símbolo.
+- **Recomendación:** acompañar los controles con etiquetas breves, como «Ver detalle» y «Editar», según su función real. Comprobar también sus nombres accesibles y la posibilidad de activarlos con teclado.
+- **Estado:** mejora propuesta. No se ha verificado una corrección.
+
+![Evidencia H-01: acciones con iconos debajo de los procesos productivos](assets/Images%20Chapter%205/Sprint%202/5.2.2.5-01-production-overview.jpg)
+
+*Fuente: captura 5.2.2.5-01-production-overview.jpg del informe. Una imagen no permite confirmar si los controles ya tienen tooltip o nombre accesible.*
+
+**H-02. Consulta de recepciones sin filtro visible por periodo**
+
+- **Dimensión:** usabilidad y arquitectura de información.
+- **Heurística:** flexibilidad y eficiencia de uso.
+- **Ubicación:** listado de recepciones de materia prima.
+- **Evidencia observada:** el buscador anuncia consultas por identificador, proveedor o procedencia. La pantalla muestra ordenamiento por fecha y paginación, pero no un control específico de fecha inicial y final.
+- **Dificultad prevista:** consultar las recepciones de una semana o de un mes puede requerir revisar varias páginas. Ordenar por fecha no sustituye seleccionar un periodo.
+- **Severidad estimada:** 2. La búsqueda general sigue disponible, aunque no cubre directamente esa consulta.
+- **Recomendación:** incorporar filtros de fecha desde/hasta, mostrar cuáles están activos y ofrecer «Limpiar filtros». Verificar que funcionen junto con la búsqueda existente.
+- **Estado:** mejora propuesta para la vista mostrada. La sugerencia de incorporar filtros también aparece en la sección 5.3.2.
+
+![Evidencia H-02: búsqueda y paginación del listado de recepciones](assets/Images%20Chapter%205/Sprint%202/5.2.2.5-02-raw-material-receptions.jpg)
+
+*Fuente: captura 5.2.2.5-02-raw-material-receptions.jpg del informe. El hallazgo corresponde a recepciones; no afirma que el historial de producción carezca de filtros.*
+
+**H-03. Indicadores de calidad sin una explicación visible de su cálculo**
+
+- **Dimensión:** usabilidad y arquitectura de información.
+- **Heurísticas:** relación con el mundo real y ayuda y documentación.
+- **Ubicación:** pantalla de resultados de calidad.
+- **Evidencia observada:** se muestran porcentajes de arroz entero, arroz quebrado y rendimiento. En la captura no se observa una explicación de la fórmula ni de la base utilizada para el rendimiento.
+- **Dificultad prevista:** los usuarios pueden interpretar de manera diferente un indicador o desconocer qué registros intervienen en él.
+- **Severidad estimada:** 2. La cifra se puede leer, pero su interpretación necesita contexto.
+- **Recomendación:** añadir una ayuda junto al indicador con su significado, fórmula validada con el dominio, unidad, periodo y tratamiento de datos insuficientes. No representar falta de información como 0 %.
+- **Estado:** mejora propuesta. Debe comprobarse si existe ayuda adicional que no aparezca en la captura.
+
+![Evidencia H-03: indicadores presentados en la pantalla de calidad](assets/Images%20Chapter%205/Sprint%202/5.2.2.5-07-quality-results.jpg)
+
+*Fuente: captura 5.2.2.5-07-quality-results.jpg del informe. Los valores corresponden a datos de prueba del Sprint 2.*
+
+**H-04. Instrucción de búsqueda cortada en maquinaria**
+
+- **Dimensión:** diseño inclusivo.
+- **Heurísticas:** reconocimiento antes que recuerdo y diseño estético y minimalista.
+- **Ubicación:** buscador del inventario de maquinaria, en la parte superior derecha.
+- **Evidencia observada:** el texto interior comienza con «Search by code, name, or…» y su parte final no se alcanza a leer en el campo mostrado. No se observa una etiqueta persistente encima del control.
+- **Dificultad prevista:** el usuario no recibe la instrucción completa sobre los datos por los que puede buscar. Además, una instrucción situada únicamente dentro del campo puede dejar de verse al escribir.
+- **Severidad estimada:** 2. Afecta la comprensión del control, aunque no demuestra que la búsqueda esté bloqueada.
+- **Recomendación:** colocar una etiqueta visible, como «Buscar maquinaria», y una ayuda breve con los criterios admitidos. Ajustar el ancho del campo en cada tamaño de pantalla. Verificar por separado que tenga un nombre accesible.
+- **Estado:** mejora propuesta. No se atribuye un incumplimiento de accesibilidad sin inspeccionar el control implementado.
+
+![Evidencia H-04: instrucción de búsqueda recortada en maquinaria](assets/Images%20Chapter%205/Sprint%202/5.2.2.5-09-machinery-inventory.jpg)
+
+*Fuente: captura 5.2.2.5-09-machinery-inventory.jpg del informe.*
+
+**H-05. Acciones comerciales con etiquetas poco específicas**
+
+- **Dimensión:** arquitectura de información.
+- **Heurísticas:** relación con el mundo real y reconocimiento antes que recuerdo.
+- **Ubicación:** sección de planes del mockup de la Landing Page.
+- **Evidencia observada:** los tres planes utilizan la etiqueta «Learn more» para su acción.
+- **Dificultad prevista:** la etiqueta no anticipa si la siguiente pantalla amplía características, abre un formulario o inicia otro paso comercial.
+- **Severidad estimada:** 2. Los planes se distinguen por su nombre, pero la acción necesita mayor precisión.
+- **Recomendación:** nombrar el resultado real del enlace. Por ejemplo, «Ver características del plan Básico» o «Solicitar información del plan Básico», según el destino implementado. Mantener equivalencia entre EN y ES.
+- **Estado:** recomendación sobre el mockup. Debe contrastarse con la Landing Page desplegada antes de registrarla como defecto vigente.
+
+**H-06. Resumen de planes sin precio ni indicación visible de cotización**
+
+- **Dimensión:** arquitectura de información.
+- **Heurística:** relación con el mundo real.
+- **Ubicación:** sección de planes del mismo mockup.
+- **Evidencia observada:** las opciones Basic, Professional y Enterprise muestran prestaciones, pero en ese resumen no aparece un precio ni una indicación expresa de que se necesita cotización.
+- **Dificultad prevista:** el visitante cuenta con información funcional para comparar, pero no sabe cómo obtener las condiciones económicas.
+- **Severidad estimada:** 2. La solicitud de información permanece como alternativa, aunque falta orientar ese paso.
+- **Recomendación:** mostrar las condiciones comerciales aprobadas. Si no existe una tarifa publicada, indicar «Solicitar cotización». No inventar precios. Esta recomendación también debe contrastarse con el criterio de aceptación de US-33.
+- **Estado:** recomendación sobre el mockup. No se verificó su presencia o ausencia en la versión desplegada.
+
+![Evidencia H-05 y H-06: mockup de Landing Page, incluida su sección de planes](assets/design/landing-mockup.webp)
+
+*Fuente: landing-mockup.webp, sección 4.3.2 del informe. Los hallazgos se refieren al diseño representado en esta imagen.*
+
+#### Diseño inclusivo: observaciones y pruebas pendientes
+
+Las capturas del inventario acompañan el color con nombres de estado, como «Operational», «Requires attention» y «Under maintenance». Esto permite reconocer la categoría sin interpretar únicamente el color. Es una característica favorable respecto al criterio de [uso del color de W3C](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html), aunque no acredita la accesibilidad del flujo completo.
+
+Para completar la evaluación se deben registrar las siguientes pruebas sobre la aplicación ejecutándose:
+
+| Aspecto | Comprobación pendiente | Evidencia que se debe conservar |
+| --- | --- | --- |
+| Teclado | Recorrer navegación, formularios, filtros y paginación sin ratón, comprobando el orden y la visibilidad del foco. | Recorrido reproducible, navegador, versión evaluada y resultado. |
+| Controles e imágenes | Verificar los nombres accesibles de los botones con iconos y las alternativas de las imágenes informativas. | Inspección del árbol de accesibilidad y prueba con lector de pantalla. |
+| Contraste | Medir texto y fondo con los colores reales de la implementación. | Colores, relación medida y criterio aplicado. Una captura comprimida no es suficiente para afirmar cumplimiento. |
+| Adaptación de la interfaz | Revisar zoom y tamaños de pantalla para localizar etiquetas cortadas, controles ocultos o desplazamientos que dificulten la tarea. | Capturas con dimensiones, zoom y pasos registrados. |
+| Formularios y errores | Enviar datos vacíos, inválidos y válidos; comprobar mensajes, conservación de datos y corrección del error. | Datos utilizados, resultado esperado, resultado observado y captura. |
+
+Estas pruebas se apoyan en las referencias de W3C sobre [operación mediante teclado](https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html), [contenido no textual](https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html) y [contraste](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html). No se registran como pruebas aprobadas en esta revisión.
+
+#### Seguimiento de mejoras
+
+| Hallazgo | Próximo paso | Criterio para cerrar la observación |
+| --- | --- | --- |
+| H-01 | Aclarar las acciones de producción. | El usuario distingue consulta y edición; se comprueban nombres accesibles y operación por teclado. |
+| H-02 | Facilitar la consulta de recepciones por periodo. | El rango de fechas devuelve los registros correspondientes y puede limpiarse. |
+| H-03 | Explicar los indicadores. | La ayuda coincide con la fórmula de negocio y diferencia datos insuficientes de cero observado. |
+| H-04 | Mostrar completa la instrucción del buscador. | El control conserva una etiqueta legible al escribir, ampliar y cambiar de pantalla. |
+| H-05 | Revisar los destinos y textos comerciales. | La etiqueta describe la acción que realmente ejecuta el enlace de cada plan. |
+| H-06 | Aclarar cómo conocer el precio. | Cada plan muestra condiciones aprobadas o una indicación explícita de cotización. |
+
+**Correcciones verificadas:** ninguna en esta revisión. Los seis hallazgos permanecen como recomendaciones hasta comprobar la versión implementada y conservar evidencia del resultado. Las capturas y la entrevista ya presentan varias funciones útiles; en particular, la navegación por módulos, el historial por máquina y la protección del lote durante la edición. Las mejoras propuestas se concentran en hacer más claras las acciones, facilitar las consultas y explicar mejor la información presentada.
+
+La sugerencia de añadir precios a la recepción de materia prima, registrada en la entrevista, debe analizarse también como una posible ampliación funcional. Por sí sola no demuestra un incumplimiento heurístico si ese dato no pertenece al alcance aprobado.
+
+#### Referencias
+
+- Nielsen, J. (1994, revisión de 2024). [10 Usability Heuristics for User Interface Design](https://www.nngroup.com/articles/ten-usability-heuristics/). Nielsen Norman Group.
+- Nielsen, J. (1994). [Severity Ratings for Usability Problems](https://www.nngroup.com/articles/how-to-rate-the-severity-of-usability-problems/). Nielsen Norman Group.
+- W3C WAI. [Understanding Success Criterion 1.1.1: Non-text Content](https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html).
+- W3C WAI. [Understanding Success Criterion 1.4.1: Use of Color](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html).
+- W3C WAI. [Understanding Success Criterion 1.4.3: Contrast (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html).
+- W3C WAI. [Understanding Success Criterion 2.1.1: Keyboard](https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html).
+
 ### 5.4. Video About-the-Product.
 # Conclusiones
 
