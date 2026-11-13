@@ -127,9 +127,31 @@ El trabajo se realizó de manera colaborativa mediante ramas y commits en el rep
 
 ### Entrega TB1
 
-Para TB1, el informe se amplió con las correcciones recibidas en AV1, la documentación del Sprint 2 y las evidencias de implementación, ejecución, servicios, despliegue y colaboración. Los aportes se integraron mediante ramas `feature/*` hacia `develop`, y el historial del repositorio conserva los commits y merges asociados a la actualización del Student Outcome, la configuración del entorno de desarrollo, la documentación de servicios y la evidencia del Sprint Review.
+Para TB1, el equipo implementó la primera versión funcional de la Web Application de Open Source, la integró con la API simulada y publicó ambos productos en Azure. El Sprint 2 se trabajó mediante ramas `feature/*`, Pull Requests hacia `develop`, ramas `release/*` y Conventional Commits.
 
-La participación de cada integrante en la implementación se detalla en las secciones 5.2.2.4 y 5.2.2.8. Estas secciones relacionan responsables, Pull Requests, commits y módulos entregados, manteniendo la trazabilidad entre el trabajo colaborativo del código y su documentación en el informe.
+| Integrante | Contribución principal en TB1 |
+| --- | --- |
+| **Antony Alexander Jimenez Saavedra** | Implementación de Asset and Maintenance Management para maquinaria y mantenimientos preventivos y correctivos (PR #5 y #6). |
+| **Luisa Nhiriel Casalino Berrocal** | Implementación de Quality and Yield Control para resultados de calidad y registros de merma (PR #7). |
+| **Giovanni Marcelo Gallegos De La Cruz** | Implementación de Production Management para recepciones, lotes, procesos e historial (PR #3). |
+| **Brayan Benjamin Huerta Cardenas** | Documentación de historias de usuario y tareas técnicas del Sprint 2, según el Student Outcome. |
+| **Fabricio Jose Rivera Rupay** | Configuración, base compartida, navegación e internacionalización, integración con la API simulada y despliegue en Azure (PR #1, #2, #4, #8 y #9). |
+
+Las secciones 5.2.2.4 y 5.2.2.8 detallan los Pull Requests, commits y módulos de la entrega.
+
+![Contribuciones a la Web Application de Open Source durante TB1](assets/Images%20Chapter%205/Sprint%202/5.2.2.8-02-github-contributors.jpg)
+
+**Figura.** GitHub Insights del repositorio `Vanguard-open-source/molinex-webapp` durante TB1. Fuente: GitHub, 05-10-2026.
+
+#### Referencia del curso de Aplicaciones Web
+
+Las siguientes capturas corresponden al repositorio `Vanguard-app-web/molinex-webapp` y muestran el formato de colaboración del informe de Aplicaciones Web.
+
+![GitHub Insights de Aplicaciones Web durante TB1, parte 1](assets/evidence/collaboration/tb1-app-web-insights-part-1.png)
+
+![GitHub Insights de Aplicaciones Web durante TB1, parte 2](assets/evidence/collaboration/tb1-app-web-insights-part-2.png)
+
+**Figuras.** Capturas del informe de Aplicaciones Web. Fuente: GitHub Insights de `Vanguard-app-web/molinex-webapp`.
 
 <div style="page-break-after: always;"></div>
 
