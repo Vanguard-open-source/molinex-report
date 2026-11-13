@@ -1,0 +1,143 @@
+@startuml
+title Molinex Open Source - Backend Shared Components Class Diagram
+left to right direction
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+package "domain.sharedkernel (DDD)" #E8F4D4 {
+  class Weight <<Shared Value Object>> {
+    -#value : BigDecimal
+    -#unit : MeasurementUnit
+    +{static} of(value : BigDecimal, unit : MeasurementUnit) : Weight
+    +isPositive() : boolean
+    +isNonNegative() : boolean
+    +convertTo(unit : MeasurementUnit) : Weight
+  }
+  enum MeasurementUnit <<Enumeration>> {
+    KILOGRAM
+    METRIC_TON
+  }
+}
+
+package "shared.domain (technical building blocks)" #FFF2CC {
+  abstract class AbstractDomainAggregateRoot<TId> <<Base Aggregate>> {
+    -#id : TId
+    -#domainEvents : List<DomainEvent>
+    +id() : TId
+    #registerEvent(event : DomainEvent) : void
+    +pullDomainEvents() : List<DomainEvent>
+  }
+  interface DomainEvent <<Event Contract>> {
+    +occurredAt() : Instant
+  }
+  interface DomainEventPublisher <<Outbound Port>> {
+    +publish(events : List<DomainEvent>) : void
+  }
+}
+
+package "shared.application" #EAF3F8 {
+  class Result<T, E> <<Application Result>> {
+    -#value : T
+    -#error : E
+    +{static} success(value : T) : Result<T, E>
+    +{static} failure(error : E) : Result<T, E>
+    +isSuccess() : boolean
+    +value() : T
+    +error() : E
+  }
+  record ApplicationError <<Value Object>> {
+    +code : String
+    +message : String
+    +type : ErrorType
+  }
+  enum ErrorType <<Enumeration>> {
+    VALIDATION
+    NOT_FOUND
+    CONFLICT
+    UNAUTHORIZED
+    FORBIDDEN
+    INTERNAL
+  }
+}
+
+package "shared.interfaces.rest" #DCEEF8 {
+  record BaseResponse<T> <<Response Contract>> {
+    +status : Integer
+    +message : String
+    +data : T
+  }
+  record ErrorResource <<Error Resource>> {
+    +code : String
+    +message : String
+    +details : List<String>
+    +timestamp : Instant
+  }
+  class ResponseAssembler <<Assembler>> {
+    +toResponse(result : Result) : ResponseEntity
+  }
+  class GlobalExceptionHandler <<REST Advice>> {
+    +handleValidation(exception : Exception) : ResponseEntity<ErrorResource>
+    +handleNotFound(exception : Exception) : ResponseEntity<ErrorResource>
+    +handleUnexpected(exception : Exception) : ResponseEntity<ErrorResource>
+  }
+}
+
+package "shared.infrastructure.persistence.jpa" #F0E6FA {
+  abstract class AuditableAbstractPersistenceEntity <<Mapped Superclass>> {
+    -id : Long <<BIGINT>>
+    -createdAt : Instant
+    -updatedAt : Instant
+  }
+  class SpringDataAuditingConfiguration <<Spring Configuration>> {
+    +auditorAware() : AuditorAware<Long>
+  }
+}
+
+package "shared.infrastructure.events" #FCE4D6 {
+  class SpringDomainEventPublisher <<Event Adapter>> {
+    -#applicationEventPublisher : ApplicationEventPublisher
+    +publish(events : List<DomainEvent>) : void
+  }
+}
+
+package "Spring types (reference)" #EFEFEF {
+  class ResponseEntity <<Spring Web Type>>
+  class ApplicationEventPublisher <<Spring Event Type>>
+  class AuditorAware <<Spring Data Type>>
+}
+
+Weight --> MeasurementUnit
+AbstractDomainAggregateRoot *-- DomainEvent
+ApplicationError --> ErrorType
+ResponseAssembler ..> Result
+ResponseAssembler ..> ApplicationError
+ResponseAssembler ..> BaseResponse
+ResponseAssembler ..> ErrorResource
+ResponseAssembler ..> ResponseEntity
+GlobalExceptionHandler ..> ErrorResource
+GlobalExceptionHandler ..> ResponseEntity
+SpringDomainEventPublisher ..|> DomainEventPublisher
+SpringDomainEventPublisher ..> ApplicationEventPublisher
+SpringDomainEventPublisher ..> DomainEvent
+SpringDataAuditingConfiguration ..> AuditorAware
+
+note bottom of Weight
+  Único Shared Kernel de dominio:
+  acordado entre Production Management
+  y Quality and Yield Control.
+end note
+
+note bottom of AuditableAbstractPersistenceEntity
+  @MappedSuperclass
+  @Id @GeneratedValue
+  Java Long -> MySQL BIGINT
+end note
+
+note bottom of AbstractDomainAggregateRoot
+  Base técnica reutilizable.
+  No forma parte del Shared Kernel de DDD.
+end note
+@enduml

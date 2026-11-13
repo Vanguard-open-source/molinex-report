@@ -2249,13 +2249,17 @@ Este bounded context se modela como un *read side*: `OperationalSummary`, `Produ
 
 #### Identity and Access Management Bounded Context
 
-`User` protege la validez de la cuenta, el perfil y el rol asignado. La unicidad global del correo se evalúa mediante `UniqueEmailPolicy`, que consulta el contrato `UserRepository`, porque una instancia aislada de `User` no puede conocer las demás cuentas. Los otros contextos no reciben el Aggregate: consumen únicamente `AuthenticatedPrincipal`, definido como Published Language.
+##### Identity and Access Management Backend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Identity and Access Management** para el backend Java con Spring Boot. Los controllers REST delegan autenticación, comandos y consultas en servicios de aplicación; el dominio conserva el usuario, sus políticas y su lenguaje publicado sin dependencias de Spring; la persistencia utiliza una entidad JPA separada; y los adapters de seguridad encapsulan BCrypt, JWT y Spring Security.
+
+`User` protege la validez de la cuenta, el perfil y el rol asignado. La unicidad global del correo se evalúa mediante `UniqueEmailPolicy`, que consulta el contrato `UserRepository`, porque una instancia aislada de `User` no puede conocer las demás cuentas. `UserId` encapsula un `Long` y `UserPersistenceEntity` lo almacena como `BIGINT`. Los otros contextos no reciben el Aggregate: consumen únicamente `AuthenticatedPrincipal`, cuyo `subject` también utiliza `Long`, definido como Published Language.
 
 <p align="center">
-  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/identity-access-management-class-diagram.svg" alt="Identity and Access Management Bounded Context Class Diagram" width="100%">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/backend-identity-access-management-class-diagram.svg" alt="Identity and Access Management Backend Class Diagram" width="100%">
 </p>
 
-**Figura: Identity and Access Management Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
+**Figura: Identity and Access Management Backend Class Diagram. Fuente: elaboración propia en PlantUML.**
 
 ##### Identity and Access Management Frontend Class Diagram
 
@@ -2268,6 +2272,18 @@ El diagrama representa el diseño objetivo del bounded context **Identity and Ac
 </p>
 
 **Figura: Identity and Access Management Frontend Class Diagram. Fuente: elaboración propia en PlantUML.**
+
+#### Backend Shared Components Class Diagram
+
+El diagrama separa explícitamente el **Production-Quality Shared Kernel** de los componentes técnicos reutilizables del backend. El Shared Kernel de DDD contiene únicamente `Weight` y `MeasurementUnit`, acordados entre Production Management y Quality and Yield Control. No contiene identificadores, Aggregates ni repositorios de otros bounded contexts.
+
+Las bases de Aggregate, los contratos de eventos, `Result`, `ApplicationError`, la respuesta REST común, la auditoría JPA y el publicador de eventos se muestran en paquetes técnicos independientes. Se reutilizan para evitar duplicación, pero no forman parte del Shared Kernel del dominio. La base de persistencia utiliza `Long` y lo mapea a `BIGINT` en MySQL.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/backend-shared-components-class-diagram.svg" alt="Backend Shared Components Class Diagram" width="100%">
+</p>
+
+**Figura: Backend Shared Components Class Diagram. Fuente: elaboración propia en PlantUML.**
 
 #### Frontend Shared Kernel Class Diagram
 
