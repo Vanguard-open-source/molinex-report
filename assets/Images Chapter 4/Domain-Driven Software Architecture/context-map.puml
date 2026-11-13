@@ -14,51 +14,64 @@ skinparam rectangle {
 }
 
 title Molinex - DDD Context Map
-caption Strategic relationships between Bounded Contexts inside one modular monolith. Lines describe model integration, not independent deployments.
+caption Strategic model relationships inside the modular monolith
 
 top to bottom direction
 
-rectangle "Commercial Engagement\nSupporting Subdomain" as commercial #F1F5F9
-rectangle "Identity and Access Management\nGeneric Subdomain" as iam #F1F5F9
-rectangle "Production Management\nCore Subdomain" as production #E6F4EA
-rectangle "Quality and Yield Control\nCore Subdomain" as quality #E6F4EA
-rectangle "Asset and Maintenance Management\nCore Subdomain" as maintenance #E6F4EA
-rectangle "Operational Intelligence\nCore Subdomain" as intelligence #E6F4EA
-rectangle "Reporting and Analytics\nSupporting Subdomain / Read Side" as reporting #F1F5F9
-rectangle "Production-Quality Shared Kernel\nWeight, MeasurementUnit" as shared_kernel #FFE27A
+rectangle "Production Management\n<<Core Subdomain>>" as production #D8F0DF
+rectangle "Quality and Yield Control\n<<Core Subdomain>>" as quality #D8F0DF
+rectangle "Operational Intelligence\n<<Core Subdomain>>" as intelligence #D8F0DF
+rectangle "Asset and Maintenance Management\n<<Core Subdomain>>" as maintenance #D8F0DF
 
-commercial .. iam : Separate Ways\nNo confirmed onboarding contract
+rectangle "Production-Quality Shared Kernel\nWeight · MeasurementUnit" as shared_kernel #FFE27A
+rectangle "Commercial Engagement\n<<Supporting Subdomain>>" as commercial #E8EEF5
+rectangle "Reporting and Analytics\n<<Supporting Subdomain / Read Side>>" as reporting #E8EEF5
+rectangle "Identity and Access Management\n<<Generic Subdomain>>" as iam #E8EEF5
 
-iam --> production : Open Host Service / Published Language\nAuthenticatedPrincipal and role claims
-iam --> quality : Open Host Service / Published Language\nAuthenticatedPrincipal and role claims
-iam --> maintenance : Open Host Service / Published Language\nAuthenticatedPrincipal and role claims
-iam --> intelligence : Open Host Service / Published Language\nAuthenticatedPrincipal and role claims
-iam --> reporting : Open Host Service / Published Language\nAuthenticatedPrincipal and role claims
+' Core collaboration: upstream to downstream.
+production -[#2F6B9A]right-> quality
+quality -[#2F6B9A]right-> intelligence
+intelligence <-[#7A5195]right-> maintenance
 
-production --> quality : Customer / Supplier + Published Language\nProductionInformationRecorded / Updated
-quality --> intelligence : Customer / Supplier + Published Language\nQualityDeviationIdentified
-maintenance <--> intelligence : Partnership + Published Language\nMachineRegistered, AnomalyDetected,\nCorrectiveMaintenanceRecorded
+' Deliberately small Shared Kernel owned only by Production and Quality.
+production -[#C69214]down- shared_kernel
+quality -[#C69214]down- shared_kernel
 
-production --> reporting : Customer / Supplier + Published Language\nProduction events
-quality --> reporting : Customer / Supplier + Published Language\nQuality and yield events
-maintenance --> reporting : Customer / Supplier + Published Language\nMaintenance events
-intelligence --> reporting : Customer / Supplier + Published Language\nAnomaly and alert events
+' IAM publishes one authorization contract to every consuming context.
+iam -[#334E68]up-> production
+iam -[#334E68]up-> quality
+iam -[#334E68]up-> intelligence
+iam -[#334E68]up-> maintenance
+iam -[#334E68]up-> reporting
 
-production -- shared_kernel : shares
-quality -- shared_kernel : shares
+' Reporting consumes published events and builds independent projections.
+production -[#2F6B9A]down-> reporting
+quality -[#2F6B9A]down-> reporting
+intelligence -[#2F6B9A]down-> reporting
+maintenance -[#2F6B9A]down-> reporting
 
-commercial -[hidden]right-> iam
-iam -[hidden]right-> production
+' Commercial onboarding is intentionally independent from IAM.
+commercial .[#7B8794]down. iam
+
+' Stable reading order: supporting/generic, core, shared/read side.
 production -[hidden]right-> quality
-quality -[hidden]down-> maintenance
-maintenance -[hidden]right-> intelligence
+quality -[hidden]right-> intelligence
+intelligence -[hidden]right-> maintenance
+shared_kernel -[hidden]right-> commercial
+commercial -[hidden]right-> reporting
+quality -[hidden]down-> shared_kernel
 intelligence -[hidden]down-> reporting
+reporting -[hidden]down-> iam
 
 legend bottom
-|= Notation |= Meaning |
-| Solid directed line | Upstream provides a contract to a downstream consumer |
-| Bidirectional line | Partnership with coordinated evolution |
-| Dotted line | Separate Ways; no integration contract currently exists |
-| Yellow box | Explicit and deliberately small Shared Kernel |
+|= Color / notation |= Meaning |
+|<#D8F0DF>| Core Subdomain |
+|<#E8EEF5>| Supporting or Generic Subdomain |
+|<#FFE27A>| Shared Kernel |
+| Blue directed line | Customer/Supplier + Published Language |
+| Dark directed line from IAM | Open Host Service / Published Language |
+| Purple bidirectional line | Partnership + Published Language |
+| Gold line | Shared Kernel |
+| Gray dotted line | Separate Ways; no integration contract |
 endlegend
 @enduml

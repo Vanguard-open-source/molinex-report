@@ -1844,7 +1844,9 @@ El Shared Kernel no contiene identificadores, Aggregates, repositorios, servicio
 
 #### DDD Context Map
 
-El Context Map hace explícitas las relaciones estratégicas. Estas relaciones describen dependencias de modelos dentro del monolito modular.
+El Context Map hace explícitas las relaciones estratégicas y las dependencias entre modelos dentro del monolito modular. Para facilitar su lectura, presenta primero los Core Subdomains, luego los Supporting Subdomains y finalmente el Generic Subdomain, sin repetir en cada línea los eventos que ya se detallan en la tabla.
+
+La leyenda utiliza líneas azules para `Customer/Supplier + Published Language`, líneas oscuras desde IAM para `Open Host Service / Published Language`, una línea morada bidireccional para `Partnership + Published Language`, líneas doradas para el `Shared Kernel` y una línea gris punteada para `Separate Ways`. Así se evitan etiquetas repetidas y se mantiene el detalle contractual en la tabla siguiente.
 
 <p align="center">
   <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/context-map.svg" alt="DDD Context Map de Molinex" width="100%">
