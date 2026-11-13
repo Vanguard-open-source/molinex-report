@@ -2093,13 +2093,17 @@ Los diagramas representan el diseño orientado a objetos del dominio y no un esq
 
 #### Production Management Bounded Context
 
-`RawMaterialReception`, `ProductionBatch` y `ProductionRecord` son Aggregates independientes. Un lote conserva un `RawMaterialReceptionId` y un registro productivo conserva un `ProductionBatchId`; ninguno contiene otro Aggregate Root. `Weight` y `MeasurementUnit` pertenecen al Shared Kernel acordado con Quality and Yield Control.
+##### Production Management Backend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Production Management** para el backend Java con Spring Boot. La capa `interfaces.rest` expone recursos y assemblers REST; `application` separa comandos y consultas mediante CQRS; `domain` mantiene Aggregates, Value Objects, eventos y contratos de repositorio sin dependencias de JPA; e `infrastructure.persistence.jpa` implementa entidades de persistencia, mappers, repositorios Spring Data y adapters.
+
+`RawMaterialReception`, `ProductionBatch` y `ProductionRecord` son Aggregates independientes. Un lote conserva un `RawMaterialReceptionId` y un registro productivo conserva un `ProductionBatchId`; ninguno contiene otro Aggregate Root. Sus identificadores de dominio encapsulan `Long`, mientras que las entidades de persistencia los mapean a columnas MySQL `BIGINT`. `Weight` y `MeasurementUnit` pertenecen al Shared Kernel acordado con Quality and Yield Control.
 
 <p align="center">
-  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/production-management-class-diagram.svg" alt="Production Management Bounded Context Class Diagram" width="100%">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/backend-production-management-class-diagram.svg" alt="Production Management Backend Class Diagram" width="100%">
 </p>
 
-**Figura: Production Management Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
+**Figura: Production Management Backend Class Diagram. Fuente: elaboración propia en PlantUML.**
 
 ##### Production Management Frontend Class Diagram
 
@@ -2115,13 +2119,17 @@ El diagrama representa el diseño objetivo del bounded context **Production Mana
 
 #### Quality and Yield Control Bounded Context
 
-`QualityAssessment`, `WasteRecord` y `QualityDeviation` protegen invariantes distintas y permanecen como Aggregates separados. El `ProductionRecordId` mostrado pertenece al lenguaje local de Quality; no importa la clase homónima de Production Management.
+##### Quality and Yield Control Backend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Quality and Yield Control** para el backend Java con Spring Boot. Las operaciones REST se traducen a comandos y consultas en `application`; el modelo de dominio permanece libre de anotaciones JPA; y la infraestructura utiliza entidades de persistencia paralelas, mappers, repositorios Spring Data y adapters para implementar los contratos del dominio.
+
+`QualityAssessment`, `WasteRecord` y `QualityDeviation` protegen invariantes distintas y permanecen como Aggregates separados. El `ProductionRecordId` mostrado pertenece al lenguaje local de Quality; no importa la clase homónima de Production Management. Los identificadores se expresan con `Long` en Java y se persisten como `BIGINT` en MySQL.
 
 <p align="center">
-  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/quality-yield-control-class-diagram.svg" alt="Quality and Yield Control Bounded Context Class Diagram" width="100%">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/backend-quality-yield-control-class-diagram.svg" alt="Quality and Yield Control Backend Class Diagram" width="100%">
 </p>
 
-**Figura: Quality and Yield Control Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
+**Figura: Quality and Yield Control Backend Class Diagram. Fuente: elaboración propia en PlantUML.**
 
 ##### Quality and Yield Control Frontend Class Diagram
 
@@ -2137,13 +2145,17 @@ El diagrama representa el diseño objetivo del bounded context **Quality and Yie
 
 #### Asset and Maintenance Management Bounded Context
 
-`Machine` y `MaintenanceRecord` evolucionan como Aggregates independientes y se relacionan mediante `MachineId`. Un mantenimiento correctivo puede conservar una `AnomalyReference` informativa, pero no importa el Aggregate `OperationalAnomaly` de Operational Intelligence.
+##### Asset and Maintenance Management Backend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Asset and Maintenance Management** para el backend Java con Spring Boot. Los controllers y assemblers REST dependen de servicios CQRS de aplicación; el dominio conserva sus reglas sin dependencias de frameworks; y la infraestructura implementa la persistencia mediante entidades JPA separadas, mappers, repositorios Spring Data y repository adapters.
+
+`Machine` y `MaintenanceRecord` evolucionan como Aggregates independientes y se relacionan mediante `MachineId`. Un mantenimiento correctivo puede conservar una `AnomalyReference` informativa, pero no importa el Aggregate `OperationalAnomaly` de Operational Intelligence. Los identificadores `Long` se corresponden con columnas MySQL `BIGINT`, incluidas las referencias foráneas.
 
 <p align="center">
-  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/asset-maintenance-management-class-diagram.svg" alt="Asset and Maintenance Management Bounded Context Class Diagram" width="100%">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/backend-asset-maintenance-management-class-diagram.svg" alt="Asset and Maintenance Management Backend Class Diagram" width="100%">
 </p>
 
-**Figura: Asset and Maintenance Management Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
+**Figura: Asset and Maintenance Management Backend Class Diagram. Fuente: elaboración propia en PlantUML.**
 
 ##### Asset and Maintenance Management Frontend Class Diagram
 
@@ -2159,13 +2171,17 @@ El diagrama representa el diseño objetivo del bounded context **Asset and Maint
 
 #### Operational Intelligence Bounded Context
 
-`OperationalReading`, `OperationalAnomaly` y `Alert` mantienen ciclos de vida separados. `AnomalyDetectionService` concentra la evaluación que involucra una lectura y un criterio. `SensorGatewayPort` actúa como Anti-Corruption Layer frente al proveedor de sensores, mientras que `NotificationPort` evita acoplar el dominio al servicio de entrega de notificaciones.
+##### Operational Intelligence Backend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Operational Intelligence** para el backend Java con Spring Boot. La capa REST delega en servicios CQRS; el dominio contiene Aggregates, Value Objects, servicios y puertos sin dependencias de infraestructura; y los adapters de persistencia e integración conectan Spring Data JPA, el proveedor de sensores y el servicio de notificaciones sin contaminar el modelo del dominio.
+
+`OperationalReading`, `OperationalAnomaly` y `Alert` mantienen ciclos de vida separados. `AnomalyDetectionService` concentra la evaluación que involucra una lectura y un criterio. `SensorGatewayPort` actúa como Anti-Corruption Layer frente al proveedor de sensores, mientras que `NotificationPort` evita acoplar el dominio al servicio de entrega de notificaciones. Los identificadores y referencias usan `Long` en Java y columnas `BIGINT` en MySQL.
 
 <p align="center">
-  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/operational-intelligence-class-diagram.svg" alt="Operational Intelligence Bounded Context Class Diagram" width="100%">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/backend-operational-intelligence-class-diagram.svg" alt="Operational Intelligence Backend Class Diagram" width="100%">
 </p>
 
-**Figura: Operational Intelligence Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
+**Figura: Operational Intelligence Backend Class Diagram. Fuente: elaboración propia en PlantUML.**
 
 ##### Operational Intelligence Frontend Class Diagram
 

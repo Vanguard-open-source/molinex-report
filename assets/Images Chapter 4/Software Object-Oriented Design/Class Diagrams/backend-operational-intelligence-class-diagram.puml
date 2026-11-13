@@ -1,0 +1,340 @@
+@startuml
+title Molinex Open Source - Operational Intelligence Backend Class Diagram
+left to right direction
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+package "interfaces.rest" #DCEEF8 {
+  class OperationalReadingsController <<Integration Controller>> {
+    -#commandService : IntelligenceCommandService
+    -#queryService : IntelligenceQueryService
+    +ingest(resource : SensorReadingResource) : ResponseEntity
+    +getHistory() : ResponseEntity
+  }
+  class AnomaliesController <<REST Controller>> {
+    -#commandService : IntelligenceCommandService
+    -#queryService : IntelligenceQueryService
+    +getAll() : ResponseEntity
+    +acknowledge(id : Long) : ResponseEntity
+  }
+  class AlertsController <<REST Controller>> {
+    -#commandService : IntelligenceCommandService
+    -#queryService : IntelligenceQueryService
+    +getAll() : ResponseEntity
+    +acknowledge(id : Long) : ResponseEntity
+    +close(id : Long) : ResponseEntity
+  }
+  record SensorReadingResource <<Request Resource>> {
+    +machineId : Long
+    +variableName : String
+    +value : BigDecimal
+    +unitSymbol : String
+    +recordedAt : Instant
+  }
+  record IntelligenceResource <<Response Resource>> {
+    +id : Long
+    +referenceId : Long
+    +status : String
+    +occurredAt : Instant
+  }
+  class IntelligenceResourceAssembler <<Assembler>> {
+    +toCommand(resource : SensorReadingResource) : RegisterOperationalReadingCommand
+    +toResource(model : Object) : IntelligenceResource
+  }
+}
+
+package "application" #EAF3F8 {
+  interface IntelligenceCommandService <<Application Port>> {
+    +handle(command : RegisterOperationalReadingCommand) : Result<OperationalReadingId, ApplicationError>
+    +handle(command : AcknowledgeAnomalyCommand) : Result<OperationalAnomalyId, ApplicationError>
+    +handle(command : AttendAlertCommand) : Result<AlertId, ApplicationError>
+  }
+  interface IntelligenceQueryService <<Application Port>> {
+    +handle(query : GetOperationalReadingsQuery) : List<OperationalReading>
+    +handle(query : GetOperationalAnomaliesQuery) : List<OperationalAnomaly>
+    +handle(query : GetAlertsQuery) : List<Alert>
+    +handle(query : GetMaintenanceRecommendationsQuery) : List<MaintenanceRecommendation>
+  }
+  interface NotificationPort <<Outbound Port>> {
+    +sendOperationalAlert(alert : Alert) : void
+  }
+  class IntelligenceCommandServiceImpl <<Application Service>> {
+    -#readingRepository : OperationalReadingRepository
+    -#anomalyRepository : OperationalAnomalyRepository
+    -#alertRepository : AlertRepository
+    -#notificationPort : NotificationPort
+    -#detectionService : AnomalyDetectionService
+    -#eventPublisher : DomainEventPublisher
+  }
+  class IntelligenceQueryServiceImpl <<Application Service>> {
+    -#readingRepository : OperationalReadingRepository
+    -#anomalyRepository : OperationalAnomalyRepository
+    -#alertRepository : AlertRepository
+  }
+  record RegisterOperationalReadingCommand <<Command>> {
+    +machineId : Long
+    +variableName : String
+    +value : BigDecimal
+    +unitSymbol : String
+    +recordedAt : Instant
+  }
+  record AcknowledgeAnomalyCommand <<Command>> {
+    +anomalyId : Long
+  }
+  record AttendAlertCommand <<Command>> {
+    +alertId : Long
+    +action : String
+  }
+  record GetOperationalReadingsQuery <<Query>>
+  record GetOperationalAnomaliesQuery <<Query>>
+  record GetAlertsQuery <<Query>>
+  record GetMaintenanceRecommendationsQuery <<Query>>
+}
+
+package "domain" #E8F4D4 {
+  class OperationalReading <<Aggregate Root>> {
+    -#id : OperationalReadingId
+    -#machineId : MachineId
+    -#measurement : OperationalMeasurement
+    -#recordedAt : ReadingDateTime
+    +{static} record(machineId, measurement, recordedAt) : OperationalReading
+  }
+  class OperationalAnomaly <<Aggregate Root>> {
+    -#id : OperationalAnomalyId
+    -#readingId : OperationalReadingId
+    -#measurement : OperationalMeasurement
+    -#criterion : EvaluationCriterion
+    -#detectedAt : DetectionDateTime
+    -#status : AnomalyStatus
+    +acknowledge() : void
+    +resolve() : void
+  }
+  class Alert <<Aggregate Root>> {
+    -#id : AlertId
+    -#anomalyId : OperationalAnomalyId
+    -#priority : AlertPriority
+    -#status : AlertStatus
+    -#generatedAt : AlertGenerationDateTime
+    +acknowledge() : void
+    +close() : void
+  }
+  record OperationalReadingId <<Value Object>> {
+    +value : Long
+  }
+  record OperationalAnomalyId <<Value Object>> {
+    +value : Long
+  }
+  record AlertId <<Value Object>> {
+    +value : Long
+  }
+  record MachineId <<Value Object>> {
+    +value : Long
+  }
+  record VariableName <<Value Object>> {
+    +value : String
+  }
+  record MeasurementValue <<Value Object>> {
+    +value : BigDecimal
+  }
+  record UnitSymbol <<Value Object>> {
+    +value : String
+  }
+  record ReadingDateTime <<Value Object>> {
+    +value : Instant
+  }
+  record DetectionDateTime <<Value Object>> {
+    +value : Instant
+  }
+  record AlertGenerationDateTime <<Value Object>> {
+    +value : Instant
+  }
+  record OperationalMeasurement <<Value Object>> {
+    +variable : VariableName
+    +value : MeasurementValue
+    +unit : UnitSymbol
+  }
+  record EvaluationCriterion <<Value Object>> {
+    +minimum : MeasurementValue
+    +maximum : MeasurementValue
+    +isViolatedBy(value : MeasurementValue) : boolean
+  }
+  record MaintenanceRecommendation <<Read Model>> {
+    +machineId : MachineId
+    +anomalyId : OperationalAnomalyId
+    +suggestedAction : String
+    +priority : AlertPriority
+  }
+  enum AnomalyStatus <<Enumeration>> {
+    DETECTED
+    ACKNOWLEDGED
+    RESOLVED
+  }
+  enum AlertPriority <<Enumeration>> {
+    LOW
+    MEDIUM
+    HIGH
+    CRITICAL
+  }
+  enum AlertStatus <<Enumeration>> {
+    OPEN
+    ACKNOWLEDGED
+    CLOSED
+  }
+  class AnomalyDetectionService <<Domain Service>> {
+    +detect(reading : OperationalReading, criterion : EvaluationCriterion) : Optional<OperationalAnomaly>
+  }
+  interface OperationalReadingRepository <<Repository Port>> {
+    +save(reading : OperationalReading) : OperationalReading
+    +findById(id : OperationalReadingId) : Optional<OperationalReading>
+    +findAll() : List<OperationalReading>
+  }
+  interface OperationalAnomalyRepository <<Repository Port>> {
+    +save(anomaly : OperationalAnomaly) : OperationalAnomaly
+    +findById(id : OperationalAnomalyId) : Optional<OperationalAnomaly>
+    +findAll() : List<OperationalAnomaly>
+  }
+  interface AlertRepository <<Repository Port>> {
+    +save(alert : Alert) : Alert
+    +findById(id : AlertId) : Optional<Alert>
+    +findAll() : List<Alert>
+  }
+  record OperationalReadingRecorded <<Domain Event>> {
+    +readingId : OperationalReadingId
+    +occurredAt : Instant
+  }
+  record OperationalAnomalyDetected <<Domain Event>> {
+    +anomalyId : OperationalAnomalyId
+    +occurredAt : Instant
+  }
+  record OperationalAlertGenerated <<Domain Event>> {
+    +alertId : AlertId
+    +occurredAt : Instant
+  }
+}
+
+package "infrastructure.persistence.jpa" #F0E6FA {
+  class OperationalReadingPersistenceEntity <<JPA Entity>> {
+    -id : Long <<BIGINT>>
+    -machineId : Long <<BIGINT FK>>
+    -variableName : String
+    -measurementValue : BigDecimal
+    -unitSymbol : String
+    -recordedAt : Instant
+  }
+  class OperationalAnomalyPersistenceEntity <<JPA Entity>> {
+    -id : Long <<BIGINT>>
+    -readingId : Long <<BIGINT FK>>
+    -minimumValue : BigDecimal
+    -maximumValue : BigDecimal
+    -detectedAt : Instant
+    -status : String
+  }
+  class AlertPersistenceEntity <<JPA Entity>> {
+    -id : Long <<BIGINT>>
+    -anomalyId : Long <<BIGINT FK>>
+    -priority : String
+    -status : String
+    -generatedAt : Instant
+  }
+  class OperationalReadingPersistenceAssembler <<Data Mapper>> {
+    +toPersistence(domain : OperationalReading) : OperationalReadingPersistenceEntity
+    +toDomain(entity : OperationalReadingPersistenceEntity) : OperationalReading
+  }
+  class OperationalAnomalyPersistenceAssembler <<Data Mapper>> {
+    +toPersistence(domain : OperationalAnomaly) : OperationalAnomalyPersistenceEntity
+    +toDomain(entity : OperationalAnomalyPersistenceEntity) : OperationalAnomaly
+  }
+  class AlertPersistenceAssembler <<Data Mapper>> {
+    +toPersistence(domain : Alert) : AlertPersistenceEntity
+    +toDomain(entity : AlertPersistenceEntity) : Alert
+  }
+  interface OperationalReadingPersistenceRepository <<Spring Data Repository>>
+  interface OperationalAnomalyPersistenceRepository <<Spring Data Repository>>
+  interface AlertPersistenceRepository <<Spring Data Repository>>
+  class OperationalReadingRepositoryImpl <<Repository Adapter>>
+  class OperationalAnomalyRepositoryImpl <<Repository Adapter>>
+  class AlertRepositoryImpl <<Repository Adapter>>
+}
+
+package "infrastructure.integration" #FCE8D5 {
+  class SensorGatewayAdapter <<Telemetry Adapter>> {
+    +toCommand(resource : SensorReadingResource) : RegisterOperationalReadingCommand
+  }
+  class NotificationDeliveryAdapter <<Notification Adapter>> {
+    +sendOperationalAlert(alert : Alert) : void
+  }
+}
+
+package "shared (reference)" #FFF2CC {
+  abstract class AbstractDomainAggregateRoot <<Shared Base Aggregate>>
+  class DomainEventPublisher <<Shared Component>>
+  class Result <<Shared Result>>
+  class ApplicationError <<Shared Value Object>>
+}
+
+OperationalReadingsController ..> IntelligenceCommandService
+OperationalReadingsController ..> IntelligenceQueryService
+AnomaliesController ..> IntelligenceCommandService
+AnomaliesController ..> IntelligenceQueryService
+AlertsController ..> IntelligenceCommandService
+AlertsController ..> IntelligenceQueryService
+OperationalReadingsController ..> IntelligenceResourceAssembler
+AnomaliesController ..> IntelligenceResourceAssembler
+AlertsController ..> IntelligenceResourceAssembler
+IntelligenceCommandServiceImpl ..|> IntelligenceCommandService
+IntelligenceQueryServiceImpl ..|> IntelligenceQueryService
+IntelligenceCommandServiceImpl ..> OperationalReadingRepository
+IntelligenceCommandServiceImpl ..> OperationalAnomalyRepository
+IntelligenceCommandServiceImpl ..> AlertRepository
+IntelligenceCommandServiceImpl ..> NotificationPort
+IntelligenceCommandServiceImpl ..> AnomalyDetectionService
+IntelligenceCommandServiceImpl ..> DomainEventPublisher
+IntelligenceQueryServiceImpl ..> OperationalReadingRepository
+IntelligenceQueryServiceImpl ..> OperationalAnomalyRepository
+IntelligenceQueryServiceImpl ..> AlertRepository
+OperationalReading --|> AbstractDomainAggregateRoot
+OperationalAnomaly --|> AbstractDomainAggregateRoot
+Alert --|> AbstractDomainAggregateRoot
+OperationalReading *-- OperationalReadingId
+OperationalReading *-- MachineId : references by identity
+OperationalReading *-- OperationalMeasurement
+OperationalReading *-- ReadingDateTime
+OperationalMeasurement *-- VariableName
+OperationalMeasurement *-- MeasurementValue
+OperationalMeasurement *-- UnitSymbol
+OperationalAnomaly *-- OperationalAnomalyId
+OperationalAnomaly *-- OperationalReadingId : references by identity
+OperationalAnomaly *-- OperationalMeasurement
+OperationalAnomaly *-- EvaluationCriterion
+OperationalAnomaly *-- DetectionDateTime
+OperationalAnomaly --> AnomalyStatus
+Alert *-- AlertId
+Alert *-- OperationalAnomalyId : references by identity
+Alert --> AlertPriority
+Alert --> AlertStatus
+Alert *-- AlertGenerationDateTime
+OperationalReading ..> OperationalReadingRecorded : raises
+OperationalAnomaly ..> OperationalAnomalyDetected : raises
+Alert ..> OperationalAlertGenerated : raises
+OperationalReadingRepositoryImpl ..|> OperationalReadingRepository
+OperationalAnomalyRepositoryImpl ..|> OperationalAnomalyRepository
+AlertRepositoryImpl ..|> AlertRepository
+OperationalReadingRepositoryImpl --> OperationalReadingPersistenceRepository
+OperationalAnomalyRepositoryImpl --> OperationalAnomalyPersistenceRepository
+AlertRepositoryImpl --> AlertPersistenceRepository
+OperationalReadingRepositoryImpl ..> OperationalReadingPersistenceAssembler
+OperationalAnomalyRepositoryImpl ..> OperationalAnomalyPersistenceAssembler
+AlertRepositoryImpl ..> AlertPersistenceAssembler
+OperationalReadingPersistenceRepository --|> JpaRepository
+OperationalAnomalyPersistenceRepository --|> JpaRepository
+AlertPersistenceRepository --|> JpaRepository
+NotificationDeliveryAdapter ..|> NotificationPort
+
+note right of OperationalReadingPersistenceEntity
+  @Id @GeneratedValue
+  Java Long -> MySQL BIGINT
+end note
+@enduml
