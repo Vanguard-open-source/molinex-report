@@ -1,0 +1,74 @@
+@startuml
+title Asset and Maintenance Management — Detailed Design-Level Event Storming
+left to right direction
+skinparam backgroundColor #F7FAFC
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam linetype ortho
+skinparam ArrowColor #334E68
+skinparam ArrowThickness 1.3
+skinparam packageStyle rectangle
+skinparam rectangle {
+  RoundCorner 8
+  Padding 8
+}
+
+rectangle "Maintenance\nTechnician" as technician #FFF3A6
+rectangle "Maintenance\nTechnician" as technicianQuery #FFF3A6
+
+package "Asset and Maintenance Management · Core Subdomain" #E6F4EA {
+  rectangle "Register Machine" as cmdRegister #A9C7F7
+  rectangle "Machine" as aggMachine #FFE27A
+  rectangle "Machine Registered" as evtRegistered #FFB26B
+
+  rectangle "Change Machine\nStatus" as cmdStatus #A9C7F7
+  rectangle "Machine Status\nChanged" as evtStatus #FFB26B
+
+  rectangle "Record Preventive\nMaintenance" as cmdPreventive #A9C7F7
+  rectangle "Record Corrective\nMaintenance" as cmdCorrective #A9C7F7
+  rectangle "MaintenanceRecord" as aggMaintenance #FFE27A
+  rectangle "Maintenance Recorded" as evtMaintenance #FFB26B
+
+  rectangle "Machine Inventory\nand Status" as readMachines #B9D98A
+  rectangle "Maintenance History" as readHistory #B9D98A
+}
+
+technician --> cmdRegister
+cmdRegister --> aggMachine
+aggMachine --> evtRegistered
+
+technician --> cmdStatus
+cmdStatus --> aggMachine
+aggMachine --> evtStatus
+
+technician --> cmdPreventive
+technician --> cmdCorrective
+cmdPreventive --> aggMaintenance
+cmdCorrective --> aggMaintenance
+aggMaintenance --> evtMaintenance
+
+technicianQuery ..> readMachines : queries
+technicianQuery ..> readHistory : queries
+
+cmdRegister -[hidden]down-> cmdStatus
+cmdStatus -[hidden]down-> cmdPreventive
+cmdPreventive -[hidden]down-> cmdCorrective
+cmdCorrective -[hidden]down-> technicianQuery
+technicianQuery -[hidden]right-> readMachines
+readMachines -[hidden]right-> readHistory
+
+note bottom of aggMaintenance
+  Preventive and corrective maintenance are initiated
+  by the technician. They are not automatic Policies.
+end note
+
+legend bottom
+|= Color |= EventStorming element |
+|<#FFF3A6>| Actor |
+|<#A9C7F7>| Command |
+|<#FFE27A>| Aggregate Root |
+|<#FFB26B>| Domain Event |
+|<#B9D98A>| Read Model |
+endlegend
+@enduml

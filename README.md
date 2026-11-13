@@ -1740,9 +1740,9 @@ Los modelos fueron elaborados con PlantUML bajo el enfoque Diagram-as-Code. Las 
 
 #### Diagrama detallado de Production Management
 
-El diagrama presenta el diseño de las historias US-05 a US-10. El Operador de Producción registra recepciones, lotes y procesos, actualiza la información productiva y consulta procesos. El Administrador consulta el historial. Las consultas se muestran como operaciones de lectura sin emisión de eventos de dominio.
+El diagrama presenta el diseño de las historias US-05 a US-10. Cada flujo iniciado por el Operador de Producción sigue la secuencia `Actor → Command → Aggregate Root → Domain Event`. El registro y la actualización de información productiva utilizan el mismo Aggregate Root, pero producen eventos distintos. No se introduce una Policy porque ninguna de estas operaciones se activa automáticamente como reacción a otro evento.
 
-En US-06, `RegisterProductionBatch` requiere un código único y una recepción existente. `ProductionBatch` conserva la referencia mediante `RawMaterialReceptionId`, dentro del mismo bounded context. El diseño prevé emitir `ProductionBatchRegistered` tras aceptar el registro. El Context Map documenta por separado los eventos de información productiva que Production publica hacia Quality.
+`Production Processes` y `Production History` se muestran como Read Models independientes del flujo transaccional. El operador y el administrador los consultan sin enviar Commands ni producir Domain Events. En US-06, `RegisterProductionBatch` requiere un código único y una recepción existente; `ProductionBatch` conserva la referencia mediante `RawMaterialReceptionId` y emite `ProductionBatchRegistered` solamente después de aceptar el cambio.
 
 <p align="center">
   <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/design-level-event-storming-production-management.svg" alt="Design-Level Event Storming de Production Management, historias US-05 a US-10" width="100%">
@@ -1752,15 +1752,69 @@ En US-06, `RegisterProductionBatch` requiere un código único y una recepción 
 
 #### Diagrama detallado de Quality and Yield Control
 
-El diagrama documenta el diseño de US-11 a US-16. El Operador de Producción registra resultados de calidad y merma, y consulta la composición del arroz y la merma registrada. El Administrador consulta rendimientos, compara indicadores e identifica desviaciones. El diseño prevé emitir `QualityDeviationIdentified` solo si el indicador queda fuera de un rango válido. Las consultas se muestran como operaciones de lectura.
+El diagrama documenta el diseño de US-11 a US-16. El Operador de Producción registra evaluaciones de calidad y merma mediante flujos transaccionales independientes. `QualityAssessmentRecorded` y `WasteRecorded` pueden activar la Policy que evalúa los indicadores contra su rango válido. Solo cuando se incumple el rango, la Policy emite automáticamente `IdentifyQualityDeviation`, que actúa sobre `QualityDeviation` y produce `QualityDeviationIdentified`.
 
-`QualityAssessment` y `WasteRecord` referencian el proceso mediante el `ProductionRecordId` local de Quality. Según el Context Map, Production comunica los cambios de información productiva mediante `ProductionInformationRecorded` y `ProductionInformationUpdated` como parte del Published Language. Quality traduce el identificador a su propio tipo y mantiene sus propios agregados.
+Los Read Models de rendimiento, composición, merma, comparación y desviaciones permanecen separados de la Policy y pueden consultarse sin modificar Aggregates. `QualityAssessment` y `WasteRecord` referencian el proceso mediante el `ProductionRecordId` local de Quality. Según el Context Map, Production comunica los cambios de información productiva como Published Language y Quality traduce el identificador a su propio tipo.
 
 <p align="center">
   <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/design-level-event-storming-quality-yield-control.svg" alt="Design-Level Event Storming de Quality and Yield Control, historias US-11 a US-16" width="100%">
 </p>
 
 **Figura: Design-Level Event Storming de Quality and Yield Control. Fuente: elaboración propia en PlantUML.**
+
+#### Diagrama detallado de Asset and Maintenance Management
+
+El diagrama documenta las operaciones de maquinaria y mantenimiento de US-17 a US-21. El Técnico de Mantenimiento registra una máquina, cambia su estado y registra mantenimientos preventivos o correctivos. Cada Command actúa sobre `Machine` o `MaintenanceRecord` y produce el Domain Event correspondiente después de validar el cambio.
+
+Los mantenimientos preventivos y correctivos son decisiones iniciadas por el técnico; por ello, no se representan como Policies automáticas. `Machine Inventory and Status` y `Maintenance History` son Read Models consultados de manera independiente y no modifican los Aggregates.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/design-level-event-storming-asset-maintenance-management.svg" alt="Design-Level Event Storming de Asset and Maintenance Management" width="100%">
+</p>
+
+**Figura: Design-Level Event Storming de Asset and Maintenance Management. Fuente: elaboración propia en PlantUML.**
+
+#### Diagrama detallado de Operational Intelligence
+
+El flujo comienza cuando una fuente de datos registra una lectura operacional. `OperationalReadingRecorded` activa una Policy que evalúa el criterio aplicable y emite automáticamente `DetectOperationalAnomaly`. Si se detecta una anomalía que requiere atención, `OperationalAnomalyDetected` activa una segunda Policy que emite `GenerateOperationalAlert` y puede producir `OperationalAlertGenerated`.
+
+Las Policies se muestran únicamente porque reaccionan a Domain Events y originan Commands automáticos. Las lecturas, el historial de anomalías, las alertas y las recomendaciones de mantenimiento son Read Models consultados por el Técnico de Mantenimiento y permanecen fuera del flujo de escritura.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/design-level-event-storming-operational-intelligence.svg" alt="Design-Level Event Storming de Operational Intelligence" width="100%">
+</p>
+
+**Figura: Design-Level Event Storming de Operational Intelligence. Fuente: elaboración propia en PlantUML.**
+
+#### Diagrama detallado de Commercial Engagement
+
+El Visitante consulta el catálogo de planes y la propuesta de valor como Read Models. Cuando decide contactar a Vanguard, inicia `SubmitCommercialInquiry`; el Command actúa sobre `CommercialInquiry` y produce `CommercialInquirySubmitted`. No existe una Policy que cree automáticamente una cuenta, una suscripción o un tenant, porque ese flujo no forma parte del alcance confirmado.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/design-level-event-storming-commercial-engagement.svg" alt="Design-Level Event Storming de Commercial Engagement" width="100%">
+</p>
+
+**Figura: Design-Level Event Storming de Commercial Engagement. Fuente: elaboración propia en PlantUML.**
+
+#### Diagrama detallado de Reporting and Analytics
+
+Reporting and Analytics funciona como un read side. Los Domain Events publicados por los bounded contexts operativos actualizan `Operational Summary`, `Production Report`, `Maintenance Report` y `Operational Trend`; posteriormente, el Administrador consulta esas proyecciones. La actualización de una proyección no se etiqueta como Policy porque no emite un Command de negocio ni modifica un Aggregate Root.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/design-level-event-storming-reporting-analytics.svg" alt="Design-Level Event Storming de Reporting and Analytics" width="100%">
+</p>
+
+**Figura: Design-Level Event Storming de Reporting and Analytics. Fuente: elaboración propia en PlantUML.**
+
+#### Diagrama detallado de Identity and Access Management
+
+El Administrador inicia el registro de usuarios y la asignación de roles, mientras que el Usuario de la Plataforma inicia la autenticación y la actualización de su perfil. Cada operación actúa sobre `User` y produce un Domain Event distinto. `Authorized Functions` y `User Profile` se representan como Read Models consultables; no son Policies porque no reaccionan a un evento para emitir un Command automático.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/design-level-event-storming-identity-access-management.svg" alt="Design-Level Event Storming de Identity and Access Management" width="100%">
+</p>
+
+**Figura: Design-Level Event Storming de Identity and Access Management. Fuente: elaboración propia en PlantUML.**
 
 #### Aggregate boundaries and invariants
 

@@ -1,0 +1,63 @@
+@startuml
+title Reporting and Analytics — Detailed Design-Level Event Storming
+left to right direction
+skinparam backgroundColor #F7FAFC
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam linetype ortho
+skinparam ArrowColor #334E68
+skinparam ArrowThickness 1.3
+skinparam packageStyle rectangle
+skinparam rectangle {
+  RoundCorner 8
+  Padding 8
+}
+
+rectangle "Production, Quality, Maintenance\nand Alert Events" as evtSummary #FFB26B
+rectangle "Administrator" as adminSummary #FFF3A6
+rectangle "Production and\nWaste Events" as evtProduction #FFB26B
+rectangle "Administrator" as adminProduction #FFF3A6
+rectangle "Maintenance Events" as evtMaintenance #FFB26B
+rectangle "Administrator" as adminMaintenance #FFF3A6
+rectangle "Reading, Anomaly\nand Alert Events" as evtTrend #FFB26B
+rectangle "Administrator" as adminTrend #FFF3A6
+
+package "Reporting and Analytics · Supporting Subdomain / Read Side" #F1F5F9 {
+  rectangle "Operational Summary" as readSummary #B9D98A
+  rectangle "Production Report" as readProduction #B9D98A
+  rectangle "Maintenance Report" as readMaintenance #B9D98A
+  rectangle "Operational Trend" as readTrend #B9D98A
+}
+
+evtSummary ..> readSummary : updates projection
+adminSummary ..> readSummary : queries
+
+evtProduction ..> readProduction : updates projection
+adminProduction ..> readProduction : queries
+
+evtMaintenance ..> readMaintenance : updates projection
+adminMaintenance ..> readMaintenance : queries
+
+evtTrend ..> readTrend : updates projection
+adminTrend ..> readTrend : queries
+
+evtSummary -[hidden]down-> evtProduction
+evtProduction -[hidden]down-> evtMaintenance
+evtMaintenance -[hidden]down-> evtTrend
+readSummary -[hidden]down-> readProduction
+readProduction -[hidden]down-> readMaintenance
+readMaintenance -[hidden]down-> readTrend
+
+note bottom of evtTrend
+  Projection updates are event reactions on the read side,
+  not Policies. No automatic business Command is issued.
+end note
+
+legend bottom
+|= Color |= EventStorming element |
+|<#FFF3A6>| Actor |
+|<#FFB26B>| Published Domain Event |
+|<#B9D98A>| Read Model / Projection |
+endlegend
+@enduml
