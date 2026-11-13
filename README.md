@@ -2145,6 +2145,18 @@ El diagrama representa el diseño objetivo del bounded context **Quality and Yie
 
 **Figura: Asset and Maintenance Management Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
 
+##### Asset and Maintenance Management Frontend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Asset and Maintenance Management** para el frontend Angular. `AssetMaintenanceStore` mantiene mediante Signals las máquinas y los registros de mantenimiento, mientras `AssetMaintenanceApi` coordina las operaciones HTTP. Los assemblers aíslan al dominio frontend de los recursos serializables intercambiados con la RESTful API.
+
+`Machine` y `MaintenanceRecord` se modelan como Aggregate Roots independientes y se relacionan únicamente mediante el Value Object `MachineId`. Sus identificadores encapsulan un `number`, en correspondencia con identificadores `Long` y columnas `BIGINT` del backend y la base de datos. El código, nombre, modelo, fechas, descripción, responsable y referencia de anomalía también se expresan mediante Value Objects. `CorrectiveMaintenanceDetails` agrupa la falla, la causa, la acción ejecutada y el tiempo de inactividad, y solo acompaña a los mantenimientos correctivos.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/frontend-asset-maintenance-management-class-diagram.svg" alt="Asset and Maintenance Management Frontend Class Diagram" width="100%">
+</p>
+
+**Figura: Asset and Maintenance Management Frontend Class Diagram. Fuente: elaboración propia en PlantUML.**
+
 #### Operational Intelligence Bounded Context
 
 `OperationalReading`, `OperationalAnomaly` y `Alert` mantienen ciclos de vida separados. `AnomalyDetectionService` concentra la evaluación que involucra una lectura y un criterio. `SensorGatewayPort` actúa como Anti-Corruption Layer frente al proveedor de sensores, mientras que `NotificationPort` evita acoplar el dominio al servicio de entrega de notificaciones.
