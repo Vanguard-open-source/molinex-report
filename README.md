@@ -1892,7 +1892,7 @@ Las dos primeras dependen de los hotspots "Origen de las variables operativas" y
 
 ### 4.6.2 Software Architecture Context Diagram
 
-El diagrama de contexto presenta a Molinex como un único sistema de software, muestra los objetivos principales de sus actores e incorpora `Rice Mill Sensor Gateway` y `Notification Delivery Service` como integraciones externas planificadas. No expone decisiones internas de implementación.
+El diagrama de contexto presenta a Molinex como un único sistema de software, muestra los objetivos principales de sus actores e incorpora `Rice Mill Sensor Gateway` y `Notification Delivery Service` como integraciones externas. No expone decisiones internas de implementación.
 
 <p align="center">
   <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/software-system-context.svg" alt="Software Architecture Context Diagram de Molinex" width="100%">
@@ -1902,7 +1902,7 @@ El diagrama de contexto presenta a Molinex como un único sistema de software, m
 
 ### 4.6.3 Software Architecture Container Diagrams
 
-El administrador, el técnico de mantenimiento y el operario de producción acceden a Molinex por HTTPS mediante el contenedor Web Application. Nginx sirve los archivos estáticos de la SPA Angular, que se ejecuta en el navegador y consume la RESTful API mediante JSON sobre HTTPS. La Landing Page se mantiene como un contenedor independiente que presenta la oferta pública y envía solicitudes comerciales a la API.
+El administrador, el técnico de mantenimiento y el operario de producción acceden a Molinex por HTTPS mediante el contenedor Web Application, desplegado en Azure Static Web Apps. Este contenedor entrega la Single-Page Application desarrollada con Angular 22, TypeScript, Angular Signals y Angular Material; la SPA se ejecuta en el navegador y consume la RESTful API de Spring Boot mediante JSON sobre HTTPS. La Landing Page se mantiene como un contenedor independiente que presenta la oferta pública, redirige a la aplicación y envía solicitudes comerciales a la API.
 
 <p align="center">
   <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/container-diagram.svg" alt="Software Architecture Container Diagram de Molinex" width="100%">
@@ -1918,7 +1918,7 @@ Dentro de cada producto, los Bounded Contexts se presentan según su tipo de sub
 
 #### Frontend Component Diagrams
 
-La vista general muestra las áreas funcionales internas de la Single Page Application y su acceso a la RESTful API. En las vistas detalladas, cada área se organiza mediante los límites Presentation, Application, Domain e Infrastructure. El Frontend Shared Module reúne capacidades transversales de interfaz, sesión y comunicación HTTP; únicamente Weight y MeasurementUnit corresponden al modelo compartido entre Producción y Calidad.
+La vista general muestra los siete Bounded Contexts internos de la Single-Page Application, el Shared Kernel y su acceso a la RESTful API. En las vistas detalladas, cada contexto se organiza mediante los límites Presentation, Application, Domain e Infrastructure. Presentation contiene componentes Angular; Application coordina el estado mediante stores basados en Signals; Domain expresa entidades, objetos de valor y modelos de lectura; e Infrastructure concentra la comunicación HTTP y el ensamblaje de recursos. El Shared Kernel reúne las capacidades transversales del frontend y los objetos de valor `Weight` y `MeasurementUnit` compartidos por Production Management y Quality and Yield Control.
 
 ##### Frontend Component Overview
 
@@ -1936,9 +1936,7 @@ La vista general muestra las áreas funcionales internas de la Single Page Appli
 
 **Figura: Production Management Frontend Component Diagram. Fuente: elaboración propia en Structurizr.**
 
-En el bounded context **Production Management**, el Operador de Producción inicia el registro de un lote de materia prima asociado a una recepción (US-06) en **Production Views**. Las vistas delegan la operación a **Production Management Facade**, implementada por `ProductionManagementStore`, que gestiona el estado y utiliza **Production API Adapter** para enviar la solicitud.
-
-La figura representa la arquitectura objetivo, en la que el adaptador consume la API REST de Spring Boot. En el despliegue de TB1, el frontend Angular consumió la API simulada de `molinex-platform-mock` (JSON Server).
+En el Bounded Context **Production Management**, los componentes de Presentation permiten consultar y registrar recepciones de materia prima, lotes y registros de producción. Estos componentes coordinan las operaciones mediante `ProductionManagementStore`, trabajan con el modelo de dominio del contexto y delegan la comunicación remota a `production-management/infrastructure`. Esta última agrupa `ProductionApi` y los assemblers que transforman los recursos de la RESTful API de Spring Boot en entidades del frontend y viceversa.
 
 ##### Quality and Yield Control Frontend Components
 
@@ -1988,17 +1986,17 @@ La figura representa la arquitectura objetivo, en la que el adaptador consume la
 
 **Figura: Identity and Access Management Frontend Component Diagram. Fuente: elaboración propia en Structurizr.**
 
-##### Frontend Shared Module Components
+##### Frontend Shared Kernel Components
 
 <p align="center">
-  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/frontend-shared-module-component-diagram.svg" alt="Frontend Shared Module Component Diagram" width="100%">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/frontend-shared-module-component-diagram.svg" alt="Frontend Shared Kernel Component Diagram" width="100%">
 </p>
 
-**Figura: Frontend Shared Module Component Diagram. Fuente: elaboración propia en Structurizr.**
+**Figura: Frontend Shared Kernel Component Diagram. Fuente: elaboración propia en Structurizr.**
 
 #### Backend Component Diagrams
 
-La vista general representa los módulos de los Bounded Contexts que conviven dentro de la RESTful API, sus eventos en proceso y los sistemas externos planificados. Cada vista detallada separa Interfaces, Application, Domain e Infrastructure, de modo que las dependencias técnicas apunten hacia contratos controlados por el dominio. El Production-Quality Shared Kernel constituye una excepción intencional: contiene solo objetos de valor de Domain, por lo que no se inventan capas de Interfaces, Application o Infrastructure.
+La vista general representa los módulos de los Bounded Contexts que conviven dentro de la RESTful API, sus eventos en proceso y los sistemas externos. Cada vista detallada separa Interfaces, Application, Domain e Infrastructure: las interfaces REST se implementan con Spring Web MVC, los servicios de aplicación coordinan comandos y consultas, el modelo de dominio conserva las reglas del negocio y la infraestructura utiliza Spring Data JPA para persistencia. El Production-Quality Shared Kernel constituye una excepción intencional: contiene solo objetos de valor de Domain, por lo que no se inventan capas de Interfaces, Application o Infrastructure.
 
 ##### Backend Component Overview
 
