@@ -2973,9 +2973,65 @@ BUILD SUCCESS
 | **US-02 · Inicio de sesión** | Autenticación de una cuenta activa y emisión de un token firmado. Se comprobó el rechazo de credenciales incorrectas, cuentas no disponibles y solicitudes sin contraseña. | 3 |
 | **US-36 · Solicitud comercial** | Persistencia y confirmación de una solicitud válida en el backend. Se comprobó el rechazo de solicitudes inválidas y el manejo de fallos en el servicio. | 6 |
 
-La ejecución de estas pruebas cubre el backend en un entorno local de pruebas. Sigue pendiente incorporar evidencia visual de los flujos de rendimiento, composición, estado de maquinaria e historial en Angular (US-12, US-13, US-18 y US-21), así como del inicio de sesión y del envío del formulario desde la Landing Page. La comprobación de estos flujos contra la API desplegada y MySQL requiere una ejecución adicional.
+Las 44 pruebas anteriores cubren el backend con H2 en un entorno local. El 13 de noviembre de 2026 se revisó también la [Web Application desplegada en Azure Static Web Apps](https://lemon-meadow-06ea8a41e.1.azurestaticapps.net/). Se inició sesión con la cuenta de demostración y se navegó por las vistas que se muestran a continuación.
+
+#### Evidencia visual de la Web Application
+
+![Inicio de sesión con el formulario vacío (US-02)](assets/Images%20Chapter%205/Sprint%203/5.2.3.5-01-inicio-sesion.jpg)
+
+**Figura:** Inicio de sesión con el formulario vacío (US-02). Fuente: captura de la Web Application desplegada, 13-11-2026.
+
+![Panel de producción y trazabilidad de recepciones, lotes y procesos (TS-01)](assets/Images%20Chapter%205/Sprint%203/5.2.3.5-02-produccion.jpg)
+
+**Figura:** Panel de producción y trazabilidad de recepciones, lotes y procesos (TS-01). Fuente: captura de la Web Application desplegada, 13-11-2026.
+
+![Historial de producción y filtros (TS-01)](assets/Images%20Chapter%205/Sprint%203/5.2.3.5-03-historial-produccion.jpg)
+
+**Figura:** Historial de producción y filtros (TS-01). Fuente: captura de la Web Application desplegada, 13-11-2026.
+
+![Indicadores de rendimiento y composición de arroz entero y quebrado (US-12 y US-13)](assets/Images%20Chapter%205/Sprint%203/5.2.3.5-04-calidad-rendimiento.jpg)
+
+**Figura:** Indicadores de rendimiento y composición de arroz entero y quebrado (US-12 y US-13). Fuente: captura de la Web Application desplegada, 13-11-2026.
+
+![Inventario y estado operativo de la maquinaria (US-18)](assets/Images%20Chapter%205/Sprint%203/5.2.3.5-05-maquinaria.jpg)
+
+**Figura:** Inventario y estado operativo de la maquinaria (US-18). Fuente: captura de la Web Application desplegada, 13-11-2026.
+
+![Historial de mantenimiento filtrado por máquina (US-21)](assets/Images%20Chapter%205/Sprint%203/5.2.3.5-06-mantenimiento.jpg)
+
+**Figura:** Historial de mantenimiento filtrado por máquina (US-21). Fuente: captura de la Web Application desplegada, 13-11-2026.
+
+![Vista de usuarios y permisos disponible para el administrador](assets/Images%20Chapter%205/Sprint%203/5.2.3.5-07-usuarios-permisos.jpg)
+
+**Figura:** Vista de usuarios y permisos disponible para el administrador. Fuente: captura de la Web Application desplegada, 13-11-2026.
+
+![Formulario de solicitud comercial antes del envío (US-36)](assets/Images%20Chapter%205/Sprint%203/5.2.3.5-08-formulario-comercial.jpg)
+
+**Figura:** Formulario de solicitud comercial antes del envío (US-36). Fuente: captura de la Web Application desplegada, 13-11-2026.
+
+El formulario comercial se inspeccionó en la Web Application y quedó sin enviar. La verificación del envío desde la Landing Page y la confirmación de qué API y base de datos utiliza el despliegue quedan pendientes.
 
 ### 5.2.3.6.Services Documentation Evidence for Sprint Review.
+
+Se verificaron **Swagger UI** y **OpenAPI 3.1** con HTTP 200 al ejecutar localmente el backend Java de Molinex en el commit [`97c9763`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/97c9763807ae5105880e55f4ef35ae6a669f81f3), con JDK 25 y H2 en memoria. Swagger UI se consultó en `http://127.0.0.1:18843/swagger-ui/index.html`. La [especificación OpenAPI generada](assets/Images%20Chapter%205/Sprint%203/5.2.3.6-openapi.json) conserva las 21 rutas y 29 operaciones del entorno de revisión.
+
+| Alcance | Operaciones representativas | Datos de entrada |
+| --- | --- | --- |
+| **TS-01 · Producción** | `POST /api/v1/raw-material-receptions`, `POST /api/v1/production-batches`, `POST /api/v1/production-records`, `GET /api/v1/production-records/history` | Cuerpo JSON para registros y filtros `from` y `to` para el historial. |
+| **TS-02 · Calidad y rendimiento** | `GET /api/v1/yield-indicators`, `GET /api/v1/rice-composition` | `from`, `to` y `productionRecordId` para rendimiento. `batchId` para composición. |
+| **TS-03 · Maquinaria y mantenimiento** | `GET /api/v1/machines/{id}/status`, `GET /api/v1/maintenance-records/by-machine/{machineId}`, `POST /api/v1/maintenance-records` | Identificador de máquina para consultas y cuerpo JSON para registrar una intervención. |
+| **US-02 · Acceso** | `POST /api/v1/tokens` | Credenciales en el cuerpo JSON. |
+| **US-36 · Solicitud comercial** | `POST /api/v1/commercial-inquiries` | Datos de contacto y mensaje en el cuerpo JSON. |
+
+| Solicitud ejecutada | Respuesta observada |
+| --- | --- |
+| `GET /api/v1/production-batches` con la base vacía | `200 OK` con `[]`. |
+| `GET /api/v1/rice-composition?batchId=1` sin el lote | `404 Not Found` con `PRODUCTION_BATCH_NOT_FOUND`. |
+| `GET /api/v1/machines/1/status` sin la máquina | `404 Not Found` con `MACHINE_NOT_FOUND`. |
+| `POST /api/v1/commercial-inquiries` con `{}` | `400 Bad Request` con `VALIDATION_ERROR` y los campos obligatorios omitidos. |
+
+La especificación generada declara `200` para las altas de recepción, lote y registro productivo. Los controladores y las pruebas de integración confirman `201 Created`. Las respuestas `400` y `404` observadas tampoco están documentadas en esas operaciones de ejemplo. Queda pendiente alinear esos códigos en el backend e incorporar la URL de Swagger del entorno desplegado.
+
 ### 5.2.3.7.Software Deployment Evidence for Sprint Review.
 ### 5.2.3.8.Team Collaboration Insights during Sprint.
 ### 5.3. Validation Interviews.

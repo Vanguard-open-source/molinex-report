@@ -1,0 +1,1598 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "OpenAPI definition",
+    "version": "v0"
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:18843",
+      "description": "Generated server url"
+    }
+  ],
+  "paths": {
+    "/api/v1/production-records/{id}": {
+      "get": {
+        "tags": [
+          "production-records-controller"
+        ],
+        "operationId": "getById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "production-records-controller"
+        ],
+        "operationId": "update",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateProductionInformationResource"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/waste-records": {
+      "get": {
+        "tags": [
+          "WasteRecord"
+        ],
+        "summary": "List waste, optionally by production record",
+        "operationId": "getAll",
+        "parameters": [
+          {
+            "name": "productionRecordId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Waste records",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WasteRecordResource"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "WasteRecord"
+        ],
+        "summary": "RecordProductionWaste",
+        "operationId": "create",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecordProductionWasteResource"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Resource persisted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WasteRecordResource"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/tokens": {
+      "post": {
+        "tags": [
+          "Tokens"
+        ],
+        "summary": "Authenticate by email and issue a stateless JWT",
+        "operationId": "create_1",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthenticateUserResource"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Token issued",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthenticatedUserResource"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/raw-material-receptions": {
+      "get": {
+        "tags": [
+          "raw-material-receptions-controller"
+        ],
+        "operationId": "getAll_1",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RawMaterialReceptionResource"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "raw-material-receptions-controller"
+        ],
+        "operationId": "create_2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecordRawMaterialReceptionResource"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/quality-results": {
+      "get": {
+        "tags": [
+          "QualityAssessment"
+        ],
+        "summary": "List quality-results",
+        "operationId": "getAll_2",
+        "responses": {
+          "200": {
+            "description": "Resource collection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/QualityAssessmentResource"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "QualityAssessment"
+        ],
+        "summary": "RecordQualityResults",
+        "operationId": "create_3",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecordQualityResultsResource"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Resource persisted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QualityAssessmentResource"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/production-records": {
+      "get": {
+        "tags": [
+          "production-records-controller"
+        ],
+        "operationId": "getAll_3",
+        "parameters": [
+          {
+            "name": "batchId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "production-records-controller"
+        ],
+        "operationId": "create_4",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecordProductionInformationResource"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/production-batches": {
+      "get": {
+        "tags": [
+          "production-batches-controller"
+        ],
+        "operationId": "getAll_4",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductionBatchResource"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "production-batches-controller"
+        ],
+        "operationId": "create_5",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterProductionBatchResource"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/maintenance-records": {
+      "get": {
+        "tags": [
+          "MaintenanceRecord"
+        ],
+        "summary": "Maintenance history, optionally for an existing machine",
+        "operationId": "getAll_5",
+        "parameters": [
+          {
+            "name": "machineId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Matching interventions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MaintenanceRecordResource"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "MaintenanceRecord"
+        ],
+        "summary": "Record preventive or corrective maintenance",
+        "operationId": "create_6",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecordMaintenanceResource"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Intervention persisted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MaintenanceRecordResource"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/machines": {
+      "get": {
+        "tags": [
+          "Machine"
+        ],
+        "summary": "List machines",
+        "operationId": "getAll_6",
+        "responses": {
+          "200": {
+            "description": "Resource collection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MachineResource"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Machine"
+        ],
+        "summary": "RegisterMachine",
+        "operationId": "create_7",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterMachineResource"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Resource persisted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MachineResource"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/commercial-inquiries": {
+      "post": {
+        "tags": [
+          "CommercialInquiry"
+        ],
+        "summary": "SubmitCommercialInquiry",
+        "operationId": "create_8",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SubmitCommercialInquiryResource"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Resource persisted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommercialInquiryResource"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/yield-indicators": {
+      "get": {
+        "tags": [
+          "yield-indicators-controller"
+        ],
+        "summary": "Recorded quality and calculated waste indicators with explicit availability",
+        "operationId": "get",
+        "parameters": [
+          {
+            "name": "from",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "productionRecordId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/IndicatorSetResource"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/waste-records/{id}": {
+      "get": {
+        "tags": [
+          "WasteRecord"
+        ],
+        "summary": "Find WasteRecord by identifier",
+        "operationId": "getById_1",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resource found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WasteRecordResource"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/rice-composition": {
+      "get": {
+        "tags": [
+          "rice-composition-controller"
+        ],
+        "summary": "Recorded rice composition for one batch; no averaging",
+        "operationId": "get_1",
+        "parameters": [
+          {
+            "name": "batchId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Composition availability and observations",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RiceCompositionResource"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/raw-material-receptions/{id}": {
+      "get": {
+        "tags": [
+          "raw-material-receptions-controller"
+        ],
+        "operationId": "getById_2",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/quality-results/{id}": {
+      "get": {
+        "tags": [
+          "QualityAssessment"
+        ],
+        "summary": "Find QualityAssessment by identifier",
+        "operationId": "getById_3",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resource found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QualityAssessmentResource"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/production-records/history": {
+      "get": {
+        "tags": [
+          "production-records-controller"
+        ],
+        "operationId": "history",
+        "parameters": [
+          {
+            "name": "from",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/production-batches/{id}": {
+      "get": {
+        "tags": [
+          "production-batches-controller"
+        ],
+        "operationId": "getById_4",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/maintenance-records/{id}": {
+      "get": {
+        "tags": [
+          "MaintenanceRecord"
+        ],
+        "summary": "Find MaintenanceRecord by identifier",
+        "operationId": "getById_5",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resource found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MaintenanceRecordResource"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/maintenance-records/by-machine/{machineId}": {
+      "get": {
+        "tags": [
+          "MaintenanceRecord"
+        ],
+        "summary": "Maintenance history of one existing machine",
+        "operationId": "byMachine",
+        "parameters": [
+          {
+            "name": "machineId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Matching interventions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MaintenanceRecordResource"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/machines/{id}": {
+      "get": {
+        "tags": [
+          "Machine"
+        ],
+        "summary": "Find Machine by identifier",
+        "operationId": "getById_6",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resource found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MachineResource"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/machines/{id}/status": {
+      "get": {
+        "tags": [
+          "Machine"
+        ],
+        "summary": "Machine state and last update, with pending flag for legacy data",
+        "operationId": "status",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "UpdateProductionInformationResource": {
+        "type": "object",
+        "properties": {
+          "batchId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "processName": {
+            "type": "string"
+          },
+          "processedWeightValue": {
+            "type": "number"
+          },
+          "processedWeightUnit": {
+            "type": "string",
+            "enum": [
+              "KILOGRAM",
+              "METRIC_TON"
+            ]
+          },
+          "startedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "finishedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "REGISTERED",
+              "IN_PROGRESS",
+              "COMPLETED"
+            ]
+          }
+        }
+      },
+      "RecordProductionWasteResource": {
+        "type": "object",
+        "properties": {
+          "productionRecordId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "quantityValue": {
+            "type": "number"
+          },
+          "quantityUnit": {
+            "type": "string",
+            "enum": [
+              "KILOGRAM",
+              "METRIC_TON"
+            ]
+          },
+          "baseWeightValue": {
+            "type": "number"
+          },
+          "baseWeightUnit": {
+            "type": "string",
+            "enum": [
+              "KILOGRAM",
+              "METRIC_TON"
+            ]
+          },
+          "recordedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "productionRecordId",
+          "quantityUnit",
+          "quantityValue",
+          "recordedAt"
+        ]
+      },
+      "WasteRecordResource": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "productionRecordId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "quantityValue": {
+            "type": "number"
+          },
+          "quantityUnit": {
+            "type": "string",
+            "enum": [
+              "KILOGRAM",
+              "METRIC_TON"
+            ]
+          },
+          "baseWeightValue": {
+            "type": "number"
+          },
+          "baseWeightUnit": {
+            "type": "string",
+            "enum": [
+              "KILOGRAM",
+              "METRIC_TON"
+            ]
+          },
+          "percentage": {
+            "type": "number"
+          },
+          "recordedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "AuthenticateUserResource": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "AuthenticatedUserResource": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "email": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          }
+        }
+      },
+      "RecordRawMaterialReceptionResource": {
+        "type": "object",
+        "properties": {
+          "receivedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "supplierName": {
+            "type": "string"
+          },
+          "originDescription": {
+            "type": "string"
+          },
+          "quantityValue": {
+            "type": "number"
+          },
+          "quantityUnit": {
+            "type": "string",
+            "enum": [
+              "KILOGRAM",
+              "METRIC_TON"
+            ]
+          }
+        }
+      },
+      "QualityMeasurementResource": {
+        "type": "object",
+        "properties": {
+          "indicator": {
+            "type": "string",
+            "enum": [
+              "WHOLE_GRAIN_PERCENTAGE",
+              "BROKEN_GRAIN_PERCENTAGE",
+              "YIELD_PERCENTAGE"
+            ]
+          },
+          "value": {
+            "type": "number"
+          },
+          "expectedMinimum": {
+            "type": "number"
+          },
+          "expectedMaximum": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "expectedMaximum",
+          "expectedMinimum",
+          "indicator",
+          "value"
+        ]
+      },
+      "RecordQualityResultsResource": {
+        "type": "object",
+        "properties": {
+          "productionRecordId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "measurements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QualityMeasurementResource"
+            }
+          },
+          "assessedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "assessedAt",
+          "measurements",
+          "productionRecordId"
+        ]
+      },
+      "QualityAssessmentResource": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "productionRecordId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "measurements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QualityMeasurementResource"
+            }
+          },
+          "assessedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "RecordProductionInformationResource": {
+        "type": "object",
+        "properties": {
+          "batchId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "processName": {
+            "type": "string"
+          },
+          "processedWeightValue": {
+            "type": "number"
+          },
+          "processedWeightUnit": {
+            "type": "string",
+            "enum": [
+              "KILOGRAM",
+              "METRIC_TON"
+            ]
+          },
+          "startedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "finishedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "REGISTERED",
+              "IN_PROGRESS",
+              "COMPLETED"
+            ]
+          },
+          "recordedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "RegisterProductionBatchResource": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "receptionId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "registeredAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "RecordMaintenanceResource": {
+        "type": "object",
+        "properties": {
+          "machineId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "PREVENTIVE",
+              "CORRECTIVE"
+            ]
+          },
+          "performedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "responsiblePrincipalId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "responsibleDisplayName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "anomalyId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "failure": {
+            "type": "string"
+          },
+          "cause": {
+            "type": "string"
+          },
+          "actionTaken": {
+            "type": "string"
+          },
+          "downtimeMinutes": {
+            "type": "integer",
+            "format": "int32",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "description",
+          "machineId",
+          "performedAt",
+          "responsibleDisplayName",
+          "responsiblePrincipalId",
+          "type"
+        ]
+      },
+      "MaintenanceRecordResource": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "machineId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "PREVENTIVE",
+              "CORRECTIVE"
+            ]
+          },
+          "performedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "description": {
+            "type": "string"
+          },
+          "responsiblePrincipalId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "responsibleDisplayName": {
+            "type": "string"
+          },
+          "anomalyId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "failure": {
+            "type": "string"
+          },
+          "cause": {
+            "type": "string"
+          },
+          "actionTaken": {
+            "type": "string"
+          },
+          "downtimeMinutes": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "RegisterMachineResource": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "model": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "OPERATIONAL",
+              "REQUIRES_ATTENTION",
+              "UNDER_MAINTENANCE",
+              "OUT_OF_SERVICE"
+            ]
+          },
+          "statusChangedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "code",
+          "model",
+          "name",
+          "status",
+          "statusChangedAt"
+        ]
+      },
+      "MachineResource": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "model": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "OPERATIONAL",
+              "REQUIRES_ATTENTION",
+              "UNDER_MAINTENANCE",
+              "OUT_OF_SERVICE"
+            ]
+          },
+          "statusChangedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "SubmitCommercialInquiryResource": {
+        "type": "object",
+        "properties": {
+          "fullName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "minLength": 1
+          },
+          "phoneNumber": {
+            "type": "string"
+          },
+          "companyName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "companyName",
+          "email",
+          "fullName",
+          "message"
+        ]
+      },
+      "CommercialInquiryResource": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "fullName": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "phoneNumber": {
+            "type": "string"
+          },
+          "companyName": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "submittedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "IndicatorResource": {
+        "type": "object",
+        "properties": {
+          "indicator": {
+            "type": "string"
+          },
+          "value": {
+            "type": "number"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "available": {
+            "type": "boolean"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "sourceId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "productionRecordId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "observedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "IndicatorSetResource": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "to": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "productionRecordId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "indicators": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IndicatorResource"
+            }
+          }
+        }
+      },
+      "RiceCompositionResource": {
+        "type": "object",
+        "properties": {
+          "batchId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "available": {
+            "type": "boolean"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "assessments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QualityAssessmentResource"
+            }
+          }
+        }
+      },
+      "RawMaterialReceptionResource": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "receivedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "supplierName": {
+            "type": "string"
+          },
+          "originDescription": {
+            "type": "string"
+          },
+          "quantityValue": {
+            "type": "number"
+          },
+          "quantityUnit": {
+            "type": "string",
+            "enum": [
+              "KILOGRAM",
+              "METRIC_TON"
+            ]
+          }
+        }
+      },
+      "ProductionBatchResource": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "code": {
+            "type": "string"
+          },
+          "receptionId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "registeredAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    }
+  }
+}
