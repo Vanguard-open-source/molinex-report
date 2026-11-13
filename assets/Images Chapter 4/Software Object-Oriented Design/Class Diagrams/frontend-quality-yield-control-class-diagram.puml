@@ -1,0 +1,308 @@
+@startuml
+title Molinex Open Source - Quality and Yield Control Frontend Class Diagram
+left to right direction
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+package "Application" #EAF3F8 {
+  class QualityControlStore <<Angular Signals Store>> {
+    -#qualityApi : QualityApi
+    -#assessmentsSignal : WritableSignal<QualityAssessment[]>
+    -#wasteRecordsSignal : WritableSignal<WasteRecord[]>
+    -#indicatorsSignal : WritableSignal<YieldIndicator[]>
+    -#compositionSignal : WritableSignal<RiceComposition?>
+    -#comparisonsSignal : WritableSignal<QualityComparison[]>
+    -#deviationsSignal : WritableSignal<QualityDeviation[]>
+    +assessments : Signal<QualityAssessment[]>
+    +wasteRecords : Signal<WasteRecord[]>
+    +indicators : Signal<YieldIndicator[]>
+    +composition : Signal<RiceComposition?>
+    +comparisons : Signal<QualityComparison[]>
+    +deviations : Signal<QualityDeviation[]>
+    +loading : Signal<boolean>
+    +error : Signal<QualityOperationError?>
+    --
+    +addAssessment(assessment : QualityAssessment) : void
+    +addWasteRecord(record : WasteRecord) : void
+    +reloadQualityData() : void
+  }
+}
+
+package "Domain Model" #E8F4D4 {
+  class QualityAssessment <<Aggregate Root>> {
+    -#id : QualityAssessmentId
+    -#productionRecordId : ProductionRecordId
+    -#measurements : QualityMeasurement[]
+    -#assessedAt : AssessmentDateTime
+    --
+    +id : QualityAssessmentId
+    +productionRecordId : ProductionRecordId
+    +measurements : QualityMeasurement[]
+    +assessedAt : AssessmentDateTime
+    +{static} assess(productionRecordId, measurements, assessedAt) : QualityAssessment
+    +recordMeasurement(measurement : QualityMeasurement) : void
+    +hasValidPercentages() : boolean
+  }
+
+  class WasteRecord <<Aggregate Root>> {
+    -#id : WasteRecordId
+    -#productionRecordId : ProductionRecordId
+    -#quantity : Weight
+    -#baseWeight : Weight?
+    -#percentage : Percentage?
+    -#recordedAt : WasteRecordDateTime
+    --
+    +id : WasteRecordId
+    +productionRecordId : ProductionRecordId
+    +quantity : Weight
+    +baseWeight : Weight?
+    +percentage : Percentage?
+    +recordedAt : WasteRecordDateTime
+    +{static} record(productionRecordId, quantity, baseWeight, recordedAt) : WasteRecord
+    +calculatePercentage() : Percentage?
+  }
+
+  class QualityDeviation <<Aggregate Root>> {
+    -#id : QualityDeviationId
+    -#source : DeviationSource
+    -#measurement : QualityMeasurement
+    -#detectedAt : DetectionDateTime
+    --
+    +id : QualityDeviationId
+    +source : DeviationSource
+    +measurement : QualityMeasurement
+    +detectedAt : DetectionDateTime
+    +{static} identify(source, measurement, detectedAt) : QualityDeviation
+  }
+
+  class QualityAssessmentId <<Value Object>> {
+    -#value : number
+    +value : number
+  }
+  class WasteRecordId <<Value Object>> {
+    -#value : number
+    +value : number
+  }
+  class QualityDeviationId <<Value Object>> {
+    -#value : number
+    +value : number
+  }
+  class ProductionRecordId <<Value Object>> {
+    -#value : number
+    +value : number
+  }
+  class AssessmentDateTime <<Value Object>> {
+    -#value : Date
+    +value : Date
+    +isNotInFuture() : boolean
+  }
+  class WasteRecordDateTime <<Value Object>> {
+    -#value : Date
+    +value : Date
+    +isNotInFuture() : boolean
+  }
+  class DetectionDateTime <<Value Object>> {
+    -#value : Date
+    +value : Date
+  }
+  class Percentage <<Value Object>> {
+    -#value : number
+    +value : number
+    +isValid() : boolean
+  }
+  class QualityRange <<Value Object>> {
+    -#minimum : Percentage
+    -#maximum : Percentage
+    +minimum : Percentage
+    +maximum : Percentage
+    +contains(value : Percentage) : boolean
+  }
+  class QualityMeasurement <<Value Object>> {
+    -#indicator : QualityIndicator
+    -#value : Percentage
+    -#expectedRange : QualityRange
+    +indicator : QualityIndicator
+    +value : Percentage
+    +expectedRange : QualityRange
+    +isOutsideExpectedRange() : boolean
+  }
+  class DeviationSource <<Value Object>> {
+    -#sourceId : number
+    -#sourceType : DeviationSourceType
+    +sourceId : number
+    +sourceType : DeviationSourceType
+  }
+
+  class YieldIndicator <<Read Model>> {
+    +name : string
+    +value : Percentage
+  }
+  class RiceComposition <<Read Model>> {
+    +wholeGrain : Percentage
+    +brokenGrain : Percentage
+  }
+  class QualityComparison <<Read Model>> {
+    +current : Percentage
+    +previous : Percentage
+  }
+
+  enum QualityIndicator <<Enumeration>> {
+    WHOLE_GRAIN_PERCENTAGE
+    BROKEN_GRAIN_PERCENTAGE
+    YIELD_PERCENTAGE
+  }
+  enum DeviationSourceType <<Enumeration>> {
+    QUALITY_ASSESSMENT
+    WASTE_RECORD
+  }
+}
+
+package "Infrastructure" #F0E6FA {
+  class QualityApi <<Angular HTTP Service>> {
+    -#qualityAssessmentsEndpoint : QualityAssessmentsApiEndpoint
+    -#wasteRecordsEndpoint : WasteRecordsApiEndpoint
+    -#yieldIndicatorsEndpoint : YieldIndicatorsApiEndpoint
+    -#qualityComparisonsEndpoint : QualityComparisonsApiEndpoint
+    -#qualityDeviationsEndpoint : QualityDeviationsApiEndpoint
+    --
+    +getAssessments() : Observable<QualityAssessment[]>
+    +createAssessment(assessment : QualityAssessment) : Observable<QualityAssessment>
+    +getWasteRecords() : Observable<WasteRecord[]>
+    +createWasteRecord(record : WasteRecord) : Observable<WasteRecord>
+    +getIndicators() : Observable<YieldIndicator[]>
+    +getComposition() : Observable<RiceComposition>
+    +getComparisons() : Observable<QualityComparison[]>
+    +getDeviations() : Observable<QualityDeviation[]>
+  }
+
+  class QualityAssessmentAssembler <<Assembler>> {
+    +toEntityFromResource(resource : QualityAssessmentResource) : QualityAssessment
+    +toResourceFromEntity(entity : QualityAssessment) : QualityAssessmentResource
+  }
+  class WasteRecordAssembler <<Assembler>> {
+    +toEntityFromResource(resource : WasteRecordResource) : WasteRecord
+    +toResourceFromEntity(entity : WasteRecord) : WasteRecordResource
+  }
+  class YieldIndicatorAssembler <<Assembler>> {
+    +toModelFromResource(resource : YieldIndicatorResource) : YieldIndicator
+  }
+  class RiceCompositionAssembler <<Assembler>> {
+    +toModelFromResource(resource : RiceCompositionResource) : RiceComposition
+  }
+  class QualityComparisonAssembler <<Assembler>> {
+    +toModelFromResource(resource : QualityComparisonResource) : QualityComparison
+  }
+  class QualityDeviationAssembler <<Assembler>> {
+    +toEntityFromResource(resource : QualityDeviationResource) : QualityDeviation
+  }
+
+  interface QualityAssessmentResource <<Resource>> {
+    +id : number
+    +productionRecordId : number
+    +measurements : QualityMeasurementResource[]
+    +assessedAt : string
+  }
+  interface QualityMeasurementResource <<Resource>> {
+    +indicator : string
+    +value : number
+    +expectedMinimum : number
+    +expectedMaximum : number
+  }
+  interface WasteRecordResource <<Resource>> {
+    +id : number
+    +productionRecordId : number
+    +quantityValue : number
+    +quantityUnit : string
+    +baseWeightValue : number?
+    +baseWeightUnit : string?
+    +percentage : number?
+    +recordedAt : string
+  }
+  interface YieldIndicatorResource <<Resource>> {
+    +name : string
+    +value : number
+  }
+  interface RiceCompositionResource <<Resource>> {
+    +wholeGrain : number
+    +brokenGrain : number
+  }
+  interface QualityComparisonResource <<Resource>> {
+    +current : number
+    +previous : number
+  }
+  interface QualityDeviationResource <<Resource>> {
+    +id : number
+    +sourceId : number
+    +sourceType : string
+    +indicator : string
+    +observedValue : number
+    +expectedMinimum : number
+    +expectedMaximum : number
+    +detectedAt : string
+  }
+}
+
+package "Shared References" #FFF2CC {
+  class Weight <<Shared Value Object>> {
+    -#value : number
+    -#unit : MeasurementUnit
+  }
+  enum MeasurementUnit <<Enumeration>> {
+    KILOGRAM
+    METRIC_TON
+  }
+  abstract class BaseApi <<Shared Infrastructure>>
+  abstract class BaseApiEndpoint <<Shared Infrastructure>>
+}
+
+QualityControlStore o-- "0..*" QualityAssessment : holds
+QualityControlStore o-- "0..*" WasteRecord : holds
+QualityControlStore o-- "0..*" YieldIndicator : holds
+QualityControlStore o-- "0..1" RiceComposition : holds
+QualityControlStore o-- "0..*" QualityComparison : holds
+QualityControlStore o-- "0..*" QualityDeviation : holds
+QualityControlStore ..> QualityApi : uses
+
+QualityAssessment *-- QualityAssessmentId
+QualityAssessment *-- ProductionRecordId : references by identity
+QualityAssessment *-- "1..*" QualityMeasurement
+QualityAssessment *-- AssessmentDateTime
+WasteRecord *-- WasteRecordId
+WasteRecord *-- ProductionRecordId : references by identity
+WasteRecord *-- Weight
+WasteRecord o-- "0..1" Weight : base weight
+WasteRecord o-- "0..1" Percentage
+WasteRecord *-- WasteRecordDateTime
+QualityDeviation *-- QualityDeviationId
+QualityDeviation *-- DeviationSource
+QualityDeviation *-- QualityMeasurement
+QualityDeviation *-- DetectionDateTime
+QualityMeasurement *-- Percentage
+QualityMeasurement *-- QualityRange
+QualityMeasurement --> QualityIndicator
+QualityRange *-- "2" Percentage
+DeviationSource --> DeviationSourceType
+YieldIndicator *-- Percentage
+RiceComposition *-- "2" Percentage
+QualityComparison *-- "2" Percentage
+Weight --> MeasurementUnit
+
+QualityApi --|> BaseApi
+QualityApi *-- BaseApiEndpoint : composes one per resource
+QualityAssessmentAssembler ..> QualityAssessmentResource : maps
+QualityAssessmentAssembler ..> QualityMeasurementResource : maps
+QualityAssessmentAssembler ..> QualityAssessment : builds
+WasteRecordAssembler ..> WasteRecordResource : maps
+WasteRecordAssembler ..> WasteRecord : builds
+YieldIndicatorAssembler ..> YieldIndicatorResource : maps
+YieldIndicatorAssembler ..> YieldIndicator : builds
+RiceCompositionAssembler ..> RiceCompositionResource : maps
+RiceCompositionAssembler ..> RiceComposition : builds
+QualityComparisonAssembler ..> QualityComparisonResource : maps
+QualityComparisonAssembler ..> QualityComparison : builds
+QualityDeviationAssembler ..> QualityDeviationResource : maps
+QualityDeviationAssembler ..> QualityDeviation : builds
+@enduml
