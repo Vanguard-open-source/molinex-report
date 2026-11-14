@@ -79,6 +79,8 @@ Proyecto<br>
 |1.3|04-10-2026|Fabricio Rivera|Se corrigió el Big Picture Event Storming y se incorporó la Single Page Application como contenedor independiente en el modelo C4.|
 |1.4|05-10-2026|Equipo Vanguard|Se incorporaron las evidencias de implementación, ejecución, servicios, despliegue y colaboración correspondientes al Sprint 2 y se actualizaron las conclusiones y anexos de TB1.|
 |1.5|05-10-2026|Fabricio Rivera|Se alinearon los identificadores y estados del Sprint Backlog, se documentó el i18n de la Landing Page y se corrigieron las referencias de repositorios para TB1.|
+| AV2 |  |  |  |
+|1.6|14-11-2026|Equipo Vanguard|Se consolidaron las evidencias del Sprint 3, el despliegue del backend v1.0.0, la documentación de servicios, los Insights de colaboración y los enlaces verificables de los productos desplegados.|
 <div style="page-break-after: always;"></div>
 
 
@@ -152,6 +154,24 @@ Las siguientes capturas corresponden al repositorio `Vanguard-app-web/molinex-we
 ![GitHub Insights de Aplicaciones Web durante TB1, parte 2](assets/evidence/collaboration/tb1-app-web-insights-part-2.png)
 
 **Figuras.** Capturas del informe de Aplicaciones Web. Fuente: GitHub Insights de `Vanguard-app-web/molinex-webapp`.
+
+### Entrega AV2
+
+Para AV2, el equipo implementó y publicó la primera versión del backend RESTful de Molinex. La colaboración se realizó en el repositorio `molinex-platform-backend` mediante ramas `feature/*`, integraciones en `develop`, una rama `release/1.0.0`, merges `--no-ff` hacia `main` y `develop`, y el tag anotado `v1.0.0`.
+
+| Integrante | Usuario de GitHub | Commits registrados | Participación |
+| --- | --- | ---: | ---: |
+| Gallegos De La Cruz, Giovanni Marcelo | `Giova2725` | 8 | 33.3 % |
+| Huerta Cardenas, Brayan Benjamin | `brayanjk22` | 5 | 20.8 % |
+| Rivera Rupay, Fabricio Jose | `Fabricio1924` | 5 | 20.8 % |
+| Jimenez Saavedra, Antony Alexander | `saavedraantony-max` | 3 | 12.5 % |
+| Casalino Berrocal, Luisa Nhiriel | `lulu22nhiri` | 3 | 12.5 % |
+
+El conteo refleja los commits que GitHub atribuye a cada colaborador en el backend y no sustituye la evaluación de responsabilidades, revisiones, pruebas y coordinación descritas en Aspect Leaders and Collaborators.
+
+![GitHub Insights de colaboradores del backend durante AV2](assets/evidence/collaboration/av2-backend-github-insights.png)
+
+**Figura.** GitHub Insights del repositorio `Vanguard-open-source/molinex-platform-backend` durante AV2. Fuente: GitHub, 14-11-2026.
 
 <div style="page-break-after: always;"></div>
 
@@ -242,11 +262,26 @@ Las siguientes capturas corresponden al repositorio `Vanguard-app-web/molinex-we
     - [5.2.2.6 Services Documentation Evidence for Sprint Review](#5226-services-documentation-evidence-for-sprint-review)
     - [5.2.2.7 Software Deployment Evidence for Sprint Review](#5227-software-deployment-evidence-for-sprint-review)
     - [5.2.2.8 Team Collaboration Insights during Sprint](#5228-team-collaboration-insights-during-sprint)
+  - [5.2.3 Sprint 3](#523-sprint-3)
+    - [5.2.3.1 Sprint Planning 3](#5231-sprint-planning-3)
+    - [5.2.3.2 Aspect Leaders and Collaborators](#5232-aspect-leaders-and-collaborators)
+    - [5.2.3.3 Sprint Backlog 3](#5233-sprint-backlog-3)
+    - [5.2.3.4 Development Evidence for Sprint Review](#5234-development-evidence-for-sprint-review)
+    - [5.2.3.5 Execution Evidence for Sprint Review](#5235-execution-evidence-for-sprint-review)
+    - [5.2.3.6 Services Documentation Evidence for Sprint Review](#5236-services-documentation-evidence-for-sprint-review)
+    - [5.2.3.7 Software Deployment Evidence for Sprint Review](#5237-software-deployment-evidence-for-sprint-review)
+    - [5.2.3.8 Team Collaboration Insights during Sprint](#5238-team-collaboration-insights-during-sprint)
+- [5.3 Validation Interviews](#53-validation-interviews)
+  - [5.3.1 Diseño de Entrevistas](#531-diseño-de-entrevistas)
+  - [5.3.2 Registro de Entrevistas](#532-registro-de-entrevistas)
+  - [5.3.3 Evaluaciones según heurísticas](#533-evaluaciones-según-heurísticas)
+- [5.4 Video About-the-Product](#54-video-about-the-product)
 - [Conclusiones](#conclusiones)
 - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
 - [Bibliografía](#bibliografía)
 - [Anexos](#anexos)
 - [Anexo A. Videos de Exposiciones](#anexo-a-videos-de-exposiciones)
+- [Anexo B. Enlaces de despliegue](#anexo-b-enlaces-de-despliegue)
 
 <div style="page-break-after: always;"></div>
 
@@ -2458,7 +2493,7 @@ Las ramas específicas y los Pull Requests utilizados durante el Sprint 2 se det
 
 #### Releases por entrega
 
-Cada entrega se cierra con un release en cada repositorio: una rama `release/*` se integra en `main` y el commit resultante se marca con un tag anotado de Git. La tabla indica qué tag y qué commit corresponden a AV1 y TB1, y qué commit quedó realmente desplegado.
+Cada entrega se cierra con un release en cada repositorio: una rama `release/*` se integra en `main` y el commit resultante se marca con un tag anotado de Git. La tabla indica qué tag y qué commit corresponden a AV1, TB1 y AV2, y qué commit quedó realmente desplegado.
 
 | Entrega | Repositorio | Tag | Commit del tag | Commit desplegado | Fecha |
 |:--|:--|:--|:--|:--|:--|
@@ -2468,12 +2503,14 @@ Cada entrega se cierra con un release en cada repositorio: una rama `release/*` 
 | TB1 | `molinex-website` | `Vn1.0.0` | `32dd6e3` | `32dd6e3` (GitHub Pages) | 05-10-2026 |
 | TB1 | `molinex-webapp` | `v0.1.1` | `c3b9416` | `959513a` (Azure Static Web Apps) | 05-10-2026 |
 | TB1 | `molinex-platform-mock` | Sin tag | No aplica | `902c31d` (Azure App Service) | 05-10-2026 |
+| AV2 | `molinex-platform-backend` | [`v1.0.0`](https://github.com/Vanguard-open-source/molinex-platform-backend/releases/tag/v1.0.0) | `9fe637a` | `66e702c` (imagen equivalente al árbol del tag en Azure App Service) | 13-11-2026 |
 
 - Antes de TB1 se publicaron dos releases intermedios: `Vn0.0.2` (`293a289`) en `molinex-website` y `v0.1.0` (`5551944`) en `molinex-webapp`, ambos el 04-10-2026.
 - Los tags de la landing (`release_v0.0.1`, `Vn0.0.2` y `Vn1.0.0`) se documentan tal como existen en GitHub. No siguen el formato `vMAJOR.MINOR.PATCH` definido arriba y se conservan para no alterar releases ya publicados. El siguiente release de la landing usará ese formato.
 - El commit desplegado de `molinex-webapp` (`959513a`) es posterior al tag y solo agrega el archivo de workflow de Azure Static Web Apps. El código de la aplicación es el del tag `v0.1.1`.
 - El repositorio `molinex-platform-mock` aún no publica tags ni releases, por lo que se identifica por el commit desplegado.
 - En `molinex-report`, `main` avanzó un commit después del tag `v2.0.0` (`f112bb7`, "Update README.md").
+- La imagen `molinex-platform-backend:1.0.0` se construyó desde `66e702c` antes del merge final. El tag `v1.0.0` apunta al merge `9fe637a`; ambos contienen el mismo árbol de archivos de la release.
 
 ### 5.1.3 Source Code Style Guide & Coding Conventions
 
@@ -2532,7 +2569,7 @@ A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con e
 | Attendees (to planning meeting) | Gallegos De La Cruz, Giovanni Marcelo / Casalino Berrocal, Luisa Nhiriel / Huerta Cardenas, Brayan Benjamin / Jimenez Saavedra, Antony Alexander / Rivera Rupay, Fabricio Jose |
 | Sprint n - 1 Review Summary | No aplica (primer Sprint). |
 | Sprint n - 1 Retrospective Summary | No aplica (primer Sprint). |
-| Sprint 1 Goal | Our focus is on letting prospective mills evaluate Molinex and choose a subscription plan from the landing page, and on giving authorized mill staff role-based access to the platform. We believe it delivers a clearer understanding of Molinex's value, features and plans to the mill owners and administrators who visit the site, and controlled access to operational information to administrators, technicians and operators. This will be confirmed when a visitor can review the value proposition, benefits, features and the Basic, Professional and Enterprise plans and submit a commercial information request in no more than three steps, and when an administrator can register a user and assign a role, and that user can log in, update their profile and is denied access to functionalities outside their role.|
+| Sprint 1 Goal | Nuestro enfoque está en permitir que los molinos potenciales evalúen Molinex y elijan un plan de suscripción desde la Landing Page, y en brindar al personal autorizado del molino acceso a la plataforma según su rol. Creemos que esto ofrece a los propietarios y administradores una comprensión más clara del valor, las funcionalidades y los planes de Molinex, y proporciona acceso controlado a la información operativa para administradores, técnicos y operarios. Esto se confirmará cuando un visitante pueda revisar la propuesta de valor, los beneficios, las funcionalidades y los planes Basic, Professional y Enterprise, y enviar una solicitud de información comercial en no más de tres pasos; asimismo, cuando un administrador pueda registrar un usuario y asignarle un rol, y dicho usuario pueda iniciar sesión, actualizar su perfil y tenga restringidas las funcionalidades ajenas a su rol.|
 | Sprint 1 Velocity | 20 Story Points. Primer Sprint sin velocity histórico: se adopta una capacidad conservadora para un equipo de 5 integrantes. |
 | Sum of Story Points | 20 Story Points (US-01 a US-04 y US-31 a US-36) |
 
@@ -2654,7 +2691,7 @@ A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con e
 | **Attendees (to planning meeting)** | Gallegos De La Cruz, Giovanni Marcelo / Casalino Berrocal, Luisa Nhiriel / Huerta Cardenas, Brayan Benjamin / Jimenez Saavedra, Antony Alexander / Rivera Rupay, Fabricio Jose |
 | **Sprint 1 Review Summary** | Se revisó la primera versión de la Landing Page de Molinex, incluyendo la propuesta de valor, funcionalidades, beneficios y planes de suscripción Básico, Profesional y Empresarial. Las historias de acceso y gestión de usuarios no se completaron y permanecieron en estado `To-do`. Como corrección para TB1, la Landing Page incorporó soporte i18n EN/ES con inglés como idioma predeterminado. |
 | **Sprint 1 Retrospective Summary** | El equipo identificó como aspectos positivos la distribución de actividades y la coordinación para desarrollar las funcionalidades iniciales. Como oportunidad de mejora, se estableció fortalecer la coordinación entre los integrantes y precisar los criterios de aceptación antes de iniciar el desarrollo de cada historia de usuario. |
-| **Sprint 2 Goal** | **Our focus is on enabling the initial operational management of rice mill information in Molinex. We believe it delivers a structured way for mill personnel to register and manage the information required for production and maintenance activities. This will be confirmed when users can register raw material reception and lots, machinery, production and quality information, waste, and preventive and corrective maintenance records.** |
+| **Sprint 2 Goal** | **Nuestro enfoque está en habilitar la gestión operativa inicial de la información del molino arrocero en Molinex. Creemos que esto brinda al personal del molino una forma estructurada de registrar y gestionar la información necesaria para las actividades de producción y mantenimiento. Esto se confirmará cuando los usuarios puedan registrar la recepción de materia prima y los lotes, la maquinaria, la información de producción y calidad, la merma, y los mantenimientos preventivos y correctivos.** |
 | **Sprint 2 Velocity** | **23 Story Points.** Se establece una capacidad de 23 Story Points considerando la experiencia obtenida durante el Sprint 1 y la capacidad de trabajo del equipo de 5 integrantes. |
 | **Sum of Story Points** | **23 Story Points (US-05, US-06, US-07, US-11, US-14, US-17, US-19 y US-20)** |
 
@@ -2852,8 +2889,8 @@ El gráfico de contribuciones de GitHub registra los commits del repositorio mol
 
 **Figura:** Contribuciones al repositorio molinex-webapp. Fuente: elaboración propia a partir de GitHub, 05-10-2026.
 
-### 5.2.3. Sprint 3
-### 5.2.3.1.Sprint Planning 3.
+### 5.2.3 Sprint 3
+#### 5.2.3.1 Sprint Planning 3
 El Sprint 3 reemplaza la API simulada con JSON Server por la primera versión de los Web Services RESTful de Molinex, implementados con Spring Boot y Spring Data JPA y documentados con OpenAPI/Swagger, e integra la Web Application con ellos. Además, incorpora las historias de consulta de indicadores y de estado de maquinaria, el inicio de sesión y la persistencia de las solicitudes comerciales de la Landing Page.
 
 A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con el Sprint Goal, el velocity establecido y las historias comprometidas.
@@ -2868,11 +2905,11 @@ A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con e
 | **Attendees (to planning meeting)** | Gallegos De La Cruz, Giovanni Marcelo / Casalino Berrocal, Luisa Nhiriel / Huerta Cardenas, Brayan Benjamin / Jimenez Saavedra, Antony Alexander / Rivera Rupay, Fabricio Jose |
 | **Sprint 2 Review Summary** | Se revisó la Web Application desplegada en Azure Static Web Apps con los módulos de producción, calidad, merma, maquinaria y mantenimiento, integrados con una API simulada (JSON Server). Quedaron pendientes la RESTful API definitiva, la base de datos productiva, la documentación Swagger/OpenAPI, las historias de gestión de acceso (US-01 a US-04) y la persistencia de las solicitudes comerciales (US-36). |
 | **Sprint 2 Retrospective Summary** |  Durante el Sprint 2, el equipo integró 9 Pull Requests en la rama develop, aplicando GitFlow y Conventional Commits. Se destacó el trabajo colaborativo, pero también se identificó la necesidad de mejorar la coordinación y el seguimiento de tareas. Para el siguiente sprint, se acordó fortalecer la comunicación y planificar mejor las actividades. |
-| **Sprint 3 Goal** | **Our focus is on replacing the simulated API with the first version of Molinex's RESTful Web Services and on giving mill staff access to performance, quality and maintenance information. We believe it delivers reliable, persistent operational data to administrators, technicians and operators, and a documented API to developers. This will be confirmed when the Web Application consumes the deployed Spring Boot API instead of JSON Server and the endpoints can be explored and tested in Swagger UI.** |
+| **Sprint 3 Goal** | **Nuestro enfoque está en reemplazar la API simulada por la primera versión de los Web Services RESTful de Molinex y en brindar al personal del molino acceso a información de rendimiento, calidad y mantenimiento. Creemos que esto proporciona datos operativos confiables y persistentes a administradores, técnicos y operarios, además de una API documentada para los desarrolladores. Esto se confirmará cuando la Web Application consuma la API Spring Boot desplegada en lugar de JSON Server y los endpoints puedan explorarse y probarse mediante Swagger UI.** |
 | **Sprint 3 Velocity** | **24 Story Points.** Se establece una capacidad de 24 Story Points considerando la experiencia de los Sprints 1 y 2 (20 y 23 Story Points) y la capacidad de trabajo del equipo de 5 integrantes. |
 | **Sum of Story Points** | 24 Story Points (TS-01, TS-02, TS-03, US-02, US-12, US-13, US-18, US-21 y US-36) |
 
-### 5.2.3.2. Aspect Leaders and Collaborators.
+#### 5.2.3.2 Aspect Leaders and Collaborators
 Los aspectos del Sprint 3 son los Web Services (producción y calidad; mantenimiento y acceso), la integración de la Web Application, la Landing Page con los videos, y la base de datos con el despliegue.
 
 | Team Member (Last Name, First Name) | GitHub Username | Aspecto 1: Web Services – Producción y calidad (TS-01, TS-02) | Aspecto 2: Web Services – Mantenimiento y acceso (TS-03, US-02) | Aspecto 3: Integración Web Application (US-12, US-13, US-18, US-21) | Aspecto 4: Landing Page y videos (US-36) | Aspecto 5: Base de datos y despliegue |
@@ -2882,7 +2919,7 @@ Los aspectos del Sprint 3 son los Web Services (producción y calidad; mantenimi
 | Huerta Cardenas, Brayan Benjamin | Brayanjk22 | C | C | C | L | C |
 | Jimenez Saavedra, Antony Alexander | saavedraantony-max | C | C| L | C | C |
 | Rivera Rupay, Fabricio Jose | Fabricio1924 | C | C | C | C | L |
-### 5.2.3.3.Sprint Backlog 3.
+#### 5.2.3.3 Sprint Backlog 3
 | Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
 |---|---|---|---|---|---:|---|---|
 | TS-01 | Gestionar recursos de producción mediante API | T-S3-PROD-01 | Implementar persistencia productiva con JPA | Implementar recepción, lote y registro productivo respetando referencias, código único, peso válido y vínculo estable con el lote; retomar los modelos iniciados con mock. | 8 | Gallegos De La Cruz, Giovanni Marcelo | Done |
@@ -2925,9 +2962,9 @@ Los aspectos del Sprint 3 son los Web Services (producción y calidad; mantenimi
 ![Sprint Backlog 3.png](assets/Images%20Chapter%205/Sprint%20Backlog%203.png)
 Link:https://trello.com/invite/b/6aa9c4fdfc659047df591de0/ATTI907effe44c9315a41519954d192d71f48A54EF45/molinex
 
-### 5.2.3.4.Development Evidence for Sprint Review.
+#### 5.2.3.4 Development Evidence for Sprint Review
 
-La revisión del Sprint 3 toma como punto de partida la planificación del 1 de noviembre de 2026. Al corte del 13 de noviembre, los 19 commits de desarrollo registrados en esta tabla pertenecen al backend Java de Molinex e integran la base Spring Boot, el registro de recepciones, lotes y producción (TS-01), las consultas de rendimiento y composición del arroz (TS-02), los servicios de maquinaria y mantenimiento (TS-03), la autenticación (US-02) y la persistencia de solicitudes comerciales (US-36). El historial consultado corresponde a [`develop` del backend hasta `97c9763`](https://github.com/Vanguard-open-source/molinex-platform-backend/tree/97c9763807ae5105880e55f4ef35ae6a669f81f3).
+La revisión del Sprint 3 toma como punto de partida la planificación del 1 de noviembre de 2026. Al cierre del 13 de noviembre, los 24 commits no-merge registrados en esta tabla pertenecen al backend Java de Molinex e integran la base Spring Boot, el registro de recepciones, lotes y producción (TS-01), las consultas de rendimiento y composición del arroz (TS-02), los servicios de maquinaria y mantenimiento (TS-03), la autenticación (US-02), la persistencia de solicitudes comerciales (US-36), la configuración por entornos y el despliegue con Docker y Azure. El historial final corresponde a la [release `v1.0.0`](https://github.com/Vanguard-open-source/molinex-platform-backend/releases/tag/v1.0.0).
 
 La rama indica la rama de origen cuando el merge permite identificarla. Para los cambios visibles directamente en el historial de `develop` se consigna esa rama; el commit inicial está presente en `main` y `develop`. Se omiten los commits de merge. El guion indica que el commit carece de cuerpo y las fechas conservan el desplazamiento horario registrado por Git.
 
@@ -2952,15 +2989,20 @@ La rama indica la rama de origen cuando el merge permite identificarla. Para los
 | `molinex-platform-backend` | `feature/asset-maintenance-management` | [`5da44ab`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/5da44ab4e65a0b074e23b8bc7ff2020f8bfc43ad) | `feat(assets): expose machine status and maintenance history` | Add the REST controllers, resources and assemblers for machines and maintenance records (US-18 and US-21) with an HTTP scenario test, and the shared GlobalExceptionHandler that maps validation errors to ProblemDetail. | 2026-11-13T16:06:03-05:00 |
 | `molinex-platform-backend` | `feature/commercial-inquiry` | [`f698c08`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/f698c08b758c3e3d1971fa1e670d378245d48786) | `feat(commercial): add commercial inquiry domain, service and persistence` | Add the CommercialInquiry aggregate, value objects, command, event and repository contract, the submission service and its JPA persistence adapters, with the US-36 scenario tests. | 2026-11-13T16:07:59-05:00 |
 | `molinex-platform-backend` | `feature/commercial-inquiry` | [`ceba070`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/ceba07048edb95f33b82580a51acf18c80d9e9c7) | `feat(commercial): persist inquiries from the landing page` | Expose POST /api/v1/commercial-inquiries with its resources and assemblers so the Landing Page can submit an inquiry that is stored before it is confirmed (US-36), and add an HTTP integration test for the 201 and 400 cases. | 2026-11-13T16:10:20-05:00 |
+| `molinex-platform-backend` | `feature/mysql-azure-deployment` | [`3af7a28`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/3af7a280ebd89ab3709bf9da9daf7743c8d95f84) | `feat(config): add environment-specific MySQL profiles` | Configura los perfiles `dev` y `prod` y externaliza las credenciales mediante variables de entorno. | 2026-11-13T17:55:32-05:00 |
+| `molinex-platform-backend` | `feature/mysql-azure-deployment` | [`b61181e`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/b61181e6c478886231ecf3a4cfcef918fe886c2a) | `build(docker): add Java 27 container image` | Incorpora la imagen multi-stage para compilar y ejecutar el backend con Java 27. | 2026-11-13T18:05:57-05:00 |
+| `molinex-platform-backend` | `feature/mysql-azure-deployment` | [`e69b62e`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/e69b62e6fd4ca9f2340c9008c900f14e443a5418) | `build(docker): add local MySQL compose stack` | Añade el entorno reproducible local con la API, MySQL 8.4, healthcheck y volumen persistente. | 2026-11-13T18:16:05-05:00 |
+| `molinex-platform-backend` | `feature/azure-production-deployment` | [`a25ac66`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/a25ac66a35260c471bf235842a83a2095e3be2aa) | `build(docker): add Azure production compose stack` | Documenta la ejecución del contenedor contra Azure Database for MySQL mediante variables de entorno. | 2026-11-13T21:35:33-05:00 |
+| `molinex-platform-backend` | `release/1.0.0` | [`66e702c`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/66e702c2e3f17a04a1405744783b05f930838c59) | `chore(release): prepare version 1.0.0` | Establece la versión Maven final utilizada por la imagen desplegada y prepara el cierre GitFlow. | 2026-11-13T22:43:48-05:00 |
 
 Las ramas principales publicadas de [`molinex-webapp`](https://github.com/Vanguard-open-source/molinex-webapp) y [`molinex-website`](https://github.com/Vanguard-open-source/molinex-website) todavía registran como últimos cambios commits de octubre. La integración de Angular y del formulario de la Landing Page con la API queda por sustentar con cambios en sus respectivos repositorios. Los commits del backend acreditan el desarrollo de los servicios y deben complementarse con las evidencias de ejecución y despliegue.
 
-### 5.2.3.5.Execution Evidence for Sprint Review.
+#### 5.2.3.5 Execution Evidence for Sprint Review
 
-La evidencia de ejecución del Sprint 3 corresponde a pruebas locales del backend Java de Molinex, realizadas el 13 de noviembre de 2026 sobre el commit [`97c9763`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/97c9763). Se ejecutó Maven con JDK 25 mediante un ajuste temporal por línea de comandos. Las pruebas de integración utilizaron Spring MockMvc y H2 en memoria.
+La evidencia de ejecución del Sprint 3 corresponde a la suite final del backend Java de Molinex, ejecutada el 13 de noviembre de 2026 durante la preparación de la [release `v1.0.0`](https://github.com/Vanguard-open-source/molinex-platform-backend/releases/tag/v1.0.0). Se utilizó Maven Wrapper 3.9.11 con JDK 27.0.1. Las pruebas de integración utilizaron Spring MockMvc y H2 en memoria para aislar los escenarios del dominio.
 
 ```text
-mvnw.cmd -Djava.version=25 test
+mvnw.cmd -Dsurefire.useManifestOnlyJar=false clean test
 Tests run: 44, Failures: 0, Errors: 0, Skipped: 0
 BUILD SUCCESS
 ```
@@ -2973,7 +3015,7 @@ BUILD SUCCESS
 | **US-02 · Inicio de sesión** | Autenticación de una cuenta activa y emisión de un token firmado. Se comprobó el rechazo de credenciales incorrectas, cuentas no disponibles y solicitudes sin contraseña. | 3 |
 | **US-36 · Solicitud comercial** | Persistencia y confirmación de una solicitud válida en el backend. Se comprobó el rechazo de solicitudes inválidas y el manejo de fallos en el servicio. | 6 |
 
-Las 44 pruebas anteriores cubren el backend con H2 en un entorno local. El 13 de noviembre de 2026 se revisó también la [Web Application desplegada en Azure Static Web Apps](https://lemon-meadow-06ea8a41e.1.azurestaticapps.net/). Se inició sesión con la cuenta de demostración y se navegó por las vistas que se muestran a continuación.
+Las 44 pruebas anteriores cubren el backend con H2 en un entorno local. Además, el 14 de noviembre de 2026 se verificaron con HTTP 200 el Swagger UI y el documento OpenAPI del contenedor `v1.0.0` desplegado en Azure. El 13 de noviembre de 2026 se revisó también la [Web Application desplegada en Azure Static Web Apps](https://lemon-meadow-06ea8a41e.1.azurestaticapps.net/). Se inició sesión con la cuenta de demostración y se navegó por las vistas que se muestran a continuación.
 
 #### Evidencia visual de la Web Application
 
@@ -3011,9 +3053,9 @@ Las 44 pruebas anteriores cubren el backend con H2 en un entorno local. El 13 de
 
 El formulario comercial se inspeccionó en la Web Application y quedó sin enviar. La verificación del envío desde la Landing Page y la confirmación de qué API y base de datos utiliza el despliegue quedan pendientes.
 
-### 5.2.3.6.Services Documentation Evidence for Sprint Review.
+#### 5.2.3.6 Services Documentation Evidence for Sprint Review
 
-Se verificaron **Swagger UI** y **OpenAPI 3.1** con HTTP 200 al ejecutar localmente el backend Java de Molinex en el commit [`97c9763`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/97c9763807ae5105880e55f4ef35ae6a669f81f3), con JDK 25 y H2 en memoria. Swagger UI se consultó en `http://127.0.0.1:18843/swagger-ui/index.html`. La [especificación OpenAPI generada](assets/Images%20Chapter%205/Sprint%203/5.2.3.6-openapi.json) conserva las 21 rutas y 29 operaciones del entorno de revisión.
+Se verificaron **Swagger UI** y **OpenAPI 3.1** tanto en la ejecución local como en la release `v1.0.0` desplegada en Azure. El 14 de noviembre de 2026 respondieron con HTTP 200 el [Swagger UI del backend](https://molinex-platform-backend-vanguard.azurewebsites.net/swagger-ui/index.html) y el [documento OpenAPI](https://molinex-platform-backend-vanguard.azurewebsites.net/v3/api-docs). La [especificación OpenAPI conservada como evidencia](assets/Images%20Chapter%205/Sprint%203/5.2.3.6-openapi.json) contiene 21 rutas y 29 operaciones del alcance revisado.
 
 | Alcance | Operaciones representativas | Datos de entrada |
 | --- | --- | --- |
@@ -3030,7 +3072,7 @@ Se verificaron **Swagger UI** y **OpenAPI 3.1** con HTTP 200 al ejecutar localme
 | `GET /api/v1/machines/1/status` sin la máquina | `404 Not Found` con `MACHINE_NOT_FOUND`. |
 | `POST /api/v1/commercial-inquiries` con `{}` | `400 Bad Request` con `VALIDATION_ERROR` y los campos obligatorios omitidos. |
 
-La especificación generada declara `200` para las altas de recepción, lote y registro productivo. Los controladores y las pruebas de integración confirman `201 Created`. Las respuestas `400` y `404` observadas tampoco están documentadas en esas operaciones de ejemplo. Queda pendiente alinear esos códigos en el backend e incorporar la URL de Swagger del entorno desplegado.
+La especificación generada declara `200` para las altas de recepción, lote y registro productivo, mientras que los controladores y las pruebas de integración confirman `201 Created`. Las respuestas `400` y `404` observadas tampoco aparecen en todas las operaciones de ejemplo. La URL desplegada ya está publicada y verificada; para una siguiente iteración corresponde alinear en OpenAPI los códigos de éxito y error con el comportamiento real de los controladores.
 
 #### Capturas de Swagger UI
 
@@ -3056,10 +3098,45 @@ Las capturas corresponden al backend Java de Molinex ejecutado en `localhost:808
 
 **Figura.** Operaciones documentadas para maquinaria, solicitudes comerciales, rendimiento y composición del arroz. Fuente de la captura: Swagger UI en `localhost:8080`.
 
-### 5.2.3.7.Software Deployment Evidence for Sprint Review.
-### 5.2.3.8.Team Collaboration Insights during Sprint.
-### 5.3. Validation Interviews.
-### 5.3.1. Diseño de Entrevistas.
+#### 5.2.3.7 Software Deployment Evidence for Sprint Review
+
+La primera API propia de Molinex se publicó como un contenedor Linux en Azure App Service. El artefacto desplegado corresponde a la release `v1.0.0` del repositorio `molinex-platform-backend` y se conecta a una instancia administrada de Azure Database for MySQL. Las credenciales y el secreto de firma se configuraron como variables de entorno del App Service y no forman parte del repositorio ni de la imagen.
+
+El flujo de despliegue aplicado fue el siguiente:
+
+1. Maven Wrapper compila el backend con Java 27 y genera `molinex-platform-backend-1.0.0.jar`.
+2. El `Dockerfile` multi-stage construye la imagen `molinex-platform-backend:1.0.0` y ejecuta la aplicación con un usuario no privilegiado.
+3. La imagen se publica en Azure Container Registry como `molinexplatformacr1924.azurecr.io/molinex-platform-backend:1.0.0`.
+4. Azure App Service descarga la imagen, activa el perfil `prod` y expone el puerto 8080.
+5. Spring Boot se conecta mediante TLS a la base `molinex-platform` del servidor flexible `mysql-molinex`.
+
+| Recurso | Servicio y configuración | Evidencia de verificación |
+| --- | --- | --- |
+| Backend RESTful API | Azure App Service para Linux, contenedor `molinex-platform-backend:1.0.0`, aplicación `molinex-platform-backend-vanguard` | [Swagger UI](https://molinex-platform-backend-vanguard.azurewebsites.net/swagger-ui/index.html), HTTP 200 el 14-11-2026. |
+| Contrato de servicios | Springdoc OpenAPI 3.1 servido por el mismo contenedor | [OpenAPI JSON](https://molinex-platform-backend-vanguard.azurewebsites.net/v3/api-docs), HTTP 200 el 14-11-2026. |
+| Registro de imágenes | Azure Container Registry Basic `molinexplatformacr1924` | Imagen `molinex-platform-backend:1.0.0` publicada con digest `sha256:4264a4409da36e916449fa013d4e9b32e363358b913b96633495bccb8959ce26`. |
+| Persistencia | Azure Database for MySQL Flexible Server 8.0, servidor `mysql-molinex`, base `molinex-platform` | El log de arranque registra MySQL Connector/J, `MySQLDialect`, MySQL 8.0.46 y la inicialización satisfactoria de JPA. |
+| Frontend Web Application vigente | Azure Static Web Apps | [Web Application](https://lemon-meadow-06ea8a41e.1.azurestaticapps.net/), HTTP 200 el 14-11-2026. |
+| Landing Page vigente | GitHub Pages | [Landing Page](https://vanguard-open-source.github.io/molinex-website/), HTTP 200 el 14-11-2026. |
+
+El contenedor necesita varios minutos para completar Spring Data, Hibernate y la conexión con MySQL en el plan B1. Por ello se configuró `WEBSITES_CONTAINER_START_TIME_LIMIT=600`; el arranque final de la release superó el warmup de Azure y quedó en estado `Running`. La disponibilidad HTTP del frontend y de la Landing Page confirma sus despliegues vigentes, pero no sustituye la evidencia de una nueva integración de sus repositorios con la API propia.
+
+#### 5.2.3.8 Team Collaboration Insights during Sprint
+
+Durante el Sprint 3, los cinco integrantes participaron en el repositorio del backend. GitHub Insights atribuye 24 commits: 8 a `Giova2725`, 5 a `brayanjk22`, 5 a `Fabricio1924`, 3 a `saavedraantony-max` y 3 a `lulu22nhiri`. La cantidad de commits se complementa con la responsabilidad funcional declarada en la sección 5.2.3.2, ya que una contribución puede representar implementación, pruebas, configuración o despliegue con alcances diferentes.
+
+| Integrante | Usuario de GitHub | Commits | Responsabilidad principal durante Sprint 3 |
+| --- | --- | ---: | --- |
+| Gallegos De La Cruz, Giovanni Marcelo | `Giova2725` | 8 | Liderazgo de Web Services de producción y calidad y colaboración en la integración. |
+| Huerta Cardenas, Brayan Benjamin | `brayanjk22` | 5 | Colaboración en los servicios, validación, Landing Page y evidencias de la entrega. |
+| Rivera Rupay, Fabricio Jose | `Fabricio1924` | 5 | Configuración por entornos, Docker, MySQL, Azure, release y despliegue. |
+| Jimenez Saavedra, Antony Alexander | `saavedraantony-max` | 3 | Liderazgo de la integración de la Web Application y colaboración en mantenimiento y acceso. |
+| Casalino Berrocal, Luisa Nhiriel | `lulu22nhiri` | 3 | Liderazgo de Web Services de mantenimiento y acceso y colaboración en calidad. |
+
+El cierre utilizó GitFlow: las features se integraron en `develop`, la rama `release/1.0.0` preparó la versión, se realizaron merges `--no-ff` hacia `main` y `develop`, se eliminó la rama de release y se publicó el tag anotado y la [GitHub Release `v1.0.0`](https://github.com/Vanguard-open-source/molinex-platform-backend/releases/tag/v1.0.0). La evidencia gráfica completa se presenta en [Project Report Collaboration Insights – Entrega AV2](#entrega-av2).
+
+## 5.3 Validation Interviews
+### 5.3.1 Diseño de Entrevistas
 #### Objetivo general
 
 Validar la propuesta de valor y las funcionalidades principales de Molinex mediante sesiones de validación dirigidas a los tres segmentos de usuarios identificados. Estas sesiones se realizarán después de presentar la Landing Page y la Web Application, con la finalidad de evaluar la comprensión de la propuesta de valor, la utilidad de las funcionalidades, la facilidad de uso y la experiencia de interacción de los participantes, así como identificar oportunidades de mejora.
@@ -3213,12 +3290,12 @@ Asimismo, solicitamos su autorización para grabar la sesión en video, únicame
 
 Muchas gracias por su tiempo y por compartir su experiencia. Sus respuestas nos permitirán mejorar la facilidad de uso de Molinex y comprobar si sus funcionalidades se adaptan a las necesidades de los operarios de maquinaria y producción.
 
-### 5.3.2. Registro de Entrevistas.
+### 5.3.2 Registro de Entrevistas
 | Nombre y apellido	 | Contexto | Distrito | Segmento | Duración |Resumen descriptivo|Screenshot|Link|
 |:---|:--|:--|:--|:----|:----|:--|:--|
 | Yeisen Maculupu Beckam | Entrevista realizada por Antony Jimenez Saavedra para conocer las necesidades y experiencias relacionadas con la gestión de molinos arroceros. | Piura | Segmento1: Gerentes o administradores | 0:00 - 5:05 | Durante la entrevista, Jason, administrador de un molino arrocero, destacó la utilidad de Molinex para gestionar la producción y el mantenimiento de maquinaria, especialmente para anticipar fallas y evitar interrupciones. Asimismo, sugirió agregar precios al registro de materia prima, incorporar filtros de búsqueda y mejorar algunos detalles de la interfaz. En general, consideró que la aplicación es funcional y beneficiosa para el molino. |![Registo 1-cap5.png](assets/Images%20Chapter%205/Registo%201-cap5.png)|[Video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202420031_upc_edu_pe/IQDk-auXMJy3TauRlpsRkVs5Ae_am6uFEoqAHHow4fr19hc?e=rkMsyE&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)|
 
-### 5.3.3. Evaluaciones según heurísticas.
+### 5.3.3 Evaluaciones según heurísticas
 La evaluación busca identificar dificultades de uso en Molinex y proponer mejoras para los gerentes, técnicos de mantenimiento y operarios. Se revisaron las capturas de la Web Application del Sprint 2, el mockup de la Landing Page y las observaciones registradas en la entrevista de validación de la sección 5.3.2.
 
 La revisión se organizó en tres dimensiones: usabilidad, diseño inclusivo y arquitectura de información. Para usabilidad se tomaron como referencia las [diez heurísticas de Nielsen](https://www.nngroup.com/articles/ten-usability-heuristics/). Para los aspectos de accesibilidad se consultaron los criterios de W3C citados al final de la sección.
@@ -3383,7 +3460,7 @@ La sugerencia de añadir precios a la recepción de materia prima, registrada en
 - W3C WAI. [Understanding Success Criterion 1.4.3: Contrast (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html).
 - W3C WAI. [Understanding Success Criterion 2.1.1: Keyboard](https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html).
 
-### 5.4. Video About-the-Product.
+## 5.4 Video About-the-Product
 # Conclusiones
 
 ## Conclusiones y recomendaciones
@@ -3398,7 +3475,9 @@ Durante el Sprint 2 se implementó la primera versión funcional de la Web Appli
 
 La Web Application fue desplegada en Azure Static Web Apps y la API simulada fue publicada en Azure. Asimismo, se verificó la compilación de producción, la navegación entre módulos, el cambio de idioma y la consulta de datos mediante los endpoints documentados en la sección de servicios. Las evidencias de Pull Requests, commits, ramas, colaboradores y despliegue sustentan la participación del equipo durante el Sprint 2.
 
-Como trabajo pendiente para los siguientes avances, se recomienda reemplazar la API simulada por la RESTful API definitiva, implementar e integrar la base de datos productiva y documentar los servicios definitivos mediante Swagger/OpenAPI. Por tanto, JSON Server se presenta únicamente como una solución temporal de integración y validación de la Web Application, no como el backend definitivo del producto.
+Durante el Sprint 3 se reemplazó la API simulada como servicio de referencia del backend por la primera release de los Web Services RESTful propios de Molinex. El backend se implementó con Java 27, Spring Boot, Spring Data JPA y MySQL; cuenta con 44 pruebas automatizadas, documentación OpenAPI/Swagger, una imagen Docker versionada y un despliegue verificable en Azure App Service conectado a Azure Database for MySQL.
+
+Para la siguiente iteración se recomienda consolidar en los repositorios de la Web Application y la Landing Page la integración con la API `v1.0.0`, alinear en OpenAPI todos los códigos de respuesta con los controladores y ampliar la validación interactiva de accesibilidad y manejo de errores. JSON Server se conserva únicamente como evidencia histórica de la integración realizada en Sprint 2.
 
 # Bibliografía
 
@@ -3426,3 +3505,17 @@ En este anexo se incluyen los enlaces a los videos correspondientes a la exposic
 | AV1 | Video de exposición del proyecto | [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202420031_upc_edu_pe/IQDe6HjgK534RoKJUdNr7jlUAeca07gXpLXC7_NkXEK444Y?e=faXkz9) |
 | AV1 | Video de demostración de la Landing Page | [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202420031_upc_edu_pe/IQBG3ToqxvMbR7DzQq0B5yLIAU1bxtjN3nuWse2Z3NQ_Ik8?e=exijmP)|
 | AV1 | Video del prototipo en Figma | [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202420031_upc_edu_pe/IQAuKZpedDkkTr19h5yiaO6hAbRvnrzfZpqPXLHV-w8nY5E?e=2iIVyT) |
+
+## Anexo B. Enlaces de despliegue
+
+Los siguientes enlaces centralizan los productos y servicios públicos de Molinex. Su disponibilidad HTTP fue verificada el 14 de noviembre de 2026.
+
+| Producto o evidencia | Plataforma | Enlace | Resultado de verificación |
+| --- | --- | --- | --- |
+| Landing Page | GitHub Pages | [Abrir Landing Page](https://vanguard-open-source.github.io/molinex-website/) | HTTP 200 |
+| Frontend Web Application | Azure Static Web Apps | [Abrir Web Application](https://lemon-meadow-06ea8a41e.1.azurestaticapps.net/) | HTTP 200 |
+| Backend RESTful API · Swagger UI | Azure App Service | [Abrir Swagger UI](https://molinex-platform-backend-vanguard.azurewebsites.net/swagger-ui/index.html) | HTTP 200 |
+| Backend RESTful API · OpenAPI 3.1 | Azure App Service | [Abrir documento OpenAPI](https://molinex-platform-backend-vanguard.azurewebsites.net/v3/api-docs) | HTTP 200 |
+| Backend RESTful API · Release | GitHub Releases | [Abrir release v1.0.0](https://github.com/Vanguard-open-source/molinex-platform-backend/releases/tag/v1.0.0) | Publicada y asociada al tag `v1.0.0` |
+
+La raíz del dominio del backend no implementa una página de inicio; para comprobar visualmente el servicio debe utilizarse Swagger UI o una ruta `/api/v1/*` documentada.
