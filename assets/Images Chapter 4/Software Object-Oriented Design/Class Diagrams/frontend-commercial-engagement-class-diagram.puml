@@ -1,0 +1,196 @@
+@startuml
+title Molinex Open Source - Commercial Engagement Frontend Class Diagram
+left to right direction
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+package "Application" #EAF3F8 {
+  class CommercialStore <<Angular Signals Store>> {
+    -#commercialApi : CommercialApi
+    -#plansSignal : WritableSignal<Plan[]>
+    -#valuePropositionSignal : WritableSignal<ValueProposition?>
+    -#inquirySignal : WritableSignal<CommercialInquiry?>
+    +plans : Signal<Plan[]>
+    +valueProposition : Signal<ValueProposition?>
+    +inquiry : Signal<CommercialInquiry?>
+    +loading : Signal<boolean>
+    +error : Signal<CommercialOperationError?>
+    --
+    +reloadPlans() : void
+    +reloadValueProposition() : void
+    +submitInquiry(inquiry : CommercialInquiry) : void
+  }
+}
+
+package "Domain Model" #E8F4D4 {
+  class CommercialInquiry <<Aggregate Root>> {
+    -#id : CommercialInquiryId
+    -#contact : ContactInformation
+    -#message : InquiryMessage
+    -#submittedAt : SubmissionDateTime
+    --
+    +id : CommercialInquiryId
+    +contact : ContactInformation
+    +message : InquiryMessage
+    +submittedAt : SubmissionDateTime
+    +{static} submit(contact, message, submittedAt) : CommercialInquiry
+  }
+
+  class Plan <<Read Model>> {
+    +id : PlanId
+    +name : PlanName
+    +price : PriceLabel
+    +features : PlanFeature[]
+  }
+  class ValueProposition <<Read Model>> {
+    +headline : PropositionHeadline
+    +benefits : PropositionBenefit[]
+  }
+
+  class CommercialInquiryId <<Value Object>> {
+    -#value : number
+    +value : number
+  }
+  class PlanId <<Value Object>> {
+    -#value : number
+    +value : number
+  }
+  class PlanName <<Value Object>> {
+    -#value : string
+    +value : string
+  }
+  class PriceLabel <<Value Object>> {
+    -#value : string
+    +value : string
+  }
+  class PlanFeature <<Value Object>> {
+    -#description : string
+    +description : string
+  }
+  class PropositionHeadline <<Value Object>> {
+    -#value : string
+    +value : string
+  }
+  class PropositionBenefit <<Value Object>> {
+    -#description : string
+    +description : string
+  }
+  class FullName <<Value Object>> {
+    -#value : string
+    +value : string
+  }
+  class CompanyName <<Value Object>> {
+    -#value : string
+    +value : string
+  }
+  class EmailAddress <<Value Object>> {
+    -#value : string
+    +value : string
+    +isValid() : boolean
+  }
+  class PhoneNumber <<Value Object>> {
+    -#value : string
+    +value : string
+    +isValid() : boolean
+  }
+  class InquiryMessage <<Value Object>> {
+    -#value : string
+    +value : string
+    +isBlank() : boolean
+  }
+  class SubmissionDateTime <<Value Object>> {
+    -#value : Date
+    +value : Date
+  }
+  class ContactInformation <<Value Object>> {
+    -#fullName : FullName
+    -#email : EmailAddress
+    -#phone : PhoneNumber?
+    -#companyName : CompanyName
+    +fullName : FullName
+    +email : EmailAddress
+    +phone : PhoneNumber?
+    +companyName : CompanyName
+  }
+}
+
+package "Infrastructure" #F0E6FA {
+  class CommercialApi <<Angular HTTP Service>> {
+    -#plansEndpoint : PlansApiEndpoint
+    -#valuePropositionEndpoint : ValuePropositionApiEndpoint
+    -#inquiriesEndpoint : CommercialInquiriesApiEndpoint
+    --
+    +getPlans() : Observable<Plan[]>
+    +getValueProposition() : Observable<ValueProposition>
+    +createInquiry(inquiry : CommercialInquiry) : Observable<CommercialInquiry>
+  }
+
+  class PlanAssembler <<Assembler>> {
+    +toModelFromResource(resource : PlanResource) : Plan
+  }
+  class ValuePropositionAssembler <<Assembler>> {
+    +toModelFromResource(resource : ValuePropositionResource) : ValueProposition
+  }
+  class CommercialInquiryAssembler <<Assembler>> {
+    +toEntityFromResource(resource : CommercialInquiryResource) : CommercialInquiry
+    +toResourceFromEntity(entity : CommercialInquiry) : CommercialInquiryResource
+  }
+
+  interface PlanResource <<Resource>> {
+    +id : number
+    +name : string
+    +priceLabel : string
+    +features : string[]
+  }
+  interface ValuePropositionResource <<Resource>> {
+    +headline : string
+    +benefits : string[]
+  }
+  interface CommercialInquiryResource <<Resource>> {
+    +id : number
+    +fullName : string
+    +email : string
+    +phone : string?
+    +companyName : string
+    +message : string
+    +submittedAt : string
+  }
+}
+
+package "Shared References" #FFF2CC {
+  abstract class BaseApi <<Shared Infrastructure>>
+  abstract class BaseApiEndpoint <<Shared Infrastructure>>
+}
+
+CommercialStore o-- "0..*" Plan : holds
+CommercialStore o-- "0..1" ValueProposition : holds
+CommercialStore o-- "0..1" CommercialInquiry : holds
+CommercialStore ..> CommercialApi : uses
+
+CommercialInquiry *-- CommercialInquiryId
+CommercialInquiry *-- ContactInformation
+CommercialInquiry *-- InquiryMessage
+CommercialInquiry *-- SubmissionDateTime
+ContactInformation *-- FullName
+ContactInformation *-- EmailAddress
+ContactInformation o-- "0..1" PhoneNumber
+ContactInformation *-- CompanyName
+Plan *-- PlanId
+Plan *-- PlanName
+Plan *-- PriceLabel
+Plan *-- "1..*" PlanFeature
+ValueProposition *-- PropositionHeadline
+ValueProposition *-- "1..*" PropositionBenefit
+
+CommercialApi --|> BaseApi
+CommercialApi *-- BaseApiEndpoint : composes one per resource
+PlanAssembler ..> PlanResource : maps
+PlanAssembler ..> Plan : builds
+ValuePropositionAssembler ..> ValuePropositionResource : maps
+ValuePropositionAssembler ..> ValueProposition : builds
+CommercialInquiryAssembler ..> CommercialInquiryResource : maps
+CommercialInquiryAssembler ..> CommercialInquiry : builds
+@enduml

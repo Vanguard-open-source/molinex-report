@@ -1,0 +1,238 @@
+@startuml
+title Molinex Open Source - Production Management Frontend Class Diagram
+left to right direction
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+package "Application" #EAF3F8 {
+  class ProductionManagementStore <<Angular Signals Store>> {
+    -#productionManagementApi : ProductionManagementApi
+    -#rawMaterialReceptionsSignal : WritableSignal<RawMaterialReception[]>
+    -#productionBatchesSignal : WritableSignal<ProductionBatch[]>
+    -#productionRecordsSignal : WritableSignal<ProductionRecord[]>
+    +rawMaterialReceptions : Signal<RawMaterialReception[]>
+    +productionBatches : Signal<ProductionBatch[]>
+    +productionRecords : Signal<ProductionRecord[]>
+    +loading : Signal<boolean>
+    +error : Signal<ProductionManagementOperationError?>
+    --
+    +addRawMaterialReception(reception : RawMaterialReception) : void
+    +addProductionBatch(batch : ProductionBatch) : void
+    +addProductionRecord(record : ProductionRecord) : void
+    +updateProductionRecord(record : ProductionRecord) : void
+    +reloadProductionData() : void
+  }
+}
+
+package "Domain Model" #E8F4D4 {
+  class RawMaterialReception <<Aggregate Root>> {
+    -#id : RawMaterialReceptionId
+    -#receivedAt : ReceptionDateTime
+    -#supplier : Supplier
+    -#origin : MaterialOrigin
+    -#quantity : Weight
+    --
+    +id : RawMaterialReceptionId
+    +receivedAt : ReceptionDateTime
+    +supplier : Supplier
+    +origin : MaterialOrigin
+    +quantity : Weight
+    +{static} record(receivedAt, supplier, origin, quantity) : RawMaterialReception
+  }
+
+  class ProductionBatch <<Aggregate Root>> {
+    -#id : ProductionBatchId
+    -#code : BatchCode
+    -#receptionId : RawMaterialReceptionId
+    -#registeredAt : BatchRegistrationDateTime
+    --
+    +id : ProductionBatchId
+    +code : BatchCode
+    +receptionId : RawMaterialReceptionId
+    +registeredAt : BatchRegistrationDateTime
+    +{static} register(code, receptionId, registeredAt) : ProductionBatch
+  }
+
+  class ProductionRecord <<Aggregate Root>> {
+    -#id : ProductionRecordId
+    -#batchId : ProductionBatchId
+    -#details : ProductionDetails
+    -#recordedAt : ProductionRecordDateTime
+    --
+    +id : ProductionRecordId
+    +batchId : ProductionBatchId
+    +details : ProductionDetails
+    +recordedAt : ProductionRecordDateTime
+    +{static} record(batchId, details, recordedAt) : ProductionRecord
+    +updateDetails(details : ProductionDetails) : void
+  }
+
+  class RawMaterialReceptionId <<Value Object>> {
+    -#value : number
+    +value : number
+  }
+  class ProductionBatchId <<Value Object>> {
+    -#value : number
+    +value : number
+  }
+  class ProductionRecordId <<Value Object>> {
+    -#value : number
+    +value : number
+  }
+  class ReceptionDateTime <<Value Object>> {
+    -#value : Date
+    +value : Date
+    +isNotInFuture() : boolean
+  }
+  class BatchRegistrationDateTime <<Value Object>> {
+    -#value : Date
+    +value : Date
+  }
+  class ProductionRecordDateTime <<Value Object>> {
+    -#value : Date
+    +value : Date
+  }
+  class BatchCode <<Value Object>> {
+    -#value : string
+    +value : string
+  }
+  class Supplier <<Value Object>> {
+    -#name : string
+    +name : string
+  }
+  class MaterialOrigin <<Value Object>> {
+    -#description : string
+    +description : string
+  }
+  class ProductionProcessName <<Value Object>> {
+    -#value : string
+    +value : string
+  }
+  class ProductionPeriod <<Value Object>> {
+    -#startedAt : Date
+    -#finishedAt : Date?
+    +startedAt : Date
+    +finishedAt : Date?
+    +isChronologicallyValid() : boolean
+  }
+  class ProductionDetails <<Value Object>> {
+    -#processName : ProductionProcessName
+    -#processedWeight : Weight
+    -#period : ProductionPeriod
+    -#status : ProductionStatus
+    +processName : ProductionProcessName
+    +processedWeight : Weight
+    +period : ProductionPeriod
+    +status : ProductionStatus
+  }
+  enum ProductionStatus <<Enumeration>> {
+    REGISTERED
+    IN_PROGRESS
+    COMPLETED
+  }
+}
+
+package "Infrastructure" #F0E6FA {
+  class ProductionManagementApi <<Angular HTTP Service>> {
+    -#rawMaterialReceptionsEndpoint : RawMaterialReceptionsApiEndpoint
+    -#productionBatchesEndpoint : ProductionBatchesApiEndpoint
+    -#productionRecordsEndpoint : ProductionRecordsApiEndpoint
+    --
+    +getRawMaterialReceptions() : Observable<RawMaterialReception[]>
+    +createRawMaterialReception(reception : RawMaterialReception) : Observable<RawMaterialReception>
+    +getProductionBatches() : Observable<ProductionBatch[]>
+    +createProductionBatch(batch : ProductionBatch) : Observable<ProductionBatch>
+    +getProductionRecords() : Observable<ProductionRecord[]>
+    +createProductionRecord(record : ProductionRecord) : Observable<ProductionRecord>
+    +updateProductionRecord(record : ProductionRecord) : Observable<ProductionRecord>
+  }
+
+  class RawMaterialReceptionAssembler <<Assembler>> {
+    +toEntityFromResource(resource : RawMaterialReceptionResource) : RawMaterialReception
+    +toResourceFromEntity(entity : RawMaterialReception) : RawMaterialReceptionResource
+  }
+  class ProductionBatchAssembler <<Assembler>> {
+    +toEntityFromResource(resource : ProductionBatchResource) : ProductionBatch
+    +toResourceFromEntity(entity : ProductionBatch) : ProductionBatchResource
+  }
+  class ProductionRecordAssembler <<Assembler>> {
+    +toEntityFromResource(resource : ProductionRecordResource) : ProductionRecord
+    +toResourceFromEntity(entity : ProductionRecord) : ProductionRecordResource
+  }
+
+  interface RawMaterialReceptionResource <<Resource>> {
+    +id : number
+    +receivedAt : string
+    +supplierName : string
+    +originDescription : string
+    +quantityValue : number
+    +quantityUnit : string
+  }
+  interface ProductionBatchResource <<Resource>> {
+    +id : number
+    +code : string
+    +receptionId : number
+    +registeredAt : string
+  }
+  interface ProductionRecordResource <<Resource>> {
+    +id : number
+    +batchId : number
+    +processName : string
+    +processedWeightValue : number
+    +processedWeightUnit : string
+    +startedAt : string
+    +finishedAt : string?
+    +status : string
+    +recordedAt : string
+  }
+}
+
+package "Shared References" #FFF2CC {
+  class Weight <<Shared Value Object>> {
+    -#value : number
+    -#unit : MeasurementUnit
+  }
+  enum MeasurementUnit <<Enumeration>> {
+    KILOGRAM
+    METRIC_TON
+  }
+  abstract class BaseApi <<Shared Infrastructure>>
+  abstract class BaseApiEndpoint <<Shared Infrastructure>>
+}
+
+ProductionManagementStore o-- "0..*" RawMaterialReception : holds
+ProductionManagementStore o-- "0..*" ProductionBatch : holds
+ProductionManagementStore o-- "0..*" ProductionRecord : holds
+ProductionManagementStore ..> ProductionManagementApi : uses
+
+RawMaterialReception *-- RawMaterialReceptionId
+RawMaterialReception *-- ReceptionDateTime
+RawMaterialReception *-- Supplier
+RawMaterialReception *-- MaterialOrigin
+RawMaterialReception *-- Weight
+ProductionBatch *-- ProductionBatchId
+ProductionBatch *-- BatchCode
+ProductionBatch *-- RawMaterialReceptionId : references by identity
+ProductionBatch *-- BatchRegistrationDateTime
+ProductionRecord *-- ProductionRecordId
+ProductionRecord *-- ProductionBatchId : references by identity
+ProductionRecord *-- ProductionDetails
+ProductionRecord *-- ProductionRecordDateTime
+ProductionDetails *-- ProductionProcessName
+ProductionDetails *-- Weight
+ProductionDetails *-- ProductionPeriod
+ProductionDetails --> ProductionStatus
+Weight --> MeasurementUnit
+
+ProductionManagementApi --|> BaseApi
+ProductionManagementApi *-- BaseApiEndpoint : composes one per resource
+RawMaterialReceptionAssembler ..> RawMaterialReceptionResource : maps
+RawMaterialReceptionAssembler ..> RawMaterialReception : builds
+ProductionBatchAssembler ..> ProductionBatchResource : maps
+ProductionBatchAssembler ..> ProductionBatch : builds
+ProductionRecordAssembler ..> ProductionRecordResource : maps
+ProductionRecordAssembler ..> ProductionRecord : builds
+@enduml

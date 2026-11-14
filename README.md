@@ -64,21 +64,23 @@ Proyecto<br>
 | Versión | Fecha | Autor | Descripción de la modificación |
 |:--:|:--:|:--|:--|
 | AV1 |  |  ||
-|0.1|12/09|Luisa Casalino|Se desarrollaron los segmentos objetivo y el análisis competitivo de Molinex.|
-|0.2|13/09|Antony Jimenez|Se redactó la descripción inicial de la startup y se configuró la estructura inicial del proyecto.|
-|0.3|06/09|Brayan Huerta|Se realizaron correcciones y actualizaciones relacionadas con la descripción de la startup, perfiles del equipo y análisis de entrevistas.|
-|0.4|15/09|Antony Jimenez Saavedra|Se incorporó el registro de entrevistas, análisis de entrevistas y User Task Matrix.|
-|0.5|15/09|Luisa Nhiriel Casalino|Se agregaron User Persona, User Journey Map, Empathy Mapping y Ubiquitous Language.|
-|0.6|16/09|Antony Jimenez Saavedra|Se actualizaron los perfiles de los integrantes y se incorporaron evidencias adicionales del proyecto.|
-|0.7|17/09|Brayan Huerta|Se realizaron correcciones en hipótesis, perfiles del equipo y análisis de entrevistas.|
-|0.8|17/09|Fabricio Rivera|Se incorporaron Style Guidelines, Information Architecture, Big Picture Event Storming, Design-Level Event Storming, arquitectura de software y diagramas de clases.|
-|0.9|17/09|Fabricio Rivera|Se agregó el diagrama de base de datos y se completaron elementos del diseño técnico.|
-|1.0|17/09|Giovanni Gallegos|Se agregaron los wireflows, wireframes, prototipo de aplicación web y evidencias de la Landing Page.|
-|1.1|18/09|Giovanni Gallegos|Se completaron las secciones del informe correspondientes a AV1 y se agregaron evidencias.|
-|1.2|18/09|Equipo Vanguard|Consolidación y revisión de las secciones del informe correspondientes a la evaluación AV1.|
-|1.3|04/10|Fabricio Rivera|Se corrigió el Big Picture Event Storming y se incorporó la Single Page Application como contenedor independiente en el modelo C4.|
-|1.4|05/10|Equipo Vanguard|Se incorporaron las evidencias de implementación, ejecución, servicios, despliegue y colaboración correspondientes al Sprint 2 y se actualizaron las conclusiones y anexos de TB1.|
-|1.5|05/10|Fabricio Rivera|Se alinearon los identificadores y estados del Sprint Backlog, se documentó el i18n de la Landing Page y se corrigieron las referencias de repositorios para TB1.|
+|0.1|12-09-2026|Luisa Casalino|Se desarrollaron los segmentos objetivo y el análisis competitivo de Molinex.|
+|0.2|13-09-2026|Antony Jimenez|Se redactó la descripción inicial de la startup y se configuró la estructura inicial del proyecto.|
+|0.3|06-09-2026|Brayan Huerta|Se realizaron correcciones y actualizaciones relacionadas con la descripción de la startup, perfiles del equipo y análisis de entrevistas.|
+|0.4|15-09-2026|Antony Jimenez Saavedra|Se incorporó el registro de entrevistas, análisis de entrevistas y User Task Matrix.|
+|0.5|15-09-2026|Luisa Nhiriel Casalino|Se agregaron User Persona, User Journey Map, Empathy Mapping y Ubiquitous Language.|
+|0.6|16-09-2026|Antony Jimenez Saavedra|Se actualizaron los perfiles de los integrantes y se incorporaron evidencias adicionales del proyecto.|
+|0.7|17-09-2026|Brayan Huerta|Se realizaron correcciones en hipótesis, perfiles del equipo y análisis de entrevistas.|
+|0.8|17-09-2026|Fabricio Rivera|Se incorporaron Style Guidelines, Information Architecture, Big Picture Event Storming, Design-Level Event Storming, arquitectura de software y diagramas de clases.|
+|0.9|17-09-2026|Fabricio Rivera|Se agregó el diagrama de base de datos y se completaron elementos del diseño técnico.|
+|1.0|17-09-2026|Giovanni Gallegos|Se agregaron los wireflows, wireframes, prototipo de aplicación web y evidencias de la Landing Page.|
+|1.1|18-09-2026|Giovanni Gallegos|Se completaron las secciones del informe correspondientes a AV1 y se agregaron evidencias.|
+|1.2|18-09-2026|Equipo Vanguard|Consolidación y revisión de las secciones del informe correspondientes a la evaluación AV1.|
+|1.3|04-10-2026|Fabricio Rivera|Se corrigió el Big Picture Event Storming y se incorporó la Single Page Application como contenedor independiente en el modelo C4.|
+|1.4|05-10-2026|Equipo Vanguard|Se incorporaron las evidencias de implementación, ejecución, servicios, despliegue y colaboración correspondientes al Sprint 2 y se actualizaron las conclusiones y anexos de TB1.|
+|1.5|05-10-2026|Fabricio Rivera|Se alinearon los identificadores y estados del Sprint Backlog, se documentó el i18n de la Landing Page y se corrigieron las referencias de repositorios para TB1.|
+| AV2 |  |  |  |
+|1.6|14-11-2026|Equipo Vanguard|Se consolidaron las evidencias del Sprint 3, el despliegue del backend v1.0.0, la documentación de servicios, los Insights de colaboración y los enlaces verificables de los productos desplegados.|
 <div style="page-break-after: always;"></div>
 
 
@@ -91,7 +93,7 @@ Para el desarrollo del informe correspondiente a la entrega AV1, se distribuyero
 
 | Integrante | Tareas Designadas |
 | --- | --- |
-| **Antony Alexander Jimenez Saavedra** | Registro y análisis de entrevistas, Interview Record, Interview Analysis, User Task Matrix, Lean UX Canvas, Product Backlog, Impact Mapping, Mapping, enlace del Backlog y Sprint Backlog. |
+| **Antony Alexander Jimenez Saavedra** | Registro y análisis de entrevistas, Interview Record, Interview Analysis, User Task Matrix, Lean UX Canvas, Product Backlog, Impact Mapping, enlace del Backlog y Sprint Backlog. |
 | **Luisa Nhiriel Casalino Berrocal** | User Persona, User Journey Map, Empathy Mapping, Ubiquitous Language, User Stories, Sprint Planning 1, Aspect Leaders and Collaborators y Student Outcome. |
 | **Giovanni Marcelo Gallegos De La Cruz** | Wireframes de la aplicación web, Wireflows, prototipo de aplicación web, evidencias de la Landing Page, documentación de diseño y consolidación de secciones del informe para AV1. |
 | **Brayan Benjamin Huerta Cardenas** | Análisis de la Landing Page, wireframe y mockup de la Landing Page, perfiles de integrantes, correcciones de la descripción de la startup y ajustes del análisis de entrevistas. |
@@ -102,9 +104,10 @@ Para el desarrollo del informe correspondiente a la entrega AV1, se distribuyero
 - Project Report: `https://github.com/Vanguard-open-source/molinex-report`
 - Landing Page: `https://github.com/Vanguard-open-source/molinex-website`
 - Frontend Web Application: `https://github.com/Vanguard-open-source/molinex-webapp`
+- Backend RESTful API (Sprint 3): [molinex-platform-backend](https://github.com/Vanguard-open-source/molinex-platform-backend)
 - Mock Web Service (Sprint 2): `https://github.com/Vanguard-open-source/molinex-platform-mock`
 
-La RESTful API definitiva todavía no cuenta con un repositorio. Su implementación y publicación están planificadas para un sprint posterior; por ello, no se incluye un enlace inexistente.
+El backend propio corresponde al Sprint 3 (AV2). El Mock Web Service con JSON Server se utilizó para la integración del Sprint 2 (TB1).
 
 ### Entrega AV1
 
@@ -122,13 +125,53 @@ El trabajo se realizó de manera colaborativa mediante ramas y commits en el rep
 - Jimenez Saavedra, Antony Alexander
 - Rivera Rupay, Fabricio Jose
 
-![evidencias.png](assets/evidence/collaboration/evidencias.png)
+![GitHub Contributors de molinex-report al cierre de AV1](assets/evidence/collaboration/av1-report-github-contributors.png)
 
 ### Entrega TB1
 
-Para TB1, el informe se amplió con las correcciones recibidas en AV1, la documentación del Sprint 2 y las evidencias de implementación, ejecución, servicios, despliegue y colaboración. Los aportes se integraron mediante ramas `feature/*` hacia `develop`, y el historial del repositorio conserva los commits y merges asociados a la actualización del Student Outcome, la configuración del entorno de desarrollo, la documentación de servicios y la evidencia del Sprint Review.
+Para TB1, el equipo implementó la primera versión funcional de la Web Application de Open Source, la integró con la API simulada y publicó ambos productos en Azure. El Sprint 2 se trabajó mediante ramas `feature/*`, Pull Requests hacia `develop`, ramas `release/*` y Conventional Commits.
 
-La participación de cada integrante en la implementación se detalla en las secciones 5.2.2.4 y 5.2.2.8. Estas secciones relacionan responsables, Pull Requests, commits y módulos entregados, manteniendo la trazabilidad entre el trabajo colaborativo del código y su documentación en el informe.
+| Integrante | Contribución principal en TB1 |
+| --- | --- |
+| **Antony Alexander Jimenez Saavedra** | Implementación de Asset and Maintenance Management para maquinaria y mantenimientos preventivos y correctivos (PR #5 y #6). |
+| **Luisa Nhiriel Casalino Berrocal** | Implementación de Quality and Yield Control para resultados de calidad y registros de merma (PR #7). |
+| **Giovanni Marcelo Gallegos De La Cruz** | Implementación de Production Management para recepciones, lotes, procesos e historial (PR #3). |
+| **Brayan Benjamin Huerta Cardenas** | Documentación de historias de usuario y tareas técnicas del Sprint 2, según el Student Outcome. |
+| **Fabricio Jose Rivera Rupay** | Configuración, base compartida, navegación e internacionalización, integración con la API simulada y despliegue en Azure (PR #1, #2, #4, #8 y #9). |
+
+Las secciones 5.2.2.4 y 5.2.2.8 detallan los Pull Requests, commits y módulos de la entrega.
+
+![Contribuciones a la Web Application de Open Source durante TB1](assets/Images%20Chapter%205/Sprint%202/5.2.2.8-02-github-contributors.jpg)
+
+**Figura.** GitHub Insights del repositorio `Vanguard-open-source/molinex-webapp` durante TB1. Fuente: GitHub, 05-10-2026.
+
+#### Referencia del curso de Aplicaciones Web
+
+Las siguientes capturas corresponden al repositorio `Vanguard-app-web/molinex-webapp` y muestran el formato de colaboración del informe de Aplicaciones Web.
+
+![GitHub Insights de Aplicaciones Web durante TB1, parte 1](assets/evidence/collaboration/tb1-app-web-insights-part-1.png)
+
+![GitHub Insights de Aplicaciones Web durante TB1, parte 2](assets/evidence/collaboration/tb1-app-web-insights-part-2.png)
+
+**Figuras.** Capturas del informe de Aplicaciones Web. Fuente: GitHub Insights de `Vanguard-app-web/molinex-webapp`.
+
+### Entrega AV2
+
+Para AV2, el equipo implementó y publicó la primera versión del backend RESTful de Molinex. La colaboración se realizó en el repositorio `molinex-platform-backend` mediante ramas `feature/*`, integraciones en `develop`, una rama `release/1.0.0`, merges `--no-ff` hacia `main` y `develop`, y el tag anotado `v1.0.0`.
+
+| Integrante | Usuario de GitHub | Commits registrados | Participación |
+| --- | --- | ---: | ---: |
+| Gallegos De La Cruz, Giovanni Marcelo | `Giova2725` | 8 | 33.3 % |
+| Huerta Cardenas, Brayan Benjamin | `brayanjk22` | 5 | 20.8 % |
+| Rivera Rupay, Fabricio Jose | `Fabricio1924` | 5 | 20.8 % |
+| Jimenez Saavedra, Antony Alexander | `saavedraantony-max` | 3 | 12.5 % |
+| Casalino Berrocal, Luisa Nhiriel | `lulu22nhiri` | 3 | 12.5 % |
+
+El conteo refleja los commits que GitHub atribuye a cada colaborador en el backend y no sustituye la evaluación de responsabilidades, revisiones, pruebas y coordinación descritas en Aspect Leaders and Collaborators.
+
+![GitHub Insights de colaboradores del backend durante AV2](assets/evidence/collaboration/av2-backend-github-insights.png)
+
+**Figura.** GitHub Insights del repositorio `Vanguard-open-source/molinex-platform-backend` durante AV2. Fuente: GitHub, 14-11-2026.
 
 <div style="page-break-after: always;"></div>
 
@@ -219,14 +262,28 @@ La participación de cada integrante en la implementación se detalla en las sec
     - [5.2.2.6 Services Documentation Evidence for Sprint Review](#5226-services-documentation-evidence-for-sprint-review)
     - [5.2.2.7 Software Deployment Evidence for Sprint Review](#5227-software-deployment-evidence-for-sprint-review)
     - [5.2.2.8 Team Collaboration Insights during Sprint](#5228-team-collaboration-insights-during-sprint)
+  - [5.2.3 Sprint 3](#523-sprint-3)
+    - [5.2.3.1 Sprint Planning 3](#5231-sprint-planning-3)
+    - [5.2.3.2 Aspect Leaders and Collaborators](#5232-aspect-leaders-and-collaborators)
+    - [5.2.3.3 Sprint Backlog 3](#5233-sprint-backlog-3)
+    - [5.2.3.4 Development Evidence for Sprint Review](#5234-development-evidence-for-sprint-review)
+    - [5.2.3.5 Execution Evidence for Sprint Review](#5235-execution-evidence-for-sprint-review)
+    - [5.2.3.6 Services Documentation Evidence for Sprint Review](#5236-services-documentation-evidence-for-sprint-review)
+    - [5.2.3.7 Software Deployment Evidence for Sprint Review](#5237-software-deployment-evidence-for-sprint-review)
+    - [5.2.3.8 Team Collaboration Insights during Sprint](#5238-team-collaboration-insights-during-sprint)
+- [5.3 Validation Interviews](#53-validation-interviews)
+  - [5.3.1 Diseño de Entrevistas](#531-diseño-de-entrevistas)
+  - [5.3.2 Registro de Entrevistas](#532-registro-de-entrevistas)
+  - [5.3.3 Evaluaciones según heurísticas](#533-evaluaciones-según-heurísticas)
+- [5.4 Video About-the-Product](#54-video-about-the-product)
 - [Conclusiones](#conclusiones)
 - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
 - [Bibliografía](#bibliografía)
 - [Anexos](#anexos)
 - [Anexo A. Videos de Exposiciones](#anexo-a-videos-de-exposiciones)
+- [Anexo B. Enlaces de despliegue](#anexo-b-enlaces-de-despliegue)
 
 <div style="page-break-after: always;"></div>
-<div style="page-break-before: always;"></div>
 
 # Student Outcome
 
@@ -239,8 +296,8 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 
 | Criterio específico | Acciones realizadas | Conclusiones |
 | :--- | :--- | :--- |
-| **Comunica oralmente con efectividad a diferentes rangos de audiencia.** | **Casalino Berrocal, Luisa Nhiriel**<br>**AV1:** Presenté y expliqué la distribución de roles del equipo en la llamada grupal y participé activamente en la grabación del video "About The Team", exponiendo la visión general del proyecto Molinex a una audiencia académica.<br>**TB1:** Participé en el Sprint Planning 2 realizado por videollamada en Discord, donde expuse mi propuesta para el módulo de Quality & Waste Control (US-11 y US-14) y asumí el liderazgo de ese aspecto. Durante la implementación coordiné verbalmente con mis compañeros la integración de los formularios de recepción, lotes y calidad con los módulos de producción.<br><br>**Gallegos De La Cruz, Giovanni Marcelo**<br>**AV1:** Me mantuve activo en la comunicación oral durante las reuniones virtuales, exponiendo los aspectos técnicos de la arquitectura del software y proponiendo ideas de mejora para la Landing Page.<br>**TB1:** Conduje el Sprint Planning 2 en Discord, presentando al equipo el Sprint Goal, la velocity de 23 Story Points y las historias de usuario comprometidas, y expliqué el diseño del módulo de Production Management (US-05, US-06 y US-07) que lideré para que los demás integrantes pudieran conectar sus módulos.<br><br>**Huerta Cardenas, Brayan Benjamin**<br>**AV1:** Participé en las llamadas de planificación comunicando mis propuestas sobre el alcance del dominio y la gestión de materia prima, además de intervenir oralmente en la presentación del video del grupo.<br>**TB1:** Participé en el Sprint Planning 2 y en la retrospectiva del Sprint 1, comunicando mis observaciones sobre la coordinación del equipo y explicando mi alcance en la merma (US-14), la maquinaria (US-17) y el mantenimiento preventivo (US-19), así como los puntos que debía coordinar con los módulos de mis compañeros.<br><br>**Jimenez Saavedra, Antony Alexander**<br>**AV1:** Comuniqué mis ideas y dudas durante las sesiones grupales para la definición del Product Backlog, coordinando verbalmente con mis compañeros el desglose de historias de usuario del Sprint 1.<br>**TB1:** En el Sprint Planning 2 expuse el alcance del módulo de Asset & Maintenance (US-17, US-19 y US-20), que lideré, y expliqué verbalmente los endpoints de mantenimiento al equipo cuando fue necesario ajustarlos para la integración con la API.<br><br>**Rivera Rupay, Fabricio Jose**<br>**AV1:** Apoyé la conducción de las reuniones de planificación, explicando oralmente los objetivos de negocio y la propuesta de valor del sistema frente al grupo y en la presentación en video.<br>**TB1:** Expliqué al equipo la estructura base del repositorio, la arquitectura por bounded contexts, el sistema de internacionalización ES/EN y el proceso de despliegue en Azure, de modo que todos pudieran integrar sus módulos siguiendo GitFlow, y lideré el aspecto de base compartida, API e integración. | Como conclusión para este primer avance del proyecto, hemos confirmado que la comunicación oral grupal desde el inicio del proyecto es fundamental para un buen inicio de trabajo. No solo nos ha permitido conocernos entre nosotros, sino que también ha servido como plataforma para expresar nuestras ideas, dudas y consultas de manera efectiva, lo cual ha contribuido significativamente a la organización y la claridad en el desarrollo del proyecto. Al participar activamente en las llamadas grupales, hemos establecido una base sólida de comprensión mutua y confianza, lo que facilita la asignación de tareas y la colaboración en equipo. Además, estas interacciones nos han permitido identificar áreas clave que requieren atención y enfoque, asegurando que abordemos los desafíos de manera proactiva y eficiente. En resumen, la comunicación oral grupal no solo es esencial para compartir información, sino que también es fundamental para construir relaciones sólidas y establecer una estructura organizativa efectiva que guiará nuestro progreso en las siguientes etapas del proyecto.<br><br>**TB1:** Durante el Sprint 2 la comunicación oral pasó de la presentación de ideas a la coordinación técnica. En el Sprint Planning 2 cada integrante expuso el alcance de su aspecto (Production Management, Quality & Waste Control, Asset & Maintenance y base compartida, API e integración) y la retrospectiva del Sprint 1 permitió acordar mejoras concretas: fortalecer la coordinación entre los integrantes y precisar los criterios de aceptación antes de desarrollar cada historia de usuario. Explicar oralmente las decisiones de diseño y las dependencias entre módulos redujo los conflictos de integración y permitió que los nueve Pull Requests del repositorio molinex-webapp se integraran en `develop` sin quedar ninguno abierto. |
-| **Comunica por escrito con efectividad a diferentes rangos de audiencia.** | **Casalino Berrocal, Luisa Nhiriel**<br>**AV1:** Realicé la redacción y estructuración formal del Sprint Planning 1 y del Sprint Backlog en formato Markdown, asegurando el uso correcto de estándares técnicos y la precisión del lenguaje escrito.<br>**TB1:** Integré el módulo de Quality & Waste Control mediante el Pull Request #7 (`feature/sprint2-quality-waste-control`), con commits redactados según Conventional Commits, y documenté las tareas T-05-02, T-06-02 y T-11-02 del Sprint Backlog 2 con descripciones claras de cada formulario y sus validaciones.<br><br>**Gallegos De La Cruz, Giovanni Marcelo**<br>**AV1:** Me encargué de la redacción de las tareas técnicas (Work-Items) del primer Sprint y de la documentación de los requisitos del sistema, manteniendo informados a mis compañeros por WhatsApp.<br>**TB1:** Preparé la documentación del Sprint Planning 2 (Sprint Goal, velocity y resumen de las revisiones del Sprint 1) y redacté las tareas de modelo y API de recepción, lote y merma (T-05-01, T-06-01 y T-14-01). Integré el módulo de Production Management mediante el Pull Request #3 (`feature/sprint2-production-management`), con 47 archivos y el commit `feat(production): integrate production management module structure`.<br><br>**Huerta Cardenas, Brayan Benjamin**<br>**AV1:** Elaboré las descripciones formales de las Historias de Usuario (US-01 a US-04 y US-31 a US-36) y redacté los objetivos del Sprint en inglés y español con rigor técnico.<br>**TB1:** Redacté la descripción de las tareas T-14-02, T-17-01 y T-19-01 del Sprint Backlog 2, detallando las entidades de maquinaria y mantenimiento preventivo, sus campos y los endpoints de registro y consulta, y mantuve la consistencia de los términos con el Ubiquitous Language del proyecto.<br><br>**Jimenez Saavedra, Antony Alexander**<br>**AV1:** Redacté las secciones del informe vinculadas a la propuesta de valor y planes de suscripción de la Landing Page, e incluí referencias bibliográficas relevantes que respaldan la investigación.<br>**TB1:** Integré el módulo de Asset & Maintenance mediante el Pull Request #5 (`feature/sprint2-asset-maintenance`, 34 archivos) y el ajuste de endpoints del Pull Request #6, y documenté las tareas T-07-01, T-11-01 y T-20-01 con las entidades de producción, calidad y mantenimiento correctivo.<br><br>**Rivera Rupay, Fabricio Jose**<br>**AV1:** Me encargué de consolidar la documentación textual en el repositorio Git, revisando la ortografía, coherencia y formato general del informe para el envío del avance 1.<br>**TB1:** Documenté la base del repositorio (Pull Requests #1, #2, #4, #8 y #9): dependencias, entornos, API simulada con JSON Server, estructura de bounded contexts, i18n ES/EN y configuración de despliegue en Azure. Además registré las versiones `v0.1.0` y `v0.1.1` en el `CHANGELOG.md` y redacté las tareas T-07-02, T-17-02 y T-19-02 del Sprint Backlog 2. | La comunicación escrita desempeña un papel insustituible en nuestro equipo, actuando como un medio vital para mantenernos informados de manera constante sobre los progresos y las inquietudes que surgen en el transcurso del proyecto. A través de la documentación escrita, no solo consolidamos y compartimos nuestras investigaciones y aprendizajes, sino que también creamos un registro detallado y accesible de nuestro trabajo. Esta transcripción minuciosa no solo refleja nuestro compromiso con la transparencia y la organización interna, sino que también se erige como un recurso invaluable para cualquier individuo interesado en comprender los detalles y las razones detrás de nuestras decisiones y acciones. En última instancia, esta práctica no solo fortalece la cohesión y la eficacia de nuestro equipo, sino que también garantiza que nuestro proyecto sea accesible y comprensible para una audiencia más amplia, lo que amplifica su impacto y su alcance potencial.<br><br>**TB1:** En el Sprint 2 la comunicación escrita se aplicó a públicos distintos: el docente, que evalúa el informe; los compañeros, que integran módulos ajenos; y los futuros mantenedores del código. Para el docente se documentaron el Sprint Planning 2, el Sprint Backlog 2, las evidencias de ejecución, los servicios y el despliegue, aclarando que JSON Server es una solución temporal y no el backend definitivo. Para el equipo se usaron GitFlow, Conventional Commits y Pull Requests con alcance definido, y para quienes mantendrán el producto se registraron las versiones `v0.1.0` y `v0.1.1` en el `CHANGELOG.md` y las convenciones de código. Esta documentación permitió trazar quién implementó cada historia de usuario y fortaleció la claridad y la trazabilidad del trabajo. |
+| **Comunica oralmente con efectividad a diferentes rangos de audiencia.** | **Casalino Berrocal, Luisa Nhiriel**<br>**AV1:** Presenté y expliqué la distribución de roles del equipo en la llamada grupal y participé activamente en la grabación del video "About The Team", exponiendo la visión general del proyecto Molinex a una audiencia académica.<br>**TB1:** Participé en el Sprint Planning 2 realizado por videollamada en Discord, donde expuse mi propuesta para el módulo de Quality & Waste Control (US-11 y US-14) y asumí el liderazgo de ese aspecto. Durante la implementación coordiné verbalmente con mis compañeros la integración de los formularios de recepción, lotes y calidad con los módulos de producción.<br>**AV2:** Participé en la videollamada de planificación del Sprint 3, donde el equipo revisó el alcance de los servicios de mantenimiento y el inicio de sesión.<br><br>**Gallegos De La Cruz, Giovanni Marcelo**<br>**AV1:** Me mantuve activo en la comunicación oral durante las reuniones virtuales, exponiendo los aspectos técnicos de la arquitectura del software y proponiendo ideas de mejora para la Landing Page.<br>**TB1:** Conduje el Sprint Planning 2 en Discord, presentando al equipo el Sprint Goal, la velocity de 23 Story Points y las historias de usuario comprometidas, y expliqué el diseño del módulo de Production Management (US-05, US-06 y US-07) que lideré para que los demás integrantes pudieran conectar sus módulos.<br>**AV2:** Preparé el Sprint Planning 3 y participé en la videollamada en la que el equipo revisó el objetivo del sprint y el alcance de los servicios de producción y calidad.<br><br>**Huerta Cardenas, Brayan Benjamin**<br>**AV1:** Participé en las llamadas de planificación comunicando mis propuestas sobre el alcance del dominio y la gestión de materia prima, además de intervenir oralmente en la presentación del video del grupo.<br>**TB1:** Participé en el Sprint Planning 2 y en la retrospectiva del Sprint 1, comunicando mis observaciones sobre la coordinación del equipo y explicando mi alcance en la merma (US-14), la maquinaria (US-17) y el mantenimiento preventivo (US-19), así como los puntos que debía coordinar con los módulos de mis compañeros.<br>**AV2:** Participé en la videollamada de planificación del Sprint 3, donde el equipo revisó el alcance del formulario comercial de la Landing Page y los videos de la entrega.<br><br>**Jimenez Saavedra, Antony Alexander**<br>**AV1:** Comuniqué mis ideas y dudas durante las sesiones grupales para la definición del Product Backlog, coordinando verbalmente con mis compañeros el desglose de historias de usuario del Sprint 1.<br>**TB1:** En el Sprint Planning 2 expuse el alcance del módulo de Asset & Maintenance (US-17, US-19 y US-20), que lideré, y expliqué verbalmente los endpoints de mantenimiento al equipo cuando fue necesario ajustarlos para la integración con la API.<br>**AV2:** Conduje una entrevista de validación con un administrador de molino. Guié la conversación para conocer su experiencia y sus necesidades de gestión. El registro, la captura y el enlace de la sesión están en la sección 5.3.2.<br><br>**Rivera Rupay, Fabricio Jose**<br>**AV1:** Apoyé la conducción de las reuniones de planificación, explicando oralmente los objetivos de negocio y la propuesta de valor del sistema frente al grupo y en la presentación en video.<br>**TB1:** Expliqué al equipo la estructura base del repositorio, la arquitectura por bounded contexts, el sistema de internacionalización ES/EN y el proceso de despliegue en Azure, de modo que todos pudieran integrar sus módulos siguiendo GitFlow, y lideré el aspecto de base compartida, API e integración.<br>**AV2:** Participé en la videollamada de planificación del Sprint 3, donde el equipo revisó el alcance de la base de datos y del despliegue. | Como conclusión para este primer avance del proyecto, hemos confirmado que la comunicación oral grupal desde el inicio del proyecto es fundamental para un buen inicio de trabajo. No solo nos ha permitido conocernos entre nosotros, sino que también ha servido como plataforma para expresar nuestras ideas, dudas y consultas de manera efectiva, lo cual ha contribuido significativamente a la organización y la claridad en el desarrollo del proyecto. Al participar activamente en las llamadas grupales, hemos establecido una base sólida de comprensión mutua y confianza, lo que facilita la asignación de tareas y la colaboración en equipo. Además, estas interacciones nos han permitido identificar áreas clave que requieren atención y enfoque, asegurando que abordemos los desafíos de manera proactiva y eficiente. En resumen, la comunicación oral grupal no solo es esencial para compartir información, sino que también es fundamental para construir relaciones sólidas y establecer una estructura organizativa efectiva que guiará nuestro progreso en las siguientes etapas del proyecto.<br><br>**TB1:** Durante el Sprint 2 la comunicación oral pasó de la presentación de ideas a la coordinación técnica. En el Sprint Planning 2 cada integrante expuso el alcance de su aspecto (Production Management, Quality & Waste Control, Asset & Maintenance y base compartida, API e integración) y la retrospectiva del Sprint 1 permitió acordar mejoras concretas: fortalecer la coordinación entre los integrantes y precisar los criterios de aceptación antes de desarrollar cada historia de usuario. Explicar oralmente las decisiones de diseño y las dependencias entre módulos redujo los conflictos de integración y permitió que los nueve Pull Requests del repositorio molinex-webapp se integraran en `develop` sin quedar ninguno abierto.<br><br>**AV2:** La entrevista muestra cómo adaptamos la conversación a un usuario del producto. La exposición del equipo ante el docente podrá documentarse con el video de AV2 cuando esté disponible. |
+| **Comunica por escrito con efectividad a diferentes rangos de audiencia.** | **Casalino Berrocal, Luisa Nhiriel**<br>**AV1:** Realicé la redacción y estructuración formal del Sprint Planning 1 y del Sprint Backlog en formato Markdown, asegurando el uso correcto de estándares técnicos y la precisión del lenguaje escrito.<br>**TB1:** Integré el módulo de Quality & Waste Control mediante el Pull Request #7 (`feature/sprint2-quality-waste-control`), con commits redactados según Conventional Commits, y documenté las tareas T-05-02, T-06-02 y T-11-02 del Sprint Backlog 2 con descripciones claras de cada formulario y sus validaciones.<br>**AV2:** Documenté el diseño de las entrevistas de validación y dejé en el historial del backend los cambios de las consultas de rendimiento y composición del arroz (informe: `147a1f4`; backend: `6ded52b`).<br><br>**Gallegos De La Cruz, Giovanni Marcelo**<br>**AV1:** Me encargué de la redacción de las tareas técnicas (Work-Items) del primer Sprint y de la documentación de los requisitos del sistema, manteniendo informados a mis compañeros por WhatsApp.<br>**TB1:** Preparé la documentación del Sprint Planning 2 (Sprint Goal, velocity y resumen de las revisiones del Sprint 1) y redacté las tareas de modelo y API de recepción, lote y merma (T-05-01, T-06-01 y T-14-01). Integré el módulo de Production Management mediante el Pull Request #3 (`feature/sprint2-production-management`), con 47 archivos y el commit `feat(production): integrate production management module structure`.<br>**AV2:** Registré en el informe el repositorio del backend y documenté con commits separados el modelo, el servicio y las pruebas del registro de lotes (informe: `e8ee89d`; backend: `2ba3639`, `da43525`, `46a2b20`).<br><br>**Huerta Cardenas, Brayan Benjamin**<br>**AV1:** Elaboré las descripciones formales de las Historias de Usuario (US-01 a US-04 y US-31 a US-36) y redacté los objetivos del Sprint en inglés y español con rigor técnico.<br>**TB1:** Redacté la descripción de las tareas T-14-02, T-17-01 y T-19-01 del Sprint Backlog 2, detallando las entidades de maquinaria y mantenimiento preventivo, sus campos y los endpoints de registro y consulta, y mantuve la consistencia de los términos con el Ubiquitous Language del proyecto.<br>**AV2:** Unifiqué el formato de fechas, nombres y encabezados, y documenté las decisiones de diseño y su relación con las historias de usuario (informe: `86fa71e`, `41118c6`).<br><br>**Jimenez Saavedra, Antony Alexander**<br>**AV1:** Redacté las secciones del informe vinculadas a la propuesta de valor y planes de suscripción de la Landing Page, e incluí referencias bibliográficas relevantes que respaldan la investigación.<br>**TB1:** Integré el módulo de Asset & Maintenance mediante el Pull Request #5 (`feature/sprint2-asset-maintenance`, 34 archivos) y el ajuste de endpoints del Pull Request #6, y documenté las tareas T-07-01, T-11-01 y T-20-01 con las entidades de producción, calidad y mantenimiento correctivo.<br>**AV2:** Documenté el Sprint Backlog 3 y registré la entrevista de validación con su resumen y evidencia (informe: `20c904b`, `5d23a80`).<br><br>**Rivera Rupay, Fabricio Jose**<br>**AV1:** Me encargué de consolidar la documentación textual en el repositorio Git, revisando la ortografía, coherencia y formato general del informe para el envío del avance 1.<br>**TB1:** Documenté la base del repositorio (Pull Requests #1, #2, #4, #8 y #9): dependencias, entornos, API simulada con JSON Server, estructura de bounded contexts, i18n ES/EN y configuración de despliegue en Azure. Además registré las versiones `v0.1.0` y `v0.1.1` en el `CHANGELOG.md` y redacté las tareas T-07-02, T-17-02 y T-19-02 del Sprint Backlog 2.<br>**AV2:** Completé los diagramas detallados de Event Storming y simplifiqué el Context Map para explicar las relaciones entre módulos (informe: `abb041f`, `6fd6ac9`). | La comunicación escrita desempeña un papel insustituible en nuestro equipo, actuando como un medio vital para mantenernos informados de manera constante sobre los progresos y las inquietudes que surgen en el transcurso del proyecto. A través de la documentación escrita, no solo consolidamos y compartimos nuestras investigaciones y aprendizajes, sino que también creamos un registro detallado y accesible de nuestro trabajo. Esta transcripción minuciosa no solo refleja nuestro compromiso con la transparencia y la organización interna, sino que también se erige como un recurso invaluable para cualquier individuo interesado en comprender los detalles y las razones detrás de nuestras decisiones y acciones. En última instancia, esta práctica no solo fortalece la cohesión y la eficacia de nuestro equipo, sino que también garantiza que nuestro proyecto sea accesible y comprensible para una audiencia más amplia, lo que amplifica su impacto y su alcance potencial.<br><br>**TB1:** En el Sprint 2 la comunicación escrita se aplicó a públicos distintos: el docente, que evalúa el informe; los compañeros, que integran módulos ajenos; y los futuros mantenedores del código. Para el docente se documentaron el Sprint Planning 2, el Sprint Backlog 2, las evidencias de ejecución, los servicios y el despliegue, aclarando que JSON Server es una solución temporal y no el backend definitivo. Para el equipo se usaron GitFlow, Conventional Commits y Pull Requests con alcance definido, y para quienes mantendrán el producto se registraron las versiones `v0.1.0` y `v0.1.1` en el `CHANGELOG.md` y las convenciones de código. Esta documentación permitió trazar quién implementó cada historia de usuario y fortaleció la claridad y la trazabilidad del trabajo.<br><br>**AV2:** El informe permite al docente relacionar los cambios con las historias de usuario y consultar la evidencia de validación. Los diagramas y los mensajes de commit ayudan al equipo a revisar las decisiones de arquitectura y a ubicar los cambios del backend. |
 # Capítulo I Introducción 
 
 ## 1.1 Startup Profile
@@ -269,15 +326,17 @@ Ser la plataforma de referencia en inteligencia operativa para la industria arro
 
 | Nombre completo | Código | Carrera | Fotografía | Conocimientos y habilidades |
 |:--|:--:|:--|:--:|:--|
-| Casalino Berrocal, Luisa Nhiriel | u202424008 | Ingeniería de Software, UPC |![Luisa - perfil.jpeg](assets/team/Luisa%20-%20perfil.jpeg)|Como una estudiante de la carrera de Ingeniería de Software . Forma parte del equipo aportando experiencia en C++ y un dominio práctico de la Programación Orientada a Objetos, lo que me permite desarrollar soluciones técnicas funcionales y crear herramientas útiles para el proyecto. Se caracteriza por analizar los procesos de manera crítica para hacerlos más ágiles y sostenibles, además de contar con facilidad para organizar ideas y generar propuestas creativas.|
-| Gallegos De La Cruz, Giovanni Marcelo | u202424466 | Ingeniería de Software, UPC |![Gio - Perfil.jpeg](assets/team/Gio%20-%20Perfil.jpeg)|Soy un estudiante de Ingeniería de Software, cuento con habilidades técnicas en tecnologías como HTML, CSS, JavaScript, Java, y SQL , además de un gran entusiasmo por la ciencia y la innovación. Soy proactivo y tengo una sólida capacidad para la colaboración, la versatilidad ante nuevos retos y la resolución eficiente de problemas, lo que me permite sumar valor e impulsar resultados positivos en proyectos académicos y en equipo.|
+| Casalino Berrocal, Luisa Nhiriel | u202424008 | Ingeniería de Software, UPC |![Luisa - perfil.jpeg](assets/team/Luisa%20-%20perfil.jpeg)|Como estudiante de la carrera de Ingeniería de Software, aporto al equipo experiencia en C++ y un dominio práctico de la Programación Orientada a Objetos, lo que me permite desarrollar soluciones técnicas funcionales y crear herramientas útiles para el proyecto. Me caracterizo por analizar los procesos de manera crítica para hacerlos más ágiles y sostenibles, además de contar con facilidad para organizar ideas y generar propuestas creativas.|
+| Gallegos De La Cruz, Giovanni Marcelo | u202424466 | Ingeniería de Software, UPC |![Gio - Perfil.jpeg](assets/team/Gio%20-%20Perfil.jpeg)|Soy un estudiante de Ingeniería de Software, cuento con habilidades técnicas en tecnologías como HTML, CSS, JavaScript, Java y SQL, además de un gran entusiasmo por la ciencia y la innovación. Soy proactivo y tengo una sólida capacidad para la colaboración, la versatilidad ante nuevos retos y la resolución eficiente de problemas, lo que me permite sumar valor e impulsar resultados positivos en proyectos académicos y en equipo.|
 | Huerta Cardenas, Brayan Benjamin | u20241e550 | Ingeniería de Software, UPC | ![Brayan - perfil.jpg](assets/team/Brayan%20-%20perfil.jpg)| Soy estudiante de Ingeniería de Software con conocimientos en HTML, CSS, JavaScript, Java, C++, SQL y MongoDB, y con especial interés en la ciencia y la tecnología. Me considero una persona con aptitudes técnicas y una actitud proactiva para el trabajo colaborativo, capaz de adaptarme a distintos entornos y resolver problemas de manera eficiente, lo que me ha permitido aportar valor en proyectos grupales y académicos. |
-| Jimenez Saavedra, Antony Alexander | u202420031 | Ingeniería de Software, UPC | ![Antony - perfil.jpg](assets/team/Antony%20-%20perfil.jpg)|Soy un estudiante de la carrera de Ingeniería de Software,con conocimientos en HTML, Java, C++. Soy una persona responsable y proactiva, capaz de afrontar cualquier reto con creatividad y dedicación. Además,tengo una gran capacidad de adaptación y facilidad para comunicarse le permiten aportar un valor significativo para alcanzar las metas grupales.|
-| Rivera Rupay, Fabricio Jose | u202423883 | Ingeniería de Software, UPC |![Fabricio - perfil.jpeg](assets/team/Fabricio%20-%20perfil.jpeg)|Como estudiante de Ingeniería de Software, cuento con habilidades técnicas en tecnologías como HTML, C++, CSS, JavaScript, Java y SQL, además de un gran entusiasmo por la ciencia y la innovación. Tengo una actitud proactiva y una sólida capacidad para la colaboración, la versatilidad ante nuevos retos y la resolución eficiente de problemas, lo que le permite sumar valor e impulsar resultados positivos en proyectos académicos y en equipo.|
+| Jimenez Saavedra, Antony Alexander | u202420031 | Ingeniería de Software, UPC | ![Antony - perfil.jpg](assets/team/Antony%20-%20perfil.jpg)|Soy un estudiante de la carrera de Ingeniería de Software, con conocimientos en HTML, Java, C++. Soy una persona responsable y proactiva, capaz de afrontar cualquier reto con creatividad y dedicación. Además, tengo una gran capacidad de adaptación y facilidad para comunicarme, lo que me permite aportar un valor significativo para alcanzar las metas grupales.|
+| Rivera Rupay, Fabricio Jose | u202423883 | Ingeniería de Software, UPC |![Fabricio - perfil.jpeg](assets/team/Fabricio%20-%20perfil.jpeg)|Como estudiante de Ingeniería de Software, cuento con habilidades técnicas en tecnologías como HTML, C++, CSS, JavaScript, Java y SQL, además de un gran entusiasmo por la ciencia y la innovación. Tengo una actitud proactiva y una sólida capacidad para la colaboración, la versatilidad ante nuevos retos y la resolución eficiente de problemas, lo que me permite sumar valor e impulsar resultados positivos en proyectos académicos y en equipo.|
 
 ## 1.2 Solution Profile
 
 ### 1.2.1 Antecedentes y problemática
+
+**Enunciado del problema**
 
 En los molinos de arroz, el proceso productivo genera información relacionada con la materia prima, producción, calidad, mantenimiento y rendimiento de las máquinas. Sin embargo, esta información suele encontrarse dispersa o utilizarse únicamente para visualizar indicadores, dificultando la identificación de las causas de problemas como el aumento del arroz quebrado, la merma, las fallas de maquinaria y la disminución del rendimiento.
 
@@ -285,7 +344,7 @@ Para analizar preliminarmente la problemática, se aplicó la técnica de las 5W
 
 | Elemento 5W2H | Definición para Molinex |
 |:--|:--|
-| Who | A los propietarios, administradores, supervisores, técnicos de mantenimiento y trabajadores de los molinos de arroz. |
+| Who | Propietarios, administradores, supervisores, técnicos de mantenimiento y trabajadores de los molinos de arroz. |
 | What | Se presentan pérdidas de materia prima, disminución del rendimiento, aumento de arroz quebrado y fallas inesperadas en las máquinas. |
 | Where | En las diferentes etapas del proceso productivo de los molinos de arroz. |
 | When | Durante la recepción de materia prima, procesamiento, mantenimiento y control de calidad, especialmente cuando no se detectan oportunamente las anomalías. |
@@ -293,8 +352,16 @@ Para analizar preliminarmente la problemática, se aplicó la técnica de las 5W
 | How | Mediante mermas, menor cantidad de arroz entero, fallas de maquinaria, paradas no planificadas y decisiones basadas en información limitada. |
 | How much | Genera costos adicionales, desperdicio de materia prima, disminución de la productividad y posibles pérdidas económicas para el molino. La cuantificación exacta será determinada durante la investigación y validación con usuarios. |
 
-**Objetivo general.**
- - Desarrollar una plataforma web inteligente que integre y analice los datos operativos de los molinos de arroz para detectar posibles causas de pérdidas, anticipar problemas y mejorar la eficiencia del proceso productivo.
+**Aspectos que debe resolver la solución**
+
+- Reunir en un solo lugar los datos de materia prima, producción, calidad y mantenimiento, que hoy están dispersos.
+- Relacionar esos datos para identificar las causas de la merma, del arroz quebrado y de la caída del rendimiento.
+- Detectar anomalías en las variables de las máquinas antes de que deriven en paradas no planificadas.
+- Entregar alertas y recomendaciones que permitan decidir con información completa.
+
+**Objetivo general**
+
+- Desarrollar una plataforma web inteligente que integre y analice los datos operativos de los molinos de arroz para detectar posibles causas de pérdidas, anticipar problemas y mejorar la eficiencia del proceso productivo.
 
 **Objetivos específicos**
 
@@ -304,6 +371,16 @@ Para analizar preliminarmente la problemática, se aplicó la técnica de las 5W
 - Generar alertas y recomendaciones que apoyen la toma de decisiones operativas.
 - Implementar planes de suscripción diferenciados según las necesidades de los molinos pequeños, medianos y grandes.
 - Evaluar la utilidad de la plataforma mediante pruebas con usuarios y el análisis de indicadores operativos.
+
+**Restricciones del proyecto**
+
+- Molinex se entrega como una experiencia web responsive, formada por la Landing Page y la Web Application. No incluye una aplicación móvil nativa (sección 4.1).
+- La contratación, el pago y la activación de suscripciones quedan fuera del alcance actual. La Landing Page presenta los planes y registra solicitudes comerciales (secciones 2.4 y 4.6.1).
+- El origen de las variables operativas (registro manual, sensores o ambos) sigue sin definirse, por lo que el alcance no asume una integración con sensores confirmada (sección 2.4).
+- La implementación usa las tecnologías exigidas por el curso: HTML5, CSS3 y JavaScript para la Landing Page, Angular y TypeScript para la Web Application, y Spring Boot con Spring Data JPA y Java para los Web Services, documentados con OpenAPI/Swagger.
+- El inglés es el idioma predeterminado de la interfaz y de la documentación del producto, con español como idioma secundario.
+- El trabajo se organiza en cuatro Sprints, con las entregas AV1, TB1, AV2 y TB2 durante el ciclo 202620, a cargo de un equipo de cinco integrantes. Cada Sprint toma solo una parte de las historias del Product Backlog.
+
 ### 1.2.2 Lean UX Process
 
 #### 1.2.2.1 Lean UX Problem Statements
@@ -411,7 +488,7 @@ Molinex estará dirigida a tres segmentos principales dentro de los molinos de a
 
 **Segmento 1: Gerentes o administradores**
 
-Los gerentes o administradores, necesitan controlar indicadores como el rendimiento, la merma, la calidad y los costos de producción. Este segmento representa a los responsables de los molinos de arroz pequeños, medianos y grandes que toman decisiones sobre la eficiencia y rentabilidad del negocio. La importancia de este grupo se relaciona con la presencia de numerosos establecimientos dedicados al procesamiento de arroz en las principales zonas productoras del Perú, según información del INEI y MIDAGRI.
+Los gerentes o administradores necesitan controlar indicadores como el rendimiento, la merma, la calidad y los costos de producción. Este segmento representa a los responsables de los molinos de arroz pequeños, medianos y grandes que toman decisiones sobre la eficiencia y rentabilidad del negocio. La importancia de este grupo se relaciona con la presencia de numerosos establecimientos dedicados al procesamiento de arroz en las principales zonas productoras del Perú, según información del INEI y MIDAGRI.
 
 **Segmento 2: Técnicos de mantenimiento**
 
@@ -474,7 +551,7 @@ En el caso de Molinex, este análisis permite conocer qué soluciones ofrecen ac
 
 ### 2.2.1 Diseño de entrevistas
 
-### Segmentos de entrevistados
+#### Segmentos de entrevistados
 
 | Segmento | Rol | Criterio de selección | Propósito |
 |---|---|---|---|
@@ -574,11 +651,14 @@ La entrevista tendrá una duración aproximada de 10 a 15 minutos. No existen re
 
 Muchas gracias por su tiempo y por compartir su experiencia. La información brindada será utilizada únicamente con fines académicos para comprender mejor las necesidades de los operarios y diseñar una propuesta tecnológica adecuada.
 ### 2.2.2 Registro de entrevistas
-| Nombre y apellido	 | Contexto | Distrito | Segmento | Duración |Resumen descriptivo|Screenshot|Link|
-|:---|:--|:--|:--|:----|:----|:--|:--|
-|Jackeline Estrella León Berrocal |26 años |Piura|Segmento1: Gerentes o administradores| 0:00 - 6:20|Jackeline Estrella León Berrocal, de 26 años, señaló que los molinos enfrentan problemas por la falta de monitoreo en tiempo real, pérdidas de arroz y fallas de maquinaria. Considera necesario implementar una solución como Molinex para monitorear procesos, prevenir fallas y reducir pérdidas.|![Entrevista1-Jacky.jpeg](assets/Screenshot%20of%20the%20interview/Entrevista1-Jacky.jpeg) |https://upcedupe-my.sharepoint.com/:v:/g/personal/u202420031_upc_edu_pe/IQC0KNSr8pYrQ7bDyXmh9IRCAfutJgxPHGtcYY1l51bef4s?e=oa7HYB|
-|Ismael Sandoval Sandoval| 32 años|Piura|Segmento 2: Técnicos de mantenimiento|6:20 - 10:54 |Técnico con 10 años de experiencia que identifica como principales fallas el desgaste mecánico, problemas eléctricos y mala lubricación. Actualmente, los reportes son manuales y algunos equipos cuentan con sensores. Propone un sistema que permita monitorear las máquinas, detectar paradas y reducir costos de mantenimiento.|![Entrevista2-Ismael.png](assets/Screenshot%20of%20the%20interview/Entrevista2-Ismael.png)|https://upcedupe-my.sharepoint.com/:v:/g/personal/u202420031_upc_edu_pe/IQC0KNSr8pYrQ7bDyXmh9IRCAfutJgxPHGtcYY1l51bef4s?e=oa7HYB|
-|Diego Rantería Saavedra|34 años| Piura|Segmento 3:Operarios de maquinaria y producción|10:54 - 30:21 |Ingeniero agroindustrial (Universidad Nacional de Piura), 5 años en la industria arrocera. Describe el proceso completo (elevadores, descascaradoras, padi, conos pulidores, Rotex, selectora, envasado). Señala cortes eléctricos, desgaste de fajas/rodamientos y fallas en la cámara óptica de la selectora como problemas frecuentes. El reporte de fallas es informal (olor, sonido, atascos visibles). El mantenimiento preventivo se basa en calendarios fijos por horas de uso, no en monitoreo en tiempo real.|![Entrevista3-Diego.png](assets/Screenshot%20of%20the%20interview/Entrevista3-Diego.png)|https://upcedupe-my.sharepoint.com/:v:/g/personal/u202420031_upc_edu_pe/IQC0KNSr8pYrQ7bDyXmh9IRCAfutJgxPHGtcYY1l51bef4s?e=oa7HYB|
+|Nombre y apellido	 | Contexto | Distrito | Segmento | Duración |Resumen descriptivo| Screenshot                                                                                                    | Link                                                                                                                                                                                                                                                                                |
+|:---|:--|:--|:--|:----|:----|:--------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|Jackeline Estrella León Berrocal |26 años |Piura|Segmento1: Gerentes o administradores| 0:00 - 6:20|Jackeline Estrella León Berrocal, de 26 años, señaló que los molinos enfrentan problemas por la falta de monitoreo en tiempo real, pérdidas de arroz y fallas de maquinaria. Considera necesario implementar una solución como Molinex para monitorear procesos, prevenir fallas y reducir pérdidas.| ![Entrevista1-Jacky.jpeg](assets/Screenshot%20of%20the%20interview/Entrevista1-Jacky.jpeg)                    | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202420031_upc_edu_pe/IQC0KNSr8pYrQ7bDyXmh9IRCAfutJgxPHGtcYY1l51bef4s?e=oa7HYB                                                                                                                                                    |
+|Yeisen Maculupu Beckam| 22 años| Piura |Segmento 1: Gerentes o administradores| 0:00 - 4:10|señaló que la falta de control en tiempo real del inventario, la producción y el mantenimiento es su principal problema, ya que hoy depende de Excel, anotaciones manuales e informes diarios. A esto se suman el alto consumo de energía, las fallas de maquinaria, las mermas de arroz y los retrasos, que elevan los costos. Por ello, propone una solución tecnológica sencilla que permita monitorear la producción, controlar costos e inventario, registrar el mantenimiento y generar alertas e informes automáticos.  | ![Entrevista2-Segmento2.png](assets/Screenshot%20of%20the%20interview/Entrevista2-Segmento2.png)                                                                                                              | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202420031_upc_edu_pe/IQDNAX4Oq6onSLAmTNx4W6LwAUOxnpe4mg0lA2woZCS0-8k?e=nj0hxi&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D |
+|Ismael Sandoval Sandoval| 32 años|Piura|Segmento 2: Técnicos de mantenimiento|6:20 - 10:54 |Técnico con 10 años de experiencia que identifica como principales fallas el desgaste mecánico, problemas eléctricos y mala lubricación. Actualmente, los reportes son manuales y algunos equipos cuentan con sensores. Propone un sistema que permita monitorear las máquinas, detectar paradas y reducir costos de mantenimiento.| ![Entrevista2-Ismael.png](assets/Screenshot%20of%20the%20interview/Entrevista2-Ismael.png)                    | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202420031_upc_edu_pe/IQC0KNSr8pYrQ7bDyXmh9IRCAfutJgxPHGtcYY1l51bef4s?e=oa7HYB                                                                                                                                                    |
+|Paula Chavez |30 años| Piura|Segmento 2: Tecnicos de mantenimiento |00 - 03:21 |La entrevista realizada a Paula, técnica de mantenimiento de un molino de arroz, permitió conocer que las fallas se reportan directamente por los operarios y que el mantenimiento preventivo se realiza semanalmente, según el estado de la maquinaria. Además, se identificó la necesidad de implementar un sistema tecnológico que permita programar mantenimientos, registrar reparaciones y consultar el historial de averías para mejorar la gestión del mantenimiento.| ![Entrevista 4 Paula Chavez.PNG](assets/Screenshot%20of%20the%20interview/Entrevista%204%20Paula%20Chavez.PNG)| https://upcedupe-my.sharepoint.com/:v:/g/personal/u202420031_upc_edu_pe/IQC0KNSr8pYrQ7bDyXmh9IRCAfutJgxPHGtcYY1l51bef4s?e=oa7HYB                                                                                                                                                    |
+|Diego Rantería Saavedra|34 años| Piura|Segmento 3:Operarios de maquinaria y producción|10:54 - 30:21 | Ingeniero agroindustrial (Universidad Nacional de Piura), 5 años en la industria arrocera. Describe el proceso completo (elevadores, descascaradoras, padi, conos pulidores, Rotex, selectora, envasado). Señala cortes eléctricos, desgaste de fajas/rodamientos y fallas en la cámara óptica de la selectora como problemas frecuentes. El reporte de fallas es informal (olor, sonido, atascos visibles). El mantenimiento preventivo se basa en calendarios fijos por horas de uso, no en monitoreo en tiempo real.| ![Entrevista3-Diego.png](assets/Screenshot%20of%20the%20interview/Entrevista3-Diego.png)                      | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202424008_upc_edu_pe/IQA1Y0bOVQqMS58ji1Bp3xT4AQ4MQdly8z0rIGqPegnDtNs?e=irXdUI&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D |
+
 
 ### 2.2.3 Análisis de entrevistas
 Segmento 1: Gerentes o administradores
@@ -595,55 +675,86 @@ Diego Rantería, egresado de Ingeniería Agroindustrial con 5 años en la indust
 
 ## 2.3 Needfinding
 
+Esta sección presenta los artefactos que salen de analizar las entrevistas (2.2) y la competencia (2.1): una User Persona, un User Journey Map As-Is y un Empathy Map por segmento, y un User Task Matrix que reúne las tareas de los tres. Las personas, los journey maps y los empathy maps se elaboraron en UXPressia a partir de la entrevista registrada de cada segmento.
+
 ### 2.3.1 User Personas
 
-**Segmento 1 : Gerentes o administradores**
-![User Persona Segmento 1.jpeg](assets/Images%20Chapter%202/User%20Persona%20Segmento%201.jpeg)
+Cada ficha resume a la persona entrevistada de su segmento: Jackeline León (gerente de un molino en Piura), Ismael Sandoval (técnico de mantenimiento) y Diego Rantería (ingeniero agroindustrial con experiencia en operación de planta). La frase representativa y el background reproducen lo que dijo cada entrevistado en 2.2.2. Las frustraciones y las necesidades recogen los problemas que el análisis de 2.2.3 destacó: la falta de visibilidad en tiempo real y los registros manuales en la gerencia; las fallas por desgaste, las reparaciones largas y la espera de técnicos externos en mantenimiento; y los cortes de luz, las fallas imprevistas de piezas y las demoras por técnicos especializados en producción.
+
+Las necesidades también se contrastan con la competencia de 2.1. Ninguno de los competidores presenta el mantenimiento predictivo como su valor principal, y las tres personas piden justamente monitoreo y alertas para anticipar fallas.
+
+**Segmento 1: Gerentes o administradores**
+
+<p align="center">
+  <img src="assets/Images%20Chapter%202/User%20Persona%20Segmento%201.jpeg" alt="User Persona del Segmento 1: Gerentes o administradores" width="70%">
+</p>
 
 
 
-**Segmento 2 : Técnicos de mantenimiento** 
-![User Persona Segmento 2.jpeg](assets/Images%20Chapter%202/User%20Persona%20Segmento%202.jpeg)
+**Segmento 2: Técnicos de mantenimiento** 
+
+<p align="center">
+  <img src="assets/Images%20Chapter%202/User%20Persona%20Segmento%202.jpeg" alt="User Persona del Segmento 2: Técnicos de mantenimiento" width="70%">
+</p>
 
 
-**Segmento 3 : Operarios de maquinaria y producción**
-![User Persona Segmento 3.jpeg](assets/Images%20Chapter%202/User%20Persona%20Segmento%203.jpeg)
+**Segmento 3: Operarios de maquinaria y producción**
+
+<p align="center">
+  <img src="assets/Images%20Chapter%202/User%20Persona%20Segmento%203.jpeg" alt="User Persona del Segmento 3: Operarios de maquinaria y producción" width="70%">
+</p>
+
 ### 2.3.2 User Task Matrix 
+
+El User Task Matrix reúne las tareas que realizan las personas de los tres segmentos para cumplir sus objetivos, sin importar si existe una solución de software. Las columnas corresponden a Jackeline (Segmento 1, gerentes o administradores), Ismael (Segmento 2, técnicos de mantenimiento) y Diego (Segmento 3, operarios de maquinaria y producción). Para cada una se indica con qué frecuencia realiza la tarea y qué importancia le da.
 
 | Tarea | Jackeline – Gerente/Administradora(Frec. / Imp.) | Ismael – Técnico de Mantenimiento (Frec. / Imp.) | Diego-Operario de Producción (Frec. / Imp.) |
 |:--|:--:|:--:|:--:|
-|Supervisar el estado general de la producción|Diaria/Alta|Diaria/Media |Diaria/Alta |
-|Controlar el rendimiento y la merma del proceso|Diaria/Alta|Ocasional/Baja| Diaria/Alta|
-|Controlar los costos de producción y mantenimiento|Semanal/Alta|Ocasional/Media| Ocasional/Media|
-|Detectar una falla o anomalía en una máquina|Ocasional/Media|Diaria/Alta|Ocasional/Alta|
-|Reportar una avería detectada|Ocasional/Media|Diaria/Alta|Semanal/Media|
-|Diagnosticar la causa de una falla mecánica o eléctrica|No Aplica/-|Semanal/Alta|Ocasional/Media|
-|Reparar o dar mantenimiento a una máquina	|No Aplica/-|Semanal/Alta|No Aplica/-|
-|Coordinar con técnicos externos especializados|Ocasional/Media|Ocasional/Alta|Ocasional/Alta|
-|Registrar información de producción o mantenimiento|Semanal/Media|Diaria/Alta|Semanal/Media|
-|Detener la producción ante una falla crítica|No Aplica/-|Ocasional/Alta|Ocasional/Alta|
-|Tomar decisiones sobre la operación del molino|Diaria/Alta|No Aplica/-|Ocasional/Media|
+| Supervisar el estado general de la producción | Diaria/Alta | Diaria/Media | Diaria/Alta |
+| Controlar el rendimiento y la merma del proceso | Diaria/Alta | Ocasional/Baja | Diaria/Alta |
+| Controlar los costos de producción y mantenimiento | Semanal/Alta | Ocasional/Media | Ocasional/Media |
+| Detectar una falla o anomalía en una máquina | Ocasional/Media | Diaria/Alta | Ocasional/Alta |
+| Reportar una avería detectada | Ocasional/Media | Diaria/Alta | Semanal/Media |
+| Diagnosticar la causa de una falla mecánica o eléctrica | No aplica/- | Semanal/Alta | Ocasional/Media |
+| Reparar o dar mantenimiento a una máquina | No aplica/- | Semanal/Alta | No aplica/- |
+| Coordinar con técnicos externos especializados | Ocasional/Media | Ocasional/Alta | Ocasional/Alta |
+| Registrar información de producción o mantenimiento | Semanal/Media | Diaria/Alta | Semanal/Media |
+| Detener la producción ante una falla crítica | No aplica/- | Ocasional/Alta | Ocasional/Alta |
+| Tomar decisiones sobre la operación del molino | Diaria/Alta | No aplica/- | Ocasional/Media |
+
+Las tareas más frecuentes e importantes cambian según el rol. Jackeline supervisa la producción, controla el rendimiento y la merma, y toma decisiones sobre la operación, todo a diario y con importancia alta. Ismael detecta y reporta fallas y registra información a diario, también con importancia alta, y es el único que repara las máquinas. Diego coincide con Jackeline en supervisar y controlar el rendimiento y la merma a diario; detecta y diagnostica fallas de forma ocasional y las reporta cada semana.
+
+Hay tres coincidencias. Los tres supervisan la producción todos los días. Los tres coordinan de vez en cuando con técnicos externos, una tarea de importancia alta para Ismael y Diego. Y Ismael y Diego consideran de importancia alta detener la producción ante una falla crítica, aunque la hacen ocasionalmente. La diferencia principal está en el foco: la gerencia mira resultados y costos, el técnico atiende las fallas y sus registros, y el operario combina ambos.
+
 ### 2.3.3 User Journey Mapping
 
-**Segmento 1 : Gerentes o administradores**
+Los User Journey Maps muestran cómo trabaja hoy cada persona, antes de Molinex (versión As-Is). Siguen las cinco etapas de la plantilla de UXPressia (Aware, Join, Use, Develop y Leave) y, en cada una, describen las metas, el proceso, los problemas, la experiencia y las oportunidades. El panel lateral de cada mapa enlaza con la persona de 2.3.1.
+
+El recorrido de Jackeline va de la supervisión de la producción a la recopilación de información, el análisis del rendimiento, la toma de decisiones y el seguimiento de resultados. El de Ismael y el de Diego van de la detección de fallas o anomalías al reporte y registro, la atención y reparación, el mantenimiento preventivo y la continuidad operativa. En los tres mapas el punto más bajo de la experiencia es la etapa Use: Jackeline no logra obtener indicadores en tiempo real y no detecta las mermas a tiempo, y Ismael y Diego esperan horas, días o semanas por reparaciones que dependen de técnicos externos. Las oportunidades que proponen los tres mapas (centralizar la información, dar seguimiento continuo al estado de las máquinas y aprovechar el historial de fallas) son las que orientan la propuesta de Molinex.
+
+**Segmento 1: Gerentes o administradores**
 ![User Journey Map As-Is Segmento 1 .jpeg](assets/Images%20Chapter%202/User%20Journey%20Map%20As-Is%20Segmento%201%20.jpeg)
 
 
-**Segmento 2 : Técnicos de mantenimiento**
+**Segmento 2: Técnicos de mantenimiento**
 ![User Journey Map As-Is Segmento 2.jpeg](assets/Images%20Chapter%202/User%20Journey%20Map%20As-Is%20Segmento%202.jpeg)
 
-**Segmento 3 : Operarios de maquinaria y producción**
+**Segmento 3: Operarios de maquinaria y producción**
 ![User Journey Map As-Is Segmento 3 .jpeg](assets/Images%20Chapter%202/User%20Journey%20Map%20As-Is%20Segmento%203%20.jpeg)
 ### 2.3.4 Empathy Mapping
 
-**Segmento 1 : Gerentes o administradores**
+Para cada persona se construyó un Empathy Map en UXPressia, con la persona al centro y las siete preguntas de la plantilla: con quién estamos empatizando, qué necesita hacer, qué ve, qué dice, qué hace, qué escucha y qué piensa y siente. Cada casilla se redactó a partir de la entrevista del segmento, y las citas textuales provienen de lo que dijeron los entrevistados. Por ejemplo, Jackeline señala que la falta de visibilidad en tiempo real "dificulta detectar rápidamente las ineficiencias", e Ismael nombra como fallas más frecuentes "problemas de lubricación, el desgaste mecánico, las fallas eléctricas y la desalineación de componentes".
+
+Cada mapa cierra con los Pains, que repiten los problemas del journey (visibilidad, registros manuales, fallas recurrentes y esperas por técnicos externos), y los Gains, que los convierten en lo que la persona busca ganar: monitoreo continuo sin infraestructura IoT compleja en Jackeline, control de activos y menos paradas inesperadas en Ismael, y una cultura de mantenimiento preventivo apoyada en sistemas en Diego.
+
+**Segmento 1: Gerentes o administradores**
 ![Empathy Mapping Segmento 1.jpeg](assets/Images%20Chapter%202/Empathy%20Mapping%20Segmento%201.jpeg)
 
 
-**Segmento 2 : Técnicos de mantenimiento**
+**Segmento 2: Técnicos de mantenimiento**
 ![Empathy Mapping Segmento 2.jpeg](assets/Images%20Chapter%202/Empathy%20Mapping%20Segmento%202.jpeg)
 
-**Segmento 3 : Operarios de maquinaria y producción**
+**Segmento 3: Operarios de maquinaria y producción**
 ![Empathy Mapping Segmento 3.jpeg](assets/Images%20Chapter%202/Empathy%20Mapping%20Segmento%203.jpeg)
 
 
@@ -728,11 +839,11 @@ El análisis hizo visibles preguntas que no deben resolverse mediante suposicion
 | Origen de las variables operativas | Define quién registra los datos, su frecuencia y su confiabilidad. | Determinar si los valores serán manuales, recibidos desde sensores o admitidos por ambas vías. |
 | Criterios y umbrales de evaluación | Condiciona cuándo una lectura se considera anómala. | Definir responsables, alcance por máquina y posibilidad de configuración. |
 | Ciclo de vida de alertas | Afecta la atención y trazabilidad de una posible falla. | Definir estados, prioridades, responsables y condiciones de cierre. |
-| Contratación y tenancy del SaaS | Los requerimientos actuales muestran planes, pero no describen cómo se contrata y habilita un molino. | Definir suscripción, pago, alta del molino, asignación del plan y asociación de usuarios. |
+| Contratación y tenancy del SaaS | Los requisitos actuales muestran planes, pero no describen cómo se contrata y habilita un molino. | Definir suscripción, pago, alta del molino, asignación del plan y asociación de usuarios. |
 | Corrección de información productiva | Una modificación puede alterar indicadores y reportes previamente calculados. | Definir auditoría, permisos y reglas de recálculo. |
 | Persistencia y exportación de reportes | Determina si un reporte es solo una consulta o un documento con identidad propia. | Definir formatos, almacenamiento, vigencia y regeneración. |
 
-### Trazabilidad con los requerimientos
+### Trazabilidad con los requisitos
 
 | Flujo del Big Picture | User Stories relacionadas |
 |:--|:--|
@@ -764,6 +875,122 @@ El presente glosario reúne los términos y conceptos utilizados en el dominio d
 | Whitening | Blanqueado | Proceso mediante el cual se eliminan las capas externas del grano para obtener arroz blanco o pilado. |
 | Polishing | Pulido | Etapa de acabado que mejora la apariencia y limpieza del grano mediante la eliminación de restos de salvado. |
 | Rice Grading | Clasificación del arroz | Proceso de separación del arroz según características como tamaño, calidad y proporción de granos enteros o quebrados. |
+| Paddy Reception | Recepción de arroz cáscara | Actividad mediante la cual el molino recibe la materia prima procedente de los proveedores para iniciar su registro, evaluación y procesamiento. |
+| Paddy Unloading | Descarga de arroz cáscara | Operación mediante la cual se descarga el arroz cáscara de los vehículos de transporte para trasladarlo hacia las áreas de recepción o almacenamiento. |
+| Supplier | Proveedor | Persona o empresa encargada de suministrar arroz cáscara al molino para su procesamiento. |
+| Supplier Evaluation | Evaluación de proveedores | Análisis de los proveedores considerando aspectos como calidad de la materia prima, cantidades entregadas y cumplimiento de los acuerdos de suministro. |
+| Delivery Record | Registro de entrega | Documento que contiene información sobre la entrega de materia prima, incluyendo proveedor, fecha, cantidad y condiciones de recepción. |
+| Gross Weight | Peso bruto | Peso total del vehículo junto con la carga de arroz cáscara antes de descontar el peso del vehículo vacío. |
+| Tare Weight | Peso de tara | Peso del vehículo vacío que se utiliza para calcular la cantidad neta de materia prima recibida. |
+| Net Weight | Peso neto | Cantidad real de arroz cáscara recibida después de descontar el peso del vehículo vacío del peso bruto. |
+| Weighbridge | Báscula camionera | Equipo utilizado para determinar el peso de los vehículos que transportan materia prima o productos terminados hacia o desde el molino. |
+| Moisture Content | Contenido de humedad | Porcentaje de agua presente en el arroz. Es un factor importante para determinar las condiciones de secado, almacenamiento y procesamiento. |
+| Moisture Measurement | Medición de humedad | Procedimiento mediante el cual se determina la cantidad de agua presente en una muestra de arroz utilizando instrumentos de medición. |
+| Impurity Content | Contenido de impurezas | Porcentaje de materiales extraños presentes en el arroz cáscara, como piedras, tierra, polvo y restos vegetales. |
+| Paddy Cleaning | Limpieza de arroz cáscara | Operación destinada a retirar impurezas y materiales extraños presentes en la materia prima antes de continuar con el procesamiento. |
+| Pre-cleaning | Prelimpieza | Primera operación de limpieza del arroz cáscara, en la que se eliminan materiales extraños de mayor tamaño y partículas ligeras. |
+| Screening | Cribado | Operación que permite separar materiales mediante superficies perforadas o mallas según sus dimensiones. |
+| Destoning | Despedrado | Proceso mediante el cual se separan piedras y otros materiales pesados que pueden encontrarse mezclados con el arroz. |
+| Aspiration | Aspiración | Operación que utiliza corrientes de aire para retirar partículas ligeras, polvo y otros materiales presentes durante el procesamiento. |
+| Foreign Matter | Materia extraña | Materiales que no forman parte del arroz y que pueden encontrarse mezclados con la materia prima, como piedras, tierra, restos vegetales y polvo. |
+| Paddy Drying | Secado de arroz cáscara | Proceso mediante el cual se reduce el contenido de humedad del arroz cáscara para alcanzar condiciones adecuadas de almacenamiento y procesamiento. |
+| Drying Temperature | Temperatura de secado | Temperatura del aire utilizado durante el secado, cuya regulación influye en la conservación de las características físicas del grano. |
+| Drying Time | Tiempo de secado | Duración necesaria para reducir la humedad del arroz hasta alcanzar el nivel requerido para su almacenamiento o procesamiento. |
+| Drying Capacity | Capacidad de secado | Cantidad de arroz cáscara que un equipo de secado puede procesar durante un periodo determinado. |
+| Grain Cooling | Enfriamiento del grano | Operación destinada a reducir la temperatura del arroz después del secado para facilitar su conservación y almacenamiento. |
+| Tempering | Reposo de humedad | Periodo durante el cual el arroz permanece en reposo después del secado para favorecer una distribución más uniforme de la humedad dentro del grano. |
+| Paddy Storage | Almacenamiento de arroz cáscara | Actividad de conservación del arroz sin descascarar en espacios destinados a mantener sus condiciones antes de su procesamiento. |
+| Storage Conditions | Condiciones de almacenamiento | Conjunto de factores ambientales y físicos, como temperatura, humedad y ventilación, que influyen en la conservación del arroz. |
+| Storage Capacity | Capacidad de almacenamiento | Cantidad máxima de arroz cáscara o producto terminado que puede conservarse en las instalaciones del molino. |
+| Storage Duration | Tiempo de almacenamiento | Periodo durante el cual la materia prima o el producto terminado permanece almacenado antes de ser procesado o despachado. |
+| Aeration | Aireación | Circulación controlada de aire a través del arroz almacenado para contribuir al control de la temperatura y las condiciones de conservación. |
+| Relative Humidity | Humedad relativa | Relación entre la cantidad de vapor de agua presente en el aire y la cantidad máxima que puede contener a una temperatura determinada. |
+| Grain Temperature | Temperatura del grano | Temperatura registrada en el arroz almacenado, utilizada para evaluar sus condiciones de conservación. |
+| Dehusker | Descascaradora | Máquina encargada de retirar la cáscara del arroz cáscara mediante mecanismos de presión y fricción. |
+| Rubber Roll Husker | Descascaradora de rodillos de goma | Máquina que utiliza dos rodillos de goma para separar la cáscara del grano mediante presión y fricción controladas. |
+| Paddy Separator | Separadora de arroz cáscara | Máquina que separa los granos que todavía conservan su cáscara de aquellos que ya han sido descascarados. |
+| Rice Whitener | Blanqueadora de arroz | Máquina utilizada para eliminar las capas externas del arroz integral y obtener arroz blanco. |
+| Rice Polisher | Pulidora de arroz | Equipo que mejora la apariencia superficial del arroz blanco mediante una operación de pulido. |
+| Rice Grader Machine | Máquina clasificadora de arroz | Equipo utilizado para separar los granos según sus dimensiones y características físicas, permitiendo obtener diferentes categorías de producto. |
+| Color Sorter | Clasificadora óptica | Máquina que identifica y separa granos según sus características de color y apariencia mediante sensores y mecanismos de selección. |
+| Bucket Elevator | Elevador de cangilones | Equipo utilizado para transportar arroz verticalmente mediante recipientes fijados a una banda o cadena. |
+| Belt Conveyor | Transportador de faja | Sistema mecánico que utiliza una banda continua para trasladar arroz entre diferentes etapas y áreas del molino. |
+| Screw Conveyor | Transportador helicoidal | Equipo que utiliza un tornillo giratorio para desplazar arroz u otros materiales a través de un conducto. |
+| Paddy Hopper | Tolva de arroz cáscara | Recipiente utilizado para recibir y almacenar temporalmente el arroz antes de alimentar una máquina o etapa del proceso. |
+| Grain Feeder | Alimentador de granos | Dispositivo que regula la cantidad de arroz suministrada a una máquina para mantener un flujo adecuado durante el procesamiento. |
+| Dust Collector | Colector de polvo | Equipo encargado de recoger partículas de polvo generadas durante las operaciones de limpieza, transporte y procesamiento del arroz. |
+| Rice Husk | Cáscara de arroz | Cubierta externa que protege el grano y que se retira durante la etapa de descascarado. |
+| Rice Bran | Salvado de arroz | Subproducto obtenido durante el blanqueado, compuesto por las capas externas que se eliminan del grano. |
+| Rice Husk Recovery | Recuperación de cáscara | Cantidad de cáscara obtenida y recolectada durante el proceso de descascarado del arroz. |
+| Bran Recovery | Recuperación de salvado | Cantidad de salvado recuperada durante las operaciones de blanqueado del arroz. |
+| Byproduct | Subproducto | Material secundario obtenido durante el procesamiento del arroz, como cáscara, salvado y arroz quebrado. |
+| Byproduct Management | Gestión de subproductos | Conjunto de actividades destinadas a recolectar, clasificar, almacenar y aprovechar los materiales obtenidos como resultado del procesamiento del arroz. |
+| Broken Rice | Arroz quebrado | Fragmentos de granos generados durante el procesamiento que se separan del arroz entero mediante operaciones de clasificación. |
+| Whole Grain | Grano entero | Grano de arroz que conserva su integridad física después del procesamiento y cumple con las características establecidas para su clasificación. |
+| Whole Grain Percentage | Porcentaje de grano entero | Proporción de arroz entero obtenida respecto de la cantidad total de arroz pilado producido durante el procesamiento. |
+| Broken Grain Percentage | Porcentaje de grano quebrado | Proporción de fragmentos de arroz obtenidos respecto de la cantidad total de arroz pilado producido. |
+| Rice Yield | Rendimiento de arroz | Relación entre la cantidad de arroz pilado obtenida y la cantidad de arroz cáscara utilizada como materia prima. |
+| Milling Recovery | Recuperación de pilado | Porcentaje de producto aprovechable obtenido después del procesamiento del arroz cáscara. |
+| Milling Loss | Pérdida de pilado | Cantidad de materia prima que no se convierte en producto aprovechable durante las operaciones de pilado. |
+| Production Loss | Pérdida de producción | Disminución de la cantidad de producto esperado debido a fallas, desperdicios, condiciones inadecuadas o problemas durante el procesamiento. |
+| Waste | Desperdicio | Material que se pierde o descarta durante las actividades de producción y que no se incorpora al producto final. |
+| Merma | Merma | Disminución de la cantidad o peso de la materia prima o producto durante las operaciones de recepción, almacenamiento o procesamiento. |
+| Material Balance | Balance de materiales | Comparación entre las cantidades de materia prima ingresadas y las cantidades de productos y subproductos obtenidos durante el procesamiento. |
+| Processing Capacity | Capacidad de procesamiento | Cantidad de arroz cáscara que una máquina o etapa puede procesar durante un periodo determinado. |
+| Production Volume | Volumen de producción | Cantidad total de arroz procesado u obtenido durante una jornada, turno o periodo de trabajo. |
+| Production Target | Meta de producción | Cantidad de arroz que el molino espera procesar u obtener durante un periodo determinado. |
+| Production Schedule | Programa de producción | Organización de las actividades productivas mediante la asignación de cantidades, fechas y horarios de procesamiento. |
+| Production Order | Orden de producción | Documento que establece la cantidad de arroz que debe procesarse y las condiciones generales de la actividad productiva. |
+| Quality Inspection | Inspección de calidad | Evaluación de las características físicas y condiciones del arroz mediante observaciones, mediciones y análisis de muestras. |
+| Quality Standard | Estándar de calidad | Conjunto de características y criterios establecidos para determinar si la materia prima o el producto terminado cumple con las condiciones requeridas. |
+| Quality Parameter | Parámetro de calidad | Característica medible utilizada para evaluar las condiciones del arroz, como humedad, tamaño, color, impurezas y proporción de granos enteros. |
+| Grain Length | Longitud del grano | Medida que representa la dimensión longitudinal del grano de arroz y permite evaluar sus características físicas y clasificación. |
+| Grain Width | Ancho del grano | Medida correspondiente a la dimensión transversal del grano que permite complementar su caracterización física. |
+| Grain Shape | Forma del grano | Característica física determinada por la proporción entre la longitud y el ancho del grano de arroz. |
+| Grain Uniformity | Uniformidad del grano | Grado de semejanza entre los granos de un lote considerando características como tamaño, forma y apariencia. |
+| Chalky Grain | Grano yesoso | Grano que presenta zonas blancas y opacas en su interior, característica que puede afectar su apariencia y clasificación comercial. |
+| Damaged Grain | Grano dañado | Grano que presenta alteraciones físicas o deterioro que afectan su integridad y pueden disminuir su aceptación comercial. |
+| Discolored Grain | Grano decolorado | Grano que presenta cambios de color respecto de la apariencia habitual del arroz y que puede afectar la calidad del producto. |
+| Immature Grain | Grano inmaduro | Grano que no ha completado adecuadamente su desarrollo durante el cultivo y que puede presentar características físicas diferentes a las del arroz maduro. |
+| Rice Sample | Muestra de arroz | Cantidad representativa de arroz extraída de un lote para realizar mediciones, inspecciones y evaluaciones de calidad. |
+| Sampling | Muestreo | Procedimiento mediante el cual se selecciona una cantidad representativa de arroz para analizar sus características. |
+| Sample Analysis | Análisis de muestra | Evaluación de una muestra de arroz para determinar características como humedad, impurezas, integridad y proporción de granos enteros y quebrados. |
+| Defect Rate | Tasa de defectos | Proporción de granos o productos que presentan características no conformes respecto del total evaluado. |
+| Acceptance Criteria | Criterios de aceptación | Condiciones establecidas para determinar si una cantidad de materia prima o producto terminado cumple con los requisitos de calidad del molino. |
+| Nonconformity | No conformidad | Incumplimiento de una característica o condición establecida para la materia prima, el producto terminado o una actividad del proceso. |
+| Machine | Máquina | Equipo utilizado para ejecutar una operación específica durante las diferentes etapas del procesamiento industrial del arroz. |
+| Equipment | Equipo | Conjunto de dispositivos y componentes utilizados para realizar actividades de producción, transporte, almacenamiento o mantenimiento dentro del molino. |
+| Machine Component | Componente de máquina | Pieza o elemento que forma parte de una máquina y que contribuye a su funcionamiento mecánico, eléctrico u operativo. |
+| Machine Operation | Operación de maquinaria | Actividad mediante la cual una máquina realiza la función para la que fue diseñada durante el procesamiento del arroz. |
+| Machine Condition | Estado de maquinaria | Situación en la que se encuentra una máquina considerando su funcionamiento, desgaste, temperatura, vibración y condiciones generales. |
+| Machine Availability | Disponibilidad de maquinaria | Capacidad de una máquina para encontrarse en condiciones de funcionamiento cuando se requiere realizar una actividad productiva. |
+| Machine Performance | Rendimiento de maquinaria | Capacidad de una máquina para procesar cantidades determinadas de arroz durante un periodo y bajo condiciones específicas. |
+| Machine Failure | Falla de maquinaria | Situación en la que una máquina deja de funcionar correctamente o pierde la capacidad de realizar la operación para la que fue diseñada. |
+| Mechanical Failure | Falla mecánica | Problema ocasionado por el deterioro, rotura, desgaste o funcionamiento incorrecto de los componentes mecánicos de una máquina. |
+| Electrical Failure | Falla eléctrica | Problema relacionado con los circuitos, conexiones, motores o componentes eléctricos que impide el funcionamiento adecuado de una máquina. |
+| Unexpected Shutdown | Parada inesperada | Interrupción no planificada del funcionamiento de una máquina que puede afectar la continuidad de la producción. |
+| Downtime | Tiempo de inactividad | Periodo durante el cual una máquina permanece detenida y no puede realizar sus actividades productivas. |
+| Equipment Inspection | Inspección de equipos | Revisión de las condiciones físicas y operativas de una máquina para identificar desgaste, daños o posibles fallas. |
+| Component Wear | Desgaste de componentes | Deterioro progresivo de las piezas de una máquina debido al uso, fricción y condiciones de funcionamiento. |
+| Bearing | Rodamiento | Componente mecánico que facilita el movimiento giratorio de un eje y reduce la fricción entre las piezas móviles. |
+| Drive Belt | Faja de transmisión | Elemento flexible utilizado para transmitir movimiento y potencia entre diferentes componentes de una máquina. |
+| Pulley | Polea | Elemento mecánico que trabaja junto con una faja para transmitir movimiento entre ejes de una máquina. |
+| Gear | Engranaje | Componente mecánico dentado que permite transmitir movimiento y fuerza entre diferentes partes de una máquina. |
+| Drive Shaft | Eje de transmisión | Componente mecánico encargado de transmitir movimiento giratorio y potencia entre los elementos de una máquina. |
+| Gearbox | Caja reductora | Mecanismo que modifica la velocidad de rotación y transmite movimiento hacia los componentes de una máquina. |
+| Electric Motor | Motor eléctrico | Dispositivo que transforma energía eléctrica en energía mecánica para accionar las máquinas utilizadas en el molino. |
+| Lubrication | Lubricación | Aplicación de sustancias lubricantes entre superficies móviles para reducir la fricción y evitar el desgaste prematuro de los componentes. |
+| Overheating | Sobrecalentamiento | Incremento anormal de temperatura en una máquina o componente que puede afectar su funcionamiento y provocar daños. |
+| Excessive Vibration | Vibración excesiva | Movimiento oscilatorio superior al esperado durante el funcionamiento de una máquina que puede indicar desequilibrio, desalineación o deterioro. |
+| Preventive Maintenance | Mantenimiento preventivo | Actividades programadas que se realizan periódicamente para reducir la posibilidad de fallas y conservar las condiciones de funcionamiento de las máquinas. |
+| Corrective Maintenance | Mantenimiento correctivo | Actividades realizadas para reparar una máquina o componente después de que se presenta una falla o avería. |
+| Predictive Maintenance | Mantenimiento predictivo | Estrategia que utiliza información sobre las condiciones y el comportamiento de las máquinas para anticipar posibles fallas y planificar intervenciones. |
+| Maintenance Schedule | Programa de mantenimiento | Plan que establece las actividades de mantenimiento que deben realizarse, sus fechas, frecuencias y responsables. |
+| Maintenance Record | Registro de mantenimiento | Información documentada sobre las inspecciones, reparaciones y actividades realizadas a una máquina durante su funcionamiento. |
+| Maintenance History | Historial de mantenimiento | Conjunto de registros de las intervenciones, fallas, reparaciones y reemplazos realizados a una máquina a lo largo del tiempo. |
+| Maintenance Task | Tarea de mantenimiento | Actividad específica que debe realizarse para inspeccionar, ajustar, conservar o reparar una máquina o componente. |
+| Maintenance Inspection | Inspección de mantenimiento | Revisión de una máquina para identificar condiciones que puedan requerir limpieza, lubricación, ajuste, reparación o reemplazo de componentes. |
+
 
 <div style="page-break-after: always;"></div>
 
@@ -771,66 +998,65 @@ El presente glosario reúne los términos y conceptos utilizados en el dominio d
 
 ## 3.1 User Stories
 
-# Historias de Usuario — Molinex
 | Epic / Story ID | Título | Descripción | Criterios de Aceptación | Relacionado con (Epic ID) |
 |:---|:---|:---|:---|:---|
-| **EP-01** | **Gestión de acceso y usuarios** | Permite gestionar el acceso a la plataforma, los usuarios registrados, sus roles y la información de sus perfiles. | No aplica. | — |
-| **US-01** | Registrar usuario | Como administrador, quiero registrar nuevos usuarios, para que el personal autorizado pueda acceder a la plataforma. | **Escenario 1: Registro exitoso de usuario:** **Dado** que el administrador cuenta con permisos de gestión de usuarios. **Cuando** registra los datos obligatorios de un nuevo usuario. **Entonces** el sistema crea la cuenta y confirma su registro. **Y** el sistema asigna el rol seleccionado. <br><br> **Escenario 2: Registro con correo duplicado:** **Dado** que existe un usuario registrado con el mismo correo electrónico. **Cuando** el administrador intenta registrar nuevamente ese correo. **Entonces** el sistema rechaza el registro e informa que el usuario ya existe. | EP-01 |
-| **US-02** | Iniciar sesión | Como administrador, técnico u operador, quiero iniciar sesión, para poder acceder a las funciones permitidas según mi rol. | **Escenario 1: Inicio de sesión exitoso:** **Dado** que el usuario tiene una cuenta registrada y activa. **Cuando** ingresa credenciales válidas. **Entonces** el sistema autentica al usuario y permite el acceso a las funcionalidades autorizadas. <br><br> **Escenario 2: Inicio de sesión con credenciales inválidas:** **Dado** que el usuario ingresa credenciales incorrectas. **Cuando** intenta iniciar sesión. **Entonces** el sistema rechaza el acceso e informa que las credenciales no son válidas. | EP-01 |
-| **US-03** | Gestionar roles y permisos | Como administrador, quiero asignar roles y permisos a los usuarios, para poder controlar el acceso a las funcionalidades de la plataforma. | **Escenario 1: Asignación de permisos exitosa:** **Dado** que el administrador tiene permisos para gestionar usuarios. **Cuando** asigna o modifica el rol de un usuario. **Entonces** el sistema actualiza sus permisos. <br><br> **Escenario 2: Acceso a funcionalidad no autorizada:** **Dado** que un usuario tiene un rol sin autorización para una funcionalidad. **Cuando** intenta acceder a dicha funcionalidad. **Entonces** el sistema deniega el acceso. | EP-01 |
-| **US-04** | Gestionar perfil | Como administrador, técnico u operador, quiero actualizar la información de mi perfil, para poder mantener mis datos personales y laborales actualizados. | **Escenario 1: Actualización exitosa del perfil:** **Dado** que el usuario ha iniciado sesión. **Cuando** modifica sus datos permitidos y guarda los cambios. **Entonces** el sistema actualiza la información del perfil. <br><br> **Escenario 2: Actualización con datos inválidos:** **Dado** que el usuario ingresa un dato con formato inválido. **Cuando** intenta guardar los cambios. **Entonces** el sistema rechaza la actualización e informa el error. | EP-01 |
 | **EP-02** | **Gestión de materia prima y producción** | Permite registrar y consultar la recepción de materia prima, los lotes y la información relacionada con los procesos productivos del molino. | No aplica. | — |
-| **US-05** | Registrar recepción de materia prima | Como operador, quiero registrar la recepción de arroz cáscara, para poder mantener un control de la materia prima que ingresa al molino. | **Escenario 1: Registro exitoso de recepción:** **Dado** que el operador tiene permisos para registrar materia prima. **Cuando** ingresa los datos obligatorios de recepción, como fecha, proveedor, cantidad y procedencia. **Entonces** el sistema registra la recepción y asigna un identificador único. <br><br> **Escenario 2: Registro con datos obligatorios faltantes:** **Dado** que el operador omite un dato obligatorio. **Cuando** intenta registrar la recepción. **Entonces** el sistema rechaza el registro e informa los datos faltantes. | EP-02 |
-| **US-06** | Registrar lote de materia prima | Como operador, quiero registrar lotes de materia prima, para poder facilitar la trazabilidad del arroz durante el proceso productivo. | **Escenario 1: Registro exitoso de lote:** **Dado** que existe una recepción de materia prima registrada. **Cuando** el operador registra los datos obligatorios del lote. **Entonces** el sistema crea el lote y lo relaciona con la recepción correspondiente. <br><br> **Escenario 2: Registro con identificador duplicado:** **Dado** que el identificador del lote ya existe. **Cuando** el operador intenta registrar nuevamente dicho identificador. **Entonces** el sistema rechaza la operación e informa la duplicidad. | EP-02 |
-| **US-07** | Registrar información de producción | Como operador, quiero registrar la información de cada proceso productivo, para poder mantener actualizado el seguimiento de la producción del molino. | **Escenario 1: Registro exitoso de producción:** **Dado** que existe un lote de materia prima registrado. **Cuando** el operador registra los datos obligatorios del proceso productivo. **Entonces** el sistema guarda la información de producción y la relaciona con el lote correspondiente. <br><br> **Escenario 2: Registro con datos inválidos o incompletos:** **Dado** que el operador ingresa datos inválidos o incompletos. **Cuando** intenta guardar el proceso productivo. **Entonces** el sistema rechaza el registro e informa los errores encontrados. | EP-02 |
-| **US-08** | Consultar procesos productivos | Como operador, quiero consultar los procesos productivos registrados, para poder conocer el estado y la información de las operaciones realizadas. | **Escenario 1: Consulta general de procesos:** **Dado** que existen procesos productivos registrados. **Cuando** el operador solicita consultar los procesos. **Entonces** el sistema devuelve los registros disponibles. **Y** cada registro incluye información como lote, fecha y estado del proceso. <br><br> **Escenario 2: Consulta de procesos por lote:** **Dado** que el operador consulta un lote específico. **Cuando** solicita los procesos asociados a dicho lote. **Entonces** el sistema devuelve únicamente los procesos relacionados con el lote seleccionado. | EP-02 |
-| **US-09** | Consultar historial de producción | Como administrador, quiero consultar el historial de producción, para poder analizar el comportamiento de las operaciones realizadas en el molino. | **Escenario 1: Consulta del historial completo:** **Dado** que existen registros históricos de producción. **Cuando** el administrador solicita el historial. **Entonces** el sistema devuelve la información registrada. <br><br> **Escenario 2: Consulta del historial por periodo:** **Dado** que existen registros de producción de diferentes periodos. **Cuando** el administrador consulta el historial utilizando un periodo determinado. **Entonces** el sistema devuelve los registros correspondientes al periodo seleccionado. | EP-02 |
-| **US-10** | Actualizar información de producción | Como operador, quiero actualizar la información de un proceso productivo, para poder corregir datos registrados y mantener la información precisa. | **Escenario 1: Actualización exitosa de producción:** **Dado** que existe un registro de producción y el operador tiene permisos de edición. **Cuando** modifica los datos permitidos. **Entonces** el sistema actualiza el registro y conserva su relación con el lote correspondiente. <br><br> **Escenario 2: Actualización de registro inexistente:** **Dado** que el operador intenta modificar un registro inexistente. **Cuando** envía la solicitud de actualización. **Entonces** el sistema rechaza la operación e informa que el registro no fue encontrado. | EP-02 |
+| **US-05** | Registrar recepción de materia prima | Como operador, quiero registrar la recepción de arroz cáscara, para poder mantener un control de la materia prima que ingresa al molino. | **Escenario 1: Registro de recepción válido.** **Dado** que el operador dispone de fecha, proveedor, procedencia, cantidad positiva y unidad admitida. **Cuando** registra la recepción con esos datos. **Entonces** el sistema guarda la recepción, le asigna un identificador único y confirma el registro. <br><br> **Escenario 2: Datos obligatorios incompletos.** **Dado** que falta la fecha, el proveedor, la procedencia, la cantidad o su unidad. **Cuando** el operador intenta guardar la recepción. **Entonces** el sistema identifica los campos faltantes y no crea la recepción. <br><br> **Escenario 3: Cantidad o unidad inválida.** **Dado** que la cantidad es cero, negativa o no numérica, o la unidad no está admitida. **Cuando** el operador intenta registrar la recepción. **Entonces** el sistema informa el dato inválido y no guarda la recepción. | EP-02 |
+| **US-06** | Registrar lote de materia prima | Como operador, quiero registrar lotes de materia prima, para poder facilitar la trazabilidad del arroz durante el proceso productivo. | **Escenario 1: Lote vinculado a una recepción.** **Dado** que existe una recepción y el operador dispone de un código de lote no utilizado y una fecha de registro válida. **Cuando** registra el lote. **Entonces** el sistema crea el lote, conserva su código y lo vincula con la recepción indicada. <br><br> **Escenario 2: Código de lote duplicado.** **Dado** que ya existe un lote con el código ingresado. **Cuando** el operador intenta registrar otro lote con ese código. **Entonces** el sistema informa la duplicidad y no crea un segundo lote. <br><br> **Escenario 3: Recepción inexistente.** **Dado** que la recepción indicada no existe. **Cuando** el operador intenta registrar el lote. **Entonces** el sistema informa que la recepción no se encuentra y no crea el lote. <br><br> **Escenario 4: Datos obligatorios incompletos.** **Dado** que el operador no indica el código, la recepción o la fecha de registro. **Cuando** intenta guardar el lote. **Entonces** el sistema señala los campos obligatorios y no registra el lote. | EP-02 |
+| **US-07** | Registrar información de producción | Como operador, quiero registrar la información de cada proceso productivo, para poder mantener actualizado el seguimiento de la producción del molino. | **Escenario 1: Registro válido de producción.** **Dado** que existe un lote y los datos del proceso, peso positivo, unidad, fechas y estado son válidos. **Cuando** el operador registra la producción. **Entonces** el sistema guarda el proceso y su relación con el lote, y confirma el registro. <br><br> **Escenario 2: Datos obligatorios incompletos.** **Dado** que falta un dato obligatorio del proceso productivo. **Cuando** el operador intenta guardarlo. **Entonces** el sistema indica el campo requerido y no registra el proceso. <br><br> **Escenario 3: Peso procesado inválido.** **Dado** que el peso procesado es cero, negativo o no numérico, o su unidad no está admitida. **Cuando** el operador intenta registrar la producción. **Entonces** el sistema rechaza el peso o la unidad y no guarda el proceso. <br><br> **Escenario 4: Lote inexistente.** **Dado** que el lote indicado no existe. **Cuando** el operador registra la producción asociada a ese lote. **Entonces** el sistema informa que el lote no se encuentra y no crea el proceso. <br><br> **Escenario 5: Fechas inconsistentes.** **Dado** que la fecha de finalización es anterior a la fecha de inicio. **Cuando** el operador intenta guardar el proceso. **Entonces** el sistema informa la inconsistencia de fechas y no registra el proceso. <br><br> **Escenario 6: Proceso completado sin fecha final.** **Dado** que se indica el estado completado y no se proporciona fecha de finalización. **Cuando** el operador intenta guardar el proceso. **Entonces** el sistema solicita la fecha de finalización y no guarda el proceso como completado. | EP-02 |
+| **US-08** | Consultar procesos productivos | Como operador, quiero consultar los procesos productivos registrados, para poder conocer el estado y la información de las operaciones realizadas. | **Escenario 1: Listado de procesos.** **Dado** que existen procesos productivos registrados en el molino consultado. **Cuando** el operador solicita el listado. **Entonces** el sistema muestra los procesos con su lote, fecha y estado. <br><br> **Escenario 2: Consulta por lote.** **Dado** que existen procesos asociados a distintos lotes. **Cuando** el operador consulta los procesos de un lote específico. **Entonces** el sistema muestra únicamente los procesos vinculados con ese lote. <br><br> **Escenario 3: Consulta sin coincidencias.** **Dado** que no existen procesos para la consulta realizada. **Cuando** el operador solicita los resultados. **Entonces** el sistema muestra un listado vacío e informa que no hay procesos registrados para esa consulta. | EP-02 |
+| **US-09** | Consultar historial de producción | Como administrador, quiero consultar el historial de producción, para poder analizar el comportamiento de las operaciones realizadas en el molino. | **Escenario 1: Historial general.** **Dado** que existen registros históricos de producción del molino. **Cuando** el administrador consulta el historial sin limitar el periodo. **Entonces** el sistema muestra los registros con su fecha, lote e información productiva. <br><br> **Escenario 2: Historial por periodo.** **Dado** que existen registros de producción dentro y fuera de un periodo. **Cuando** el administrador consulta ese periodo. **Entonces** el sistema incluye únicamente registros cuyas fechas se encuentran entre el inicio y el fin seleccionados, incluidos ambos límites. <br><br> **Escenario 3: Periodo sin producción.** **Dado** que no existen registros dentro del periodo seleccionado. **Cuando** el administrador consulta el historial. **Entonces** el sistema informa que no hay producción registrada para ese periodo. <br><br> **Escenario 4: Periodo inválido.** **Dado** que la fecha inicial es posterior a la final. **Cuando** el administrador solicita el historial. **Entonces** el sistema informa el error del periodo y no ejecuta la consulta con ese rango. | EP-02 |
+| **US-10** | Actualizar información de producción | Como operador, quiero actualizar la información de un proceso productivo, para poder corregir datos registrados y mantener la información precisa. | **Escenario 1: Actualización válida.** **Dado** que existe un registro de producción y el operador puede editarlo. **Cuando** modifica datos permitidos con valores válidos y guarda. **Entonces** el sistema conserva los cambios y mantiene la relación original con el lote. <br><br> **Escenario 2: Registro inexistente.** **Dado** que el registro solicitado no existe. **Cuando** el operador intenta actualizarlo. **Entonces** el sistema informa que no se encontró el registro y no crea uno nuevo. <br><br> **Escenario 3: Datos productivos inválidos.** **Dado** que la actualización contiene un peso no positivo, una unidad no admitida o un dato obligatorio vacío. **Cuando** el operador intenta guardar. **Entonces** el sistema señala los errores y conserva los datos anteriores sin cambios parciales. <br><br> **Escenario 4: Cambio del lote de origen.** **Dado** que un registro ya está vinculado a un lote. **Cuando** se intenta reemplazar ese lote durante la edición. **Entonces** el sistema rechaza el cambio de vínculo y conserva el lote y los datos anteriores. <br><br> **Escenario 5: Fechas o cierre inconsistentes.** **Dado** que la edición deja la fecha final antes del inicio o marca completado sin fecha final. **Cuando** el operador intenta guardar. **Entonces** el sistema informa la inconsistencia y conserva la versión anterior del registro. | EP-02 |
 | **EP-03** | **Control de rendimiento, merma y calidad** | Permite registrar y analizar indicadores relacionados con el rendimiento, la merma, la calidad del arroz y las desviaciones del proceso productivo. | No aplica. | — |
-| **US-11** | Registrar resultados de calidad | Como operador, quiero registrar los resultados de calidad del arroz procesado, para poder mantener un control sobre las características del producto obtenido. | **Escenario 1: Registro exitoso de resultados de calidad:** **Dado** que existe un proceso productivo registrado. **Cuando** el operador ingresa los resultados de calidad obligatorios. **Entonces** el sistema guarda los valores y los relaciona con el proceso o lote correspondiente. <br><br> **Escenario 2: Registro con valor fuera de rango:** **Dado** que el operador ingresa un valor de calidad fuera del rango permitido. **Cuando** intenta registrar el resultado. **Entonces** el sistema rechaza el registro e informa el error. | EP-03 |
-| **US-12** | Consultar indicadores de rendimiento | Como administrador, quiero consultar los indicadores de rendimiento, para poder evaluar la eficiencia de la producción del molino. | **Escenario 1: Consulta exitosa de indicadores:** **Dado** que existen datos de producción registrados. **Cuando** el administrador solicita los indicadores de rendimiento. **Entonces** el sistema calcula y devuelve los indicadores disponibles. <br><br> **Escenario 2: Consulta sin datos suficientes:** **Dado** que no existen datos suficientes para calcular un indicador. **Cuando** el administrador realiza la consulta. **Entonces** el sistema informa que no hay información suficiente para realizar el cálculo. | EP-03 |
-| **US-13** | Consultar porcentaje de arroz entero y quebrado | Como operador, quiero consultar el porcentaje de arroz entero y quebrado, para poder conocer la composición del producto obtenido durante el procesamiento. | **Escenario 1: Consulta de composición del arroz:** **Dado** que existen resultados de calidad registrados. **Cuando** el operador consulta la composición del arroz procesado. **Entonces** el sistema devuelve los porcentajes de arroz entero y quebrado. <br><br> **Escenario 2: Consulta de lote sin resultados:** **Dado** que el operador selecciona un lote que no tiene resultados de calidad registrados. **Cuando** solicita la composición del arroz procesado. **Entonces** el sistema informa que no existen resultados disponibles. | EP-03 |
-| **US-14** | Registrar y consultar merma | Como operador, quiero registrar y consultar la merma generada durante la producción, para poder identificar las pérdidas de materia prima y producto. | **Escenario 1: Registro de merma:** **Dado** que existe un proceso productivo registrado. **Cuando** el operador registra la cantidad de merma. **Entonces** el sistema guarda el registro y calcula el porcentaje correspondiente cuando existen datos suficientes. <br><br> **Escenario 2: Consulta de merma registrada:** **Dado** que existe un registro de merma asociado a un proceso. **Cuando** el operador consulta la merma de dicho proceso. **Entonces** el sistema devuelve la cantidad y el porcentaje registrado o calculado. | EP-03 |
-| **US-15** | Comparar indicadores de calidad | Como administrador, quiero comparar indicadores de calidad entre diferentes periodos o lotes, para poder identificar cambios en los resultados productivos. | **Escenario 1: Comparación exitosa de indicadores:** **Dado** que existen indicadores de calidad de dos o más periodos o lotes. **Cuando** el administrador solicita una comparación. **Entonces** el sistema devuelve los valores correspondientes a los registros seleccionados. <br><br> **Escenario 2: Comparación con datos faltantes:** **Dado** que uno de los periodos o lotes seleccionados no contiene datos. **Cuando** el administrador solicita la comparación. **Entonces** el sistema informa que no existen datos suficientes para realizarla. | EP-03 |
-| **US-16** | Identificar desviaciones de calidad y rendimiento | Como administrador, quiero identificar desviaciones en los indicadores de calidad y rendimiento, para poder detectar resultados que requieran una revisión operativa. | **Escenario 1: Detección de desviación:** **Dado** que existen indicadores registrados y valores de referencia definidos. **Cuando** un indicador supera o se encuentra por debajo del rango esperado. **Entonces** el sistema identifica la desviación y registra el indicador, el valor detectado y la fecha del evento. <br><br> **Escenario 2: Indicador dentro del rango esperado:** **Dado** que un indicador se encuentra dentro del rango esperado. **Cuando** el sistema evalúa el valor. **Entonces** el sistema no genera una desviación para ese indicador. | EP-03 |
+| **US-11** | Registrar resultados de calidad | Como operador, quiero registrar los resultados de calidad del arroz procesado, para poder mantener un control sobre las características del producto obtenido. | **Escenario 1: Registro de calidad válido.** **Dado** que existe un proceso productivo y se proporcionan los indicadores obligatorios con porcentajes entre 0 y 100. **Cuando** el operador registra sus resultados. **Entonces** el sistema guarda los valores y los vincula con el proceso correspondiente. <br><br> **Escenario 2: Porcentaje físicamente inválido.** **Dado** que algún porcentaje es negativo, mayor que 100 o no numérico. **Cuando** el operador intenta guardar los resultados. **Entonces** el sistema identifica el valor inválido y no guarda la evaluación. <br><br> **Escenario 3: Resultados obligatorios incompletos.** **Dado** que falta un indicador obligatorio o la fecha de evaluación. **Cuando** el operador intenta registrar los resultados. **Entonces** el sistema informa qué datos faltan y no crea una evaluación incompleta. <br><br> **Escenario 4: Producción inexistente.** **Dado** que el proceso productivo indicado no existe. **Cuando** el operador intenta asociarle resultados. **Entonces** el sistema informa que no se encuentra el proceso y no guarda la evaluación. | EP-03 |
+| **US-12** | Consultar indicadores de rendimiento | Como administrador, quiero consultar los indicadores de rendimiento, para poder evaluar la eficiencia de la producción del molino. | **Escenario 1: Indicadores calculables.** **Dado** que existen los datos y bases positivas necesarios para calcular un indicador de rendimiento. **Cuando** el administrador consulta los indicadores. **Entonces** el sistema muestra el valor calculado con su unidad y el periodo o conjunto de datos al que corresponde. <br><br> **Escenario 2: Ausencia de datos.** **Dado** que no existen datos de producción para la consulta. **Cuando** el administrador solicita los indicadores. **Entonces** el sistema informa que no hay datos suficientes y no presenta un rendimiento inventado. <br><br> **Escenario 3: Base de cálculo no válida.** **Dado** que hay registros pero falta la base necesaria o esta es cero. **Cuando** el administrador consulta el indicador afectado. **Entonces** el sistema lo identifica como no calculable, explica la falta de base y no divide entre cero ni lo presenta como 0 %. | EP-03 |
+| **US-13** | Consultar porcentaje de arroz entero y quebrado | Como operador, quiero consultar el porcentaje de arroz entero y quebrado, para poder conocer la composición del producto obtenido durante el procesamiento. | **Escenario 1: Composición disponible.** **Dado** que el lote seleccionado tiene resultados de calidad con porcentajes de arroz entero y quebrado. **Cuando** el operador consulta su composición. **Entonces** el sistema muestra ambos porcentajes, identifica el lote y usa los resultados correspondientes a ese lote. <br><br> **Escenario 2: Lote sin resultados de calidad.** **Dado** que el lote seleccionado no tiene resultados de calidad. **Cuando** el operador consulta la composición. **Entonces** el sistema informa que no hay resultados disponibles y no muestra porcentajes de otro lote ni valores ficticios. <br><br> **Escenario 3: Consultar porcentajes de un lote específico.** **Dado** que el operador ha seleccionado un lote de producción que cuenta con resultados de clasificación. **Cuando** consulta el porcentaje de arroz entero y quebrado de dicho lote. **Entonces** el sistema muestra los porcentajes correspondientes a cada tipo de arroz registrado. | EP-03 |
+| **US-14** | Registrar y consultar merma | Como operador, quiero registrar y consultar la merma generada durante la producción, para poder identificar las pérdidas de materia prima y producto. | **Escenario 1: Registro con base de cálculo.** **Dado** que existe un proceso, la merma es no negativa y no supera una base positiva expresada en unidades compatibles. **Cuando** el operador registra la merma y la base. **Entonces** el sistema guarda la cantidad y calcula el porcentaje como merma dividida entre base por 100; una merma cero produce 0 %. <br><br> **Escenario 2: Registro sin base de cálculo.** **Dado** que existe un proceso y una cantidad válida de merma, pero no se dispone de peso base. **Cuando** el operador registra la cantidad sin base. **Entonces** el sistema guarda la merma y señala el porcentaje como no disponible, sin asignarle un cero ficticio. <br><br> **Escenario 3: Consulta de merma registrada.** **Dado** que hay registros de merma para un proceso. **Cuando** el operador consulta la merma de ese proceso. **Entonces** el sistema muestra sus cantidades, unidades y los porcentajes calculados o la indicación de que no están disponibles. <br><br> **Escenario 4: Cantidad o proceso inválidos.** **Dado** que la merma es negativa o no numérica, falta el proceso o el proceso indicado no existe. **Cuando** el operador intenta registrar la merma. **Entonces** el sistema informa el error y no guarda el registro. <br><br> **Escenario 5: Base o proporción inválida.** **Dado** que se informa una base cero o negativa, unidades incompatibles o una merma superior a la base. **Cuando** el operador intenta guardar. **Entonces** el sistema rechaza esos datos y no genera un porcentaje inválido. <br><br> **Escenario 6: Consulta sin registros de merma.** **Dado** que el proceso no tiene registros de merma. **Cuando** el operador consulta su merma. **Entonces** el sistema informa que no hay registros y distingue esa situación de una merma registrada igual a cero. | EP-03 |
+| **US-15** | Comparar indicadores de calidad | Como administrador, quiero comparar indicadores de calidad entre diferentes periodos o lotes, para poder identificar cambios en los resultados productivos. | **Escenario 1: Comparación entre lotes.** **Dado** que dos o más lotes tienen valores disponibles del mismo indicador y expresados en la misma unidad. **Cuando** el administrador selecciona esos lotes y el indicador. **Entonces** el sistema presenta sus valores identificando cada lote para permitir su comparación. <br><br> **Escenario 2: Comparación entre periodos.** **Dado** que hay valores del mismo indicador para dos periodos válidos. **Cuando** el administrador compara esos periodos. **Entonces** el sistema presenta los valores con las fechas de cada periodo y sin mezclar sus registros. <br><br> **Escenario 3: Datos insuficientes para comparar.** **Dado** que algún lote o periodo seleccionado no tiene un valor calculable del indicador. **Cuando** el administrador solicita la comparación. **Entonces** el sistema identifica la selección sin datos suficientes y no la sustituye por cero ni presenta una comparación completa. | EP-03 |
+| **US-16** | Identificar desviaciones de calidad y rendimiento | Como administrador, quiero identificar desviaciones en los indicadores de calidad y rendimiento, para poder detectar resultados que requieran una revisión operativa. | **Escenario 1: Indicador bajo el mínimo.** **Dado** que un indicador tiene un rango de referencia válido y un valor menor que su mínimo. **Cuando** el sistema evalúa el indicador. **Entonces** registra una desviación con indicador, valor observado, rango y fecha. <br><br> **Escenario 2: Indicador sobre el máximo.** **Dado** que un indicador tiene un rango de referencia válido y un valor mayor que su máximo. **Cuando** el sistema lo evalúa. **Entonces** registra una desviación que identifica el exceso, el indicador, su valor y la fecha. <br><br> **Escenario 3: Valor dentro del rango.** **Dado** que el valor está entre el mínimo y el máximo, incluidos los límites. **Cuando** el sistema lo evalúa. **Entonces** no registra una desviación para ese resultado. <br><br> **Escenario 4: Referencia no evaluable.** **Dado** que falta el rango de referencia o su mínimo es mayor que su máximo. **Cuando** se solicita evaluar el indicador. **Entonces** el sistema informa que la evaluación no puede realizarse y no clasifica el valor como normal ni como desviado. | EP-03 |
 | **EP-04** | **Gestión de maquinaria y mantenimiento** | Permite registrar las máquinas del molino y gestionar las actividades de mantenimiento preventivo y correctivo. | No aplica. | — |
-| **US-17** | Registrar maquinaria | Como técnico, quiero registrar las máquinas del molino, para poder mantener un inventario actualizado de los equipos operativos. | **Escenario 1: Registro exitoso de maquinaria:** **Dado** que el técnico tiene permisos para gestionar maquinaria. **Cuando** registra los datos obligatorios de una máquina. **Entonces** el sistema guarda la información del equipo y asigna o valida un identificador único. <br><br> **Escenario 2: Registro con identificador duplicado:** **Dado** que el identificador de la máquina ya existe. **Cuando** el técnico intenta registrar nuevamente dicho identificador. **Entonces** el sistema rechaza la operación e informa la duplicidad. | EP-04 |
-| **US-18** | Consultar estado de maquinaria | Como técnico, quiero consultar el estado de las máquinas, para poder conocer su condición operativa y detectar posibles necesidades de atención. | **Escenario 1: Consulta de estado de máquina:** **Dado** que existen máquinas registradas. **Cuando** el técnico consulta el estado de una máquina. **Entonces** el sistema devuelve su estado operativo registrado. **Y** la información corresponde a la última actualización disponible. <br><br> **Escenario 2: Consulta de máquina inexistente:** **Dado** que el técnico consulta una máquina inexistente. **Cuando** realiza la consulta. **Entonces** el sistema informa que no se encontró el equipo. | EP-04 |
-| **US-19** | Registrar mantenimiento preventivo | Como técnico, quiero registrar actividades de mantenimiento preventivo, para poder reducir la probabilidad de fallas en las máquinas. | **Escenario 1: Registro de mantenimiento preventivo:** **Dado** que existe una máquina registrada. **Cuando** el técnico registra una actividad de mantenimiento preventivo con los datos requeridos. **Entonces** el sistema guarda la actividad, la fecha, la máquina y las observaciones correspondientes. **Y** el mantenimiento queda asociado al historial del equipo. <br><br> **Escenario 2: Registro para máquina inexistente:** **Dado** que el técnico intenta registrar mantenimiento para una máquina inexistente. **Cuando** envía el registro. **Entonces** el sistema rechaza la operación e informa que la máquina no está registrada. | EP-04 |
-| **US-20** | Registrar mantenimiento correctivo | Como técnico, quiero registrar actividades de mantenimiento correctivo, para poder documentar las acciones realizadas después de una falla o avería. | **Escenario 1: Registro de mantenimiento correctivo:** **Dado** que existe una máquina registrada y una incidencia o falla identificada. **Cuando** el técnico registra el mantenimiento correctivo. **Entonces** el sistema guarda la actividad realizada y los datos de la intervención. **Y** el registro queda asociado a la máquina correspondiente. <br><br> **Escenario 2: Registro sin máquina identificada:** **Dado** que el técnico intenta registrar una intervención sin identificar la máquina. **Cuando** intenta guardar el registro. **Entonces** el sistema rechaza la operación e informa que la máquina es obligatoria. | EP-04 |
-| **US-21** | Consultar historial de mantenimiento | Como técnico, quiero consultar el historial de mantenimiento de una máquina, para poder conocer las intervenciones realizadas y apoyar futuras decisiones técnicas. | **Escenario 1: Consulta de historial con registros:** **Dado** que una máquina tiene actividades de mantenimiento registradas. **Cuando** el técnico consulta su historial. **Entonces** el sistema devuelve las actividades asociadas. **Y** cada registro incluye información como tipo, fecha, descripción y responsable. <br><br> **Escenario 2: Consulta de historial sin registros:** **Dado** que el técnico consulta una máquina sin actividades de mantenimiento registradas. **Cuando** solicita su historial. **Entonces** el sistema informa que no existen actividades registradas. | EP-04 |
+| **US-17** | Registrar maquinaria | Como técnico, quiero registrar las máquinas del molino, para poder mantener un inventario actualizado de los equipos operativos. | **Escenario 1: Registro válido de máquina.** **Dado** que el técnico dispone de un código no utilizado, los datos obligatorios y un estado admitido. **Cuando** registra la máquina. **Entonces** el sistema guarda el equipo con ese código y estado y confirma el registro. <br><br> **Escenario 2: Código duplicado.** **Dado** que existe una máquina con el código ingresado. **Cuando** el técnico intenta registrar otra con ese código. **Entonces** el sistema informa la duplicidad y no crea otro equipo. <br><br> **Escenario 3: Datos obligatorios incompletos.** **Dado** que falta el código, el nombre, el tipo u otro dato obligatorio del equipo. **Cuando** el técnico intenta guardar. **Entonces** el sistema indica qué datos faltan y no registra la máquina. <br><br> **Escenario 4: Estado no admitido.** **Dado** que se indica un estado fuera del catálogo operativo definido. **Cuando** el técnico intenta registrar la máquina. **Entonces** el sistema informa que el estado no es válido y no crea el equipo. | EP-04 |
+| **US-18** | Consultar estado de maquinaria | Como técnico, quiero consultar el estado de las máquinas, para poder conocer su condición operativa y detectar posibles necesidades de atención. | **Escenario 1: Estado de equipo existente.** **Dado** que existe la máquina consultada. **Cuando** el técnico solicita su estado. **Entonces** el sistema muestra el estado operativo registrado y la fecha de su última actualización, identificando el equipo. <br><br> **Escenario 2: Equipo inexistente.** **Dado** que la máquina solicitada no existe. **Cuando** el técnico consulta su estado. **Entonces** el sistema informa que no se encontró el equipo y no muestra el estado de otra máquina. <br><br> **Escenario 3: Consultar maquinaria sin registros de estado.** **Dado** que el técnico ha ingresado a la sección de maquinaria y existe una máquina registrada sin información actualizada sobre su estado operativo. **Cuando** consulta el estado de dicha máquina. **Entonces** el sistema muestra que el estado de la máquina se encuentra pendiente de actualización. | EP-04 |
+| **US-19** | Registrar mantenimiento preventivo | Como técnico, quiero registrar actividades de mantenimiento preventivo, para poder reducir la probabilidad de fallas en las máquinas. | **Escenario 1: Mantenimiento preventivo válido.** **Dado** que existe una máquina y se informan fecha válida, descripción de la actividad y responsable. **Cuando** el técnico registra el mantenimiento preventivo. **Entonces** el sistema guarda el tipo preventivo y los datos de la intervención asociados al historial de esa máquina. <br><br> **Escenario 2: Máquina inexistente.** **Dado** que la máquina indicada no está registrada. **Cuando** el técnico intenta registrar su mantenimiento. **Entonces** el sistema informa que no encuentra el equipo y no guarda la intervención. <br><br> **Escenario 3: Información obligatoria incompleta.** **Dado** que falta la máquina, la fecha, la descripción o el responsable. **Cuando** el técnico intenta guardar el mantenimiento preventivo. **Entonces** el sistema identifica los datos obligatorios y no registra la actividad. | EP-04 |
+| **US-20** | Registrar mantenimiento correctivo | Como técnico, quiero registrar actividades de mantenimiento correctivo, para poder documentar las acciones realizadas después de una falla o avería. | **Escenario 1: Mantenimiento correctivo válido.** **Dado** que existe una máquina con una falla identificada y se informan fecha, responsable y descripción de la acción correctiva. **Cuando** el técnico registra la intervención. **Entonces** el sistema guarda el mantenimiento como correctivo y lo vincula a la máquina y a la información de la falla indicada. <br><br> **Escenario 2: Máquina inexistente.** **Dado** que el identificador de máquina proporcionado no corresponde a un equipo registrado. **Cuando** el técnico intenta guardar la intervención. **Entonces** el sistema informa que el equipo no existe y no registra el mantenimiento. <br><br> **Escenario 3: Datos de intervención incompletos.** **Dado** que falta la máquina, la descripción de la falla o acción realizada, la fecha o el responsable. **Cuando** el técnico intenta guardar el correctivo. **Entonces** el sistema informa los datos requeridos y no guarda una intervención incompleta. | EP-04 |
+| **US-21** | Consultar historial de mantenimiento | Como técnico, quiero consultar el historial de mantenimiento de una máquina, para poder conocer las intervenciones realizadas y apoyar futuras decisiones técnicas. | **Escenario 1: Historial con intervenciones.** **Dado** que la máquina tiene mantenimientos preventivos y correctivos registrados. **Cuando** el técnico consulta su historial. **Entonces** el sistema muestra únicamente sus intervenciones e identifica tipo, fecha, descripción y responsable de cada una. <br><br> **Escenario 2: Máquina sin mantenimientos.** **Dado** que la máquina existe y no tiene intervenciones registradas. **Cuando** el técnico consulta su historial. **Entonces** el sistema informa que no hay actividades de mantenimiento registradas. <br><br> **Escenario 3: Máquina inexistente.** **Dado** que la máquina consultada no existe. **Cuando** el técnico solicita su historial. **Entonces** el sistema informa que el equipo no se encuentra y distingue esa situación de un historial vacío. | EP-04 |
 | **EP-05** | **Monitoreo, anomalías y alertas** | Permite monitorear variables operativas, identificar comportamientos anómalos y consultar alertas y recomendaciones relacionadas con el mantenimiento. | No aplica. | — |
-| **US-22** | Consultar variables operativas | Como técnico, quiero consultar las variables operativas de las máquinas, para poder supervisar su comportamiento durante la producción. | **Escenario 1: Consulta de variables disponibles:** **Dado** que existen datos operativos registrados o recibidos de una máquina. **Cuando** el técnico consulta sus variables. **Entonces** el sistema devuelve los valores disponibles. **Y** cada valor se relaciona con la máquina y el momento de registro correspondiente. <br><br> **Escenario 2: Consulta sin datos operativos:** **Dado** que el técnico consulta una máquina sin datos operativos registrados. **Cuando** realiza la consulta. **Entonces** el sistema informa que no existen datos disponibles. | EP-05 |
-| **US-23** | Detectar anomalías operativas | Como técnico, quiero detectar anomalías en las variables de las máquinas, para poder identificar comportamientos que puedan indicar una posible falla. | **Escenario 1: Detección de anomalía:** **Dado** que existen datos operativos y criterios de evaluación definidos. **Cuando** una variable presenta un comportamiento fuera del rango esperado. **Entonces** el sistema identifica una anomalía. **Y** registra la variable, el valor detectado y la fecha del evento. <br><br> **Escenario 2: Evaluación sin anomalía:** **Dado** que una variable se encuentra dentro del rango esperado. **Cuando** el sistema evalúa el valor. **Entonces** el sistema no genera una anomalía para ese registro. | EP-05 |
-| **US-24** | Consultar alertas | Como técnico, quiero consultar las alertas generadas, para poder conocer las anomalías que requieren revisión o atención. | **Escenario 1: Consulta de alertas disponibles:** **Dado** que el sistema ha generado alertas. **Cuando** el técnico consulta las alertas. **Entonces** el sistema devuelve las alertas disponibles. **Y** cada alerta incluye información sobre la máquina, el evento, la prioridad y el estado de atención. <br><br> **Escenario 2: Consulta sin alertas registradas:** **Dado** que no existen alertas registradas. **Cuando** el técnico realiza la consulta. **Entonces** el sistema informa que no existen alertas disponibles. | EP-05 |
-| **US-25** | Consultar historial de anomalías | Como técnico, quiero consultar el historial de anomalías, para poder analizar eventos anteriores y reconocer patrones de comportamiento en las máquinas. | **Escenario 1: Consulta de historial de anomalías:** **Dado** que existen anomalías registradas. **Cuando** el técnico consulta el historial. **Entonces** el sistema devuelve los eventos registrados. **Y** cada evento incluye la fecha, la máquina, la variable afectada y el estado de la anomalía. <br><br> **Escenario 2: Consulta de anomalías por máquina:** **Dado** que el técnico consulta el historial de una máquina específica. **Cuando** realiza la consulta. **Entonces** el sistema devuelve las anomalías asociadas a esa máquina. | EP-05 |
-| **US-26** | Consultar recomendaciones de mantenimiento | Como técnico, quiero consultar recomendaciones de mantenimiento, para poder priorizar acciones preventivas según las anomalías detectadas. | **Escenario 1: Consulta de recomendaciones disponibles:** **Dado** que existen anomalías o indicadores que requieren atención. **Cuando** el técnico consulta las recomendaciones. **Entonces** el sistema devuelve las acciones sugeridas. **Y** cada recomendación se relaciona con la máquina o evento correspondiente. <br><br> **Escenario 2: Consulta sin recomendaciones:** **Dado** que no existen anomalías o indicadores que requieran atención. **Cuando** el técnico consulta las recomendaciones. **Entonces** el sistema informa que no existen recomendaciones disponibles. | EP-05 |
+| **US-22** | Consultar variables operativas | Como técnico, quiero consultar las variables operativas de las máquinas, para poder supervisar su comportamiento durante la producción. | **Escenario 1: Variables operativas disponibles.** **Dado** que hay lecturas operativas de una máquina. **Cuando** el técnico consulta sus variables. **Entonces** el sistema muestra variable, valor, unidad cuando corresponda y momento de medición, identificando la máquina. <br><br> **Escenario 2: Equipo sin lecturas.** **Dado** que la máquina existe pero no tiene lecturas operativas. **Cuando** el técnico consulta sus variables. **Entonces** el sistema informa que no hay datos y no muestra ceros como si fueran mediciones. <br><br> **Escenario 3: Equipo inexistente.** **Dado** que la máquina consultada no está registrada. **Cuando** el técnico solicita sus variables. **Entonces** el sistema informa que no se encontró el equipo y no devuelve lecturas ajenas. | EP-05 |
+| **US-23** | Detectar anomalías operativas | Como técnico, quiero detectar anomalías en las variables de las máquinas, para poder identificar comportamientos que puedan indicar una posible falla. | **Escenario 1: Lectura inferior al rango.** **Dado** que una lectura tiene un criterio válido y su valor es inferior al límite mínimo. **Cuando** el sistema la evalúa. **Entonces** registra una anomalía vinculada a la lectura y a la máquina, con variable, valor y fecha. <br><br> **Escenario 2: Lectura superior al rango.** **Dado** que una lectura tiene un criterio válido y su valor supera el límite máximo. **Cuando** el sistema la evalúa. **Entonces** registra una anomalía vinculada a esa lectura e identifica la variable y el valor fuera de rango. <br><br> **Escenario 3: Lectura dentro del rango.** **Dado** que el valor de la lectura está entre los límites del criterio, incluidos ambos. **Cuando** el sistema la evalúa. **Entonces** no crea una anomalía para esa lectura. <br><br> **Escenario 4: Criterio ausente o inconsistente.** **Dado** que la variable no tiene un criterio definido o su rango es inválido. **Cuando** se intenta evaluar una lectura. **Entonces** el sistema informa que no es evaluable y no inventa umbrales ni la clasifica como normal. | EP-05 |
+| **US-24** | Consultar alertas | Como técnico, quiero consultar las alertas generadas, para poder conocer las anomalías que requieren revisión o atención. | **Escenario 1: Alertas disponibles.** **Dado** que hay alertas generadas para el molino consultado. **Cuando** el técnico solicita las alertas. **Entonces** el sistema muestra máquina, anomalía asociada, fecha, prioridad y estado de atención de cada alerta. <br><br> **Escenario 2: Sin alertas.** **Dado** que no existen alertas para la consulta. **Cuando** el técnico solicita el listado. **Entonces** el sistema muestra un resultado vacío e informa que no hay alertas disponibles. <br><br> **Escenario 3: Consultar alertas sin resultados.** **Dado** que el técnico ha ingresado a la sección de alertas y no existen alertas generadas. **Cuando** consulta las alertas registradas. **Entonces** el sistema muestra un mensaje indicando que no hay alertas disponibles. | EP-05 |
+| **US-25** | Consultar historial de anomalías | Como técnico, quiero consultar el historial de anomalías, para poder analizar eventos anteriores y reconocer patrones de comportamiento en las máquinas. | **Escenario 1: Historial general de anomalías.** **Dado** que existen anomalías registradas del molino. **Cuando** el técnico consulta el historial. **Entonces** el sistema muestra los eventos con fecha, máquina, variable, valor detectado y estado. <br><br> **Escenario 2: Historial de una máquina.** **Dado** que hay anomalías asociadas a diferentes máquinas. **Cuando** el técnico consulta el historial de una máquina específica. **Entonces** el sistema muestra únicamente los eventos de ese equipo. <br><br> **Escenario 3: Consulta sin anomalías.** **Dado** que no existen anomalías que correspondan a la consulta. **Cuando** el técnico solicita el historial. **Entonces** el sistema informa que no hay eventos registrados para esa consulta y no incluye eventos de otros equipos. | EP-05 |
+| **US-26** | Consultar recomendaciones de mantenimiento | Como técnico, quiero consultar recomendaciones de mantenimiento, para poder priorizar acciones preventivas según las anomalías detectadas. | **Escenario 1: Recomendación aplicable.** **Dado** que hay una anomalía o indicador que requiere atención y una recomendación aplicable definida. **Cuando** el técnico consulta las recomendaciones. **Entonces** el sistema presenta la acción sugerida y la máquina o evento que la origina, sin registrar un mantenimiento como ejecutado. <br><br> **Escenario 2: Sin eventos que requieran atención.** **Dado** que no hay anomalías ni indicadores que requieran una acción. **Cuando** el técnico consulta las recomendaciones. **Entonces** el sistema informa que no hay recomendaciones disponibles. <br><br> **Escenario 3: Evento sin recomendación definida.** **Dado** que existe un evento que requiere atención pero no hay una recomendación aplicable definida. **Cuando** el técnico consulta las acciones sugeridas. **Entonces** el sistema informa que no dispone de una recomendación para ese evento y no inventa una acción técnica. | EP-05 |
 | **EP-06** | **Reportes e inteligencia operativa** | Permite consultar resúmenes, generar reportes y analizar tendencias para apoyar la toma de decisiones operativas y administrativas. | No aplica. | — |
-| **US-27** | Consultar resumen operativo | Como administrador, quiero consultar un resumen operativo del molino, para poder conocer el estado general de la producción, la calidad y el mantenimiento. | **Escenario 1: Consulta de resumen con datos:** **Dado** que existen datos registrados en la plataforma. **Cuando** el administrador consulta el resumen operativo. **Entonces** el sistema devuelve los principales indicadores disponibles. **Y** la información corresponde al periodo seleccionado o al último periodo registrado. <br><br> **Escenario 2: Consulta de resumen sin datos:** **Dado** que no existen datos registrados para el periodo consultado. **Cuando** el administrador solicita el resumen. **Entonces** el sistema informa que no existen datos disponibles. | EP-06 |
-| **US-28** | Generar reportes de producción | Como administrador, quiero generar reportes de producción, para poder analizar el volumen procesado, el rendimiento y la merma del molino. | **Escenario 1: Generación exitosa de reporte:** **Dado** que existen registros de producción. **Cuando** el administrador solicita un reporte de producción para un periodo determinado. **Entonces** el sistema genera el reporte con los datos disponibles. **Y** el reporte incluye los indicadores relacionados con la producción. <br><br> **Escenario 2: Generación sin datos de producción:** **Dado** que no existen registros de producción en el periodo consultado. **Cuando** el administrador solicita el reporte. **Entonces** el sistema informa que no existen datos para generarlo. | EP-06 |
-| **US-29** | Generar reportes de mantenimiento | Como administrador, quiero generar reportes de mantenimiento, para poder evaluar las actividades realizadas y el comportamiento de las máquinas. | **Escenario 1: Generación exitosa de reporte de mantenimiento:** **Dado** que existen registros de mantenimiento. **Cuando** el administrador solicita un reporte de mantenimiento. **Entonces** el sistema genera el reporte correspondiente. **Y** el reporte incluye información como máquina, tipo de mantenimiento, fecha y estado. <br><br> **Escenario 2: Generación sin datos de mantenimiento:** **Dado** que no existen registros de mantenimiento en el periodo consultado. **Cuando** el administrador solicita el reporte. **Entonces** el sistema informa que no existen datos disponibles. | EP-06 |
-| **US-30** | Analizar tendencias operativas | Como administrador, quiero analizar las tendencias de los indicadores operativos, para poder identificar comportamientos recurrentes y oportunidades de mejora. | **Escenario 1: Análisis de tendencias con datos suficientes:** **Dado** que existen datos históricos suficientes. **Cuando** el administrador consulta las tendencias de un indicador. **Entonces** el sistema devuelve la evolución del indicador durante el periodo seleccionado. **Y** permite reconocer aumentos, disminuciones o variaciones relevantes. <br><br> **Escenario 2: Análisis sin datos suficientes:** **Dado** que no existen datos suficientes para analizar un indicador. **Cuando** el administrador solicita la tendencia. **Entonces** el sistema informa que no existen datos suficientes para realizar el análisis. | EP-06 |
+| **US-27** | Consultar resumen operativo | Como administrador, quiero consultar un resumen operativo del molino, para poder conocer el estado general de la producción, la calidad y el mantenimiento. | **Escenario 1: Resumen con datos completos.** **Dado** que hay datos de producción, calidad y mantenimiento para el periodo consultado. **Cuando** el administrador solicita el resumen operativo. **Entonces** el sistema muestra los indicadores disponibles con su periodo e identificación de cada área. <br><br> **Escenario 2: Resumen con datos parciales.** **Dado** que solo algunas áreas tienen datos para el periodo. **Cuando** el administrador consulta el resumen. **Entonces** el sistema muestra los indicadores disponibles y señala las áreas sin datos, sin convertir la ausencia en valores cero. <br><br> **Escenario 3: Periodo sin información.** **Dado** que ninguna de las áreas tiene datos para el periodo consultado. **Cuando** el administrador solicita el resumen. **Entonces** el sistema informa que no hay información disponible para ese periodo. | EP-06 |
+| **US-28** | Generar reportes de producción | Como administrador, quiero generar reportes de producción, para poder analizar el volumen procesado, el rendimiento y la merma del molino. | **Escenario 1: Reporte de producción disponible.** **Dado** que existen registros de producción e indicadores calculables para un periodo válido. **Cuando** el administrador solicita el reporte de ese periodo. **Entonces** el sistema genera el reporte con las fechas, registros e indicadores de volumen procesado, rendimiento y merma disponibles, identificando sus unidades. <br><br> **Escenario 2: Periodo sin producción.** **Dado** que no hay registros productivos en el periodo. **Cuando** el administrador solicita el reporte. **Entonces** el sistema informa que no hay datos para generarlo y no presenta un reporte con producción ficticia. <br><br> **Escenario 3: Rango de fechas inválido.** **Dado** que el inicio del periodo es posterior a su fin. **Cuando** el administrador intenta generar el reporte. **Entonces** el sistema informa el error y no genera un reporte con ese rango. <br><br> **Escenario 4: Indicadores parcialmente disponibles.** **Dado** que hay producción registrada pero faltan datos para calcular rendimiento o porcentaje de merma. **Cuando** el administrador genera el reporte. **Entonces** el sistema incluye los registros disponibles y marca los indicadores no calculables, sin reemplazarlos por cero. | EP-06 |
+| **US-29** | Generar reportes de mantenimiento | Como administrador, quiero generar reportes de mantenimiento, para poder evaluar las actividades realizadas y el comportamiento de las máquinas. | **Escenario 1: Reporte de mantenimiento disponible.** **Dado** que hay mantenimientos dentro de un periodo válido. **Cuando** el administrador genera el reporte de ese periodo. **Entonces** el sistema incluye las intervenciones del periodo con máquina, tipo, fecha y responsable; si muestra el estado del equipo, lo distingue del tipo de mantenimiento. <br><br> **Escenario 2: Periodo sin mantenimiento.** **Dado** que no existen intervenciones en el periodo elegido. **Cuando** el administrador solicita el reporte. **Entonces** el sistema informa que no hay datos de mantenimiento para ese periodo. <br><br> **Escenario 3: Periodo inválido.** **Dado** que la fecha de inicio es posterior a la fecha final. **Cuando** el administrador solicita el reporte. **Entonces** el sistema informa la inconsistencia y no lo genera con ese periodo. | EP-06 |
+| **US-30** | Analizar tendencias operativas | Como administrador, quiero analizar las tendencias de los indicadores operativos, para poder identificar comportamientos recurrentes y oportunidades de mejora. | **Escenario 1: Evolución temporal disponible.** **Dado** que existen al menos dos observaciones comparables del mismo indicador en fechas distintas del periodo. **Cuando** el administrador consulta su tendencia. **Entonces** el sistema presenta las observaciones ordenadas cronológicamente, con fechas y unidad, permitiendo identificar variaciones. <br><br> **Escenario 2: Observaciones insuficientes.** **Dado** que hay menos de dos observaciones comparables para el indicador y periodo. **Cuando** el administrador solicita su tendencia. **Entonces** el sistema informa que no hay datos suficientes para establecer una evolución temporal. <br><br> **Escenario 3: Intervalos sin datos.** **Dado** que la serie tiene observaciones en algunas fechas y carece de datos en otras. **Cuando** el administrador consulta la tendencia. **Entonces** el sistema distingue los intervalos sin medición de los valores observados iguales a cero y no inventa mediciones. <br><br> **Escenario 4: Periodo inválido.** **Dado** que la fecha inicial es posterior a la final. **Cuando** el administrador consulta una tendencia para ese periodo. **Entonces** el sistema informa el error de fechas y no realiza el análisis con ese rango. | EP-06 |
 | **EP-07** | **Planes de suscripción y Landing Page** | Permite presentar la propuesta de valor, las funcionalidades, los beneficios y los planes de suscripción de Molinex a los visitantes interesados. | No aplica. | — |
-| **US-31** | Conocer la propuesta de valor | Como visitante, quiero conocer la propuesta de valor de Molinex, para poder comprender cómo la plataforma ayuda a mejorar la gestión operativa de los molinos de arroz. | **Escenario 1: Consulta de propuesta de valor:** **Dado** que el visitante accede a la página de inicio. **Cuando** consulta la información de propuesta de valor. **Entonces** el sistema presenta una explicación del problema que resuelve Molinex y de su beneficio principal. <br><br> **Escenario 2: Consulta del propósito de la plataforma:** **Dado** que el visitante consulta la descripción de la plataforma. **Cuando** solicita información sobre su propósito. **Entonces** el sistema presenta que Molinex centraliza información operativa para apoyar el control de producción, calidad y mantenimiento. | EP-07 |
-| **US-32** | Conocer las funcionalidades | Como visitante, quiero conocer las funcionalidades de Molinex, para poder identificar las herramientas que ofrece la plataforma. | **Escenario 1: Consulta de funcionalidades:** **Dado** que el visitante accede a la página de inicio. **Cuando** consulta la información de funcionalidades. **Entonces** el sistema presenta las principales capacidades de Molinex. **Y** cada funcionalidad incluye una descripción comprensible de su utilidad. <br><br> **Escenario 2: Consulta de una funcionalidad específica:** **Dado** que el visitante consulta una funcionalidad específica. **Cuando** solicita información sobre ella. **Entonces** el sistema presenta su propósito y utilidad operativa. | EP-07 |
-| **US-33** | Consultar planes de suscripción | Como visitante, quiero consultar los planes de suscripción, para poder conocer las alternativas comerciales disponibles para contratar Molinex. | **Escenario 1: Consulta de los tres planes:** **Dado** que existen tres planes de suscripción configurados. **Cuando** el visitante consulta la información comercial. **Entonces** el sistema presenta los tres planes disponibles. **Y** cada plan incluye su nombre, precio, características y condiciones principales. <br><br> **Escenario 2: Consulta de un plan específico:** **Dado** que el visitante consulta un plan específico. **Cuando** solicita su información. **Entonces** el sistema devuelve las características y beneficios incluidos en dicho plan. | EP-07 |
-| **US-34** | Comparar planes de suscripción | Como visitante, quiero comparar los planes de suscripción, para poder identificar cuál se adapta mejor a las necesidades de mi empresa. | **Escenario 1: Comparación de planes:** **Dado** que existen tres planes de suscripción disponibles. **Cuando** el visitante consulta sus características. **Entonces** el sistema presenta la información de cada plan de manera diferenciada. **Y** permite reconocer las funciones incluidas en cada alternativa. <br><br> **Escenario 2: Consulta de característica no incluida:** **Dado** que un plan no incluye una característica determinada. **Cuando** el visitante consulta la comparación. **Entonces** el sistema indica que dicha característica no forma parte del plan. | EP-07 |
-| **US-35** | Conocer los beneficios de Molinex | Como visitante, quiero conocer los beneficios de utilizar Molinex, para poder evaluar el valor que la plataforma puede aportar a mi empresa. | **Escenario 1: Consulta de beneficios:** **Dado** que el visitante accede a la página de inicio. **Cuando** consulta la información de beneficios. **Entonces** el sistema presenta beneficios relacionados con el control de producción, la reducción de pérdidas, el mantenimiento y la toma de decisiones. <br><br> **Escenario 2: Relación de beneficios con necesidades operativas:** **Dado** que el visitante consulta los beneficios de la plataforma. **Cuando** revisa la información disponible. **Entonces** el sistema relaciona los beneficios con las necesidades operativas de los molinos de arroz. | EP-07 |
-| **US-36** | Solicitar información comercial | Como visitante interesado en Molinex, quiero solicitar información comercial sobre Molinex, para poder recibir orientación sobre la plataforma y sus planes de suscripción. | **Escenario 1: Solicitud comercial exitosa:** **Dado** que el visitante desea obtener información comercial. **Cuando** registra sus datos de contacto y su consulta. **Entonces** el sistema valida la información y registra la solicitud. **Y** confirma que la solicitud fue recibida correctamente. <br><br> **Escenario 2: Solicitud con datos inválidos:** **Dado** que el visitante ingresa datos de contacto inválidos o incompletos. **Cuando** intenta enviar la solicitud. **Entonces** el sistema rechaza el registro e informa los datos que deben corregirse. | EP-07 |
+| **US-31** | Conocer la propuesta de valor | Como visitante, quiero conocer la propuesta de valor de Molinex, para poder comprender cómo la plataforma ayuda a mejorar la gestión operativa de los molinos de arroz. | **Escenario 1: Propuesta de valor en idioma predeterminado.** **Dado** que un visitante abre la Landing Page sin una preferencia de idioma guardada. **Cuando** visualiza su sección principal. **Entonces** el sistema presenta en inglés el problema de los molinos, el público objetivo y el beneficio principal de centralizar información de producción, calidad y mantenimiento. <br><br> **Escenario 2: Propuesta de valor en español.** **Dado** que el visitante está en la Landing Page. **Cuando** selecciona español en el selector de idioma. **Entonces** la propuesta de valor se muestra en español y conserva el mismo significado y alcance que la versión en inglés. <br><br> **Escenario 3: Acceder a la propuesta de valor.** **Dado** que el visitante se encuentra en la página de inicio de Molinex. **Cuando** accede a la sección de propuesta de valor. **Entonces** el sistema muestra información sobre cómo Molinex contribuye a mejorar la gestión operativa de los molinos de arroz. | EP-07 |
+| **US-32** | Conocer las funcionalidades | Como visitante, quiero conocer las funcionalidades de Molinex, para poder identificar las herramientas que ofrece la plataforma. | **Escenario 1: Funcionalidades y utilidad.** **Dado** que el visitante accede a la sección de funcionalidades. **Cuando** revisa su contenido. **Entonces** el sistema identifica las capacidades principales de Molinex y explica la utilidad operativa de cada una con texto visible. <br><br> **Escenario 2: Consulta desde pantalla pequeña.** **Dado** que el visitante utiliza una pantalla móvil. **Cuando** revisa la sección de funcionalidades. **Entonces** puede leer los nombres y descripciones completos sin recortes que oculten información ni desplazamiento horizontal de la página. <br><br> **Escenario 3: Consultar el detalle de una funcionalidad.** **Dado** que el visitante se encuentra en la sección de funcionalidades de Molinex. **Cuando** selecciona una funcionalidad específica. **Entonces** el sistema muestra una descripción de su propósito y utilidad dentro de la gestión operativa del molino. | EP-07 |
+| **US-33** | Consultar planes de suscripción | Como visitante, quiero consultar los planes de suscripción, para poder conocer las alternativas comerciales disponibles para contratar Molinex. | **Escenario 1: Planes identificables.** **Dado** que el visitante accede a la sección de planes. **Cuando** consulta las alternativas comerciales. **Entonces** el sistema muestra los planes Básico, Profesional y Empresarial como opciones diferenciadas. <br><br> **Escenario 2: Información comercial del plan.** **Dado** que el visitante revisa uno de los planes. **Cuando** consulta su información publicada. **Entonces** el sistema muestra características y condiciones, e identifica precio, moneda y periodicidad cuando existe un precio publicado, o indica que requiere cotización. <br><br> **Escenario 3: Planes en el idioma seleccionado.** **Dado** que el visitante está consultando los planes. **Cuando** cambia entre inglés y español. **Entonces** las descripciones y condiciones se muestran en el idioma elegido sin alterar los importes, la moneda ni las prestaciones de cada alternativa. | EP-07 |
+| **US-34** | Comparar planes de suscripción | Como visitante, quiero comparar los planes de suscripción, para poder identificar cuál se adapta mejor a las necesidades de mi empresa. | **Escenario 1: Comparación con criterios equivalentes.** **Dado** que están disponibles los planes Básico, Profesional y Empresarial. **Cuando** el visitante consulta su comparación. **Entonces** el sistema presenta las mismas categorías de características para los tres planes e identifica qué incluye cada uno. <br><br> **Escenario 2: Característica excluida.** **Dado** que una característica no está incluida en un plan. **Cuando** el visitante revisa esa característica en la comparación. **Entonces** el sistema la identifica expresamente como no incluida para ese plan y la diferencia de las prestaciones disponibles. <br><br> **Escenario 3: Identificar diferencias entre los planes.** **Dado** que el visitante se encuentra en la sección de comparación de planes de suscripción. **Cuando** revisa las características y funcionalidades incluidas en cada plan. **Entonces** el sistema muestra las diferencias entre los planes Básico, Profesional y Empresarial para facilitar su comparación. | EP-07 |
+| **US-35** | Conocer los beneficios de Molinex | Como visitante, quiero conocer los beneficios de utilizar Molinex, para poder evaluar el valor que la plataforma puede aportar a mi empresa. | **Escenario 1: Beneficios vinculados con necesidades.** **Dado** que el visitante accede a la sección de beneficios. **Cuando** revisa su contenido. **Entonces** el sistema explica cómo las capacidades de Molinex apoyan el control productivo, la identificación de pérdidas, el mantenimiento y las decisiones operativas, sin presentar resultados cuantitativos no demostrados como garantías. <br><br> **Escenario 2: Beneficios en el idioma seleccionado.** **Dado** que el visitante está revisando los beneficios. **Cuando** cambia el idioma entre inglés y español. **Entonces** el sistema muestra los beneficios en el idioma elegido manteniendo la relación entre necesidad operativa y beneficio descrito. <br><br> **Escenario 3: Visualizar los beneficios de la plataforma.** **Dado** que el visitante ha ingresado a la sección de beneficios de Molinex. **Cuando** consulta la información presentada. **Entonces** el sistema muestra los principales beneficios de Molinex relacionados con el control de la producción, la calidad, el mantenimiento y la toma de decisiones operativas. | EP-07 |
+| **US-36** | Solicitar información comercial | Como visitante interesado en Molinex, quiero solicitar información comercial sobre Molinex, para poder recibir orientación sobre la plataforma y sus planes de suscripción. | **Escenario 1: Solicitud registrada.** **Dado** que el visitante completa los datos obligatorios de contacto y su consulta con formatos válidos. **Cuando** envía el formulario y el servicio confirma que guardó la solicitud. **Entonces** el sistema confirma su recepción únicamente después del registro exitoso. <br><br> **Escenario 2: Campos obligatorios vacíos.** **Dado** que falta un dato de contacto obligatorio o el texto de la consulta. **Cuando** el visitante intenta enviar el formulario. **Entonces** el sistema identifica los campos faltantes y no registra una solicitud incompleta. <br><br> **Escenario 3: Correo con formato inválido.** **Dado** que el visitante ingresa un correo que no tiene formato válido. **Cuando** intenta enviar la solicitud. **Entonces** el sistema señala el correo inválido y solicita corregirlo antes de registrar la consulta. <br><br> **Escenario 4: Fallo al registrar la solicitud.** **Dado** que los datos son válidos pero el servicio falla o no confirma la persistencia. **Cuando** el visitante envía el formulario. **Entonces** el sistema informa que no pudo confirmar el registro, conserva los datos para corregir o reintentar y no muestra una confirmación de recepción. | EP-07 |
 | **EP-08** | **Historias técnicas — API RESTful** | Permite implementar los servicios de API RESTful necesarios para que la plataforma gestione y consulte información de producción, mantenimiento, anomalías y alertas. | No aplica. | — |
-| **TS-01** | Gestionar recursos de producción mediante API | Como desarrollador, quiero implementar endpoints RESTful para gestionar los recursos de producción, para que los clientes autorizados puedan registrar, consultar y actualizar información productiva. | **Escenario 1: Creación exitosa de recurso de producción:** **Dado** que el servicio API está disponible y el cliente está autorizado. **Cuando** envía una solicitud válida para crear un recurso de producción. **Entonces** la API registra el recurso y responde con el código HTTP **201 Creado** y los datos del recurso creado. <br><br> **Escenario 2: Solicitud con datos inválidos:** **Dado** que el cliente envía datos inválidos o incompletos. **Cuando** realiza una solicitud de creación o actualización. **Entonces** la API responde con el código HTTP **400 Solicitud incorrecta** e informa el error. | EP-08 |
-| **TS-02** | Consultar indicadores mediante API | Como desarrollador, quiero implementar endpoints RESTful para consultar indicadores de rendimiento, calidad y merma, para que los clientes autorizados puedan obtener información operativa procesada. | **Escenario 1: Consulta autorizada de indicadores:** **Dado** que existen datos suficientes para calcular los indicadores y el cliente está autorizado. **Cuando** solicita los indicadores mediante la API. **Entonces** la API responde con el código HTTP **200 OK** y devuelve los valores calculados. <br><br> **Escenario 2: Consulta no autorizada:** **Dado** que el cliente no cuenta con autorización. **Cuando** solicita los indicadores mediante la API. **Entonces** la API responde con el código HTTP **401 No autorizado** o **403 Prohibido**, según corresponda. | EP-08 |
-| **TS-03** | Gestionar mantenimiento mediante API | Como desarrollador, quiero implementar endpoints RESTful para gestionar los registros de mantenimiento, para que los clientes autorizados puedan registrar y consultar las actividades realizadas en las máquinas. | **Escenario 1: Registro exitoso de mantenimiento mediante API:** **Dado** que existe una máquina registrada y el cliente está autorizado. **Cuando** envía una solicitud válida para registrar una actividad de mantenimiento. **Entonces** la API guarda el registro y responde con el código HTTP **201 Creado** y los datos del mantenimiento creado. <br><br> **Escenario 2: Operación con máquina inexistente:** **Dado** que la máquina indicada no existe. **Cuando** el cliente intenta registrar o consultar un mantenimiento asociado. **Entonces** la API responde con el código HTTP **404 No encontrado**. | EP-08 |
-| **TS-04** | Gestionar anomalías y alertas mediante API | Como desarrollador, quiero implementar endpoints RESTful para gestionar anomalías y alertas, para que los clientes autorizados puedan consultar y actualizar los eventos detectados. | **Escenario 1: Consulta autorizada de alertas:** **Dado** que existen anomalías registradas y el cliente está autorizado. **Cuando** consulta las anomalías o alertas mediante la API. **Entonces** la API responde con el código HTTP **200 OK** y devuelve la información solicitada. <br><br> **Escenario 2: Operación con alerta inexistente:** **Dado** que la alerta indicada no existe. **Cuando** el cliente intenta consultarla o actualizarla. **Entonces** la API responde con el código HTTP **404 No encontrado**. | EP-08 |
+| **TS-01** | Gestionar recursos de producción mediante API | Como desarrollador, quiero implementar endpoints RESTful para gestionar los recursos de producción, para que los clientes autorizados puedan registrar, consultar y actualizar información productiva. | **Escenario 1: Creación de recurso productivo.** **Dado** que el cliente cumple las precondiciones de acceso y envía datos válidos con referencias existentes. **Cuando** solicita crear un recurso de producción. **Entonces** la API persiste el recurso y responde 201 Created con su identificador y datos. <br><br> **Escenario 2: Consulta de recurso existente.** **Dado** que el recurso productivo solicitado existe y el cliente cumple las precondiciones de acceso. **Cuando** lo consulta por su identificador. **Entonces** la API responde 200 OK con los datos del recurso solicitado. <br><br> **Escenario 3: Actualización válida.** **Dado** que existe el recurso y se envían cambios permitidos que respetan las invariantes productivas. **Cuando** el cliente solicita su actualización. **Entonces** la API persiste los cambios y responde 200 OK con el recurso actualizado, manteniendo el lote de origen. <br><br> **Escenario 4: Datos inválidos.** **Dado** que la solicitud omite datos obligatorios, usa valores no válidos o intenta modificar el lote de origen. **Cuando** el cliente solicita crear o actualizar el recurso. **Entonces** la API responde 400 Bad Request con información del error y no aplica cambios parciales. <br><br> **Escenario 5: Recurso inexistente.** **Dado** que el identificador solicitado no corresponde a un recurso productivo. **Cuando** el cliente intenta consultarlo o actualizarlo. **Entonces** la API responde 404 Not Found y no crea un recurso como efecto de la actualización. <br><br> **Escenario 6: Referencia productiva inexistente.** **Dado** que la creación contiene un identificador de lote o recepción requerido que no existe. **Cuando** el cliente envía la solicitud. **Entonces** la API responde 404 Not Found, identifica la referencia ausente y no guarda un recurso huérfano. | EP-08 |
+| **TS-02** | Consultar indicadores mediante API | Como desarrollador, quiero implementar endpoints RESTful para consultar indicadores de rendimiento, calidad y merma, para que los clientes autorizados puedan obtener información operativa procesada. | **Escenario 1: Indicadores disponibles.** **Dado** que el cliente cumple las precondiciones de acceso y hay datos suficientes para calcular los indicadores. **Cuando** solicita los indicadores con parámetros válidos. **Entonces** la API responde 200 OK con valores, unidades y el periodo o conjunto de datos evaluado. <br><br> **Escenario 2: Datos insuficientes.** **Dado** que la consulta es válida pero falta información o una base positiva para algún cálculo. **Cuando** el cliente solicita los indicadores. **Entonces** la API responde 200 OK indicando los indicadores no disponibles y su motivo, sin divisiones entre cero ni porcentajes inventados. <br><br> **Escenario 3: Parámetros inválidos.** **Dado** que el periodo tiene fechas invertidas o un parámetro presenta un formato no válido. **Cuando** el cliente consulta los indicadores. **Entonces** la API responde 400 Bad Request e identifica el parámetro inválido. <br><br> **Escenario 4: Cliente sin autenticación válida.** **Dado** que la protección IAM está implementada y la solicitud carece de credenciales válidas. **Cuando** el cliente intenta consultar los indicadores. **Entonces** la API responde 401 Unauthorized y no expone información operativa. <br><br> **Escenario 5: Cliente autenticado sin permiso.** **Dado** que la protección IAM está implementada y el cliente está autenticado pero no tiene permiso de consulta. **Cuando** solicita los indicadores. **Entonces** la API responde 403 Forbidden y no entrega los datos protegidos. | EP-08 |
+| **TS-03** | Gestionar mantenimiento mediante API | Como desarrollador, quiero implementar endpoints RESTful para gestionar los registros de mantenimiento, para que los clientes autorizados puedan registrar y consultar las actividades realizadas en las máquinas. | **Escenario 1: Creación de mantenimiento válido.** **Dado** que existen la máquina y las referencias requeridas y el cliente envía fecha, tipo, responsable y descripción válidos. **Cuando** solicita registrar el mantenimiento cumpliendo las precondiciones de acceso. **Entonces** la API guarda la intervención vinculada a la máquina y responde 201 Created con sus datos. <br><br> **Escenario 2: Consulta de mantenimientos de una máquina.** **Dado** que la máquina existe y el cliente cumple las precondiciones de acceso. **Cuando** solicita sus mantenimientos. **Entonces** la API responde 200 OK con sus intervenciones o una colección vacía si no tiene registros. <br><br> **Escenario 3: Solicitud de mantenimiento inválida.** **Dado** que faltan datos obligatorios o se indica un tipo distinto de preventivo o correctivo. **Cuando** el cliente solicita crear la intervención. **Entonces** la API responde 400 Bad Request con el error y no guarda el registro. <br><br> **Escenario 4: Máquina inexistente.** **Dado** que la máquina indicada no está registrada. **Cuando** el cliente solicita crear o listar sus mantenimientos. **Entonces** la API responde 404 Not Found y distingue el equipo inexistente de una máquina sin intervenciones. <br><br> **Escenario 5: Intervención inexistente.** **Dado** que el mantenimiento solicitado no existe. **Cuando** el cliente consulta esa intervención por su identificador. **Entonces** la API responde 404 Not Found sin devolver una intervención distinta. | EP-08 |
+| **TS-04** | Gestionar anomalías y alertas mediante API | Como desarrollador, quiero implementar endpoints RESTful para gestionar anomalías y alertas, para que los clientes autorizados puedan consultar y actualizar los eventos detectados. | **Escenario 1: Consulta con eventos disponibles.** **Dado** que hay anomalías o alertas registradas y el cliente cumple las precondiciones de acceso. **Cuando** solicita la colección correspondiente. **Entonces** la API responde 200 OK con los eventos y sus identificadores, máquina relacionada y estado. <br><br> **Escenario 2: Colección sin eventos.** **Dado** que no hay eventos que coincidan con una consulta válida. **Cuando** el cliente consulta las anomalías o alertas. **Entonces** la API responde 200 OK con una colección vacía. <br><br> **Escenario 3: Actualización válida de evento.** **Dado** que el evento existe y el estado solicitado pertenece al catálogo y respeta la transición definida para ese tipo de evento. **Cuando** el cliente autorizado solicita actualizarlo. **Entonces** la API guarda el cambio y responde 200 OK con el evento actualizado sin modificar su máquina ni el evento de origen. <br><br> **Escenario 4: Estado o cambio inválido.** **Dado** que el estado solicitado no está permitido o la modificación incumple las reglas del evento. **Cuando** el cliente intenta actualizarlo. **Entonces** la API responde 400 Bad Request con el error y conserva los datos anteriores. <br><br> **Escenario 5: Evento inexistente.** **Dado** que el identificador no corresponde a una anomalía o alerta existente. **Cuando** el cliente intenta consultar o actualizar ese evento. **Entonces** la API responde 404 Not Found y no crea un evento por esa actualización. | EP-08 |
+| **EP-01** | **Gestión de acceso y usuarios** | Permite gestionar el acceso a la plataforma, los usuarios registrados, sus roles y la información de sus perfiles. | No aplica. | — |
+| **US-01** | Registrar usuario | Como administrador, quiero registrar nuevos usuarios, para que el personal autorizado pueda acceder a la plataforma. | **Escenario 1: Registro de usuario válido.** **Dado** que el administrador tiene permiso de gestión y dispone de datos válidos, correo no registrado y un rol permitido. **Cuando** registra al usuario para el molino correspondiente. **Entonces** el sistema crea la cuenta, la vincula con el molino mediante su membresía, asigna el rol indicado y confirma el registro sin exponer credenciales. <br><br> **Escenario 2: Correo duplicado.** **Dado** que ya existe una cuenta con el correo proporcionado. **Cuando** el administrador intenta crear otra cuenta con ese correo. **Entonces** el sistema informa la duplicidad y no crea una segunda identidad con ese correo. <br><br> **Escenario 3: Datos obligatorios o formatos inválidos.** **Dado** que faltan datos obligatorios o el correo no tiene formato válido. **Cuando** el administrador intenta registrar la cuenta. **Entonces** el sistema identifica los errores y no crea una cuenta incompleta o inválida. <br><br> **Escenario 4: Rol no permitido.** **Dado** que el rol seleccionado no existe o no está permitido para la asignación. **Cuando** el administrador intenta registrar al usuario con ese rol. **Entonces** el sistema rechaza la asignación y no deja una cuenta parcialmente creada. <br><br> **Escenario 5: Registro sin permiso.** **Dado** que el solicitante carece de permiso para registrar usuarios. **Cuando** intenta crear una cuenta desde la interfaz o directamente por el servicio. **Entonces** el sistema deniega la operación y no registra al usuario. | EP-01 |
+| **US-02** | Iniciar sesión | Como administrador, técnico u operador, quiero iniciar sesión, para poder acceder a las funciones permitidas según mi rol. | **Escenario 1: Inicio de sesión válido.** **Dado** que el usuario tiene cuenta activa y credenciales válidas. **Cuando** solicita iniciar sesión. **Entonces** el sistema establece su sesión y permite únicamente las funcionalidades correspondientes a su rol y molino. <br><br> **Escenario 2: Credenciales incorrectas.** **Dado** que el correo o la contraseña proporcionados son incorrectos. **Cuando** se solicita iniciar sesión. **Entonces** el sistema rechaza el acceso con un mensaje general de credenciales inválidas y no crea una sesión. <br><br> **Escenario 3: Credenciales incompletas.** **Dado** que falta el correo o la contraseña. **Cuando** el usuario intenta iniciar sesión. **Entonces** el sistema solicita los campos obligatorios y no inicia una sesión. <br><br> **Escenario 4: Cuenta inactiva o bloqueada.** **Dado** que la cuenta está inactiva o bloqueada. **Cuando** se presentan sus credenciales para iniciar sesión. **Entonces** el sistema deniega el acceso y no establece una sesión operativa. | EP-01 |
+| **US-03** | Gestionar roles y permisos | Como administrador, quiero asignar roles y permisos a los usuarios, para poder controlar el acceso a las funcionalidades de la plataforma. | **Escenario 1: Asignación de rol válida.** **Dado** que el administrador tiene permiso y existen el usuario y un rol permitido. **Cuando** asigna ese rol en el molino correspondiente. **Entonces** el sistema guarda la asignación y la relaciona con ese usuario y molino. <br><br> **Escenario 2: Aplicación de permisos modificados.** **Dado** que se cambia el rol de un usuario a otro con permisos diferentes. **Cuando** el usuario vuelve a solicitar una funcionalidad protegida después de hacerse efectivo el cambio. **Entonces** el sistema evalúa los permisos vigentes y no conserva accesos revocados por la modificación. <br><br> **Escenario 3: Operación sin autorización.** **Dado** que el usuario no tiene el permiso necesario para una funcionalidad o para administrar roles. **Cuando** intenta ejecutar la operación por la interfaz o directamente por el servicio. **Entonces** el sistema la deniega y no modifica los datos protegidos. <br><br> **Escenario 4: Usuario o rol inexistente.** **Dado** que el usuario o rol indicado en la asignación no existe. **Cuando** el administrador intenta guardar el cambio. **Entonces** el sistema identifica la referencia inexistente y conserva las asignaciones anteriores. | EP-01 |
+| **US-04** | Gestionar perfil | Como administrador, técnico u operador, quiero actualizar la información de mi perfil, para poder mantener mis datos personales y laborales actualizados. | **Escenario 1: Actualización válida del perfil propio.** **Dado** que el usuario ha iniciado sesión y consulta su propio perfil. **Cuando** modifica campos personales o laborales permitidos con datos válidos y guarda. **Entonces** el sistema conserva los cambios y los muestra al volver a consultar ese perfil. <br><br> **Escenario 2: Datos de perfil inválidos.** **Dado** que se elimina un campo obligatorio o se ingresa un valor con formato no válido. **Cuando** el usuario intenta actualizar su perfil. **Entonces** el sistema informa el error y conserva los datos anteriores sin cambios parciales. <br><br> **Escenario 3: Modificación fuera del perfil permitido.** **Dado** que el usuario intenta cambiar su rol, sus permisos o el perfil de otra persona mediante esta función. **Cuando** envía la actualización. **Entonces** el sistema deniega esos cambios y conserva los datos protegidos. | EP-01 |
 
 
 
 ## 3.2 Impact Mapping
-**Segmento 1 : Gerentes o administradores**
+**Segmento 1: Gerentes o administradores**
 ![Impact Mapping - Segmento 1.png](assets/Images%20Chapter%203/Impact%20Mapping%20-%20Segmento%201.png)
-**Segmento 2 : Técnicos de mantenimiento**
+**Segmento 2: Técnicos de mantenimiento**
 ![Impact Mapping - Segmento 2.png](assets/Images%20Chapter%203/Impact%20Mapping%20-%20Segmento%202.png)
-**Segmento 3 : Operarios de maquinaria y producción**
+**Segmento 3: Operarios de maquinaria y producción**
 ![Impact Mapping - Segmento 3.png](assets/Images%20Chapter%203/Impact%20Mapping%20-%20Segmento%203.png)
 
 _URL pública del Impact Map en UXPressia:_ `https://uxpressia.com/w/7lSlk/i/xmNpX?tagId=noTag`
@@ -1365,33 +1591,45 @@ En desktop se prevé una barra lateral persistente. En anchos menores podrá col
 
 ### 4.3.1 Landing Page Wireframe
 
-El wireframe del Landing Page traduce a bloques de baja fidelidad la organización definida en 4.2.1: un recorrido jerárquico y secuencial que va desde la propuesta de valor hasta el formulario de contacto, sin comprometer aún color ni tipografía final. Su objetivo es validar la agrupación y jerarquía del contenido antes de aplicar el Design System.
+El wireframe de la Landing Page traduce a bloques de baja fidelidad la organización definida en 4.2.1: un recorrido jerárquico y secuencial que va desde la propuesta de valor hasta el formulario de contacto, sin comprometer aún color ni tipografía final. Su objetivo es validar la agrupación y jerarquía del contenido antes de aplicar el Design System.
 
 La propuesta contempla: un encabezado con navegación (Solution, Features, Plans) y la acción principal de contacto; un Hero con título, descripción, dos llamadas a la acción y un panel de vista previa del dashboard operativo; una sección de problemática con tres tarjetas (Scattered data, Unexpected downtime, Hidden losses); una sección de funcionalidades con cuatro tarjetas, la primera en estado activo; una sección de audiencias con tres columnas (Managers, Maintenance Technicians, Production Operators); una sección de planes con tres tarjetas de precio; un formulario de contacto; y un footer con marca y enlaces de navegación y legales.
 
 <p align="center">
-  <img src="assets/design/landing-wireframe.webp" alt="Wireframe Desktop del Landing Page de Molinex" width="100%">
+  <img src="assets/design/landing-wireframe.webp" alt="Wireframe Desktop de la Landing Page de Molinex" width="45%">
 </p>
 
-**Figura: Wireframe Desktop del Landing Page de Molinex. Fuente: elaboración propia en Figma.**
+**Figura: Wireframe Desktop de la Landing Page de Molinex. Fuente: elaboración propia en Figma.**
 
-> Pendiente: versión Mobile Web Browser del wireframe.
+En la versión Mobile Web Browser, las secciones se apilan en una sola columna y conservan el orden definido en 4.2.1. El menú del encabezado se reduce a un botón de hamburguesa, los dos botones del Hero ocupan todo el ancho y las tarjetas de problemática, funcionalidades y planes pasan de una cuadrícula a una lista vertical. El footer incluye los enlaces a Terms and conditions y Privacy policy. Como la pantalla completa mide casi 25 veces su ancho, la figura la muestra en cinco tramos, de izquierda a derecha: encabezado, Hero y problemática; funcionalidades y audiencias; beneficios y cómo funciona; planes y contacto; footer y textos legales.
+
+<p align="center">
+  <img src="assets/design/landing-wireframe-mobile.webp" alt="Wireframe Mobile de la Landing Page de Molinex, en cinco tramos consecutivos" width="90%">
+</p>
+
+**Figura: Wireframe Mobile de la Landing Page de Molinex, en cinco tramos. Fuente: elaboración propia en Figma.**
 
 ### 4.3.2 Landing Page Mockup
 
-El mockup aplica sobre el wireframe el Design System definido en 4.1: Azul Molinex (`#0B4F8A`) como color estructural, Dorado (`#F2B705`) como acento de las acciones principales, y la pareja tipográfica Poppins/Inter. El panel del Hero muestra datos reales de ejemplo (rendimiento 86.4 %, merma 4.8 %) con un indicador "Live" y una alerta de mantenimiento, evidenciando el principio de Visibilidad del estado. La tarjeta de plan Professional se destaca con la insignia "Most flexible" y un botón dorado, siguiendo la proporción 60-30-10 y la regla de no combinar dorado con blanco establecidas en 4.1.1. El footer, en azul oscuro, incluye los enlaces legales que sustentan la sección de Ética y Responsabilidad del informe.
+El mockup aplica sobre el wireframe el Design System definido en 4.1: Azul Molinex (`#0B4F8A`) como color estructural, Dorado (`#F2B705`) como acento de las acciones principales, y la pareja tipográfica Poppins/Inter. El panel del Hero muestra datos de ejemplo (rendimiento 86.4 %, merma 4.8 %) con un indicador "Live" y una alerta de mantenimiento, evidenciando el principio de Visibilidad del estado. La tarjeta de plan Professional se destaca con la insignia "Most flexible" y un botón dorado, siguiendo la proporción 60-30-10 y la regla de no combinar dorado con blanco establecidas en 4.1.1. El footer, en azul oscuro, incluye los enlaces legales que sustentan la sección de Ética y Responsabilidad del informe.
 
-Este mockup corresponde a la versión ya implementada y desplegada del Landing Page (ver 5.2.1.5 Execution Evidence), lo que evidencia que la implementación siguió al diseño y no al revés.
+Este mockup corresponde a la versión ya implementada y desplegada de la Landing Page (ver 5.2.1.5 Execution Evidence), lo que evidencia que la implementación siguió al diseño y no al revés.
 
 <p align="center">
-  <img src="assets/design/landing-mockup.webp" alt="Mockup Desktop del Landing Page de Molinex" width="100%">
+  <img src="assets/design/landing-mockup.webp" alt="Mockup Desktop de la Landing Page de Molinex" width="45%">
 </p>
 
-**Figura: Mockup Desktop del Landing Page de Molinex. Fuente: elaboración propia en Figma.**
+**Figura: Mockup Desktop de la Landing Page de Molinex. Fuente: elaboración propia en Figma.**
+
+La versión móvil conserva la paleta y la tipografía del Design System de 4.1. El botón dorado "Improve your mill" y el de "Learn more" del plan Professional siguen siendo los elementos de mayor contraste, por lo que la jerarquía de acciones es la misma que en escritorio. El panel del Hero se muestra a ancho completo bajo los botones. La figura sigue la misma división en cinco tramos que el wireframe.
+
+<p align="center">
+  <img src="assets/design/landing-mockup-mobile.webp" alt="Mockup Mobile de la Landing Page de Molinex, en cinco tramos consecutivos" width="90%">
+</p>
+
+**Figura: Mockup Mobile de la Landing Page de Molinex, en cinco tramos. Fuente: elaboración propia en Figma.**
 
 _Archivo de diseño en Figma:_ `https://www.figma.com/design/QytNXR0eMrUtT5MNpJarbK/Figma-Molinex`
-
-> Pendiente: versión Mobile Web Browser del mockup.
 
 ## 4.4 Web Applications UX/UI Design
 
@@ -1424,6 +1662,7 @@ Las vistas representadas corresponden a:
 ![Wireframe Users & Permissions](assets/Images%20Chapter%204/Web%20app/webapp-users-wireframe.png)
 
 **Figura:** Wireframes de las principales vistas de la Web Application de Molinex. Fuente: elaboración propia.
+
 ### 4.4.2 Web Applications Wireflow Diagrams
 
 Los Wireflow Diagrams representan los recorridos principales de los usuarios dentro de la Web Application de Molinex. Cada flujo muestra las pantallas involucradas y la navegación necesaria para alcanzar un objetivo específico.
@@ -1459,6 +1698,7 @@ Como administrador, quiero gestionar usuarios y permisos.
 ![Wireflow de usuarios y permisos](assets/Images%20Chapter%204/Web%20app/flow-04-manage-users.png)
 
 **Figura:** Wireflow para gestionar usuarios y permisos. Fuente: elaboración propia.
+
 ### 4.4.3 Web Applications Mockups
 
 Los mockups de la Web Application representan las principales vistas operativas de Molinex: resumen general, operaciones, maquinaria, mantenimiento, inteligencia operativa, reportes y usuarios.
@@ -1531,33 +1771,111 @@ Los modelos fueron elaborados con PlantUML bajo el enfoque Diagram-as-Code. Las 
 
 | Bounded Context | Clasificación | Responsabilidad |
 |:--|:--|:--|
-| `Commercial Engagement` | Supporting Subdomain | Presentar la oferta comercial y registrar solicitudes de visitantes interesados. No incluye todavía contratación, pago ni activación de suscripciones. |
-| `Identity and Access Management` | Generic Subdomain | Gestionar usuarios, autenticación, roles, permisos y datos de perfil. |
 | `Production Management` | Core Subdomain | Gestionar recepciones de materia prima, lotes y registros de producción. |
 | `Quality and Yield Control` | Core Subdomain | Registrar resultados de calidad y merma, consultar indicadores e identificar desviaciones. |
 | `Asset and Maintenance Management` | Core Subdomain | Gestionar el inventario de máquinas y registrar mantenimiento preventivo y correctivo. |
 | `Operational Intelligence` | Core Subdomain | Registrar variables operativas, detectar anomalías y generar alertas e información de atención. |
+| `Commercial Engagement` | Supporting Subdomain | Presentar la oferta comercial y registrar solicitudes de visitantes interesados. No incluye todavía contratación, pago ni activación de suscripciones. |
 | `Reporting and Analytics` | Supporting Subdomain / Read Side | Construir proyecciones para resúmenes, reportes y tendencias sin apropiarse de los Aggregates operativos. |
+| `Identity and Access Management` | Generic Subdomain | Gestionar usuarios, autenticación, roles, permisos y datos de perfil. |
 
-`Profiles` no se separa como Bounded Context porque la información de perfil forma parte del ciclo de vida del `User`. `Subscriptions` tampoco se incorpora: los requerimientos actuales permiten consultar planes, pero no definen contratación, pago, tenancy ni activación. Finalmente, `Shared` no se considera un Bounded Context; el subconjunto compartido se modela explícitamente como Shared Kernel.
+`Profiles` no se separa como Bounded Context porque la información de perfil forma parte del ciclo de vida del `User`. `Subscriptions` tampoco se incorpora: los requisitos actuales permiten consultar planes, pero no definen contratación, pago, tenancy ni activación. Finalmente, `Shared` no se considera un Bounded Context; el subconjunto compartido se modela explícitamente como Shared Kernel.
 
 #### Commands, Aggregate Roots, Domain Events and Queries
 
 | Bounded Context | Commands | Aggregate Roots | Domain Events | Queries / Read Models |
 |:--|:--|:--|:--|:--|
-| `Commercial Engagement` | `SubmitCommercialInquiry` | `CommercialInquiry` | `CommercialInquirySubmitted` | `GetPlanCatalog`, `GetValueProposition` |
-| `Identity and Access Management` | `RegisterUser`, `AssignRole`, `AuthenticateUser`, `UpdateUserProfile` | `User` | `UserRegistered`, `RoleAssigned`, `UserAuthenticated`, `UserProfileUpdated` | `GetAuthorizedFunctions`, `GetUserProfile` |
 | `Production Management` | `RecordRawMaterialReception`, `RegisterProductionBatch`, `RecordProductionInformation`, `UpdateProductionInformation` | `RawMaterialReception`, `ProductionBatch`, `ProductionRecord` | `RawMaterialReceptionRecorded`, `ProductionBatchRegistered`, `ProductionInformationRecorded`, `ProductionInformationUpdated` | `GetProductionProcesses`, `GetProductionHistory` |
 | `Quality and Yield Control` | `RecordQualityResults`, `RecordProductionWaste`, `IdentifyQualityDeviation` | `QualityAssessment`, `WasteRecord`, `QualityDeviation` | `QualityResultsRecorded`, `ProductionWasteRecorded`, `QualityDeviationIdentified` | `GetYieldIndicators`, `GetRiceComposition`, `GetProductionWaste`, `CompareQualityIndicators` |
 | `Asset and Maintenance Management` | `RegisterMachine`, `RecordPreventiveMaintenance`, `RecordCorrectiveMaintenance` | `Machine`, `MaintenanceRecord` | `MachineRegistered`, `PreventiveMaintenanceRecorded`, `CorrectiveMaintenanceRecorded` | `GetMachineStatus`, `GetMaintenanceHistory` |
 | `Operational Intelligence` | `RecordOperationalVariable`, `DetectOperationalAnomaly`, `GenerateOperationalAlert` | `OperationalReading`, `OperationalAnomaly`, `Alert` | `OperationalVariableRecorded`, `OperationalAnomalyDetected`, `OperationalAlertGenerated` | `GetOperationalVariables`, `GetAnomalyHistory`, `GetAlerts`, `GetMaintenanceRecommendations` |
+| `Commercial Engagement` | `SubmitCommercialInquiry` | `CommercialInquiry` | `CommercialInquirySubmitted` | `GetPlanCatalog`, `GetValueProposition` |
 | `Reporting and Analytics` | — | — | — | `GetOperationalSummary`, `GetProductionReport`, `GetMaintenanceReport`, `GetOperationalTrends` |
+| `Identity and Access Management` | `RegisterUser`, `AssignRole`, `AuthenticateUser`, `UpdateUserProfile` | `User` | `UserRegistered`, `RoleAssigned`, `UserAuthenticated`, `UserProfileUpdated` | `GetAuthorizedFunctions`, `GetUserProfile` |
 
 `Reporting and Analytics` no define Aggregate Roots por ahora. Las historias describen consultas y generación de vistas, pero no confirman que un reporte posea identidad, ciclo de vida o persistencia propia. Si posteriormente se exige almacenar, versionar o aprobar reportes, esa decisión podrá introducir un Aggregate específico.
 
 <p align="center">
   <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/design-level-event-storming.svg" alt="Design-Level Event Storming de Molinex" width="100%">
 </p>
+
+#### Diagrama detallado de Production Management
+
+El diagrama presenta el diseño de las historias US-05 a US-10. Cada flujo iniciado por el Operador de Producción sigue la secuencia `Actor → Command → Aggregate Root → Domain Event`. El registro y la actualización de información productiva utilizan el mismo Aggregate Root, pero producen eventos distintos. No se introduce una Policy porque ninguna de estas operaciones se activa automáticamente como reacción a otro evento.
+
+`Production Processes` y `Production History` se muestran como Read Models independientes del flujo transaccional. El operador y el administrador los consultan sin enviar Commands ni producir Domain Events. En US-06, `RegisterProductionBatch` requiere un código único y una recepción existente; `ProductionBatch` conserva la referencia mediante `RawMaterialReceptionId` y emite `ProductionBatchRegistered` solamente después de aceptar el cambio.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/design-level-event-storming-production-management.svg" alt="Design-Level Event Storming de Production Management, historias US-05 a US-10" width="100%">
+</p>
+
+**Figura: Design-Level Event Storming de Production Management. Fuente: elaboración propia en PlantUML.**
+
+#### Diagrama detallado de Quality and Yield Control
+
+El diagrama documenta el diseño de US-11 a US-16. El Operador de Producción registra evaluaciones de calidad y merma mediante flujos transaccionales independientes. `QualityAssessmentRecorded` y `WasteRecorded` pueden activar la Policy que evalúa los indicadores contra su rango válido. Solo cuando se incumple el rango, la Policy emite automáticamente `IdentifyQualityDeviation`, que actúa sobre `QualityDeviation` y produce `QualityDeviationIdentified`.
+
+Los Read Models de rendimiento, composición, merma, comparación y desviaciones permanecen separados de la Policy y pueden consultarse sin modificar Aggregates. `QualityAssessment` y `WasteRecord` referencian el proceso mediante el `ProductionRecordId` local de Quality. Según el Context Map, Production comunica los cambios de información productiva como Published Language y Quality traduce el identificador a su propio tipo.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/design-level-event-storming-quality-yield-control.svg" alt="Design-Level Event Storming de Quality and Yield Control, historias US-11 a US-16" width="100%">
+</p>
+
+**Figura: Design-Level Event Storming de Quality and Yield Control. Fuente: elaboración propia en PlantUML.**
+
+#### Diagrama detallado de Asset and Maintenance Management
+
+El diagrama documenta las operaciones de maquinaria y mantenimiento de US-17 a US-21. El Técnico de Mantenimiento registra una máquina, cambia su estado y registra mantenimientos preventivos o correctivos. Cada Command actúa sobre `Machine` o `MaintenanceRecord` y produce el Domain Event correspondiente después de validar el cambio.
+
+Los mantenimientos preventivos y correctivos son decisiones iniciadas por el técnico; por ello, no se representan como Policies automáticas. `Machine Inventory and Status` y `Maintenance History` son Read Models consultados de manera independiente y no modifican los Aggregates.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/design-level-event-storming-asset-maintenance-management.svg" alt="Design-Level Event Storming de Asset and Maintenance Management" width="100%">
+</p>
+
+**Figura: Design-Level Event Storming de Asset and Maintenance Management. Fuente: elaboración propia en PlantUML.**
+
+#### Diagrama detallado de Operational Intelligence
+
+El flujo comienza cuando una fuente de datos registra una lectura operacional. `OperationalReadingRecorded` activa una Policy que evalúa el criterio aplicable y emite automáticamente `DetectOperationalAnomaly`. Si se detecta una anomalía que requiere atención, `OperationalAnomalyDetected` activa una segunda Policy que emite `GenerateOperationalAlert` y puede producir `OperationalAlertGenerated`.
+
+Las Policies se muestran únicamente porque reaccionan a Domain Events y originan Commands automáticos. Las lecturas, el historial de anomalías, las alertas y las recomendaciones de mantenimiento son Read Models consultados por el Técnico de Mantenimiento y permanecen fuera del flujo de escritura.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/design-level-event-storming-operational-intelligence.svg" alt="Design-Level Event Storming de Operational Intelligence" width="100%">
+</p>
+
+**Figura: Design-Level Event Storming de Operational Intelligence. Fuente: elaboración propia en PlantUML.**
+
+#### Diagrama detallado de Commercial Engagement
+
+El Visitante consulta el catálogo de planes y la propuesta de valor como Read Models. Cuando decide contactar a Vanguard, inicia `SubmitCommercialInquiry`; el Command actúa sobre `CommercialInquiry` y produce `CommercialInquirySubmitted`. No existe una Policy que cree automáticamente una cuenta, una suscripción o un tenant, porque ese flujo no forma parte del alcance confirmado.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/design-level-event-storming-commercial-engagement.svg" alt="Design-Level Event Storming de Commercial Engagement" width="100%">
+</p>
+
+**Figura: Design-Level Event Storming de Commercial Engagement. Fuente: elaboración propia en PlantUML.**
+
+#### Diagrama detallado de Reporting and Analytics
+
+Reporting and Analytics funciona como un read side. Los Domain Events publicados por los bounded contexts operativos actualizan `Operational Summary`, `Production Report`, `Maintenance Report` y `Operational Trend`; posteriormente, el Administrador consulta esas proyecciones. La actualización de una proyección no se etiqueta como Policy porque no emite un Command de negocio ni modifica un Aggregate Root.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/design-level-event-storming-reporting-analytics.svg" alt="Design-Level Event Storming de Reporting and Analytics" width="100%">
+</p>
+
+**Figura: Design-Level Event Storming de Reporting and Analytics. Fuente: elaboración propia en PlantUML.**
+
+#### Diagrama detallado de Identity and Access Management
+
+El Administrador inicia el registro de usuarios y la asignación de roles, mientras que el Usuario de la Plataforma inicia la autenticación y la actualización de su perfil. Cada operación actúa sobre `User` y produce un Domain Event distinto. `Authorized Functions` y `User Profile` se representan como Read Models consultables; no son Policies porque no reaccionan a un evento para emitir un Command automático.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/design-level-event-storming-identity-access-management.svg" alt="Design-Level Event Storming de Identity and Access Management" width="100%">
+</p>
+
+**Figura: Design-Level Event Storming de Identity and Access Management. Fuente: elaboración propia en PlantUML.**
 
 #### Aggregate boundaries and invariants
 
@@ -1572,7 +1890,7 @@ Los límites se definieron aplicando cuatro criterios: cada Aggregate protege in
 | Quality and Yield Control | `QualityAssessment` | Valores de calidad dentro de rangos permitidos y vínculo con producción. | `ProductionRecordId` propio de Quality, no el tipo interno de Production. |
 | Quality and Yield Control | `WasteRecord` | Cantidad no negativa y porcentaje calculable solo cuando existe una base válida. | `ProductionRecordId` propio de Quality. |
 | Quality and Yield Control | `QualityDeviation` | Solo existe cuando un indicador evaluado está fuera de su rango; conserva indicador, valor y fecha. | Referencias locales a la evaluación o registro que originó la desviación. |
-| Asset and Maintenance Management | `Machine` | Identificador único, datos obligatorios y estado operativo permitido. | Sin importar Aggregates de Operational Intelligence. |
+| Asset and Maintenance Management | `Machine` | Identificador único, datos obligatorios y estado operativo permitido. | No importa Aggregates de Operational Intelligence. |
 | Asset and Maintenance Management | `MaintenanceRecord` | Máquina obligatoria, tipo preventivo o correctivo, fecha, descripción y responsable válidos. | `MachineId` local; puede conservar un `AnomalyId` local como referencia informativa. |
 | Operational Intelligence | `OperationalReading` | Máquina, variable, valor y momento de medición obligatorios. | `MachineId` propio de Operational Intelligence. |
 | Operational Intelligence | `OperationalAnomaly` | Se crea únicamente cuando una lectura incumple un criterio definido; conserva variable, valor, fecha y estado. | `OperationalReadingId` local. |
@@ -1587,7 +1905,9 @@ El Shared Kernel no contiene identificadores, Aggregates, repositorios, servicio
 
 #### DDD Context Map
 
-El Context Map hace explícitas las relaciones estratégicas. Estas relaciones describen dependencias de modelos dentro del monolito modular.
+El Context Map hace explícitas las relaciones estratégicas y las dependencias entre modelos dentro del monolito modular. Para facilitar su lectura, presenta primero los Core Subdomains, luego los Supporting Subdomains y finalmente el Generic Subdomain, sin repetir en cada línea los eventos que ya se detallan en la tabla.
+
+La leyenda utiliza líneas azules para `Customer/Supplier + Published Language`, líneas oscuras desde IAM para `Open Host Service / Published Language`, una línea morada bidireccional para `Partnership + Published Language`, líneas doradas para el `Shared Kernel` y una línea gris punteada para `Separate Ways`. Así se evitan etiquetas repetidas y se mantiene el detalle contractual en la tabla siguiente.
 
 <p align="center">
   <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/context-map.svg" alt="DDD Context Map de Molinex" width="100%">
@@ -1607,9 +1927,89 @@ La combinación de referencias locales, Published Language y proyecciones permit
 
 Los sistemas externos planificados no constituyen Bounded Contexts. `Operational Intelligence` traducirá las mediciones provenientes de `Rice Mill Sensor Gateway` mediante un adaptador que proteja su modelo de dominio, mientras que `Identity and Access Management` y `Operational Intelligence` utilizarán un puerto de notificaciones para desacoplarse de `Notification Delivery Service`.
 
+#### Decisiones de diseño de la sesión
+
+La sesión partió de los hotspots del Big Picture Event Storming (2.4) y de las User Stories. La primera tabla indica qué decidió el equipo para cada hotspot y cuáles siguen abiertos. La segunda reúne las decisiones estructurales del modelo.
+
+| Hotspot (2.4) | Decisión del equipo | Estado |
+|:--|:--|:--|
+| Origen de las variables operativas | `RecordOperationalVariable` registra las variables y un adaptador traduce las mediciones del `Rice Mill Sensor Gateway`, de modo que el dominio no dependa del sensor. | Parcial: falta definir quién registra los valores y con qué frecuencia. |
+| Criterios y umbrales de evaluación | `OperationalAnomaly` solo se crea cuando una lectura incumple un criterio definido. | Abierto: faltan responsables, alcance por máquina y posibilidad de configuración. |
+| Ciclo de vida de alertas | `Alert` es un Aggregate propio, siempre ligado a una anomalía y con prioridad y estado de atención válidos. | Parcial: faltan los estados concretos, los responsables y las condiciones de cierre. |
+| Contratación y tenancy del SaaS | No se crea el contexto `Subscriptions`. `Commercial Engagement` queda separado de `Identity and Access Management` (Separate Ways) hasta que exista un flujo de alta confirmado. | Resuelto para este alcance. |
+| Corrección de información productiva | `UpdateProductionInformation` publica `ProductionInformationUpdated` para que `Quality and Yield Control` y `Reporting and Analytics` reaccionen sin compartir el Aggregate. | Parcial: faltan la auditoría, los permisos y las reglas de recálculo. |
+| Persistencia y exportación de reportes | `Reporting and Analytics` es un read side con proyecciones propias y no define Aggregate Roots. | Resuelto por ahora. Se revisará si se exige almacenar, versionar o aprobar reportes. |
+
+| Decisión estructural | Motivo |
+|:--|:--|
+| Los Bounded Contexts se implementan como módulos de un monolito modular con un único backend desplegable. | El análisis no presupone microservicios, y cada módulo conserva su modelo sin acceder a los Aggregates de otro contexto. |
+| `Profiles` se incluye dentro de `Identity and Access Management`. | La información de perfil forma parte del ciclo de vida del `User`. |
+| `Shared` no es un Bounded Context; solo se comparte un Shared Kernel con `Weight` y `MeasurementUnit`. | Production y Quality usan la misma magnitud, pero el Shared Kernel no incluye identificadores, Aggregates, repositorios, servicios de infraestructura ni clases base. |
+| Los Aggregates son pequeños, se referencian por identificador local y se sincronizan con consistencia eventual. | Cada Aggregate protege sus invariantes dentro de una transacción. Compartir el mismo dato físico no implica compartir la misma clase. |
+| Los módulos se comunican con eventos internos en memoria, sin broker de mensajería. | El sistema es un monolito modular y no necesita HTTP ni mensajería entre módulos. |
+| Los sistemas externos quedan fuera del dominio, detrás de adaptadores y puertos. | `Rice Mill Sensor Gateway` y `Notification Delivery Service` no son Bounded Contexts; un adaptador y un puerto protegen el modelo de dominio. |
+
+#### Trazabilidad con las User Stories
+
+Las tablas vinculan cada comando, consulta y flujo entre contextos con las User Stories (US) y Technical Stories (TS) del Product Backlog. Las historias TS-01 a TS-04 exponen mediante la RESTful API los mismos casos de uso.
+
+La primera tabla relaciona cada comando con el Domain Event que produce y con las historias que lo sustentan.
+
+| Bounded Context | Command | Domain Event | User Story / Technical Story |
+|:--|:--|:--|:--|
+| `Commercial Engagement` | `SubmitCommercialInquiry` | `CommercialInquirySubmitted` | US-36 |
+| `Identity and Access Management` | `RegisterUser` | `UserRegistered` | US-01 |
+| `Identity and Access Management` | `AuthenticateUser` | `UserAuthenticated` | US-02 |
+| `Identity and Access Management` | `AssignRole` | `RoleAssigned` | US-03 |
+| `Identity and Access Management` | `UpdateUserProfile` | `UserProfileUpdated` | US-04 |
+| `Production Management` | `RecordRawMaterialReception` | `RawMaterialReceptionRecorded` | US-05, TS-01 |
+| `Production Management` | `RegisterProductionBatch` | `ProductionBatchRegistered` | US-06, TS-01 |
+| `Production Management` | `RecordProductionInformation` | `ProductionInformationRecorded` | US-07, TS-01 |
+| `Production Management` | `UpdateProductionInformation` | `ProductionInformationUpdated` | US-10, TS-01 |
+| `Quality and Yield Control` | `RecordQualityResults` | `QualityResultsRecorded` | US-11 |
+| `Quality and Yield Control` | `RecordProductionWaste` | `ProductionWasteRecorded` | US-14 |
+| `Quality and Yield Control` | `IdentifyQualityDeviation` | `QualityDeviationIdentified` | US-16 |
+| `Asset and Maintenance Management` | `RegisterMachine` | `MachineRegistered` | US-17 |
+| `Asset and Maintenance Management` | `RecordPreventiveMaintenance` | `PreventiveMaintenanceRecorded` | US-19, TS-03 |
+| `Asset and Maintenance Management` | `RecordCorrectiveMaintenance` | `CorrectiveMaintenanceRecorded` | US-20, TS-03 |
+| `Operational Intelligence` | `RecordOperationalVariable` | `OperationalVariableRecorded` | Sin historia explícita (ver brecha 1) |
+| `Operational Intelligence` | `DetectOperationalAnomaly` | `OperationalAnomalyDetected` | US-23 |
+| `Operational Intelligence` | `GenerateOperationalAlert` | `OperationalAlertGenerated` | US-24 (la historia presupone que el sistema genera las alertas) |
+
+La segunda tabla relaciona cada consulta con las historias que la sustentan. `Reporting and Analytics` solo tiene consultas, porque funciona como read side.
+
+| Bounded Context | Query / Read Model y User Story / Technical Story |
+|:--|:--|
+| `Commercial Engagement` | `GetValueProposition`: US-31, US-32, US-35<br>`GetPlanCatalog`: US-33, US-34 |
+| `Identity and Access Management` | `GetAuthorizedFunctions`: US-03<br>`GetUserProfile`: US-04 |
+| `Production Management` | `GetProductionProcesses`: US-08, TS-01<br>`GetProductionHistory`: US-09, TS-01 |
+| `Quality and Yield Control` | `GetYieldIndicators`: US-12, TS-02<br>`GetRiceComposition`: US-13, TS-02<br>`GetProductionWaste`: US-14, TS-02<br>`CompareQualityIndicators`: US-15 |
+| `Asset and Maintenance Management` | `GetMachineStatus`: US-18<br>`GetMaintenanceHistory`: US-21, TS-03 |
+| `Operational Intelligence` | `GetOperationalVariables`: US-22<br>`GetAlerts`: US-24, TS-04<br>`GetAnomalyHistory`: US-25, TS-04<br>`GetMaintenanceRecommendations`: US-26 |
+| `Reporting and Analytics` | `GetOperationalSummary`: US-27<br>`GetProductionReport`: US-28<br>`GetMaintenanceReport`: US-29<br>`GetOperationalTrends`: US-30 |
+
+Los flujos entre Bounded Contexts del Context Map también se apoyan en historias concretas.
+
+| Flujo entre contextos | Contrato o evento | User Stories involucradas |
+|:--|:--|:--|
+| `Identity and Access Management` hacia los módulos operativos | `AuthenticatedPrincipal` y claims de autorización | US-02 y US-03; condición de acceso de TS-01 a TS-04 |
+| `Production Management` hacia `Quality and Yield Control` | `ProductionInformationRecorded` y `ProductionInformationUpdated` | US-07 y US-10 originan el flujo; US-11 y US-14 lo usan al vincular calidad y merma con el proceso |
+| `Quality and Yield Control` hacia `Operational Intelligence` | `QualityDeviationIdentified` | US-16 origina el flujo y puede alimentar las recomendaciones de US-26 |
+| `Asset and Maintenance Management` y `Operational Intelligence` | Eventos e identificadores locales de máquina y anomalía | US-20 y US-21 se coordinan con US-23 y US-25 |
+| Módulos operativos hacia `Reporting and Analytics` | Eventos publicados | US-05 a US-26 aportan los datos; US-27 a US-30 los consumen |
+| `Commercial Engagement` y `Identity and Access Management` | Separate Ways, sin contrato | US-36 no crea cuenta, tenant ni suscripción |
+
+Con estas tablas, las 36 User Stories y las 4 Technical Stories quedan cubiertas al menos una vez. La trazabilidad también dejó tres brechas:
+
+1. `RecordOperationalVariable` no tiene historia explícita. US-22 solo consulta variables y US-23 las evalúa, pero ninguna historia define quién registra la variable ni cómo llegan las mediciones.
+2. TS-04 exige actualizar el estado de una anomalía o alerta, pero el modelo no incluye un comando para ese cambio.
+3. US-24 da por hecho que las alertas ya fueron generadas, y `GenerateOperationalAlert` no tiene un criterio de aceptación propio.
+
+Las dos primeras dependen de los hotspots "Origen de las variables operativas" y "Ciclo de vida de alertas", que siguen abiertos en la sección 2.4. Conviene cerrarlas con nuevas historias o criterios de aceptación antes de implementar esos flujos.
+
 ### 4.6.2 Software Architecture Context Diagram
 
-El diagrama de contexto presenta a Molinex como un único sistema de software, muestra los objetivos principales de sus actores e incorpora `Rice Mill Sensor Gateway` y `Notification Delivery Service` como integraciones externas planificadas. No expone decisiones internas de implementación.
+El diagrama de contexto presenta a Molinex como un único sistema de software, muestra los objetivos principales de sus actores e incorpora `Rice Mill Sensor Gateway` y `Notification Delivery Service` como integraciones externas. No expone decisiones internas de implementación.
 
 <p align="center">
   <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/software-system-context.svg" alt="Software Architecture Context Diagram de Molinex" width="100%">
@@ -1619,7 +2019,7 @@ El diagrama de contexto presenta a Molinex como un único sistema de software, m
 
 ### 4.6.3 Software Architecture Container Diagrams
 
-El diagrama separa explícitamente la `Web Application` de la `Single Page Application`. La primera utiliza Nginx para servir al navegador los archivos estáticos generados por `ng build`; la SPA contiene la aplicación Angular que se ejecuta en el navegador. Por ello, el flujo principal es `Web Application → Single Page Application → RESTful API`. Los usuarios interactúan con la SPA, mientras que esta consume la API mediante JSON sobre HTTPS. La Landing Page se mantiene como un contenedor independiente porque cubre la experiencia pública y únicamente envía solicitudes comerciales a la API.
+El administrador, el técnico de mantenimiento y el operario de producción acceden a Molinex por HTTPS mediante el contenedor Web Application, desplegado en Azure Static Web Apps. Este contenedor entrega la Single-Page Application desarrollada con Angular 22, TypeScript, Angular Signals y Angular Material; la SPA se ejecuta en el navegador y consume la RESTful API de Spring Boot mediante JSON sobre HTTPS. La Landing Page se mantiene como un contenedor independiente que presenta la oferta pública, redirige a la aplicación y envía solicitudes comerciales a la API.
 
 <p align="center">
   <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/container-diagram.svg" alt="Software Architecture Container Diagram de Molinex" width="100%">
@@ -1631,9 +2031,11 @@ El diagrama separa explícitamente la `Web Application` de la `Single Page Appli
 
 Los diagramas de componentes se organizan por producto de software y por límite funcional. Para cada producto se presenta primero una vista general y luego una vista detallada por Bounded Context, además de la estructura compartida correspondiente. Esta separación evita mezclar los límites propios de la SPA de Angular con los del monolito modular de Spring Boot.
 
+Dentro de cada producto, los Bounded Contexts se presentan según su tipo de subdominio, como se clasificó en 4.6.1: primero los Core (`Production Management`, `Quality and Yield Control`, `Asset and Maintenance Management` y `Operational Intelligence`), luego los Supporting (`Commercial Engagement` y `Reporting and Analytics`) y al final el Generic (`Identity and Access Management`). Los módulos compartidos van al cierre porque no son Bounded Contexts.
+
 #### Frontend Component Diagrams
 
-La vista general muestra las áreas funcionales internas de la Single Page Application y su acceso a la RESTful API. En las vistas detalladas, cada área se organiza mediante los límites Presentation, Application, Domain e Infrastructure. El Frontend Shared Module reúne capacidades transversales de interfaz, sesión y comunicación HTTP; únicamente Weight y MeasurementUnit corresponden al modelo compartido entre Producción y Calidad.
+La vista general muestra los siete Bounded Contexts internos de la Single-Page Application, el Shared Kernel y su acceso a la RESTful API. En las vistas detalladas, cada contexto se organiza mediante los límites Presentation, Application, Domain e Infrastructure. Presentation contiene componentes Angular; Application coordina el estado mediante stores basados en Signals; Domain expresa entidades, objetos de valor y modelos de lectura; e Infrastructure concentra la comunicación HTTP y el ensamblaje de recursos. El Shared Kernel reúne las capacidades transversales del frontend y los objetos de valor `Weight` y `MeasurementUnit` compartidos por Production Management y Quality and Yield Control.
 
 ##### Frontend Component Overview
 
@@ -1643,22 +2045,6 @@ La vista general muestra las áreas funcionales internas de la Single Page Appli
 
 **Figura: Molinex Frontend Component Overview. Fuente: elaboración propia en Structurizr.**
 
-##### Commercial Engagement Frontend Components
-
-<p align="center">
-  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/frontend-commercial-engagement-component-diagram.svg" alt="Commercial Engagement Frontend Component Diagram" width="100%">
-</p>
-
-**Figura: Commercial Engagement Frontend Component Diagram. Fuente: elaboración propia en Structurizr.**
-
-##### Identity and Access Management Frontend Components
-
-<p align="center">
-  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/frontend-identity-access-management-component-diagram.svg" alt="Identity and Access Management Frontend Component Diagram" width="100%">
-</p>
-
-**Figura: Identity and Access Management Frontend Component Diagram. Fuente: elaboración propia en Structurizr.**
-
 ##### Production Management Frontend Components
 
 <p align="center">
@@ -1666,6 +2052,8 @@ La vista general muestra las áreas funcionales internas de la Single Page Appli
 </p>
 
 **Figura: Production Management Frontend Component Diagram. Fuente: elaboración propia en Structurizr.**
+
+En el Bounded Context **Production Management**, los componentes de Presentation permiten consultar y registrar recepciones de materia prima, lotes y registros de producción. Estos componentes coordinan las operaciones mediante `ProductionManagementStore`, trabajan con el modelo de dominio del contexto y delegan la comunicación remota a `production-management/infrastructure`. Esta última agrupa `ProductionApi` y los assemblers que transforman los recursos de la RESTful API de Spring Boot en entidades del frontend y viceversa.
 
 ##### Quality and Yield Control Frontend Components
 
@@ -1691,6 +2079,14 @@ La vista general muestra las áreas funcionales internas de la Single Page Appli
 
 **Figura: Operational Intelligence Frontend Component Diagram. Fuente: elaboración propia en Structurizr.**
 
+##### Commercial Engagement Frontend Components
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/frontend-commercial-engagement-component-diagram.svg" alt="Commercial Engagement Frontend Component Diagram" width="100%">
+</p>
+
+**Figura: Commercial Engagement Frontend Component Diagram. Fuente: elaboración propia en Structurizr.**
+
 ##### Reporting and Analytics Frontend Components
 
 <p align="center">
@@ -1699,17 +2095,25 @@ La vista general muestra las áreas funcionales internas de la Single Page Appli
 
 **Figura: Reporting and Analytics Frontend Component Diagram. Fuente: elaboración propia en Structurizr.**
 
-##### Frontend Shared Module Components
+##### Identity and Access Management Frontend Components
 
 <p align="center">
-  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/frontend-shared-module-component-diagram.svg" alt="Frontend Shared Module Component Diagram" width="100%">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/frontend-identity-access-management-component-diagram.svg" alt="Identity and Access Management Frontend Component Diagram" width="100%">
 </p>
 
-**Figura: Frontend Shared Module Component Diagram. Fuente: elaboración propia en Structurizr.**
+**Figura: Identity and Access Management Frontend Component Diagram. Fuente: elaboración propia en Structurizr.**
+
+##### Frontend Shared Kernel Components
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/frontend-shared-module-component-diagram.svg" alt="Frontend Shared Kernel Component Diagram" width="100%">
+</p>
+
+**Figura: Frontend Shared Kernel Component Diagram. Fuente: elaboración propia en Structurizr.**
 
 #### Backend Component Diagrams
 
-La vista general representa los módulos de los Bounded Contexts que conviven dentro de la RESTful API, sus eventos en proceso y los sistemas externos planificados. Cada vista detallada separa Interfaces, Application, Domain e Infrastructure, de modo que las dependencias técnicas apunten hacia contratos controlados por el dominio. El Production-Quality Shared Kernel constituye una excepción intencional: contiene solo objetos de valor de Domain, por lo que no se inventan capas de Interfaces, Application o Infrastructure.
+La vista general representa los módulos de los Bounded Contexts que conviven dentro de la RESTful API, sus eventos en proceso y los sistemas externos. Cada vista detallada separa Interfaces, Application, Domain e Infrastructure: las interfaces REST se implementan con Spring Web MVC, los servicios de aplicación coordinan comandos y consultas, el modelo de dominio conserva las reglas del negocio y la infraestructura utiliza Spring Data JPA para persistencia. El Production-Quality Shared Kernel constituye una excepción intencional: contiene solo objetos de valor de Domain, por lo que no se inventan capas de Interfaces, Application o Infrastructure.
 
 ##### Backend Component Overview
 
@@ -1718,22 +2122,6 @@ La vista general representa los módulos de los Bounded Contexts que conviven de
 </p>
 
 **Figura: Molinex Backend Component Overview. Fuente: elaboración propia en Structurizr.**
-
-##### Commercial Engagement Backend Components
-
-<p align="center">
-  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/backend-commercial-engagement-component-diagram.svg" alt="Commercial Engagement Backend Component Diagram" width="100%">
-</p>
-
-**Figura: Commercial Engagement Backend Component Diagram. Fuente: elaboración propia en Structurizr.**
-
-##### Identity and Access Management Backend Components
-
-<p align="center">
-  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/backend-identity-access-management-component-diagram.svg" alt="Identity and Access Management Backend Component Diagram" width="100%">
-</p>
-
-**Figura: Identity and Access Management Backend Component Diagram. Fuente: elaboración propia en Structurizr.**
 
 ##### Production Management Backend Components
 
@@ -1767,6 +2155,14 @@ La vista general representa los módulos de los Bounded Contexts que conviven de
 
 **Figura: Operational Intelligence Backend Component Diagram. Fuente: elaboración propia en Structurizr.**
 
+##### Commercial Engagement Backend Components
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/backend-commercial-engagement-component-diagram.svg" alt="Commercial Engagement Backend Component Diagram" width="100%">
+</p>
+
+**Figura: Commercial Engagement Backend Component Diagram. Fuente: elaboración propia en Structurizr.**
+
 ##### Reporting and Analytics Backend Components
 
 <p align="center">
@@ -1774,6 +2170,14 @@ La vista general representa los módulos de los Bounded Contexts que conviven de
 </p>
 
 **Figura: Reporting and Analytics Backend Component Diagram. Fuente: elaboración propia en Structurizr.**
+
+##### Identity and Access Management Backend Components
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/backend-identity-access-management-component-diagram.svg" alt="Identity and Access Management Backend Component Diagram" width="100%">
+</p>
+
+**Figura: Identity and Access Management Backend Component Diagram. Fuente: elaboración propia en Structurizr.**
 
 ##### Production-Quality Shared Kernel Components
 
@@ -1789,6 +2193,8 @@ La vista general representa los módulos de los Bounded Contexts que conviven de
 
 El modelado se presenta por Bounded Context; por ello, no existe un único modelo de clases global que permita acceder directamente a los objetos internos de todos los módulos.
 
+Los modelos de clases siguen el mismo orden que 4.6.4: Core, Supporting y Generic Subdomain, según la clasificación de 4.6.1.
+
 Los diagramas representan el diseño orientado a objetos del dominio y no un esquema de base de datos. Los atributos se mantienen privados, las operaciones públicas expresan comportamientos que protegen invariantes y cada Aggregate Root dispone de su propio contrato de repositorio. Las referencias hacia otros Aggregates se expresan mediante identificadores tipados. Cuando dos contextos representan la misma identidad, cada uno define su propio tipo local en lugar de importar el modelo interno del otro.
 
 | Notación | Significado en el diseño |
@@ -1802,75 +2208,211 @@ Los diagramas representan el diseño orientado a objetos del dominio y no un esq
 | `<<Published Language>>` | Contrato estable utilizado para intercambiar información sin compartir modelos internos. |
 | `<<Port>>` | Frontera que desacopla el dominio de una integración externa. |
 
-#### Commercial Engagement Bounded Context
-
-`CommercialInquiry` es el único Aggregate Root transaccional. Los planes y la propuesta de valor se mantienen como modelos de lectura porque los requerimientos no confirman contratación, pago ni activación de suscripciones.
-
-<p align="center">
-  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/commercial-engagement-class-diagram.svg" alt="Commercial Engagement Bounded Context Class Diagram" width="100%">
-</p>
-
-**Figura: Commercial Engagement Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
-
-#### Identity and Access Management Bounded Context
-
-`User` protege la validez de la cuenta, el perfil y el rol asignado. La unicidad global del correo se evalúa mediante `UniqueEmailPolicy`, que consulta el contrato `UserRepository`, porque una instancia aislada de `User` no puede conocer las demás cuentas. Los otros contextos no reciben el Aggregate: consumen únicamente `AuthenticatedPrincipal`, definido como Published Language.
-
-<p align="center">
-  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/identity-access-management-class-diagram.svg" alt="Identity and Access Management Bounded Context Class Diagram" width="100%">
-</p>
-
-**Figura: Identity and Access Management Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
-
 #### Production Management Bounded Context
 
-`RawMaterialReception`, `ProductionBatch` y `ProductionRecord` son Aggregates independientes. Un lote conserva un `RawMaterialReceptionId` y un registro productivo conserva un `ProductionBatchId`; ninguno contiene otro Aggregate Root. `Weight` y `MeasurementUnit` pertenecen al Shared Kernel acordado con Quality and Yield Control.
+##### Production Management Backend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Production Management** para el backend Java con Spring Boot. La capa `interfaces.rest` expone recursos y assemblers REST; `application` separa comandos y consultas mediante CQRS; `domain` mantiene Aggregates, Value Objects, eventos y contratos de repositorio sin dependencias de JPA; e `infrastructure.persistence.jpa` implementa entidades de persistencia, mappers, repositorios Spring Data y adapters.
+
+`RawMaterialReception`, `ProductionBatch` y `ProductionRecord` son Aggregates independientes. Un lote conserva un `RawMaterialReceptionId` y un registro productivo conserva un `ProductionBatchId`; ninguno contiene otro Aggregate Root. Sus identificadores de dominio encapsulan `Long`, mientras que las entidades de persistencia los mapean a columnas MySQL `BIGINT`. `Weight` y `MeasurementUnit` pertenecen al Shared Kernel acordado con Quality and Yield Control.
 
 <p align="center">
-  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/production-management-class-diagram.svg" alt="Production Management Bounded Context Class Diagram" width="100%">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/backend-production-management-class-diagram.svg" alt="Production Management Backend Class Diagram" width="100%">
 </p>
 
-**Figura: Production Management Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
+**Figura: Production Management Backend Class Diagram. Fuente: elaboración propia en PlantUML.**
+
+##### Production Management Frontend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Production Management** para el frontend Angular. `ProductionManagementStore` conserva el estado reactivo mediante Signals y coordina las operaciones expuestas por `ProductionManagementApi`. Los endpoints y assemblers traducen entre los recursos REST —que utilizan tipos serializables— y el modelo de dominio del frontend.
+
+`RawMaterialReception`, `ProductionBatch` y `ProductionRecord` se modelan como Aggregate Roots independientes. Sus identidades se expresan mediante `RawMaterialReceptionId`, `ProductionBatchId` y `ProductionRecordId`, objetos de valor que encapsulan un `number` para mantener correspondencia con identificadores `Long` y columnas `BIGINT` en backend y base de datos. De igual manera, fechas, códigos, proveedor, origen, nombre del proceso y periodo productivo se representan mediante Value Objects. `ProductionDetails` reutiliza `Weight` y `MeasurementUnit` del Shared Kernel acordado entre Production Management y Quality and Yield Control.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/frontend-production-management-class-diagram.svg" alt="Production Management Frontend Class Diagram" width="100%">
+</p>
+
+**Figura: Production Management Frontend Class Diagram. Fuente: elaboración propia en PlantUML.**
 
 #### Quality and Yield Control Bounded Context
 
-`QualityAssessment`, `WasteRecord` y `QualityDeviation` protegen invariantes distintas y permanecen como Aggregates separados. El `ProductionRecordId` mostrado pertenece al lenguaje local de Quality; no importa la clase homónima de Production Management.
+##### Quality and Yield Control Backend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Quality and Yield Control** para el backend Java con Spring Boot. Las operaciones REST se traducen a comandos y consultas en `application`; el modelo de dominio permanece libre de anotaciones JPA; y la infraestructura utiliza entidades de persistencia paralelas, mappers, repositorios Spring Data y adapters para implementar los contratos del dominio.
+
+`QualityAssessment`, `WasteRecord` y `QualityDeviation` protegen invariantes distintas y permanecen como Aggregates separados. El `ProductionRecordId` mostrado pertenece al lenguaje local de Quality; no importa la clase homónima de Production Management. Los identificadores se expresan con `Long` en Java y se persisten como `BIGINT` en MySQL.
 
 <p align="center">
-  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/quality-yield-control-class-diagram.svg" alt="Quality and Yield Control Bounded Context Class Diagram" width="100%">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/backend-quality-yield-control-class-diagram.svg" alt="Quality and Yield Control Backend Class Diagram" width="100%">
 </p>
 
-**Figura: Quality and Yield Control Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
+**Figura: Quality and Yield Control Backend Class Diagram. Fuente: elaboración propia en PlantUML.**
+
+##### Quality and Yield Control Frontend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Quality and Yield Control** para el frontend Angular. `QualityControlStore` mantiene mediante Signals las evaluaciones, los registros de merma, los indicadores, la composición del arroz, las comparaciones y las desviaciones; `QualityApi` coordina las solicitudes HTTP y los assemblers traducen entre recursos REST serializables y el modelo del dominio frontend.
+
+`QualityAssessment`, `WasteRecord` y `QualityDeviation` conservan ciclos de vida independientes como Aggregate Roots. Sus identificadores y la referencia local a `ProductionRecord` se expresan mediante Value Objects que encapsulan un `number`, en correspondencia con identificadores `Long` y columnas `BIGINT` del backend y la base de datos. Porcentajes, rangos, mediciones, fechas y fuentes de desviación también se modelan como Value Objects. `Weight` y `MeasurementUnit` se reutilizan desde el Shared Kernel acordado con Production Management, mientras que los indicadores, la composición y las comparaciones se representan como modelos de lectura.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/frontend-quality-yield-control-class-diagram.svg" alt="Quality and Yield Control Frontend Class Diagram" width="100%">
+</p>
+
+**Figura: Quality and Yield Control Frontend Class Diagram. Fuente: elaboración propia en PlantUML.**
 
 #### Asset and Maintenance Management Bounded Context
 
-`Machine` y `MaintenanceRecord` evolucionan como Aggregates independientes y se relacionan mediante `MachineId`. Un mantenimiento correctivo puede conservar una `AnomalyReference` informativa, pero no importa el Aggregate `OperationalAnomaly` de Operational Intelligence.
+##### Asset and Maintenance Management Backend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Asset and Maintenance Management** para el backend Java con Spring Boot. Los controllers y assemblers REST dependen de servicios CQRS de aplicación; el dominio conserva sus reglas sin dependencias de frameworks; y la infraestructura implementa la persistencia mediante entidades JPA separadas, mappers, repositorios Spring Data y repository adapters.
+
+`Machine` y `MaintenanceRecord` evolucionan como Aggregates independientes y se relacionan mediante `MachineId`. Un mantenimiento correctivo puede conservar una `AnomalyReference` informativa, pero no importa el Aggregate `OperationalAnomaly` de Operational Intelligence. Los identificadores `Long` se corresponden con columnas MySQL `BIGINT`, incluidas las referencias foráneas.
 
 <p align="center">
-  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/asset-maintenance-management-class-diagram.svg" alt="Asset and Maintenance Management Bounded Context Class Diagram" width="100%">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/backend-asset-maintenance-management-class-diagram.svg" alt="Asset and Maintenance Management Backend Class Diagram" width="100%">
 </p>
 
-**Figura: Asset and Maintenance Management Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
+**Figura: Asset and Maintenance Management Backend Class Diagram. Fuente: elaboración propia en PlantUML.**
+
+##### Asset and Maintenance Management Frontend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Asset and Maintenance Management** para el frontend Angular. `AssetMaintenanceStore` mantiene mediante Signals las máquinas y los registros de mantenimiento, mientras `AssetMaintenanceApi` coordina las operaciones HTTP. Los assemblers aíslan al dominio frontend de los recursos serializables intercambiados con la RESTful API.
+
+`Machine` y `MaintenanceRecord` se modelan como Aggregate Roots independientes y se relacionan únicamente mediante el Value Object `MachineId`. Sus identificadores encapsulan un `number`, en correspondencia con identificadores `Long` y columnas `BIGINT` del backend y la base de datos. El código, nombre, modelo, fechas, descripción, responsable y referencia de anomalía también se expresan mediante Value Objects. `CorrectiveMaintenanceDetails` agrupa la falla, la causa, la acción ejecutada y el tiempo de inactividad, y solo acompaña a los mantenimientos correctivos.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/frontend-asset-maintenance-management-class-diagram.svg" alt="Asset and Maintenance Management Frontend Class Diagram" width="100%">
+</p>
+
+**Figura: Asset and Maintenance Management Frontend Class Diagram. Fuente: elaboración propia en PlantUML.**
 
 #### Operational Intelligence Bounded Context
 
-`OperationalReading`, `OperationalAnomaly` y `Alert` mantienen ciclos de vida separados. `AnomalyDetectionService` concentra la evaluación que involucra una lectura y un criterio. `SensorGatewayPort` actúa como Anti-Corruption Layer frente al proveedor de sensores, mientras que `NotificationPort` evita acoplar el dominio al servicio de entrega de notificaciones.
+##### Operational Intelligence Backend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Operational Intelligence** para el backend Java con Spring Boot. La capa REST delega en servicios CQRS; el dominio contiene Aggregates, Value Objects, servicios y puertos sin dependencias de infraestructura; y los adapters de persistencia e integración conectan Spring Data JPA, el proveedor de sensores y el servicio de notificaciones sin contaminar el modelo del dominio.
+
+`OperationalReading`, `OperationalAnomaly` y `Alert` mantienen ciclos de vida separados. `AnomalyDetectionService` concentra la evaluación que involucra una lectura y un criterio. `SensorGatewayPort` actúa como Anti-Corruption Layer frente al proveedor de sensores, mientras que `NotificationPort` evita acoplar el dominio al servicio de entrega de notificaciones. Los identificadores y referencias usan `Long` en Java y columnas `BIGINT` en MySQL.
 
 <p align="center">
-  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/operational-intelligence-class-diagram.svg" alt="Operational Intelligence Bounded Context Class Diagram" width="100%">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/backend-operational-intelligence-class-diagram.svg" alt="Operational Intelligence Backend Class Diagram" width="100%">
 </p>
 
-**Figura: Operational Intelligence Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
+**Figura: Operational Intelligence Backend Class Diagram. Fuente: elaboración propia en PlantUML.**
+
+##### Operational Intelligence Frontend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Operational Intelligence** para el frontend Angular. `OperationalIntelligenceStore` mantiene mediante Signals las lecturas, anomalías, alertas y recomendaciones, mientras `IntelligenceApi` coordina las solicitudes HTTP. Los assemblers reconstruyen el modelo frontend a partir de recursos REST serializables y preparan las actualizaciones de alertas.
+
+`OperationalReading`, `OperationalAnomaly` y `Alert` mantienen ciclos de vida independientes como Aggregate Roots y se relacionan únicamente mediante identificadores locales. Estos identificadores encapsulan un `number`, en correspondencia con identificadores `Long` y columnas `BIGINT` del backend y la base de datos. Las mediciones, los criterios, las fechas y la acción sugerida se expresan mediante Value Objects. `MaintenanceRecommendation` permanece como modelo de lectura y referencia una máquina y una anomalía sin importar Aggregates de otros bounded contexts.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/frontend-operational-intelligence-class-diagram.svg" alt="Operational Intelligence Frontend Class Diagram" width="100%">
+</p>
+
+**Figura: Operational Intelligence Frontend Class Diagram. Fuente: elaboración propia en PlantUML.**
+
+#### Commercial Engagement Bounded Context
+
+##### Commercial Engagement Backend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Commercial Engagement** para el backend Java con Spring Boot. Los controllers REST delegan comandos y consultas en servicios de aplicación; el dominio conserva el Aggregate y sus Value Objects sin dependencias JPA; el repository adapter traduce hacia una entidad de persistencia separada; y el catálogo comercial se obtiene mediante un puerto de consulta para no acoplar el dominio a su fuente de configuración.
+
+`CommercialInquiry` es el único Aggregate Root transaccional. Su identificador encapsula un `Long` y se almacena como `BIGINT` en MySQL. Los planes y la propuesta de valor se mantienen como modelos de lectura porque el alcance no confirma contratación, pago ni activación de suscripciones.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/backend-commercial-engagement-class-diagram.svg" alt="Commercial Engagement Backend Class Diagram" width="100%">
+</p>
+
+**Figura: Commercial Engagement Backend Class Diagram. Fuente: elaboración propia en PlantUML.**
+
+##### Commercial Engagement Frontend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Commercial Engagement** para el frontend Angular. `CommercialStore` mantiene mediante Signals el catálogo de planes, la propuesta de valor y el estado de la consulta comercial. `CommercialApi` coordina las solicitudes HTTP y los assemblers traducen los recursos REST al modelo frontend.
+
+`CommercialInquiry` es el único Aggregate Root transaccional y encapsula la información de contacto, el mensaje y la fecha de envío mediante Value Objects. Su identificador y el de los planes encapsulan un `number`, en correspondencia con identificadores `Long` y columnas `BIGINT`. `Plan` y `ValueProposition` permanecen como modelos de lectura, ya que el alcance actual no incorpora contratación ni activación de suscripciones.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/frontend-commercial-engagement-class-diagram.svg" alt="Commercial Engagement Frontend Class Diagram" width="100%">
+</p>
+
+**Figura: Commercial Engagement Frontend Class Diagram. Fuente: elaboración propia en PlantUML.**
 
 #### Reporting and Analytics Bounded Context
 
-Reporting and Analytics se modela como un *read side*: consume eventos expresados mediante Published Language, construye proyecciones propias y responde consultas. No se introduce un Aggregate Root para reportes porque los requerimientos actuales no establecen identidad, versionado, aprobación ni ciclo de vida transaccional para ellos.
+##### Reporting and Analytics Backend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Reporting and Analytics** para el backend Java con Spring Boot. El controller REST expone exclusivamente consultas; los servicios de aplicación construyen los modelos de lectura; un subscriber consume eventos mediante Published Language; y un Anti-Corruption Layer traduce los mensajes externos antes de actualizar proyecciones JPA propias.
+
+Reporting and Analytics se modela como un *read side*: no se introduce un Aggregate Root para los reportes porque el alcance actual no establece identidad, versionado, aprobación ni ciclo de vida transaccional para ellos. Cada proyección usa un identificador `Long`, persistido como `BIGINT`, y conserva las referencias de los Aggregates de origen también como `BIGINT`, sin importar sus modelos internos.
 
 <p align="center">
-  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/reporting-analytics-class-diagram.svg" alt="Reporting and Analytics Bounded Context Class Diagram" width="100%">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/backend-reporting-analytics-class-diagram.svg" alt="Reporting and Analytics Backend Class Diagram" width="100%">
 </p>
 
-**Figura: Reporting and Analytics Bounded Context Class Diagram. Fuente: elaboración propia en PlantUML.**
+**Figura: Reporting and Analytics Backend Class Diagram. Fuente: elaboración propia en PlantUML.**
+
+##### Reporting and Analytics Frontend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Reporting and Analytics** para el frontend Angular. `ReportingStore` conserva mediante Signals el resumen operativo, los reportes de producción y mantenimiento, las tendencias y el periodo seleccionado. `ReportingApi` ejecuta consultas de solo lectura y los assemblers reconstruyen las proyecciones desde recursos REST serializables.
+
+Este bounded context se modela como un *read side*: `OperationalSummary`, `ProductionReport`, `MaintenanceReport` y `OperationalTrend` son modelos de lectura, no Aggregate Roots. Los periodos, métricas, dimensiones, filas y puntos de tendencia se expresan mediante Value Objects. De esta manera el frontend consume proyecciones propias sin importar los Aggregates de los bounded contexts que originan la información.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/frontend-reporting-analytics-class-diagram.svg" alt="Reporting and Analytics Frontend Class Diagram" width="100%">
+</p>
+
+**Figura: Reporting and Analytics Frontend Class Diagram. Fuente: elaboración propia en PlantUML.**
+
+#### Identity and Access Management Bounded Context
+
+##### Identity and Access Management Backend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Identity and Access Management** para el backend Java con Spring Boot. Los controllers REST delegan autenticación, comandos y consultas en servicios de aplicación; el dominio conserva el usuario, sus políticas y su lenguaje publicado sin dependencias de Spring; la persistencia utiliza una entidad JPA separada; y los adapters de seguridad encapsulan BCrypt, JWT y Spring Security.
+
+`User` protege la validez de la cuenta, el perfil y el rol asignado. La unicidad global del correo se evalúa mediante `UniqueEmailPolicy`, que consulta el contrato `UserRepository`, porque una instancia aislada de `User` no puede conocer las demás cuentas. `UserId` encapsula un `Long` y `UserPersistenceEntity` lo almacena como `BIGINT`. Los otros contextos no reciben el Aggregate: consumen únicamente `AuthenticatedPrincipal`, cuyo `subject` también utiliza `Long`, definido como Published Language.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/backend-identity-access-management-class-diagram.svg" alt="Identity and Access Management Backend Class Diagram" width="100%">
+</p>
+
+**Figura: Identity and Access Management Backend Class Diagram. Fuente: elaboración propia en PlantUML.**
+
+##### Identity and Access Management Frontend Class Diagram
+
+El diagrama representa el diseño objetivo del bounded context **Identity and Access Management** para el frontend Angular. `IdentityAccessStore` conserva mediante Signals la sesión autenticada y los usuarios, coordina los comandos de acceso y registro, y utiliza `TokenStorage` para persistir el token. `IamApi`, los assemblers, el guard y el interceptor aíslan las responsabilidades de comunicación, transformación y protección de rutas.
+
+`User` es el Aggregate Root y encapsula su identidad, correo, perfil, rol y estado mediante tipos del dominio. `UserId` contiene un `number`, en correspondencia con identificadores `Long` y columnas `BIGINT`. `AuthenticatedSession` permanece como Value Object del contexto y referencia al usuario por identidad; las credenciales aparecen como datos primitivos únicamente en Commands y Resources de las fronteras de aplicación e infraestructura.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/frontend-identity-access-management-class-diagram.svg" alt="Identity and Access Management Frontend Class Diagram" width="100%">
+</p>
+
+**Figura: Identity and Access Management Frontend Class Diagram. Fuente: elaboración propia en PlantUML.**
+
+#### Backend Shared Components Class Diagram
+
+El diagrama separa explícitamente el **Production-Quality Shared Kernel** de los componentes técnicos reutilizables del backend. El Shared Kernel de DDD contiene únicamente `Weight` y `MeasurementUnit`, acordados entre Production Management y Quality and Yield Control. No contiene identificadores, Aggregates ni repositorios de otros bounded contexts.
+
+Las bases de Aggregate, los contratos de eventos, `Result`, `ApplicationError`, la respuesta REST común, la auditoría JPA y el publicador de eventos se muestran en paquetes técnicos independientes. Se reutilizan para evitar duplicación, pero no forman parte del Shared Kernel del dominio. La base de persistencia utiliza `Long` y lo mapea a `BIGINT` en MySQL.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/backend-shared-components-class-diagram.svg" alt="Backend Shared Components Class Diagram" width="100%">
+</p>
+
+**Figura: Backend Shared Components Class Diagram. Fuente: elaboración propia en PlantUML.**
+
+#### Frontend Shared Kernel Class Diagram
+
+El Shared Kernel del frontend reúne únicamente contratos y capacidades realmente reutilizados por varios bounded contexts. `Weight` y `MeasurementUnit` constituyen el modelo compartido acordado entre Production Management y Quality and Yield Control. `BaseApi`, `BaseApiEndpoint`, los contratos base de recursos y respuestas, el interceptor de autenticación y `ApiErrorHandler` proporcionan la infraestructura común basada en Angular `HttpClient` y RxJS.
+
+El Shared Kernel no es un bounded context y por ello se presenta después de los contextos core, supporting y generic. Su alcance se mantiene reducido para evitar que los modelos particulares de negocio se conviertan en dependencias globales.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/frontend-shared-kernel-class-diagram.svg" alt="Frontend Shared Kernel Class Diagram" width="100%">
+</p>
+
+**Figura: Frontend Shared Kernel Class Diagram. Fuente: elaboración propia en PlantUML.**
 
 ## 4.8 Database Design
 
@@ -1926,27 +2468,49 @@ El código fuente del proyecto Molinex se gestiona mediante Git y GitHub. Cada p
 | Project Report | `https://github.com/Vanguard-open-source/molinex-report` |
 | Landing Page | `https://github.com/Vanguard-open-source/molinex-website` |
 | Frontend Web Application | `https://github.com/Vanguard-open-source/molinex-webapp` |
+| Backend RESTful API de Sprint 3 | [molinex-platform-backend](https://github.com/Vanguard-open-source/molinex-platform-backend) |
 | Mock Web Service de Sprint 2 | `https://github.com/Vanguard-open-source/molinex-platform-mock` |
 
-La RESTful API definitiva aún no dispone de un repositorio. El Mock Web Service se documenta como una solución temporal de integración y no como sustituto del backend definitivo.
+El backend propio se desarrolla en Java con Spring Boot para el Sprint 3 (AV2). El Mock Web Service se conserva como evidencia de la integración del Sprint 2 (TB1).
 
 Para organizar el desarrollo colaborativo se utiliza GitFlow, considerando las siguientes ramas y convenciones:
 
 - La rama `main` contiene las versiones estables del proyecto.
 - La rama `develop` concentra la integración de los cambios.
-- Las ramas `feature/<modulo>-<descripcion>` se utilizan para desarrollar funcionalidades o secciones específicas y se integran posteriormente en `develop`.
+- Las ramas `feature/<module>-<description>` se utilizan para desarrollar funcionalidades o secciones específicas y se integran posteriormente en `develop`.
 - Las ramas `release/v<MAJOR>.<MINOR>.<PATCH>` se utilizan para preparar una versión candidata antes de integrarla en `main` y actualizar `develop`.
-- Las ramas `hotfix/<descripcion>` se utilizan para corregir errores críticos detectados en una versión estable; luego se integran en `main` y `develop`.
+- Las ramas `hotfix/<description>` se utilizan para corregir errores críticos detectados en una versión estable; luego se integran en `main` y `develop`.
 
 Las versiones se identifican mediante Semantic Versioning con el formato `MAJOR.MINOR.PATCH`. Por ejemplo, `v1.0.0` corresponde a una primera versión estable y `v1.0.1` a una corrección compatible.
 
-Los mensajes de commit siguen Conventional Commits con el formato `<tipo>(<alcance>): <descripción>`. Se utilizan tipos como `feat`, `fix`, `docs`, `refactor`, `test` y `chore`. Algunos ejemplos aplicados al proyecto son `docs(report): update chapter 5 evidence` y `feat(landing): add pricing section`.
+Los mensajes de commit siguen Conventional Commits con el formato `<type>(<scope>): <description>`. Se utilizan tipos como `feat`, `fix`, `docs`, `refactor`, `test` y `chore`. Algunos ejemplos aplicados al proyecto son `docs(report): update chapter 5 evidence` y `feat(landing): add pricing section`.
 
 Las ramas específicas y los Pull Requests utilizados durante el Sprint 2 se detallan en la sección 5.2.2.4.
 
 ![Ramas GitFlow del proyecto](assets/Images%20Chapter%205/github-branches.png)
 
 **Figura:** Ramas GitFlow utilizadas para organizar el desarrollo colaborativo de Molinex. Fuente: elaboración propia.
+
+#### Releases por entrega
+
+Cada entrega se cierra con un release en cada repositorio: una rama `release/*` se integra en `main` y el commit resultante se marca con un tag anotado de Git. La tabla indica qué tag y qué commit corresponden a AV1, TB1 y AV2, y qué commit quedó realmente desplegado.
+
+| Entrega | Repositorio | Tag | Commit del tag | Commit desplegado | Fecha |
+|:--|:--|:--|:--|:--|:--|
+| AV1 | `molinex-report` | `v1.0.0` | `0a4a743` | No aplica | 19-09-2026 |
+| AV1 | `molinex-website` | `release_v0.0.1` | `0db81b0` | `0db81b0` (GitHub Pages) | 18-09-2026 |
+| TB1 | `molinex-report` | `v2.0.0` | `60e5c56` | No aplica | 05-10-2026 |
+| TB1 | `molinex-website` | `Vn1.0.0` | `32dd6e3` | `32dd6e3` (GitHub Pages) | 05-10-2026 |
+| TB1 | `molinex-webapp` | `v0.1.1` | `c3b9416` | `959513a` (Azure Static Web Apps) | 05-10-2026 |
+| TB1 | `molinex-platform-mock` | Sin tag | No aplica | `902c31d` (Azure App Service) | 05-10-2026 |
+| AV2 | `molinex-platform-backend` | [`v1.0.0`](https://github.com/Vanguard-open-source/molinex-platform-backend/releases/tag/v1.0.0) | `9fe637a` | `66e702c` (imagen equivalente al árbol del tag en Azure App Service) | 13-11-2026 |
+
+- Antes de TB1 se publicaron dos releases intermedios: `Vn0.0.2` (`293a289`) en `molinex-website` y `v0.1.0` (`5551944`) en `molinex-webapp`, ambos el 04-10-2026.
+- Los tags de la landing (`release_v0.0.1`, `Vn0.0.2` y `Vn1.0.0`) se documentan tal como existen en GitHub. No siguen el formato `vMAJOR.MINOR.PATCH` definido arriba y se conservan para no alterar releases ya publicados. El siguiente release de la landing usará ese formato.
+- El commit desplegado de `molinex-webapp` (`959513a`) es posterior al tag y solo agrega el archivo de workflow de Azure Static Web Apps. El código de la aplicación es el del tag `v0.1.1`.
+- El repositorio `molinex-platform-mock` aún no publica tags ni releases, por lo que se identifica por el commit desplegado.
+- En `molinex-report`, `main` avanzó un commit después del tag `v2.0.0` (`f112bb7`, "Update README.md").
+- La imagen `molinex-platform-backend:1.0.0` se construyó desde `66e702c` antes del merge final. El tag `v1.0.0` apunta al merge `9fe637a`; ambos contienen el mismo árbol de archivos de la release.
 
 ### 5.1.3 Source Code Style Guide & Coding Conventions
 
@@ -1998,20 +2562,20 @@ A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con e
 | Sprint # | Sprint 1 |
 |:--|:--|
 | **Sprint Planning Background** | |
-| Date | 26-09-02 |
-| Time | 7:00 PM |
+| Date | 2026-09-02 |
+| Time | 07:00 PM |
 | Location | virtual (videollamada del equipo por Discord) |
 | Prepared By | Gallegos De La Cruz, Giovanni Marcelo |
 | Attendees (to planning meeting) | Gallegos De La Cruz, Giovanni Marcelo / Casalino Berrocal, Luisa Nhiriel / Huerta Cardenas, Brayan Benjamin / Jimenez Saavedra, Antony Alexander / Rivera Rupay, Fabricio Jose |
 | Sprint n - 1 Review Summary | No aplica (primer Sprint). |
 | Sprint n - 1 Retrospective Summary | No aplica (primer Sprint). |
-| Sprint 1 Goal | Our focus is on letting prospective mills evaluate Molinex and choose a subscription plan from the landing page, and on giving authorized mill staff role-based access to the platform.We believe it delivers a clearer understanding of Molinex's value, features and plans to the mill owners and administrators who visit the site, and controlled access to operational information to administrators, technicians and operators.This will be confirmed when a visitor can review the value proposition, benefits, features and the Basic, Professional and Enterprise plans and submit a commercial information request in no more than three steps, and when an administrator can register a user and assign a role, and that user can log in, update their profile and is denied access to functionalities outside their role.|
-|Sprint 1 Velocity | 20 Story Points. Primer Sprint sin velocity histórico: se adopta una capacidad conservadora para un equipo de 5 integrantes. |
-|Sum of Story Points | 20 Story Points (US-01 a US-04 y US-31 a US-36) |
+| Sprint 1 Goal | Nuestro enfoque está en permitir que los molinos potenciales evalúen Molinex y elijan un plan de suscripción desde la Landing Page, y en brindar al personal autorizado del molino acceso a la plataforma según su rol. Creemos que esto ofrece a los propietarios y administradores una comprensión más clara del valor, las funcionalidades y los planes de Molinex, y proporciona acceso controlado a la información operativa para administradores, técnicos y operarios. Esto se confirmará cuando un visitante pueda revisar la propuesta de valor, los beneficios, las funcionalidades y los planes Basic, Professional y Enterprise, y enviar una solicitud de información comercial en no más de tres pasos; asimismo, cuando un administrador pueda registrar un usuario y asignarle un rol, y dicho usuario pueda iniciar sesión, actualizar su perfil y tenga restringidas las funcionalidades ajenas a su rol.|
+| Sprint 1 Velocity | 20 Story Points. Primer Sprint sin velocity histórico: se adopta una capacidad conservadora para un equipo de 5 integrantes. |
+| Sum of Story Points | 20 Story Points (US-01 a US-04 y US-31 a US-36) |
 
 #### 5.2.1.2 Aspect Leaders and Collaborators
 
-| Team Member (Last Name, First Name) | GitHub Username | Aspecto 1 : Landing Page  | Aspecto 2 Usuarios y Acceso | Aspecto 3 Documentacion e Integracion |
+| Team Member (Last Name, First Name) | GitHub Username | Aspecto 1: Landing Page | Aspecto 2: Usuarios y Acceso | Aspecto 3: Documentación e Integración |
 |:--|:--:|:--:|:--:|:--:|
 | Casalino Berrocal, Luisa Nhiriel |lulu22nhiri | C|C |C |
 | Gallegos De La Cruz, Giovanni Marcelo |Giova2725|L |L | L|
@@ -2034,8 +2598,8 @@ La tabla conserva el alcance comprometido durante la planificación y actualiza 
 | US-03 | Gestionar roles y permisos | T-03-01 | Diseñar esquema RBAC | Definir las entidades y relaciones necesarias para gestionar usuarios, roles y permisos. | 4 | Gallegos De La Cruz, Giovanni Marcelo | To-do |
 | US-03 | Gestionar roles y permisos | T-03-02 | Implementar middleware de autorización | Desarrollar el middleware encargado de verificar los permisos asociados al rol del usuario. | 6 | Huerta Cardenas, Brayan Benjamin | To-do |
 | US-03 | Gestionar roles y permisos | T-03-03 | Implementar administración de roles | Desarrollar las operaciones necesarias para consultar y asignar roles a los usuarios. | 6 | Jimenez Saavedra, Antony Alexander | To-do |
-| US-04 | Gestionar perfil de usuario | T-04-01 | Implementar vista de perfil | Construir la vista que permita consultar y editar la información del perfil del usuario. | 4 | Rivera Rupay, Fabricio Jose | To-do |
-| US-04 | Gestionar perfil de usuario | T-04-02 | Implementar actualización de perfil | Desarrollar el endpoint y las validaciones necesarias para actualizar los datos del perfil. | 4 | Casalino Berrocal, Luisa Nhiriel | To-do |
+| US-04 | Gestionar perfil | T-04-01 | Implementar vista de perfil | Construir la vista que permita consultar y editar la información del perfil del usuario. | 4 | Rivera Rupay, Fabricio Jose | To-do |
+| US-04 | Gestionar perfil | T-04-02 | Implementar actualización de perfil | Desarrollar el endpoint y las validaciones necesarias para actualizar los datos del perfil. | 4 | Casalino Berrocal, Luisa Nhiriel | To-do |
 | US-31 | Conocer la propuesta de valor | T-31-01 | Implementar sección Hero | Desarrollar la sección principal de la Landing Page con la propuesta de valor de Molinex. | 4 | Gallegos De La Cruz, Giovanni Marcelo | Done |
 | US-32 | Conocer las funcionalidades | T-32-01 | Implementar sección de funcionalidades | Desarrollar la sección destinada a presentar las principales funcionalidades de Molinex. | 4 | Huerta Cardenas, Brayan Benjamin | Done |
 | US-33 | Consultar planes de suscripción | T-33-01 | Implementar tabla de planes | Construir la sección que presenta los planes Básico, Profesional y Empresarial junto con sus características. | 4 | Jimenez Saavedra, Antony Alexander | Done |
@@ -2048,7 +2612,7 @@ El Sprint Goal se alcanzó parcialmente. La Landing Page entregó la propuesta d
 
 **Captura y enlace al Board:** `https://trello.com/invite/b/6aa9c4fdfc659047df591de0/ATTI907effe44c9315a41519954d192d71f48A54EF45/molinex`
 
-![Sprint Backlog.png](assets/Images%20Chapter%205/Sprint%20Backlog.png)
+![Tablero de Trello del Sprint 1 con el Product Backlog y las tareas hechas](assets/Images%20Chapter%205/Sprint%20Backlog%201.png)
 
 **Figura:** Captura histórica del Board al cierre del AV1. La tabla anterior presenta la corrección consolidada para TB1, con los identificadores vigentes y los estados verificados frente a la implementación disponible.
 
@@ -2094,6 +2658,7 @@ URL pública:
 ![Landing Page desplegada](assets/Images%20Chapter%205/landing-deployed.png)
 
 **Figura:** Primera versión de la Landing Page desplegada mediante GitHub Pages. Fuente: elaboración propia.
+
 #### 5.2.1.8 Team Collaboration Insights during Sprint
 
 Durante el Sprint 1, el equipo utilizó GitHub para organizar el desarrollo colaborativo y registrar la participación de sus integrantes.
@@ -2119,14 +2684,14 @@ A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con e
 | Sprint # | Sprint 2 |
 |:--|:--|
 | **Sprint Planning Background** | |
-| **Date** | 26-10-03 |
-| **Time** | 7:00 PM |
+| **Date** | 2026-10-03 |
+| **Time** | 07:00 PM |
 | **Location** | virtual (videollamada del equipo por Discord) |
 | **Prepared By** | Gallegos De La Cruz, Giovanni Marcelo |
 | **Attendees (to planning meeting)** | Gallegos De La Cruz, Giovanni Marcelo / Casalino Berrocal, Luisa Nhiriel / Huerta Cardenas, Brayan Benjamin / Jimenez Saavedra, Antony Alexander / Rivera Rupay, Fabricio Jose |
 | **Sprint 1 Review Summary** | Se revisó la primera versión de la Landing Page de Molinex, incluyendo la propuesta de valor, funcionalidades, beneficios y planes de suscripción Básico, Profesional y Empresarial. Las historias de acceso y gestión de usuarios no se completaron y permanecieron en estado `To-do`. Como corrección para TB1, la Landing Page incorporó soporte i18n EN/ES con inglés como idioma predeterminado. |
 | **Sprint 1 Retrospective Summary** | El equipo identificó como aspectos positivos la distribución de actividades y la coordinación para desarrollar las funcionalidades iniciales. Como oportunidad de mejora, se estableció fortalecer la coordinación entre los integrantes y precisar los criterios de aceptación antes de iniciar el desarrollo de cada historia de usuario. |
-| **Sprint 2 Goal** | **Our focus is on enabling the initial operational management of rice mill information in Molinex. We believe it delivers a structured way for mill personnel to register and manage the information required for production and maintenance activities. This will be confirmed when users can register raw material reception and lots, machinery, production and quality information, waste, and preventive and corrective maintenance records.** |
+| **Sprint 2 Goal** | **Nuestro enfoque está en habilitar la gestión operativa inicial de la información del molino arrocero en Molinex. Creemos que esto brinda al personal del molino una forma estructurada de registrar y gestionar la información necesaria para las actividades de producción y mantenimiento. Esto se confirmará cuando los usuarios puedan registrar la recepción de materia prima y los lotes, la maquinaria, la información de producción y calidad, la merma, y los mantenimientos preventivos y correctivos.** |
 | **Sprint 2 Velocity** | **23 Story Points.** Se establece una capacidad de 23 Story Points considerando la experiencia obtenida durante el Sprint 1 y la capacidad de trabajo del equipo de 5 integrantes. |
 | **Sum of Story Points** | **23 Story Points (US-05, US-06, US-07, US-11, US-14, US-17, US-19 y US-20)** |
 
@@ -2149,25 +2714,25 @@ Los estados utilizan el vocabulario `To-do`, `In-Process`, `To-Review` y `Done` 
 
 | Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
 |:--|:--|:--|:--|:--|--:|:--|:--|
-| US-05 | Registrar recepción de materia prima | T-05-01 | Diseñar modelo y API de recepción | Definir la entidad de recepción (proveedor, fecha, peso, tipo de arroz) y exponer los endpoints REST para registrarla. | 6 | Gallegos De La Cruz Giovanni | Done |
-| US-05 | Registrar recepción de materia prima | T-05-02 | Crear formulario de recepción | Implementar en el webapp el formulario de registro con validaciones de campos obligatorios. | 4 | Casalino Berrocal Luisa | Done |
-| US-06 | Registrar lote de materia prima | T-06-01 | Diseñar modelo y API de lote | Crear la entidad de lote asociada a una recepción, con código único, cantidad y estado, y sus endpoints. | 6 | Gallegos De La Cruz Giovanni | Done |
-| US-06 | Registrar lote de materia prima | T-06-02 | Crear vista de registro de lotes | Implementar el formulario y el listado de lotes registrados en el webapp. | 5 | Casalino Berrocal Luisa | Done |
-| US-07 | Registrar información de producción | T-07-01 | Diseñar modelo y API de producción | Crear la entidad de producción vinculada a lote y maquinaria (cantidad procesada, turno, fecha) con sus endpoints. | 8 | Jimenez Saavedra Antony | Done |
-| US-07 | Registrar información de producción | T-07-02 | Crear formulario de producción | Implementar el formulario de registro de producción con selección de lote y maquinaria. | 6 | Rivera Rupay Fabricio | Done |
-| US-11 | Registrar resultados de calidad | T-11-01 | Diseñar modelo y API de calidad | Definir la entidad de resultados de calidad (humedad, granos quebrados, impurezas) asociada a un lote y sus endpoints. | 6 | Jimenez Saavedra Antony | Done |
-| US-11 | Registrar resultados de calidad | T-11-02 | Crear formulario de calidad | Implementar el formulario de registro de resultados de calidad en el webapp. | 5 | Casalino Berrocal Luisa | Done |
-| US-14 | Registrar y consultar merma | T-14-01 | Diseñar modelo y API de merma | Crear la entidad de merma por proceso y los endpoints de registro y consulta con filtros por fecha y lote. | 6 | Gallegos De La Cruz Giovanni | Done |
-| US-14 | Registrar y consultar merma | T-14-02 | Crear vista de registro y consulta de merma | Implementar el formulario de registro y la tabla de consulta con filtros. | 6 | Huerta Cardenas Brayan | Done |
-| US-17 | Registrar maquinaria | T-17-01 | Diseñar modelo y API de maquinaria | Definir la entidad de maquinaria (nombre, tipo, código, estado) y los endpoints de registro y consulta. | 4 | Huerta Cardenas Brayan | Done |
-| US-17 | Registrar maquinaria | T-17-02 | Crear formulario de maquinaria | Implementar el formulario de registro y la lista de maquinaria en el webapp. | 4 | Rivera Rupay Fabricio | Done |
-| US-19 | Registrar mantenimiento preventivo | T-19-01 | Diseñar modelo y API de mantenimiento preventivo | Definir la entidad de mantenimiento preventivo (maquinaria, fecha programada, tipo, responsable) y sus endpoints. | 6 | Huerta Cardenas Brayan | Done |
-| US-19 | Registrar mantenimiento preventivo | T-19-02 | Crear formulario de mantenimiento preventivo | Implementar el formulario de programación y registro en el webapp. | 4 | Rivera Rupay Fabricio | Done |
-| US-20 | Registrar mantenimiento correctivo | T-20-01 | Diseñar modelo y API de mantenimiento correctivo | Crear la entidad de mantenimiento correctivo (falla, causa, acción realizada, tiempo de parada) y sus endpoints. | 6 | Jimenez Saavedra Antony | Done |
-| US-20 | Registrar mantenimiento correctivo | T-20-02 | Crear formulario de mantenimiento correctivo | Implementar el formulario de registro de fallas y acciones correctivas en el webapp. | 5 | Gallegos De La Cruz Giovanni | Done |
+| US-05 | Registrar recepción de materia prima | T-05-01 | Diseñar modelo y API de recepción | Definir la entidad de recepción (proveedor, fecha, peso, tipo de arroz) y exponer los endpoints REST para registrarla. | 6 | Gallegos De La Cruz, Giovanni Marcelo | Done |
+| US-05 | Registrar recepción de materia prima | T-05-02 | Crear formulario de recepción | Implementar en el webapp el formulario de registro con validaciones de campos obligatorios. | 4 | Casalino Berrocal, Luisa Nhiriel | Done |
+| US-06 | Registrar lote de materia prima | T-06-01 | Diseñar modelo y API de lote | Crear la entidad de lote asociada a una recepción, con código único, cantidad y estado, y sus endpoints. | 6 | Gallegos De La Cruz, Giovanni Marcelo | Done |
+| US-06 | Registrar lote de materia prima | T-06-02 | Crear vista de registro de lotes | Implementar el formulario y el listado de lotes registrados en el webapp. | 5 | Casalino Berrocal, Luisa Nhiriel | Done |
+| US-07 | Registrar información de producción | T-07-01 | Diseñar modelo y API de producción | Crear la entidad de producción vinculada a lote y maquinaria (cantidad procesada, turno, fecha) con sus endpoints. | 8 | Jimenez Saavedra, Antony Alexander | Done |
+| US-07 | Registrar información de producción | T-07-02 | Crear formulario de producción | Implementar el formulario de registro de producción con selección de lote y maquinaria. | 6 | Rivera Rupay, Fabricio Jose | Done |
+| US-11 | Registrar resultados de calidad | T-11-01 | Diseñar modelo y API de calidad | Definir la entidad de resultados de calidad (humedad, granos quebrados, impurezas) asociada a un lote y sus endpoints. | 6 | Jimenez Saavedra, Antony Alexander | Done |
+| US-11 | Registrar resultados de calidad | T-11-02 | Crear formulario de calidad | Implementar el formulario de registro de resultados de calidad en el webapp. | 5 | Casalino Berrocal, Luisa Nhiriel | Done |
+| US-14 | Registrar y consultar merma | T-14-01 | Diseñar modelo y API de merma | Crear la entidad de merma por proceso y los endpoints de registro y consulta con filtros por fecha y lote. | 6 | Gallegos De La Cruz, Giovanni Marcelo | Done |
+| US-14 | Registrar y consultar merma | T-14-02 | Crear vista de registro y consulta de merma | Implementar el formulario de registro y la tabla de consulta con filtros. | 6 | Huerta Cardenas, Brayan Benjamin | Done |
+| US-17 | Registrar maquinaria | T-17-01 | Diseñar modelo y API de maquinaria | Definir la entidad de maquinaria (nombre, tipo, código, estado) y los endpoints de registro y consulta. | 4 | Huerta Cardenas, Brayan Benjamin | Done |
+| US-17 | Registrar maquinaria | T-17-02 | Crear formulario de maquinaria | Implementar el formulario de registro y la lista de maquinaria en el webapp. | 4 | Rivera Rupay, Fabricio Jose | Done |
+| US-19 | Registrar mantenimiento preventivo | T-19-01 | Diseñar modelo y API de mantenimiento preventivo | Definir la entidad de mantenimiento preventivo (maquinaria, fecha programada, tipo, responsable) y sus endpoints. | 6 | Huerta Cardenas, Brayan Benjamin | Done |
+| US-19 | Registrar mantenimiento preventivo | T-19-02 | Crear formulario de mantenimiento preventivo | Implementar el formulario de programación y registro en el webapp. | 4 | Rivera Rupay, Fabricio Jose | Done |
+| US-20 | Registrar mantenimiento correctivo | T-20-01 | Diseñar modelo y API de mantenimiento correctivo | Crear la entidad de mantenimiento correctivo (falla, causa, acción realizada, tiempo de parada) y sus endpoints. | 6 | Jimenez Saavedra, Antony Alexander | Done |
+| US-20 | Registrar mantenimiento correctivo | T-20-02 | Crear formulario de mantenimiento correctivo | Implementar el formulario de registro de fallas y acciones correctivas en el webapp. | 5 | Gallegos De La Cruz, Giovanni Marcelo | Done |
 | US-05, US-06, US-07, US-11, US-14, US-17, US-19, US-20 | Todas las historias del Sprint 2 | T-QA-01 | Pruebas de integración y validación | Ejecutar pruebas de los endpoints y flujos de registro, y corregir los defectos encontrados. | 8 | Todo el equipo | Done |
 
-![Tablero de Trello del Sprint 2](assets/Images%20Chapter%205/Captura%20de%20pantalla%202026-10-02%20180921.png)
+![Tablero de Trello del Sprint 2](assets/Images%20Chapter%205/Sprint%202/5.2.2.3-01-trello-sprint-2-board.png)
 
 **Nota sobre el alcance:** las historias comprometidas en el Sprint Planning son las ocho listadas. Durante la implementación del módulo de Producción también se dejaron operativas la consulta de procesos productivos (US-08), el historial de producción (US-09) y la actualización de registros de producción (US-10), que comparten modelo, API y Store con US-07. Su evidencia se presenta en la sección 5.2.2.5.
 
@@ -2179,17 +2744,17 @@ La participación en el desarrollo del Sprint 2 se evidencia mediante las ramas 
 
 | PR | Rama | Responsable (GitHub) | Historias de usuario / alcance | Commits principales | Capas / archivos integrados | Merge a `develop` |
 |:--|:--|:--|:--|:--|:--|:--|
-| #1 | `feature/project-setup` | Fabricio1924 | Base del repositorio: dependencias, entornos, API falsa (JSON Server), estilos y documentación | `cb9cb9c`, `c0cf2d8`, `f9a4af6`, `c8a47aa` | Configuración, `server/`, estilos globales | 03-10-2026 |
+| #1 | `feature/project-setup` | Fabricio1924 | Base del repositorio: dependencias, entornos, API simulada (JSON Server), estilos y documentación | `cb9cb9c`, `c0cf2d8`, `f9a4af6`, `c8a47aa` | Configuración, `server/`, estilos globales | 03-10-2026 |
 | #2 | `feature/architecture-scaffold` | Fabricio1924 | Estructura de bounded contexts del frontend | `8b71eae` | Carpetas Domain/Application/Infrastructure/Presentation por contexto | 03-10-2026 |
 | #3 | `feature/sprint2-production-management` | Giova2725 | US-05, US-06, US-07 (y consulta, historial y actualización de producción: US-08, US-09, US-10) | `2e61ffe` `feat(production): integrate production management module structure` | Domain, Infrastructure, Application y Presentation de `production-management` y `production-quality-shared-kernel` (47 archivos) | 04-10-2026 17:38 |
 | #4 | `feature/sprint2-shared-shell-i18n` | Fabricio1924 | Base compartida: layout, navegación, rutas e i18n ES/EN | `309b276` `feat(shared)`, `3949f83` `feat(i18n)`, `baf46cd` `feat(shell)`, `fd8e7e1` `fix(config)` | `shared/` (domain, infrastructure, presentation), layout, side navigation, top bar, language switcher, `es.json`/`en.json` | 04-10-2026 19:37 |
 | #5 | `feature/sprint2-asset-maintenance` | saavedraantony-max | US-17, US-19, US-20 | `5c96250` `feat(maintenance): integrate asset and maintenance management module` | Domain, Infrastructure, Application y Presentation de `asset-maintenance-management` (34 archivos) | 04-10-2026 20:08 |
 | #6 | `feature/fix-maintenance-api-endpoints` | saavedraantony-max | Ajuste de endpoints de mantenimiento | `a85b634` `fix(maintenance): configure maintenance api endpoints` | `environment.ts`, `environment.development.ts` | 04-10-2026 20:24 |
 | #7 | `feature/sprint2-quality-waste-control` | lulu22nhiri | US-11, US-14 | `f62abdc` y `bcae13f` `feat(quality): integrate quality and waste control module` | Domain, Infrastructure, Application y Presentation de `quality-yield-control` (28 archivos) y configuración de endpoints | 04-10-2026 20:51 |
-| #8 | `feature/sprint2-api-integration` | Fabricio1924 | Integración de la API falsa y de las rutas de los módulos | `05392be` `fix(integration)`, `b8a207d` `chore(api)`, `c1b8a71` `chore(config)` | `server/db.json`, `app.routes.ts`, `angular.json` | 04-10-2026 21:57 |
+| #8 | `feature/sprint2-api-integration` | Fabricio1924 | Integración de la API simulada y de las rutas de los módulos | `05392be` `fix(integration)`, `b8a207d` `chore(api)`, `c1b8a71` `chore(config)` | `server/db.json`, `app.routes.ts`, `angular.json` | 04-10-2026 21:57 |
 | #9 | `feature/configure-production-deployment` | Fabricio1924 | Configuración de despliegue de la Web Application | `c808f57` `feat(environment)`, `b0a65bf` `chore` | `environment.ts`, `public/staticwebapp.config.json` | 05-10-2026 01:18 |
 
-Sobre la rama `main`, se publicaron las versiones `v0.1.0` (04-10-2026) y `v0.1.1` (05-10-2026) mediante ramas `release/*`, con su registro en `CHANGELOG.md`.
+Sobre la rama `main`, se publicaron las versiones `v0.1.0` (04-10-2026) y `v0.1.1` (05-10-2026) mediante ramas `release/*`, con su registro en `CHANGELOG.md`. La tabla de releases por entrega, con sus commits, se encuentra en la sección 5.1.2.
 
 ![Pull Requests cerrados de molinex-webapp](assets/Images%20Chapter%205/Sprint%202/5.2.2.4-01-github-pull-requests.jpg)
 
@@ -2324,7 +2889,578 @@ El gráfico de contribuciones de GitHub registra los commits del repositorio mol
 
 **Figura:** Contribuciones al repositorio molinex-webapp. Fuente: elaboración propia a partir de GitHub, 05-10-2026.
 
+### 5.2.3 Sprint 3
+#### 5.2.3.1 Sprint Planning 3
+El Sprint 3 reemplaza la API simulada con JSON Server por la primera versión de los Web Services RESTful de Molinex, implementados con Spring Boot y Spring Data JPA y documentados con OpenAPI/Swagger, e integra la Web Application con ellos. Además, incorpora las historias de consulta de indicadores y de estado de maquinaria, el inicio de sesión y la persistencia de las solicitudes comerciales de la Landing Page.
 
+A continuación se presenta el cuadro resumen del Sprint Planning Meeting, con el Sprint Goal, el velocity establecido y las historias comprometidas.
+
+| Sprint # | Sprint 3 |
+|:--|:--|
+| **Sprint Planning Background** | |
+| **Date** | 2026-11-01 |
+| **Time** | 07:00 PM |
+| **Location** | virtual (videollamada del equipo por Discord)  |
+| **Prepared By** | Gallegos De La Cruz, Giovanni Marcelo |
+| **Attendees (to planning meeting)** | Gallegos De La Cruz, Giovanni Marcelo / Casalino Berrocal, Luisa Nhiriel / Huerta Cardenas, Brayan Benjamin / Jimenez Saavedra, Antony Alexander / Rivera Rupay, Fabricio Jose |
+| **Sprint 2 Review Summary** | Se revisó la Web Application desplegada en Azure Static Web Apps con los módulos de producción, calidad, merma, maquinaria y mantenimiento, integrados con una API simulada (JSON Server). Quedaron pendientes la RESTful API definitiva, la base de datos productiva, la documentación Swagger/OpenAPI, las historias de gestión de acceso (US-01 a US-04) y la persistencia de las solicitudes comerciales (US-36). |
+| **Sprint 2 Retrospective Summary** |  Durante el Sprint 2, el equipo integró 9 Pull Requests en la rama develop, aplicando GitFlow y Conventional Commits. Se destacó el trabajo colaborativo, pero también se identificó la necesidad de mejorar la coordinación y el seguimiento de tareas. Para el siguiente sprint, se acordó fortalecer la comunicación y planificar mejor las actividades. |
+| **Sprint 3 Goal** | **Nuestro enfoque está en reemplazar la API simulada por la primera versión de los Web Services RESTful de Molinex y en brindar al personal del molino acceso a información de rendimiento, calidad y mantenimiento. Creemos que esto proporciona datos operativos confiables y persistentes a administradores, técnicos y operarios, además de una API documentada para los desarrolladores. Esto se confirmará cuando la Web Application consuma la API Spring Boot desplegada en lugar de JSON Server y los endpoints puedan explorarse y probarse mediante Swagger UI.** |
+| **Sprint 3 Velocity** | **24 Story Points.** Se establece una capacidad de 24 Story Points considerando la experiencia de los Sprints 1 y 2 (20 y 23 Story Points) y la capacidad de trabajo del equipo de 5 integrantes. |
+| **Sum of Story Points** | 24 Story Points (TS-01, TS-02, TS-03, US-02, US-12, US-13, US-18, US-21 y US-36) |
+
+#### 5.2.3.2 Aspect Leaders and Collaborators
+Los aspectos del Sprint 3 son los Web Services (producción y calidad; mantenimiento y acceso), la integración de la Web Application, la Landing Page con los videos, y la base de datos con el despliegue.
+
+| Team Member (Last Name, First Name) | GitHub Username | Aspecto 1: Web Services – Producción y calidad (TS-01, TS-02) | Aspecto 2: Web Services – Mantenimiento y acceso (TS-03, US-02) | Aspecto 3: Integración Web Application (US-12, US-13, US-18, US-21) | Aspecto 4: Landing Page y videos (US-36) | Aspecto 5: Base de datos y despliegue |
+|:--|:--:|:--:|:--:|:--:|:--:|:--:|
+| Casalino Berrocal, Luisa Nhiriel | lulu22nhiri | C | L | C | C | C |
+| Gallegos De La Cruz, Giovanni Marcelo | Giova2725 | L | C | C| C | C |
+| Huerta Cardenas, Brayan Benjamin | Brayanjk22 | C | C | C | L | C |
+| Jimenez Saavedra, Antony Alexander | saavedraantony-max | C | C| L | C | C |
+| Rivera Rupay, Fabricio Jose | Fabricio1924 | C | C | C | C | L |
+#### 5.2.3.3 Sprint Backlog 3
+| Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
+|---|---|---|---|---|---:|---|---|
+| TS-01 | Gestionar recursos de producción mediante API | T-S3-PROD-01 | Implementar persistencia productiva con JPA | Implementar recepción, lote y registro productivo respetando referencias, código único, peso válido y vínculo estable con el lote; retomar los modelos iniciados con mock. | 8 | Gallegos De La Cruz, Giovanni Marcelo | Done |
+| TS-01 | Gestionar recursos de producción mediante API | T-S3-PROD-02 | Implementar endpoints productivos y errores | Crear y consultar recursos y actualizar producción; responder según TS-01 E1–E6, sin cambios parciales ante datos o referencias inválidas. | 8 | Gallegos De La Cruz, Giovanni Marcelo | Done |
+| TS-01 | Gestionar recursos de producción mediante API | T-S3-PROD-03 | Comprobar contrato de producción | Verificar persistencia, consulta, actualización, datos inválidos y recursos/referencias inexistentes; registrar resultados y dependencias de acceso pendientes. | 6 | Huerta Cardenas, Brayan Benjamin | To-Review |
+| TS-02 | Consultar indicadores mediante API | T-S3-IND-01 | Preparar fuentes persistentes de indicadores | Integrar datos reales de producción, calidad y merma necesarios para los indicadores, distinguiendo datos faltantes y cero observado; trazar el trabajo con US-11 y US-14 sin contarlo otra vez. | 8 | Casalino Berrocal, Luisa Nhiriel | Done |
+| TS-02 | Consultar indicadores mediante API | T-S3-IND-02 | Implementar cálculos de indicadores | Documentar y validar con el dominio las fórmulas de rendimiento y composición; implementar cálculos con unidades compatibles y bases válidas. | 6 | Casalino Berrocal, Luisa Nhiriel | Done |
+| TS-02 | Consultar indicadores mediante API | T-S3-IND-03 | Exponer consulta de indicadores y errores | Implementar consulta con parámetros válidos, ausencia de datos y rechazo de parámetros inválidos, según TS-02 E1–E3; E4/E5 dependen de IAM y permanecen diferidos. | 4 | Casalino Berrocal, Luisa Nhiriel | Done |
+| TS-02 | Consultar indicadores mediante API | T-S3-IND-04 | Comprobar escenarios de negocio de indicadores | Registrar resultados TS-02 E1–E3 y declarar E4/E5 pendientes de IAM; no aceptar la historia completa si esos criterios siguen sin cumplirse. | 5 | Huerta Cardenas, Brayan Benjamin | To-Review |
+| TS-03 | Gestionar mantenimiento mediante API | T-S3-MAN-01 | Implementar persistencia de maquinaria y mantenimiento | Implementar entidades y repositorios JPA de maquinaria y mantenimiento; alinear el tratamiento de AnomalyId con la regla de dominio acordada. | 6 | Casalino Berrocal, Luisa Nhiriel | Done |
+| TS-03 | Gestionar mantenimiento mediante API | T-S3-MAN-02 | Implementar servicios de mantenimiento | Registrar y consultar mantenimientos con máquina, tipo, fecha, responsable y descripción; manejar datos inválidos y máquina/intervención inexistente. | 6 | Casalino Berrocal, Luisa Nhiriel | Done |
+| TS-03 | Gestionar mantenimiento mediante API | T-S3-MAN-03 | Comprobar contrato de mantenimiento | Verificar TS-03 E1–E5 sobre la API real y registrar por separado las precondiciones de acceso pendientes hasta implementar IAM. | 5 | Jimenez Saavedra, Antony Alexander | To-Review |
+| US-12 | Consultar indicadores de rendimiento | T-12-01 | Integrar consulta de rendimiento en Angular | Conectar la vista de indicadores con la API Spring Boot y mostrar valor, unidad y periodo o conjunto evaluado. | 6 | Jimenez Saavedra, Antony Alexander | Done |
+| US-12 | Consultar indicadores de rendimiento | T-12-02 | Validar rendimiento no calculable | Comprobar US-12 E1–E3: resultado disponible, ausencia de datos y base no válida; no representar falta de información como 0 %. | 4 | Jimenez Saavedra, Antony Alexander | Done |
+| US-13 | Consultar porcentaje de arroz entero y quebrado | T-13-01 | Integrar composición de arroz por lote | Consultar porcentajes de arroz entero y quebrado del lote seleccionado mediante el servicio propio. | 4 | Jimenez Saavedra, Antony Alexander | Done |
+| US-13 | Consultar porcentaje de arroz entero y quebrado | T-13-02 | Validar consulta de composición | Comprobar US-13 E1–E2 e identificar lotes sin resultados sin mostrar datos ajenos o porcentajes ficticios. | 2 | Jimenez Saavedra, Antony Alexander | Done |
+| US-18 | Consultar estado de maquinaria | T-18-01 | Integrar consulta de estado de maquinaria | Mostrar estado operativo y fecha de actualización del equipo consultado utilizando la API real. | 3 | Jimenez Saavedra, Antony Alexander | Done |
+| US-18 | Consultar estado de maquinaria | T-18-02 | Validar existencia del equipo consultado | Comprobar US-18 E1–E2 y distinguir equipo existente de equipo no encontrado. | 2 | Jimenez Saavedra, Antony Alexander | Done |
+| US-21 | Consultar historial de mantenimiento | T-21-01 | Integrar historial de mantenimiento | Mostrar intervenciones del equipo con tipo, fecha, descripción y responsable desde el servicio propio. | 4 | Jimenez Saavedra, Antony Alexander | Done |
+| US-21 | Consultar historial de mantenimiento | T-21-02 | Validar historial y ausencia de registros | Comprobar US-21 E1–E3: historial con datos, máquina sin intervenciones y máquina inexistente. | 3 | Jimenez Saavedra, Antony Alexander | Done |
+| US-36 | Solicitar información comercial | T-36-02 | Persistir la solicitud comercial | Retomar la tarea pendiente de Sprint 1: guardar solicitudes comerciales válidas mediante servicio propio y confirmar recepción después de la persistencia. | 4 | Gallegos De La Cruz, Giovanni Marcelo | Done |
+| US-36 | Solicitar información comercial | T-S3-COM-01 | Integrar formulario comercial y manejo de fallos | Conectar Landing Page al servicio y comprobar US-36 E1–E4: registro, campos requeridos, correo inválido y fallo sin falsa confirmación. | 4 | Huerta Cardenas, Brayan Benjamin | Done |
+| — | Trabajo transversal AV2 | T-S3-BASE-01 | Configurar proyecto backend y base de datos | Configurar Java, Spring Boot, Spring Data JPA, MySQL, entornos y estructura por bounded contexts; documentar las versiones realmente utilizadas. | 6 | Rivera Rupay, Fabricio Jose | Done |
+| — | Trabajo transversal AV2 | T-S3-BASE-02 | Alinear esquema y reglas de dominio | Revisar diagramas, SQL y entidades; resolver diferencias de campos, referencias y fórmulas antes de validar la primera API. | 6 | Rivera Rupay, Fabricio Jose | Done |
+| — | Trabajo transversal AV2 | T-S3-QA-01 | Trazar escenarios, tareas y evidencias | Relacionar las ocho historias seleccionadas y sus 30 escenarios con pruebas o revisiones; marcar explícitamente las dependencias IAM diferidas. | 3 | Todo el equipo | Done |
+| — | Trabajo transversal AV2 | T-S3-QA-02 | Comprobar integración y corregir defectos | Ejecutar verificaciones apropiadas de dominio, API y flujos Angular del alcance; comprobar inglés/español, accesibilidad, persistencia y errores; documentar resultados reales. | 6 | Todo el equipo | To-Review |
+| TS-01, TS-02, TS-03 | Gestionar recursos de producción mediante API / Consultar indicadores mediante API / Gestionar mantenimiento mediante API | T-S3-DOC-01 | Publicar Swagger/OpenAPI del alcance | Documentar rutas, verbos, parámetros, ejemplos y respuestas reales; publicar Swagger UI y registrar repositorio y commits de documentación. | 4 | Gallegos De La Cruz, Giovanni Marcelo | Done |
+| — | Trabajo transversal AV2 | T-S3-LP-01 | Actualizar Landing Page y CTA | Revalidar contenido, idiomas y visualización móvil; conectar CTA por segmento con las vistas entregadas, sin afirmar disponibilidad de funciones pendientes. | 6 | Huerta Cardenas, Brayan Benjamin | Done |
+| — | Trabajo transversal AV2 | T-S3-LP-02 | Incrustar videos de producto y equipo | Incluir About-the-Product y About-the-Team publicados y comprobar su reproducción desde la Landing Page. | 2 | Huerta Cardenas, Brayan Benjamin | To-do |
+| — | Trabajo transversal AV2 | T-S3-DEP-01 | Desplegar primera API propia y base de datos | Publicar backend real y persistencia, verificar recuperación de registros y documentación accesible; conservar evidencia de configuración y despliegue. | 6 | Rivera Rupay, Fabricio Jose | Done |
+| — | Trabajo transversal AV2 | T-S3-DEP-02 | Desplegar nueva Web Application | Publicar Angular con la URL real de servicios para el alcance y verificar navegación, recarga de rutas e integración. | 3 | Rivera Rupay, Fabricio Jose | Done |
+| — | Trabajo transversal AV2 | T-S3-DEP-03 | Desplegar nueva Landing Page | Publicar cambios AV2 y verificar CTA, formulario, idiomas y videos. | 2 | Huerta Cardenas, Brayan Benjamin | Done |
+| — | Trabajo transversal AV2 | T-S3-VAL-01 | Diseñar validaciones por segmento | Definir tareas, user flows, preguntas y registro de resultados para gerentes, técnicos y operarios usando funciones disponibles. | 3 | Huerta Cardenas, Brayan Benjamin | Done |
+| — | Trabajo transversal AV2 | T-S3-VAL-02 | Realizar entrevistas de validación | Realizar y registrar de 3 a 5 sesiones por cada uno de los tres segmentos; consolidar evidencia, datos, tiempos, capturas y resúmenes reales. | 8 | Todo el equipo | Done |
+| — | Trabajo transversal AV2 | T-S3-VAL-03 | Evaluar heurísticas y registrar mejoras | Aplicar Anexo D con usabilidad, diseño inclusivo y arquitectura de información; registrar severidad 1–4, captura, recomendación y correcciones reales. | 4 | Huerta Cardenas, Brayan Benjamin | In-Process |
+| — | Trabajo transversal AV2 | T-S3-VID-01 | Publicar About-the-Product | Producir MP4 de 1–3 minutos con escenas del producto y una opinión por segmento, al menos una positiva de validación; publicar en Stream y YouTube. | 4 | Todo el equipo | Done |
+| — | Trabajo transversal AV2 | T-S3-VID-02 | Publicar About-the-Team | Registrar sesiones reales, narración y testimonios de los cinco miembros sobre actividades, outcomes y competencias; publicar en Stream y YouTube. | 4 | Todo el equipo | In-Process |
+| — | Trabajo transversal AV2 | T-S3-REP-01 | Consolidar evidencias y documentación AV2 | Actualizar informe, registro de versiones, colaboración, Student Outcome, conclusiones, bibliografía, anexos y materiales de exposición. | 6 | Todo el equipo | To-do |
+
+![Sprint Backlog 3.png](assets/Images%20Chapter%205/Sprint%20Backlog%203.png)
+Link:https://trello.com/invite/b/6aa9c4fdfc659047df591de0/ATTI907effe44c9315a41519954d192d71f48A54EF45/molinex
+
+#### 5.2.3.4 Development Evidence for Sprint Review
+
+La revisión del Sprint 3 toma como punto de partida la planificación del 1 de noviembre de 2026. Al cierre del 13 de noviembre, los 24 commits no-merge registrados en esta tabla pertenecen al backend Java de Molinex e integran la base Spring Boot, el registro de recepciones, lotes y producción (TS-01), las consultas de rendimiento y composición del arroz (TS-02), los servicios de maquinaria y mantenimiento (TS-03), la autenticación (US-02), la persistencia de solicitudes comerciales (US-36), la configuración por entornos y el despliegue con Docker y Azure. El historial final corresponde a la [release `v1.0.0`](https://github.com/Vanguard-open-source/molinex-platform-backend/releases/tag/v1.0.0).
+
+La rama indica la rama de origen cuando el merge permite identificarla. Para los cambios visibles directamente en el historial de `develop` se consigna esa rama; el commit inicial está presente en `main` y `develop`. Se omiten los commits de merge. El guion indica que el commit carece de cuerpo y las fechas conservan el desplazamiento horario registrado por Git.
+
+| Repository | Branch | Commit ID | Commit Message | Commit Message Body | Committed on |
+| --- | --- | --- | --- | --- | --- |
+| `molinex-platform-backend` | `main / develop` | [`c178ad6`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/c178ad6ceb3e02567996169c1a5b0439cc609b9d) | `chore: initialize Molinex Spring Boot backend` | — | 2026-11-13T06:48:43-05:00 |
+| `molinex-platform-backend` | `feature/production-batch-registration` | [`25c7421`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/25c74216a0f409cc948dcd94c8d70f3bc922b731) | `feat(shared): add application result and error types` | — | 2026-11-13T07:15:02-05:00 |
+| `molinex-platform-backend` | `feature/production-batch-registration` | [`2f662cc`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/2f662cc27d984c401c4f1995de6b67138f42a9a3) | `feat(production): add batch registration value objects` | — | 2026-11-13T07:16:00-05:00 |
+| `molinex-platform-backend` | `feature/production-batch-registration` | [`2ba3639`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/2ba3639cc3d2c1278d6dbd6ce3e197e855f05c51) | `feat(production): model production batch and registration event` | — | 2026-11-13T07:16:19-05:00 |
+| `molinex-platform-backend` | `feature/production-batch-registration` | [`4bd222e`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/4bd222e6f98e229cfd4bbab2782f0b7b5b0ad388) | `feat(production): define batch registration command and ports` | — | 2026-11-13T07:16:32-05:00 |
+| `molinex-platform-backend` | `feature/production-batch-registration-api` | [`da43525`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/da43525408761851f4db19a0d2941db90dadb586) | `feat(production): implement batch registration servic` | — | 2026-11-13T08:15:18-05:00 |
+| `molinex-platform-backend` | `feature/production-batch-registration-api` | [`d2b86bd`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/d2b86bd1dc2db56d89824feebf3ce1a536e95db3) | `test(production): cover batch registration scenarios` | — | 2026-11-13T08:15:37-05:00 |
+| `molinex-platform-backend` | `feature/production-batch-registration-api` | [`46a2b20`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/46a2b20dc76997cb17cc35cac509e67afdf38b0d) | `test(production): cover batch registration scenarios` | — | 2026-11-13T08:16:29-05:00 |
+| `molinex-platform-backend` | `develop` | [`bf3dd4a`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/bf3dd4ae85c335f65c25ea220094dbf3d99dcc4d) | `feat(production): add raw material reception persistence` | — | 2026-11-13T12:55:09-05:00 |
+| `molinex-platform-backend` | `develop` | [`5db1531`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/5db15310625bbbe65f12e1274bcbd4b8c303be1e) | `feat(production): expose batch registration endpoint` | — | 2026-11-13T12:59:46-05:00 |
+| `molinex-platform-backend` | `develop` | [`2a6eb66`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/2a6eb665d659e7d554d9e86fb99aa6f35adc7e63) | `feat(production): implement production records and history` | — | 2026-11-13T13:04:22-05:00 |
+| `molinex-platform-backend` | `feature/quality-yield-control` | [`6ded52b`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/6ded52b6d1d7f89c5f6a0ec39cc7eef8419042a2) | `feat(quality): add yield and rice composition queries` | — | 2026-11-13T14:42:54-05:00 |
+| `molinex-platform-backend` | `develop` | [`88d2551`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/88d2551dae1ff05f1ca863f9640cba3dbab0ec61) | `fix(quality): resolve errors in yield and rice composition queries` | — | 2026-11-13T15:40:56-05:00 |
+| `molinex-platform-backend` | `develop` | [`88a1e73`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/88a1e73a6d3685fa624301b6775f7cc9709bc8f3) | `feat(iam): implement user authentication` | — | 2026-11-13T15:40:56-05:00 |
+| `molinex-platform-backend` | `feature/asset-maintenance-management` | [`7523df1`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/7523df137dfa1e78a56f6025e150b43716bc9457) | `feat(assets): add machine and maintenance domain model` | Add the Machine and MaintenanceRecord aggregates, value objects, commands, domain events, queries and repository contracts for US-17 to US-21. | 2026-11-13T15:58:44-05:00 |
+| `molinex-platform-backend` | `feature/asset-maintenance-management` | [`89e714d`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/89e714d0df4910cb5d1a9ec98ec3bcd0697a4fdb) | `feat(assets): add machine and maintenance services and persistence` | Add the command and query services for machine registration, status, preventive and corrective maintenance and history (US-17 to US-21), with their JPA persistence adapters and the scenario tests for each story. | 2026-11-13T16:03:22-05:00 |
+| `molinex-platform-backend` | `feature/asset-maintenance-management` | [`5da44ab`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/5da44ab4e65a0b074e23b8bc7ff2020f8bfc43ad) | `feat(assets): expose machine status and maintenance history` | Add the REST controllers, resources and assemblers for machines and maintenance records (US-18 and US-21) with an HTTP scenario test, and the shared GlobalExceptionHandler that maps validation errors to ProblemDetail. | 2026-11-13T16:06:03-05:00 |
+| `molinex-platform-backend` | `feature/commercial-inquiry` | [`f698c08`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/f698c08b758c3e3d1971fa1e670d378245d48786) | `feat(commercial): add commercial inquiry domain, service and persistence` | Add the CommercialInquiry aggregate, value objects, command, event and repository contract, the submission service and its JPA persistence adapters, with the US-36 scenario tests. | 2026-11-13T16:07:59-05:00 |
+| `molinex-platform-backend` | `feature/commercial-inquiry` | [`ceba070`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/ceba07048edb95f33b82580a51acf18c80d9e9c7) | `feat(commercial): persist inquiries from the landing page` | Expose POST /api/v1/commercial-inquiries with its resources and assemblers so the Landing Page can submit an inquiry that is stored before it is confirmed (US-36), and add an HTTP integration test for the 201 and 400 cases. | 2026-11-13T16:10:20-05:00 |
+| `molinex-platform-backend` | `feature/mysql-azure-deployment` | [`3af7a28`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/3af7a280ebd89ab3709bf9da9daf7743c8d95f84) | `feat(config): add environment-specific MySQL profiles` | Configura los perfiles `dev` y `prod` y externaliza las credenciales mediante variables de entorno. | 2026-11-13T17:55:32-05:00 |
+| `molinex-platform-backend` | `feature/mysql-azure-deployment` | [`b61181e`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/b61181e6c478886231ecf3a4cfcef918fe886c2a) | `build(docker): add Java 27 container image` | Incorpora la imagen multi-stage para compilar y ejecutar el backend con Java 27. | 2026-11-13T18:05:57-05:00 |
+| `molinex-platform-backend` | `feature/mysql-azure-deployment` | [`e69b62e`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/e69b62e6fd4ca9f2340c9008c900f14e443a5418) | `build(docker): add local MySQL compose stack` | Añade el entorno reproducible local con la API, MySQL 8.4, healthcheck y volumen persistente. | 2026-11-13T18:16:05-05:00 |
+| `molinex-platform-backend` | `feature/azure-production-deployment` | [`a25ac66`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/a25ac66a35260c471bf235842a83a2095e3be2aa) | `build(docker): add Azure production compose stack` | Documenta la ejecución del contenedor contra Azure Database for MySQL mediante variables de entorno. | 2026-11-13T21:35:33-05:00 |
+| `molinex-platform-backend` | `release/1.0.0` | [`66e702c`](https://github.com/Vanguard-open-source/molinex-platform-backend/commit/66e702c2e3f17a04a1405744783b05f930838c59) | `chore(release): prepare version 1.0.0` | Establece la versión Maven final utilizada por la imagen desplegada y prepara el cierre GitFlow. | 2026-11-13T22:43:48-05:00 |
+
+Las ramas principales publicadas de [`molinex-webapp`](https://github.com/Vanguard-open-source/molinex-webapp) y [`molinex-website`](https://github.com/Vanguard-open-source/molinex-website) todavía registran como últimos cambios commits de octubre. La integración de Angular y del formulario de la Landing Page con la API queda por sustentar con cambios en sus respectivos repositorios. Los commits del backend acreditan el desarrollo de los servicios y deben complementarse con las evidencias de ejecución y despliegue.
+
+#### 5.2.3.5 Execution Evidence for Sprint Review
+
+La evidencia de ejecución del Sprint 3 corresponde a la suite final del backend Java de Molinex, ejecutada el 13 de noviembre de 2026 durante la preparación de la [release `v1.0.0`](https://github.com/Vanguard-open-source/molinex-platform-backend/releases/tag/v1.0.0). Se utilizó Maven Wrapper 3.9.11 con JDK 27.0.1. Las pruebas de integración utilizaron Spring MockMvc y H2 en memoria para aislar los escenarios del dominio.
+
+```text
+mvnw.cmd -Dsurefire.useManifestOnlyJar=false clean test
+Tests run: 44, Failures: 0, Errors: 0, Skipped: 0
+BUILD SUCCESS
+```
+
+| Flujo del Sprint 3 | Resultado observado | Pruebas ejecutadas |
+| --- | --- | ---: |
+| **TS-01 · Producción** | Registro y consulta de recepciones y lotes, vinculación con el registro productivo, consulta del historial y actualización. Se comprobó el rechazo de datos inválidos, códigos duplicados y referencias inexistentes en los escenarios cubiertos. | 13 |
+| **TS-02 · Calidad y rendimiento** | Registro de resultados de calidad y merma, consulta del rendimiento por registro productivo y de la composición por lote. La prueba incluye una consulta de composición sin resultados. | 1 |
+| **TS-03 · Maquinaria y mantenimiento** | Registro y consulta de equipos, estado e historial, intervenciones preventivas y correctivas. Se comprobaron escenarios HTTP de mantenimiento y casos de validación y recursos inexistentes. | 21 |
+| **US-02 · Inicio de sesión** | Autenticación de una cuenta activa y emisión de un token firmado. Se comprobó el rechazo de credenciales incorrectas, cuentas no disponibles y solicitudes sin contraseña. | 3 |
+| **US-36 · Solicitud comercial** | Persistencia y confirmación de una solicitud válida en el backend. Se comprobó el rechazo de solicitudes inválidas y el manejo de fallos en el servicio. | 6 |
+
+Las 44 pruebas anteriores cubren el backend con H2 en un entorno local. Además, el 14 de noviembre de 2026 se verificaron con HTTP 200 el Swagger UI y el documento OpenAPI del contenedor `v1.0.0` desplegado en Azure. El 13 de noviembre de 2026 se revisó también la [Web Application desplegada en Azure Static Web Apps](https://lemon-meadow-06ea8a41e.1.azurestaticapps.net/). Se inició sesión con la cuenta de demostración y se navegó por las vistas que se muestran a continuación.
+
+#### Evidencia visual de la Web Application
+
+![Inicio de sesión con el formulario vacío (US-02)](assets/Images%20Chapter%205/Sprint%203/5.2.3.5-01-inicio-sesion.jpg)
+
+**Figura:** Inicio de sesión con el formulario vacío (US-02). Fuente: captura de la Web Application desplegada, 13-11-2026.
+
+![Panel de producción y trazabilidad de recepciones, lotes y procesos (TS-01)](assets/Images%20Chapter%205/Sprint%203/5.2.3.5-02-produccion.jpg)
+
+**Figura:** Panel de producción y trazabilidad de recepciones, lotes y procesos (TS-01). Fuente: captura de la Web Application desplegada, 13-11-2026.
+
+![Historial de producción y filtros (TS-01)](assets/Images%20Chapter%205/Sprint%203/5.2.3.5-03-historial-produccion.jpg)
+
+**Figura:** Historial de producción y filtros (TS-01). Fuente: captura de la Web Application desplegada, 13-11-2026.
+
+![Indicadores de rendimiento y composición de arroz entero y quebrado (US-12 y US-13)](assets/Images%20Chapter%205/Sprint%203/5.2.3.5-04-calidad-rendimiento.jpg)
+
+**Figura:** Indicadores de rendimiento y composición de arroz entero y quebrado (US-12 y US-13). Fuente: captura de la Web Application desplegada, 13-11-2026.
+
+![Inventario y estado operativo de la maquinaria (US-18)](assets/Images%20Chapter%205/Sprint%203/5.2.3.5-05-maquinaria.jpg)
+
+**Figura:** Inventario y estado operativo de la maquinaria (US-18). Fuente: captura de la Web Application desplegada, 13-11-2026.
+
+![Historial de mantenimiento filtrado por máquina (US-21)](assets/Images%20Chapter%205/Sprint%203/5.2.3.5-06-mantenimiento.jpg)
+
+**Figura:** Historial de mantenimiento filtrado por máquina (US-21). Fuente: captura de la Web Application desplegada, 13-11-2026.
+
+![Vista de usuarios y permisos disponible para el administrador](assets/Images%20Chapter%205/Sprint%203/5.2.3.5-07-usuarios-permisos.jpg)
+
+**Figura:** Vista de usuarios y permisos disponible para el administrador. Fuente: captura de la Web Application desplegada, 13-11-2026.
+
+![Formulario de solicitud comercial antes del envío (US-36)](assets/Images%20Chapter%205/Sprint%203/5.2.3.5-08-formulario-comercial.jpg)
+
+**Figura:** Formulario de solicitud comercial antes del envío (US-36). Fuente: captura de la Web Application desplegada, 13-11-2026.
+
+El formulario comercial se inspeccionó en la Web Application y quedó sin enviar. La verificación del envío desde la Landing Page y la confirmación de qué API y base de datos utiliza el despliegue quedan pendientes.
+
+#### 5.2.3.6 Services Documentation Evidence for Sprint Review
+
+Se verificaron **Swagger UI** y **OpenAPI 3.1** tanto en la ejecución local como en la release `v1.0.0` desplegada en Azure. El 14 de noviembre de 2026 respondieron con HTTP 200 el [Swagger UI del backend](https://molinex-platform-backend-vanguard.azurewebsites.net/swagger-ui/index.html) y el [documento OpenAPI](https://molinex-platform-backend-vanguard.azurewebsites.net/v3/api-docs). La [especificación OpenAPI conservada como evidencia](assets/Images%20Chapter%205/Sprint%203/5.2.3.6-openapi.json) contiene 21 rutas y 29 operaciones del alcance revisado.
+
+| Alcance | Operaciones representativas | Datos de entrada |
+| --- | --- | --- |
+| **TS-01 · Producción** | `POST /api/v1/raw-material-receptions`, `POST /api/v1/production-batches`, `POST /api/v1/production-records`, `GET /api/v1/production-records/history` | Cuerpo JSON para registros y filtros `from` y `to` para el historial. |
+| **TS-02 · Calidad y rendimiento** | `GET /api/v1/yield-indicators`, `GET /api/v1/rice-composition` | `from`, `to` y `productionRecordId` para rendimiento. `batchId` para composición. |
+| **TS-03 · Maquinaria y mantenimiento** | `GET /api/v1/machines/{id}/status`, `GET /api/v1/maintenance-records/by-machine/{machineId}`, `POST /api/v1/maintenance-records` | Identificador de máquina para consultas y cuerpo JSON para registrar una intervención. |
+| **US-02 · Acceso** | `POST /api/v1/tokens` | Credenciales en el cuerpo JSON. |
+| **US-36 · Solicitud comercial** | `POST /api/v1/commercial-inquiries` | Datos de contacto y mensaje en el cuerpo JSON. |
+
+| Solicitud ejecutada | Respuesta observada |
+| --- | --- |
+| `GET /api/v1/production-batches` con la base vacía | `200 OK` con `[]`. |
+| `GET /api/v1/rice-composition?batchId=1` sin el lote | `404 Not Found` con `PRODUCTION_BATCH_NOT_FOUND`. |
+| `GET /api/v1/machines/1/status` sin la máquina | `404 Not Found` con `MACHINE_NOT_FOUND`. |
+| `POST /api/v1/commercial-inquiries` con `{}` | `400 Bad Request` con `VALIDATION_ERROR` y los campos obligatorios omitidos. |
+
+La especificación generada declara `200` para las altas de recepción, lote y registro productivo, mientras que los controladores y las pruebas de integración confirman `201 Created`. Las respuestas `400` y `404` observadas tampoco aparecen en todas las operaciones de ejemplo. La URL desplegada ya está publicada y verificada; para una siguiente iteración corresponde alinear en OpenAPI los códigos de éxito y error con el comportamiento real de los controladores.
+
+#### Capturas de Swagger UI
+
+Las capturas corresponden al backend Java de Molinex ejecutado en `localhost:8080`. Las figuras de la consulta de recepciones muestran tanto la solicitud `GET /api/v1/raw-material-receptions` como la respuesta del servidor con datos de prueba.
+
+![Vista general de Swagger UI y operaciones de registros de producción.](assets/Images%20Chapter%205/Sprint%203/5.2.3.6-01-swagger-registros-produccion.png)
+
+**Figura.** Vista general de Swagger UI y operaciones de registros de producción. Fuente de la captura: Swagger UI en `localhost:8080`.
+
+![Solicitud GET de recepciones de materia prima desde Swagger UI.](assets/Images%20Chapter%205/Sprint%203/5.2.3.6-02-swagger-consulta-recepciones.png)
+
+**Figura.** Solicitud GET de recepciones de materia prima desde Swagger UI. Fuente de la captura: Swagger UI en `localhost:8080`.
+
+![Respuesta 200 OK de la consulta, con una recepción que contiene datos de prueba.](assets/Images%20Chapter%205/Sprint%203/5.2.3.6-03-swagger-respuesta-recepciones.png)
+
+**Figura.** Respuesta 200 OK de la consulta, con una recepción que contiene datos de prueba. Fuente de la captura: Swagger UI en `localhost:8080`.
+
+![Operaciones documentadas para calidad, lotes de producción y mantenimiento.](assets/Images%20Chapter%205/Sprint%203/5.2.3.6-04-swagger-calidad-lotes-mantenimiento.png)
+
+**Figura.** Operaciones documentadas para calidad, lotes de producción y mantenimiento. Fuente de la captura: Swagger UI en `localhost:8080`.
+
+![Operaciones documentadas para maquinaria, solicitudes comerciales, rendimiento y composición del arroz.](assets/Images%20Chapter%205/Sprint%203/5.2.3.6-05-swagger-maquinaria-comercial-indicadores.png)
+
+**Figura.** Operaciones documentadas para maquinaria, solicitudes comerciales, rendimiento y composición del arroz. Fuente de la captura: Swagger UI en `localhost:8080`.
+
+#### 5.2.3.7 Software Deployment Evidence for Sprint Review
+
+La primera API propia de Molinex se publicó como un contenedor Linux en Azure App Service. El artefacto desplegado corresponde a la release `v1.0.0` del repositorio `molinex-platform-backend` y se conecta a una instancia administrada de Azure Database for MySQL. Las credenciales y el secreto de firma se configuraron como variables de entorno del App Service y no forman parte del repositorio ni de la imagen.
+
+El flujo de despliegue aplicado fue el siguiente:
+
+1. Maven Wrapper compila el backend con Java 27 y genera `molinex-platform-backend-1.0.0.jar`.
+2. El `Dockerfile` multi-stage construye la imagen `molinex-platform-backend:1.0.0` y ejecuta la aplicación con un usuario no privilegiado.
+3. La imagen se publica en Azure Container Registry como `molinexplatformacr1924.azurecr.io/molinex-platform-backend:1.0.0`.
+4. Azure App Service descarga la imagen, activa el perfil `prod` y expone el puerto 8080.
+5. Spring Boot se conecta mediante TLS a la base `molinex-platform` del servidor flexible `mysql-molinex`.
+
+| Recurso | Servicio y configuración | Evidencia de verificación |
+| --- | --- | --- |
+| Backend RESTful API | Azure App Service para Linux, contenedor `molinex-platform-backend:1.0.0`, aplicación `molinex-platform-backend-vanguard` | [Swagger UI](https://molinex-platform-backend-vanguard.azurewebsites.net/swagger-ui/index.html), HTTP 200 el 14-11-2026. |
+| Contrato de servicios | Springdoc OpenAPI 3.1 servido por el mismo contenedor | [OpenAPI JSON](https://molinex-platform-backend-vanguard.azurewebsites.net/v3/api-docs), HTTP 200 el 14-11-2026. |
+| Registro de imágenes | Azure Container Registry Basic `molinexplatformacr1924` | Imagen `molinex-platform-backend:1.0.0` publicada con digest `sha256:4264a4409da36e916449fa013d4e9b32e363358b913b96633495bccb8959ce26`. |
+| Persistencia | Azure Database for MySQL Flexible Server 8.0, servidor `mysql-molinex`, base `molinex-platform` | El log de arranque registra MySQL Connector/J, `MySQLDialect`, MySQL 8.0.46 y la inicialización satisfactoria de JPA. |
+| Frontend Web Application vigente | Azure Static Web Apps | [Web Application](https://lemon-meadow-06ea8a41e.1.azurestaticapps.net/), HTTP 200 el 14-11-2026. |
+| Landing Page vigente | GitHub Pages | [Landing Page](https://vanguard-open-source.github.io/molinex-website/), HTTP 200 el 14-11-2026. |
+
+El contenedor necesita varios minutos para completar Spring Data, Hibernate y la conexión con MySQL en el plan B1. Por ello se configuró `WEBSITES_CONTAINER_START_TIME_LIMIT=600`; el arranque final de la release superó el warmup de Azure y quedó en estado `Running`. La disponibilidad HTTP del frontend y de la Landing Page confirma sus despliegues vigentes, pero no sustituye la evidencia de una nueva integración de sus repositorios con la API propia.
+
+#### 5.2.3.8 Team Collaboration Insights during Sprint
+
+Durante el Sprint 3, los cinco integrantes participaron en el repositorio del backend. GitHub Insights atribuye 24 commits: 8 a `Giova2725`, 5 a `brayanjk22`, 5 a `Fabricio1924`, 3 a `saavedraantony-max` y 3 a `lulu22nhiri`. La cantidad de commits se complementa con la responsabilidad funcional declarada en la sección 5.2.3.2, ya que una contribución puede representar implementación, pruebas, configuración o despliegue con alcances diferentes.
+
+| Integrante | Usuario de GitHub | Commits | Responsabilidad principal durante Sprint 3 |
+| --- | --- | ---: | --- |
+| Gallegos De La Cruz, Giovanni Marcelo | `Giova2725` | 8 | Liderazgo de Web Services de producción y calidad y colaboración en la integración. |
+| Huerta Cardenas, Brayan Benjamin | `brayanjk22` | 5 | Colaboración en los servicios, validación, Landing Page y evidencias de la entrega. |
+| Rivera Rupay, Fabricio Jose | `Fabricio1924` | 5 | Configuración por entornos, Docker, MySQL, Azure, release y despliegue. |
+| Jimenez Saavedra, Antony Alexander | `saavedraantony-max` | 3 | Liderazgo de la integración de la Web Application y colaboración en mantenimiento y acceso. |
+| Casalino Berrocal, Luisa Nhiriel | `lulu22nhiri` | 3 | Liderazgo de Web Services de mantenimiento y acceso y colaboración en calidad. |
+
+El cierre utilizó GitFlow: las features se integraron en `develop`, la rama `release/1.0.0` preparó la versión, se realizaron merges `--no-ff` hacia `main` y `develop`, se eliminó la rama de release y se publicó el tag anotado y la [GitHub Release `v1.0.0`](https://github.com/Vanguard-open-source/molinex-platform-backend/releases/tag/v1.0.0). La evidencia gráfica completa se presenta en [Project Report Collaboration Insights – Entrega AV2](#entrega-av2).
+
+## 5.3 Validation Interviews
+### 5.3.1 Diseño de Entrevistas
+#### Objetivo general
+
+Validar la propuesta de valor y las funcionalidades principales de Molinex mediante sesiones de validación dirigidas a los tres segmentos de usuarios identificados. Estas sesiones se realizarán después de presentar la Landing Page y la Web Application, con la finalidad de evaluar la comprensión de la propuesta de valor, la utilidad de las funcionalidades, la facilidad de uso y la experiencia de interacción de los participantes, así como identificar oportunidades de mejora.
+
+#### Características de las sesiones de validación
+
+- **Tipo:** Entrevistas semiestructuradas de validación.
+- **Modalidad:** Virtual o presencial.
+- **Duración:** 15 a 20 minutos por participante.
+- **Participantes:** Entre 3 y 5 personas por cada segmento objetivo.
+- **Material de apoyo:** Landing Page desplegada y prototipo navegable de Figma de la Web Application.
+- **Procedimiento:** Presentación de la solución, exploración de la Landing Page, ejecución de los User Flows correspondientes a cada segmento y aplicación de preguntas abiertas posteriores a la interacción.
+- **Registro:** Las sesiones serán grabadas en video, previa autorización de los participantes, para documentar sus respuestas y observaciones.
+
+1. **Guion de entrevista: Gerentes o administradores**
+
+**Objetivo específico:**
+
+Evaluar la comprensión de la propuesta de valor de Molinex, la presentación de los planes de suscripción y la utilidad de las funcionalidades relacionadas con la supervisión general del molino, los indicadores de producción, rendimiento, mermas, calidad y estado de la maquinaria, así como su contribución a la toma de decisiones administrativas.
+
+**Artefactos y User Flows para la validación:**
+
+- **Landing Page:** Se evaluará la comprensión de la propuesta de valor, la identificación de los beneficios y funcionalidades, la ubicación y comparación de los planes de suscripción Básico, Profesional y Empresarial, y la posibilidad de solicitar información comercial.
+- **Web Application:** Se utilizará el User Goal 1: "Revisar el estado general del molino", definido en la sección 4.4.2 del presente informe. También se tomará como referencia el User Flow Diagram de la sección 4.4.4.
+
+**Actividades de validación:**
+
+1. Explorar la Landing Page e identificar la propuesta de valor y los beneficios principales de Molinex.
+2. Localizar las funcionalidades presentadas y explicar cómo contribuirían a la gestión del molino.
+3. Ubicar los tres planes de suscripción, comparar sus características e identificar cuál se ajustaría mejor a las necesidades del molino.
+4. Localizar la opción para solicitar información comercial y explicar cómo realizaría dicha solicitud.
+5. Ingresar a la Web Application y explorar el dashboard principal.
+6. Consultar los indicadores de producción, rendimiento y merma.
+7. Revisar las alertas y recomendaciones generadas por el sistema.
+8. Explorar los reportes y la información disponible para la toma de decisiones.
+
+**Presentación:**
+
+Buenos días/tardes. Somos estudiantes de Ingeniería de Software y estamos desarrollando Molinex, una plataforma web orientada a mejorar la gestión operativa de los molinos de arroz.
+
+En esta sesión le mostraremos nuestra Landing Page y la aplicación web de Molinex para que pueda explorar sus funcionalidades. Después de interactuar con ambas, queremos conocer su experiencia, evaluar la utilidad de la información presentada y recopilar sus opiniones y sugerencias para mejorar la solución.
+
+Asimismo, solicitamos su autorización para grabar la sesión en video, únicamente con fines académicos y como evidencia del proceso de validación.
+
+**Preguntas de validación:**
+
+1. Después de explorar la Landing Page, ¿cómo describiría la propuesta de valor de Molinex? ¿Qué beneficios logró identificar?
+2. ¿Qué funcionalidades presentadas en la Landing Page considera más relevantes para la gestión de un molino de arroz? ¿Por qué?
+3. ¿Cómo describiría la presentación de los planes Básico, Profesional y Empresarial? ¿Qué diferencias logró identificar y qué información adicional necesitaría para compararlos?
+4. ¿Qué tan sencillo le resultó encontrar la opción para solicitar información comercial? ¿Qué mejoraría de ese proceso?
+5. Después de explorar el dashboard, ¿cómo describiría la utilidad de los indicadores presentados para supervisar el funcionamiento del molino?
+6. ¿Qué información del dashboard considera más relevante para sus decisiones administrativas? ¿Por qué?
+7. ¿Cómo interpretó los indicadores de producción, rendimiento y merma? ¿Qué información adicional le habría resultado útil?
+8. Si una de las alertas presentadas apareciera hoy en su molino, ¿qué decisión tomaría a partir de esa información? ¿Qué dato adicional necesitaría?
+9. ¿De qué manera los reportes presentados podrían contribuir al control de las operaciones?
+10. ¿Qué dificultades encontró al navegar por la plataforma o interpretar la información?
+11. ¿Qué funcionalidad considera que aporta mayor valor a la gestión del molino y qué cambios propondría para mejorarla?
+
+**Cierre:**
+
+Muchas gracias por su tiempo y por compartir su experiencia. Sus comentarios nos permitirán identificar oportunidades de mejora y evaluar si Molinex responde a las necesidades de gestión y toma de decisiones de los gerentes o administradores de los molinos de arroz.
+
+2. **Guion de entrevista: Técnicos de mantenimiento**
+
+**Objetivo específico:**
+
+Evaluar la utilidad y facilidad de uso de las funcionalidades de Molinex relacionadas con la gestión de maquinaria, el registro de mantenimientos, el historial de fallas y las alertas, considerando su contribución al seguimiento y control de las actividades de mantenimiento.
+
+**Artefactos y User Flows para la validación:**
+
+- **Landing Page:** Se evaluará la comprensión general de la propuesta de valor, la identificación de las funcionalidades relacionadas con el mantenimiento y la facilidad para localizar los planes de suscripción.
+- **Web Application:** Se utilizará el User Goal 3: "Gestionar mantenimiento", definido en la sección 4.4.2 del presente informe. También se tomará como referencia el User Flow Diagram de la sección 4.4.4.
+
+**Actividades de validación:**
+
+1. Explorar la Landing Page e identificar las funcionalidades relacionadas con el mantenimiento de maquinaria.
+2. Localizar los planes de suscripción y revisar la información presentada.
+3. Ingresar a la Web Application y consultar el listado de maquinaria registrada.
+4. Revisar la información y el estado de una máquina seleccionada.
+5. Consultar el historial de mantenimientos y fallas.
+6. Explorar el registro de una actividad de mantenimiento.
+7. Consultar las alertas relacionadas con posibles fallas o mantenimientos pendientes.
+
+**Presentación:**
+
+Buenos días/tardes. Somos estudiantes de Ingeniería de Software y estamos desarrollando Molinex, una plataforma web que busca facilitar la gestión operativa y el mantenimiento de maquinaria en los molinos de arroz.
+
+En esta sesión le mostraremos nuestra Landing Page y la aplicación web de Molinex para que pueda explorar sus funcionalidades, especialmente aquellas relacionadas con el mantenimiento de maquinaria. Después de interactuar con la solución, queremos conocer su experiencia, identificar posibles dificultades y recoger sus sugerencias para mejorar la plataforma.
+
+Asimismo, solicitamos su autorización para grabar la sesión en video, únicamente con fines académicos y como evidencia del proceso de validación.
+
+**Preguntas de validación:**
+
+1. Después de explorar la Landing Page, ¿cómo describiría las funcionalidades de Molinex relacionadas con el mantenimiento de maquinaria?
+2. ¿Qué información presentada en la Landing Page considera más relevante para un técnico de mantenimiento?
+3. Después de revisar la información de la maquinaria, ¿qué tan útil le resultó para conocer el estado de los equipos? ¿Qué datos considera más importantes?
+4. ¿Cómo describiría su experiencia al consultar el historial de mantenimientos y fallas? ¿En qué le ayudaría disponer de esta información?
+5. ¿Qué opinión tiene sobre el proceso de registro de las actividades de mantenimiento? ¿Qué aspectos facilitaría o cambiaría?
+6. Si una alerta de mantenimiento apareciera en la plataforma, ¿qué información necesitaría para determinar la prioridad de atención de la máquina?
+7. ¿Qué dificultades encontró al utilizar las funcionalidades relacionadas con el mantenimiento?
+8. ¿Qué información adicional considera necesaria para mejorar el seguimiento de las máquinas?
+9. ¿Qué funcionalidad considera más útil para sus actividades y qué mejoras propondría?
+
+**Cierre:**
+
+Muchas gracias por su participación. Sus comentarios nos ayudarán a mejorar las funcionalidades de mantenimiento y adaptarlas a las necesidades reales de los técnicos de los molinos de arroz.
+
+3. **Guion de entrevista: Operarios de maquinaria y producción**
+
+**Objetivo específico:**
+
+Evaluar la facilidad de uso y utilidad de las funcionalidades de Molinex relacionadas con el registro y consulta de información de producción, el seguimiento de lotes y la comunicación de anomalías, considerando su adecuación a las actividades diarias de los operarios.
+
+**Artefactos y User Flows para la validación:**
+
+- **Landing Page:** Se evaluará la comprensión general de la propuesta de valor, la identificación de las funcionalidades relacionadas con la producción y la facilidad para localizar los planes de suscripción.
+- **Web Application:** Se utilizará el User Goal 2: "Registrar una operación", definido en la sección 4.4.2 del presente informe. También se tomará como referencia el User Flow Diagram de la sección 4.4.4.
+
+**Actividades de validación:**
+
+1. Explorar la Landing Page e identificar las funcionalidades relacionadas con las actividades de producción.
+2. Localizar los planes de suscripción y revisar la información presentada.
+3. Ingresar a la Web Application y explorar las opciones disponibles en el módulo de producción.
+4. Consultar la información de un lote de producción.
+5. Revisar los datos relacionados con la producción y las mermas.
+6. Explorar el flujo para registrar una operación y completar las acciones correspondientes.
+7. Identificar las opciones disponibles para comunicar anomalías o problemas relacionados con la maquinaria.
+
+**Presentación:**
+
+Buenos días/tardes. Somos estudiantes de Ingeniería de Software y estamos desarrollando Molinex, una plataforma web orientada a mejorar el control de los procesos operativos en los molinos de arroz.
+
+En esta sesión le mostraremos nuestra Landing Page y la aplicación web de Molinex para que pueda explorar sus funcionalidades relacionadas con las actividades de producción. Después de interactuar con la solución, queremos conocer su experiencia, identificar qué tan comprensibles y sencillas resultaron las opciones y recoger sus sugerencias para mejorar la plataforma.
+
+Asimismo, solicitamos su autorización para grabar la sesión en video, únicamente con fines académicos y como evidencia del proceso de validación.
+
+**Preguntas de validación:**
+
+1. Después de explorar la Landing Page, ¿cómo describiría las funcionalidades de Molinex relacionadas con las actividades de producción?
+2. ¿Qué información presentada en la Landing Page le permitió comprender cómo la plataforma apoya las operaciones del molino?
+3. Después de explorar el módulo de producción, ¿cómo describiría la facilidad para encontrar las opciones que necesitaba?
+4. ¿Qué opinión tiene sobre la información presentada acerca de los lotes de producción? ¿Qué datos le resultaron más útiles?
+5. ¿Cómo interpretó la información relacionada con la producción y las mermas?
+6. ¿Qué tan sencillo le resultó seguir el flujo para registrar una operación? ¿En qué parte tuvo alguna dificultad?
+7. ¿Qué datos del registro de la operación le resultaron fáciles o difíciles de completar
+8. ¿Qué información adicional le gustaría registrar al terminar una operación?
+9. ¿Qué cambios realizaría en la interfaz para facilitar su utilización durante la jornada laboral?
+10. ¿Qué funcionalidad considera que facilitaría más sus actividades diarias y qué mejoras propondría?
+
+**Cierre:**
+
+Muchas gracias por su tiempo y por compartir su experiencia. Sus respuestas nos permitirán mejorar la facilidad de uso de Molinex y comprobar si sus funcionalidades se adaptan a las necesidades de los operarios de maquinaria y producción.
+
+### 5.3.2 Registro de Entrevistas
+| Nombre y apellido	 | Contexto | Distrito | Segmento | Duración |Resumen descriptivo|Screenshot|Link|
+|:---|:--|:--|:--|:----|:----|:--|:--|
+| Yeisen Maculupu Beckam | Entrevista realizada por Antony Jimenez Saavedra para conocer las necesidades y experiencias relacionadas con la gestión de molinos arroceros. | Piura | Segmento1: Gerentes o administradores | 0:00 - 5:05 | Durante la entrevista, Jason, administrador de un molino arrocero, destacó la utilidad de Molinex para gestionar la producción y el mantenimiento de maquinaria, especialmente para anticipar fallas y evitar interrupciones. Asimismo, sugirió agregar precios al registro de materia prima, incorporar filtros de búsqueda y mejorar algunos detalles de la interfaz. En general, consideró que la aplicación es funcional y beneficiosa para el molino. |![Registo 1-cap5.png](assets/Images%20Chapter%205/Registo%201-cap5.png)|[Video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202420031_upc_edu_pe/IQDk-auXMJy3TauRlpsRkVs5Ae_am6uFEoqAHHow4fr19hc?e=rkMsyE&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)|
+
+### 5.3.3 Evaluaciones según heurísticas
+La evaluación busca identificar dificultades de uso en Molinex y proponer mejoras para los gerentes, técnicos de mantenimiento y operarios. Se revisaron las capturas de la Web Application del Sprint 2, el mockup de la Landing Page y las observaciones registradas en la entrevista de validación de la sección 5.3.2.
+
+La revisión se organizó en tres dimensiones: usabilidad, diseño inclusivo y arquitectura de información. Para usabilidad se tomaron como referencia las [diez heurísticas de Nielsen](https://www.nngroup.com/articles/ten-usability-heuristics/). Para los aspectos de accesibilidad se consultaron los criterios de W3C citados al final de la sección.
+
+**Alcance de la revisión.** Se trata de una evaluación preliminar de las evidencias visuales del informe, realizada el 13 de noviembre de 2026. Las capturas permiten revisar etiquetas, organización y presentación de la información. No permiten comprobar por sí solas la navegación por teclado, los nombres accesibles, los mensajes después de guardar, la recuperación ante errores ni el comportamiento responsive de la aplicación. Esos puntos quedan pendientes de una evaluación interactiva. El Anexo D mencionado en el backlog no está incluido en el material recibido, por lo que esta estructura deberá contrastarse con ese formato antes de la entrega académica.
+
+#### Escala de severidad
+
+Los problemas se clasificaron con una escala de 1 a 4, basada en la [propuesta de Nielsen](https://www.nngroup.com/articles/how-to-rate-the-severity-of-usability-problems/).
+
+| Nivel | Interpretación | Prioridad orientativa |
+| --- | --- | --- |
+| 1 | Detalle cosmético que no dificulta la tarea. | Baja. |
+| 2 | Dificultad menor que puede aumentar el esfuerzo o generar dudas. | Corregir en una próxima iteración. |
+| 3 | Dificultad importante para completar una tarea. | Alta. |
+| 4 | Problema crítico que impide una tarea esencial. | Resolver antes de publicar el flujo afectado. |
+
+La severidad de los hallazgos es una estimación de esta revisión. Su frecuencia y persistencia deben contrastarse al observar a los usuarios. No se asignaron niveles 3 o 4 porque el material estático no demuestra bloqueos de esa magnitud; esto no implica que todos los flujos estén libres de problemas importantes.
+
+#### Revisión de las diez heurísticas de usabilidad
+
+| Heurística | Evidencia y valoración preliminar |
+| --- | --- |
+| 1. Visibilidad del estado del sistema | La navegación lateral resalta el módulo activo y la maquinaria presenta estados con texto. Falta observar la respuesta durante cargas, guardados y fallos. |
+| 2. Relación con el mundo real | Las pantallas utilizan términos del molino, como recepción, lote, peso procesado y mantenimiento. Conviene explicar cómo se calculan los indicadores de calidad. |
+| 3. Control y libertad del usuario | El formulario de edición muestra la acción «Cancelar». No se comprobó su funcionamiento ni el tratamiento de cambios sin guardar. |
+| 4. Consistencia y estándares | Las capturas mantienen la navegación y la disposición de las acciones principales. La coherencia de todos los textos EN/ES requiere una revisión interactiva. |
+| 5. Prevención de errores | El formulario de edición bloquea el lote y explica que su relación no puede cambiar. Las validaciones de peso, fechas y datos obligatorios siguen pendientes de prueba. |
+| 6. Reconocimiento antes que recuerdo | Los títulos y campos orientan la tarea. Las acciones representadas solo mediante iconos pueden resultar ambiguas (H-01). |
+| 7. Flexibilidad y eficiencia de uso | Recepciones ofrece búsqueda y paginación. La vista mostrada no presenta un filtro específico por periodo (H-02). |
+| 8. Diseño estético y minimalista | Las pantallas separan navegación, resumen y contenido operativo. En maquinaria, el texto del buscador queda cortado (H-04). |
+| 9. Reconocimiento y recuperación de errores | Las capturas no muestran escenarios de error. No es posible valorar este comportamiento con las evidencias revisadas. |
+| 10. Ayuda y documentación | La edición contiene una indicación sobre el lote bloqueado. En calidad no se observa una explicación de la fórmula de rendimiento (H-03). |
+
+Estas observaciones describen lo visible en cada evidencia. No representan una certificación de cumplimiento de las diez heurísticas.
+
+#### Hallazgos y recomendaciones
+
+**H-01. Acciones de producción representadas solo con iconos**
+
+- **Dimensión:** usabilidad.
+- **Heurística:** reconocimiento antes que recuerdo.
+- **Ubicación:** vista general de producción, acciones debajo de cada proceso.
+- **Evidencia observada:** aparecen dos controles con iconos y sin una etiqueta textual visible al lado.
+- **Dificultad prevista:** una persona que usa la plataforma por primera vez puede dudar sobre qué control consulta información y cuál la modifica.
+- **Severidad estimada:** 2. La acción está disponible visualmente, pero exige interpretar el símbolo.
+- **Recomendación:** acompañar los controles con etiquetas breves, como «Ver detalle» y «Editar», según su función real. Comprobar también sus nombres accesibles y la posibilidad de activarlos con teclado.
+- **Estado:** mejora propuesta. No se ha verificado una corrección.
+
+![Evidencia H-01: acciones con iconos debajo de los procesos productivos](assets/Images%20Chapter%205/Sprint%202/5.2.2.5-01-production-overview.jpg)
+
+*Fuente: captura 5.2.2.5-01-production-overview.jpg del informe. Una imagen no permite confirmar si los controles ya tienen tooltip o nombre accesible.*
+
+**H-02. Consulta de recepciones sin filtro visible por periodo**
+
+- **Dimensión:** usabilidad y arquitectura de información.
+- **Heurística:** flexibilidad y eficiencia de uso.
+- **Ubicación:** listado de recepciones de materia prima.
+- **Evidencia observada:** el buscador anuncia consultas por identificador, proveedor o procedencia. La pantalla muestra ordenamiento por fecha y paginación, pero no un control específico de fecha inicial y final.
+- **Dificultad prevista:** consultar las recepciones de una semana o de un mes puede requerir revisar varias páginas. Ordenar por fecha no sustituye seleccionar un periodo.
+- **Severidad estimada:** 2. La búsqueda general sigue disponible, aunque no cubre directamente esa consulta.
+- **Recomendación:** incorporar filtros de fecha desde/hasta, mostrar cuáles están activos y ofrecer «Limpiar filtros». Verificar que funcionen junto con la búsqueda existente.
+- **Estado:** mejora propuesta para la vista mostrada. La sugerencia de incorporar filtros también aparece en la sección 5.3.2.
+
+![Evidencia H-02: búsqueda y paginación del listado de recepciones](assets/Images%20Chapter%205/Sprint%202/5.2.2.5-02-raw-material-receptions.jpg)
+
+*Fuente: captura 5.2.2.5-02-raw-material-receptions.jpg del informe. El hallazgo corresponde a recepciones; no afirma que el historial de producción carezca de filtros.*
+
+**H-03. Indicadores de calidad sin una explicación visible de su cálculo**
+
+- **Dimensión:** usabilidad y arquitectura de información.
+- **Heurísticas:** relación con el mundo real y ayuda y documentación.
+- **Ubicación:** pantalla de resultados de calidad.
+- **Evidencia observada:** se muestran porcentajes de arroz entero, arroz quebrado y rendimiento. En la captura no se observa una explicación de la fórmula ni de la base utilizada para el rendimiento.
+- **Dificultad prevista:** los usuarios pueden interpretar de manera diferente un indicador o desconocer qué registros intervienen en él.
+- **Severidad estimada:** 2. La cifra se puede leer, pero su interpretación necesita contexto.
+- **Recomendación:** añadir una ayuda junto al indicador con su significado, fórmula validada con el dominio, unidad, periodo y tratamiento de datos insuficientes. No representar falta de información como 0 %.
+- **Estado:** mejora propuesta. Debe comprobarse si existe ayuda adicional que no aparezca en la captura.
+
+![Evidencia H-03: indicadores presentados en la pantalla de calidad](assets/Images%20Chapter%205/Sprint%202/5.2.2.5-07-quality-results.jpg)
+
+*Fuente: captura 5.2.2.5-07-quality-results.jpg del informe. Los valores corresponden a datos de prueba del Sprint 2.*
+
+**H-04. Instrucción de búsqueda cortada en maquinaria**
+
+- **Dimensión:** diseño inclusivo.
+- **Heurísticas:** reconocimiento antes que recuerdo y diseño estético y minimalista.
+- **Ubicación:** buscador del inventario de maquinaria, en la parte superior derecha.
+- **Evidencia observada:** el texto interior comienza con «Search by code, name, or…» y su parte final no se alcanza a leer en el campo mostrado. No se observa una etiqueta persistente encima del control.
+- **Dificultad prevista:** el usuario no recibe la instrucción completa sobre los datos por los que puede buscar. Además, una instrucción situada únicamente dentro del campo puede dejar de verse al escribir.
+- **Severidad estimada:** 2. Afecta la comprensión del control, aunque no demuestra que la búsqueda esté bloqueada.
+- **Recomendación:** colocar una etiqueta visible, como «Buscar maquinaria», y una ayuda breve con los criterios admitidos. Ajustar el ancho del campo en cada tamaño de pantalla. Verificar por separado que tenga un nombre accesible.
+- **Estado:** mejora propuesta. No se atribuye un incumplimiento de accesibilidad sin inspeccionar el control implementado.
+
+![Evidencia H-04: instrucción de búsqueda recortada en maquinaria](assets/Images%20Chapter%205/Sprint%202/5.2.2.5-09-machinery-inventory.jpg)
+
+*Fuente: captura 5.2.2.5-09-machinery-inventory.jpg del informe.*
+
+**H-05. Acciones comerciales con etiquetas poco específicas**
+
+- **Dimensión:** arquitectura de información.
+- **Heurísticas:** relación con el mundo real y reconocimiento antes que recuerdo.
+- **Ubicación:** sección de planes del mockup de la Landing Page.
+- **Evidencia observada:** los tres planes utilizan la etiqueta «Learn more» para su acción.
+- **Dificultad prevista:** la etiqueta no anticipa si la siguiente pantalla amplía características, abre un formulario o inicia otro paso comercial.
+- **Severidad estimada:** 2. Los planes se distinguen por su nombre, pero la acción necesita mayor precisión.
+- **Recomendación:** nombrar el resultado real del enlace. Por ejemplo, «Ver características del plan Básico» o «Solicitar información del plan Básico», según el destino implementado. Mantener equivalencia entre EN y ES.
+- **Estado:** recomendación sobre el mockup. Debe contrastarse con la Landing Page desplegada antes de registrarla como defecto vigente.
+
+**H-06. Resumen de planes sin precio ni indicación visible de cotización**
+
+- **Dimensión:** arquitectura de información.
+- **Heurística:** relación con el mundo real.
+- **Ubicación:** sección de planes del mismo mockup.
+- **Evidencia observada:** las opciones Basic, Professional y Enterprise muestran prestaciones, pero en ese resumen no aparece un precio ni una indicación expresa de que se necesita cotización.
+- **Dificultad prevista:** el visitante cuenta con información funcional para comparar, pero no sabe cómo obtener las condiciones económicas.
+- **Severidad estimada:** 2. La solicitud de información permanece como alternativa, aunque falta orientar ese paso.
+- **Recomendación:** mostrar las condiciones comerciales aprobadas. Si no existe una tarifa publicada, indicar «Solicitar cotización». No inventar precios. Esta recomendación también debe contrastarse con el criterio de aceptación de US-33.
+- **Estado:** recomendación sobre el mockup. No se verificó su presencia o ausencia en la versión desplegada.
+
+![Evidencia H-05 y H-06: mockup de Landing Page, incluida su sección de planes](assets/design/landing-mockup.webp)
+
+*Fuente: landing-mockup.webp, sección 4.3.2 del informe. Los hallazgos se refieren al diseño representado en esta imagen.*
+
+#### Diseño inclusivo: observaciones y pruebas pendientes
+
+Las capturas del inventario acompañan el color con nombres de estado, como «Operational», «Requires attention» y «Under maintenance». Esto permite reconocer la categoría sin interpretar únicamente el color. Es una característica favorable respecto al criterio de [uso del color de W3C](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html), aunque no acredita la accesibilidad del flujo completo.
+
+Para completar la evaluación se deben registrar las siguientes pruebas sobre la aplicación ejecutándose:
+
+| Aspecto | Comprobación pendiente | Evidencia que se debe conservar |
+| --- | --- | --- |
+| Teclado | Recorrer navegación, formularios, filtros y paginación sin ratón, comprobando el orden y la visibilidad del foco. | Recorrido reproducible, navegador, versión evaluada y resultado. |
+| Controles e imágenes | Verificar los nombres accesibles de los botones con iconos y las alternativas de las imágenes informativas. | Inspección del árbol de accesibilidad y prueba con lector de pantalla. |
+| Contraste | Medir texto y fondo con los colores reales de la implementación. | Colores, relación medida y criterio aplicado. Una captura comprimida no es suficiente para afirmar cumplimiento. |
+| Adaptación de la interfaz | Revisar zoom y tamaños de pantalla para localizar etiquetas cortadas, controles ocultos o desplazamientos que dificulten la tarea. | Capturas con dimensiones, zoom y pasos registrados. |
+| Formularios y errores | Enviar datos vacíos, inválidos y válidos; comprobar mensajes, conservación de datos y corrección del error. | Datos utilizados, resultado esperado, resultado observado y captura. |
+
+Estas pruebas se apoyan en las referencias de W3C sobre [operación mediante teclado](https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html), [contenido no textual](https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html) y [contraste](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html). No se registran como pruebas aprobadas en esta revisión.
+
+#### Seguimiento de mejoras
+
+| Hallazgo | Próximo paso | Criterio para cerrar la observación |
+| --- | --- | --- |
+| H-01 | Aclarar las acciones de producción. | El usuario distingue consulta y edición; se comprueban nombres accesibles y operación por teclado. |
+| H-02 | Facilitar la consulta de recepciones por periodo. | El rango de fechas devuelve los registros correspondientes y puede limpiarse. |
+| H-03 | Explicar los indicadores. | La ayuda coincide con la fórmula de negocio y diferencia datos insuficientes de cero observado. |
+| H-04 | Mostrar completa la instrucción del buscador. | El control conserva una etiqueta legible al escribir, ampliar y cambiar de pantalla. |
+| H-05 | Revisar los destinos y textos comerciales. | La etiqueta describe la acción que realmente ejecuta el enlace de cada plan. |
+| H-06 | Aclarar cómo conocer el precio. | Cada plan muestra condiciones aprobadas o una indicación explícita de cotización. |
+
+**Correcciones verificadas:** ninguna en esta revisión. Los seis hallazgos permanecen como recomendaciones hasta comprobar la versión implementada y conservar evidencia del resultado. Las capturas y la entrevista ya presentan varias funciones útiles; en particular, la navegación por módulos, el historial por máquina y la protección del lote durante la edición. Las mejoras propuestas se concentran en hacer más claras las acciones, facilitar las consultas y explicar mejor la información presentada.
+
+La sugerencia de añadir precios a la recepción de materia prima, registrada en la entrevista, debe analizarse también como una posible ampliación funcional. Por sí sola no demuestra un incumplimiento heurístico si ese dato no pertenece al alcance aprobado.
+
+#### Referencias
+
+- Nielsen, J. (1994, revisión de 2024). [10 Usability Heuristics for User Interface Design](https://www.nngroup.com/articles/ten-usability-heuristics/). Nielsen Norman Group.
+- Nielsen, J. (1994). [Severity Ratings for Usability Problems](https://www.nngroup.com/articles/how-to-rate-the-severity-of-usability-problems/). Nielsen Norman Group.
+- W3C WAI. [Understanding Success Criterion 1.1.1: Non-text Content](https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html).
+- W3C WAI. [Understanding Success Criterion 1.4.1: Use of Color](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html).
+- W3C WAI. [Understanding Success Criterion 1.4.3: Contrast (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html).
+- W3C WAI. [Understanding Success Criterion 2.1.1: Keyboard](https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html).
+
+## 5.4 Video About-the-Product
 # Conclusiones
 
 ## Conclusiones y recomendaciones
@@ -2339,7 +3475,9 @@ Durante el Sprint 2 se implementó la primera versión funcional de la Web Appli
 
 La Web Application fue desplegada en Azure Static Web Apps y la API simulada fue publicada en Azure. Asimismo, se verificó la compilación de producción, la navegación entre módulos, el cambio de idioma y la consulta de datos mediante los endpoints documentados en la sección de servicios. Las evidencias de Pull Requests, commits, ramas, colaboradores y despliegue sustentan la participación del equipo durante el Sprint 2.
 
-Como trabajo pendiente para los siguientes avances, se recomienda reemplazar la API simulada por la RESTful API definitiva, implementar e integrar la base de datos productiva y documentar los servicios definitivos mediante Swagger/OpenAPI. Por tanto, JSON Server se presenta únicamente como una solución temporal de integración y validación de la Web Application, no como el backend definitivo del producto.
+Durante el Sprint 3 se reemplazó la API simulada como servicio de referencia del backend por la primera release de los Web Services RESTful propios de Molinex. El backend se implementó con Java 27, Spring Boot, Spring Data JPA y MySQL; cuenta con 44 pruebas automatizadas, documentación OpenAPI/Swagger, una imagen Docker versionada y un despliegue verificable en Azure App Service conectado a Azure Database for MySQL.
+
+Para la siguiente iteración se recomienda consolidar en los repositorios de la Web Application y la Landing Page la integración con la API `v1.0.0`, alinear en OpenAPI todos los códigos de respuesta con los controladores y ampliar la validación interactiva de accesibilidad y manejo de errores. JSON Server se conserva únicamente como evidencia histórica de la integración realizada en Sprint 2.
 
 # Bibliografía
 
@@ -2349,7 +3487,7 @@ Conventional Commits. (s. f.). *Conventional Commits specification*. https://www
 
 Driessen, V. (2010). *A successful Git branching model*. https://nvie.com/posts/a-successful-git-branching-model/
 
-GitLab. (s. f.). *What is GitFlow?*. https://about.gitlab.com/blog/what-is-gitflow/
+GitLab. (s. f.). *What is GitFlow?* https://about.gitlab.com/blog/what-is-gitflow/
 
 Kummer, D. (s. f.). *Git-flow cheatsheet*. https://danielkummer.github.io/git-flow-cheatsheet/index.html
 
@@ -2367,3 +3505,17 @@ En este anexo se incluyen los enlaces a los videos correspondientes a la exposic
 | AV1 | Video de exposición del proyecto | [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202423883_upc_edu_pe/IQDLh1J66Lw1RoPnOHpVs3dTARNjufwCRsGWNBKD6unQxbY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=fbuUFT) |
 | AV1 | Video de demostración de la Landing Page | [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202420031_upc_edu_pe/IQBG3ToqxvMbR7DzQq0B5yLIAU1bxtjN3nuWse2Z3NQ_Ik8?e=exijmP)|
 | AV1 | Video del prototipo en Figma | [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202420031_upc_edu_pe/IQAuKZpedDkkTr19h5yiaO6hAbRvnrzfZpqPXLHV-w8nY5E?e=2iIVyT) |
+
+## Anexo B. Enlaces de despliegue
+
+Los siguientes enlaces centralizan los productos y servicios públicos de Molinex. Su disponibilidad HTTP fue verificada el 14 de noviembre de 2026.
+
+| Producto o evidencia | Plataforma | Enlace | Resultado de verificación |
+| --- | --- | --- | --- |
+| Landing Page | GitHub Pages | [Abrir Landing Page](https://vanguard-open-source.github.io/molinex-website/) | HTTP 200 |
+| Frontend Web Application | Azure Static Web Apps | [Abrir Web Application](https://lemon-meadow-06ea8a41e.1.azurestaticapps.net/) | HTTP 200 |
+| Backend RESTful API · Swagger UI | Azure App Service | [Abrir Swagger UI](https://molinex-platform-backend-vanguard.azurewebsites.net/swagger-ui/index.html) | HTTP 200 |
+| Backend RESTful API · OpenAPI 3.1 | Azure App Service | [Abrir documento OpenAPI](https://molinex-platform-backend-vanguard.azurewebsites.net/v3/api-docs) | HTTP 200 |
+| Backend RESTful API · Release | GitHub Releases | [Abrir release v1.0.0](https://github.com/Vanguard-open-source/molinex-platform-backend/releases/tag/v1.0.0) | Publicada y asociada al tag `v1.0.0` |
+
+La raíz del dominio del backend no implementa una página de inicio; para comprobar visualmente el servicio debe utilizarse Swagger UI o una ruta `/api/v1/*` documentada.

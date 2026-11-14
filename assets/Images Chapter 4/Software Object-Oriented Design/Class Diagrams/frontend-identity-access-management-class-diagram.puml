@@ -1,0 +1,236 @@
+@startuml
+title Molinex Open Source - Identity and Access Management Frontend Class Diagram
+left to right direction
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+package "Application" #EAF3F8 {
+  class IdentityAccessStore <<Angular Signals Store>> {
+    -#iamApi : IamApi
+    -#tokenStorage : TokenStorage
+    -#currentSessionSignal : WritableSignal<AuthenticatedSession?>
+    -#usersSignal : WritableSignal<User[]>
+    +currentSession : Signal<AuthenticatedSession?>
+    +users : Signal<User[]>
+    +roles : Signal<Role[]>
+    +permissions : Signal<Permission[]>
+    +loading : Signal<boolean>
+    +error : Signal<IdentityAccessOperationError?>
+    --
+    +signIn(command : SignInCommand) : void
+    +signUp(command : SignUpCommand) : void
+    +signOut() : void
+    +reloadUsers() : void
+    +assignRole(userId : UserId, role : Role) : void
+    +updateProfile(userId : UserId, profile : UserProfile) : void
+  }
+
+  class SignInCommand <<Command>> {
+    +email : string
+    +password : string
+  }
+  class SignUpCommand <<Command>> {
+    +email : string
+    +password : string
+    +fullName : string
+  }
+}
+
+package "Domain Model" #E8F4D4 {
+  class User <<Aggregate Root>> {
+    -#id : UserId
+    -#email : EmailAddress
+    -#profile : UserProfile
+    -#role : Role
+    -#status : AccountStatus
+    --
+    +id : UserId
+    +email : EmailAddress
+    +profile : UserProfile
+    +role : Role
+    +status : AccountStatus
+    +assignRole(role : Role) : void
+    +updateProfile(profile : UserProfile) : void
+  }
+
+  class UserId <<Value Object>> {
+    -#value : number
+    +value : number
+  }
+  class EmailAddress <<Value Object>> {
+    -#value : string
+    +value : string
+    +isValid() : boolean
+  }
+  class FullName <<Value Object>> {
+    -#value : string
+    +value : string
+  }
+  class JobTitle <<Value Object>> {
+    -#value : string
+    +value : string
+  }
+  class PhoneNumber <<Value Object>> {
+    -#value : string
+    +value : string
+    +isValid() : boolean
+  }
+  class UserProfile <<Value Object>> {
+    -#fullName : FullName
+    -#jobTitle : JobTitle
+    -#phoneNumber : PhoneNumber
+    +fullName : FullName
+    +jobTitle : JobTitle
+    +phoneNumber : PhoneNumber
+  }
+  class Role <<Value Object>> {
+    -#type : RoleType
+    -#permissions : Permission[]
+    +type : RoleType
+    +permissions : Permission[]
+    +allows(permission : Permission) : boolean
+  }
+  class AuthenticatedSession <<Value Object>> {
+    -#userId : UserId
+    -#token : AccessToken
+    -#role : Role
+    +userId : UserId
+    +token : AccessToken
+    +role : Role
+    +isAuthenticated() : boolean
+  }
+  class AccessToken <<Value Object>> {
+    -#value : string
+    +value : string
+    +isExpired() : boolean
+  }
+
+  enum RoleType <<Enumeration>> {
+    ADMINISTRATOR
+    MAINTENANCE_TECHNICIAN
+    PRODUCTION_OPERATOR
+  }
+  enum Permission <<Enumeration>> {
+    MANAGE_USERS
+    MANAGE_PRODUCTION
+    MANAGE_MAINTENANCE
+    VIEW_OPERATIONAL_INFORMATION
+    VIEW_REPORTS
+  }
+  enum AccountStatus <<Enumeration>> {
+    ACTIVE
+    INACTIVE
+    LOCKED
+  }
+}
+
+package "Infrastructure" #F0E6FA {
+  class IamApi <<Angular HTTP Service>> {
+    -#signInEndpoint : SignInApiEndpoint
+    -#signUpEndpoint : SignUpApiEndpoint
+    -#usersEndpoint : UsersApiEndpoint
+    -#profilesEndpoint : ProfilesApiEndpoint
+    --
+    +signIn(request : SignInRequest) : Observable<AuthenticatedSession>
+    +signUp(request : SignUpRequest) : Observable<User>
+    +getUsers() : Observable<User[]>
+    +assignRole(userId : number, role : string) : Observable<User>
+    +updateProfile(user : User) : Observable<User>
+  }
+
+  class SignInAssembler <<Assembler>> {
+    +toRequestFromCommand(command : SignInCommand) : SignInRequest
+    +toSessionFromResource(resource : SignInResource) : AuthenticatedSession
+  }
+  class SignUpAssembler <<Assembler>> {
+    +toRequestFromCommand(command : SignUpCommand) : SignUpRequest
+    +toEntityFromResource(resource : UserResource) : User
+  }
+  class UserAssembler <<Assembler>> {
+    +toEntityFromResource(resource : UserResource) : User
+    +toResourceFromEntity(entity : User) : UserResource
+  }
+
+  interface SignInRequest <<Resource>> {
+    +email : string
+    +password : string
+  }
+  interface SignUpRequest <<Resource>> {
+    +email : string
+    +password : string
+    +fullName : string
+  }
+  interface SignInResource <<Resource>> {
+    +userId : number
+    +token : string
+    +role : string
+    +permissions : string[]
+  }
+  interface UserResource <<Resource>> {
+    +id : number
+    +email : string
+    +fullName : string
+    +jobTitle : string
+    +phoneNumber : string
+    +role : string
+    +permissions : string[]
+    +status : string
+  }
+
+  class TokenStorage <<Browser Storage Service>> {
+    +save(token : AccessToken) : void
+    +get() : AccessToken?
+    +clear() : void
+  }
+  class AuthenticationGuard <<Angular Router Guard>> {
+    +canActivate() : boolean
+  }
+  class IamInterceptor <<Angular HTTP Interceptor>> {
+    +intercept(request, next) : Observable<HttpEvent>
+  }
+}
+
+package "Shared References" #FFF2CC {
+  abstract class BaseApi <<Shared Infrastructure>>
+  abstract class BaseApiEndpoint <<Shared Infrastructure>>
+}
+
+IdentityAccessStore o-- "0..*" User : holds
+IdentityAccessStore o-- "0..1" AuthenticatedSession : holds
+IdentityAccessStore ..> IamApi : uses
+IdentityAccessStore ..> TokenStorage : persists session with
+IdentityAccessStore ..> SignInCommand : handles
+IdentityAccessStore ..> SignUpCommand : handles
+
+User *-- UserId
+User *-- EmailAddress
+User *-- UserProfile
+User *-- Role
+User --> AccountStatus
+UserProfile *-- FullName
+UserProfile *-- JobTitle
+UserProfile *-- PhoneNumber
+Role *-- RoleType
+Role *-- "1..*" Permission
+AuthenticatedSession *-- UserId : references by identity
+AuthenticatedSession *-- AccessToken
+AuthenticatedSession *-- Role
+
+IamApi --|> BaseApi
+IamApi *-- BaseApiEndpoint : composes one per resource
+SignInAssembler ..> SignInCommand : maps
+SignInAssembler ..> SignInRequest : builds
+SignInAssembler ..> SignInResource : maps
+SignInAssembler ..> AuthenticatedSession : builds
+SignUpAssembler ..> SignUpCommand : maps
+SignUpAssembler ..> SignUpRequest : builds
+SignUpAssembler ..> UserResource : maps
+SignUpAssembler ..> User : builds
+UserAssembler ..> UserResource : maps
+UserAssembler ..> User : builds
+AuthenticationGuard ..> IdentityAccessStore : checks session in
+IamInterceptor ..> TokenStorage : obtains token from
+@enduml

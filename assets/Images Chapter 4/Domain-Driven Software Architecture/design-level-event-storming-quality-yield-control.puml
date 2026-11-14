@@ -1,0 +1,84 @@
+@startuml
+title Quality and Yield Control — Detailed Design-Level Event Storming
+left to right direction
+skinparam backgroundColor #F7FAFC
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam linetype ortho
+skinparam ArrowColor #334E68
+skinparam ArrowThickness 1.3
+skinparam packageStyle rectangle
+skinparam rectangle {
+  RoundCorner 8
+  Padding 8
+}
+
+rectangle "Production\nOperator" as operator #FFF3A6
+rectangle "Administrator" as administrator #FFF3A6
+
+package "Quality and Yield Control · Core Subdomain" #E6F4EA {
+  rectangle "Record Quality\nAssessment" as cmdAssessment #A9C7F7
+  rectangle "QualityAssessment" as aggAssessment #FFE27A
+  rectangle "QualityAssessment\nRecorded" as evtAssessment #FFB26B
+
+  rectangle "Record Production\nWaste" as cmdWaste #A9C7F7
+  rectangle "WasteRecord" as aggWaste #FFE27A
+  rectangle "WasteRecorded" as evtWaste #FFB26B
+
+  rectangle "When a recorded indicator is outside\nits valid reference range" as policyDeviation #C9A7E8
+  rectangle "Identify Quality\nDeviation" as cmdDeviation #A9C7F7
+  rectangle "QualityDeviation" as aggDeviation #FFE27A
+  rectangle "QualityDeviation\nIdentified" as evtDeviation #FFB26B
+
+  rectangle "Yield Indicators" as readYield #B9D98A
+  rectangle "Rice Composition" as readComposition #B9D98A
+  rectangle "Production Waste" as readWaste #B9D98A
+  rectangle "Quality Comparison" as readComparison #B9D98A
+  rectangle "Quality Deviations" as readDeviations #B9D98A
+}
+
+operator --> cmdAssessment
+cmdAssessment --> aggAssessment
+aggAssessment --> evtAssessment
+
+operator --> cmdWaste
+cmdWaste --> aggWaste
+aggWaste --> evtWaste
+
+evtAssessment --> policyDeviation
+evtWaste --> policyDeviation
+policyDeviation --> cmdDeviation : automatically triggers
+cmdDeviation --> aggDeviation
+aggDeviation --> evtDeviation
+
+administrator ..> readYield : queries
+operator ..> readComposition : queries
+operator ..> readWaste : queries
+administrator ..> readComparison : queries
+administrator ..> readDeviations : queries
+
+cmdAssessment -[hidden]down-> cmdWaste
+cmdWaste -[hidden]down-> policyDeviation
+policyDeviation -[hidden]down-> readYield
+readYield -[hidden]right-> readComposition
+readComposition -[hidden]right-> readWaste
+readWaste -[hidden]right-> readComparison
+readComparison -[hidden]right-> readDeviations
+
+note bottom of policyDeviation
+  This is a Policy because it reacts to recorded
+  facts and automatically issues a new Command.
+  Read Models remain on the independent query side.
+end note
+
+legend bottom
+|= Color |= EventStorming element |
+|<#FFF3A6>| Actor |
+|<#A9C7F7>| Command |
+|<#FFE27A>| Aggregate Root |
+|<#FFB26B>| Domain Event |
+|<#C9A7E8>| Policy: Event → Command |
+|<#B9D98A>| Read Model |
+endlegend
+@enduml

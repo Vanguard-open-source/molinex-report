@@ -1,0 +1,354 @@
+@startuml
+title Molinex Open Source - Production Management Backend Class Diagram
+left to right direction
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+package "interfaces.rest" #DCEEF8 {
+  class RawMaterialReceptionsController <<REST Controller>> {
+    -#commandService : ProductionCommandService
+    -#queryService : ProductionQueryService
+    +create(resource : CreateRawMaterialReceptionResource) : ResponseEntity
+    +getById(id : Long) : ResponseEntity
+    +getAll() : ResponseEntity
+  }
+  class ProductionBatchesController <<REST Controller>> {
+    -#commandService : ProductionCommandService
+    -#queryService : ProductionQueryService
+    +create(resource : CreateProductionBatchResource) : ResponseEntity
+    +getById(id : Long) : ResponseEntity
+    +getAvailable() : ResponseEntity
+  }
+  class ProductionRecordsController <<REST Controller>> {
+    -#commandService : ProductionCommandService
+    -#queryService : ProductionQueryService
+    +create(resource : CreateProductionRecordResource) : ResponseEntity
+    +update(id : Long, resource : UpdateProductionRecordResource) : ResponseEntity
+    +getHistory() : ResponseEntity
+  }
+  record CreateRawMaterialReceptionResource <<Request Resource>> {
+    +receivedAt : Instant
+    +supplier : String
+    +origin : String
+    +quantity : BigDecimal
+    +unit : String
+  }
+  record CreateProductionBatchResource <<Request Resource>> {
+    +code : String
+    +receptionId : Long
+    +registeredAt : Instant
+  }
+  record CreateProductionRecordResource <<Request Resource>> {
+    +batchId : Long
+    +processName : String
+    +processedWeight : BigDecimal
+    +unit : String
+    +startedAt : Instant
+  }
+  record UpdateProductionRecordResource <<Request Resource>> {
+    +processName : String
+    +processedWeight : BigDecimal
+    +unit : String
+    +startedAt : Instant
+    +finishedAt : Instant
+    +status : String
+  }
+  record ProductionResource <<Response Resource>> {
+    +id : Long
+    +referenceId : Long
+    +description : String
+  }
+  class ProductionResourceAssembler <<Assembler>> {
+    +toCommand(resource : CreateRawMaterialReceptionResource) : RecordRawMaterialReceptionCommand
+    +toCommand(resource : CreateProductionBatchResource) : RegisterProductionBatchCommand
+    +toCommand(resource : CreateProductionRecordResource) : RecordProductionInformationCommand
+    +toCommand(id : Long, resource : UpdateProductionRecordResource) : UpdateProductionInformationCommand
+    +toResource(model : Object) : ProductionResource
+  }
+}
+
+package "application" #EAF3F8 {
+  interface ProductionCommandService <<Application Port>> {
+    +handle(command : RecordRawMaterialReceptionCommand) : Result<RawMaterialReceptionId, ApplicationError>
+    +handle(command : RegisterProductionBatchCommand) : Result<ProductionBatchId, ApplicationError>
+    +handle(command : RecordProductionInformationCommand) : Result<ProductionRecordId, ApplicationError>
+    +handle(command : UpdateProductionInformationCommand) : Result<ProductionRecordId, ApplicationError>
+  }
+  interface ProductionQueryService <<Application Port>> {
+    +handle(query : GetRawMaterialReceptionByIdQuery) : Optional<RawMaterialReception>
+    +handle(query : GetAvailableProductionBatchesQuery) : List<ProductionBatch>
+    +handle(query : GetProductionHistoryQuery) : List<ProductionRecord>
+  }
+  class ProductionCommandServiceImpl <<Application Service>> {
+    -#receptionRepository : RawMaterialReceptionRepository
+    -#batchRepository : ProductionBatchRepository
+    -#recordRepository : ProductionRecordRepository
+    -#eventPublisher : DomainEventPublisher
+  }
+  class ProductionQueryServiceImpl <<Application Service>> {
+    -#receptionRepository : RawMaterialReceptionRepository
+    -#batchRepository : ProductionBatchRepository
+    -#recordRepository : ProductionRecordRepository
+  }
+  record RecordRawMaterialReceptionCommand <<Command>> {
+    +receivedAt : Instant
+    +supplier : String
+    +origin : String
+    +quantity : BigDecimal
+    +unit : String
+  }
+  record RegisterProductionBatchCommand <<Command>> {
+    +code : String
+    +receptionId : Long
+    +registeredAt : Instant
+  }
+  record RecordProductionInformationCommand <<Command>> {
+    +batchId : Long
+    +processName : String
+    +processedWeight : BigDecimal
+    +unit : String
+    +startedAt : Instant
+  }
+  record UpdateProductionInformationCommand <<Command>> {
+    +recordId : Long
+    +processName : String
+    +processedWeight : BigDecimal
+    +unit : String
+    +startedAt : Instant
+    +finishedAt : Instant
+    +status : String
+  }
+  record GetRawMaterialReceptionByIdQuery <<Query>> {
+    +id : Long
+  }
+  record GetAvailableProductionBatchesQuery <<Query>>
+  record GetProductionHistoryQuery <<Query>>
+}
+
+package "domain" #E8F4D4 {
+  class RawMaterialReception <<Aggregate Root>> {
+    -#id : RawMaterialReceptionId
+    -#receivedAt : ReceptionDateTime
+    -#supplier : Supplier
+    -#origin : MaterialOrigin
+    -#quantity : Weight
+    +{static} record(receivedAt, supplier, origin, quantity) : RawMaterialReception
+  }
+  class ProductionBatch <<Aggregate Root>> {
+    -#id : ProductionBatchId
+    -#code : BatchCode
+    -#receptionId : RawMaterialReceptionId
+    -#registeredAt : BatchRegistrationDateTime
+    +{static} register(code, receptionId, registeredAt) : ProductionBatch
+  }
+  class ProductionRecord <<Aggregate Root>> {
+    -#id : ProductionRecordId
+    -#batchId : ProductionBatchId
+    -#details : ProductionDetails
+    -#recordedAt : ProductionRecordDateTime
+    +{static} record(batchId, details, recordedAt) : ProductionRecord
+    +updateDetails(details : ProductionDetails) : void
+  }
+  record RawMaterialReceptionId <<Value Object>> {
+    +value : Long
+  }
+  record ProductionBatchId <<Value Object>> {
+    +value : Long
+  }
+  record ProductionRecordId <<Value Object>> {
+    +value : Long
+  }
+  record ReceptionDateTime <<Value Object>> {
+    +value : Instant
+  }
+  record BatchRegistrationDateTime <<Value Object>> {
+    +value : Instant
+  }
+  record ProductionRecordDateTime <<Value Object>> {
+    +value : Instant
+  }
+  record BatchCode <<Value Object>> {
+    +value : String
+  }
+  record Supplier <<Value Object>> {
+    +name : String
+  }
+  record MaterialOrigin <<Value Object>> {
+    +description : String
+  }
+  record ProductionProcessName <<Value Object>> {
+    +value : String
+  }
+  record ProductionPeriod <<Value Object>> {
+    +startedAt : Instant
+    +finishedAt : Instant
+    +isChronologicallyValid() : boolean
+  }
+  record ProductionDetails <<Value Object>> {
+    +processName : ProductionProcessName
+    +processedWeight : Weight
+    +period : ProductionPeriod
+    +status : ProductionStatus
+  }
+  enum ProductionStatus <<Enumeration>> {
+    REGISTERED
+    IN_PROGRESS
+    COMPLETED
+  }
+  interface RawMaterialReceptionRepository <<Repository Port>> {
+    +save(reception : RawMaterialReception) : RawMaterialReception
+    +findById(id : RawMaterialReceptionId) : Optional<RawMaterialReception>
+    +findAll() : List<RawMaterialReception>
+  }
+  interface ProductionBatchRepository <<Repository Port>> {
+    +save(batch : ProductionBatch) : ProductionBatch
+    +findById(id : ProductionBatchId) : Optional<ProductionBatch>
+    +findAvailable() : List<ProductionBatch>
+    +existsByCode(code : BatchCode) : boolean
+  }
+  interface ProductionRecordRepository <<Repository Port>> {
+    +save(record : ProductionRecord) : ProductionRecord
+    +findById(id : ProductionRecordId) : Optional<ProductionRecord>
+    +findAll() : List<ProductionRecord>
+  }
+  record RawMaterialReceptionRecorded <<Domain Event>> {
+    +receptionId : RawMaterialReceptionId
+    +occurredAt : Instant
+  }
+  record ProductionBatchRegistered <<Domain Event>> {
+    +batchId : ProductionBatchId
+    +receptionId : RawMaterialReceptionId
+    +occurredAt : Instant
+  }
+  record ProductionInformationRecorded <<Domain Event>> {
+    +recordId : ProductionRecordId
+    +batchId : ProductionBatchId
+    +occurredAt : Instant
+  }
+  record ProductionInformationUpdated <<Domain Event>> {
+    +recordId : ProductionRecordId
+    +occurredAt : Instant
+  }
+}
+
+package "infrastructure.persistence.jpa" #F0E6FA {
+  class RawMaterialReceptionPersistenceEntity <<JPA Entity>> {
+    -id : Long <<BIGINT>>
+    -receivedAt : Instant
+    -supplier : String
+    -origin : String
+    -quantityValue : BigDecimal
+    -quantityUnit : String
+  }
+  class ProductionBatchPersistenceEntity <<JPA Entity>> {
+    -id : Long <<BIGINT>>
+    -receptionId : Long <<BIGINT FK>>
+    -code : String
+    -registeredAt : Instant
+  }
+  class ProductionRecordPersistenceEntity <<JPA Entity>> {
+    -id : Long <<BIGINT>>
+    -batchId : Long <<BIGINT FK>>
+    -processName : String
+    -processedWeightValue : BigDecimal
+    -processedWeightUnit : String
+    -startedAt : Instant
+    -finishedAt : Instant
+    -status : String
+  }
+  class RawMaterialReceptionPersistenceAssembler <<Data Mapper>> {
+    +toPersistence(domain : RawMaterialReception) : RawMaterialReceptionPersistenceEntity
+    +toDomain(entity : RawMaterialReceptionPersistenceEntity) : RawMaterialReception
+  }
+  class ProductionBatchPersistenceAssembler <<Data Mapper>> {
+    +toPersistence(domain : ProductionBatch) : ProductionBatchPersistenceEntity
+    +toDomain(entity : ProductionBatchPersistenceEntity) : ProductionBatch
+  }
+  class ProductionRecordPersistenceAssembler <<Data Mapper>> {
+    +toPersistence(domain : ProductionRecord) : ProductionRecordPersistenceEntity
+    +toDomain(entity : ProductionRecordPersistenceEntity) : ProductionRecord
+  }
+  interface RawMaterialReceptionPersistenceRepository <<Spring Data Repository>>
+  interface ProductionBatchPersistenceRepository <<Spring Data Repository>>
+  interface ProductionRecordPersistenceRepository <<Spring Data Repository>>
+  class RawMaterialReceptionRepositoryImpl <<Repository Adapter>>
+  class ProductionBatchRepositoryImpl <<Repository Adapter>>
+  class ProductionRecordRepositoryImpl <<Repository Adapter>>
+}
+
+package "shared (reference)" #FFF2CC {
+  abstract class AbstractDomainAggregateRoot <<Shared Base Aggregate>>
+  class DomainEventPublisher <<Shared Component>>
+  class Result <<Shared Result>>
+  class ApplicationError <<Shared Value Object>>
+  class Weight <<Shared Value Object>>
+  enum MeasurementUnit <<Enumeration>> {
+    KILOGRAM
+    METRIC_TON
+  }
+}
+
+RawMaterialReceptionsController ..> ProductionCommandService
+RawMaterialReceptionsController ..> ProductionQueryService
+ProductionBatchesController ..> ProductionCommandService
+ProductionBatchesController ..> ProductionQueryService
+ProductionRecordsController ..> ProductionCommandService
+ProductionRecordsController ..> ProductionQueryService
+RawMaterialReceptionsController ..> ProductionResourceAssembler
+ProductionBatchesController ..> ProductionResourceAssembler
+ProductionRecordsController ..> ProductionResourceAssembler
+ProductionCommandServiceImpl ..|> ProductionCommandService
+ProductionQueryServiceImpl ..|> ProductionQueryService
+ProductionCommandServiceImpl ..> RawMaterialReceptionRepository
+ProductionCommandServiceImpl ..> ProductionBatchRepository
+ProductionCommandServiceImpl ..> ProductionRecordRepository
+ProductionCommandServiceImpl ..> DomainEventPublisher
+ProductionQueryServiceImpl ..> RawMaterialReceptionRepository
+ProductionQueryServiceImpl ..> ProductionBatchRepository
+ProductionQueryServiceImpl ..> ProductionRecordRepository
+RawMaterialReception --|> AbstractDomainAggregateRoot
+ProductionBatch --|> AbstractDomainAggregateRoot
+ProductionRecord --|> AbstractDomainAggregateRoot
+RawMaterialReception *-- RawMaterialReceptionId
+RawMaterialReception *-- ReceptionDateTime
+RawMaterialReception *-- Supplier
+RawMaterialReception *-- MaterialOrigin
+RawMaterialReception *-- Weight
+ProductionBatch *-- ProductionBatchId
+ProductionBatch *-- RawMaterialReceptionId : references by identity
+ProductionBatch *-- BatchCode
+ProductionBatch *-- BatchRegistrationDateTime
+ProductionRecord *-- ProductionRecordId
+ProductionRecord *-- ProductionBatchId : references by identity
+ProductionRecord *-- ProductionDetails
+ProductionRecord *-- ProductionRecordDateTime
+ProductionDetails *-- ProductionProcessName
+ProductionDetails *-- Weight
+ProductionDetails *-- ProductionPeriod
+ProductionDetails --> ProductionStatus
+Weight --> MeasurementUnit
+RawMaterialReception ..> RawMaterialReceptionRecorded : raises
+ProductionBatch ..> ProductionBatchRegistered : raises
+ProductionRecord ..> ProductionInformationRecorded : raises
+ProductionRecord ..> ProductionInformationUpdated : raises
+RawMaterialReceptionRepositoryImpl ..|> RawMaterialReceptionRepository
+ProductionBatchRepositoryImpl ..|> ProductionBatchRepository
+ProductionRecordRepositoryImpl ..|> ProductionRecordRepository
+RawMaterialReceptionRepositoryImpl --> RawMaterialReceptionPersistenceRepository
+ProductionBatchRepositoryImpl --> ProductionBatchPersistenceRepository
+ProductionRecordRepositoryImpl --> ProductionRecordPersistenceRepository
+RawMaterialReceptionRepositoryImpl ..> RawMaterialReceptionPersistenceAssembler
+ProductionBatchRepositoryImpl ..> ProductionBatchPersistenceAssembler
+ProductionRecordRepositoryImpl ..> ProductionRecordPersistenceAssembler
+RawMaterialReceptionPersistenceRepository --|> JpaRepository
+ProductionBatchPersistenceRepository --|> JpaRepository
+ProductionRecordPersistenceRepository --|> JpaRepository
+
+note right of RawMaterialReceptionPersistenceEntity
+  @Id @GeneratedValue
+  Java Long -> MySQL BIGINT
+end note
+@enduml

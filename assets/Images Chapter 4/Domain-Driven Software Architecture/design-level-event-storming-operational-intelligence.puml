@@ -1,0 +1,86 @@
+@startuml
+title Operational Intelligence — Detailed Design-Level Event Storming
+left to right direction
+skinparam backgroundColor #F7FAFC
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam linetype ortho
+skinparam ArrowColor #334E68
+skinparam ArrowThickness 1.3
+skinparam packageStyle rectangle
+skinparam rectangle {
+  RoundCorner 8
+  Padding 8
+}
+
+rectangle "Operational\nData Source" as dataSource #FFF3A6
+rectangle "Maintenance\nTechnician" as technician #FFF3A6
+
+package "Operational Intelligence · Core Subdomain" #E6F4EA {
+  rectangle "Register Operational\nReading" as cmdReading #A9C7F7
+  rectangle "OperationalReading" as aggReading #FFE27A
+  rectangle "OperationalReading\nRecorded" as evtReading #FFB26B
+
+  rectangle "When a reading is recorded,\nevaluate the applicable criterion" as policyEvaluate #C9A7E8
+  rectangle "Detect Operational\nAnomaly" as cmdDetect #A9C7F7
+  rectangle "OperationalAnomaly" as aggAnomaly #FFE27A
+  rectangle "OperationalAnomaly\nDetected" as evtAnomaly #FFB26B
+
+  rectangle "When an anomaly requires attention,\ngenerate an operational alert" as policyAlert #C9A7E8
+  rectangle "Generate Operational\nAlert" as cmdAlert #A9C7F7
+  rectangle "Alert" as aggAlert #FFE27A
+  rectangle "OperationalAlert\nGenerated" as evtAlert #FFB26B
+
+  rectangle "Operational Readings" as readReadings #B9D98A
+  rectangle "Anomaly History" as readAnomalies #B9D98A
+  rectangle "Alerts" as readAlerts #B9D98A
+  rectangle "Maintenance\nRecommendations" as readRecommendations #B9D98A
+}
+
+dataSource --> cmdReading
+cmdReading --> aggReading
+aggReading --> evtReading
+
+evtReading --> policyEvaluate
+policyEvaluate --> cmdDetect : automatically triggers
+cmdDetect --> aggAnomaly
+aggAnomaly --> evtAnomaly
+
+evtAnomaly --> policyAlert
+policyAlert --> cmdAlert : automatically triggers
+cmdAlert --> aggAlert
+aggAlert --> evtAlert
+
+technician ..> readReadings : queries
+technician ..> readAnomalies : queries
+technician ..> readAlerts : queries
+technician ..> readRecommendations : queries
+
+cmdReading -[hidden]down-> policyEvaluate
+policyEvaluate -[hidden]down-> policyAlert
+policyAlert -[hidden]down-> readReadings
+readReadings -[hidden]right-> readAnomalies
+readAnomalies -[hidden]right-> readAlerts
+readAlerts -[hidden]right-> readRecommendations
+
+note bottom of policyEvaluate
+  A Policy reacts to the recorded Domain Event and
+  automatically issues DetectOperationalAnomaly.
+end note
+
+note bottom of policyAlert
+  This Policy only issues GenerateOperationalAlert
+  when the detected anomaly requires attention.
+end note
+
+legend bottom
+|= Color |= EventStorming element |
+|<#FFF3A6>| Actor |
+|<#A9C7F7>| Command |
+|<#FFE27A>| Aggregate Root |
+|<#FFB26B>| Domain Event |
+|<#C9A7E8>| Policy: Event → Command |
+|<#B9D98A>| Read Model |
+endlegend
+@enduml

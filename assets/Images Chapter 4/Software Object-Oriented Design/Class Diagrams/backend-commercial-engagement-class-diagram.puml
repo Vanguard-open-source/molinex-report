@@ -1,0 +1,235 @@
+@startuml
+title Molinex Open Source - Commercial Engagement Backend Class Diagram
+left to right direction
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+package "interfaces.rest" #DCEEF8 {
+  class CommercialInquiriesController <<REST Controller>> {
+    -#commandService : CommercialCommandService
+    -#queryService : CommercialQueryService
+    +submit(resource : SubmitCommercialInquiryResource) : ResponseEntity
+    +getById(id : Long) : ResponseEntity
+    +getAll(status : String) : ResponseEntity
+  }
+  class CommercialContentController <<REST Controller>> {
+    -#queryService : CommercialQueryService
+    +getPlans() : ResponseEntity
+    +getValueProposition() : ResponseEntity
+  }
+  record SubmitCommercialInquiryResource <<Request Resource>> {
+    +fullName : String
+    +email : String
+    +phone : String
+    +companyName : String
+    +message : String
+  }
+  record CommercialInquiryResource <<Response Resource>> {
+    +id : Long
+    +fullName : String
+    +email : String
+    +status : String
+    +submittedAt : Instant
+  }
+  record PlanSummaryResource <<Response Resource>> {
+    +code : String
+    +name : String
+    +priceLabel : String
+    +features : List<String>
+  }
+  class CommercialResourceAssembler <<Assembler>> {
+    +toCommand(resource : SubmitCommercialInquiryResource) : SubmitCommercialInquiryCommand
+    +toResource(inquiry : CommercialInquiry) : CommercialInquiryResource
+    +toResource(plan : PlanSummary) : PlanSummaryResource
+  }
+}
+
+package "application" #EAF3F8 {
+  interface CommercialCommandService <<Application Port>> {
+    +handle(command : SubmitCommercialInquiryCommand) : Result<CommercialInquiryId, ApplicationError>
+    +handle(command : ChangeInquiryStatusCommand) : Result<CommercialInquiryId, ApplicationError>
+  }
+  interface CommercialQueryService <<Application Port>> {
+    +handle(query : GetCommercialInquiryByIdQuery) : Optional<CommercialInquiry>
+    +handle(query : GetCommercialInquiriesQuery) : List<CommercialInquiry>
+    +handle(query : GetPlanCatalogQuery) : List<PlanSummary>
+    +handle(query : GetValuePropositionQuery) : ValueProposition
+  }
+  class CommercialCommandServiceImpl <<Application Service>> {
+    -#repository : CommercialInquiryRepository
+    -#eventPublisher : DomainEventPublisher
+  }
+  class CommercialQueryServiceImpl <<Application Service>> {
+    -#repository : CommercialInquiryRepository
+    -#contentPort : CommercialContentPort
+  }
+  record SubmitCommercialInquiryCommand <<Command>> {
+    +fullName : String
+    +email : String
+    +phone : String
+    +companyName : String
+    +message : String
+  }
+  record ChangeInquiryStatusCommand <<Command>> {
+    +inquiryId : Long
+    +status : String
+  }
+  record GetCommercialInquiryByIdQuery <<Query>> {
+    +inquiryId : Long
+  }
+  record GetCommercialInquiriesQuery <<Query>> {
+    +status : String
+  }
+  record GetPlanCatalogQuery <<Query>>
+  record GetValuePropositionQuery <<Query>>
+}
+
+package "domain" #E8F4D4 {
+  class CommercialInquiry <<Aggregate Root>> {
+    -#id : CommercialInquiryId
+    -#contact : ContactInformation
+    -#message : InquiryMessage
+    -#status : InquiryStatus
+    -#submittedAt : SubmissionDateTime
+    +{static} submit(contact, message, submittedAt) : CommercialInquiry
+    +markAsContacted() : void
+    +close() : void
+  }
+  record CommercialInquiryId <<Value Object>> {
+    +value : Long
+  }
+  record ContactInformation <<Value Object>> {
+    +fullName : FullName
+    +email : EmailAddress
+    +phone : PhoneNumber
+    +companyName : CompanyName
+  }
+  record FullName <<Value Object>> {
+    +value : String
+  }
+  record EmailAddress <<Value Object>> {
+    +value : String
+    +isValid() : boolean
+  }
+  record PhoneNumber <<Value Object>> {
+    +value : String
+    +isValid() : boolean
+  }
+  record CompanyName <<Value Object>> {
+    +value : String
+  }
+  record InquiryMessage <<Value Object>> {
+    +value : String
+    +isBlank() : boolean
+  }
+  record SubmissionDateTime <<Value Object>> {
+    +value : Instant
+  }
+  enum InquiryStatus <<Enumeration>> {
+    SUBMITTED
+    CONTACTED
+    CLOSED
+  }
+  interface CommercialInquiryRepository <<Repository Port>> {
+    +save(inquiry : CommercialInquiry) : CommercialInquiry
+    +findById(id : CommercialInquiryId) : Optional<CommercialInquiry>
+    +findByStatus(status : InquiryStatus) : List<CommercialInquiry>
+    +findAll() : List<CommercialInquiry>
+  }
+  interface CommercialContentPort <<Query Port>> {
+    +findPlanCatalog() : List<PlanSummary>
+    +findValueProposition() : ValueProposition
+  }
+  record PlanSummary <<Read Model>> {
+    +code : String
+    +name : String
+    +priceLabel : String
+    +features : List<String>
+    +conditions : List<String>
+  }
+  record ValueProposition <<Read Model>> {
+    +headline : String
+    +description : String
+    +benefits : List<String>
+  }
+  record CommercialInquirySubmitted <<Domain Event>> {
+    +inquiryId : CommercialInquiryId
+    +occurredAt : Instant
+  }
+  record CommercialInquiryStatusChanged <<Domain Event>> {
+    +inquiryId : CommercialInquiryId
+    +status : InquiryStatus
+    +occurredAt : Instant
+  }
+}
+
+package "infrastructure.persistence.jpa" #F0E6FA {
+  class CommercialInquiryPersistenceEntity <<JPA Entity>> {
+    -id : Long <<BIGINT>>
+    -fullName : String
+    -email : String
+    -phone : String
+    -companyName : String
+    -message : String
+    -status : String
+    -submittedAt : Instant
+  }
+  class CommercialInquiryPersistenceAssembler <<Data Mapper>> {
+    +toPersistence(domain : CommercialInquiry) : CommercialInquiryPersistenceEntity
+    +toDomain(entity : CommercialInquiryPersistenceEntity) : CommercialInquiry
+  }
+  interface CommercialInquiryPersistenceRepository <<Spring Data Repository>>
+  class CommercialInquiryRepositoryImpl <<Repository Adapter>>
+}
+
+package "infrastructure.content" #FCE4D6 {
+  class ConfigurationCommercialContentAdapter <<Query Adapter>> {
+    +findPlanCatalog() : List<PlanSummary>
+    +findValueProposition() : ValueProposition
+  }
+}
+
+package "shared (reference)" #FFF2CC {
+  abstract class AbstractDomainAggregateRoot <<Shared Base Aggregate>>
+  class DomainEventPublisher <<Shared Component>>
+  class Result <<Shared Result>>
+  class ApplicationError <<Shared Value Object>>
+}
+
+CommercialInquiriesController ..> CommercialCommandService
+CommercialInquiriesController ..> CommercialQueryService
+CommercialContentController ..> CommercialQueryService
+CommercialInquiriesController ..> CommercialResourceAssembler
+CommercialContentController ..> CommercialResourceAssembler
+CommercialCommandServiceImpl ..|> CommercialCommandService
+CommercialQueryServiceImpl ..|> CommercialQueryService
+CommercialCommandServiceImpl ..> CommercialInquiryRepository
+CommercialCommandServiceImpl ..> DomainEventPublisher
+CommercialQueryServiceImpl ..> CommercialInquiryRepository
+CommercialQueryServiceImpl ..> CommercialContentPort
+CommercialInquiry --|> AbstractDomainAggregateRoot
+CommercialInquiry *-- CommercialInquiryId
+CommercialInquiry *-- ContactInformation
+CommercialInquiry *-- InquiryMessage
+CommercialInquiry *-- SubmissionDateTime
+CommercialInquiry --> InquiryStatus
+ContactInformation *-- FullName
+ContactInformation *-- EmailAddress
+ContactInformation o-- PhoneNumber
+ContactInformation *-- CompanyName
+CommercialInquiry ..> CommercialInquirySubmitted : raises
+CommercialInquiry ..> CommercialInquiryStatusChanged : raises
+CommercialInquiryRepositoryImpl ..|> CommercialInquiryRepository
+CommercialInquiryRepositoryImpl --> CommercialInquiryPersistenceRepository
+CommercialInquiryRepositoryImpl ..> CommercialInquiryPersistenceAssembler
+CommercialInquiryPersistenceRepository --|> JpaRepository
+ConfigurationCommercialContentAdapter ..|> CommercialContentPort
+
+note right of CommercialInquiryPersistenceEntity
+  @Id @GeneratedValue
+  Java Long -> MySQL BIGINT
+end note
+@enduml

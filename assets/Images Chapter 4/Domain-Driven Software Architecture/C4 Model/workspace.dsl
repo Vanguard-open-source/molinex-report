@@ -13,11 +13,11 @@ workspace "Molinex Platform" "C4 model for the Molinex rice mill operational man
         maintenanceTechnician = person "Maintenance Technician" "Registers machines and maintenance work, and reviews anomalies and alerts."
         productionOperator = person "Production Operator" "Records raw material, batches, production, quality and waste information."
 
-        sensorGateway = softwareSystem "Rice Mill Sensor Gateway" "Collects rice mill telemetry and sends planned operational readings to Molinex." {
-            tags "External System" "Planned"
+        sensorGateway = softwareSystem "Rice Mill Sensor Gateway" "Collects rice mill telemetry and sends operational readings to Molinex." {
+            tags "External System"
         }
-        notificationService = softwareSystem "Notification Delivery Service" "Delivers planned account and critical operational alert notifications." {
-            tags "External System" "Planned"
+        notificationService = softwareSystem "Notification Delivery Service" "Delivers account and critical operational alert notifications." {
+            tags "External System"
         }
 
         molinex = softwareSystem "Molinex Platform" "Centralizes rice mill production, quality, maintenance and operational intelligence information." {
@@ -25,21 +25,21 @@ workspace "Molinex Platform" "C4 model for the Molinex rice mill operational man
                 tags "Landing Page"
             }
 
-            webApplication = container "Web Application" "Serves the compiled Single Page Application to the user's browser." "Nginx" {
+            webHost = container "Web Application" "Hosts and delivers the Molinex Single-Page Application to its users." "Azure Static Web Apps" {
                 tags "Web Application"
             }
 
-            spa = container "Single Page Application" "Provides role-based operational management and analytics entirely in the user's browser." "Angular, TypeScript and Angular Material" {
+            webApplication = container "Single-Page Application" "Provides role-based operational management and analytics through a responsive browser experience." "Angular 22, TypeScript, Angular Signals and Angular Material" {
                 tags "SPA"
                 !include frontend-components.dsl
             }
 
-            apiApplication = container "RESTful API" "Implements the Molinex business capabilities as a modular monolith with isolated domain models." "Java and Spring Boot" {
+            apiApplication = container "RESTful API" "Implements the Molinex business capabilities as a modular monolith with isolated domain models." "Java, Spring Boot and Spring Data JPA" {
                 tags "Backend Application"
                 !include backend-components.dsl
             }
 
-            database = container "Molinex Database" "Stores operational information while preserving logical ownership by backend module." "MySQL" {
+            database = container "Relational Database" "Stores operational information while preserving logical ownership by backend module." "MySQL" {
                 tags "Database"
             }
         }
@@ -80,7 +80,7 @@ workspace "Molinex Platform" "C4 model for the Molinex rice mill operational man
             }
             element "SPA" {
                 shape webBrowser
-                background #9ECBE7
+                background #DCEEF8
             }
             element "Backend Application" {
                 background #5B9CCB
@@ -137,9 +137,6 @@ workspace "Molinex Platform" "C4 model for the Molinex rice mill operational man
             element "External System" {
                 background #8C96A0
                 color #FFFFFF
-            }
-            element "Planned" {
-                border dashed
             }
             element "Group" {
                 color #526D82

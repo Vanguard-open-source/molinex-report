@@ -1,0 +1,300 @@
+@startuml
+title Molinex Open Source - Asset and Maintenance Management Backend Class Diagram
+left to right direction
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+package "interfaces.rest" #DCEEF8 {
+  class MachinesController <<REST Controller>> {
+    -#commandService : MaintenanceCommandService
+    -#queryService : MaintenanceQueryService
+    +create(resource : RegisterMachineResource) : ResponseEntity
+    +changeStatus(id : Long, resource : ChangeMachineStatusResource) : ResponseEntity
+    +getAll() : ResponseEntity
+  }
+  class MaintenanceRecordsController <<REST Controller>> {
+    -#commandService : MaintenanceCommandService
+    -#queryService : MaintenanceQueryService
+    +create(resource : RecordMaintenanceResource) : ResponseEntity
+    +getHistory(machineId : Long) : ResponseEntity
+  }
+  record RegisterMachineResource <<Request Resource>> {
+    +code : String
+    +name : String
+    +model : String
+  }
+  record ChangeMachineStatusResource <<Request Resource>> {
+    +status : String
+    +changedAt : Instant
+  }
+  record RecordMaintenanceResource <<Request Resource>> {
+    +machineId : Long
+    +type : String
+    +performedAt : Instant
+    +description : String
+    +technicianId : Long
+    +technicianName : String
+    +anomalyId : Long
+    +failure : String
+    +cause : String
+    +actionTaken : String
+    +downtimeMinutes : Long
+  }
+  record MaintenanceResource <<Response Resource>> {
+    +id : Long
+    +machineId : Long
+    +type : String
+    +description : String
+  }
+  class MaintenanceResourceAssembler <<Assembler>> {
+    +toCommand(resource : RegisterMachineResource) : RegisterMachineCommand
+    +toCommand(id : Long, resource : ChangeMachineStatusResource) : ChangeMachineStatusCommand
+    +toCommand(resource : RecordMaintenanceResource) : RecordMaintenanceCommand
+    +toResource(model : Object) : MaintenanceResource
+  }
+}
+
+package "application" #EAF3F8 {
+  interface MaintenanceCommandService <<Application Port>> {
+    +handle(command : RegisterMachineCommand) : Result<MachineId, ApplicationError>
+    +handle(command : ChangeMachineStatusCommand) : Result<MachineId, ApplicationError>
+    +handle(command : RecordMaintenanceCommand) : Result<MaintenanceRecordId, ApplicationError>
+  }
+  interface MaintenanceQueryService <<Application Port>> {
+    +handle(query : GetMachinesQuery) : List<Machine>
+    +handle(query : GetMachineByIdQuery) : Optional<Machine>
+    +handle(query : GetMaintenanceHistoryQuery) : List<MaintenanceRecord>
+  }
+  class MaintenanceCommandServiceImpl <<Application Service>> {
+    -#machineRepository : MachineRepository
+    -#maintenanceRepository : MaintenanceRecordRepository
+    -#eventPublisher : DomainEventPublisher
+  }
+  class MaintenanceQueryServiceImpl <<Application Service>> {
+    -#machineRepository : MachineRepository
+    -#maintenanceRepository : MaintenanceRecordRepository
+  }
+  record RegisterMachineCommand <<Command>> {
+    +code : String
+    +name : String
+    +model : String
+  }
+  record ChangeMachineStatusCommand <<Command>> {
+    +machineId : Long
+    +status : String
+    +changedAt : Instant
+  }
+  record RecordMaintenanceCommand <<Command>> {
+    +machineId : Long
+    +type : String
+    +performedAt : Instant
+    +description : String
+    +technicianId : Long
+    +technicianName : String
+    +anomalyId : Long
+    +failure : String
+    +cause : String
+    +actionTaken : String
+    +downtimeMinutes : Long
+  }
+  record GetMachinesQuery <<Query>>
+  record GetMachineByIdQuery <<Query>> {
+    +machineId : Long
+  }
+  record GetMaintenanceHistoryQuery <<Query>> {
+    +machineId : Long
+  }
+}
+
+package "domain" #E8F4D4 {
+  class Machine <<Aggregate Root>> {
+    -#id : MachineId
+    -#code : MachineCode
+    -#name : MachineName
+    -#model : MachineModel
+    -#status : MachineStatus
+    -#statusChangedAt : StatusChangeDateTime
+    +{static} register(code, name, model) : Machine
+    +changeStatus(status : MachineStatus, changedAt : StatusChangeDateTime) : void
+  }
+  class MaintenanceRecord <<Aggregate Root>> {
+    -#id : MaintenanceRecordId
+    -#machineId : MachineId
+    -#type : MaintenanceType
+    -#performedAt : MaintenanceDateTime
+    -#description : MaintenanceDescription
+    -#responsible : TechnicianReference
+    -#anomalyReference : AnomalyReference
+    -#correctiveDetails : CorrectiveMaintenanceDetails
+    +{static} recordPreventive(machineId, performedAt, description, responsible) : MaintenanceRecord
+    +{static} recordCorrective(machineId, performedAt, description, responsible, anomaly, details) : MaintenanceRecord
+  }
+  record MachineId <<Value Object>> {
+    +value : Long
+  }
+  record MaintenanceRecordId <<Value Object>> {
+    +value : Long
+  }
+  record MachineCode <<Value Object>> {
+    +value : String
+  }
+  record MachineName <<Value Object>> {
+    +value : String
+  }
+  record MachineModel <<Value Object>> {
+    +value : String
+  }
+  record StatusChangeDateTime <<Value Object>> {
+    +value : Instant
+  }
+  record MaintenanceDateTime <<Value Object>> {
+    +value : Instant
+  }
+  record MaintenanceDescription <<Value Object>> {
+    +value : String
+    +isBlank() : boolean
+  }
+  record TechnicianReference <<Value Object>> {
+    +principalId : Long
+    +displayName : String
+  }
+  record AnomalyReference <<Value Object>> {
+    +anomalyId : Long
+  }
+  record CorrectiveMaintenanceDetails <<Value Object>> {
+    +failure : String
+    +cause : String
+    +actionTaken : String
+    +downtimeMinutes : Long
+    +hasValidDowntime() : boolean
+  }
+  enum MachineStatus <<Enumeration>> {
+    OPERATIONAL
+    REQUIRES_ATTENTION
+    UNDER_MAINTENANCE
+    OUT_OF_SERVICE
+  }
+  enum MaintenanceType <<Enumeration>> {
+    PREVENTIVE
+    CORRECTIVE
+  }
+  interface MachineRepository <<Repository Port>> {
+    +save(machine : Machine) : Machine
+    +findById(id : MachineId) : Optional<Machine>
+    +findAll() : List<Machine>
+    +existsByCode(code : MachineCode) : boolean
+  }
+  interface MaintenanceRecordRepository <<Repository Port>> {
+    +save(record : MaintenanceRecord) : MaintenanceRecord
+    +findById(id : MaintenanceRecordId) : Optional<MaintenanceRecord>
+    +findByMachineId(id : MachineId) : List<MaintenanceRecord>
+  }
+  record MachineRegistered <<Domain Event>> {
+    +machineId : MachineId
+    +occurredAt : Instant
+  }
+  record MachineStatusChanged <<Domain Event>> {
+    +machineId : MachineId
+    +status : MachineStatus
+    +occurredAt : Instant
+  }
+  record MaintenanceRecorded <<Domain Event>> {
+    +recordId : MaintenanceRecordId
+    +machineId : MachineId
+    +occurredAt : Instant
+  }
+}
+
+package "infrastructure.persistence.jpa" #F0E6FA {
+  class MachinePersistenceEntity <<JPA Entity>> {
+    -id : Long <<BIGINT>>
+    -code : String
+    -name : String
+    -model : String
+    -status : String
+    -statusChangedAt : Instant
+  }
+  class MaintenanceRecordPersistenceEntity <<JPA Entity>> {
+    -id : Long <<BIGINT>>
+    -machineId : Long <<BIGINT FK>>
+    -type : String
+    -performedAt : Instant
+    -description : String
+    -technicianId : Long <<BIGINT>>
+    -technicianName : String
+    -anomalyId : Long <<BIGINT>>
+    -failure : String
+    -cause : String
+    -actionTaken : String
+    -downtimeMinutes : Long
+  }
+  class MachinePersistenceAssembler <<Data Mapper>> {
+    +toPersistence(domain : Machine) : MachinePersistenceEntity
+    +toDomain(entity : MachinePersistenceEntity) : Machine
+  }
+  class MaintenanceRecordPersistenceAssembler <<Data Mapper>> {
+    +toPersistence(domain : MaintenanceRecord) : MaintenanceRecordPersistenceEntity
+    +toDomain(entity : MaintenanceRecordPersistenceEntity) : MaintenanceRecord
+  }
+  interface MachinePersistenceRepository <<Spring Data Repository>>
+  interface MaintenanceRecordPersistenceRepository <<Spring Data Repository>>
+  class MachineRepositoryImpl <<Repository Adapter>>
+  class MaintenanceRecordRepositoryImpl <<Repository Adapter>>
+}
+
+package "shared (reference)" #FFF2CC {
+  abstract class AbstractDomainAggregateRoot <<Shared Base Aggregate>>
+  class DomainEventPublisher <<Shared Component>>
+  class Result <<Shared Result>>
+  class ApplicationError <<Shared Value Object>>
+}
+
+MachinesController ..> MaintenanceCommandService
+MachinesController ..> MaintenanceQueryService
+MaintenanceRecordsController ..> MaintenanceCommandService
+MaintenanceRecordsController ..> MaintenanceQueryService
+MachinesController ..> MaintenanceResourceAssembler
+MaintenanceRecordsController ..> MaintenanceResourceAssembler
+MaintenanceCommandServiceImpl ..|> MaintenanceCommandService
+MaintenanceQueryServiceImpl ..|> MaintenanceQueryService
+MaintenanceCommandServiceImpl ..> MachineRepository
+MaintenanceCommandServiceImpl ..> MaintenanceRecordRepository
+MaintenanceCommandServiceImpl ..> DomainEventPublisher
+MaintenanceQueryServiceImpl ..> MachineRepository
+MaintenanceQueryServiceImpl ..> MaintenanceRecordRepository
+Machine --|> AbstractDomainAggregateRoot
+MaintenanceRecord --|> AbstractDomainAggregateRoot
+Machine *-- MachineId
+Machine *-- MachineCode
+Machine *-- MachineName
+Machine *-- MachineModel
+Machine --> MachineStatus
+Machine *-- StatusChangeDateTime
+MaintenanceRecord *-- MaintenanceRecordId
+MaintenanceRecord *-- MachineId : references by identity
+MaintenanceRecord --> MaintenanceType
+MaintenanceRecord *-- MaintenanceDateTime
+MaintenanceRecord *-- MaintenanceDescription
+MaintenanceRecord *-- TechnicianReference
+MaintenanceRecord o-- AnomalyReference
+MaintenanceRecord o-- CorrectiveMaintenanceDetails
+Machine ..> MachineRegistered : raises
+Machine ..> MachineStatusChanged : raises
+MaintenanceRecord ..> MaintenanceRecorded : raises
+MachineRepositoryImpl ..|> MachineRepository
+MaintenanceRecordRepositoryImpl ..|> MaintenanceRecordRepository
+MachineRepositoryImpl --> MachinePersistenceRepository
+MaintenanceRecordRepositoryImpl --> MaintenanceRecordPersistenceRepository
+MachineRepositoryImpl ..> MachinePersistenceAssembler
+MaintenanceRecordRepositoryImpl ..> MaintenanceRecordPersistenceAssembler
+MachinePersistenceRepository --|> JpaRepository
+MaintenanceRecordPersistenceRepository --|> JpaRepository
+
+note right of MachinePersistenceEntity
+  @Id @GeneratedValue
+  Java Long -> MySQL BIGINT
+end note
+@enduml

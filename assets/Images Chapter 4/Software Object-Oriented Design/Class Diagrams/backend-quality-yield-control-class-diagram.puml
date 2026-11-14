@@ -1,0 +1,344 @@
+@startuml
+title Molinex Open Source - Quality and Yield Control Backend Class Diagram
+left to right direction
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+package "interfaces.rest" #DCEEF8 {
+  class QualityAssessmentsController <<REST Controller>> {
+    -#commandService : QualityCommandService
+    -#queryService : QualityQueryService
+    +create(resource : CreateQualityAssessmentResource) : ResponseEntity
+    +getById(id : Long) : ResponseEntity
+  }
+  class WasteRecordsController <<REST Controller>> {
+    -#commandService : QualityCommandService
+    -#queryService : QualityQueryService
+    +create(resource : CreateWasteRecordResource) : ResponseEntity
+    +getAll() : ResponseEntity
+  }
+  class YieldIndicatorsController <<REST Controller>> {
+    -#queryService : QualityQueryService
+    +getIndicators() : ResponseEntity
+    +compare() : ResponseEntity
+    +getDeviations() : ResponseEntity
+  }
+  record CreateQualityAssessmentResource <<Request Resource>> {
+    +productionRecordId : Long
+    +measurements : List<QualityMeasurementResource>
+    +assessedAt : Instant
+  }
+  record QualityMeasurementResource <<Request Resource>> {
+    +indicator : String
+    +value : BigDecimal
+    +expectedMinimum : BigDecimal
+    +expectedMaximum : BigDecimal
+  }
+  record CreateWasteRecordResource <<Request Resource>> {
+    +productionRecordId : Long
+    +quantityValue : BigDecimal
+    +quantityUnit : String
+    +baseWeightValue : BigDecimal
+    +recordedAt : Instant
+  }
+  record QualityResource <<Response Resource>> {
+    +id : Long
+    +productionRecordId : Long
+    +description : String
+  }
+  class QualityResourceAssembler <<Assembler>> {
+    +toCommand(resource : CreateQualityAssessmentResource) : RecordQualityAssessmentCommand
+    +toCommand(resource : CreateWasteRecordResource) : RecordWasteCommand
+    +toResource(model : Object) : QualityResource
+  }
+}
+
+package "application" #EAF3F8 {
+  interface QualityCommandService <<Application Port>> {
+    +handle(command : RecordQualityAssessmentCommand) : Result<QualityAssessmentId, ApplicationError>
+    +handle(command : RecordWasteCommand) : Result<WasteRecordId, ApplicationError>
+    +handle(command : IdentifyQualityDeviationCommand) : Result<QualityDeviationId, ApplicationError>
+  }
+  interface QualityQueryService <<Application Port>> {
+    +handle(query : GetQualityAssessmentByIdQuery) : Optional<QualityAssessment>
+    +handle(query : GetYieldIndicatorsQuery) : List<YieldIndicator>
+    +handle(query : CompareQualityIndicatorsQuery) : QualityComparison
+    +handle(query : GetQualityDeviationsQuery) : List<QualityDeviation>
+  }
+  class QualityCommandServiceImpl <<Application Service>> {
+    -#assessmentRepository : QualityAssessmentRepository
+    -#wasteRepository : WasteRecordRepository
+    -#deviationRepository : QualityDeviationRepository
+    -#eventPublisher : DomainEventPublisher
+  }
+  class QualityQueryServiceImpl <<Application Service>> {
+    -#assessmentRepository : QualityAssessmentRepository
+    -#wasteRepository : WasteRecordRepository
+    -#deviationRepository : QualityDeviationRepository
+  }
+  record RecordQualityAssessmentCommand <<Command>> {
+    +productionRecordId : Long
+    +measurements : List<QualityMeasurementData>
+    +assessedAt : Instant
+  }
+  record QualityMeasurementData <<Command Data>> {
+    +indicator : String
+    +value : BigDecimal
+    +expectedMinimum : BigDecimal
+    +expectedMaximum : BigDecimal
+  }
+  record RecordWasteCommand <<Command>> {
+    +productionRecordId : Long
+    +quantityValue : BigDecimal
+    +quantityUnit : String
+    +baseWeightValue : BigDecimal
+    +recordedAt : Instant
+  }
+  record IdentifyQualityDeviationCommand <<Command>> {
+    +sourceId : Long
+    +sourceType : String
+    +indicator : String
+    +observedValue : BigDecimal
+  }
+  record GetQualityAssessmentByIdQuery <<Query>> {
+    +id : Long
+  }
+  record GetYieldIndicatorsQuery <<Query>>
+  record CompareQualityIndicatorsQuery <<Query>>
+  record GetQualityDeviationsQuery <<Query>>
+}
+
+package "domain" #E8F4D4 {
+  class QualityAssessment <<Aggregate Root>> {
+    -#id : QualityAssessmentId
+    -#productionRecordId : ProductionRecordId
+    -#measurements : List<QualityMeasurement>
+    -#assessedAt : AssessmentDateTime
+    +recordMeasurement(measurement : QualityMeasurement) : void
+    +hasValidPercentages() : boolean
+  }
+  class WasteRecord <<Aggregate Root>> {
+    -#id : WasteRecordId
+    -#productionRecordId : ProductionRecordId
+    -#quantity : Weight
+    -#baseWeight : Weight
+    -#percentage : Percentage
+    -#recordedAt : WasteRecordDateTime
+    +calculatePercentage() : Percentage
+  }
+  class QualityDeviation <<Aggregate Root>> {
+    -#id : QualityDeviationId
+    -#source : DeviationSource
+    -#measurement : QualityMeasurement
+    -#detectedAt : DetectionDateTime
+  }
+  record QualityAssessmentId <<Value Object>> {
+    +value : Long
+  }
+  record WasteRecordId <<Value Object>> {
+    +value : Long
+  }
+  record QualityDeviationId <<Value Object>> {
+    +value : Long
+  }
+  record ProductionRecordId <<Value Object>> {
+    +value : Long
+  }
+  record AssessmentDateTime <<Value Object>> {
+    +value : Instant
+  }
+  record WasteRecordDateTime <<Value Object>> {
+    +value : Instant
+  }
+  record DetectionDateTime <<Value Object>> {
+    +value : Instant
+  }
+  record Percentage <<Value Object>> {
+    +value : BigDecimal
+    +isValid() : boolean
+  }
+  record QualityRange <<Value Object>> {
+    +minimum : Percentage
+    +maximum : Percentage
+    +contains(value : Percentage) : boolean
+  }
+  record QualityMeasurement <<Value Object>> {
+    +indicator : QualityIndicator
+    +value : Percentage
+    +expectedRange : QualityRange
+    +isOutsideExpectedRange() : boolean
+  }
+  record DeviationSource <<Value Object>> {
+    +sourceId : Long
+    +sourceType : DeviationSourceType
+  }
+  record YieldIndicator <<Read Model>> {
+    +name : String
+    +value : Percentage
+  }
+  record QualityComparison <<Read Model>> {
+    +current : Percentage
+    +previous : Percentage
+  }
+  enum QualityIndicator <<Enumeration>> {
+    WHOLE_GRAIN_PERCENTAGE
+    BROKEN_GRAIN_PERCENTAGE
+    YIELD_PERCENTAGE
+  }
+  enum DeviationSourceType <<Enumeration>> {
+    QUALITY_ASSESSMENT
+    WASTE_RECORD
+  }
+  interface QualityAssessmentRepository <<Repository Port>> {
+    +save(assessment : QualityAssessment) : QualityAssessment
+    +findById(id : QualityAssessmentId) : Optional<QualityAssessment>
+  }
+  interface WasteRecordRepository <<Repository Port>> {
+    +save(record : WasteRecord) : WasteRecord
+    +findById(id : WasteRecordId) : Optional<WasteRecord>
+    +findAll() : List<WasteRecord>
+  }
+  interface QualityDeviationRepository <<Repository Port>> {
+    +save(deviation : QualityDeviation) : QualityDeviation
+    +findById(id : QualityDeviationId) : Optional<QualityDeviation>
+    +findAll() : List<QualityDeviation>
+  }
+  record QualityAssessmentRecorded <<Domain Event>> {
+    +assessmentId : QualityAssessmentId
+    +occurredAt : Instant
+  }
+  record WasteRecorded <<Domain Event>> {
+    +wasteRecordId : WasteRecordId
+    +occurredAt : Instant
+  }
+  record QualityDeviationIdentified <<Domain Event>> {
+    +deviationId : QualityDeviationId
+    +occurredAt : Instant
+  }
+}
+
+package "infrastructure.persistence.jpa" #F0E6FA {
+  class QualityAssessmentPersistenceEntity <<JPA Entity>> {
+    -id : Long <<BIGINT>>
+    -productionRecordId : Long <<BIGINT FK>>
+    -assessedAt : Instant
+  }
+  class QualityMeasurementPersistenceEntity <<JPA Entity>> {
+    -id : Long <<BIGINT>>
+    -assessmentId : Long <<BIGINT FK>>
+    -indicator : String
+    -value : BigDecimal
+    -expectedMinimum : BigDecimal
+    -expectedMaximum : BigDecimal
+  }
+  class WasteRecordPersistenceEntity <<JPA Entity>> {
+    -id : Long <<BIGINT>>
+    -productionRecordId : Long <<BIGINT FK>>
+    -quantityValue : BigDecimal
+    -quantityUnit : String
+    -baseWeightValue : BigDecimal
+    -percentage : BigDecimal
+    -recordedAt : Instant
+  }
+  class QualityDeviationPersistenceEntity <<JPA Entity>> {
+    -id : Long <<BIGINT>>
+    -sourceId : Long <<BIGINT>>
+    -sourceType : String
+    -indicator : String
+    -observedValue : BigDecimal
+    -detectedAt : Instant
+  }
+  class QualityAssessmentPersistenceAssembler <<Data Mapper>> {
+    +toPersistence(domain : QualityAssessment) : QualityAssessmentPersistenceEntity
+    +toDomain(entity : QualityAssessmentPersistenceEntity) : QualityAssessment
+  }
+  class WasteRecordPersistenceAssembler <<Data Mapper>> {
+    +toPersistence(domain : WasteRecord) : WasteRecordPersistenceEntity
+    +toDomain(entity : WasteRecordPersistenceEntity) : WasteRecord
+  }
+  class QualityDeviationPersistenceAssembler <<Data Mapper>> {
+    +toPersistence(domain : QualityDeviation) : QualityDeviationPersistenceEntity
+    +toDomain(entity : QualityDeviationPersistenceEntity) : QualityDeviation
+  }
+  interface QualityAssessmentPersistenceRepository <<Spring Data Repository>>
+  interface WasteRecordPersistenceRepository <<Spring Data Repository>>
+  interface QualityDeviationPersistenceRepository <<Spring Data Repository>>
+  class QualityAssessmentRepositoryImpl <<Repository Adapter>>
+  class WasteRecordRepositoryImpl <<Repository Adapter>>
+  class QualityDeviationRepositoryImpl <<Repository Adapter>>
+}
+
+package "shared (reference)" #FFF2CC {
+  abstract class AbstractDomainAggregateRoot <<Shared Base Aggregate>>
+  class DomainEventPublisher <<Shared Component>>
+  class Result <<Shared Result>>
+  class ApplicationError <<Shared Value Object>>
+  class Weight <<Shared Value Object>>
+  enum MeasurementUnit <<Enumeration>> {
+    KILOGRAM
+    METRIC_TON
+  }
+}
+
+QualityAssessmentsController ..> QualityCommandService
+QualityAssessmentsController ..> QualityQueryService
+WasteRecordsController ..> QualityCommandService
+WasteRecordsController ..> QualityQueryService
+YieldIndicatorsController ..> QualityQueryService
+QualityAssessmentsController ..> QualityResourceAssembler
+WasteRecordsController ..> QualityResourceAssembler
+YieldIndicatorsController ..> QualityResourceAssembler
+QualityCommandServiceImpl ..|> QualityCommandService
+QualityQueryServiceImpl ..|> QualityQueryService
+QualityCommandServiceImpl ..> QualityAssessmentRepository
+QualityCommandServiceImpl ..> WasteRecordRepository
+QualityCommandServiceImpl ..> QualityDeviationRepository
+QualityCommandServiceImpl ..> DomainEventPublisher
+QualityQueryServiceImpl ..> QualityAssessmentRepository
+QualityQueryServiceImpl ..> WasteRecordRepository
+QualityQueryServiceImpl ..> QualityDeviationRepository
+QualityAssessment --|> AbstractDomainAggregateRoot
+WasteRecord --|> AbstractDomainAggregateRoot
+QualityDeviation --|> AbstractDomainAggregateRoot
+QualityAssessment *-- QualityAssessmentId
+QualityAssessment *-- ProductionRecordId : references by identity
+QualityAssessment *-- QualityMeasurement
+QualityAssessment *-- AssessmentDateTime
+WasteRecord *-- WasteRecordId
+WasteRecord *-- ProductionRecordId : references by identity
+WasteRecord *-- Weight
+WasteRecord *-- Percentage
+WasteRecord *-- WasteRecordDateTime
+QualityDeviation *-- QualityDeviationId
+QualityDeviation *-- DeviationSource
+QualityDeviation *-- QualityMeasurement
+QualityDeviation *-- DetectionDateTime
+QualityMeasurement *-- Percentage
+QualityMeasurement *-- QualityRange
+QualityMeasurement --> QualityIndicator
+DeviationSource --> DeviationSourceType
+Weight --> MeasurementUnit
+QualityAssessment ..> QualityAssessmentRecorded : raises
+WasteRecord ..> WasteRecorded : raises
+QualityDeviation ..> QualityDeviationIdentified : raises
+QualityAssessmentRepositoryImpl ..|> QualityAssessmentRepository
+WasteRecordRepositoryImpl ..|> WasteRecordRepository
+QualityDeviationRepositoryImpl ..|> QualityDeviationRepository
+QualityAssessmentRepositoryImpl --> QualityAssessmentPersistenceRepository
+WasteRecordRepositoryImpl --> WasteRecordPersistenceRepository
+QualityDeviationRepositoryImpl --> QualityDeviationPersistenceRepository
+QualityAssessmentRepositoryImpl ..> QualityAssessmentPersistenceAssembler
+WasteRecordRepositoryImpl ..> WasteRecordPersistenceAssembler
+QualityDeviationRepositoryImpl ..> QualityDeviationPersistenceAssembler
+QualityAssessmentPersistenceRepository --|> JpaRepository
+WasteRecordPersistenceRepository --|> JpaRepository
+QualityDeviationPersistenceRepository --|> JpaRepository
+
+note right of QualityAssessmentPersistenceEntity
+  @Id @GeneratedValue
+  Java Long -> MySQL BIGINT
+end note
+@enduml
