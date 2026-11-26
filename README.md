@@ -456,17 +456,9 @@ Creemos que lograremos captar clientes y generar ingresos recurrentes si los pro
 
 
 #### 1.2.2.4 Lean UX Canvas
+![Lean UX Canvas · Molinex.png](assets/Images%20Chapter%201/Lean%20UX%20Canvas%20%C2%B7%20Molinex.png)
 
-| Campo | Síntesis |
-|:--|:--|
-| Business problem | En la industria molinera, la información de producción, materia prima, calidad y mantenimiento se gestiona mediante registros o sistemas separados que no siempre se integran, dificultando identificar las causas del arroz quebrado, la merma, las fallas de maquinaria y la disminución del rendimiento. |
-| Business outcomes | Generar ingresos recurrentes mediante los planes de suscripción Básico, Profesional y Empresarial; captar y retener clientes en el sector arrocero peruano; posicionar a Molinex como referente de inteligencia operativa en molinos de arroz. |
-| Users |Gerentes o administradores, técnicos de mantenimiento y operarios de maquinaria y producción de molinos de arroz pequeños, medianos y grandes en el Perú. |
-| User outcomes and benefits | Identificar con mayor rapidez las posibles causas de pérdidas y fallas; mejorar la toma de decisiones y el control de sus procesos; reducir mermas y mejorar el rendimiento operativo del molino.|
-| Solutions |Plataforma web SaaS con dashboard de indicadores (rendimiento, merma, calidad), módulo de registro y trazabilidad de lotes, módulo de gestión de mantenimiento, motor de análisis inteligente con alertas y recomendaciones, y planes de suscripción diferenciados según el tamaño del molino.|
-| Hypotheses |H1 Dashboard: mejora la visibilidad y la toma de decisiones de administradores y supervisores. H2 Lot Management: mejora la trazabilidad de la materia prima. H3 Maintenance Management: reduce fallas inesperadas y tiempos de parada. H4 Intelligent Analysis: reduce pérdidas operativas mediante alertas tempranas. H5 Subscription Plans: genera adquisición de clientes e ingresos recurrentes.|
-| Most important thing to learn |Si los administradores, técnicos y operarios confiarán en las alertas del motor de análisis inteligente y las usarán como base real para tomar decisiones y anticipar fallas, dado que hoy el mantenimiento es mayormente reactivo o basado en calendarios fijos, y la calidad de la solución depende directamente de que el molino registre datos suficientes y confiables (riesgo identificado en el análisis SWOT).|
-| Least work for learning | Presentar un prototipo de baja fidelidad del dashboard y del módulo de alertas (mockup en Figma) a los tres segmentos ya entrevistados (Jackeline, Ismael y Diego), y observar si logran interpretar una alerta simulada y describir qué acción tomarían, antes de construir el motor de análisis completo. |
+
 
 ## 1.3 Segmentos objetivo
 
