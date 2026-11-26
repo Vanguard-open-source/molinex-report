@@ -433,40 +433,25 @@ We’ll know we are successful when, within the first three months of adoption, 
 
 #### 1.2.2.3 Lean UX Hypothesis Statements
 
-**Hypothesis 1: Operational Dashboard**
+**Hipótesis 1: Dashboard Operacional**
 
-We believe we will achieve improved operational decision-making and process visibility
-If administrators and production supervisors
-Attain a better understanding of the mill’s performance indicators
-With a dashboard that displays production performance, waste, and rice quality data.
+Creemos que lograremos mejorar la toma de decisiones operativas y la visibilidad de los procesos si los administradores y supervisores de producción alcanzan una mejor comprensión de los indicadores de rendimiento del molino mediante un dashboard que visualice información sobre el rendimiento de la producción, la merma y la calidad del arroz.
 
-**Hypothesis 2: Lot Management**
+**Hipótesis 2: Gestión de Lotes**
 
-We believe we will achieve better traceability and control of raw materials
-If administrators and production supervisors
-Attain faster access to information about received raw materials and production lots
-With a lot management module that allows users to register, track, and consult lot information.
+Creemos que lograremos mejorar la trazabilidad y el control de la materia prima si los administradores y supervisores de producción obtienen un acceso más rápido a la información sobre la materia prima recibida y los lotes de producción mediante un módulo de gestión de lotes que permita registrar, realizar el seguimiento y consultar la información de los lotes.
 
-**Hypothesis 3: Maintenance Management**
+**Hipótesis 3: Gestión de Mantenimiento**
 
-We believe we will achieve reduced unexpected equipment failures and downtime
-If maintenance technicians and production supervisors
-Attain better visibility of equipment conditions and scheduled maintenance activities
-With a maintenance module that allows users to register maintenance activities and identify possible anomalies.
+Creemos que lograremos reducir las fallas inesperadas de los equipos y los tiempos de inactividad si los técnicos de mantenimiento y supervisores de producción alcanzan una mejor visibilidad del estado de los equipos y de las actividades de mantenimiento programadas mediante un módulo de mantenimiento que permita registrar actividades de mantenimiento e identificar posibles anomalías.
 
-**Hypothesis 4: Intelligent Analysis and Recommendations**
+**Hipótesis 4: Análisis Inteligente y Recomendaciones**
 
-We believe we will achieve reduced operational losses and improved production performance
-If administrators, production supervisors, and maintenance technicians
-Attain timely information about possible causes of losses and operational problems
-With an intelligent analysis engine that relates operational data and generates alerts and recommendations.
+Creemos que lograremos reducir las pérdidas operativas y mejorar el rendimiento de la producción si los administradores, supervisores de producción y técnicos de mantenimiento obtienen información oportuna sobre las posibles causas de las pérdidas y los problemas operativos mediante un motor de análisis inteligente que relacione los datos operativos y genere alertas y recomendaciones.
 
-**Hypothesis 5: Subscription Plans**
+**Hipótesis 5: Planes de Suscripción**
 
-We believe we will achieve customer acquisition and recurring revenue
-If owners and administrators of small, medium-sized, and large rice mills
-Attain access to functionalities that match their operational needs and available resources
-With differentiated Basic, Professional, and Enterprise subscription plans.
+Creemos que lograremos captar clientes y generar ingresos recurrentes si los propietarios y administradores de pequeños, medianos y grandes molinos de arroz acceden a funcionalidades que se adapten a sus necesidades operativas y recursos disponibles mediante planes de suscripción diferenciados: Básico, Profesional y Empresarial.
 
 
 #### 1.2.2.4 Lean UX Canvas
