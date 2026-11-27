@@ -218,7 +218,7 @@ package "domain" #E8F4D4 {
 package "infrastructure.persistence.jpa" #F0E6FA {
   class OperationalReadingPersistenceEntity <<JPA Entity>> {
     -id : Long <<BIGINT>>
-    -machineId : Long <<BIGINT FK>>
+    -machineId : Long <<BIGINT REF>>
     -variableName : String
     -measurementValue : BigDecimal
     -unitSymbol : String

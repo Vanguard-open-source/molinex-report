@@ -219,7 +219,7 @@ package "infrastructure.persistence.jpa" #F0E6FA {
   }
   class MaintenanceRecordPersistenceEntity <<JPA Entity>> {
     -id : Long <<BIGINT>>
-    -machineId : Long <<BIGINT FK>>
+    -machineId : Long <<BIGINT REF>>
     -type : String
     -performedAt : Instant
     -description : String
