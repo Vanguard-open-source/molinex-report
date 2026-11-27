@@ -2183,6 +2183,7 @@ Cada Bounded Context reúne sus diagramas de clases de backend y frontend. El or
 | `<<Command>>`, `<<Query>>`, `<<Read Model>>` | Un comando solicita un cambio, una consulta solicita información y un modelo de lectura organiza los datos para responder consultas. |
 | `<<Application Service>>`, `<<Application Port>>`, `<<Outbound Port>>` | El servicio coordina un caso de uso. Los puertos definen contratos de la aplicación con sus consumidores o sus dependencias externas. |
 | `<<Repository Port>>`, `<<Repository Adapter>>` | El puerto define el contrato de persistencia del dominio y el adaptador lo implementa en la infraestructura. |
+| `<<BIGINT REF>>` | Identificador persistido como referencia; no implica una FK física ni propiedad sobre el aggregate referenciado. |
 | `<<Published Language>>`, `<<Anti-Corruption Layer>>`, `<<Facade>>` | Contrato de integración, adaptador consumidor que traduce datos al modelo local y fachada que expone operaciones del contexto proveedor, respectivamente. |
 | `<<REST Controller>>`, `<<Integration Controller>>` | Punto de entrada HTTP para clientes de la API o para sistemas externos. |
 | `<<Resource>>`, `<<Request Resource>>`, `<<Response Resource>>` | Estructuras serializables que representan los datos enviados o recibidos a través de la API REST. |
@@ -2399,23 +2400,134 @@ El Shared Kernel no es un bounded context y por ello se presenta después de los
 
 ## 4.8 Database Design
 
-Molinex emplea una base de datos relacional MySQL para soportar un monolito modular con enfoque SaaS multiempresa. El modelo utiliza `rice_mills` como raíz de tenancy: los usuarios acceden a cada molino mediante membresías y los datos de producción, maquinaria y reportes quedan asociados directa o transitivamente con su propietario. El catálogo comercial permanece fuera de esta jerarquía porque puede ser consultado por visitantes que todavía no son clientes.
+La persistencia de Molinex se documenta por **Bounded Context**, de acuerdo con el ownership del modelo de dominio. Cada figura contiene únicamente las tablas que pertenecen a ese contexto. El monolito modular puede compartir una instancia MySQL y conservar, a la vez, la propiedad lógica de las tablas y las fronteras de integración entre módulos.
+
+La versión implementada se obtuvo de los mapeos JPA del backend Open Source, revisión `1b6311c64d0559398732838b87359e59ed6c87a4`, y se contrastó con metadatos Hibernate generados sin conexión a una base de datos. Los tipos, nulabilidad, claves y valores ENUM de las cinco vistas implementadas corresponden a esos mapeos; no constituyen una ingeniería inversa de la instancia desplegada. Operational Intelligence y Reporting and Analytics se presentan como **diseños propuestos**, basados en sus diagramas de clases, porque todavía no disponen de entidades JPA en el backend revisado.
 
 ### 4.8.1 Database Diagrams
 
+Los diagramas utilizan los siguientes criterios:
 
-| Área lógica | Tablas principales | Decisión de diseño |
+- **Ownership por BC:** una tabla tiene un único contexto propietario. Las referencias a otros contextos se almacenan como identificadores `REF`, sin dibujar tablas ajenas ni crear FK físicas entre BC. La integración Quality → Production utiliza la ACL implementada.
+- **Límite del aggregate:** cada recuadro identifica una frontera de consistencia. Una FK entre tablas de aggregates independientes dentro del mismo BC preserva una referencia por identidad; no convierte automáticamente esas tablas en un único aggregate.
+- **Value Objects:** se persisten en columnas del propietario, mediante converters o embeddables, o en una colección dependiente. `quality_measurements` pertenece a `QualityAssessment`; su PK técnica no añade identidad de negocio a `QualityMeasurement`.
+- **Modelos de lectura:** las proyecciones de Reporting se identifican como read models, sin inventar Aggregate Roots para las consultas. El Shared Kernel de Production y Quality comparte tipos de valor, no tablas adicionales.
+
+La notación `PK` identifica claves primarias, `AI` autoincremento, `FK` restricciones físicas internas, `REF` referencias por identidad sin FK, `UQ` unicidad y `*` columnas obligatorias. Los campos ENUM conservan sus valores permitidos en los scripts SQL. Las FK físicas documentadas no añaden cascadas entre aggregates independientes; el ciclo de vida de las mediciones de calidad se gestiona desde su propietario en JPA.
+
+| Bounded Context | Estado de persistencia | Tablas propias |
 |:--|:--|:--|
-| Commercial Engagement | `plans`, `features`, `plan_features`, `plan_conditions`, `commercial_inquiries` | Mantiene el catálogo público y permite asociar opcionalmente una consulta con el plan de interés, sin representar todavía una suscripción activa. |
-| Tenant and Identity Access Management | `rice_mills`, `users`, `mill_memberships`, `roles`, `permissions`, `role_permissions` | Separa la identidad global del usuario de su rol dentro de cada molino y evita mezclar datos de diferentes tenants. |
-| Operational Management | `raw_material_receptions`, `production_batches`, `production_records`, `quality_assessments`, `quality_measurements`, `waste_records`, `quality_deviations`, `machines`, `maintenance_records`, `operational_readings`, `operational_anomalies`, `alerts` | Conserva la trazabilidad desde el molino hasta producción, calidad, activos, mediciones, anomalías y mantenimientos. |
-| Reporting and Analytics | `report_rows`, `report_dimensions`, `report_metrics` | Implementa proyecciones de lectura reconstruibles, asociadas al molino mediante `mill_id`, sin duplicar las tablas transaccionales de origen. |
+| Production Management | Implementado | `raw_material_receptions`, `production_batches`, `production_records` |
+| Quality and Yield Control | Implementado | `quality_assessments`, `quality_measurements`, `waste_records` |
+| Asset and Maintenance Management | Implementado | `machines`, `maintenance_records` |
+| Operational Intelligence | Diseño propuesto | `operational_readings`, `operational_anomalies`, `alerts` |
+| Commercial Engagement | Implementado | `commercial_inquiries` |
+| Reporting and Analytics | Diseño propuesto | `metric_projections` |
+| Identity and Access Management | Implementado | `users` |
+
+#### Production Management Database Diagram
+
+`RawMaterialReception`, `ProductionBatch` y `ProductionRecord` permanecen como tres aggregates independientes. Las FK `reception_id` y `batch_id` son internas a Production y corresponden a los mapeos `@ManyToOne` existentes en su infraestructura. El dominio conserva referencias por identificador; un lote no incorpora el Aggregate Root de recepción ni un registro incorpora el de lote.
+
+Los Value Objects de proveedor, origen y peso se representan mediante columnas de la recepción. `ProductionDetails` y su peso, periodo y estado se descomponen en las columnas del registro productivo. Las PK utilizan `BIGINT`, en correspondencia con `Long` en Java.
 
 <p align="center">
-  <img src="assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/molinex-database.svg" alt="Molinex Relational Database Diagram" width="100%">
+  <img src="assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/production-management-database.svg" alt="Database Diagram de Production Management, con ownership por aggregate" width="100%">
 </p>
 
-**Figura: Molinex Relational Database Diagram. Fuente: elaboración propia en MySQL Workbench.**
+**Figura: Production Management Database Diagram. Fuente: elaboración propia en PlantUML a partir de los mapeos JPA implementados.**
+
+[Fuente PlantUML](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/production-management-database.puml) · [DDL del Bounded Context](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/production-management-database.sql)
+
+#### Quality and Yield Control Database Diagram
+
+`QualityAssessment` es propietario de la colección `quality_measurements`. Los valores de indicador, porcentaje y rango esperado pertenecen a `QualityMeasurement`, un Value Object del dominio. La tabla dependiente incorpora una PK técnica `INT`, una FK interna `assessment_id` y la restricción única `(assessment_id, indicator)`. `WasteRecord` mantiene un aggregate separado; cantidad, peso base y porcentaje se almacenan en sus propias columnas.
+
+`production_record_id` se almacena como `BIGINT` en las tablas de evaluaciones y merma. Es una referencia al contrato de Production, validada por `ExternalProductionService`, sin FK física hacia una tabla ajena. Las PK de las tres tablas de Quality son `INT`, tal como establece el código implementado. `QualityDeviation` continúa en el diseño objetivo y no se presenta como una tabla JPA existente.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/quality-yield-control-database.svg" alt="Database Diagram de Quality and Yield Control, con ownership por aggregate" width="100%">
+</p>
+
+**Figura: Quality and Yield Control Database Diagram. Fuente: elaboración propia en PlantUML a partir de los mapeos JPA implementados.**
+
+[Fuente PlantUML](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/quality-yield-control-database.puml) · [DDL del Bounded Context](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/quality-yield-control-database.sql)
+
+#### Asset and Maintenance Management Database Diagram
+
+`Machine` y `MaintenanceRecord` tienen fronteras de consistencia distintas. El mantenimiento conserva `machine_id` como identificador local convertido a `BIGINT`; el mapeo revisado no declara una FK física hacia `machines`, por lo que el diagrama tampoco la inventa.
+
+`TechnicianReference` se persiste en `principal_id` y `display_name`, manteniendo una referencia de identidad y una instantánea del nombre del técnico. `CorrectiveMaintenanceDetails` ocupa las columnas opcionales `failure`, `cause`, `action_taken` y `downtime_minutes`. La referencia opcional `anomaly_id` corresponde a la integración prevista con Operational Intelligence y no genera una FK entre contextos.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/asset-maintenance-management-database.svg" alt="Database Diagram de Asset and Maintenance Management, con ownership por aggregate" width="100%">
+</p>
+
+**Figura: Asset and Maintenance Management Database Diagram. Fuente: elaboración propia en PlantUML a partir de los mapeos JPA implementados.**
+
+[Fuente PlantUML](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/asset-maintenance-management-database.puml) · [DDL del Bounded Context](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/asset-maintenance-management-database.sql)
+
+#### Operational Intelligence Database Diagram
+
+**Estado: diseño propuesto; módulo JPA pendiente de implementación.** La vista conserva `OperationalReading`, `OperationalAnomaly` y `Alert` como aggregates independientes. `machine_id` referencia por identidad a Asset and Maintenance Management, sin incorporar su tabla ni una FK externa. Las FK propuestas `reading_id` y `anomaly_id` permanecen dentro de Operational Intelligence y no implican propiedad entre sus aggregates.
+
+El diseño utiliza columnas para la medición operativa, los límites del criterio de evaluación y los estados de anomalía y alerta. Su DDL se mantiene en un archivo propio y queda fuera del esquema consolidado implementado.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/operational-intelligence-database.svg" alt="Database Diagram de Operational Intelligence, con ownership por aggregate" width="100%">
+</p>
+
+**Figura: Operational Intelligence Database Diagram. Fuente: elaboración propia en PlantUML a partir del diseño de clases propuesto.**
+
+[Fuente PlantUML](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/operational-intelligence-database.puml) · [DDL del Bounded Context](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/operational-intelligence-database.sql)
+
+#### Commercial Engagement Database Diagram
+
+El mapeo implementado contiene `commercial_inquiries`, propiedad de `CommercialInquiry`. `ContactInformation` se integra mediante `@Embedded` en `full_name`, `email`, `phone_number` y `company_name`; `InquiryMessage` se convierte en la columna `message`. No se crea una tabla independiente para cada Value Object.
+
+El catálogo de planes, las características comerciales y las suscripciones no cuentan con tablas JPA en este módulo revisado y no se incorporan como persistencia implementada. La consulta comercial permanece independiente de las cuentas de IAM.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/commercial-engagement-database.svg" alt="Database Diagram de Commercial Engagement, con ownership por aggregate" width="100%">
+</p>
+
+**Figura: Commercial Engagement Database Diagram. Fuente: elaboración propia en PlantUML a partir de los mapeos JPA implementados.**
+
+[Fuente PlantUML](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/commercial-engagement-database.puml) · [DDL del Bounded Context](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/commercial-engagement-database.sql)
+
+#### Reporting and Analytics Database Diagram
+
+**Estado: diseño propuesto; módulo JPA pendiente de implementación.** `metric_projections` representa una proyección de lectura local para indicadores e informes. Se agrupa como read model, no como aggregate transaccional. `source_context` y `source_aggregate_id` conservan la procedencia por identidad, sin FK hacia los módulos operativos; `dimensions_json` almacena las dimensiones de la proyección.
+
+La actualización prevista recibe eventos publicados y los traduce al modelo de Reporting mediante su ACL. Los resultados de consultas como resumen, reporte de producción o tendencia no originan una tabla por cada recurso REST. Este DDL propuesto también se mantiene fuera del esquema consolidado implementado.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/reporting-analytics-database.svg" alt="Database Diagram de Reporting and Analytics, con ownership por aggregate" width="100%">
+</p>
+
+**Figura: Reporting and Analytics Database Diagram. Fuente: elaboración propia en PlantUML a partir del diseño de clases propuesto.**
+
+[Fuente PlantUML](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/reporting-analytics-database.puml) · [DDL del Bounded Context](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/reporting-analytics-database.sql)
+
+#### Identity and Access Management Database Diagram
+
+La tabla `users` pertenece al aggregate `User`. Su PK es `INT`; `EmailAddress` y `PasswordHash` se convierten a `email` y `credential`. `UserProfilePersistenceConverter` almacena únicamente el nombre del perfil en `profile VARCHAR(150)`, mientras que rol y estado se persisten como ENUM. No se añaden tablas separadas de perfiles, roles o permisos que el código actual no implementa.
+
+Los contextos consumidores reciben el contrato de identidad publicado; no incorporan la tabla de usuarios a su modelo de datos. Las columnas de auditoría se incluyen en las tablas que heredan `AuditableAbstractPersistenceEntity`, según su mapeo real.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/identity-access-management-database.svg" alt="Database Diagram de Identity and Access Management, con ownership por aggregate" width="100%">
+</p>
+
+**Figura: Identity and Access Management Database Diagram. Fuente: elaboración propia en PlantUML a partir de los mapeos JPA implementados.**
+
+[Fuente PlantUML](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/identity-access-management-database.puml) · [DDL del Bounded Context](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/identity-access-management-database.sql)
+
+#### Fuentes y actualización de los diagramas
+
+Los archivos `.puml` son las fuentes editables de los diagramas y sus archivos `.svg` son las imágenes que utiliza el informe. El [esquema consolidado implementado](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/molinex-schema.sql) reúne solamente las diez tablas de los cinco BC implementados y permite importar el modelo en una base MySQL vacía; los dos diseños propuestos disponen de scripts SQL independientes. Este DDL de referencia no es una migración de una base existente.
+
+Para actualizar una figura se edita su archivo `.puml`, se comprueba la vista previa en PlantUML y se exporta nuevamente el `.svg` con el mismo nombre y ubicación. Los cambios del esquema se mantienen también en los archivos `.sql` correspondientes; editar un diagrama no modifica por sí solo esos scripts SQL. Las fuentes PlantUML, las imágenes y el DDL de cada BC acompañan al informe. La ampliación a tenancy, membresías o suscripciones requerirá definir sus propietarios y contratos antes de incorporarla a esta versión persistente.
 
 <div style="page-break-after: always;"></div>
 

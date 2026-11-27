@@ -1,0 +1,71 @@
+@startuml
+left to right direction
+hide circle
+hide methods
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam ArrowColor #486581
+skinparam nodesep 50
+skinparam ranksep 75
+skinparam classBorderColor #486581
+skinparam packageBorderColor #8296A8
+title Molinex - Quality and Yield Control\nDatabase Diagram | IMPLEMENTED JPA MAPPING
+caption
+Owned measurement values stay inside QualityAssessment. Production
+IDs cross the BC boundary through the ACL.
+endcaption
+package "Aggregate: QualityAssessment" as aggregate_0 #F7FAFC {
+entity "quality_assessments" as quality_assessments <<Root table>> #DCEEF8 {
+  * id : INT <<PK, AI>>
+  --
+  * created_at : DATETIME(6)
+  * updated_at : DATETIME(6)
+  * assessed_at : DATETIME(6)
+  * production_record_id : BIGINT <<REF>>
+}
+entity "quality_measurements" as quality_measurements <<Owned value collection>> #FFF2CC {
+  * id : INT <<PK, AI>>
+  --
+  * created_at : DATETIME(6)
+  * updated_at : DATETIME(6)
+  * expected_max_percentage : DECIMAL(5,2)
+  * expected_min_percentage : DECIMAL(5,2)
+  * indicator : ENUM
+  * value_percentage : DECIMAL(5,2)
+  * assessment_id : INT <<FK>>
+  --
+  UQ (assessment_id, indicator)
+}
+}
+package "Aggregate: WasteRecord" as aggregate_1 #F7FAFC {
+entity "waste_records" as waste_records <<Root table>> #DCEEF8 {
+  * id : INT <<PK, AI>>
+  --
+  * created_at : DATETIME(6)
+  * updated_at : DATETIME(6)
+  base_weight_unit : ENUM
+  base_weight_value : DECIMAL(18,4)
+  percentage : DECIMAL(5,2)
+  * production_record_id : BIGINT <<REF>>
+  * quantity_unit : ENUM
+  * quantity_value : DECIMAL(18,4)
+  * recorded_at : DATETIME(6)
+}
+}
+quality_assessments ||--o{ quality_measurements : FK: assessment_id\nowned value collection
+aggregate_0 -[hidden]-> aggregate_1
+legend bottom
+|= Notation |= Meaning |
+| PK / AI | Primary key / auto increment |
+| * | NOT NULL |
+| FK | Physical FK inside this BC |
+| REF | ID only; no physical FK |
+| UQ | Unique constraint |
+| Aggregate box | Consistency boundary |
+| ENUM | Allowed values in SQL |
+endlegend
+@enduml

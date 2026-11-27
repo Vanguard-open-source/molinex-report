@@ -1,0 +1,64 @@
+@startuml
+left to right direction
+hide circle
+hide methods
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam ArrowColor #486581
+skinparam nodesep 50
+skinparam ranksep 75
+skinparam classBorderColor #486581
+skinparam packageBorderColor #8296A8
+title Molinex - Operational Intelligence\nDatabase Diagram | PROPOSED DESIGN - NOT IMPLEMENTED
+caption
+PROPOSED: three independent aggregates. The external machine ID
+has no cross-context FK.
+endcaption
+package "Aggregate: OperationalReading" as aggregate_0 #F7FAFC {
+entity "operational_readings" as operational_readings <<Root table>> #DCEEF8 {
+  * id : BIGINT <<PK, AI>>
+  --
+  * machine_id : BIGINT <<REF>>
+  * variable_name : VARCHAR(100)
+  * measurement_value : DECIMAL(18,4)
+  * unit_symbol : VARCHAR(30)
+  * recorded_at : DATETIME(6)
+}
+}
+package "Aggregate: OperationalAnomaly" as aggregate_1 #F7FAFC {
+entity "operational_anomalies" as operational_anomalies <<Root table>> #DCEEF8 {
+  * id : BIGINT <<PK, AI>>
+  --
+  * reading_id : BIGINT <<FK>>
+  * minimum_value : DECIMAL(18,4)
+  * maximum_value : DECIMAL(18,4)
+  * detected_at : DATETIME(6)
+  * status : ENUM
+}
+}
+package "Aggregate: Alert" as aggregate_2 #F7FAFC {
+entity "alerts" as alerts <<Root table>> #DCEEF8 {
+  * id : BIGINT <<PK, AI>>
+  --
+  * anomaly_id : BIGINT <<FK>>
+  * priority : ENUM
+  * status : ENUM
+  * generated_at : DATETIME(6)
+}
+}
+operational_readings ||--o{ operational_anomalies : FK: reading_id\nidentity between separate aggregates
+operational_anomalies ||--o{ alerts : FK: anomaly_id\nidentity between separate aggregates
+legend bottom
+|= Notation |= Meaning |
+| PK / AI | Primary key / auto increment |
+| * | NOT NULL |
+| FK | Physical FK inside this BC |
+| REF | ID only; no physical FK |
+| Aggregate box | Consistency boundary |
+| ENUM | Allowed values in SQL |
+endlegend
+@enduml

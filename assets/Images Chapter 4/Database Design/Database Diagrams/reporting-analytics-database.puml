@@ -1,0 +1,42 @@
+@startuml
+left to right direction
+hide circle
+hide methods
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam ArrowColor #486581
+skinparam nodesep 50
+skinparam ranksep 75
+skinparam classBorderColor #486581
+skinparam packageBorderColor #8296A8
+title Molinex - Reporting and Analytics\nDatabase Diagram | PROPOSED DESIGN - NOT IMPLEMENTED
+caption
+PROPOSED: a local read projection, with source identity references
+and no cross-context FK.
+endcaption
+package "Read model: MetricProjection" as aggregate_0 #F7FAFC {
+entity "metric_projections" as metric_projections <<Read projection>> #E8F4D4 {
+  * id : BIGINT <<PK, AI>>
+  --
+  * source_context : VARCHAR(100)
+  * source_aggregate_id : BIGINT <<REF>>
+  * category : ENUM
+  * metric_name : VARCHAR(100)
+  * metric_value : DECIMAL(18,4)
+  * unit : VARCHAR(30)
+  * measured_at : DATETIME(6)
+  * dimensions_json : JSON
+}
+}
+legend bottom
+|= Notation |= Meaning |
+| PK / AI | Primary key / auto increment |
+| * | NOT NULL |
+| REF | ID only; no physical FK |
+| ENUM | Allowed values in SQL |
+endlegend
+@enduml

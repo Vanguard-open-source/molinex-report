@@ -1,0 +1,40 @@
+@startuml
+left to right direction
+hide circle
+hide methods
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam ArrowColor #486581
+skinparam nodesep 50
+skinparam ranksep 75
+skinparam classBorderColor #486581
+skinparam packageBorderColor #8296A8
+title Molinex - Commercial Engagement\nDatabase Diagram | IMPLEMENTED JPA MAPPING
+caption
+Contact values and message are stored in the inquiry root table.
+endcaption
+package "Aggregate: CommercialInquiry" as aggregate_0 #F7FAFC {
+entity "commercial_inquiries" as commercial_inquiries <<Root table>> #DCEEF8 {
+  * id : BIGINT <<PK, AI>>
+  --
+  * created_at : DATETIME(6)
+  * updated_at : DATETIME(6)
+  * company_name : VARCHAR(150)
+  * email : VARCHAR(254)
+  * full_name : VARCHAR(150)
+  phone_number : VARCHAR(30)
+  * message : VARCHAR(2000)
+  * submitted_at : DATETIME(6)
+}
+}
+legend bottom
+|= Notation |= Meaning |
+| PK / AI | Primary key / auto increment |
+| * | NOT NULL |
+| Aggregate box | Consistency boundary |
+endlegend
+@enduml
