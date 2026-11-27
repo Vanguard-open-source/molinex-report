@@ -13,17 +13,17 @@ text { fill: #17324D; font-family: Arial, Helvetica, sans-serif; }
 .boundary-title { font-size: 16px; font-weight: 700; }
 .node { font-size: 17px; font-weight: 700; }
 .detail { font-size: 14px; fill: #3E546A; }
-.edge-label { font-size: 14px; font-weight: 600; paint-order: stroke; stroke: #FCFDFE; stroke-width: 5; stroke-linejoin: round; }
+.edge-label { font-size: 14px; font-weight: 600; stroke: none; }
 .link, .dependency { fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .link { stroke: #326087; }
 .dependency { stroke: #795019; stroke-dasharray: 6 4; }
 </style>
 <rect width="100%" height="100%" fill="#FFFFFF"/>
 <text x="25" y="38" class="title" text-anchor="start">Molinex Backend · Component Overview</text>
-<text x="26" y="64" class="subtitle" text-anchor="start">Business modules inside the Spring Boot API, the events they publish, and the production–quality Shared Kernel.</text>
+<text x="26" y="64" class="subtitle" text-anchor="start">Spring Boot modules: implemented facade/ACL call, target event integrations, and the Shared Kernel.</text>
 <rect x="25" y="88" width="1070" height="593" rx="13" class="boundary"/>
 <text x="42" y="112" class="boundary-title" text-anchor="start">RESTful API [Container · Java and Spring Boot]</text>
-<polyline data-source="productionModule" data-target="qualityModule" class="link" points="293,178 403,178" marker-end="url(#arrow-link)"/>
+<polyline data-source="qualityModule" data-target="productionModule" class="link" points="403,178 293,178" marker-end="url(#arrow-link)"/>
 <polyline data-source="qualityModule" data-target="intelligenceModule" class="link" points="644,178 760,178" marker-end="url(#arrow-link)"/>
 <polyline data-source="productionModule" data-target="sharedKernel" class="dependency" points="152,216 152,317" marker-end="url(#arrow-dependency)"/>
 <polyline data-source="qualityModule" data-target="sharedKernel" class="dependency" points="434,216 434,270 219,270 219,317" marker-end="url(#arrow-dependency)"/>
@@ -83,7 +83,8 @@ text { fill: #17324D; font-family: Arial, Helvetica, sans-serif; }
 <text x="773" y="632" class="detail" text-anchor="start">Component · Generic</text>
 <text x="773" y="649" class="detail" text-anchor="start">Authentication, users and roles</text>
 </g>
-<text x="348" y="165" class="edge-label" text-anchor="middle">Production events</text>
+<text x="348" y="160" class="edge-label" text-anchor="middle">Facade / ACL</text>
+<text x="348" y="202" class="detail" text-anchor="middle">Java call</text>
 <text x="701" y="165" class="edge-label" text-anchor="middle">Quality deviations</text>
 <text x="313" y="258" class="edge-label" text-anchor="middle">Uses shared values</text>
 <text x="141" y="307" class="edge-label" text-anchor="end">Shared values</text>

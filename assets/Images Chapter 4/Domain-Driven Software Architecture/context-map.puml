@@ -29,7 +29,7 @@ rectangle "Reporting and Analytics\n<<Supporting Subdomain / Read Side>>" as rep
 rectangle "Identity and Access Management\n<<Generic Subdomain>>" as iam #E8EEF5
 
 ' Core collaboration: upstream to downstream.
-production -[#2F6B9A]right-> quality
+production -[#A66D29]right-> quality
 quality -[#2F6B9A]right-> intelligence
 intelligence <-[#7A5195]right-> maintenance
 
@@ -68,7 +68,9 @@ legend bottom
 |<#D8F0DF>| Core Subdomain |
 |<#E8EEF5>| Supporting or Generic Subdomain |
 |<#FFE27A>| Shared Kernel |
-| Blue directed line | Customer/Supplier + Published Language |
+| Amber directed line | Implemented: Supplier/Customer + published facade + consumer ACL |
+| Implemented contract | ProductionContextFacade / ExternalProductionService (ACL) |
+| Blue directed line | Customer/Supplier + Published Language (target event integrations) |
 | Dark directed line from IAM | Open Host Service / Published Language |
 | Purple bidirectional line | Partnership + Published Language |
 | Gold line | Shared Kernel |

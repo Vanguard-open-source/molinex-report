@@ -101,7 +101,7 @@ component molinex.apiApplication "MolinexBackendComponents" {
     include molinex.apiApplication.identityModule molinex.apiApplication.sharedKernel
     autoLayout lr
     title "Molinex Backend - Component Overview by Bounded Context"
-    description "The seven backend bounded contexts, their in-process events and the Production-Quality Shared Kernel."
+    description "The seven backend bounded contexts, the implemented Quality-to-Production facade/ACL call, target event integrations and the Production-Quality Shared Kernel."
 }
 
 component molinex.apiApplication "MolinexBackendCommercial" {
@@ -127,8 +127,11 @@ component molinex.apiApplication "MolinexBackendProduction" {
     include molinex.apiApplication.productionRecordInterfaces molinex.apiApplication.productionCommandServices
     include molinex.apiApplication.productionQueryServices molinex.apiApplication.productionDomain
     include molinex.apiApplication.productionInfrastructure
+    include molinex.apiApplication.productionAclInterfaces molinex.apiApplication.productionAclImplementation
+    include molinex.apiApplication.qualityProductionAcl
     autoLayout tb
     title "Molinex Backend - Production Management Components"
+    description "Production exposes an implemented in-process facade with snapshots; Quality consumes it through its ACL. Other components describe the target design."
 }
 component molinex.apiApplication "MolinexBackendQuality" {
     include molinex.webApplication molinex.database
@@ -136,8 +139,12 @@ component molinex.apiApplication "MolinexBackendQuality" {
     include molinex.apiApplication.yieldAnalysisInterfaces molinex.apiApplication.qualityCommandServices
     include molinex.apiApplication.qualityQueryServices molinex.apiApplication.qualityDomain
     include molinex.apiApplication.qualityInfrastructure
+    include molinex.apiApplication.qualityProductionAcl
+    include molinex.apiApplication.productionAclInterfaces molinex.apiApplication.productionAclImplementation
+    include molinex.apiApplication.productionQueryServices
     autoLayout tb
     title "Molinex Backend - Quality and Yield Control Components"
+    description "Implemented ACL: quality commands and rice-composition queries call ExternalProductionService, which translates Production facade snapshots into local IDs."
 }
 component molinex.apiApplication "MolinexBackendMaintenance" {
     include molinex.webApplication molinex.database

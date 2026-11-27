@@ -134,6 +134,10 @@ workspace "Molinex Platform" "C4 model for the Molinex rice mill operational man
             element "Backend Infrastructure" {
                 background #E4D5F7
             }
+            element "ACL" {
+                background #FFE4B5
+                stroke #A66D29
+            }
             element "External System" {
                 background #8C96A0
                 color #FFFFFF

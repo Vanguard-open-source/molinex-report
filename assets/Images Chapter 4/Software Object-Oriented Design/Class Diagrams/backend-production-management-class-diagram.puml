@@ -70,6 +70,39 @@ package "interfaces.rest" #DCEEF8 {
   }
 }
 
+package "interfaces.acl" #FFE4B5 {
+  interface ProductionContextFacade <<Facade>> {
+    +findRecord(id : Long) : Optional<ProductionRecordSnapshot>
+    +findRecords(batchId : Long) : List<ProductionRecordSnapshot>
+    +batchExists(batchId : Long) : boolean
+  }
+  record ProductionRecordSnapshot <<Published Language>> {
+    +id : Long
+    +batchId : Long
+    +recordedAt : Instant
+  }
+}
+
+package "application.acl" #FFE4B5 {
+  class ProductionContextFacadeImpl <<Application Service>> {
+    -records : ProductionRecordQueryService
+    -batches : ProductionBatchQueryService
+    +findRecord(id : Long) : Optional<ProductionRecordSnapshot>
+    +findRecords(batchId : Long) : List<ProductionRecordSnapshot>
+    +batchExists(batchId : Long) : boolean
+  }
+}
+
+package "application.queryservices (implemented facade dependencies)" #EAF3F8 {
+  class ProductionRecordQueryService <<Application Service>> {
+    +findById(id : long) : Optional<ProductionRecord>
+    +handle(query : GetProductionProcessesQuery) : List<ProductionRecord>
+  }
+  class ProductionBatchQueryService <<Application Service>> {
+    +findById(id : long) : Optional<ProductionBatch>
+  }
+}
+
 package "application" #EAF3F8 {
   interface ProductionCommandService <<Application Port>> {
     +handle(command : RecordRawMaterialReceptionCommand) : Result<RawMaterialReceptionId, ApplicationError>
@@ -290,6 +323,20 @@ package "shared (reference)" #FFF2CC {
     METRIC_TON
   }
 }
+
+ProductionContextFacadeImpl ..|> ProductionContextFacade
+ProductionContextFacade ..> ProductionRecordSnapshot : returns published data
+ProductionContextFacadeImpl ..> ProductionRecordSnapshot : maps production records
+ProductionContextFacadeImpl --> ProductionRecordQueryService
+ProductionContextFacadeImpl --> ProductionBatchQueryService
+ProductionRecordQueryService ..> ProductionRecordRepository
+ProductionBatchQueryService ..> ProductionBatchRepository
+
+note right of ProductionContextFacade
+  Implemented synchronous integration contract.
+  Consumers receive snapshots with primitive IDs;
+  aggregates and repositories stay private.
+end note
 
 RawMaterialReceptionsController ..> ProductionCommandService
 RawMaterialReceptionsController ..> ProductionQueryService
