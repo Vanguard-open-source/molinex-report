@@ -56,6 +56,34 @@ package "interfaces.rest" #DCEEF8 {
   }
 }
 
+package "application.internal.outboundservices.acl" #FFE4B5 {
+  class ExternalProductionService <<Anti-Corruption Layer>> {
+    -facade : ProductionContextFacade
+    +recordExists(id : ProductionRecordId) : boolean
+    +batchExists(id : Long) : boolean
+    +recordIds(batchId : Long) : Set<ProductionRecordId>
+  }
+}
+
+package "Production interfaces.acl (published contract reference)" #FFF2CC {
+  interface ProductionContextFacade <<Facade>> {
+    +findRecord(id : Long) : Optional<ProductionRecordSnapshot>
+    +findRecords(batchId : Long) : List<ProductionRecordSnapshot>
+    +batchExists(batchId : Long) : boolean
+  }
+  record ProductionRecordSnapshot <<Published Language>> {
+    +id : Long
+    +batchId : Long
+    +recordedAt : Instant
+  }
+}
+
+package "application.internal (implemented ACL consumers)" #EAF3F8 {
+  class QualityAssessmentCommandServiceImpl <<Application Service>>
+  class WasteRecordCommandServiceImpl <<Application Service>>
+  class RiceCompositionQueryServiceImpl <<Application Service>>
+}
+
 package "application" #EAF3F8 {
   interface QualityCommandService <<Application Port>> {
     +handle(command : RecordQualityAssessmentCommand) : Result<QualityAssessmentId, ApplicationError>
@@ -282,6 +310,20 @@ package "shared (reference)" #FFF2CC {
     METRIC_TON
   }
 }
+
+QualityAssessmentCommandServiceImpl --> ExternalProductionService : validates production record
+WasteRecordCommandServiceImpl --> ExternalProductionService : validates production record
+RiceCompositionQueryServiceImpl --> ExternalProductionService : checks batch and gets local IDs
+ExternalProductionService --> ProductionContextFacade : in-process Java call
+ProductionContextFacade ..> ProductionRecordSnapshot : returns
+ExternalProductionService ..> ProductionRecordSnapshot : translates snapshot IDs
+ExternalProductionService ..> ProductionRecordId : creates Quality-local IDs
+
+note right of ExternalProductionService
+  Implemented ACL on the consuming side.
+  Uses only Production's published contract;
+  no access to its aggregates or repositories.
+end note
 
 QualityAssessmentsController ..> QualityCommandService
 QualityAssessmentsController ..> QualityQueryService

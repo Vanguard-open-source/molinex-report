@@ -1793,7 +1793,7 @@ El diagrama presenta el diseño de las historias US-05 a US-10. Cada flujo inici
 
 El diagrama documenta el diseño de US-11 a US-16. El Operador de Producción registra evaluaciones de calidad y merma mediante flujos transaccionales independientes. `QualityAssessmentRecorded` y `WasteRecorded` pueden activar la Policy que evalúa los indicadores contra su rango válido. Solo cuando se incumple el rango, la Policy emite automáticamente `IdentifyQualityDeviation`, que actúa sobre `QualityDeviation` y produce `QualityDeviationIdentified`.
 
-Los Read Models de rendimiento, composición, merma, comparación y desviaciones permanecen separados de la Policy y pueden consultarse sin modificar Aggregates. `QualityAssessment` y `WasteRecord` referencian el proceso mediante el `ProductionRecordId` local de Quality. Según el Context Map, Production comunica los cambios de información productiva como Published Language y Quality traduce el identificador a su propio tipo.
+Los Read Models de rendimiento, composición, merma, comparación y desviaciones permanecen separados de la Policy y pueden consultarse sin modificar Aggregates. `QualityAssessment` y `WasteRecord` referencian el proceso mediante el `ProductionRecordId` local de Quality. La integración implementada utiliza llamadas internas: la ACL de Quality, `ExternalProductionService`, consulta `ProductionContextFacade` y convierte los identificadores de `ProductionRecordSnapshot` a su propio tipo. Los eventos del diseño objetivo no sustituyen esta validación síncrona.
 
 <p align="center">
   <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/design-level-event-storming-quality-yield-control.svg" alt="Design-Level Event Storming de Quality and Yield Control, historias US-11 a US-16" width="100%">
@@ -1885,7 +1885,7 @@ El Shared Kernel no contiene identificadores, Aggregates, repositorios, servicio
 
 El Context Map hace explícitas las relaciones estratégicas y las dependencias entre modelos dentro del monolito modular. Para facilitar su lectura, presenta primero los Core Subdomains, luego los Supporting Subdomains y finalmente el Generic Subdomain, sin repetir en cada línea los eventos que ya se detallan en la tabla.
 
-La leyenda utiliza líneas azules para `Customer/Supplier + Published Language`, líneas oscuras desde IAM para `Open Host Service / Published Language`, una línea morada bidireccional para `Partnership + Published Language`, líneas doradas para el `Shared Kernel` y una línea gris punteada para `Separate Ways`. Así se evitan etiquetas repetidas y se mantiene el detalle contractual en la tabla siguiente.
+La leyenda utiliza una línea ámbar para la integración implementada `Supplier/Customer + fachada publicada + ACL consumidora` entre Production y Quality, líneas azules para `Customer/Supplier + Published Language` de las integraciones por eventos previstas, líneas oscuras desde IAM para `Open Host Service / Published Language`, una línea morada bidireccional para `Partnership + Published Language`, líneas doradas para el `Shared Kernel` y una línea gris punteada para `Separate Ways`. Así se evitan etiquetas repetidas y se mantiene el detalle contractual en la tabla siguiente.
 
 <p align="center">
   <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/context-map.svg" alt="DDD Context Map de Molinex" width="100%">
@@ -1895,13 +1895,13 @@ La leyenda utiliza líneas azules para `Customer/Supplier + Published Language`,
 |:--|:--|:--|
 | Commercial Engagement — IAM | Separate Ways | No existe todavía un contrato confirmado para convertir una solicitud comercial en suscripción, tenant o cuenta. |
 | IAM → módulos operativos | Open Host Service / Published Language | Los módulos reciben `AuthenticatedPrincipal` y claims de autorización; no importan el Aggregate `User`. |
-| Production Management → Quality and Yield Control | Customer/Supplier + Published Language | Production publica `ProductionInformationRecorded` y `ProductionInformationUpdated`; Quality traduce los identificadores a sus propios tipos. |
+| Production Management → Quality and Yield Control | Supplier/Customer + Published Language + Anti-Corruption Layer | Implementado: Production publica `ProductionContextFacade` y `ProductionRecordSnapshot`; la ACL `ExternalProductionService` de Quality valida registros y lotes y convierte los IDs a `ProductionRecordId` local mediante llamadas Java síncronas. La flecha del Context Map indica proveedor → consumidor; en C4 la dependencia de llamada va de Quality → Production. |
 | Production Management — Quality and Yield Control | Shared Kernel | Comparten únicamente `Weight` y `MeasurementUnit`. |
 | Quality and Yield Control → Operational Intelligence | Customer/Supplier + Published Language | `QualityDeviationIdentified` puede alimentar recomendaciones sin compartir el Aggregate `QualityDeviation`. |
 | Asset and Maintenance Management ↔ Operational Intelligence | Partnership + Published Language | Coordinan máquinas, anomalías y mantenimiento mediante eventos e identificadores locales. |
 | Módulos operativos → Reporting and Analytics | Customer/Supplier + Published Language | Reporting consume eventos publicados y construye sus propias proyecciones; no consulta directamente los repositorios de los módulos productores. |
 
-La combinación de referencias locales, Published Language y proyecciones permite que cada Bounded Context evolucione sin compartir sus Aggregate Roots. La comunicación puede ejecutarse mediante eventos internos en memoria porque el sistema será un monolito modular; no requiere broker de mensajería ni comunicación HTTP entre módulos.
+La combinación de referencias locales, Published Language y proyecciones permite que cada Bounded Context evolucione sin compartir sus Aggregate Roots. La integración Quality → Production ya utiliza una llamada Java en proceso a una fachada, protegida por la ACL consumidora. Las relaciones por eventos con Operational Intelligence y Reporting and Analytics corresponden al diseño objetivo; no se presentan como integraciones implementadas en el backend revisado. Tanto las llamadas internas como los eventos previstos son compatibles con el monolito modular y no requieren comunicación HTTP entre módulos.
 
 Los sistemas externos planificados no constituyen Bounded Contexts. `Operational Intelligence` traducirá las mediciones provenientes de `Rice Mill Sensor Gateway` mediante un adaptador que proteja su modelo de dominio, mientras que `Identity and Access Management` y `Operational Intelligence` utilizarán un puerto de notificaciones para desacoplarse de `Notification Delivery Service`.
 
@@ -1997,13 +1997,13 @@ El diagrama de contexto presenta a Molinex como un único sistema de software, m
 
 ### 4.6.3 Software Architecture Container Diagrams
 
-El administrador, el técnico de mantenimiento y el operario de producción acceden a Molinex por HTTPS mediante el contenedor Web Application, desplegado en Azure Static Web Apps. Este contenedor entrega la Single-Page Application desarrollada con Angular 22, TypeScript, Angular Signals y Angular Material; la SPA se ejecuta en el navegador y consume la RESTful API de Spring Boot mediante JSON sobre HTTPS. La Landing Page se mantiene como un contenedor independiente que presenta la oferta pública, redirige a la aplicación y envía solicitudes comerciales a la API.
+El administrador, el técnico de mantenimiento y el operario de producción acceden a Molinex por HTTPS mediante el contenedor Web Application, desplegado en Azure Static Web Apps. Este contenedor entrega la Single-Page Application desarrollada con Angular 22, TypeScript, Angular Signals y Angular Material; la SPA se ejecuta en el navegador y consume la RESTful API de Spring Boot mediante JSON sobre HTTPS. La Landing Page presenta la oferta pública, redirige a la aplicación y envía las solicitudes comerciales directamente a la API. El diagrama separa el acceso público y operativo de las conexiones que la API establece con MySQL y los sistemas externos.
 
 <p align="center">
   <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/container-diagram.svg" alt="Software Architecture Container Diagram de Molinex" width="100%">
 </p>
 
-**Figura: Software Architecture Container Diagram de Molinex. Fuente: elaboración propia en Structurizr.**
+**Figura: Software Architecture Container Diagram de Molinex. Fuente: elaboración propia a partir del modelo Structurizr.**
 
 ### 4.6.4 Software Architecture Components Diagrams
 
@@ -2013,7 +2013,7 @@ Dentro de cada producto, los Bounded Contexts se presentan según su tipo de sub
 
 #### Frontend Component Diagrams
 
-La vista general muestra los siete Bounded Contexts internos de la Single-Page Application, el Shared Kernel y su acceso a la RESTful API. En las vistas detalladas, cada contexto se organiza mediante los límites Presentation, Application, Domain e Infrastructure. Presentation contiene componentes Angular; Application coordina el estado mediante stores basados en Signals; Domain expresa entidades, objetos de valor y modelos de lectura; e Infrastructure concentra la comunicación HTTP y el ensamblaje de recursos. El Shared Kernel reúne las capacidades transversales del frontend y los objetos de valor `Weight` y `MeasurementUnit` compartidos por Production Management y Quality and Yield Control.
+La vista general muestra qué Bounded Contexts de la Single-Page Application utiliza cada actor. Cada uno de los siete componentes depende del Shared Kernel para capacidades comunes y se comunica con la RESTful API mediante JSON sobre HTTPS. En las vistas detalladas, cada contexto se organiza mediante los límites Presentation, Application, Domain e Infrastructure. Presentation contiene componentes Angular; Application coordina el estado mediante stores basados en Signals; Domain expresa entidades, objetos de valor y modelos de lectura; e Infrastructure concentra la comunicación HTTP y el ensamblaje de recursos. El Shared Kernel reúne las capacidades transversales del frontend y los objetos de valor `Weight` y `MeasurementUnit` compartidos por Production Management y Quality and Yield Control.
 
 ##### Frontend Component Overview
 
@@ -2021,7 +2021,7 @@ La vista general muestra los siete Bounded Contexts internos de la Single-Page A
   <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/frontend-component-diagram.svg" alt="Molinex Frontend Component Overview" width="100%">
 </p>
 
-**Figura: Molinex Frontend Component Overview. Fuente: elaboración propia en Structurizr.**
+**Figura: Molinex Frontend Component Overview. Fuente: elaboración propia a partir del modelo Structurizr.**
 
 ##### Production Management Frontend Components
 
@@ -2091,7 +2091,7 @@ En el Bounded Context **Production Management**, los componentes de Presentation
 
 #### Backend Component Diagrams
 
-La vista general representa los módulos de los Bounded Contexts que conviven dentro de la RESTful API, sus eventos en proceso y los sistemas externos. Cada vista detallada separa Interfaces, Application, Domain e Infrastructure: las interfaces REST se implementan con Spring Web MVC, los servicios de aplicación coordinan comandos y consultas, el modelo de dominio conserva las reglas del negocio y la infraestructura utiliza Spring Data JPA para persistencia. El Production-Quality Shared Kernel constituye una excepción intencional: contiene solo objetos de valor de Domain, por lo que no se inventan capas de Interfaces, Application o Infrastructure.
+La vista general muestra los módulos de la RESTful API, la llamada implementada de Quality a Production mediante fachada y ACL, las integraciones por eventos del diseño objetivo y las dependencias con el Shared Kernel. El diagrama de contenedores y las vistas detalladas muestran el acceso de los clientes, la persistencia y las integraciones externas. Cada vista detallada separa Interfaces, Application, Domain e Infrastructure: las interfaces REST se implementan con Spring Web MVC, los servicios de aplicación coordinan comandos y consultas, el modelo de dominio conserva las reglas del negocio y la infraestructura utiliza Spring Data JPA para persistencia. El Production-Quality Shared Kernel constituye una excepción intencional: contiene solo objetos de valor de Domain, por lo que no se inventan capas de Interfaces, Application o Infrastructure.
 
 ##### Backend Component Overview
 
@@ -2099,23 +2099,27 @@ La vista general representa los módulos de los Bounded Contexts que conviven de
   <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/backend-component-diagram.svg" alt="Molinex Backend Component Overview" width="100%">
 </p>
 
-**Figura: Molinex Backend Component Overview. Fuente: elaboración propia en Structurizr.**
+**Figura: Molinex Backend Component Overview. Fuente: elaboración propia a partir del modelo Structurizr.**
 
 ##### Production Management Backend Components
+
+`ProductionContextFacade` y `ProductionRecordSnapshot` forman el contrato publicado en `production.interfaces.acl`. `ProductionContextFacadeImpl`, en `production.application.acl`, delega en `ProductionRecordQueryService` y `ProductionBatchQueryService` y transforma los registros en snapshots. Quality recibe únicamente ese contrato, sin acceder a los Aggregates ni repositorios de Production.
 
 <p align="center">
   <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/backend-production-management-component-diagram.svg" alt="Production Management Backend Component Diagram" width="100%">
 </p>
 
-**Figura: Production Management Backend Component Diagram. Fuente: elaboración propia en Structurizr.**
+**Figura: Production Management Backend Component Diagram. Fuente: elaboración propia a partir del modelo Structurizr.**
 
 ##### Quality and Yield Control Backend Components
+
+La ACL implementada es `ExternalProductionService`, ubicada en `quality.application.internal.outboundservices.acl`. Los servicios `QualityAssessmentCommandServiceImpl` y `WasteRecordCommandServiceImpl` la utilizan para validar referencias; `RiceCompositionQueryServiceImpl` comprueba el lote y obtiene sus identificadores de registro. Las llamadas son síncronas y en proceso. El adaptador convierte los IDs recibidos en `ProductionRecordSnapshot` al `ProductionRecordId` propio de Quality.
 
 <p align="center">
   <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/backend-quality-yield-control-component-diagram.svg" alt="Quality and Yield Control Backend Component Diagram" width="100%">
 </p>
 
-**Figura: Quality and Yield Control Backend Component Diagram. Fuente: elaboración propia en Structurizr.**
+**Figura: Quality and Yield Control Backend Component Diagram. Fuente: elaboración propia a partir del modelo Structurizr.**
 
 ##### Asset and Maintenance Management Backend Components
 
@@ -2169,22 +2173,23 @@ La vista general representa los módulos de los Bounded Contexts que conviven de
 
 ### 4.7.1 Class Diagrams
 
-El modelado se presenta por Bounded Context; por ello, no existe un único modelo de clases global que permita acceder directamente a los objetos internos de todos los módulos.
-
-Los modelos de clases siguen el mismo orden que 4.6.4: Core, Supporting y Generic Subdomain, según la clasificación de 4.6.1.
-
-Los diagramas representan el diseño orientado a objetos del dominio y no un esquema de base de datos. Los atributos se mantienen privados, las operaciones públicas expresan comportamientos que protegen invariantes y cada Aggregate Root dispone de su propio contrato de repositorio. Las referencias hacia otros Aggregates se expresan mediante identificadores tipados. Cuando dos contextos representan la misma identidad, cada uno define su propio tipo local en lugar de importar el modelo interno del otro.
+Cada Bounded Context reúne sus diagramas de clases de backend y frontend. El orden coincide con el de 4.6.4, de modo que cada pareja se puede consultar junto con las vistas de componentes del mismo módulo. Las vistas muestran el diseño objetivo de las clases y contratos de las capas de aplicación, dominio e infraestructura, además de las interfaces REST del backend. Los atributos se mantienen privados, las operaciones públicas expresan comportamientos que protegen invariantes y cada Aggregate Root dispone de su propio contrato de repositorio. Las referencias hacia otros Aggregates se expresan mediante identificadores tipados. Cuando dos contextos representan la misma identidad, cada uno define su propio tipo local en lugar de importar el modelo interno del otro.
 
 | Notación | Significado en el diseño |
 |:--|:--|
-| `<<Aggregate Root>>` | Único punto de entrada autorizado para modificar un Aggregate y proteger sus invariantes. |
-| `<<Entity>>` | Objeto con identidad subordinado al ciclo de vida de un Aggregate Root. |
-| `<<Value Object>>` | Objeto inmutable definido por sus valores y validaciones. |
-| `<<Repository>>` | Contrato de persistencia definido por el dominio para recuperar o guardar Aggregate Roots. |
-| `<<Domain Service>>` | Comportamiento de dominio que no pertenece naturalmente a una sola Entity o Value Object. |
-| `<<Read Model>>` | Proyección optimizada para consulta que no modifica el modelo transaccional. |
-| `<<Published Language>>` | Contrato estable utilizado para intercambiar información sin compartir modelos internos. |
-| `<<Port>>` | Frontera que desacopla el dominio de una integración externa. |
+| `<<Aggregate Root>>` | Entidad que controla los cambios del aggregate y protege sus invariantes. |
+| `<<Value Object>>`, `<<Shared Value Object>>` | Objeto definido por sus valores. La variante compartida se reutiliza entre contextos dentro del Shared Kernel correspondiente. |
+| `<<Domain Service>>`, `<<Domain Event>>` | Un servicio contiene una regla que abarca varios objetos. Un evento comunica un hecho ocurrido en el dominio. |
+| `<<Command>>`, `<<Query>>`, `<<Read Model>>` | Un comando solicita un cambio, una consulta solicita información y un modelo de lectura organiza los datos para responder consultas. |
+| `<<Application Service>>`, `<<Application Port>>`, `<<Outbound Port>>` | El servicio coordina un caso de uso. Los puertos definen contratos de la aplicación con sus consumidores o sus dependencias externas. |
+| `<<Repository Port>>`, `<<Repository Adapter>>` | El puerto define el contrato de persistencia del dominio y el adaptador lo implementa en la infraestructura. |
+| `<<Published Language>>`, `<<Anti-Corruption Layer>>`, `<<Facade>>` | Contrato de integración, adaptador consumidor que traduce datos al modelo local y fachada que expone operaciones del contexto proveedor, respectivamente. |
+| `<<REST Controller>>`, `<<Integration Controller>>` | Punto de entrada HTTP para clientes de la API o para sistemas externos. |
+| `<<Resource>>`, `<<Request Resource>>`, `<<Response Resource>>` | Estructuras serializables que representan los datos enviados o recibidos a través de la API REST. |
+| `<<Assembler>>`, `<<Data Mapper>>` | El assembler traduce recursos o mensajes de integración. El mapper relaciona el modelo de dominio con las clases de persistencia. |
+| `<<JPA Entity>>`, `<<Spring Data Repository>>` | Entidad de persistencia y contrato Spring Data usado para consultar y guardar datos, respectivamente. |
+| `<<Angular Signals Store>>`, `<<Angular HTTP Service>>` | El store mantiene estado reactivo y coordina operaciones. El servicio HTTP ejecuta solicitudes a la API. |
+| `<<Angular Router Guard>>`, `<<Angular HTTP Interceptor>>` | El guard controla el acceso a rutas. El interceptor aplica comportamiento común a las solicitudes HTTP. |
 
 #### Production Management Bounded Context
 
@@ -2192,7 +2197,7 @@ Los diagramas representan el diseño orientado a objetos del dominio y no un esq
 
 El diagrama representa el diseño objetivo del bounded context **Production Management** para el backend Java con Spring Boot. La capa `interfaces.rest` expone recursos y assemblers REST; `application` separa comandos y consultas mediante CQRS; `domain` mantiene Aggregates, Value Objects, eventos y contratos de repositorio sin dependencias de JPA; e `infrastructure.persistence.jpa` implementa entidades de persistencia, mappers, repositorios Spring Data y adapters.
 
-`RawMaterialReception`, `ProductionBatch` y `ProductionRecord` son Aggregates independientes. Un lote conserva un `RawMaterialReceptionId` y un registro productivo conserva un `ProductionBatchId`; ninguno contiene otro Aggregate Root. Sus identificadores de dominio encapsulan `Long`, mientras que las entidades de persistencia los mapean a columnas MySQL `BIGINT`. `Weight` y `MeasurementUnit` pertenecen al Shared Kernel acordado con Quality and Yield Control.
+`RawMaterialReception`, `ProductionBatch` y `ProductionRecord` son Aggregates independientes. Un lote conserva un `RawMaterialReceptionId` y un registro productivo conserva un `ProductionBatchId`; ninguno contiene otro Aggregate Root. Sus identificadores de dominio encapsulan `Long`, mientras que las entidades de persistencia los mapean a columnas MySQL `BIGINT`. `Weight` y `MeasurementUnit` pertenecen al Shared Kernel acordado con Quality and Yield Control. La integración implementada añade `ProductionContextFacade`, `ProductionRecordSnapshot` y `ProductionContextFacadeImpl`, junto con sus dependencias reales `ProductionRecordQueryService` y `ProductionBatchQueryService`. La fachada devuelve datos publicados con IDs primitivos y no expone los Aggregates.
 
 <p align="center">
   <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/backend-production-management-class-diagram.svg" alt="Production Management Backend Class Diagram" width="100%">
@@ -2218,7 +2223,7 @@ El diagrama representa el diseño objetivo del bounded context **Production Mana
 
 El diagrama representa el diseño objetivo del bounded context **Quality and Yield Control** para el backend Java con Spring Boot. Las operaciones REST se traducen a comandos y consultas en `application`; el modelo de dominio permanece libre de anotaciones JPA; y la infraestructura utiliza entidades de persistencia paralelas, mappers, repositorios Spring Data y adapters para implementar los contratos del dominio.
 
-`QualityAssessment`, `WasteRecord` y `QualityDeviation` protegen invariantes distintas y permanecen como Aggregates separados. El `ProductionRecordId` mostrado pertenece al lenguaje local de Quality; no importa la clase homónima de Production Management. Los identificadores se expresan con `Long` en Java y se persisten como `BIGINT` en MySQL.
+`QualityAssessment`, `WasteRecord` y `QualityDeviation` protegen invariantes distintas y permanecen como Aggregates separados. El `ProductionRecordId` mostrado pertenece al lenguaje local de Quality; no importa la clase homónima de Production Management. Los identificadores se expresan con `Long` en Java y se persisten como `BIGINT` en MySQL. El diagrama incluye la ACL `ExternalProductionService`, sus tres servicios consumidores implementados y las referencias al contrato publicado de Production. El consumidor transforma los snapshots a identificadores locales antes de operar con su modelo.
 
 <p align="center">
   <img src="assets/Images%20Chapter%204/Software%20Object-Oriented%20Design/Class%20Diagrams/backend-quality-yield-control-class-diagram.svg" alt="Quality and Yield Control Backend Class Diagram" width="100%">
@@ -2320,7 +2325,7 @@ El diagrama representa el diseño objetivo del bounded context **Commercial Enga
 
 ##### Reporting and Analytics Backend Class Diagram
 
-El diagrama representa el diseño objetivo del bounded context **Reporting and Analytics** para el backend Java con Spring Boot. El controller REST expone exclusivamente consultas; los servicios de aplicación construyen los modelos de lectura; un subscriber consume eventos mediante Published Language; y un Anti-Corruption Layer traduce los mensajes externos antes de actualizar proyecciones JPA propias.
+El diagrama representa el diseño objetivo del bounded context **Reporting and Analytics** para el backend Java con Spring Boot. El controller REST expone exclusivamente consultas; los servicios de aplicación construyen los modelos de lectura; un subscriber consume eventos mediante Published Language; y un Anti-Corruption Layer traduce los mensajes externos antes de actualizar proyecciones JPA propias. Esta integración por eventos es diseño objetivo: el backend revisado no contiene aún el módulo Reporting ni `PublishedDomainEventAssembler`; la ACL implementada y comprobada es la de Quality hacia Production.
 
 Reporting and Analytics se modela como un *read side*: no se introduce un Aggregate Root para los reportes porque el alcance actual no establece identidad, versionado, aprobación ni ciclo de vida transaccional para ellos. Cada proyección usa un identificador `Long`, persistido como `BIGINT`, y conserva las referencias de los Aggregates de origen también como `BIGINT`, sin importar sus modelos internos.
 
@@ -2959,7 +2964,7 @@ Los aspectos del Sprint 3 son los Web Services (producción y calidad; mantenimi
 | TS-02 | Consultar indicadores mediante API | T-S3-IND-05 | Implementar QualityAssessment | Contexto: Quality and Yield Control. Proteger porcentajes y fecha; utilizar ProductionRecordId propio de Quality. Definir QualityAssessmentRepository sin dependencias de JPA, HTTP ni clases internas de Production. | 4 | Casalino Berrocal, Luisa Nhiriel | Done |
 | TS-02 | Consultar indicadores mediante API | T-S3-IND-06 | Implementar WasteRecord | Contexto: Quality and Yield Control. Proteger cantidad y base de cálculo conforme a US-14; porcentaje opcional cuando no existe base y rechazo de base inválida. Compartir solo Weight y MeasurementUnit. | 4 | Casalino Berrocal, Luisa Nhiriel | Done |
 | TS-02 | Consultar indicadores mediante API | T-S3-IND-07 | Coordinar consultas y registros de Quality | Contexto: Quality and Yield Control. Orquestar comandos de calidad/merma y Queries de indicadores mediante contratos locales; delegar las invariantes al dominio y devolver modelos de lectura sin modificarlos como Aggregates. | 6 | Casalino Berrocal, Luisa Nhiriel | Done |
-| TS-02 | Consultar indicadores mediante API | T-S3-IND-08 | Traducir eventos de Production | Contexto: Quality and Yield Control. Consumir ProductionInformationRecorded/Updated mediante Published Language, traducir IDs a tipos de Quality y actualizar sus datos derivados con consistencia eventual; evitar efectos duplicados al repetir un evento. | 6 | Rivera Rupay, Fabricio Jose | Done |
+| TS-02 | Consultar indicadores mediante API | T-S3-IND-08 | Integrar referencias de Production mediante ACL | Contexto: Quality and Yield Control. Consultar ProductionContextFacade mediante ExternalProductionService para validar registros y lotes, obtener los registros del lote y traducir los IDs de ProductionRecordSnapshot al ProductionRecordId local. Integración síncrona implementada para evaluaciones, merma y composición del arroz. | 6 | Rivera Rupay, Fabricio Jose | Done |
 | TS-03 | Gestionar mantenimiento mediante API | T-S3-MAN-01 | Persistir Machine y MaintenanceRecord | Contexto: Asset and Maintenance Management. Implementar los dos contratos de repositorio con adapters, entidades JPA y mappers propios; persistir MachineId y la referencia informativa de anomalía sin importar OperationalAnomaly. | 6 | Casalino Berrocal, Luisa Nhiriel | Done |
 | TS-03 | Gestionar mantenimiento mediante API | T-S3-MAN-02 | Coordinar maquinaria y mantenimiento | Contexto: Asset and Maintenance Management. Orquestar registro y consulta de máquinas e intervenciones, comprobar existencia mediante contratos y ejecutar comportamiento del Aggregate correspondiente; usar AuthenticatedPrincipal para el control de acceso. | 6 | Casalino Berrocal, Luisa Nhiriel | Done |
 | TS-03 | Gestionar mantenimiento mediante API | T-S3-MAN-03 | Probar invariantes y contrato de mantenimiento | Contexto: Asset and Maintenance Management. Comprobar TS-03 E1–E5, máquina existente, tipos y datos válidos; verificar que Machine y MaintenanceRecord se referencien por identidad y que el acceso se controle sin importar User. | 5 | Jimenez Saavedra, Antony Alexander | Done |

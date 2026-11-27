@@ -86,6 +86,9 @@ group "Identity and Access Management" {
 
 group "Production Management" {
     group "Interfaces" {
+        productionAclInterfaces = component "Production Context Facade" "ProductionContextFacade publishes findRecord, findRecords and batchExists; ProductionRecordSnapshot contains only Long IDs and an Instant timestamp." "Java In-Process Published Contract" {
+            tags "Backend Interfaces" "ACL"
+        }
         rawMaterialReceptionInterfaces = component "Raw Material Reception REST Interface" "RawMaterialReceptionsController, resources and assemblers expose reception operations." "Spring Web MVC" {
             tags "Backend Interfaces"
         }
@@ -97,6 +100,9 @@ group "Production Management" {
         }
     }
     group "Application" {
+        productionAclImplementation = component "Production Facade Implementation" "ProductionContextFacadeImpl delegates to ProductionRecordQueryService and ProductionBatchQueryService and maps records into ProductionRecordSnapshot." "Spring Application Service" {
+            tags "Backend Application Layer" "ACL"
+        }
         productionCommandServices = component "Production Command Services" "Coordinates commands for raw material receptions, production batches and production records." "Java Command Services" {
             tags "Backend Application Layer"
         }
@@ -129,6 +135,9 @@ group "Quality and Yield Control" {
         }
     }
     group "Application" {
+        qualityProductionAcl = component "External Production Service (ACL)" "ExternalProductionService calls ProductionContextFacade, checks records and batches, and converts snapshot IDs to Quality-local ProductionRecordId values." "Spring Application Service / Anti-Corruption Layer" {
+            tags "Backend Application Layer" "ACL"
+        }
         qualityCommandServices = component "Quality Command Services" "Coordinates quality assessment, waste recording and deviation-identification commands." "Java Command Services" {
             tags "Backend Application Layer"
         }
