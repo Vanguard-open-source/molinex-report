@@ -1997,13 +1997,13 @@ El diagrama de contexto presenta a Molinex como un único sistema de software, m
 
 ### 4.6.3 Software Architecture Container Diagrams
 
-El administrador, el técnico de mantenimiento y el operario de producción acceden a Molinex por HTTPS mediante el contenedor Web Application, desplegado en Azure Static Web Apps. Este contenedor entrega la Single-Page Application desarrollada con Angular 22, TypeScript, Angular Signals y Angular Material; la SPA se ejecuta en el navegador y consume la RESTful API de Spring Boot mediante JSON sobre HTTPS. La Landing Page se mantiene como un contenedor independiente que presenta la oferta pública, redirige a la aplicación y envía solicitudes comerciales a la API.
+El administrador, el técnico de mantenimiento y el operario de producción acceden a Molinex por HTTPS mediante el contenedor Web Application, desplegado en Azure Static Web Apps. Este contenedor entrega la Single-Page Application desarrollada con Angular 22, TypeScript, Angular Signals y Angular Material; la SPA se ejecuta en el navegador y consume la RESTful API de Spring Boot mediante JSON sobre HTTPS. La Landing Page presenta la oferta pública, redirige a la aplicación y envía las solicitudes comerciales directamente a la API. El diagrama separa el acceso público y operativo de las conexiones que la API establece con MySQL y los sistemas externos.
 
 <p align="center">
   <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/container-diagram.svg" alt="Software Architecture Container Diagram de Molinex" width="100%">
 </p>
 
-**Figura: Software Architecture Container Diagram de Molinex. Fuente: elaboración propia en Structurizr.**
+**Figura: Software Architecture Container Diagram de Molinex. Fuente: elaboración propia a partir del modelo Structurizr.**
 
 ### 4.6.4 Software Architecture Components Diagrams
 
@@ -2013,7 +2013,7 @@ Dentro de cada producto, los Bounded Contexts se presentan según su tipo de sub
 
 #### Frontend Component Diagrams
 
-La vista general muestra los siete Bounded Contexts internos de la Single-Page Application, el Shared Kernel y su acceso a la RESTful API. En las vistas detalladas, cada contexto se organiza mediante los límites Presentation, Application, Domain e Infrastructure. Presentation contiene componentes Angular; Application coordina el estado mediante stores basados en Signals; Domain expresa entidades, objetos de valor y modelos de lectura; e Infrastructure concentra la comunicación HTTP y el ensamblaje de recursos. El Shared Kernel reúne las capacidades transversales del frontend y los objetos de valor `Weight` y `MeasurementUnit` compartidos por Production Management y Quality and Yield Control.
+La vista general muestra qué Bounded Contexts de la Single-Page Application utiliza cada actor. Cada uno de los siete componentes depende del Shared Kernel para capacidades comunes y se comunica con la RESTful API mediante JSON sobre HTTPS. En las vistas detalladas, cada contexto se organiza mediante los límites Presentation, Application, Domain e Infrastructure. Presentation contiene componentes Angular; Application coordina el estado mediante stores basados en Signals; Domain expresa entidades, objetos de valor y modelos de lectura; e Infrastructure concentra la comunicación HTTP y el ensamblaje de recursos. El Shared Kernel reúne las capacidades transversales del frontend y los objetos de valor `Weight` y `MeasurementUnit` compartidos por Production Management y Quality and Yield Control.
 
 ##### Frontend Component Overview
 
@@ -2021,7 +2021,7 @@ La vista general muestra los siete Bounded Contexts internos de la Single-Page A
   <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/frontend-component-diagram.svg" alt="Molinex Frontend Component Overview" width="100%">
 </p>
 
-**Figura: Molinex Frontend Component Overview. Fuente: elaboración propia en Structurizr.**
+**Figura: Molinex Frontend Component Overview. Fuente: elaboración propia a partir del modelo Structurizr.**
 
 ##### Production Management Frontend Components
 
@@ -2091,7 +2091,7 @@ En el Bounded Context **Production Management**, los componentes de Presentation
 
 #### Backend Component Diagrams
 
-La vista general representa los módulos de los Bounded Contexts que conviven dentro de la RESTful API, sus eventos en proceso y los sistemas externos. Cada vista detallada separa Interfaces, Application, Domain e Infrastructure: las interfaces REST se implementan con Spring Web MVC, los servicios de aplicación coordinan comandos y consultas, el modelo de dominio conserva las reglas del negocio y la infraestructura utiliza Spring Data JPA para persistencia. El Production-Quality Shared Kernel constituye una excepción intencional: contiene solo objetos de valor de Domain, por lo que no se inventan capas de Interfaces, Application o Infrastructure.
+La vista general muestra los módulos de la RESTful API, los eventos que intercambian en proceso y las dependencias de Production Management y Quality and Yield Control con su Shared Kernel. El diagrama de contenedores y las vistas detalladas muestran el acceso de los clientes, la persistencia y las integraciones externas. Cada vista detallada separa Interfaces, Application, Domain e Infrastructure: las interfaces REST se implementan con Spring Web MVC, los servicios de aplicación coordinan comandos y consultas, el modelo de dominio conserva las reglas del negocio y la infraestructura utiliza Spring Data JPA para persistencia. El Production-Quality Shared Kernel constituye una excepción intencional: contiene solo objetos de valor de Domain, por lo que no se inventan capas de Interfaces, Application o Infrastructure.
 
 ##### Backend Component Overview
 
@@ -2099,7 +2099,7 @@ La vista general representa los módulos de los Bounded Contexts que conviven de
   <img src="assets/Images%20Chapter%204/Domain-Driven%20Software%20Architecture/C4%20Model/backend-component-diagram.svg" alt="Molinex Backend Component Overview" width="100%">
 </p>
 
-**Figura: Molinex Backend Component Overview. Fuente: elaboración propia en Structurizr.**
+**Figura: Molinex Backend Component Overview. Fuente: elaboración propia a partir del modelo Structurizr.**
 
 ##### Production Management Backend Components
 
