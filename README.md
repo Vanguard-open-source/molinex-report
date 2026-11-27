@@ -54,7 +54,7 @@ Proyecto<br>
 
 **Periodo 202620**
 
-**Octubre 2026**
+**Noviembre 2026**
 
 </div>
 <div style="page-break-after: always;"></div>
