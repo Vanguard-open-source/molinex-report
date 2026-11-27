@@ -2169,22 +2169,23 @@ La vista general muestra los módulos de la RESTful API, los eventos que interca
 
 ### 4.7.1 Class Diagrams
 
-El modelado se presenta por Bounded Context; por ello, no existe un único modelo de clases global que permita acceder directamente a los objetos internos de todos los módulos.
-
-Los modelos de clases siguen el mismo orden que 4.6.4: Core, Supporting y Generic Subdomain, según la clasificación de 4.6.1.
-
-Los diagramas representan el diseño orientado a objetos del dominio y no un esquema de base de datos. Los atributos se mantienen privados, las operaciones públicas expresan comportamientos que protegen invariantes y cada Aggregate Root dispone de su propio contrato de repositorio. Las referencias hacia otros Aggregates se expresan mediante identificadores tipados. Cuando dos contextos representan la misma identidad, cada uno define su propio tipo local en lugar de importar el modelo interno del otro.
+Cada Bounded Context reúne sus diagramas de clases de backend y frontend. El orden coincide con el de 4.6.4, de modo que cada pareja se puede consultar junto con las vistas de componentes del mismo módulo. Las vistas muestran el diseño objetivo de las clases y contratos de las capas de aplicación, dominio e infraestructura, además de las interfaces REST del backend. Los atributos se mantienen privados, las operaciones públicas expresan comportamientos que protegen invariantes y cada Aggregate Root dispone de su propio contrato de repositorio. Las referencias hacia otros Aggregates se expresan mediante identificadores tipados. Cuando dos contextos representan la misma identidad, cada uno define su propio tipo local en lugar de importar el modelo interno del otro.
 
 | Notación | Significado en el diseño |
 |:--|:--|
-| `<<Aggregate Root>>` | Único punto de entrada autorizado para modificar un Aggregate y proteger sus invariantes. |
-| `<<Entity>>` | Objeto con identidad subordinado al ciclo de vida de un Aggregate Root. |
-| `<<Value Object>>` | Objeto inmutable definido por sus valores y validaciones. |
-| `<<Repository>>` | Contrato de persistencia definido por el dominio para recuperar o guardar Aggregate Roots. |
-| `<<Domain Service>>` | Comportamiento de dominio que no pertenece naturalmente a una sola Entity o Value Object. |
-| `<<Read Model>>` | Proyección optimizada para consulta que no modifica el modelo transaccional. |
-| `<<Published Language>>` | Contrato estable utilizado para intercambiar información sin compartir modelos internos. |
-| `<<Port>>` | Frontera que desacopla el dominio de una integración externa. |
+| `<<Aggregate Root>>` | Entidad que controla los cambios del aggregate y protege sus invariantes. |
+| `<<Value Object>>`, `<<Shared Value Object>>` | Objeto definido por sus valores. La variante compartida se reutiliza entre contextos dentro del Shared Kernel correspondiente. |
+| `<<Domain Service>>`, `<<Domain Event>>` | Un servicio contiene una regla que abarca varios objetos. Un evento comunica un hecho ocurrido en el dominio. |
+| `<<Command>>`, `<<Query>>`, `<<Read Model>>` | Un comando solicita un cambio, una consulta solicita información y un modelo de lectura organiza los datos para responder consultas. |
+| `<<Application Service>>`, `<<Application Port>>`, `<<Outbound Port>>` | El servicio coordina un caso de uso. Los puertos definen contratos de la aplicación con sus consumidores o sus dependencias externas. |
+| `<<Repository Port>>`, `<<Repository Adapter>>` | El puerto define el contrato de persistencia del dominio y el adaptador lo implementa en la infraestructura. |
+| `<<Published Language>>`, `<<Anti-Corruption Layer>>` | Contrato de integración entre contextos y adaptador que traduce mensajes externos al modelo local, respectivamente. |
+| `<<REST Controller>>`, `<<Integration Controller>>` | Punto de entrada HTTP para clientes de la API o para sistemas externos. |
+| `<<Resource>>`, `<<Request Resource>>`, `<<Response Resource>>` | Estructuras serializables que representan los datos enviados o recibidos a través de la API REST. |
+| `<<Assembler>>`, `<<Data Mapper>>` | El assembler traduce recursos o mensajes de integración. El mapper relaciona el modelo de dominio con las clases de persistencia. |
+| `<<JPA Entity>>`, `<<Spring Data Repository>>` | Entidad de persistencia y contrato Spring Data usado para consultar y guardar datos, respectivamente. |
+| `<<Angular Signals Store>>`, `<<Angular HTTP Service>>` | El store mantiene estado reactivo y coordina operaciones. El servicio HTTP ejecuta solicitudes a la API. |
+| `<<Angular Router Guard>>`, `<<Angular HTTP Interceptor>>` | El guard controla el acceso a rutas. El interceptor aplica comportamiento común a las solicitudes HTTP. |
 
 #### Production Management Bounded Context
 
