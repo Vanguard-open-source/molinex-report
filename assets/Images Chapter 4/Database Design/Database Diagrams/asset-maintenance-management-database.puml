@@ -1,0 +1,59 @@
+@startuml
+left to right direction
+hide circle
+hide methods
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam ArrowColor #486581
+skinparam nodesep 50
+skinparam ranksep 75
+skinparam classBorderColor #486581
+skinparam packageBorderColor #8296A8
+title Molinex - Asset and Maintenance Management\nDatabase Diagram
+package "Aggregate: Machine" as aggregate_0 #F7FAFC {
+entity "machines" as machines <<Root table>> #DCEEF8 {
+  * id : BIGINT <<PK, AI>>
+  --
+  * created_at : DATETIME(6)
+  * updated_at : DATETIME(6)
+  * code : VARCHAR(50) <<UQ>>
+  * model : VARCHAR(120)
+  * name : VARCHAR(120)
+  * status : ENUM
+  status_changed_at : DATETIME(6)
+}
+}
+package "Aggregate: MaintenanceRecord" as aggregate_1 #F7FAFC {
+entity "maintenance_records" as maintenance_records <<Root table>> #DCEEF8 {
+  * id : BIGINT <<PK, AI>>
+  --
+  * created_at : DATETIME(6)
+  * updated_at : DATETIME(6)
+  anomaly_id : BIGINT <<REF>>
+  action_taken : VARCHAR(2000)
+  cause : VARCHAR(2000)
+  downtime_minutes : INT
+  failure : VARCHAR(2000)
+  * description : VARCHAR(2000)
+  * machine_id : BIGINT <<REF>>
+  * performed_at : DATETIME(6)
+  * display_name : VARCHAR(150)
+  * principal_id : BIGINT <<REF>>
+  * type : ENUM
+}
+}
+aggregate_0 -[hidden]-> aggregate_1
+legend bottom
+|= Notation |= Meaning |
+| PK / AI | Primary key / auto increment |
+| * | NOT NULL |
+| REF | ID only; no physical FK |
+| UQ | Unique constraint |
+| Aggregate box | Consistency boundary |
+| ENUM | Allowed values in SQL |
+endlegend
+@enduml

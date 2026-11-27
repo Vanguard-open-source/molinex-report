@@ -2183,6 +2183,7 @@ Cada Bounded Context reúne sus diagramas de clases de backend y frontend. El or
 | `<<Command>>`, `<<Query>>`, `<<Read Model>>` | Un comando solicita un cambio, una consulta solicita información y un modelo de lectura organiza los datos para responder consultas. |
 | `<<Application Service>>`, `<<Application Port>>`, `<<Outbound Port>>` | El servicio coordina un caso de uso. Los puertos definen contratos de la aplicación con sus consumidores o sus dependencias externas. |
 | `<<Repository Port>>`, `<<Repository Adapter>>` | El puerto define el contrato de persistencia del dominio y el adaptador lo implementa en la infraestructura. |
+| `<<BIGINT REF>>` | Identificador persistido como referencia; no implica una FK física ni propiedad sobre el aggregate referenciado. |
 | `<<Published Language>>`, `<<Anti-Corruption Layer>>`, `<<Facade>>` | Contrato de integración, adaptador consumidor que traduce datos al modelo local y fachada que expone operaciones del contexto proveedor, respectivamente. |
 | `<<REST Controller>>`, `<<Integration Controller>>` | Punto de entrada HTTP para clientes de la API o para sistemas externos. |
 | `<<Resource>>`, `<<Request Resource>>`, `<<Response Resource>>` | Estructuras serializables que representan los datos enviados o recibidos a través de la API REST. |
@@ -2399,23 +2400,93 @@ El Shared Kernel no es un bounded context y por ello se presenta después de los
 
 ## 4.8 Database Design
 
-Molinex emplea una base de datos relacional MySQL para soportar un monolito modular con enfoque SaaS multiempresa. El modelo utiliza `rice_mills` como raíz de tenancy: los usuarios acceden a cada molino mediante membresías y los datos de producción, maquinaria y reportes quedan asociados directa o transitivamente con su propietario. El catálogo comercial permanece fuera de esta jerarquía porque puede ser consultado por visitantes que todavía no son clientes.
+El modelo de datos de Molinex se organiza en siete Bounded Contexts. Cada contexto es propietario de sus tablas y mantiene las referencias necesarias para relacionarse con los demás módulos.
 
 ### 4.8.1 Database Diagrams
 
+#### Production Management Database Diagram
 
-| Área lógica | Tablas principales | Decisión de diseño |
-|:--|:--|:--|
-| Commercial Engagement | `plans`, `features`, `plan_features`, `plan_conditions`, `commercial_inquiries` | Mantiene el catálogo público y permite asociar opcionalmente una consulta con el plan de interés, sin representar todavía una suscripción activa. |
-| Tenant and Identity Access Management | `rice_mills`, `users`, `mill_memberships`, `roles`, `permissions`, `role_permissions` | Separa la identidad global del usuario de su rol dentro de cada molino y evita mezclar datos de diferentes tenants. |
-| Operational Management | `raw_material_receptions`, `production_batches`, `production_records`, `quality_assessments`, `quality_measurements`, `waste_records`, `quality_deviations`, `machines`, `maintenance_records`, `operational_readings`, `operational_anomalies`, `alerts` | Conserva la trazabilidad desde el molino hasta producción, calidad, activos, mediciones, anomalías y mantenimientos. |
-| Reporting and Analytics | `report_rows`, `report_dimensions`, `report_metrics` | Implementa proyecciones de lectura reconstruibles, asociadas al molino mediante `mill_id`, sin duplicar las tablas transaccionales de origen. |
+El modelo relaciona las recepciones de materia prima con los lotes y los registros de producción, conservando la trazabilidad del proceso.
 
 <p align="center">
-  <img src="assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/molinex-database.svg" alt="Molinex Relational Database Diagram" width="100%">
+  <img src="assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/production-management-database.svg" alt="Production Management Database Diagram" width="100%">
 </p>
 
-**Figura: Molinex Relational Database Diagram. Fuente: elaboración propia en MySQL Workbench.**
+**Figura: Production Management Database Diagram. Fuente: elaboración propia en PlantUML.**
+
+[PlantUML](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/production-management-database.puml) · [SQL](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/production-management-database.sql)
+
+#### Quality and Yield Control Database Diagram
+
+El modelo reúne las evaluaciones de calidad, sus mediciones y los registros de merma. Las evaluaciones y mermas se vinculan al proceso productivo mediante su identificador.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/quality-yield-control-database.svg" alt="Quality and Yield Control Database Diagram" width="100%">
+</p>
+
+**Figura: Quality and Yield Control Database Diagram. Fuente: elaboración propia en PlantUML.**
+
+[PlantUML](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/quality-yield-control-database.puml) · [SQL](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/quality-yield-control-database.sql)
+
+#### Asset and Maintenance Management Database Diagram
+
+El modelo organiza el inventario de máquinas y el historial de mantenimientos, incluyendo al técnico responsable y los detalles de las intervenciones correctivas.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/asset-maintenance-management-database.svg" alt="Asset and Maintenance Management Database Diagram" width="100%">
+</p>
+
+**Figura: Asset and Maintenance Management Database Diagram. Fuente: elaboración propia en PlantUML.**
+
+[PlantUML](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/asset-maintenance-management-database.puml) · [SQL](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/asset-maintenance-management-database.sql)
+
+#### Operational Intelligence Database Diagram
+
+El modelo relaciona las lecturas operativas con las anomalías detectadas y las alertas generadas, conservando los criterios de evaluación y sus estados.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/operational-intelligence-database.svg" alt="Operational Intelligence Database Diagram" width="100%">
+</p>
+
+**Figura: Operational Intelligence Database Diagram. Fuente: elaboración propia en PlantUML.**
+
+[PlantUML](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/operational-intelligence-database.puml) · [SQL](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/operational-intelligence-database.sql)
+
+#### Commercial Engagement Database Diagram
+
+El modelo almacena las consultas comerciales y los datos de contacto de las personas y empresas interesadas.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/commercial-engagement-database.svg" alt="Commercial Engagement Database Diagram" width="100%">
+</p>
+
+**Figura: Commercial Engagement Database Diagram. Fuente: elaboración propia en PlantUML.**
+
+[PlantUML](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/commercial-engagement-database.puml) · [SQL](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/commercial-engagement-database.sql)
+
+#### Reporting and Analytics Database Diagram
+
+El modelo reúne las proyecciones de métricas para los reportes y conserva su origen, valores, unidades y dimensiones.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/reporting-analytics-database.svg" alt="Reporting and Analytics Database Diagram" width="100%">
+</p>
+
+**Figura: Reporting and Analytics Database Diagram. Fuente: elaboración propia en PlantUML.**
+
+[PlantUML](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/reporting-analytics-database.puml) · [SQL](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/reporting-analytics-database.sql)
+
+#### Identity and Access Management Database Diagram
+
+El modelo concentra los datos de acceso, el perfil, el rol y el estado de las cuentas de usuario.
+
+<p align="center">
+  <img src="assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/identity-access-management-database.svg" alt="Identity and Access Management Database Diagram" width="100%">
+</p>
+
+**Figura: Identity and Access Management Database Diagram. Fuente: elaboración propia en PlantUML.**
+
+[PlantUML](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/identity-access-management-database.puml) · [SQL](assets/Images%20Chapter%204/Database%20Design/Database%20Diagrams/identity-access-management-database.sql)
 
 <div style="page-break-after: always;"></div>
 

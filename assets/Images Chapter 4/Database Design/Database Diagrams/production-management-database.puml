@@ -1,0 +1,62 @@
+@startuml
+left to right direction
+hide circle
+hide methods
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam ArrowColor #486581
+skinparam nodesep 50
+skinparam ranksep 75
+skinparam classBorderColor #486581
+skinparam packageBorderColor #8296A8
+title Molinex - Production Management\nDatabase Diagram
+package "Aggregate: RawMaterialReception" as aggregate_0 #F7FAFC {
+entity "raw_material_receptions" as raw_material_receptions <<Root table>> #DCEEF8 {
+  * id : BIGINT <<PK, AI>>
+  --
+  * origin_description : VARCHAR(255)
+  * quantity_unit : VARCHAR(30)
+  * quantity_value : DECIMAL(18,4)
+  * received_at : DATETIME(6)
+  * supplier_name : VARCHAR(150)
+}
+}
+package "Aggregate: ProductionBatch" as aggregate_1 #F7FAFC {
+entity "production_batches" as production_batches <<Root table>> #DCEEF8 {
+  * id : BIGINT <<PK, AI>>
+  --
+  * code : VARCHAR(50) <<UQ>>
+  * registered_at : DATETIME(6)
+  * reception_id : BIGINT <<FK>>
+}
+}
+package "Aggregate: ProductionRecord" as aggregate_2 #F7FAFC {
+entity "production_records" as production_records <<Root table>> #DCEEF8 {
+  * id : BIGINT <<PK, AI>>
+  --
+  finished_at : DATETIME(6)
+  * process_name : VARCHAR(120)
+  * processed_weight_unit : ENUM
+  * processed_weight_value : DECIMAL(18,4)
+  * recorded_at : DATETIME(6)
+  * started_at : DATETIME(6)
+  * status : ENUM
+  * batch_id : BIGINT <<FK>>
+}
+}
+raw_material_receptions ||--o{ production_batches : FK: reception_id
+production_batches ||--o{ production_records : FK: batch_id
+legend bottom
+|= Notation |= Meaning |
+| PK / AI | Primary key / auto increment |
+| * | NOT NULL |
+| FK | Physical FK inside this BC |
+| UQ | Unique constraint |
+| Aggregate box | Consistency boundary |
+| ENUM | Allowed values in SQL |
+endlegend
+@enduml

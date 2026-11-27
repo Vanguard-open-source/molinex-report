@@ -251,7 +251,7 @@ package "domain" #E8F4D4 {
 package "infrastructure.persistence.jpa" #F0E6FA {
   class QualityAssessmentPersistenceEntity <<JPA Entity>> {
     -id : Long <<BIGINT>>
-    -productionRecordId : Long <<BIGINT FK>>
+    -productionRecordId : Long <<BIGINT REF>>
     -assessedAt : Instant
   }
   class QualityMeasurementPersistenceEntity <<JPA Entity>> {
@@ -264,7 +264,7 @@ package "infrastructure.persistence.jpa" #F0E6FA {
   }
   class WasteRecordPersistenceEntity <<JPA Entity>> {
     -id : Long <<BIGINT>>
-    -productionRecordId : Long <<BIGINT FK>>
+    -productionRecordId : Long <<BIGINT REF>>
     -quantityValue : BigDecimal
     -quantityUnit : String
     -baseWeightValue : BigDecimal

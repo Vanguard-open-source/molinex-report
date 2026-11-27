@@ -1,0 +1,38 @@
+@startuml
+left to right direction
+hide circle
+hide methods
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam ArrowColor #486581
+skinparam nodesep 50
+skinparam ranksep 75
+skinparam classBorderColor #486581
+skinparam packageBorderColor #8296A8
+title Molinex - Identity and Access Management\nDatabase Diagram
+package "Aggregate: User" as aggregate_0 #F7FAFC {
+entity "users" as users <<Root table>> #DCEEF8 {
+  * id : INT <<PK, AI>>
+  --
+  * created_at : DATETIME(6)
+  * updated_at : DATETIME(6)
+  * credential : VARCHAR(255)
+  * email : VARCHAR(254) <<UQ>>
+  * profile : VARCHAR(150)
+  * role : ENUM
+  * status : ENUM
+}
+}
+legend bottom
+|= Notation |= Meaning |
+| PK / AI | Primary key / auto increment |
+| * | NOT NULL |
+| UQ | Unique constraint |
+| Aggregate box | Consistency boundary |
+| ENUM | Allowed values in SQL |
+endlegend
+@enduml
