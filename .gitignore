@@ -1,1 +1,14 @@
-.idea/
+# JetBrains
+/.idea/
+*.iml
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Exportación local con Pandoc
+/config/
+/scripts/
+/output/
+/tmp/
+/README.html
