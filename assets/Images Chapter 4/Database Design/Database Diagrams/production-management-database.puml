@@ -13,11 +13,7 @@ skinparam nodesep 50
 skinparam ranksep 75
 skinparam classBorderColor #486581
 skinparam packageBorderColor #8296A8
-title Molinex - Production Management\nDatabase Diagram | IMPLEMENTED JPA MAPPING
-caption
-Three independent aggregates; internal FKs preserve identity
-references.
-endcaption
+title Molinex - Production Management\nDatabase Diagram
 package "Aggregate: RawMaterialReception" as aggregate_0 #F7FAFC {
 entity "raw_material_receptions" as raw_material_receptions <<Root table>> #DCEEF8 {
   * id : BIGINT <<PK, AI>>
@@ -52,8 +48,8 @@ entity "production_records" as production_records <<Root table>> #DCEEF8 {
   * batch_id : BIGINT <<FK>>
 }
 }
-raw_material_receptions ||--o{ production_batches : FK: reception_id\nidentity between separate aggregates
-production_batches ||--o{ production_records : FK: batch_id\nidentity between separate aggregates
+raw_material_receptions ||--o{ production_batches : FK: reception_id
+production_batches ||--o{ production_records : FK: batch_id
 legend bottom
 |= Notation |= Meaning |
 | PK / AI | Primary key / auto increment |

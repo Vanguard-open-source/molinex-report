@@ -13,10 +13,7 @@ skinparam nodesep 50
 skinparam ranksep 75
 skinparam classBorderColor #486581
 skinparam packageBorderColor #8296A8
-title Molinex - Commercial Engagement\nDatabase Diagram | IMPLEMENTED JPA MAPPING
-caption
-Contact values and message are stored in the inquiry root table.
-endcaption
+title Molinex - Commercial Engagement\nDatabase Diagram
 package "Aggregate: CommercialInquiry" as aggregate_0 #F7FAFC {
 entity "commercial_inquiries" as commercial_inquiries <<Root table>> #DCEEF8 {
   * id : BIGINT <<PK, AI>>

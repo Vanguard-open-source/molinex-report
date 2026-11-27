@@ -13,11 +13,7 @@ skinparam nodesep 50
 skinparam ranksep 75
 skinparam classBorderColor #486581
 skinparam packageBorderColor #8296A8
-title Molinex - Asset and Maintenance Management\nDatabase Diagram | IMPLEMENTED JPA MAPPING
-caption
-Two independent aggregates; scalar references have no physical FK
-in the implemented mapping.
-endcaption
+title Molinex - Asset and Maintenance Management\nDatabase Diagram
 package "Aggregate: Machine" as aggregate_0 #F7FAFC {
 entity "machines" as machines <<Root table>> #DCEEF8 {
   * id : BIGINT <<PK, AI>>

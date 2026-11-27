@@ -13,11 +13,7 @@ skinparam nodesep 50
 skinparam ranksep 75
 skinparam classBorderColor #486581
 skinparam packageBorderColor #8296A8
-title Molinex - Operational Intelligence\nDatabase Diagram | PROPOSED DESIGN - NOT IMPLEMENTED
-caption
-PROPOSED: three independent aggregates. The external machine ID
-has no cross-context FK.
-endcaption
+title Molinex - Operational Intelligence\nDatabase Diagram
 package "Aggregate: OperationalReading" as aggregate_0 #F7FAFC {
 entity "operational_readings" as operational_readings <<Root table>> #DCEEF8 {
   * id : BIGINT <<PK, AI>>
@@ -50,8 +46,8 @@ entity "alerts" as alerts <<Root table>> #DCEEF8 {
   * generated_at : DATETIME(6)
 }
 }
-operational_readings ||--o{ operational_anomalies : FK: reading_id\nidentity between separate aggregates
-operational_anomalies ||--o{ alerts : FK: anomaly_id\nidentity between separate aggregates
+operational_readings ||--o{ operational_anomalies : FK: reading_id
+operational_anomalies ||--o{ alerts : FK: anomaly_id
 legend bottom
 |= Notation |= Meaning |
 | PK / AI | Primary key / auto increment |

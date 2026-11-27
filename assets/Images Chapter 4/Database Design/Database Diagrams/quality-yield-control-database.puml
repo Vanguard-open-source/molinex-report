@@ -13,11 +13,7 @@ skinparam nodesep 50
 skinparam ranksep 75
 skinparam classBorderColor #486581
 skinparam packageBorderColor #8296A8
-title Molinex - Quality and Yield Control\nDatabase Diagram | IMPLEMENTED JPA MAPPING
-caption
-Owned measurement values stay inside QualityAssessment. Production
-IDs cross the BC boundary through the ACL.
-endcaption
+title Molinex - Quality and Yield Control\nDatabase Diagram
 package "Aggregate: QualityAssessment" as aggregate_0 #F7FAFC {
 entity "quality_assessments" as quality_assessments <<Root table>> #DCEEF8 {
   * id : INT <<PK, AI>>
